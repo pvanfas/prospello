@@ -118,13 +118,23 @@ export const blogAPI = {
 // Job API functions
 export const jobAPI = {
   getJobs: async (params = {}) => {
-    const response = await api.get("/jobs", { params });
-    return response.data.jobs;
+    try {
+      const response = await api.get("/jobs", { params });
+      return response.data.jobs || [];
+    } catch (error) {
+      console.error("Error fetching jobs:", error);
+      return [];
+    }
   },
 
   getJob: async (id) => {
-    const response = await api.get(`/jobs/${id}`);
-    return response.data.job;
+    try {
+      const response = await api.get(`/jobs/${id}`);
+      return response.data.job;
+    } catch (error) {
+      console.error("Error fetching job:", error);
+      throw error;
+    }
   },
 
   createJob: async (jobData) => {

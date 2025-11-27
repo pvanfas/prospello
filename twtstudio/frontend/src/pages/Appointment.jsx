@@ -91,14 +91,8 @@ const Appointment = () => {
                   description: "We'll respond within 24 hours",
                 },
                 {
-                  title: "Call Us",
-                  info: "+1 (555) 123-4567",
-                  icon: <Phone className="w-5 h-5" />,
-                  description: "Mon-Fri, 9am-5pm PST",
-                },
-                {
                   title: "Visit Us",
-                  info: "123 Business Ave, San Francisco, CA 94107",
+                  info: "Sector 3, HSR Layout, Bangalore, Karnataka 560102, India",
                   icon: <MapPin className="w-5 h-5" />,
                   description: "Schedule a visit in advance",
                 },
@@ -287,13 +281,13 @@ const Appointment = () => {
               Need immediate assistance?
             </h3>
             <p className={`text-sm ${secondaryText}`}>
-              For urgent matters, please call our support line at{" "}
+              For urgent matters, please email us at{" "}
               <span
                 className={`font-semibold ${
                   isDark ? "text-red-400" : "text-red-600"
                 }`}
               >
-                +1 (555) 789-0123
+                hello@twtventurestudio.com
               </span>
               . Our average response time is under 2 hours during business days.
             </p>
@@ -313,7 +307,7 @@ const Appointment = () => {
             className={`rounded-xl overflow-hidden shadow-xl h-96 ${borderColor} border`}
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.538442689271!2d-122.4199066846826!3d37.77492997975938!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA%2C%20USA!5e0!3m2!1sen!2s!4v1620000000000!5m2!1sen!2s"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.857364059994!2d77.6364146!3d12.9165757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed898fc47%3A0x1681f38b548b0b9!2sSector%203%2C%20HSR%20Layout%2C%20Bengaluru%2C%20Karnataka%20560102!5e0!3m2!1sen!2sin!4v1732700000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}

@@ -57,8 +57,7 @@ const Footer = () => {
 
   const contactInfo = [
     { icon: <Mail size={18} />, text: "hello@twtventurestudio.com" },
-    { icon: <Phone size={18} />, text: "+91 (555) 123-4567" },
-    { icon: <MapPin size={18} />, text: "123 Business Ave, San Francisco" },
+    { icon: <MapPin size={18} />, text: "Sector 3, HSR Layout, Bangalore, Karnataka 560102, India" },
   ];
 
   return (

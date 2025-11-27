@@ -481,7 +481,7 @@ const JobList = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold mb-8">Job Listings</h1>
+        <h2 className="text-3xl font-bold mb-8">Job Listings</h2>
 
         {/* Filters */}
         <div className={`rounded-xl shadow-sm p-6 mb-8 ${containerBgBorder}`}>

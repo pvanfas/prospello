@@ -16,7 +16,7 @@ const Typography = ({
   const baseStyles = "font-display transition-colors duration-200";
 
   const variants = {
-    h1: "text-4xl md:text-5xl lg:text-6xl font-bold leading-tight",
+    h1: "text-4xl md:text-4xl lg:text-4xl font-bold leading-tight",
     h2: "text-3xl md:text-4xl font-bold leading-tight",
     h3: "text-2xl md:text-3xl font-semibold leading-snug",
     h4: "text-xl md:text-2xl font-semibold leading-snug",

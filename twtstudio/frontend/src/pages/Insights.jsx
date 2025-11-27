@@ -30,7 +30,8 @@ const SkeletonCard = ({ theme }) => {
 
 const Insights = () => {
   const { theme } = useTheme();
-  const { data: blogs = [], isLoading } = useBlogs();
+  const { data, isLoading } = useBlogs();
+  const blogs = Array.isArray(data) ? data : [];
 
   return (
     <section

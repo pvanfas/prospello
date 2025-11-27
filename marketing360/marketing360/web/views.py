@@ -1,0 +1,119 @@
+from django.shortcuts import render
+
+from .models import BlogPost, HiringPartner, Mentor, Tool
+
+
+def index(request):
+    mentors = Mentor.objects.all()
+    hiring_partners = HiringPartner.objects.all()
+    blogs = BlogPost.objects.all()
+    context = {
+        "is_index": True,
+        "mentors": mentors,
+        "hiring_partners": hiring_partners,
+        "blogs": blogs[:3],
+    }
+    return render(request, "web/index.html", context)
+
+
+def courses(request):
+    tools = Tool.objects.all()
+    mentors = Mentor.objects.all()
+    hiring_partners = HiringPartner.objects.all()
+    context = {
+        "is_courses": True,
+        "is_dark_navbar": True,
+        "tools": tools,
+        "mentors": mentors,
+        "hiring_partners": hiring_partners,
+    }
+    return render(request, "web/courses.html", context)
+
+
+def mentors(request):
+    mentors = Mentor.objects.all()
+    hiring_partners = HiringPartner.objects.all()
+    context = {
+        "is_mentors": True,
+        "is_dark_navbar": True,
+        "mentors": mentors,
+        "hiring_partners": hiring_partners,
+    }
+    return render(request, "web/mentors.html", context)
+
+
+def centers(request):
+    context = {"is_centers": True, "is_dark_navbar": True}
+    return render(request, "web/centers.html", context)
+
+
+def webinars(request):
+    context = {"is_webinars": True, "is_dark_navbar": True}
+    return render(request, "web/webinars.html", context)
+
+
+def communities(request):
+    context = {"is_communities": True, "is_dark_navbar": True}
+    return render(request, "web/communities.html", context)
+
+
+def about(request):
+    context = {"is_about": True, "is_dark_navbar": True}
+    return render(request, "web/about.html", context)
+
+
+def contact(request):
+    context = {"is_contact": True, "is_dark_navbar": True}
+    return render(request, "web/contact.html", context)
+
+
+def refer(request):
+    context = {"is_refer": True, "is_dark_navbar": True}
+    return render(request, "web/refer.html", context)
+
+
+def case_studies(request):
+    context = {"is_case_studies": True, "is_dark_navbar": True}
+    return render(request, "web/case_studies.html", context)
+
+
+def blog(request):
+    context = {"is_blog": True, "is_dark_navbar": True}
+    return render(request, "web/blog.html", context)
+
+
+def faq(request):
+    context = {"is_faq": True, "is_dark_navbar": True}
+    return render(request, "web/faq.html", context)
+
+
+def digital_marketing_courses(request):
+    partners = Partner.objects.all()
+    context = {
+        "is_digital_marketing_courses": True,
+        "is_dark_navbar": True,
+        "partners": partners,
+    }
+    return render(request, "web/courses/digital_marketing_courses.html", context)
+
+
+
+def terms_and_conditions(request):
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    return render(request, "web/terms_and_conditions.html", context)
+
+
+def privacy_policy(request):
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    return render(request, "web/privacy_policy.html", context)
+
+
+def refund_policy(request):
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    return render(request, "web/refund_policy.html", context)
+
+
+def cookie_policy(request):
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    return render(request, "web/cookie_policy.html", context)
+

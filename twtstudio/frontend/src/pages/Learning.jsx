@@ -446,7 +446,7 @@ const LearningStudio = () => {
                                     }`}>
                                         Target Roles
                                     </h4>
-                                    <div className="grid grid-cols-2 gap-4">
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                         {[
                                             { role: "Founders", icon: <Rocket className="w-5 h-5" /> },
                                             { role: "Growth Leads", icon: <TrendingUp className="w-5 h-5" /> },

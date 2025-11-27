@@ -227,7 +227,7 @@ const StudioDetail = () => {
 
   return (
     <div
-      className={`max-w-5xl mx-auto p-6 transition-colors duration-300 ${
+      className={`pt-6 transition-colors duration-300 ${
         isDark ? "bg-gray-900 text-white" : "bg-white text-black"
       }`}
     >

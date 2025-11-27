@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
+import ideasToLifeImg from "../assets/images/ideastolife.jpg";
 
 const HomePageSection = () => {
   const { theme } = useTheme();
@@ -15,7 +16,7 @@ const HomePageSection = () => {
         {/* Left Image */}
         <div className="w-full h-full">
           <img
-            src="https://images.pexels.com/photos/3182781/pexels-photo-3182781.jpeg"
+            src={ideasToLifeImg}
             alt="Business meeting"
             className="w-full h-auto object-cover rounded-xl shadow-lg"
           />
@@ -33,8 +34,8 @@ const HomePageSection = () => {
               isDark ? "text-white" : "text-gray-900"
             }`}
           >
-            Not Just your Regular <br className="hidden md:block" />
-            Business Agency
+            From Conception to Capital <br className="hidden md:block" />
+            We Build the Future.
           </h2>
 
           <p
@@ -42,8 +43,7 @@ const HomePageSection = () => {
               isDark ? "text-gray-300" : "text-gray-600"
             }`}
           >
-            We bring ideas to life by combining years of experience of our very
-            talented team.
+            We provide the strategic framework, operator support, and dedicated capital sourcing needed to accelerate ventures from early-stage concept to market dominance.
           </p>
 
           {/* Buttons */}

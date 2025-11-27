@@ -8,6 +8,14 @@
     --color-bg: #fefef9;
     --color-accent: #fce09b;
     --color-bg: #f5f5f5;
+    
+    /* Typography Styles */
+    --heading-gradient: linear-gradient(to right, #ef4444, #f97316);
+    --text-primary-dark: #fefef8;
+    --text-primary-light: #1f2937;
+    --text-secondary-dark: #9ca3af;
+    --text-secondary-light: #4b5563;
+    --text-accent: #ef4444;
   }
 
   body {
@@ -17,6 +25,30 @@
 
   .font-display {
     font-family: "Bricolage Grotesque", sans-serif;
+  }
+  
+  /* Typography Classes */
+  .heading-gradient {
+    background: var(--heading-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .text-primary {
+    color: var(--text-primary-light);
+  }
+  
+  .dark .text-primary {
+    color: var(--text-primary-dark);
+  }
+  
+  .text-secondary {
+    color: var(--text-secondary-light);
+  }
+  
+  .dark .text-secondary {
+    color: var(--text-secondary-dark);
   }
 }
 

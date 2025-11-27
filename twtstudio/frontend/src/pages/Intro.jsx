@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, BrainCircuit, Users } from "lucide-react";
+import { BookOpen, Handshake, Target } from "lucide-react";
 import { useTheme } from "../context/ThemeContext"; // adjust if path differs
 
 // AnimatedTextPhrases cycles through phrases for the heading
@@ -44,7 +44,7 @@ const Intro = () => {
       {/* Heading */}
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-2xl sm:text-3xl md:text-4xl leading-snug">
-          We are a tribe of workoholics <br />{" "}
+          We are a tribe of workaholics <br />{" "}
           <span className="text-red-500">
             <AnimatedTextPhrases />
           </span>
@@ -52,19 +52,22 @@ const Intro = () => {
       </div>
 
       {/* Cards */}
-      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {[
           {
-            icon: Lightbulb,
-            title: "Innovative Ideas",
+            icon: BookOpen,
+            title: "Venture Playbooks",
+            description: "Strategic frameworks and actionable insights for startup success",
           },
           {
-            icon: BrainCircuit,
-            title: "Smart Strategy",
+            icon: Handshake,
+            title: "Founders syndicate",
+            description: "Collaborative network of ambitious founders driving innovation",
           },
           {
-            icon: Users,
-            title: "Talented Team",
+            icon: Target,
+            title: "Investment scrutiny",
+            description: "Rigorous analysis and due diligence for informed decisions",
           },
         ].map((item, idx) => {
           const Icon = item.icon;
@@ -72,14 +75,33 @@ const Intro = () => {
             <motion.div
               key={idx}
               whileHover={cardHover}
-              className={`flex flex-col items-center justify-center gap-4 p-6 rounded-2xl border transition-colors duration-300 shadow-md ${
+              className={`group relative overflow-hidden p-8 rounded-3xl border transition-all duration-300 ${
                 isDark
-                  ? "bg-gray-800 border-gray-700"
-                  : "bg-[#FDFCF6] border-gray-200"
+                  ? "bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700 hover:border-red-500/50"
+                  : "bg-gradient-to-br from-white to-gray-50 border-gray-200 hover:border-red-500/50"
               }`}
             >
-              <Icon size={40} className="text-red-500" />
-              <p className="text-center text-base font-medium">{item.title}</p>
+              {/* Accent line */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-red-500 to-orange-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+              
+              {/* Icon container */}
+              <div className={`mb-6 w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300 ${
+                isDark 
+                  ? "bg-red-500/10 group-hover:bg-red-500/20" 
+                  : "bg-red-50 group-hover:bg-red-100"
+              }`}>
+                <Icon size={32} className="text-red-500 group-hover:scale-110 transition-transform duration-300" />
+              </div>
+              
+              {/* Content */}
+              <h3 className="text-xl font-semibold mb-3 group-hover:text-red-500 transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p className={`text-sm leading-relaxed ${
+                isDark ? "text-gray-400" : "text-gray-600"
+              }`}>
+                {item.description}
+              </p>
             </motion.div>
           );
         })}

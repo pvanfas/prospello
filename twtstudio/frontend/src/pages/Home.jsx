@@ -9,9 +9,9 @@ import OurSolutionSection from "../components/OurSolutionSection";
 import FeatureCard from "../components/FeatureCard";
 import AgencyCard from "../components/AgencyCard";
 import bghero from "../assets/images/main_hero_bg.jpg";
-import bgheroMobile from "../assets/images/hero-mobile-fallback.jpg"; // Add a mobile-optimized fallback image
+import bgheroMobile from "../assets/images/hero-mobile-fallback.jpg";
 
-const phrases = ["Digital Growth", "AI Consulting", "Startup Acceleration"];
+const phrases = ["Build.", "Scale.", "Fund."];
 
 const Home = () => {
   const { theme } = useTheme();
@@ -30,7 +30,7 @@ const Home = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setIndex((prev) => (prev + 1) % phrases.length);
-    }, 3000);
+    }, 1500);
     return () => clearInterval(interval);
   }, []);
 
@@ -55,36 +55,33 @@ const Home = () => {
 
         <div className="relative z-10 h-full flex items-center px-6 sm:px-8 md:px-20 pt-24 mt-28">
           <div className="max-w-2xl w-full text-[#fefef9]">
-            <AnimatePresence mode="wait">
-              <motion.h1
-                key={index}
-                className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 sm:mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.6 }}
-              >
-                {phrases[index]} <br />
-                <span className="text-red-600">Solutions</span>
-                <span className="text-[#FFFFFF]">.</span>
-              </motion.h1>
-            </AnimatePresence>
-
-            <motion.p
-              className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 max-w-lg"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+            <h1
+              className="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4 sm:mb-6"
             >
-              We help startups and businesses scale through innovative
-              technology and strategic consulting.
-            </motion.p>
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={index}
+                  className="text-red-600"
+                  initial={{ opacity: 0, y: 8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
+                >
+                  {phrases[index]}
+                </motion.span>
+              </AnimatePresence>
+              <br />
+              <span className="text-white">The Tribe of Executors.</span>
+            </h1>
 
-            <motion.div
+            <p
+              className="text-base sm:text-lg md:text-xl text-gray-100 mb-6 sm:mb-8 max-w-lg"
+            >
+              We co-create intellectual property and mobilize our ecosystem, networks, strategy, and capital to systematically launch and scale ambitious ventures.
+            </p>
+
+            <div
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6, duration: 0.5 }}
             >
               <Link to="/appointment" className="w-full sm:w-auto">
                 <button className="w-full bg-red-600 hover:bg-red-700 px-6 py-3 rounded-lg text-base sm:text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -97,24 +94,18 @@ const Home = () => {
                   Learn More
                 </button>
               </Link>
-            </motion.div>
+            </div>
           </div>
         </div>
 
         {isMobile && (
-          <motion.div
+          <div
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 1.5 }}
           >
             <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center p-1">
-              <motion.div
-                className="w-1 h-2 bg-white rounded-full"
-                animate={{ y: [0, 4, 0] }}
-                transition={{ repeat: Infinity, duration: 1.5 }}
-              />
+              <div className="w-1 h-2 bg-white rounded-full" />
             </div>
-          </motion.div>
+          </div>
         )}
       </section>
 

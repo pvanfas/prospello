@@ -63,9 +63,7 @@ const OurSolutionSection = () => {
                 theme === "dark" ? "text-[#FEFEF8]" : "text-gray-900"
               }`}
             >
-              Our
-              <br />
-              Solution
+              Few Of Our Tribal Chiefs
             </h1>
             <p
               className={`text-lg leading-relaxed mb-12 max-w-sm ${

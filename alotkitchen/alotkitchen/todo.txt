@@ -1,0 +1,2 @@
+1. Customize the menu based on day/item selection, with automatic price allocation.
+2. Enable bulk product updates for selected customers in case of product unavailability. Notify customers about the change and collect feedback using emojis. 

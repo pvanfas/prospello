@@ -1,0 +1,13 @@
+django-tables2
+django==4.2.9
+django-admin-interface
+django-colorfield
+django-tinymce
+django-import-export
+django-registration-redux
+django-tables2
+django_compressor
+python-decouple
+django-extensions
+django-filter
+psycopg2-binary

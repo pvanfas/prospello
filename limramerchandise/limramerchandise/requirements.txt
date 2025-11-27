@@ -1,0 +1,7 @@
+django==4.2.9
+django-tinymce
+psycopg2-binary
+python-decouple
+django-admin-interface
+django-import-export
+

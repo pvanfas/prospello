@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
 import ideasToLifeImg from "../assets/images/ideastolife.jpg";
+import Typography from "./Typography";
 
 const HomePageSection = () => {
   const { theme } = useTheme();
@@ -29,22 +30,14 @@ const HomePageSection = () => {
           transition={{ duration: 0.5 }}
           className="flex flex-col justify-center"
         >
-          <h2
-            className={`text-3xl md:text-4xl mb-4 leading-tight ${
-              isDark ? "text-white" : "text-gray-900"
-            }`}
-          >
+          <Typography variant="h2" className="mb-4">
             From Conception to Capital <br className="hidden md:block" />
             We Build the Future.
-          </h2>
+          </Typography>
 
-          <p
-            className={`text-base md:text-lg mb-6 ${
-              isDark ? "text-gray-300" : "text-gray-600"
-            }`}
-          >
+          <Typography variant="body" color="secondary" className="mb-6">
             We provide the strategic framework, operator support, and dedicated capital sourcing needed to accelerate ventures from early-stage concept to market dominance.
-          </p>
+          </Typography>
 
           {/* Buttons */}
           <div className="flex flex-wrap gap-4">

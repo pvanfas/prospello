@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "../assets/images/logo/horizontal.png";
 import LogoWhite from "../assets/images/logo/horizontal-white.png";
+import Typography from "./Typography";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
@@ -40,7 +41,6 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navItems = [
-    { label: "About", path: "/about" },
     { label: "Studio", path: "/studio" },
     { label: "Learning", path: "/learning" },
     { label: "Careers", path: "/careers" },
@@ -79,7 +79,9 @@ const Navbar = () => {
                 }`
               }
             >
-              {item.label || "Home"}
+              <Typography variant="body" as="span" className="text-inherit">
+                {item.label || "Home"}
+              </Typography>
             </NavLink>
           ))}
           <button
@@ -163,7 +165,9 @@ const Navbar = () => {
                 }`
               }
             >
-              {item.label || "Home"}
+              <Typography variant="h6" as="span" className="text-inherit">
+                {item.label || "Home"}
+              </Typography>
             </NavLink>
           ))}
 
@@ -180,11 +184,11 @@ const Navbar = () => {
           >
             {theme === "light" ? (
               <>
-                <span>🌙</span> Dark Mode
+                <span>🌙</span> <Typography variant="body" as="span">Dark Mode</Typography>
               </>
             ) : (
               <>
-                <span>☀️</span> Light Mode
+                <span>☀️</span> <Typography variant="body" as="span">Light Mode</Typography>
               </>
             )}
           </button>

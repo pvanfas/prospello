@@ -5,6 +5,7 @@ import { blogAPI } from "../lib/api";
 import { motion } from "framer-motion";
 import moment from "moment";
 import { useTheme } from "../context/ThemeContext";
+import Typography from "../components/Typography";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -22,7 +23,9 @@ const BlogDetails = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-lg text-gray-500 animate-pulse">Loading blog...</p>
+        <Typography variant="h5" color="muted" className="animate-pulse">
+          Loading blog...
+        </Typography>
       </div>
     );
   }
@@ -30,7 +33,9 @@ const BlogDetails = () => {
   if (isError || !blog) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-red-500 text-lg">Blog not found.</p>
+        <Typography variant="h5" color="accent">
+          Blog not found.
+        </Typography>
       </div>
     );
   }
@@ -58,16 +63,20 @@ const BlogDetails = () => {
           className={`${theme === "dark" ? "text-gray-300" : "text-gray-700"}`}
         >
           {/* Title */}
-          <motion.h1
-            className={`text-3xl md:text-4xl font-serif font-bold mb-6 leading-snug ${
-              theme === "dark" ? "text-white" : "text-gray-900"
-            }`}
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            {blog.title}
-          </motion.h1>
+            <Typography
+              variant="h2"
+              className={`mb-6 font-serif ${
+                theme === "dark" ? "text-white" : "text-gray-900"
+              }`}
+            >
+              {blog.title}
+            </Typography>
+          </motion.div>
 
           {/* Author and Date */}
           <motion.div
@@ -82,11 +91,13 @@ const BlogDetails = () => {
               {/* Add author image if available */}
             </div>
             <div>
-              <p className="font-medium">{blog.author}</p>
-              <p className="text-sm">
+              <Typography variant="body" className="font-medium">
+                {blog.author}
+              </Typography>
+              <Typography variant="small">
                 {moment(blog.createdAt).format("MMMM D, YYYY")} ·{" "}
                 {Math.ceil(blog.description.length / 1000)} min read
-              </p>
+              </Typography>
             </div>
           </motion.div>
 
@@ -99,7 +110,9 @@ const BlogDetails = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-xl leading-relaxed">{blog.description}</p>
+            <Typography variant="body" className="text-xl leading-relaxed">
+              {blog.description}
+            </Typography>
           </motion.div>
         </article>
       </div>

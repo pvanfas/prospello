@@ -1,160 +1,100 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import React from "react";
+import { motion } from "framer-motion";
 import { useTheme } from "../context/ThemeContext";
+import Typography from "./Typography";
+
+// Import client images
+import img360 from "../assets/images/clients/360.png";
+import imgAifer from "../assets/images/clients/aifer.png";
+import imgAtp from "../assets/images/clients/atp.png";
+import imgDiabcare from "../assets/images/clients/diabcare.png";
+import imgElance from "../assets/images/clients/elance.png";
+import imgHosten from "../assets/images/clients/hosten.png";
+import imgInterval from "../assets/images/clients/interval.png";
+import imgLappino from "../assets/images/clients/lappino.png";
+import imgLiwaspring from "../assets/images/clients/liwaspring.png";
+import imgOppam from "../assets/images/clients/oppam.png";
+import imgSouthbridge from "../assets/images/clients/southbridge.png";
 
 const OurSolutionSection = () => {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const { theme } = useTheme();
 
-  const imageSets = [
-    {
-      main: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=500&h=600&fit=crop",
-      image1:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop",
-      image2:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=300&fit=crop",
-    },
-    {
-      main: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=600&fit=crop",
-      image1:
-        "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400&h=300&fit=crop",
-      image2:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop",
-    },
-    {
-      main: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=500&h=600&fit=crop",
-      image1:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400&h=300&fit=crop",
-      image2:
-        "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=400&h=300&fit=crop",
-    },
+  const allClients = [
+    img360,
+    imgAifer,
+    imgAtp,
+    imgDiabcare,
+    imgElance,
+    imgHosten,
+    imgInterval,
+    imgLappino,
+    imgLiwaspring,
+    imgOppam,
+    imgSouthbridge,
   ];
 
-  const nextImage = () => {
-    setCurrentImageIndex((prev) => (prev + 1) % imageSets.length);
-  };
-
-  const prevImage = () => {
-    setCurrentImageIndex(
-      (prev) => (prev - 1 + imageSets.length) % imageSets.length
-    );
-  };
-
-  const currentSet = imageSets[currentImageIndex];
-
   return (
-    <div
-      className={`px-4 py-8 lg:py-16 flex items-center justify-center transition-colors duration-300 ${
-        theme === "dark" ? "bg-gray-900" : "bg-[#FDFCF6]"
+    <section
+      className={`w-full py-20 px-4 transition-colors duration-300 ${
+        theme === "dark" ? "bg-gray-900" : "bg-white"
       }`}
     >
-      <div className="max-w-7xl w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Content */}
-          <motion.div
-            className="lg:col-span-4 text-left"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+      <div className="max-w-7xl mx-auto">
+        {/* Header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          <Typography variant="h2" className="mb-4">
+            Trusted by Industry Leaders
+          </Typography>
+          <p
+            className={`text-base max-w-3xl mx-auto ${
+              theme === "dark" ? "text-gray-400" : "text-gray-600"
+            }`}
           >
-            <h1
-              className={`text-5xl lg:text-6xl font-light mb-8 leading-tight ${
-                theme === "dark" ? "text-[#FEFEF8]" : "text-gray-900"
-              }`}
-            >
-              Few Of Our Tribal Chiefs
-            </h1>
-            <p
-              className={`text-lg leading-relaxed mb-12 max-w-sm ${
-                theme === "dark" ? "text-gray-400" : "text-gray-600"
-              }`}
-            >
-              We bring ideas to life by combining years of experience of our
-              very talented team.
-            </p>
-            <button
-              className={`border-2 px-8 py-3 font-medium tracking-wider text-sm transition-all duration-300 ${
+            We partner with innovative companies to drive growth and transformation
+          </p>
+        </motion.div>
+
+        {/* Client Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
+          {allClients.map((client, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              whileHover={{ 
+                scale: 1.1,
+                transition: { duration: 0.3 }
+              }}
+              className={`group relative flex items-center justify-center p-6 rounded-2xl border-2 transition-all duration-300 ${
                 theme === "dark"
-                  ? "border-red-500 text-[#FEFEF8] hover:bg-[#FEFEF8] hover:text-gray-900 rounded-full"
-                  : "border-red-500 text-gray-900 hover:bg-red-600 hover:text-[#FEFEF8] rounded-full"
-              }`}
+                  ? "bg-gradient-to-br from-gray-800 to-gray-900 border-gray-700 hover:border-red-400/50"
+                  : "bg-gradient-to-br from-white to-gray-50 border-gray-200 hover:border-red-400/50"
+              } hover:shadow-xl`}
             >
-              LEARN MORE
-            </button>
-          </motion.div>
-
-          {/* Images Section */}
-          <div className="lg:col-span-8">
-            <div className="flex gap-4 items-center justify-center h-full flex-wrap md:flex-nowrap">
-              {[currentSet.main, currentSet.image1, currentSet.image2].map(
-                (src, i) => (
-                  <AnimatePresence mode="wait" key={src}>
-                    <motion.div
-                      key={`${i}-${currentImageIndex}`}
-                      initial={{ opacity: 0, x: 50 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, x: -50 }}
-                      transition={{ duration: 0.6, delay: i * 0.1 }}
-                      className="flex-1 max-w-xs"
-                    >
-                      <div className="aspect-[3/4] rounded-lg overflow-hidden shadow-xl">
-                        <img
-                          src={src}
-                          alt={`Slide ${i + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
-                    </motion.div>
-                  </AnimatePresence>
-                )
-              )}
-            </div>
-
-            {/* Navigation Section */}
-            <div className="mt-8 flex flex-col md:flex-row justify-center items-center gap-4">
-              {/* Arrows */}
-              <div className="flex items-center gap-2">
-                <motion.button
-                  onClick={prevImage}
-                  className="w-12 h-12 bg-red-400 hover:bg-red-500 rounded-full flex items-center justify-center text-[#FEFEF8] transition-all duration-300 shadow-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ChevronLeft size={20} strokeWidth={2} />
-                </motion.button>
-                <motion.button
-                  onClick={nextImage}
-                  className="w-12 h-12 bg-red-400 hover:bg-red-500 rounded-full flex items-center justify-center text-[#FEFEF8] transition-all duration-300 shadow-lg"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <ChevronRight size={20} strokeWidth={2} />
-                </motion.button>
-              </div>
-
-              {/* Dots */}
-              <div className="flex space-x-2 mt-4 md:mt-0">
-                {imageSets.map((_, index) => (
-                  <motion.button
-                    key={index}
-                    onClick={() => setCurrentImageIndex(index)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                      index === currentImageIndex
-                        ? "bg-red-400"
-                        : theme === "dark"
-                        ? "bg-gray-700"
-                        : "bg-gray-300"
-                    }`}
-                    whileHover={{ scale: 1.2 }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+              {/* Background glow on hover */}
+              <div className="absolute inset-0 bg-gradient-to-br from-red-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
+              
+              <img
+                src={client}
+                alt={`Client ${index + 1}`}
+                className={`relative w-full h-auto object-contain transition-all duration-300 ${
+                  theme === "dark" 
+                    ? "filter brightness-90 group-hover:brightness-110" 
+                    : "filter grayscale-0 group-hover:grayscale-0"
+                }`}
+              />
+            </motion.div>
+          ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
-import { Coins, Laptop, Folder, Scale, DollarSign } from "lucide-react";
+import { TrendingUp, Settings, Zap, Wallet, FileCheck, Users, UserPlus, Network } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { Link } from "react-router-dom";
+import Typography from "./Typography";
 
 // Animation variants for card entry
 const cardVariants = {
@@ -28,21 +29,50 @@ const FeatureCard = ({ icon, title, description, button, index }) => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      whileHover={{ scale: 1.05 }}
-      className={`rounded-2xl p-6 shadow-xl border transition-all duration-300 ease-in-out
+      whileHover={{ 
+        scale: 1.03,
+        y: -8,
+        transition: { duration: 0.3 }
+      }}
+      className={`group relative rounded-3xl p-8 shadow-lg border-2 transition-all duration-500 ease-out overflow-hidden
         ${
           theme === "dark"
-            ? "bg-gray-800 text-[#FEFEF8] border-gray-700"
-            : "bg-[#E8EBE3] text-gray-700 border-gray-200"
+            ? "bg-gradient-to-br from-gray-800 to-gray-900 text-[#FEFEF8] border-gray-700 hover:border-red-400/50"
+            : "bg-gradient-to-br from-white to-gray-50 text-gray-700 border-gray-200 hover:border-red-400/50"
         }
-        flex flex-col items-center justify-between min-h-[280px]`}
+        flex flex-col items-center min-h-[320px] hover:shadow-2xl`}
     >
-      <div className="mb-4">{icon}</div>
-      <h3 className="text-xl font-semibold mb-2 text-center">{title}</h3>
-      <p className="text-sm text-center leading-relaxed opacity-80">
-        {description}
-      </p>
-      {button && <div className="mt-6">{button}</div>}
+      {/* Background gradient overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-red-400/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Icon container with background */}
+      <div className={`relative mb-6 p-4 rounded-2xl transition-all duration-300
+        ${theme === "dark" 
+          ? "bg-gray-700/50 group-hover:bg-red-400/20" 
+          : "bg-red-50 group-hover:bg-red-100"
+        }`}>
+        {icon}
+      </div>
+      
+      {/* Content */}
+      <div className="relative flex-1 flex flex-col items-center text-center">
+        <h3 className="text-xl font-bold mb-3 group-hover:text-red-400 transition-colors duration-300">
+          {title}
+        </h3>
+        <p className={`text-sm leading-relaxed flex-1
+          ${theme === "dark" ? "text-gray-300" : "text-gray-600"}`}>
+          {description}
+        </p>
+      </div>
+      
+      {button && (
+        <div className="relative mt-6 w-full">
+          {button}
+        </div>
+      )}
+      
+      {/* Decorative corner accent */}
+      <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-red-400/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </motion.div>
   );
 };
@@ -52,38 +82,53 @@ const Features = () => {
 
   const features = [
     {
-      icon: <Coins className="w-10 h-10 text-red-400" />,
+      icon: <TrendingUp className="w-10 h-10 text-red-400" />,
+      title: "Growth Strategy",
+      description:
+        "We design and execute aggressive GTM and revenue strategies to transform early traction into sustainable, repeatable market scaling.",
+    },
+    {
+      icon: <Settings className="w-10 h-10 text-red-400" />,
+      title: "Operational Efficiency",
+      description:
+        "Auditing and streamlining core business processes and technologies to maximize efficiency, reduce friction, and eliminate operational drag.",
+    },
+    {
+      icon: <Zap className="w-10 h-10 text-red-400" />,
+      title: "Planning & Execution",
+      description:
+        "Short-cycle, outcome-driven sprints that bridge the gap between strategic vision and operational deployment, ensuring rapid momentum.",
+    },
+    {
+      icon: <Wallet className="w-10 h-10 text-red-400" />,
       title: "Wealth Management",
       description:
-        "Over 20 years of experience delivering excellence in financial growth.",
+        "Implementing sophisticated financial design and strategic capital allocation models to maximize founder equity value and long-term financial health.",
     },
     {
-      icon: <Laptop className="w-10 h-10 text-red-400" />,
-      title: "Business Consulting",
-      description:
-        "Strategic insights and digital transformation tailored to your business.",
+      icon: <FileCheck className="w-10 h-10 text-red-400" />,
+      title: "Investment Readiness",
+      description: "Rigorous pre-funding validation sessions that bulletproof your data, narrative, and financial models for external investor due diligence.",
     },
     {
-      icon: <Folder className="w-10 h-10 text-red-400" />,
-      title: "Creative Solutions",
-      description:
-        "Innovative strategies and branding to accelerate your impact.",
+      icon: <Users className="w-10 h-10 text-red-400" />,
+      title: "Team & Culture",
+      description: "Curating the values, processes, and accountability frameworks necessary to evolve the team into a high-trust, high-velocity execution unit.",
     },
     {
-      icon: <Scale className="w-10 h-10 text-red-400" />,
-      title: "Compliance & Legal",
-      description:
-        "Robust governance and legal expertise for sustainable growth.",
+      icon: <UserPlus className="w-10 h-10 text-red-400" />,
+      title: "Leadership Hiring",
+      description: "Strategic placement of mission-critical C-suite and foundational leaders who fit the operational culture and are prepared for the rigors of scale.",
     },
     {
-      icon: <DollarSign className="w-10 h-10 text-red-400" />,
-      title: "Professional HR",
-      description: "End-to-end HR management solutions for teams that thrive.",
+      icon: <Network className="w-10 h-10 text-red-400" />,
+      title: "Organizational Design",
+      description: "Installing future-proof structures, roles, and reporting mechanisms to ensure the organization can sustain hyper-growth without chaos.",
     },
     {
       icon: null,
-      title: "Ready to Get Started?",
-      description: "Talk to our team today and elevate your business journey.",
+      title: "Ready to Build?",
+      description: "Connect with the Architects to fuel your vision for hyper-scale.",
       button: (
         <Link to="/appointment">
           <button className="bg-red-400 text-[#FEFEF8] px-6 py-2 rounded-full hover:bg-red-500 transition">
@@ -110,7 +155,7 @@ const Features = () => {
             theme === "dark" ? "text-[#FEFEF8]" : "text-gray-600"
           }`}
         >
-          FEATURES
+          SERVICES
         </motion.h2>
 
         <motion.h1
@@ -122,7 +167,9 @@ const Features = () => {
             theme === "dark" ? "text-[#FEFEF8]" : "text-gray-700"
           }`}
         >
-          We Have the Best <br /> Features for You
+          <Typography variant="h2">
+          The Tribe's Integrated Services
+          </Typography>
         </motion.h1>
 
         <motion.p
@@ -134,8 +181,7 @@ const Features = () => {
             theme === "dark" ? "text-gray-300" : "text-gray-600"
           }`}
         >
-          Not just your regular business agency – experience transformation.
-        </motion.p>
+Dedicated source for full-stack strategy, operator support, and capital readiness across the entire venture journey        </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, i) => (

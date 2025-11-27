@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { motion, AnimatePresence } from "framer-motion";
 import corporateImg from "../assets/images/TheCorporate.jpg";
+import Typography from "./Typography";
 
 const faqs = [
   {
@@ -45,10 +46,9 @@ const CorporateSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent">
-            The Tribe's Arsenal
-          </h2>
-          <p className={`text-lg max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600"}`}>
+          <Typography variant="h2" className="mb-4">The Tribe's Arsenal</Typography>
+        
+          <p className={`text-base max-w-3xl mx-auto ${isDark ? "text-gray-400" : "text-gray-600"}`}>
             We arm our founders with battle-tested playbooks, exclusive networks, and rigorous capital validation—the unfair advantage for relentless execution
           </p>
         </motion.div>
@@ -98,7 +98,7 @@ const CorporateSection = () => {
                     className="flex justify-between items-center w-full text-left p-6"
                     onClick={() => toggleItem(index)}
                   >
-                    <span className={`text-lg font-bold transition-colors duration-300 ${
+                    <span className={`text-base font-bold transition-colors duration-300 ${
                       isOpen ? "text-red-500" : ""
                     }`}>
                       {faq.title}

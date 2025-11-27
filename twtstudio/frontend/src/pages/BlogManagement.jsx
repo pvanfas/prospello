@@ -19,7 +19,7 @@ const BlogManagement = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedBlog, setSelectedBlog] = useState(null);
 
-  const { data: blogs = [], isLoading } = useBlogs();
+  const { data: blogs = [] } = useBlogs();
   const deleteBlogMutation = useDeleteBlog();
 
   const filteredBlogs = useMemo(() => {

@@ -14,6 +14,10 @@ import {
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
+import accelerationStudioImg from "../assets/images/AccelerationStudio.jpg";
+import capitalStudioImg from "../assets/images/CapitalStudio.jpg";
+import growthStudioImg from "../assets/images/GrowthStudio.jpg";
+import ourStudiosImg from "../assets/images/OurStudios.jpg";
 
 const Studio = () => {
   const { theme, setTheme } = useTheme();
@@ -42,8 +46,7 @@ const Studio = () => {
       slug: "acceleration",
       description:
         "We nurture early-stage startups through structured founder cohorts, hands-on support, and ecosystem access.",
-      image:
-        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      image: accelerationStudioImg,
       icon: <Rocket className="w-8 h-8" />,
     },
     {
@@ -51,8 +54,7 @@ const Studio = () => {
       slug: "capital",
       description:
         "We facilitate strategic investments, fundraising, and M&A advisory for high-growth ventures.",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      image: capitalStudioImg,
       icon: <DollarSign className="w-8 h-8" />,
     },
     {
@@ -60,8 +62,7 @@ const Studio = () => {
       slug: "growth",
       description:
         "We offer deep consulting across Operations, Marketing, Sales, Finance,Technology, Legal, and top-tier CXO hiring to help startups scale faster and smarter.",
-      image:
-        "https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80",
+      image: growthStudioImg,
       icon: <LineChart className="w-8 h-8" />,
     },
   ];
@@ -134,7 +135,7 @@ const Studio = () => {
             className="w-full md:w-1/2 mt-12 md:mt-0"
           >
             <img
-              src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1351&q=80"
+              src={ourStudiosImg}
               alt="Innovation illustration"
               className="w-full rounded-xl shadow-2xl border-4 border-white/20"
             />

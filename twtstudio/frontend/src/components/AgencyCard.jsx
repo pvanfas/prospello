@@ -1,47 +1,13 @@
 import React from "react";
 import { motion } from "framer-motion";
-import {
-  CheckCircle2,
-  Rocket,
-  Headphones,
-  BarChart,
-  Users,
-  Shield,
-} from "lucide-react";
+import { Rocket } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
+import Typography from "./Typography";
+import whyUsImage from "../assets/images/whyus.jpg";
 
 const AgencyCard = () => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
-
-  const features = [
-    {
-      icon: <Rocket className="w-5 h-5" />,
-      title: "Personalized Investments",
-      description:
-        "Tailored financial strategies for your unique business needs",
-    },
-    {
-      icon: <Headphones className="w-5 h-5" />,
-      title: "Fast Support",
-      description: "24/7 dedicated support team ready to assist you",
-    },
-    {
-      icon: <BarChart className="w-5 h-5" />,
-      title: "Data-Driven Insights",
-      description: "Actionable analytics to guide your decisions",
-    },
-    {
-      icon: <Users className="w-5 h-5" />,
-      title: "Expert Team",
-      description: "Industry specialists with proven track records",
-    },
-    {
-      icon: <Shield className="w-5 h-5" />,
-      title: "Risk Management",
-      description: "Comprehensive protection for your assets",
-    },
-  ];
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -85,14 +51,12 @@ const AgencyCard = () => {
         >
           <motion.div
             className={`inline-block px-4 py-2 rounded-full mb-6 ${
-              isDark
-                ? "bg-gray-800 text-red-500"
-                : "bg-red-100 text-red-600"
+              isDark ? "bg-gray-800 text-red-500" : "bg-red-100 text-red-600"
             }`}
             variants={itemVariants}
           >
             <span className="flex items-center gap-2 text-sm font-medium">
-              <Rocket className="w-4 h-4" /> Why Choose Us
+              <Rocket className="w-4 h-4" /> Why Partner with the Tribe?
             </span>
           </motion.div>
 
@@ -102,8 +66,9 @@ const AgencyCard = () => {
             }`}
             variants={itemVariants}
           >
-            Not Just Your Regular <br className="hidden sm:block" /> Business
-            Agency
+            <Typography variant="h2">
+              We Replace Consulting with Co-Founder Execution
+            </Typography>
           </motion.h2>
 
           <motion.p
@@ -112,65 +77,10 @@ const AgencyCard = () => {
             }`}
             variants={itemVariants}
           >
-            We redefine business consulting with innovative solutions tailored
-            to your unique challenges and goals.
+            <Typography variant="body">
+            Standard agencies offer advice; the Tribe deploys action. We are a full-cycle, dedicated partner that invests proprietary Playbooks, operator support, and Capital Networks directly into your venture. We don't redefine consulting, we provide the strategic, execution-focused partnership required for relentless scale and market dominance.
+            </Typography>
           </motion.p>
-
-          <motion.div variants={itemVariants}>
-            <p
-              className={`text-sm font-semibold mb-4 tracking-wider uppercase ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              }`}
-            >
-              What We Offer
-            </p>
-
-            <motion.ul
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
-              variants={containerVariants}
-            >
-              {features.map((feature, index) => (
-                <motion.li
-                  key={index}
-                  className={`p-4 rounded-lg ${
-                    isDark
-                      ? "bg-gray-800 hover:bg-gray-700"
-                      : "bg-[#FDFCF6] hover:bg-red-100"
-                  } transition-colors shadow-sm`}
-                  variants={itemVariants}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={`p-2 rounded-full mt-1 ${
-                        isDark
-                          ? "bg-red-900/30 text-red-500"
-                          : "bg-red-100 text-red-600"
-                      }`}
-                    >
-                      {feature.icon}
-                    </div>
-                    <div>
-                      <h3
-                        className={`font-medium ${
-                          isDark ? "text-white" : "text-gray-900"
-                        }`}
-                      >
-                        {feature.title}
-                      </h3>
-                      <p
-                        className={`text-sm ${
-                          isDark ? "text-gray-400" : "text-gray-600"
-                        }`}
-                      >
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.div>
         </motion.div>
 
         {/* Right Image */}
@@ -189,7 +99,7 @@ const AgencyCard = () => {
             } z-0 hidden lg:block`}
           ></div>
           <img
-            src="https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg"
+            src={whyUsImage}
             alt="Business team collaborating"
             className="w-full h-auto lg:h-[500px] object-cover rounded-2xl shadow-xl relative z-10"
           />

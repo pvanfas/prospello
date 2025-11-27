@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import LogoLight from "../assets/images/logo/white.png";
 import LogoDark from "../assets/images/logo/horizontal.png";
+import Typography from "./Typography";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -30,7 +31,6 @@ const Footer = () => {
 
   const navItems = [
     { path: "", name: "Home" },
-    { path: "about", name: "About" },
     { path: "careers", name: "Careers" },
     { path: "insights", name: "Insights" },
     { path: "studio", name: "Studio" },
@@ -82,14 +82,10 @@ const Footer = () => {
                 className="object-contain max-h-12"
               />
             </div>
-            <p
-              className={`text-sm ${
-                isDark ? "text-gray-400" : "text-gray-600"
-              }`}
-            >
+            <Typography variant="small" color="secondary">
               Empowering businesses through innovative solutions and strategic
               growth.
-            </p>
+            </Typography>
             <div className="flex space-x-4 mt-2">
               {socialLinks.map((social) => (
                 <a
@@ -112,13 +108,9 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div className="flex flex-col space-y-4">
-            <h3
-              className={`text-lg font-semibold ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <Typography variant="h6" className={isDark ? "text-white" : "text-gray-900"}>
               Navigation
-            </h3>
+            </Typography>
             <nav className="grid grid-cols-2 gap-2">
               {navItems.map((item) => (
                 <NavLink
@@ -145,13 +137,9 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div className="flex flex-col space-y-4">
-            <h3
-              className={`text-lg font-semibold ${
-                isDark ? "text-white" : "text-gray-900"
-              }`}
-            >
+            <Typography variant="h6" className={isDark ? "text-white" : "text-gray-900"}>
               Contact Us
-            </h3>
+            </Typography>
             <div className="space-y-3">
               {contactInfo.map((info, index) => (
                 <div key={index} className="flex items-start gap-3">
@@ -162,13 +150,9 @@ const Footer = () => {
                   >
                     {info.icon}
                   </div>
-                  <p
-                    className={`text-sm ${
-                      isDark ? "text-gray-400" : "text-gray-600"
-                    }`}
-                  >
+                  <Typography variant="small" color="secondary">
                     {info.text}
-                  </p>
+                  </Typography>
                 </div>
               ))}
             </div>
@@ -184,11 +168,9 @@ const Footer = () => {
 
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p
-            className={`text-xs ${isDark ? "text-gray-500" : "text-gray-400"}`}
-          >
+          <Typography variant="caption" color="muted">
             © {year} TwT Consulting. All rights reserved.
-          </p>
+          </Typography>
 
           <div className="flex flex-wrap justify-center gap-4">
             <a

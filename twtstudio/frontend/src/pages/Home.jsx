@@ -89,7 +89,7 @@ const Home = () => {
                 </button>
               </Link>
 
-              <Link to="/about" className="w-full sm:w-auto">
+              <Link to="/studio" className="w-full sm:w-auto">
                 <button className="w-full bg-transparent border-2 border-white hover:border-red-400 hover:text-red-400 text-white px-6 py-3 rounded-lg text-base sm:text-lg font-medium transition-all duration-300">
                   Learn More
                 </button>

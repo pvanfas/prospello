@@ -1,0 +1,666 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}About Us | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+<!-- Start Main Banner Area -->
+<div class="main-banner-area">
+    <div class="container-fluid">
+        <div class="main-banner-content" data-cue="fadeIn">
+            <h1>We shape marketers who think beyond clicks and campaigns</h1>
+
+            <div class="banner-inner-content">
+                <div class="row">
+
+                    <div class="col-lg-6 col-md-10">
+                        <div class="inner-content">
+                            <p class="mb-5">
+                                At 360 Marketing School, learners master the art of connecting people, purpose, and performance, building brands that matter.
+                            </p>
+                            <ul class="banner-list mt-0 mb-5">
+                                <li><button type="button" class="btn default-btn mt-0" data-bs-toggle="modal" data-bs-target="#enrollModalBackdrop">Enroll Now</button></li>
+                                <li><a href="#" class="default-btn mt-0">Download Brochure</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-banner-ellipse" data-cue="fadeIn"></div>
+
+    <div class="main-banner-shape1" data-cue="fadeIn">
+        <img src="/static/web/images/main-banner/wrap-shape.png" alt="image">
+    </div>
+    <div class="main-banner-shape2" data-cue="fadeIn">
+        <img src="/static/web/images/main-banner/shape.png" alt="image">
+    </div>
+</div>
+<!-- End Main Banner Area -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="enrollModalBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="enrollModalBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header align-items-start p-3" style="background-color: #EDEFEB;">
+                <h5 class="modal-title modal-title pt-4 px-4" id="enrollModalBackdropLabel">Apply for the <span class="primary">Advanced
+                        Digital Marketing <br> Proficiency Program</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-3 contact-form-inner px-3 pb-3 pt-0">
+                <form class="contact-form p-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="phone" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <button class="default-btn" type="submit">Submit Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Practical Programs Area -->
+<div class="practical-programs-area pt-150  lightbg">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp">
+            <div class="col-xl-10 col-lg-12 mx-auto">
+                <div class="practical-programs-content text-center mb-5">
+                    <h1 class="mb-4">
+                        Practical, real-world programs that equip you 
+                        to grow your career from every angle.
+                    </h1>
+                    <p class="lead-text mb-0">
+                        Learn through hands-on projects, real client work, and industry-standard tools that prepare you for success from day one.
+                    </p>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Practical Programs Area -->
+
+<!-- Start Overview Area -->
+<div class="overview-area pt-5 pb-125">
+    <div class="container-fluid">
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-xl-10 col-md-12 mx-auto">
+                <div class="overview-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="content pe-4">
+                                <span class="label">Job Ready Program</span>
+                                <h3>Digital Marketing Courses</h3>
+                                <p>For anyone from aspiring marketers, career-focused students, sales professionals, social media enthusiasts, freelancers, to business owners, learn to strategise, execute, and grow in digital marketing
+                                </p>
+                                <span class="spacer_sm"></span>
+
+                                <div class="d-flex course_info">
+                                    <div class="group flexgroup">
+                                        <span class="icon">
+                                            <svg width="48" height="49" viewBox="0 0 48 49" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.366211" width="48" height="48" rx="8" fill="white" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M28.4109 14.8839L28.4119 15.6648C31.1665 15.8896 32.9862 17.8449 32.9891 20.8434L33 29.6203C33.0039 32.8895 31.0322 34.901 27.8718 34.9062L20.1519 34.9166C17.0112 34.9207 15.0148 32.8613 15.0109 29.5828L15 20.909C14.9961 17.8907 16.7515 15.9407 19.5062 15.6772L19.5052 14.8964C19.5042 14.4383 19.83 14.0937 20.2644 14.0937C20.6989 14.0926 21.0247 14.4362 21.0257 14.8943L21.0267 15.6231L26.8914 15.6148L26.8904 14.886C26.8894 14.4279 27.2152 14.0843 27.6497 14.0833C28.0742 14.0822 28.4099 14.4258 28.4109 14.8839ZM16.5215 21.2307L31.4696 21.2099V20.8455C31.4272 18.607 30.349 17.4326 28.4138 17.2577L28.4148 18.0594C28.4148 18.5071 28.0801 18.8621 27.6556 18.8621C27.2212 18.8632 26.8943 18.5092 26.8943 18.0615L26.8934 17.2181L21.0286 17.2265L21.0296 18.0688C21.0296 18.5175 20.7048 18.8715 20.2704 18.8715C19.8359 18.8725 19.5091 18.5196 19.5091 18.0708L19.5081 17.2692C17.5829 17.4701 16.5175 18.6487 16.5205 20.9069L16.5215 21.2307ZM27.2402 25.9627V25.9741C27.2501 26.4531 27.6253 26.8164 28.0804 26.806C28.5247 26.7946 28.8792 26.3979 28.8693 25.919C28.8486 25.4608 28.4921 25.0871 28.0488 25.0881C27.5947 25.0985 27.2392 25.4838 27.2402 25.9627ZM28.055 30.6374C27.6009 30.627 27.2346 30.2324 27.2336 29.7535C27.2237 29.2746 27.588 28.8779 28.0422 28.8664H28.0521C28.5161 28.8664 28.8923 29.261 28.8923 29.7504C28.8933 30.2397 28.5181 30.6364 28.055 30.6374ZM23.1719 25.9795C23.1916 26.4584 23.5678 26.8322 24.0219 26.8113C24.4662 26.7895 24.8207 26.3938 24.8009 25.9149C24.7901 25.4464 24.4248 25.082 23.9805 25.083C23.5263 25.1039 23.1709 25.5005 23.1719 25.9795ZM24.0258 30.5907C23.5717 30.6115 23.1965 30.2377 23.1758 29.7588C23.1758 29.2799 23.5302 28.8842 23.9844 28.8624C24.4287 28.8613 24.795 29.2257 24.8048 29.6932C24.8256 30.1732 24.4701 30.5688 24.0258 30.5907ZM19.1043 26.0158C19.1241 26.4947 19.5002 26.8696 19.9544 26.8477C20.3987 26.8269 20.7532 26.4302 20.7324 25.9513C20.7226 25.4828 20.3572 25.1184 19.912 25.1194C19.4578 25.1402 19.1033 25.5369 19.1043 26.0158ZM19.9584 30.5958C19.5042 30.6177 19.129 30.2429 19.1083 29.7639C19.1073 29.285 19.4627 28.8883 19.9169 28.8675C20.3612 28.8665 20.7275 29.2309 20.7374 29.6994C20.7581 30.1783 20.4037 30.575 19.9584 30.5958Z"
+                                                    fill="#FFCB4C" />
+                                            </svg>
+                                        </span>
+                                        <div class="group">
+                                            <span class="group_label">Duration</span>
+                                            <span class="group_value">6 Months</span>
+                                        </div>
+                                    </div>
+                                    <div class="group flexgroup">
+                                        <span class="icon">
+                                            <svg width="48" height="49" viewBox="0 0 48 49" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.366211" width="48" height="48" rx="8" fill="white" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M29.7689 20.748H34C34 17.3508 31.9644 15.3662 28.5156 15.3662H19.4844C16.0356 15.3662 14 17.3508 14 20.7047V28.0277C14 31.3816 16.0356 33.3662 19.4844 33.3662H28.5156C31.9644 33.3662 34 31.3816 34 28.0277V27.7158H29.7689C27.8052 27.7158 26.2133 26.1637 26.2133 24.2492C26.2133 22.3347 27.8052 20.7827 29.7689 20.7827V20.748ZM29.7689 22.2386H33.2533C33.6657 22.2386 34 22.5645 34 22.9666V25.4972C33.9952 25.8973 33.6637 26.2205 33.2533 26.2251H29.8489C28.8548 26.2382 27.9855 25.5746 27.76 24.6305C27.6471 24.0445 27.8056 23.4398 28.1931 22.9784C28.5805 22.5171 29.1573 22.2463 29.7689 22.2386ZM29.9205 24.8992H30.2493C30.6715 24.8992 31.0138 24.5655 31.0138 24.1539C31.0138 23.7423 30.6715 23.4086 30.2493 23.4086H29.9205C29.7185 23.4063 29.5241 23.4829 29.3804 23.6213C29.2368 23.7597 29.156 23.9484 29.156 24.1452C29.156 24.5583 29.4968 24.8945 29.9205 24.8992ZM18.7381 20.7479H24.3825C24.8047 20.7479 25.147 20.4143 25.147 20.0026C25.147 19.591 24.8047 19.2573 24.3825 19.2573H18.7381C18.3193 19.2573 17.9785 19.5857 17.9736 19.994C17.9736 20.407 18.3145 20.7432 18.7381 20.7479Z"
+                                                    fill="#47C563" />
+                                            </svg>
+                                        </span>
+                                        <div class="grop">
+                                            <span class="group_label">Internship</span>
+                                            <span class="group_value">2 Months</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-2 w-100">
+                                    <div class="overview-btn w-50">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#enrollModalBackdrop"  class="default-btn w-100 text-center active">Know More</button>
+                                    </div>
+                                    <div class="overview-btn w-50">
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#enrollModalBackdrop" class="default-btn w-100 text-center">View Details</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <img src="/static/web/images/main/course.png" alt="image">
+                        </div>
+                    </div>
+                </div>
+
+                {% comment %}
+                <div class="overview-card">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="/static/web/images/main/course.png" alt="image">
+                        </div>
+                        <div class="col-md-6">
+                            <div class="content ps-4">
+                                <span class="label">Job Ready Program</span>
+                                <h3>Graphic Designing</h3>
+                                <p>A comprehensive program built for graphic designers, architects, developers, and
+                                    anyone
+                                    who wants to kickstart a career in design. A comprehensive program built for graphic
+                                    designers, architects, developers, and anyone who wants to kickstart a career in
+                                    design
+                                </p>
+                                <span class="spacer_sm"></span>
+
+                                <div class="d-flex course_info">
+                                    <div class="group flexgroup">
+                                        <span class="icon">
+                                            <svg width="48" height="49" viewBox="0 0 48 49" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.366211" width="48" height="48" rx="8" fill="white" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M28.4109 14.8839L28.4119 15.6648C31.1665 15.8896 32.9862 17.8449 32.9891 20.8434L33 29.6203C33.0039 32.8895 31.0322 34.901 27.8718 34.9062L20.1519 34.9166C17.0112 34.9207 15.0148 32.8613 15.0109 29.5828L15 20.909C14.9961 17.8907 16.7515 15.9407 19.5062 15.6772L19.5052 14.8964C19.5042 14.4383 19.83 14.0937 20.2644 14.0937C20.6989 14.0926 21.0247 14.4362 21.0257 14.8943L21.0267 15.6231L26.8914 15.6148L26.8904 14.886C26.8894 14.4279 27.2152 14.0843 27.6497 14.0833C28.0742 14.0822 28.4099 14.4258 28.4109 14.8839ZM16.5215 21.2307L31.4696 21.2099V20.8455C31.4272 18.607 30.349 17.4326 28.4138 17.2577L28.4148 18.0594C28.4148 18.5071 28.0801 18.8621 27.6556 18.8621C27.2212 18.8632 26.8943 18.5092 26.8943 18.0615L26.8934 17.2181L21.0286 17.2265L21.0296 18.0688C21.0296 18.5175 20.7048 18.8715 20.2704 18.8715C19.8359 18.8725 19.5091 18.5196 19.5091 18.0708L19.5081 17.2692C17.5829 17.4701 16.5175 18.6487 16.5205 20.9069L16.5215 21.2307ZM27.2402 25.9627V25.9741C27.2501 26.4531 27.6253 26.8164 28.0804 26.806C28.5247 26.7946 28.8792 26.3979 28.8693 25.919C28.8486 25.4608 28.4921 25.0871 28.0488 25.0881C27.5947 25.0985 27.2392 25.4838 27.2402 25.9627ZM28.055 30.6374C27.6009 30.627 27.2346 30.2324 27.2336 29.7535C27.2237 29.2746 27.588 28.8779 28.0422 28.8664H28.0521C28.5161 28.8664 28.8923 29.261 28.8923 29.7504C28.8933 30.2397 28.5181 30.6364 28.055 30.6374ZM23.1719 25.9795C23.1916 26.4584 23.5678 26.8322 24.0219 26.8113C24.4662 26.7895 24.8207 26.3938 24.8009 25.9149C24.7901 25.4464 24.4248 25.082 23.9805 25.083C23.5263 25.1039 23.1709 25.5005 23.1719 25.9795ZM24.0258 30.5907C23.5717 30.6115 23.1965 30.2377 23.1758 29.7588C23.1758 29.2799 23.5302 28.8842 23.9844 28.8624C24.4287 28.8613 24.795 29.2257 24.8048 29.6932C24.8256 30.1732 24.4701 30.5688 24.0258 30.5907ZM19.1043 26.0158C19.1241 26.4947 19.5002 26.8696 19.9544 26.8477C20.3987 26.8269 20.7532 26.4302 20.7324 25.9513C20.7226 25.4828 20.3572 25.1184 19.912 25.1194C19.4578 25.1402 19.1033 25.5369 19.1043 26.0158ZM19.9584 30.5958C19.5042 30.6177 19.129 30.2429 19.1083 29.7639C19.1073 29.285 19.4627 28.8883 19.9169 28.8675C20.3612 28.8665 20.7275 29.2309 20.7374 29.6994C20.7581 30.1783 20.4037 30.575 19.9584 30.5958Z"
+                                                    fill="#FFCB4C" />
+                                            </svg>
+                                        </span>
+                                        <div class="group">
+                                            <span class="group_label">Duration</span>
+                                            <span class="group_value">6 Months</span>
+                                        </div>
+                                    </div>
+                                    <div class="group flexgroup">
+                                        <span class="icon">
+                                            <svg width="48" height="49" viewBox="0 0 48 49" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.366211" width="48" height="48" rx="8" fill="white" />
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M29.7689 20.748H34C34 17.3508 31.9644 15.3662 28.5156 15.3662H19.4844C16.0356 15.3662 14 17.3508 14 20.7047V28.0277C14 31.3816 16.0356 33.3662 19.4844 33.3662H28.5156C31.9644 33.3662 34 31.3816 34 28.0277V27.7158H29.7689C27.8052 27.7158 26.2133 26.1637 26.2133 24.2492C26.2133 22.3347 27.8052 20.7827 29.7689 20.7827V20.748ZM29.7689 22.2386H33.2533C33.6657 22.2386 34 22.5645 34 22.9666V25.4972C33.9952 25.8973 33.6637 26.2205 33.2533 26.2251H29.8489C28.8548 26.2382 27.9855 25.5746 27.76 24.6305C27.6471 24.0445 27.8056 23.4398 28.1931 22.9784C28.5805 22.5171 29.1573 22.2463 29.7689 22.2386ZM29.9205 24.8992H30.2493C30.6715 24.8992 31.0138 24.5655 31.0138 24.1539C31.0138 23.7423 30.6715 23.4086 30.2493 23.4086H29.9205C29.7185 23.4063 29.5241 23.4829 29.3804 23.6213C29.2368 23.7597 29.156 23.9484 29.156 24.1452C29.156 24.5583 29.4968 24.8945 29.9205 24.8992ZM18.7381 20.7479H24.3825C24.8047 20.7479 25.147 20.4143 25.147 20.0026C25.147 19.591 24.8047 19.2573 24.3825 19.2573H18.7381C18.3193 19.2573 17.9785 19.5857 17.9736 19.994C17.9736 20.407 18.3145 20.7432 18.7381 20.7479Z"
+                                                    fill="#47C563" />
+                                            </svg>
+                                        </span>
+                                        <div class="grop">
+                                            <span class="group_label">Duration</span>
+                                            <span class="group_value">6 Months</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="d-flex gap-2 w-100">
+                                    <div class="overview-btn w-50">
+                                        <a href="#" class="default-btn w-100 text-center active">Know More</a>
+                                    </div>
+                                    <div class="overview-btn w-50">
+                                        <a href="#" class="default-btn w-100 text-center">View Details</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                {% endcomment %}
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Overview Area -->
+
+
+<!-- Start Why 360 Marketing School -->
+<div class="why-area pb-125">
+    <div class="container-fluid">
+        <div class="section-title" data-cues="slideInUp">
+            <h2 class="section_title">360 Marketing School vs Other Institutions</h2>
+        </div>
+        <section class="comparison-section">
+
+            <div class="comparison-cards">
+                <!-- Labels Column -->
+                <div class="labels">
+                    <ul>
+                        <li><span>Specialization</span></li>
+                        <li><span>Add-on Skills </span></li>
+                        <li><span>AI Tools</span></li>
+                        <li><span>Fundamentals of Marketing</span></li>
+                        <li><span>Continues evaluation</span></li>
+                        <li><span>Capstone Project</span></li>
+                        <li><span>Career Mentorship</span></li>
+                        <li><span>Interview Preparation</span></li>
+                        <li><span>Human Skills </span></li>
+                        <li><span>Placement Assistance</span></li>
+                    </ul>
+                </div>
+
+                <!-- Other Institutions Card -->
+                <div class="card">
+                    <h3>Other Institutions </h3>
+                    <hr>
+                    <ul>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-circle-black.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-circle-black.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
+                        <li><span><img src="/static/web/images/main/tick-circle-black.svg" alt="circle"></span>Yes</li>
+                    </ul>
+                </div>
+
+                <!-- Other Institutes Card -->
+                <div class="card highlight">
+                    <h3>360 Marketing School</h3>
+                    <hr>
+                    <ul>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Various Specialisation</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Professional & Personal Add-on Skills</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+<!-- End Why 360 Marketing School -->
+
+
+<!-- Start Student Success Stories -->
+<div class="student-success-stories-area pb-100 lightbg">
+    <div class="container">
+
+        <div class="alumni-success">
+            <div class="alumni-header">
+                <h2 class="section_title text-white">Student Success Stories</h2>
+                <p class="text-white">Real People, Real Transitions, Real Success</p>
+            </div>
+
+            <div class="alumni-users">
+                <div class="user"><img src="https://randomuser.me/api/portraits/men/40.jpg" alt="user"></div>
+                <div class="user"><img src="https://randomuser.me/api/portraits/men/41.jpg" alt="user"></div>
+                <div class="user"><img src="https://randomuser.me/api/portraits/men/42.jpg" alt="user"></div>
+                <div class="user"><img src="https://randomuser.me/api/portraits/men/43.jpg" alt="user"></div>
+                <div class="user">
+                    <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="user">
+                    <div class="user-count"><span>60,000+</span></div>
+                </div>
+            </div>
+
+            <div class="alumni-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- Card 1 -->
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Khushi Surana</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Amazon">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">Advertising Ops Specialist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>5 LPA</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat cards for each alumnus -->
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Vishnu</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Google">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">AdWords Strategist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>6 LPA</span></div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Khushi Surana</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Amazon">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">Advertising Ops Specialist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>5 LPA</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat cards for each alumnus -->
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Vishnu</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Google">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">AdWords Strategist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>6 LPA</span></div>
+                        </div>
+                    </div>
+
+
+                    <!-- Final “View More” Card -->
+                    <div class="swiper-slide">
+                        <div class="alumni-card final-card">
+                            <p>Want to see more inspiring stories?</p>
+                            <a href="#" class="border btn-white px-3 py-2 rounded-pill">
+                                View All Success Stories
+                                <svg width="24" height="24" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M18.2664 12.1064L11.7664 18.6064L11.5477 18.5986L10.8875 17.8486L15.8875 12.6504H3.8504V11.3496H15.8875L10.8875 6.15137L11.5477 5.40137L18.2664 11.8936L18.3719 12Z"
+                                        fill="#000" stroke="#000" stroke-width="0.3" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="slider-controls">
+                    <button class="prev-btn">
+                        <svg width="16" height="16" viewBox="0 0 20 20">
+                            <path
+                                d="M16.6693 9.16699H6.5276L11.1859 4.50866L10.0026 3.33366L3.33594 10.0003L10.0026 16.667L11.1776 15.492L6.5276 10.8337H16.6693V9.16699Z" />
+                        </svg>
+                    </button>
+                    <button class="next-btn">
+                        <svg width="16" height="16" viewBox="0 0 20 20">
+                            <path
+                                d="M3.33073 9.16699H13.4724L8.81406 4.50866L9.9974 3.33366L16.6641 10.0003L9.9974 16.667L8.8224 15.492L13.4724 10.8337H3.33073V9.16699Z" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="download-btn-action">
+                <button class="btn-danger rounded-pill">
+                    Download Placement Report
+                    <svg width="24" height="24" viewBox="0 0 24 25">
+                        <path
+                            d="M18.2664 12.1064L11.7664 18.6064L11.5477 18.5986L10.8875 17.8486L15.8875 12.6504H3.8504V11.3496H15.8875L10.8875 6.15137L11.5477 5.40137L18.2664 11.8936L18.3719 12Z"
+                            fill="#000" stroke="#000" stroke-width="0.3" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- End Student Success Stories -->
+
+
+<!-- Guest Mentors -->
+<div class="our-courses-area pb-100 lightbg">
+    <div class="container">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Guest Mentors</h2>
+            <p>Gain Insights from World-Class Guest Faculty</p>
+        </div>
+
+        <div class="mentor-slider">
+            <div class="swiper mentorSwiper">
+                <div class="swiper-wrapper">
+                     {% for mentor in mentors %}
+                    <div class="swiper-slide">
+                        <div class="mentor-card h-100" data-bs-toggle="modal" data-bs-target="#modal-{{mentor.id}}">
+                            {% if mentor.profile_picture %}
+                            <img src="{{mentor.profile_picture.url}}" alt="" class="mentor_img" />
+                            {% else %}
+                            <img src="/static/web/images/main/mentor.png" alt="Mentor" class="mentor_img" />
+                            {% endif %}
+                            <div class="mentor-info">
+                                <h5>{{mentor.name}}</h5>
+                                <div class="mentor-title">{{mentor.designation}}</div>
+                                <div class="mentor-logos">
+                                    <div class="logos-row">
+                                        {% if mentor.company_logo %}
+                                        <img src="{{mentor.company_logo.url}}" class="brand_card" alt="Amazon" />
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for mentor in mentors %}
+<div class="modal fade" id="modal-{{mentor.id}}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal{{mentor.id}}Label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="faculty-card">
+                    <div class="faculty-box">
+                        <div class="faculty-img">
+                            {% if mentor.profile_picture %}
+                            <img src="{{mentor.profile_picture.url}}" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
+                            {% else %}
+                            <img src="/static/web/images/main/mentor.png" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
+                            {% endif %}
+                        </div>
+                        <div class="faculty-info">
+                            <h3>{{mentor.name}}</h3>
+                            <p>{{mentor.designation}}</p>
+                        </div>
+                    </div>
+
+                    <div class="faculty-details">
+                        <p class="description">
+                            {{mentor.expertise}}
+                        </p>
+                        <div class="brands">
+                            {% if mentor.company_logo %}
+                            <strong>Associated with:</strong>
+                            <div class="logos">
+                                <img src="{{mentor.company_logo.url}}" alt="{{mentor.name}}" loading="lazy" width="60" height="30" />
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+<!-- Hiring Partners -->
+<div class="partner-area pb-100 ">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Hiring Partners</h2>
+            <p>Our Alumni Network Across the Globe</p>
+        </div>
+        <div class="row justify-content-center align-items-center" data-cues="fadeIn">
+            {% for hiring_partner in hiring_partners %}
+            <div class="col-lg-2 col-sm-4 col-6">
+                <div class="brand-item">
+                    <img src="{{hiring_partner.logo.url}}" alt="{{hiring_partner.name}}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Contact Area -->
+<div class="contact-area" id="contactArea">
+    <div class="container-fluid">
+        <div class="contact-form-inner" data-cue="fadeIn">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-12 mx-auto">
+                    <div class="contact-form">
+                        <div class="contact-form-header">
+                            <h2>Get In Touch</h2>
+                            <p>Fill in your information and we'll be in touch as soon as we can</p>
+                        </div>
+                        <form class="modern-contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-name">Name</label>
+                                        <input type="text" id="contact-name" class="form-control" placeholder="Enter your name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-phone">Phone</label>
+                                        <input type="tel" id="contact-phone" class="form-control" placeholder="Enter your phone number" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-email">Email</label>
+                                        <input type="email" id="contact-email" class="form-control" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-subject">Subject</label>
+                                        <input type="text" id="contact-subject" class="form-control" placeholder="What is this regarding?" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Message</label>
+                                <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                            </div>
+                            <div class="form-submit">
+                                <button class="default-btn modern-submit-btn" type="submit">
+                                    <span>Submit Now</span>
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact Area -->
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const swiper = new Swiper(".alumni-slider", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            grabCursor: true,
+
+            navigation: {
+                nextEl: ".next-btn",
+                prevEl: ".prev-btn",
+            },
+            breakpoints: {
+                768: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+            loop: false,
+            speed: 600,
+            autoplay: {
+                delay: 3500,
+                disableOnInteraction: false,
+            },
+        });
+    });
+</script>
+<script>
+    const swiper = new Swiper(".mentorSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            400: {slidesPerView: 2},
+            768: {slidesPerView: 2},
+            1024: {slidesPerView: 3},
+            1200: {slidesPerView: 4},
+        },
+    });
+</script>
+{% endblock %}

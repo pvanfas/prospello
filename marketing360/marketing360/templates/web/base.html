@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="360 Marketing School" />
+    <meta name="keywords" content="360 marketing, marketing school, digital marketing, marketing courses, marketing training, marketing strategies, brand building, online marketing, marketing skills, marketing education" />
+    <meta name="theme-color" content="#121212" />
+    <meta name="robots" content="noindex" />
+    
+    <!-- Primary Meta Tags -->
+    <title>360 Marketing School | Beyond Tools, Nurturing Forward-Thinking Marketers</title>
+    <meta name="title" content="360 Marketing School | Beyond Tools, Nurturing Forward-Thinking Marketers" />
+    <meta name="description" content="We help marketers develop a 360° mindset through expert-led learning, giving them clear strategies and practical skills to build brands that connect with real people in meaningful ways." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://360marketing.school/" />
+    <meta property="og:title" content="360 Marketing School | Beyond Tools, Nurturing Forward-Thinking Marketers" />
+    <meta property="og:description" content="We help marketers develop a 360° mindset through expert-led learning, giving them clear strategies and practical skills to build brands that connect with real people in meaningful ways." />
+    <meta property="og:image" content="https://360marketing.school/static/web/images/meta/tags.png" />
+
+    <!-- X (Twitter) -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://360marketing.school/" />
+    <meta property="twitter:title" content="360 Marketing School | Beyond Tools, Nurturing Forward-Thinking Marketers" />
+    <meta property="twitter:description" content="We help marketers develop a 360° mindset through expert-led learning, giving them clear strategies and practical skills to build brands that connect with real people in meaningful ways." />
+    <meta property="twitter:image" content="https://360marketing.school/static/web/images/meta/tags.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/web/images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/web/images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/static/web/images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/web/images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="360 Marketing" />
+    <link rel="manifest" href="/static/web/images/favicon/site.webmanifest" />
+
+    <!-- Stylesheet -->
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="/static/web/css/bootstrap.min.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/animate.min.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/scrollCue.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/swiper-bundle.min.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/remixicon.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/style.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/navbar.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/blog-details.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/footer.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/dark.css?v=1.1">
+    <link rel="stylesheet" href="/static/web/css/responsive.css?v=1.1">
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KH6ZZ47S');</script>
+    <!-- End Google Tag Manager -->
+
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KH6ZZ47S"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    {% comment %}
+    <div class="dark-light-switch-btn">
+        <button class="switch-toggle" id="switch-toggle">
+            <i class="ri-moon-fill"></i>
+        </button>
+    </div>
+     {% endcomment %}
+
+    {% block navbar %}
+
+    {% if is_dark_navbar %}
+    {% include "web/partials/_navbar_dark.html" %}
+    {% else %}
+    {% include "web/partials/_navbar.html" %}
+    {% endif %}
+
+    {% include "web/partials/_responsive_navbar.html" %}
+    {% endblock %}
+
+
+    {% block content %}
+
+
+    {% endblock %}
+
+
+    {% block footer %}
+    {% include "web/partials/_footer.html" %}
+    {% endblock %}
+
+    <!-- Back to Top -->
+    <button type="button" id="back-to-top" class="position-fixed text-center border-0 p-0">
+        <i class="ri-arrow-up-s-line"></i>
+    </button>
+    <!-- End Back to Top -->
+
+    <script src="/static/web/js/bootstrap.bundle.min.js"></script>
+    <script src="/static/web/js/swiper-bundle.min.js"></script>
+    <script src="/static/web/js/scrollCue.min.js"></script>
+    <script src="/static/web/js/main.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+        const n = document.getElementById("navbar"),
+            o = n.querySelector(".logo-title img:not(.sticky)"),
+            s = n.querySelector(".logo-title img.sticky"),
+            t = () => {
+            (n.classList.contains("sticky") || window.innerWidth < 1200)
+                ? (o.style.display = "none", s.style.display = "block")
+                : (o.style.display = "block", s.style.display = "none");
+            };
+        t();
+        new MutationObserver(t).observe(n, { attributes: !0, attributeFilter: ["class"] });
+        window.addEventListener("scroll", () => {
+            window.scrollY > 50 ? n.classList.add("sticky") : n.classList.remove("sticky");
+        });
+        window.addEventListener("resize", t);
+        });
+    </script>
+
+    {% block extra_js %}
+
+    {% endblock %}
+</body>
+</html>

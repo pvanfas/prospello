@@ -1,0 +1,59 @@
+{% load static %}
+<!-- Offcanvas area start -->
+<div class="offcanvas__area">
+    <div class="offcanvas__inner">
+        <div class="offcanvas__top">
+            <img src="{% static 'web/imgs/logo/white_logo.svg' %}" alt="Logo">
+            <button id="offcanvas_close"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+       
+        <div class="offcanvas__menu">
+            <div class="offcanvas-menu">
+                <ul>
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    {% comment %}
+                    <li><a href="{% url 'web:about' %}">About</a></li>
+                    <li><a href="{% url 'web:news' %}">News</a></li>
+                    <li><a href="{% url 'web:team' %}">Team</a></li>
+                    {% endcomment %}
+                    <li><a href="{% url 'web:business_lines' %}">Business Lines</a></li>
+                    <li><a href="{% url 'web:careers' %}">Careers</a></li>
+                    <li><a href="{% url 'web:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+       
+        <div class="offcanvas__btm">
+            <div class="footer__address-3">
+                <ul>
+                    <li>
+                        <span><i class="fa-solid fa-location-dot"></i></span>
+                        <p class="text-white">Burmsille Street, MN 55337, <br>
+                            United States</p>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-phone"></i></span>
+                        <div>
+                            <a href="tel:+88014420420">+(1) 123 456 7890</a>
+                            <a href="tel:+88014420420">+(1) 098 765 4321</a>
+                        </div>
+                    </li>
+                    <li>
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                        <div>
+                            <a href="mailto:info@limramerchandise.com">info@limramerchandise.com</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__social-3">
+                <ul>
+                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Offcanvas area end -->

@@ -1,0 +1,513 @@
+{% extends 'web/base.html' %}
+{% load static crispy_forms_tags %}
+
+{% block content %}
+<section style="background: #F4F1EA;" id="packages">
+	<div class="container section_padding_sm packages">
+		<div class="row">
+            
+            <div class="col-12 mb-5">
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                    <ul id="progress-num">
+                        <li><span class="step active">1</span><span>Select Plan</span></li>
+                        <li><span class="step active">2</span><span>Select Meals</span></li>
+                        <li><span class="step">3</span><span>Create Profile</span></li>
+                        <li><span class="step">4</span><span>Add Address</span></li>
+                        <li><span class="step">5</span><span>Set Delivery Address</span></li>
+                        <li><span class="step">6</span>Finish</li>
+                      </ul>
+                </div>
+            </div>
+
+            <style>
+                /* Custom styling for unselected rows */
+                .unselected-day {
+                    background-color: #FFF4E6; /* Warm light peach/orange */
+                    color: #8D6E63; /* Warm gray-brown for text */
+                }
+                .unselected-day:hover {
+                    background-color: #FFE8CC; /* Slightly darker on hover */
+                }
+                /* Custom styling for days with no meals available */
+                .no-meals-available {
+                    background-color: #F5F5F5; /* Light gray */
+                    color: #999; /* Muted text color */
+                    opacity: 0.7;
+                }
+                .no-meals-available .day-checkbox {
+                    cursor: not-allowed;
+                    opacity: 0.5;
+                }
+                /* Custom checkbox styling */
+                .day-checkbox {
+                    width: 20px;
+                    height: 20px;
+                    cursor: pointer;
+                    accent-color: #8D6E63; /* Match the warm brown text color */
+                }
+            </style>
+
+            <div class="col-12">
+                <h3 class="text-left">Customize Your Menu</h3>
+                {% if days_with_no_meals %}
+                <div class="alert alert-info mt-3">
+                    <strong>Note:</strong> Some days have no meals available and have been automatically excluded from your selection.
+                    <ul class="mb-0 mt-2">
+                        {% for day in days_with_no_meals %}
+                        <li>{{ day }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+		
+			<div class="col-lg-12 col-md-12 col-sm-12 mx-auto">
+                <div class="border_box border border-dark">
+
+                    <div class="row pb-3">
+                        <div class="col-md-3">
+                            <div class="package_image">
+                                <img src="{{plan.meal_category.image.url}}" alt="" style="height:150px;width: 100%;object-fit: contain;text-align: center;">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h5 class="card-title mb-2 fw-bold">Your Plan</h5>
+                            <p class="mb-1">
+                                You have selected the <strong>{{plan}}</strong> plan. 
+                                {{plan.meal_category.description}}. Changed your mind?  
+                                <a href="javascript: history.go(-1)" class="text-green">Switch to a different plan</a>
+                            </p>
+                            <div class="selected_container">
+                                <span>{{plan.meal_category}}</span>
+                                <span>{{plan.validity}} Days</span>
+                                <span>{{subplan}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                      
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        
+                        <!-- Hidden fields for day selections -->
+                        {{form.monday_selected.as_hidden}}
+                        {{form.tuesday_selected.as_hidden}}
+                        {{form.wednesday_selected.as_hidden}}
+                        {{form.thursday_selected.as_hidden}}
+                        {{form.friday_selected.as_hidden}}
+                        {{form.saturday_selected.as_hidden}}
+                        {{form.sunday_selected.as_hidden}}
+                        
+                        <div class="table-responsive my-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width:10%;max-width:10%;">Include</th>
+                                        <th style="width:15%;max-width:15%;">Day</th>
+                                        <th style="display:none;width:15%;max-width:15%;" data-id="BREAKFAST">Breakfast</th>
+                                        <th style="display:none;width:15%;max-width:15%;" data-id="DESI_TIFFIN">Desi Tiffin</th>
+                                        <th style="display:none;width:15%;max-width:15%;" data-id="TIFFIN_LUNCH">Tiffin Lunch</th>
+                                        <th style="display:none;width:15%;max-width:15%;" data-id="LUNCH">Lunch</th>
+                                        <th style="display:none;width:15%;max-width:15%;" data-id="DINNER">Dinner</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr data-day="Monday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Monday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Monday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="monday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.monday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.monday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.monday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.monday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.monday_dinner}}</td>
+                                    </tr>
+                                    <tr data-day="Tuesday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Tuesday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Tuesday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="tuesday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.tuesday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.tuesday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.tuesday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.tuesday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.tuesday_dinner}}</td>
+                                    </tr>
+                                    <tr data-day="Wednesday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Wednesday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Wednesday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="wednesday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.wednesday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.wednesday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.wednesday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.wednesday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.wednesday_dinner}}</td>
+                                    </tr>
+                                    <tr data-day="Thursday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Thursday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Thursday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="thursday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.thursday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.thursday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.thursday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.thursday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.thursday_dinner}}</td>
+                                    </tr>
+                                    <tr data-day="Friday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Friday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Friday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="friday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.friday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.friday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.friday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.friday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.friday_dinner}}</td>
+                                    </tr>
+                                    <tr data-day="Saturday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Saturday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Saturday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="saturday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.saturday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.saturday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.saturday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.saturday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.saturday_dinner}}</td>
+                                    </tr>
+                                    <tr data-day="Sunday">
+                                        <td style="width:10%;max-width:10%;" class="text-center py-3">
+                                            <input type="checkbox" class="day-checkbox" data-day="Sunday" checked>
+                                        </td>
+                                        <td style="width:15%;max-width:15%;" class="py-3">
+                                            Sunday
+                                            {% comment %} <small class="text-muted d-block" style="font-size: 0.75em; display: none;" id="sunday-no-meals-note">No meals available</small> {% endcomment %}
+                                        </td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="BREAKFAST">{{form.sunday_breakfast}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DESI_TIFFIN">{{form.sunday_desi_tiffin}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="TIFFIN_LUNCH">{{form.sunday_tiffin_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="LUNCH">{{form.sunday_lunch}}</td>
+                                        <td style="display:none;width:15%;max-width:15%;" class="p-0" data-id="DINNER">{{form.sunday_dinner}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div class="pt-3">
+                            <button type="submit" class="btn btn-primary">Next</button>
+                        </div>
+                    </form>
+                </div>
+			</div>
+        </div>
+	</div>
+</section>
+{% endblock content %}
+
+{% block javascript %}
+<script>
+/* ---------- 1. Show the right meal-type columns ---------- */
+const available_mealtypes = {{available_mealtypes|safe}};
+
+for (let i = 0; i < available_mealtypes.length; i++) {
+    const id = available_mealtypes[i];
+    $(`th[data-id="${id}"], td[data-id="${id}"]`).show();
+    $(`td[data-id="${id}"] select`).each(function () {
+        /* Auto-select the only real option (skip blank & "NO MEAL") */
+        const opts = $(this).find('option').not('[value=""]').filter(function () {
+            return $(this).text().trim() !== 'NO MEAL';
+        });
+        if (opts.length === 1) opts.prop('selected', true);
+    });
+}
+
+/* ---------- 2. Map day names to hidden Boolean input ids ---------- */
+const dayMap = {
+    Monday:    'id_monday_selected',
+    Tuesday:   'id_tuesday_selected',
+    Wednesday: 'id_wednesday_selected',
+    Thursday:  'id_thursday_selected',
+    Friday:    'id_friday_selected',
+    Saturday:  'id_saturday_selected',
+    Sunday:    'id_sunday_selected',
+};
+
+/* ---------- 3. Function to set meal selections based on day inclusion ---------- */
+function setMealOptions($row, isIncluded) {
+    $row.find('select').each(function() {
+        const $select = $(this);
+        let $noMealOption = $select.find('option').filter(function() {
+            return $(this).text().trim() === 'NO MEAL';
+        });
+        
+        if (isIncluded) {
+            // Day is included - allow dynamic meal selection
+            $select.prop('disabled', false);
+            $select.prop('required', true);
+            
+            // Remove NO MEAL option if it exists (for included days)
+            if ($noMealOption.length > 0) {
+                $noMealOption.remove();
+            }
+            
+            // Auto-select first available meal if only one option (excluding blank)
+            const mealOptions = $select.find('option').not('[value=""]');
+            
+            if (mealOptions.length === 1) {
+                mealOptions.prop('selected', true);
+            } else if ($select.val() === '') {
+                // If no selection, clear selection to force user choice
+                $select.val('');
+            }
+        } else {
+            // Day is excluded - add NO MEAL option if it doesn't exist and select it
+            $select.prop('disabled', true);
+            $select.prop('required', false);
+            
+            // Check if NO MEAL option exists, if not create it
+            if ($noMealOption.length === 0) {
+                $select.prepend('<option value="no_meal">NO MEAL</option>');
+                $noMealOption = $select.find('option[value="no_meal"]');
+            }
+            
+            // Select the NO MEAL option
+            $noMealOption.prop('selected', true);
+        }
+    });
+}
+
+/* ---------- 4. Sync checkbox with hidden Boolean field and row state ---------- */
+function syncRow($cb) {
+    const day = $cb.data('day');
+    const $hiddenField = $('#' + dayMap[day]);
+    const isChecked = $cb.is(':checked');
+    const $row = $cb.closest('tr');
+
+    // Update hidden field value - IMPORTANT: use 'True'/'False' strings for Django
+    $hiddenField.val(isChecked ? 'True' : 'False');
+
+    // Update row appearance
+    $row.toggleClass('unselected-day', !isChecked);
+    
+    if (!isChecked) {
+        $row.addClass('text-muted');
+    } else {
+        $row.removeClass('text-muted');
+    }
+
+    // Set meal options based on day inclusion
+    setMealOptions($row, isChecked);
+}
+
+/* ---------- 5. Initialize checkboxes from hidden field values ---------- */
+const daysWithNoMeals = {{days_with_no_meals|safe}};
+
+$('.day-checkbox').each(function () {
+    const $cb = $(this);
+    const day = $cb.data('day');
+    const $hiddenField = $('#' + dayMap[day]);
+    
+    // Check if this day has no meals available
+    const hasNoMeals = daysWithNoMeals.includes(day);
+    
+    // Set checkbox state from hidden field value (default to true if empty)
+    const fieldValue = $hiddenField.val();
+    let isChecked = fieldValue === '' || fieldValue === 'True' || fieldValue === true;
+    
+    // If day has no meals, automatically uncheck it
+    if (hasNoMeals) {
+        isChecked = false;
+        $cb.prop('disabled', true);
+        $cb.closest('tr').addClass('no-meals-available');
+        // Show the "No meals available" note
+        $(`#${day.toLowerCase()}-no-meals-note`).show();
+    }
+    
+    $cb.prop('checked', isChecked);
+    // Set the hidden field to proper string value
+    $hiddenField.val(isChecked ? 'True' : 'False');
+    syncRow($cb);
+});
+
+/* ---------- 6. Handle checkbox changes ---------- */
+$('.day-checkbox').on('change', function () {
+    syncRow($(this));
+});
+
+/* ---------- 7. Form validation - require at least one day and validate only included days ---------- */
+$('form').on('submit', function (e) {
+    // Clear any previous validation errors
+    $('.day-checkbox').each(function() {
+        const $row = $(this).closest('tr');
+        $row.find('select').removeClass('is-invalid');
+    });
+    
+    // Check if at least one day is selected
+    const checkedDays = $('.day-checkbox:checked').length;
+    if (checkedDays === 0) {
+        e.preventDefault();
+        alert('Please select at least one day for meal delivery.');
+        
+        // Highlight all checkboxes to show they need to select at least one
+        $('.day-checkbox').each(function() {
+            $(this).closest('td').addClass('border-danger');
+        });
+        
+        // Remove the border highlight after 3 seconds
+        setTimeout(function() {
+            $('.day-checkbox').each(function() {
+                $(this).closest('td').removeClass('border-danger');
+            });
+        }, 3000);
+        
+        return false;
+    }
+    
+    // Additional validation: ensure required meal selections ONLY for checked/included days
+    let hasError = false;
+    let errorMessage = '';
+    let invalidDays = [];
+    
+    $('.day-checkbox:checked').each(function() {
+        const $cb = $(this);
+        const day = $cb.data('day');
+        const $row = $cb.closest('tr');
+        let dayHasError = false;
+        
+        // Skip validation for days with no meals available
+        if (daysWithNoMeals.includes(day)) {
+            return;
+        }
+        
+        $row.find('select').each(function() {
+            const $select = $(this);
+            const mealtype = $select.closest('td').data('id');
+            
+            // Only validate if this mealtype is available and day is included
+            if (available_mealtypes.includes(mealtype)) {
+                const selectedValue = $select.val();
+                
+                // Check if the select has any options (excluding blank and "NO MEAL")
+                const hasOptions = $select.find('option').not('[value=""]').filter(function() {
+                    return $(this).text().trim() !== 'NO MEAL';
+                }).length > 0;
+                
+                // Only validate if there are actual meal options available
+                if (hasOptions) {
+                    // Check if no meal is selected, blank is selected, or "no_meal" is selected
+                    if (!selectedValue || selectedValue === '' || selectedValue === 'no_meal') {
+                        hasError = true;
+                        dayHasError = true;
+                        $select.addClass('is-invalid');
+                    } else {
+                        $select.removeClass('is-invalid');
+                    }
+                } else {
+                    // No options available for this meal type, so no validation needed
+                    $select.removeClass('is-invalid');
+                }
+            }
+        });
+        
+        if (dayHasError && !invalidDays.includes(day)) {
+            invalidDays.push(day);
+        }
+    });
+    
+    // Create specific error message
+    if (hasError) {
+        e.preventDefault();
+        if (invalidDays.length === 1) {
+            errorMessage = `Please select meals for ${invalidDays[0]}.`;
+        } else if (invalidDays.length === 2) {
+            errorMessage = `Please select meals for ${invalidDays[0]} and ${invalidDays[1]}.`;
+        } else {
+            errorMessage = `Please select meals for ${invalidDays.slice(0, -1).join(', ')} and ${invalidDays[invalidDays.length - 1]}.`;
+        }
+        
+        alert(errorMessage);
+        
+        // Focus on the first invalid select field
+        $('.is-invalid').first().focus();
+        return false;
+    }
+    
+    // If we get here, validation passed
+    console.log(`Form validation passed. Selected days: ${checkedDays}`);
+    return true;
+});
+
+/* ---------- 8. Update meal selections requirement based on available mealtypes ---------- */
+function updateMealRequirements() {
+    $('.day-checkbox').each(function() {
+        const $cb = $(this);
+        const isChecked = $cb.is(':checked');
+        const $row = $cb.closest('tr');
+        const day = $cb.data('day');
+        
+        // Skip requirements for days with no meals available
+        if (daysWithNoMeals.includes(day)) {
+            $row.find('select').prop('required', false);
+            return;
+        }
+        
+        $row.find('td[data-id]').each(function() {
+            const mealtype = $(this).data('id');
+            const $select = $(this).find('select');
+            
+            // Only make visible mealtypes required for included days
+            if (available_mealtypes.includes(mealtype) && isChecked) {
+                // Check if the select has any options (excluding blank and "NO MEAL")
+                const hasOptions = $select.find('option').not('[value=""]').filter(function() {
+                    return $(this).text().trim() !== 'NO MEAL';
+                }).length > 0;
+                
+                // Only make required if there are actual meal options available
+                $select.prop('required', hasOptions);
+            } else {
+                $select.prop('required', false);
+            }
+        });
+    });
+}
+
+// Apply meal requirements after initial setup
+updateMealRequirements();
+</script>
+{% endblock javascript %}

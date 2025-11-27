@@ -1,0 +1,110 @@
+{% extends 'web/base.html' %}
+
+{% load static extras %}
+
+{% block content %}
+
+<div class="package-area section_padding_sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h1 class="fs-30 fw-700">Top Trips!
+                        <span class="text-orange"> best holiday tour packages</span>
+                    </h1>
+                    <p class="mt-2">
+                        Skydays' Special Deals page offers best holiday tour packages at unbeatable prices. Curated by
+                        experts, these packages cater to a wide range of interests. Limited-time offers and discounts
+                        available. Book your dream vacation without breaking the bank.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row owl-carousel destination_slider">
+            {% for package in special_packages %}
+            <a href="{{package.get_absolute_url}}" class="package-card">
+                <div class="package-thumb">
+                    <img src="{{package.image.crop.280x230}}" alt="{{package.destination}}" class="img-fluid"
+                        loading="lazy">
+                </div>
+                <div class="package-details">
+                    <div class="d-flex flex-wrap align-items-center">
+                        <i class="icon-location fs-20 text-orange"></i>
+                        <div class="content ms-2">
+                            <h6>{{package.destination}}</h6>
+                            <small class="text-yellow ">
+                                {% for i in package.rating|times %}
+                                <i class="icon-star"></i>
+                                {% endfor %}
+                                {% for i in 5|subtract:package.rating|times %}
+                                <i class="icon-star-empty"></i>
+                                {% endfor %}
+                            </small>
+                        </div>
+                    </div>
+                    <div class="align-items-center d-flex flex-wrap fs-12 justify-content-between mb-1 mt-2">
+                        <span class="text-grey fw-600">{{package.departure_from}}</span>
+                        <span class="text-orange fw-600 fs-20"><small class="fs-12">From
+                            </small>{{package.price|change_currency:currency}}</span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="package-area section_padding_md">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h2>Explore More! Choose
+                        <span class="text-orange">Best Holiday Tour Packages Now!</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for package in packages %}
+            <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                <a href="{{package.get_absolute_url}}" class="package-card">
+                    <div class="package-thumb">
+                        <img src="{{package.image.crop.280x230}}" alt="" class="img-fluid" loading="lazy">
+                    </div>
+                    <div class="package-details">
+                        <div class="d-flex flex-wrap align-items-center">
+                            <i class="icon-location fs-20 text-orange"></i>
+                            <div class="content ms-2">
+                                <h6>{{package.destination}}</h6>
+                                <small class="text-yellow ">
+                                    {% for i in package.rating|times %}
+                                    <i class="icon-star"></i>
+                                    {% endfor %}
+                                    {% for i in 5|subtract:package.rating|times %}
+                                    <i class="icon-star-empty"></i>
+                                    {% endfor %}
+                                </small>
+                            </div>
+                        </div>
+                        <div class="align-items-center d-flex flex-wrap fs-12 justify-content-between mb-1 mt-2">
+                            <span class="text-grey fw-600">{{package.departure_from}}</span>
+                            <span class="text-orange fw-600 fs-20"><small class="fs-12">From
+                                </small>{{package.price|change_currency:currency}}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+{% include 'web/partials/offers.html' %}
+
+{% endblock %}

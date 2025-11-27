@@ -1,0 +1,279 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 humanize %}
+{% block title %}Home: {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+
+<div class="side-app main-container">
+
+    <div class="page-header d-xl-flex d-block">
+        <div class="page-leftheader">
+            <div class="page-title">Hello, {{request.user}}! 👋</div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="card bg-gradient-primary card-img-holder text-white">
+                <div class="card-body">
+                    <h5 class="">January Leads</h5>
+                    <h3 class="mb-0 mt-auto text-white">{{january_count|intcomma}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="card bg-gradient-info card-img-holder text-white">
+                <div class="card-body">
+                    <h5 class="">February Leads</h5>
+                    <h3 class="mb-0 mt-auto text-white">{{february_count|intcomma}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="card bg-gradient-success card-img-holder text-white">
+                <div class="card-body">
+                    <h5 class="">March Leads</h5>
+                    <h3 class="mb-0 mt-auto text-white">{{march_count|intcomma}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+            <div class="card bg-gradient-warning card-img-holder text-white">
+                <div class="card-body">
+                    <h5 class="">April Leads</h5>
+                    <h3 class="mb-0 mt-auto text-white">{{april_count|intcomma}}</h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-7 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                  <div class=""></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink">
+                  <div class=""></div>
+                </div>
+              </div>
+              <div class="clearfix">
+                <h4 class="card-title float-left">Monthly Statistics (2024)</h4>
+              </div>
+              <canvas id="month-analysis" class="mt-4 chartjs-render-monitor"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <div class="chartjs-size-monitor">
+                <div class="chartjs-size-monitor-expand">
+                  <div class=""></div>
+                </div>
+                <div class="chartjs-size-monitor-shrink">
+                  <div class=""></div>
+                </div>
+              </div>
+              <h4 class="card-title">Department Trend</h4>
+      
+              <canvas id="department-chart" style="display: block; width: 531px; height: 265px;" width="531" height="265" class="chartjs-render-monitor"></canvas>
+              
+              <div id="department-chart-legend" class="rounded-legend legend-vertical legend-bottom-left pt-4"></div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="/static/app/plugins/chart.js/Chart.min.js"></script>
+<script>
+    const PIE_LABELS = ['RISE', 'SAIL', 'REDESIGN'];
+    const PIE_VALUES = [41, 35, 24];
+    const CHART_LABELS = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    const CHART_VALUES = [50, 90, 60, 67, 34, 48, 100, 70, 90, 70, 60, 90];
+
+  (function($) {
+    'use strict';
+    $(function() {
+      Chart.defaults.global.legend.labels.usePointStyle = true;
+
+      if ($("#month-analysis").length) {
+        Chart.defaults.global.legend.labels.usePointStyle = true;
+        var ctx = document.getElementById('month-analysis').getContext("2d");
+
+        var gradientStrokeViolet = ctx.createLinearGradient(0, 0, 0, 181);
+        gradientStrokeViolet.addColorStop(0, 'rgba(218, 140, 255, 1)');
+        gradientStrokeViolet.addColorStop(1, 'rgba(154, 85, 255, 1)');
+        var gradientLegendViolet = 'linear-gradient(to right, rgba(218, 140, 255, 1), rgba(154, 85, 255, 1))';
+
+        var myChart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            
+            labels: CHART_LABELS,
+            datasets: [{
+                label: "Registration",
+                borderColor: gradientStrokeViolet,
+                backgroundColor: gradientStrokeViolet,
+                hoverBackgroundColor: gradientStrokeViolet,
+                legendColor: gradientLegendViolet,
+                pointRadius: 0,
+                fill: false,
+                borderWidth: 1,
+                fill: 'origin',
+                data: CHART_VALUES,
+              },
+            ]
+          },
+          options: {
+            responsive: true,
+            legend: false,
+            legendCallback: function(chart) {
+              var text = [];
+              text.push('<ul>');
+              for (var i = 0; i < chart.data.datasets.length; i++) {
+                text.push('<li><span class="legend-dots" style="background:' +
+                  chart.data.datasets[i].legendColor +
+                  '"></span>');
+                if (chart.data.datasets[i].label) {
+                  text.push(chart.data.datasets[i].label);
+                }
+                text.push('</li>');
+              }
+              text.push('</ul>');
+              return text.join('');
+            },
+            scales: {
+              yAxes: [{
+                ticks: {
+                  display: false,
+                  min: 0,
+                  stepSize: 20,
+                  max: 80
+                },
+                gridLines: {
+                  drawBorder: false,
+                  color: 'rgba(235,237,242,1)',
+                  zeroLineColor: 'rgba(235,237,242,1)'
+                }
+              }],
+              xAxes: [{
+                gridLines: {
+                  display: false,
+                  drawBorder: false,
+                  color: 'rgba(0,0,0,1)',
+                  zeroLineColor: 'rgba(235,237,242,1)'
+                },
+                ticks: {
+                  padding: 20,
+                  fontColor: "#9c9fa6",
+                  autoSkip: true,
+                },
+                categoryPercentage: 0.5,
+                barPercentage: 0.5
+              }]
+            }
+          },
+          elements: {
+            point: {
+              radius: 0
+            }
+          }
+        })
+        $("#month-analysis-legend").html(myChart.generateLegend());
+      }
+
+      if ($("#department-chart").length) {
+        var gradientStrokeBlue = ctx.createLinearGradient(0, 0, 0, 181);
+        gradientStrokeBlue.addColorStop(0, 'rgba(54, 215, 232, 1)');
+        gradientStrokeBlue.addColorStop(1, 'rgba(177, 148, 250, 1)');
+        var gradientLegendBlue = 'linear-gradient(to right, rgba(54, 215, 232, 1), rgba(177, 148, 250, 1))';
+
+        var gradientStrokeRed = ctx.createLinearGradient(0, 0, 0, 50);
+        gradientStrokeRed.addColorStop(0, 'rgba(255, 191, 150, 1)');
+        gradientStrokeRed.addColorStop(1, 'rgba(254, 112, 150, 1)');
+        var gradientLegendRed = 'linear-gradient(to right, rgba(255, 191, 150, 1), rgba(254, 112, 150, 1))';
+
+        var gradientStrokeGreen = ctx.createLinearGradient(0, 0, 0, 300);
+        gradientStrokeGreen.addColorStop(0, 'rgba(6, 185, 157, 1)');
+        gradientStrokeGreen.addColorStop(1, 'rgba(132, 217, 210, 1)');
+        var gradientLegendGreen = 'linear-gradient(to right, rgba(6, 185, 157, 1), rgba(132, 217, 210, 1))';
+
+        var departmentChartData = {
+          datasets: [{
+            data: PIE_VALUES,
+            backgroundColor: [
+              gradientStrokeBlue,
+              gradientStrokeGreen,
+              gradientStrokeRed
+            ],
+            hoverBackgroundColor: [
+              gradientStrokeBlue,
+              gradientStrokeGreen,
+              gradientStrokeRed
+            ],
+            borderColor: [
+              gradientStrokeBlue,
+              gradientStrokeGreen,
+              gradientStrokeRed
+            ],
+            legendColor: [
+              gradientLegendBlue,
+              gradientLegendGreen,
+              gradientLegendRed
+            ]
+          }],
+
+          // These labels appear in the legend and in the tooltips when hovering different arcs
+          
+          labels: PIE_LABELS
+        };
+        var departmentChartOptions = {
+          responsive: true,
+          animation: {
+            animateScale: true,
+            animateRotate: true
+          },
+          legend: false,
+          legendCallback: function(chart) {
+            var text = [];
+            text.push('<ul>');
+            for (var i = 0; i < departmentChartData.datasets[0].data.length; i++) {
+              text.push('<li><span class="legend-dots" style="background:' +
+                departmentChartData.datasets[0].legendColor[i] +
+                '"></span>');
+              if (departmentChartData.labels[i]) {
+                text.push(departmentChartData.labels[i]);
+              }
+              text.push('<span class="float-right">' + departmentChartData.datasets[0].data[i] + "%" + '</span>')
+              text.push('</li>');
+            }
+            text.push('</ul>');
+            return text.join('');
+          }
+        };
+        var departmentChartCanvas = $("#department-chart").get(0).getContext("2d");
+        var departmentChart = new Chart(departmentChartCanvas, {
+          type: 'doughnut',
+          data: departmentChartData,
+          options: departmentChartOptions
+        });
+        $("#department-chart-legend").html(departmentChart.generateLegend());
+      }
+
+    });
+  })(jQuery);
+</script>
+{% endblock %}

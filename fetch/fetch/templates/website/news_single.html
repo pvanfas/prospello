@@ -1,0 +1,38 @@
+{% extends 'website/base.html' %} {% load static %} {% block title %}{{news.title}} | FETCH - Office chairs brand in Kerala{% endblock %} {% block content %}
+
+<main>
+    <section id="hero" class="filters pb-0 d-flex align-items-center">
+        <div class="container">
+            <h1 class="main_head w-50">{{news.title}}</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="card border-0">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="main_image border-0" style="background-image: url();">
+                                <img src="{{news.featured_image.thumbnail.350x500}}" id="main_news_image" width="350" loading="lazy" style="object-fit: contain;height: 100%;">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 right-side">
+
+                            <div class="mt-2 pr-3 content">
+                                <p>{{news.content|safe}}</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+{% endblock %}

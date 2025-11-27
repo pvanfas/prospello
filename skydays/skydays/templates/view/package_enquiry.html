@@ -1,0 +1,72 @@
+{% extends 'view/base.html' %}
+{% block title %}Package Enquiry{% endblock %}
+{% block content %}
+
+<p>
+  You have received a new Package Enquiry from your website. The details of the message are as
+  follows:
+</p>
+
+<table style="width:100%">
+  <tr>
+    <td><strong>Package</strong></td>
+    <td>: {{ instance.package }}</td>
+  </tr>
+  <tr>
+    <td><strong>Date</strong></td>
+    <td>: {{ instance.date }}</td>
+  </tr>
+  <tr>
+    <td><strong>Hotel Category</strong></td>
+    <td>: {{ instance.hotel_category }}</td>
+  </tr>
+  <tr>
+    <td><strong>Name</strong></td>
+    <td>: {{ instance.name }}</td>
+  </tr>
+  <tr>
+    <td><strong>Whatsapp</strong></td>
+    <td>: {{ instance.whatsapp }}</td>
+  </tr>
+  <tr>
+    <td><strong>Phone</strong></td>
+    <td>: {{ instance.phone }}</td>
+  </tr>
+  <tr>
+    <td><strong>Email</strong></td>
+    <td>: {{ instance.email }}</td>
+  </tr>
+  <tr>
+    <td><strong>Additional Info</strong></td>
+    <td>: {{ instance.additional_info }}</td>
+  </tr>
+  <tr>
+    <td><strong>Timestamp</strong></td>
+    <td>: {{ instance.timestamp }}</td>
+  </tr>
+</table>
+
+
+<table class="text-center bordered">
+  <tr>
+    <th>Room</th>
+    <th>Adult</th>
+    <th>Child with Bed</th>
+    <th>Child without Bed</th>
+    <th>Infant</th>
+  </tr>
+  {% for traveller in instance.get_travellers %}
+  <tr>
+    <td>Room {{ forloop.counter }}</td>
+    <td>{{ traveller.adult }}</td>
+    <td>{{ traveller.child_with_bed }}</td>
+    <td>{{ traveller.child_without_bed }}</td>
+    <td>{{ traveller.infant }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<div class="text-center">
+  <a class="btn" href="{{instance.get_pdf_url}}">PRINT</a>
+</div>
+{% endblock %}

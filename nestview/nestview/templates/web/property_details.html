@@ -1,0 +1,213 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ltn_utilize-overlay"></div>
+
+<!-- BREADCRUMB AREA START -->
+<div class="ltn_breadcrumb-area text-left bg-overlay-white-30 bg-image mb-0"
+    data-bs-bg="{% static 'web/img/bg/14.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn_breadcrumb-inner">
+                    <h1 class="page-title">Property Details</h1>
+                    <div class="ltn_breadcrumb-list">
+                        <ul>
+                            <li><a href="/"><span class="ltn_secondary-color"><i class="fas fa-home"></i></span>
+                                    Home</a></li>
+                            <li>Property Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="ltn_shop-details-area pb-10 pt-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 mx-auto">
+
+                <!-- image box -->
+                <div class="ltn__shop-details-img-box mb-30">
+                    <div class="ltn__shop-details-img">
+                        <img src="{{property.image.url}}" alt="Image">
+                    </div>
+                </div>
+
+                <!-- PRODUCT DETAILS -->
+                <div class="ltn_shop-details-inner ltn_page-details-inner mb-60">
+                    <div class="ltn_blog-meta">
+                        <ul>
+                            {% if property.is_featured %}
+                            <li class="ltn_blog-category">
+                                <a href="#">Featured</a>
+                            </li>
+                            {% endif %}
+                            <li class="ltn_blog-category">
+                                <a class="bg-orange" href="#">{{property.property_status}}</a>
+                            </li>
+                            <li class="ltn_blog-date">
+                                <i class="far fa-calendar-alt"></i>{{property.listed_on}}
+                            </li>
+                        </ul>
+                    </div>
+                    <h1>{{property.title}}</h1>
+                    <label>
+                        <span class="ltn_secondary-color">
+                            <i class="flaticon-pin"></i>
+                        </span>
+                        {{property.location}}</label>
+                    <h4 class="title-2">Description</h4>
+                    <p>{{property.description|linebreaksbr}}</p>
+
+                    <h4 class="title-2">Property Detail</h4>
+                    <div class="property-detail-info-list section-bg-1 clearfix mb-60">
+                        <ul>
+                            {% if property.property_id %}<li><label>Property ID:</label> <span>{{property.property_id}}</span></li>{% endif %}
+                            {% if property.property_type %}<li><label>Property Type: </label> <span>{{property.property_type}}</span></li>{% endif %}
+                            {% if property.property_status %}<li><label>Property Status: </label> <span>{{property.property_status}}</span></li>{% endif %}
+                            {% if property.property_price %}<li><label>Property Price: </label> <span>{{property.property_price}}</span></li>{% endif %}
+                            {% if property.property_year_built %}<li><label>Year built:</label> <span>{{property.property_year_built}}</span></li>{% endif %}
+                        </ul>
+                        <ul>
+                            {% if property.property_bedrooms %}<li><label>Beds:</label> <span>{{property.property_bedrooms}}</span></li>{% endif %}
+                            {% if property.property_bathrooms %}<li><label>Baths:</label> <span>{{property.property_bathrooms}}</span></li>{% endif %}
+                            {% if property.property_garages %}<li><label>Garages:</label> <span>{{property.property_garages}}</span></li>{% endif %}
+                            {% if property.property_area %}<li><label>Lot Area:</label> <span>{{property.property_area}}</span></li>{% endif %}
+                            {% if property.property_floor %}<li><label>Floor Area:</label> <span>{{property.property_floor}}</span></li>{% endif %}
+                        </ul>
+
+                    </div>
+
+                    {% if property.get_features %}
+                    <h4 class="title-2">Facts and Features</h4>
+                    <div class="property-detail-feature-list clearfix mb-45">
+                        <ul>
+                            {% for feature in property.get_features %}
+                            <li>
+                                <div class="property-detail-feature-list-item">
+                                    <i class="flaticon-double-bed"></i>
+                                    <div>
+                                        <h6>{{feature.feature}}</h6>
+                                        <small>{{feature.text}}</small>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+
+                    {% if property.get_images %}
+                    <h4 class="title-2">From Our Gallery</h4>
+                    <div class="ltn_property-details-gallery mb-30">
+                        <div class="row">
+                            {% for item in property.get_images %}
+                            <div class="col-md-6">
+                                <a href="{{item.image.url}}" target="_blank">
+                                    <img class="mb-30" src="{{item.image.url}}"
+                                        style="height:200px;width:100%;object-fit:cover;" alt="Image">
+                                </a>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if property.amenities.all %}
+                    <h4 class="title-2 mb-10">Amenities</h4>
+                    <div class="property-details-amenities mb-60">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="ltn_menu-widget">
+                                    <ul class="row">
+                                        {% for item in property.amenities.all %}
+                                        <li class="col-lg-4 col-md-6">
+                                            <label class="checkbox-item">{{item}}
+                                                <input type="checkbox" checked="checked">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    {% if property.map_src %}
+                    <h4 class="title-2">Location</h4>
+                    <div class="property-details-google-map mb-40">
+                        <iframe src="{{property.map_src}}" width="100%" height="100%" frameborder="0" allowfullscreen=""
+                            aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                    {% endif %}
+
+                    <div class="enquire_area mb-90">
+                        <a href="" class="btn theme-btn-1 btn-effect-1 text-uppercase">Enquire Now</a>
+                    </div>
+
+                    {% if related_properties %}
+                    <h4 class="title-2">Related Properties</h4>
+                    <div class="row">
+                        {% for property in related_properties %}
+                        <div class="col-xl-6 col-sm-6 col-12">
+                            <div class="ltn_product-item ltn_product-item-4 ltn_product-item-5 text-center_x">
+                                <div class="product-img">
+                                    <a href="{{property.get_absolute_url}}"><img
+                                            src="{{property.image.url}}" alt=""></a>
+                                </div>
+                                <div class="product-info">
+                                    <div class="product-badge">
+                                        <ul>
+                                            <li class="sale-badg">{{property.property_status}}</li>
+                                        </ul>
+                                    </div>
+                                    <h2 class="product-title"><a href="{{property.get_absolute_url}}">{{property.title}}</a></h2>
+                                    <div class="product-img-location">
+                                        <ul>
+                                            <li>
+                                                <a href="{{property.get_absolute_url}}"><i class="flaticon-pin"></i>
+                                                    {{property.location}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <ul class="ltn_list-item-2_x ltn_list-item-2-before_x ltn_plot-brief">
+                                        {% if property.property_bedrooms %}<li><span>{{property.property_bedrooms}} </span>
+                                            Bedrooms
+                                        </li>{% endif %}
+                                        {% if property.property_bathrooms %}<li><span>{{property.property_bathrooms}} </span>
+                                            Bathrooms
+                                        </li>{% endif %}
+                                        {% if property.property_area %}<li><span>{{property.property_area}} </span>
+                                            square Ft
+                                        </li>{% endif %}
+                                    </ul>
+
+                                </div>
+                                <div class="product-info-bottom">
+                                    <div class="product-price">
+                                        <span>{{property.property_price}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content %}

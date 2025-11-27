@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Primary Meta Tags -->
+    <title>{% block title %}Alot Gifts & Hampers | Unique Gift Hampers and Luxury Gift Boxes - AlotGifts UAE{% endblock %}</title>
+    <meta name="title" content="Alot Gifts & Hampers | Unique Gift Hampers and Luxury Gift Boxes - AlotGifts UAE" />
+    <meta name="description" content="Discover a wide range of premium gift hampers and luxury gift boxes at AlotGifts. Perfect for any occasion, our thoughtfully curated hampers feature gourmet treats, personalized gifts, and exclusive collections" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://alotgifthampers.com/" />
+    <meta property="og:title" content="Alot Gifts & Hampers | Unique Gift Hampers and Luxury Gift Boxes - AlotGifts UAE" />
+    <meta property="og:description" content="Discover a wide range of premium gift hampers and luxury gift boxes at AlotGifts. Perfect for any occasion, our thoughtfully curated hampers feature gourmet treats, personalized gifts, and exclusive collections" />
+    <meta property="og:image" content="https://alotgifthampers.com/static/web/images/meta-preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://alotgifthampers.com/" />
+    <meta property="twitter:title" content="Alot Gifts & Hampers | Unique Gift Hampers and Luxury Gift Boxes - AlotGifts UAE" />
+    <meta property="twitter:description" content="Discover a wide range of premium gift hampers and luxury gift boxes at AlotGifts. Perfect for any occasion, our thoughtfully curated hampers feature gourmet treats, personalized gifts, and exclusive collections" />
+    <meta property="twitter:image" content="https://alotgifthampers.com/static/web/images/meta-preview.png" />
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'web/images/favicon/apple-icon-57x57.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'web/images/favicon/apple-icon-60x60.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'web/images/favicon/apple-icon-72x72.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'web/images/favicon/apple-icon-76x76.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'web/images/favicon/apple-icon-114x114.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'web/images/favicon/apple-icon-120x120.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'web/images/favicon/apple-icon-144x144.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'web/images/favicon/apple-icon-152x152.png' %}?v=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/images/favicon/apple-icon-180x180.png' %}?v=1.0">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'web/images/favicon/android-icon-192x192.png' %}?v=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/images/favicon/favicon-32x32.png' %}?v=1.0">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'web/images/favicon/favicon-96x96.png' %}?v=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/images/favicon/favicon-16x16.png' %}?v=1.0">
+    <link rel="manifest" href="{% static 'web/images/favicon/manifest.json' %}?v=1.0">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'web/images/favicon/ms-icon-144x144.png' %}?v=1.0">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- All CSS is here
+	============================================ -->
+    <link rel="stylesheet" href="{% static 'web/css/vendor/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/vendor/pe-icon-7-stroke.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/vendor/themify-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/vendor/font-awesome.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/animate.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/aos.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/magnific-popup.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/swiper.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/jquery-ui.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/nice-select.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/select2.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/easyzoom.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/plugins/slinky.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}?v=1.4" />
+    <link rel="stylesheet" href="{% static 'web/css/custom.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/dark.css' %}?v=1.4">
+</head>
+
+<body>
+    <div class="main-wrapper main-wrapper-2 dark">
+        {% include 'web/partials/header.html' %}
+        {% include 'web/partials/sidebar-cart.html' %}
+
+        {% block content %}
+
+        {% endblock %}
+
+        {% include 'web/partials/footer.html' %}
+        {% include 'web/partials/mobilemenu.html' %}
+
+    </div>
+    <!-- All JS is here -->
+    <script src="{% static 'web/js/vendor/modernizr-3.11.7.min.js' %}"></script>
+    <script src="{% static 'web/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'web/js/vendor/jquery-migrate-3.3.2.min.js' %}"></script>
+    <script src="{% static 'web/js/vendor/popper.min.js' %}"></script>
+    <script src="{% static 'web/js/vendor/bootstrap.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/wow.js' %}"></script>
+    <script src="{% static 'web/js/plugins/scrollup.js' %}"></script>
+    <script src="{% static 'web/js/plugins/aos.js' %}"></script>
+    <script src="{% static 'web/js/plugins/magnific-popup.js' %}"></script>
+    <script src="{% static 'web/js/plugins/jquery.syotimer.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/swiper.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/jquery-ui.js' %}"></script>
+    <script src="{% static 'web/js/plugins/jquery-ui-touch-punch.js' %}"></script>
+    <script src="{% static 'web/js/plugins/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/waypoints.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/jquery.counterup.js' %}"></script>
+    <script src="{% static 'web/js/plugins/select2.min.js' %}"></script>
+    <script src="{% static 'web/js/plugins/easyzoom.js' %}"></script>
+    <script src="{% static 'web/js/plugins/slinky.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
+    <script src="{% static 'web/js/ajax.js' %}"></script>
+    <script src="{% static 'web/js/main.js' %}?v=1.4"></script>
+    {% block js %} {% endblock js %}
+    
+</body>
+
+</html>

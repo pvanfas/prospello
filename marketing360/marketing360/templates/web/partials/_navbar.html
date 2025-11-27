@@ -1,0 +1,44 @@
+
+<!-- Start Navbar Area -->
+<nav class="navbar navbar-expand-xl" id="navbar">
+    <div class="container-fluid">
+        <div class="navbar-brand d-flex align-items-center">
+            <a class="logo-title" href="{% url 'web:index' %}">                
+                <img src="/static/web/images/logo/logowhite.svg" alt="" style="width: 100%;height: 40px;object-fit: contain;object-position: left;">
+                <img src="/static/web/images/logo/logowhite.svg" class="sticky" alt="" style="display:none;width: 100%;height: 40px;object-fit: contain;object-position: left;">
+            
+            </a>
+        </div>
+        <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarOffcanvas">
+            <span class="burger-menu">
+                <span class="top-bar"></span>
+                <span class="middle-bar"></span>
+                <span class="bottom-bar"></span>
+            </span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a href="{% url 'web:index' %}" class="nav-link active">Home</a></li>                
+                <li class="nav-item"><a href="{% url 'web:courses' %}" class="nav-link">Courses</a></li>
+                <li class="nav-item"><a href="{% url 'web:mentors' %}" class="nav-link">Our Mentors</a></li>
+                <li class="nav-item"><a href="{% url 'web:webinars' %}" class="nav-link">Webinars</a></li>
+                <li class="nav-item">
+                    <a href="javascript:void(0)" class="dropdown-toggle nav-link">More</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a href="{% url 'web:about' %}" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="{% url 'web:contact' %}" class="nav-link">Contact Us</a></li>
+                        <li class="nav-item"><a href="{% url 'web:refer' %}" class="nav-link">Refer & Earn</a></li>
+                        <li class="nav-item"><a href="{% url 'web:case_studies' %}" class="nav-link">Brand Case Studies</a></li>
+                        <li class="nav-item"><a href="{% url 'web:blog' %}" class="nav-link">Blogs</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="others-option d-flex align-items-center">
+                <div class="option-item">
+                    <a href="{% url 'web:communities' %}" class="register-btn">Join Communities</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- End Navbar Area -->

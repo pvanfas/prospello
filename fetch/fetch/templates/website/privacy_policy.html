@@ -1,0 +1,104 @@
+{% extends 'website/base.html' %} {% load static %}
+{% block title %}Privacy Policy | FETCH Office Chairs and furnitures{% endblock %}
+
+{% block meta %}
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://www.myfetch.in/" />
+<meta property="og:title" content="FETCH - Embellish with style & comfort" />
+<meta property="og:description" content="Fetch is a leading manufacturer of office chairs for more than 40 years in Kerala, India. Find the best quality office chairs in various models only from fetch." />
+<meta property="og:image" content="http://www.myfetch.in{{product.featured_image.crop.1200x630}}" />
+
+<!-- Twitter -->
+<meta property="twitter:title" content="FETCH - Embellish with style & comfort" />
+<meta property="twitter:url" content="http://www.myfetch.in/" />
+<meta property="twitter:description" content="Fetch is a leading manufacturer of office chairs for more than 40 years in Kerala, India. Find the best quality office chairs in various models only from fetch." />
+<meta property="twitter:image" content="http://www.myfetch.in{{product.featured_image.crop.1200x630}}" />
+<meta property="twitter:card" content="summary_large_image" />
+{% endblock %}
+
+{% block content %}
+
+<main>
+    <section id="hero" class="filters pb-0 d-flex align-items-center">
+        <div class="container">
+            <h1 class="main_head w-50">Privacy Policy</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <p>
+                This privacy policy (“policy”) will help you understand how Fetch (“us”, “we”, “our”) uses and protects the data you provide to us when you visit and use www.myfetch.in (“website”, “service”). We reserve the right to change this
+                policy at any given time, of which you will be promptly updated. If you want to make sure that you are up to date with the latest changes, we advise you to frequently visit this page.
+            </p>
+        
+            <h6 class="mb-4 mt-5">What User Data We Collect</h6>
+            <p>When you visit the website, we may collect the following data:</p>
+            <ul>
+                <li>
+                    <p>Your IP addresses.</p>
+                </li>
+                <li>
+                    <p>Your contact information and email address.</p>
+                </li>
+                <li>
+                    <p>Other information such as interests and preferences.</p>
+                </li>
+                <li>
+                    <p>Data profile regarding your online behavior on our website.</p>
+                </li>
+            </ul>
+        
+            <h6 class="mb-4 mt-5">Why We Collect Your Data</h6>
+            <p>We are collecting your data for several reasons:</p>
+            <ul>
+                <li><p>To better understand your needs.</p></li>
+                <li><p>To improve our services and products.</p></li>
+                <li><p>To send you promotional emails containing the information we think you will find interesting.</p></li>
+                <li><p>To contact you to fill out surveys and participate in other types of market research.</p></li>
+                <li><p>To customize our website according to your online behavior and personal preferences.</p></li>
+            </ul>
+        
+            <h6 class="mb-4 mt-5">Safeguarding and Securing the Data</h6>
+            <p>
+                Fetch is committed to securing your data and keeping it confidential. Fetch has done all in its power to prevent data theft, unauthorized access, and disclosure by implementing the latest technologies and software, which help us
+                safeguard all the information we collect online.
+            </p>
+        
+            <h6 class="mb-4 mt-5">Our Cookie Policy</h6>
+            <p>
+                Once you agree to allow our website to use cookies, you also agree to use the data it collects regarding your online behavior (analyze web traffic, web pages you spend the most time on, and websites you visit).
+            </p>
+            <p>The data we collect by using cookies is used to customize our website to your needs. After we use the data for statistical analysis, the data is completely removed from our systems.</p>
+            <p>
+                Please note that cookies don’t allow us to gain control of your computer in any way. They are strictly used to monitor which pages you find useful and which you do not so that we can provide a better experience for you.
+            </p>
+            <p>If you want to disable cookies, you can do it by accessing the settings of your internet browser. (Provide links for cookie settings for major internet browsers).</p>
+        
+            <h6 class="mb-4 mt-5">Links to Other Websites</h6>
+            <p>
+                Our website contains links that lead to other websites. If you click on these links Fetch is not held responsible for your data and privacy protection. Visiting those websites is not governed by this privacy policy agreement. Make
+                sure to read the privacy policy documentation of the website you go to from our website.
+            </p>
+        
+            <h6 class="mb-4 mt-5">Restricting the Collection of your Personal Data</h6>
+            <p>At some point, you might wish to restrict the use and collection of your personal data. You can achieve this by doing the following:</p>
+            <p>When you are filling the forms on the website, make sure to check if there is a box which you can leave unchecked, if you don’t want to disclose your personal information.</p>
+            <p>If you have already agreed to share your information with us, feel free to contact us via email and we will be more than happy to change this for you.</p>
+            <p>
+                Fetch will not lease, sell or distribute your personal information to any third parties, unless we have your permission. We might do so if the law forces us. Your personal information will be used when we need to send you
+                promotional materials if you agree to this privacy policy.
+            </p>
+        </div>
+        
+    </section>
+
+    <section class="m-0 p-0" style="background: url({% static 'web/images/contact_bg.svg' %}) no-repeat left bottom;background-size: cover;">
+        {% include 'website/partials/footer.html' %}
+    </section>
+    
+</main>
+
+{% endblock %}
+

@@ -1,0 +1,75 @@
+{% load static %}
+<header>
+    <div class="header-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
+                    <div class="navbar-wrap">
+                        <div class="logo d-flex justify-content-between">
+                            <a href="{% url 'web:index' %}" class="navbar-brand"> <img src="{% static 'web/images/logo.svg' %}"
+                                    alt="" style="height:45px"></a>
+                        </div>
+                        <div class="navbar-icons">
+                            
+                            <div class="mobile-menu d-flex ">
+                                <div class="top-search-bar m-0 d-block d-xl-none">
+                                </div>
+                                <a href="javascript:void(0)" class="hamburger d-block d-xl-none">
+                                    <span class="h-top"></span>
+                                    <span class="h-middle"></span>
+                                    <span class="h-bottom"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10">
+                    <nav class="main-nav">
+                        <div class="navber-logo-sm">
+                            <img src="{% static 'web/images/logo.svg' %}" alt="" class="img-fluid" style="height:45px">
+                        </div>
+                        <ul>
+                            <li class="{% if is_index %}active{% endif %}">
+                                <a href="{% url 'web:index' %}">Home</a>
+                            </li>
+                            <li class="{% if is_about %}active{% endif %}">
+                                <a href="{% url 'web:about' %}">About us </a>
+                            </li>
+                            <li class="{% if is_fixed_departures %}active{% endif %}">
+                                <a href="{% url 'web:fixed_departures' %}">Fixed Departures</a>
+                            </li>
+                            <li class="{% if is_packages %}active{% endif %}">
+                                <a href="{% url 'web:packages' %}">Tour Package</a>
+                            </li>
+                            <li class="{% if is_customize %}active{% endif %}">
+                                <a href="{% url 'web:customize' %}">Customized</a>
+                            </li>
+                            <li class="{% if is_blogs %}active{% endif %}">
+                                <a href="{% url 'web:blogs' %}">Blog</a>
+                            </li>
+                            <li class="{% if is_gallery %}active{% endif %}">
+                                <a href="{% url 'web:gallery' %}">Gallery</a>
+                            </li>
+                            <li class="{% if is_contact %}active{% endif %}">
+                                <a href="{% url 'web:contact' %}">Contact</a>
+                            </li>
+                        </ul>
+                        <div class="navbar-icons-2">
+                            
+                            <form action="{% url 'web:set_currency' %}" method="get" class="currency_setter">
+                                {% csrf_token %}
+                                <select name="currency" id="" class="fs-12 mb-0" style="height: 31px" onchange="this.form.submit()">
+                                  {% for currency in currencies %}
+                                    <option value="{{currency}}" {% if currency == request.session.currency %}selected{% endif %}>{{currency}}</option>
+                                  {% endfor %}
+                                </select>
+                            </form>
+                        </div>
+                        
+                    </nav>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</header>

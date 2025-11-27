@@ -1,0 +1,286 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags %}
+{% block title %}{{ title }}: {{ app_settings.site_title }}{% endblock %}
+{% load indian_filters %}
+
+{% block content %}
+<div class="side-app main-container detail_page">
+    <!-- Page Header -->
+    <div class="page-header d-flex">
+        <div class="page-leftheader">
+            <div class="page-title">{{ title }}</div>
+        </div>
+        <div class="page-rightheader ms-md-auto">
+            <div class="btn-list">
+                <a href="javascript:void(0);" onclick="window.print();" class="btn btn-sm btn-white" title="Print">
+                    <i class="feather feather-printer"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- End Page Header -->
+
+    <!-- Filters -->
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card mb-4 d-print-none">
+                <div class="card-body">
+                    <form action="" method="get">
+                        {{ form|crispy }}
+                        <button type="submit" class="btn btn-primary mt-2 mb-0">Generate</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header py-1">
+                    <h5 class="mb-0 w-auto">Income vs Expense</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="incomeExpenseChart"></canvas>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-header py-1">
+                    <h5 class="mb-0 w-auto">Payables vs Receivables</h5>
+                </div>
+                <div class="card-body">
+                    <canvas id="payableReceivableChart"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+
+
+            <!-- Income / Expense Tables -->
+            <div class="row">
+                <!-- Income -->
+                <div class="col-md-12">
+                    <div class="card content_card">
+                        <div class="align-items-center card-header d-flex justify-content-between py-1">
+                            <h5 class="mb-0 w-auto">Income</h5>
+                            <span class="text-success fs-6">Total: {{ income_total|intcomma_indian }}</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered info_table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for txn in income_transactions %}
+                                        <tr>
+                                            <td>{{ txn.title }}</td>
+                                            <td>{{ txn.category.name }}</td>
+                                            <td>{{ txn.date }}</td>
+                                            <td>{{ txn.amount|intcomma_indian }}</td>
+                                        </tr>
+                                        {% empty %}
+                                        <tr>
+                                            <td colspan="4" class="text-center">No Income Records</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Expense -->
+                <div class="col-md-12">
+                    <div class="card content_card">
+                        <div class="align-items-center card-header d-flex justify-content-between py-1">
+                            <h5 class="mb-0 w-auto">Expense</h5>
+                            <span class="text-danger fs-6">Total: {{ expense_total|intcomma_indian }}</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered info_table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Category</th>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for txn in expense_transactions %}
+                                        <tr>
+                                            <td>{{ txn.title }}</td>
+                                            <td>{{ txn.category.name }}</td>
+                                            <td>{{ txn.date }}</td>
+                                            <td>{{ txn.amount|intcomma_indian }}</td>
+                                        </tr>
+                                        {% empty %}
+                                        <tr>
+                                            <td colspan="4" class="text-center">No Expense Records</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Payables / Receivables -->
+            <div class="row mt-4">
+                <!-- Payables -->
+                <div class="col-md-12">
+                    <div class="card content_card">
+                        <div class="align-items-center card-header d-flex justify-content-between py-1">
+                            <h5 class="mb-0 w-auto">Payables</h5>
+                            <span class="text-warning fs-6">Total: {{ payable_total|intcomma_indian}}</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered info_table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Company</th>
+                                            <th>Due Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for payable in payables %}
+                                        <tr>
+                                            <td>{{ payable.title }}</td>
+                                            <td>{{ payable.company.name }}</td>
+                                            <td>{{ payable.date }}</td>
+                                            <td>{{ payable.amount|intcomma_indian }}</td>
+                                            <td>
+                                                {% if payable.is_paid %}
+                                                <span class="text-success">Paid</span>
+                                                {% else %}
+                                                <span class="text-danger">Unpaid</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        {% empty %}
+                                        <tr>
+                                            <td colspan="5" class="text-center">No Payables Found</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Receivables -->
+                <div class="col-md-12">
+                    <div class="card content_card">
+                        <div class="align-items-center card-header d-flex justify-content-between py-1">
+                            <h5 class="mb-0 w-auto">Receivables</h5>
+                            <span class="text-info fs-6">Total: {{ receivable_total|intcomma_indian }}</span>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="table-responsive">
+                                <table class="table table-hover table-bordered info_table mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Party</th>
+                                            <th>Due Date</th>
+                                            <th>Amount</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for receivable in receivables %}
+                                        <tr>
+                                            <td>{{ receivable.title }}</td>
+                                            <td>{{ receivable.party }}</td>
+                                            <td>{{ receivable.date }}</td>
+                                            <td>{{ receivable.amount|intcomma_indian }}</td>
+                                            <td>
+                                                {% if receivable.is_received %}
+                                                <span class="text-success">Received</span>
+                                                {% else %}
+                                                <span class="text-danger">Pending</span>
+                                                {% endif %}
+                                            </td>
+                                        </tr>
+                                        {% empty %}
+                                        <tr>
+                                            <td colspan="5" class="text-center">No Receivables Found</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Income vs Expense Chart
+    const ctx1 = document.getElementById('incomeExpenseChart').getContext('2d');
+    const incomeExpenseChart = new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: ['Income', 'Expense'],
+            datasets: [{
+                label: 'Amount',
+                data: [{{ income_total|default:0 }}, {{ expense_total|default:0 }}],
+                backgroundColor: ['#28a745', '#dc3545']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+
+    // Payables vs Receivables Chart
+    const ctx2 = document.getElementById('payableReceivableChart').getContext('2d');
+    const payableReceivableChart = new Chart(ctx2, {
+        type: 'bar',
+        data: {
+            labels: ['Payables', 'Receivables'],
+            datasets: [{
+                label: 'Amount',
+                data: [{{ payable_total|default:0 }}, {{ receivable_total|default:0 }}],
+                backgroundColor: ['#ffc107', '#17a2b8']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: { display: false },
+                tooltip: { enabled: true }
+            },
+            scales: {
+                y: { beginAtZero: true }
+            }
+        }
+    });
+</script>
+{% endblock javascript %}

@@ -1,0 +1,140 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start page title -->
+<section class="parallax" data-parallax-background-ratio="0.5" style="background-image:url('{% static 'web/images/contact-us-classic-bg-1.jpg' %}');">
+    <div class="opacity-medium bg-gradient-fast-blue-purple"></div>
+    <div class="container">
+        <div class="row align-items-stretch justify-content-center extra-small-screen">
+            <div class="col-12 page-title-large text-center d-flex align-items-center justify-content-center flex-column">
+                <span class="d-block text-white opacity-6 alt-font margin-5px-bottom xs-line-height-20px">Get in Touch</span>
+                <h1 class="alt-font text-white font-weight-500 no-margin-bottom">Contact us </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title -->
+<!-- start section -->
+<section class="bg-black">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center">
+            <!-- start fancy text box item -->
+            <div class="col col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
+                <div class="feature-box feature-box-hide-show-hover border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover">
+                    <div class="feature-box-move-bottom-top padding-5-rem-lr padding-15px-tb lg-padding-2-half-rem-lr md-padding-4-half-rem-lr">
+                        <div class="feature-box-icon">
+                            <i class="line-icon-Mail-Read d-block icon-medium text-fast-blue margin-25px-bottom"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="text-extra-dark-gray text-extra-medium d-block alt-font font-weight-500">How can we help you?</span>
+                            <a href="mailto:info@limrabuildcon.com" class="alt-font text-decoration-underline">Send us an email</a>
+                        </div>
+                        <div class="move-bottom-top margin-10px-top last-paragraph-no-margin">
+                            <p><a href="mailto:info@limrabuildcon.com">info@limrabuildcon.com</a></p>
+                        </div>
+                    </div>
+                    <div class="feature-box-overlay"></div>
+                </div>
+            </div>
+            <!-- end fancy text box item -->
+            <!-- start fancy text box item -->
+            <div class="col col-sm-8 md-margin-30px-bottom xs-margin-15px-bottom">
+                <div class="feature-box feature-box-hide-show-hover border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover">
+                    <div class="feature-box-move-bottom-top padding-5-rem-lr padding-15px-tb lg-padding-2-half-rem-lr md-padding-4-half-rem-lr">
+                        <div class="feature-box-icon">
+                            <i class="line-icon-Phone-2 d-block icon-medium text-fast-blue margin-25px-bottom"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="text-extra-dark-gray text-extra-medium d-block alt-font font-weight-500">Feel free to get in touch?</span>
+                            <a href="tel:+919745561111" class="alt-font text-decoration-underline">Give us a call toady</a>
+                        </div>
+                        <div class="move-bottom-top margin-10px-top last-paragraph-no-margin">
+                            <p>Mob: <a href="tel:+919745561111">+91 9745 561 111</a><br> Whatsapp: <a target="_blank" href="https://wa.me/+919745561111">+91 9745 561 111</a></p>
+
+                        </div>
+                    </div>
+                    <div class="feature-box-overlay"></div>
+                </div>
+            </div>
+            <!-- end fancy text box item -->
+            <!-- start fancy text box item -->
+            <div class="col col-sm-8">
+                <div class="feature-box feature-box-hide-show-hover border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover">
+                    <div class="feature-box-move-bottom-top padding-5-rem-lr padding-15px-tb lg-padding-2-half-rem-lr md-padding-4-half-rem-lr">
+                        <div class="feature-box-icon">
+                            <i class="line-icon-Approved-Window d-block icon-medium text-fast-blue margin-25px-bottom"></i>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <span class="text-extra-dark-gray text-extra-medium d-block alt-font font-weight-500">Need to visit our office?</span>
+                            <a href="https://goo.gl/maps/o63ZhyYp4TCkZHjp7" class="alt-font text-decoration-underline section-link">View in Map</a>
+                        </div>
+                        <div class="move-bottom-top margin-10px-top last-paragraph-no-margin">
+                            <p>2/1B20. 2nd Floor. Orris Tower. Opp HiLITE Mall Kozhikode.</p>
+                        </div>
+                    </div>
+                    <div class="feature-box-overlay"></div>
+                </div>
+            </div>
+            <!-- end fancy text box item -->
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="wow animate__fadeIn">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-xl-6 col-lg-7 text-center margin-4-half-rem-bottom md-margin-3-rem-bottom">
+                        <span class="alt-font letter-spacing-minus-1-half text-extra-medium d-block margin-5px-bottom">Fill out the form and we’ll be in touch soon!</span>
+                        <h4 class="alt-font font-weight-600 text-extra-dark-gray">How we can help you?</h4>
+                    </div>
+                    <div class="col-12">
+                        <!-- start contact form -->
+                        <form action="" method="post" class="ajax">
+                            {% csrf_token %}
+                            <div class="row row-cols-1 row-cols-md-2">
+                                <div class="col sm-margin-25px-bottom">
+                                    {{form.name}}
+                                    {{form.email}}
+                                    {{form.phone}}
+                                </div>
+                                <div class="col sm-margin-10px-bottom">
+                                    {{form.message}}
+                                </div>
+
+                                <div class="col">
+                                    <button class="btn btn-medium mb-0 submit" style="background-color: #00B057; color:white;" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                        <!-- end contact form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+
+<!-- end section -->
+<!-- start section -->
+
+<!-- end section -->
+<!-- start section -->
+<section class="p-0 wow animate__fadeIn">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col h-600px p-0 md-h-450px xs-h-300px">
+                <iframe class="w-100 h-100 filter-grayscale-100"
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15652.613484189651!2d75.8341408!3d11.2501258!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8368b8e8d60a3e98!2sDe%20Limra%20Buildcon%20LLP!5e0!3m2!1sen!2sin!4v1626759025836!5m2!1sen!2sin"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+
+{% endblock %}

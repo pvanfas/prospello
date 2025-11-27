@@ -1,0 +1,27 @@
+.dark .header-bottom {
+    background-color: #57191f;
+}
+
+.dark .search-wrap-1 form input {
+    border-color: #400B10;
+}
+
+.dark .main-menu>nav>ul>li>a,
+.dark .header-action-wrap .header-action-style a {
+    color: #fff;
+}
+
+.dark .main-menu>nav>ul>li>a {
+    color: #fff;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 17px;
+}
+
+.add_bg {
+    background-color: #fff5f6;
+}
+
+.dark .header-border-top-1 {
+    border-top: 1px solid #400B10;
+}

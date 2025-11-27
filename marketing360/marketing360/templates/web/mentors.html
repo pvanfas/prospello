@@ -1,0 +1,244 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}Our Mentors | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+
+<div class="about-area">
+    <div class="container-fluid">
+        <div class="about-top-content" data-cues="slideInUp">
+            <span>Our Mentors</span>
+            <h2>Meet the Experts Behind Your Learning</h2>
+        </div>
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp">
+            <div class="col-lg-7 col-md-12">
+                <div class="about-image">
+                    <img src="/static/web/images/main/mentors.jpg" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <div class="about-content">
+                    <h3>Practical Learning</h3>
+                    <p class="mb-0">We believe in learning by doing. Our teaching philosophy is centered around
+                        providing you with hands-on training and real-world projects. We bridge the gap between theory
+                        and practice, equipping you with the job-ready skills that employers are looking for. </p>
+                    <div class="community-btn">
+                        <a href="#" class="default-btn bg-yellow" data-bs-toggle="modal" data-bs-target="#enrollModalBackdrop">Know More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Guest Mentors -->
+<div class="our-courses-area pb-100 pt-100 pb-100">
+    <div class="container">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Guest Mentors</h2>
+            <p>Gain Insights from World-Class Guest Faculty</p>
+        </div>
+
+        <div class="mentor-slider">
+            <div class="swiper mentorSwiper">
+                <div class="swiper-wrapper">
+                     {% for mentor in mentors %}
+                    <div class="swiper-slide">
+                        <div class="mentor-card h-100" data-bs-toggle="modal" data-bs-target="#modal-{{mentor.id}}">
+                            {% if mentor.profile_picture %}
+                            <img src="{{mentor.profile_picture.url}}" alt="" class="mentor_img" />
+                            {% else %}
+                            <img src="/static/web/images/main/mentor.png" alt="Mentor" class="mentor_img" />
+                            {% endif %}
+                            <div class="mentor-info">
+                                <h5>{{mentor.name}}</h5>
+                                <div class="mentor-title">{{mentor.designation}}</div>
+                                <div class="mentor-logos">
+                                    <div class="logos-row">
+                                        {% if mentor.company_logo %}
+                                        <img src="{{mentor.company_logo.url}}" class="brand_card" alt="Amazon" />
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for mentor in mentors %}
+<div class="modal fade" id="modal-{{mentor.id}}" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal{{mentor.id}}Label"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body p-0">
+                <div class="faculty-card">
+                    <div class="faculty-box">
+                        <div class="faculty-img">
+                            {% if mentor.profile_picture %}
+                            <img src="{{mentor.profile_picture.url}}" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
+                            {% else %}
+                            <img src="/static/web/images/main/mentor.png" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
+                            {% endif %}
+                        </div>
+                        <div class="faculty-info">
+                            <h3>{{mentor.name}}</h3>
+                            <p>{{mentor.designation}}</p>
+                        </div>
+                    </div>
+
+                    <div class="faculty-details">
+                        <p class="description">
+                            {{mentor.expertise}}
+                        </p>
+                        <div class="brands">
+                            {% if mentor.company_logo %}
+                            <strong>Associated with:</strong>
+                            <div class="logos">
+                                <img src="{{mentor.company_logo.url}}" alt="{{mentor.name}}" loading="lazy" width="60" height="30" />
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+<!-- Hiring Partners -->
+<div class="partner-area pb-100 bg-white">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Hiring Partners</h2>
+            <p>Our Alumni Network Across the Globe</p>
+        </div>
+        <div class="row justify-content-center align-items-center" data-cues="fadeIn">
+            {% for hiring_partner in hiring_partners %}
+            <div class="col-lg-2 col-sm-4 col-6">
+                <div class="brand-item">
+                    <img src="{{hiring_partner.logo.url}}" alt="{{hiring_partner.name}}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="pb-100">
+    <div class="container">
+        <div class="subscribe-area ptb-100">
+            <div class="container">
+                <div class="subscribe-content" data-cues="slideInUp">
+                    <div class="row align-items-center">
+                        <div class="col-lg-2 col-md-3 col-4 text-center mb-4 mb-md-0">
+                            <div class="subscribe-icon-wrapper">
+                                <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="40" cy="40" r="40" fill="rgba(255, 255, 255, 0.15)"/>
+                                    <path d="M40 20C48.2843 20 55 26.7157 55 35C55 43.2843 48.2843 50 40 50C31.7157 50 25 43.2843 25 35C25 26.7157 31.7157 20 40 20Z" fill="#FFCB4C"/>
+                                    <path d="M20 60C20 52.268 26.268 46 34 46H46C53.732 46 60 52.268 60 60V62H20V60Z" fill="#FFCB4C"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-md-9 col-8">
+                            <h2 class="section_title mb-3 text-white">Commitment to Student Growth</h2>
+                            <p class="text-white fw-light mb-4 mb-lg-3" style="font-size: 18px; line-height: 1.8;">
+                                Our mentors are dedicated to your success. They provide personalized guidance, constructive
+                                feedback, and ongoing support to help you achieve your learning goals and advance your career.
+                            </p>
+                            <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
+                                <div class="subscribe-feature-item">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="#FFCB4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Personalized Guidance</span>
+                                </div>
+                                <div class="subscribe-feature-item">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="#FFCB4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Constructive Feedback</span>
+                                </div>
+                                <div class="subscribe-feature-item">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="#FFCB4C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                    <span>Ongoing Support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="enrollModalBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="enrollModalBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header align-items-start p-3" style="background-color: #EDEFEB;">
+                <h5 class="modal-title modal-title pt-4 px-4" id="enrollModalBackdropLabel">Apply for the <span class="primary">Advanced
+                        Digital Marketing <br> Proficiency Program</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-3 contact-form-inner px-3 pb-3 pt-0">
+                <form class="contact-form p-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="phone" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <button class="default-btn" type="submit">Submit Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script>
+    const swiper = new Swiper(".mentorSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        grabCursor: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            400: {slidesPerView: 2},
+            768: {slidesPerView: 2},
+            1024: {slidesPerView: 3},
+            1200: {slidesPerView: 4},
+        },
+    });
+</script>
+{% endblock %}

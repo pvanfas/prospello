@@ -1,0 +1,132 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}About Us | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+<div class="page-banner-area style-four bg-white">
+    <div class="container-fluid">
+        <div class="row justify-content-center" data-cue="fadeIn">
+            <div class="col-lg-12 col-md-12 mx-auto">
+                <div class="herocard">
+                    <h1 class="h2">Got questions? <br> Let’s talk growth.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner Area -->
+
+<!-- Start Contact Info Area -->
+<div class="contact-info-area pt-100 pb-100">
+    <div class="container">
+        <div class="row justify-content-center" data-cues="slideInUp">
+            
+            <div class="col-xl-6 col-sm-6">
+                <div class="contact-info-card">
+                    <div class="title">
+                        <div class="icon">
+                            <img src="/static/web/images/mail.svg" alt="mail">
+                        </div>
+                        <h3>Email Address:</h3>
+                        <span><a href="mailto:info@360marketing.school"><span>info@360marketing.school</span></a></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-6 col-sm-6">
+                <div class="contact-info-card">
+                    <div class="title">
+                        <div class="icon">
+                            <img src="/static/web/images/phone.svg" alt="phone">
+                        </div>
+                        <h3>Phone:</h3>
+                        <span><a href="tel:+918943603601">+91 8943603601</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Contact Info Area -->
+
+<!-- Start Contact Area -->
+<div class="contact-area pb-150">
+    <div class="container">
+        <div class="contact-form-inner" data-cue="fadeIn">
+            <div class="row justify-content-center">
+                <div class="col-lg-12 col-md-12">
+                    <div class="contact-form">
+                        <div class="contact-form-header">
+                            <h2>Get In Touch</h2>
+                            <p>Fill in your information and we'll be in touch as soon as we can</p>
+                        </div>
+                        <form class="modern-contact-form">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-page-name">Name</label>
+                                        <input type="text" id="contact-page-name" class="form-control" placeholder="Enter your name" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-page-phone">Phone</label>
+                                        <input type="tel" id="contact-page-phone" class="form-control" placeholder="Enter your phone number" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-page-email">Email</label>
+                                        <input type="email" id="contact-page-email" class="form-control" placeholder="Enter your email" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="contact-page-subject">Subject</label>
+                                        <input type="text" id="contact-page-subject" class="form-control" placeholder="What is this regarding?" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="contact-page-message">Message</label>
+                                        <textarea id="contact-page-message" name="message" class="form-control" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-submit">
+                                        <button class="default-btn modern-submit-btn" type="submit">
+                                            <span>Submit Now</span>
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-5 col-md-12">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="row pt-100">
+            <div class="subscribe-area ptb-100 mt-40">
+                <div class="container">
+                    <div class="subscribe-content">
+                        <h2 class="section_title">Still have Questions?</h2>
+                        <a href="#" class="default-btn me-3">Whatsapp</a>
+                        <a href="#" class="default-btn">Visit FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<!-- Start Contact Area -->
+
+{% endblock %}

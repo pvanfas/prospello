@@ -1,0 +1,100 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="contact-info-area-start rts-section-gapTop">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="top">
+                    <h2 class="title">Contact Us</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row mt--0 g-5">
+            <div class="col-lg-4 col-md-6">
+                <div class="left-contact">
+                    <p class="top mb--30">
+                        Majicspace Interior & Architecture Firm
+                    </p>
+                    <p class="disc mb--20">
+                        An architecture firm is a professional organization that is our specializes in providing
+                        architectural services are typically comprised of a team of architects, designers, engineers
+                        and other professionals.
+                    </p>
+                    <a href="#">Hot Line: +91 7659 800 800</a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 pl--50 pl_md--15 pl_sm--15">
+                <div class="contact-info-mid">
+                    <p class="top-contact mb--20">Contact Details</p>
+                    <div class="single-information mt--30">
+                        <span>Address:</span>
+                        <p class="address" style="text-decoration: underline;">
+                            Athani, Kottakkal, Kerala 676503
+                        </p>
+                    </div>
+                    <div class="single-information">
+                        <span>Phone:</span>
+                        <a href="tel:+917659800800">
+                            +91 7659 800 800
+                        </a>
+                    </div>
+                    <div class="single-information">
+                        <span>Mail:</span>
+                        <a href="mailto:admin@majicspace.in">
+                            admin@majicspace.in
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <form action="" class="contact-form-conatct-page ajax reload" method="post">
+                    {% csrf_token %}
+                    <p class="top-contact mb--20">Contact Form</p>
+                    {{form.name}}
+                    {{form.phone}}
+                    {{form.message}}
+                    <div class="pt-4">
+                        <button type="submit" class="rts-btn btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container mt--120">
+        <div class="row">
+            <div class="col-lg-12">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d62654.923682501714!2d75.94319550483199!3d11.04367045501118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b51f785cffe1%3A0xc590425cdd43da8d!2sMAJICSPACE!5e0!3m2!1sen!2sin!4v1722790553224!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- rts footer area start -->
+<div class="rts-footer-area social-jumpanimation">
+    <div class="rts-copyright-area-two border-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copy-right-area-inner-two">
+                        <p class="disc">Copyright 2024. All Rights Reserved.</p>
+                        <div class="right">
+                            <ul>
+                                <li><a href="#">Terms & conditions</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+{% endblock %}

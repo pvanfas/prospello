@@ -1,0 +1,197 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        a,
+        button {
+            text-decoration: none
+        }
+
+        .text-center,
+        button {
+            text-align: center
+        }
+
+        .w-100,
+        table {
+            width: 100%
+        }
+
+        body {
+            background-color: #f6f6f6;
+            font: 13px/2 Montserrat, sans-serif;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            padding: 0;
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100% width: 100%
+        }
+
+        .btn a,
+        button {
+            cursor: pointer;
+            display: inline-block;
+            padding: 12px 25px
+        }
+
+        .container-fluid {
+            display: block;
+            max-width: 90%;
+            margin: 0 auto
+        }
+
+        .container {
+            display: block;
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 40px;
+            box-shadow: rgba(99, 99, 99, .2) 0 2px 8px 0
+        }
+
+        .btn a,
+        .m-0 {
+            margin: 0
+        }
+
+        button,
+        .btn {
+            background-color: #ff7f47;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 0 auto;
+            text-transform: capitalize;
+            white-space: nowrap;
+            padding: 8px 20px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+
+        .text-end {
+            text-align: right
+        }
+
+        img {
+            border: none;
+            -ms-interpolation-mode: bicubic;
+            max-width: 100%
+        }
+
+        table {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+            border-collapse: collapse;
+            border-spacing: 0;
+            margin-top: 20px
+        }
+
+        table td {
+            vertical-align: top;
+            font-family: Montserrat, sans-serif
+        }
+
+        td,
+        th {
+            padding: 6px
+        }
+
+        .bordered td,
+        .bordered th {
+            border: 1px solid #eee
+        }
+
+        h1 {
+            font-size: 30px;
+            font-weight: 500
+        }
+
+        h2 {
+            font-size: 18px
+        }
+
+        h3 {
+            font-size: 16px
+        }
+
+        .spacer {
+            display: block;
+            height: 40px
+        }
+
+        .header {
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+        .btn a {
+            border: 1px solid #3498db;
+            border-radius: 5px
+        }
+
+        hr {
+            border: 0;
+            border-bottom: 1px solid #f6f6f6
+        }
+
+        @media only print and (max-width: 600px) {
+            .container {
+                width: 100%;
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <a href="https://skydays.travel" title="Skydays" style="display:inline-block;" target="_blank">
+                <img src="https://skydays.travel/static/web/images/logo.svg" width="100"></a>
+        </div>
+
+        {% block content %}{% endblock %}
+        <span class="spacer"></span>
+        <hr>
+        <table width="100%">
+            <tr>
+                <td style="color:#999999;font-size:12px;line-height:16px;text-align:center">
+                    This information was intended for skydays Admin <br>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align:center;padding:10px 10px 10px 10px">
+                    <a href="https://www.facebook.com/skydaysindia/" style="display:inline-block;margin:2px"
+                        target="_blank"><img height="40"
+                            src="https://ci6.googleusercontent.com/proxy/SornkRnO4GrQZT0iSa-UgV18FNwPYEDGyUlt6-xoqW--lnyPbZyfjUGk-JRQ-IR_cdgOQI7TJKVEHnZGeGC3uyrhaw3LUS_U4x-JJJcemfwQmDGKsARlqE9-DW_XOZ-P5rOjhubjjq_xsYcZBtSu=s0-d-e1-ft#https://fiverr-res.cloudinary.com/q_auto,f_auto/v1/general_assets/system_emails/Facebook.png"
+                            width="40" class="CToWUd" data-bit="iit"></a>
+                    <a href="https://www.linkedin.com/company/skyhind-the-travel-people/"
+                        style="display:inline-block;margin:2px" target="_blank"><img height="40"
+                            src="https://ci6.googleusercontent.com/proxy/jaoIW25H-JLwQ_pH8nRfoFh86yBmMuXGoJWOT4Wj_YcM9tgGuhPzy3Yfc6Wbj38HYHnMEKmYdWWhxIFhOsX8QdcRf9fIp3ONZ-zvlc4z5gTeshSONbwdWwu7v-6CWyYC3IPIwj1RMWSZc_5mk5eo=s0-d-e1-ft#https://fiverr-res.cloudinary.com/q_auto,f_auto/v1/general_assets/system_emails/LinkedIn.png"
+                            width="40" class="CToWUd" data-bit="iit"></a>
+                    <a href="https://www.instagram.com/skydaystours/" style="display:inline-block;margin:2px"
+                        target="_blank"><img height="40"
+                            src="https://ci3.googleusercontent.com/proxy/LjzXeoCp_o0AZnQQR1R9LK_YM9W_H_aFgIvVOnagU1PzJKdS2aX_q84El48dBC4jgGZY-qFgSOgUgF5np5xGunT5qt-QJVflsuJ1gOFqwgK_BCCCz9gnuHpib2ZM-Z3VjtKnBuGdLFsFSZaQEmwtQg=s0-d-e1-ft#https://fiverr-res.cloudinary.com/q_auto,f_auto/v1/general_assets/system_emails/Instagram.png"
+                            width="40" class="CToWUd" data-bit="iit"></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+
+</html>

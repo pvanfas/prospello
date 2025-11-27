@@ -1,0 +1,38 @@
+{% extends 'web/base.html' %}
+{% load static crispy_forms_tags %}
+{% block content %}
+
+<section style="background: #F4F1EA;" id="packages">
+    <div class="container section_padding_sm packages">
+        <div class="row">
+            
+            <div class="col-12 mb-5">
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                    <ul id="progress-num">
+                        <li><span class="step active">1</span><span>Select Plan</span></li>
+                        <li><span class="step active">2</span><span>Select Meals</span></li>
+                        <li><span class="step active">3</span><span>Create Profile</span></li>
+                        <li><span class="step active">4</span><span>Add Address</span></li>
+                        <li><span class="step active">5</span><span>Set Delivery Address</span></li>
+                        <li><span class="step active">6</span>Finish</li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+                <div class="border_box">
+                    <p>
+                        We have received your subscription request. 
+                        Our team will review your request and get back to you shortly.
+                        Please check your email for further instructions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock content %}
+

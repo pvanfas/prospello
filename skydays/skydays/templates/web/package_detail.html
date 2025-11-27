@@ -1,0 +1,275 @@
+{% extends 'web/base.html' %} {% load static %} {% block content %}
+
+
+<div class="about-area section_padding_lg">
+    <div class="container">
+        <div class="row negative_parent">
+            <div class="col-md-12">
+                <div class="thumb">
+                    <img src="{{package.image.crop.1600x800}}" alt="Packages" />
+                </div>
+            </div>
+            <div class="col-md-11 negative_child z-upper  mx-auto">
+                <div class="about_card">
+
+                    <div class="row">
+                        <div class="col-md-10 mt-3 d-flex flex-wrap align-items-center">
+                            <i class="icon-location fs-30 text-orange"></i>
+                            <h2>{{package.destination}}</h2>
+                        </div>
+                        <div class="col-md-2 mt-3 text-end">
+                            <span class="text-orange fw-600 fs-20"><small class="fs-12">From </small> {{package.price}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-md-4 mt-2 text-center text-md-start">
+                            <span class="text-grey">{{package.duration}}</span>
+                        </div>
+                        <div class="col-md-4 mt-2 text-center text-md-center">
+                            <span class="text-grey">Departure from: {{package.departure_from}}</span>
+                        </div>
+                        <div class="col-md-4 mt-2 text-center text-md-end">
+                            <span class="text-grey">Package Validity: Up to {{package.available_until}}</span>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-3 border-top justify-content-between">
+                        <div class="col-md-6 mt-2 text-grey">
+                            {{description|linebreaksbr}}
+                        </div>
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 text-center mt-3">
+                            <a href="#pills-tab" class="btn btn-white bg-blue">Send Enquiry</a>
+                            {% if package.attachment %}
+                            <a href="{{package.attachment.url}}" target="_blank" class="btn btn-white-inverse text-blue">Download Brochure</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="package-details-wrapper section_padding_md">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="package-details">
+
+                    <div class="package-tab">
+
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-quote-tab" data-bs-toggle="pill" data-bs-target="#pills-quote" type="button" role="tab" aria-controls="pills-quote" aria-selected="true">
+                                    Easy Quote</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-overview-tab" data-bs-toggle="pill" data-bs-target="#pills-overview" type="button" role="tab" aria-controls="pills-overview" aria-selected="false"> 
+                                    Overview</button>
+                            </li>
+                            {% if package.itinerary %}
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-itinerary-tab" data-bs-toggle="pill" data-bs-target="#pills-itinerary" type="button" role="tab" aria-controls="pills-itinerary" aria-selected="false">
+                                    Itinerary</button>
+                            </li>
+                            {% endif %}
+                        </ul>
+
+                        <div class="tab-content p-tab-content" id="pills-tabContent">
+
+                            <div class="tab-pane fade show active" id="pills-quote" role="tabpanel" aria-labelledby="pills-quote-tab">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="tab-content-1 box">
+                                            <div class="p-itinerary">
+                                                <div class="title_box">
+                                                    <h4 class="text-orange">{{package.destination}}</h4>
+                                                </div>
+                                                <form action="" method="post" class="costing_form">
+                                                    {% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label for="">Date & Contact details</label>
+                                                        </div>
+                                                        <div class="col-md-10 text-end">
+                                                            <div class="row">
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group mb-3">
+                                                                        {{form.name}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group mb-3">
+                                                                        {{form.phone}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group mb-3">
+                                                                        {{form.whatsapp}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group mb-3">
+                                                                        {{form.email}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <div class="form-group mb-3">
+                                                                        {{form.date}}
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 d-flex">
+                                                                    <div class="form-group w-100">
+                                                                        {{form.hotel_category}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label for="">Travellers</label>
+                                                        </div>
+                                                        <div class="col-md-10 text-center mb-3">
+                                                            {% for form in formset.forms %}
+                                                            <div class="table-responsive">
+                                                                <table class="table" id="id_orders_table">
+                                                                    <tr class="border" id="{{ form.prefix }}-row">
+                                                                        <td class="form-group number_column text-start">
+                                                                            <span class="btn-secondary" type="button">Room <script>document.write("")</script> </span>
+                                                                            {{ form.id }}
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Adult</label>
+                                                                            <div class="number">{{form.adult}}</div>
+                                                                            <small>12+ Yrs</small>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Child with Bed</label>
+                                                                            <div class="number">{{form.child_with_bed}}</div>
+                                                                            <small>Below 12 Yrs</small>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Child without Bed</label>
+                                                                            <div class="number">{{form.child_without_bed}}</div>
+                                                                            <small>Below 12 Yrs</small>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Infant</label>
+                                                                            <div class="number">{{form.infant}}</div>
+                                                                            <small>0-2 Yrs</small>
+                                                                        </td>
+                                                     
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            {% endfor %} {{ formset.management_form }}
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label for="">Additional Info</label>
+                                                        </div>
+                                                        <div class="col-md-10 text-end">
+                                                            <div class="row">
+                                                                <div class="col-md-12">
+                                                                    <div class="form-group mb-3">
+                                                                        {{form.additional_info}}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row text-center mt-3 fs-16">
+                                                        <p class="text-grey fs-14 mb-2 d-flex flex-wrap align-items-center justify-content-center">
+                                                            <input type="checkbox"> I accept the
+                                                            <a href="{% url 'web:privacy_policy' %}"> Privacy Policy</a> &
+                                                            <a href="{% url 'web:terms_and_conditions' %}"> Terms & Conditions</a>
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="text-center pt-3">
+                                                        <button type="submit" class="btn btn-white bg-blue">Send Enquiry</button>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-overview" role="tabpanel" aria-labelledby="pills-overview-tab">
+                                <div class="tab-contant-3 box">
+                                    <div class="safe_content">
+                                        {{package.overview|safe}}
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="pills-itinerary" role="tabpanel" aria-labelledby="pills-itinerary-tab">
+                                <div class="tab-content-2 box">
+                                    <div class="safe_content">
+                                        {% if package.brochure %}    
+                                        <div id="adobe-dc-view" style="width: 800px;margin: 0 auto;"></div>
+                                        <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+                                        <script type="text/javascript">
+                                            document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+                                                var adobeDCView = new AdobeDC.View({clientId: "73405d4783f94024aa3660625651a391", divId: "adobe-dc-view"});
+                                                adobeDCView.previewFile({
+                                                    content:{location: {url: "{{package.brochure.url}}"}},
+                                                    metaData:{fileName: "{{package}} Brochure"}
+                                                }, {embedMode: "IN_LINE", showPrintPDF: false});
+                                            });
+                                        </script>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'web/js/jquery.formset.js' %}"></script>
+<script>
+    $('#id_orders_table tr').formset({
+        addText: '+ Add Room',
+        deleteText: '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>',
+        prefix: 'traveller',
+        addCssClass: 'btn btn-primary text-center',
+        deleteCssClass: 'btn-x',
+        added: function(row) {
+            $(row).find('input[type=number]').each(function() {
+                if (!$(this).val()) {
+                    $(this).val(0);
+                }
+            });
+        }
+    });
+</script>
+<script>
+    $('#id_phone').on('change', function() {
+        $('#id_whatsapp').val($(this).val());
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,131 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-padding-1 add_bg">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2 class="m-0">Cart</h2>
+        </div>
+    </div>
+</div>
+
+{% if cart_items %}
+<div class="cart-area pt-60 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="">
+                    <div class="cart-table-content">
+                        <div class="table-content table-responsive">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th class="width-thumbnail"></th>
+                                        <th class="width-name">Product</th>
+                                        <th class="width-price"> Price</th>
+                                        <th class="width-quantity">Quantity</th>
+                                        <th class="width-subtotal">Subtotal</th>
+                                        <th class="width-remove"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for item in cart_items %}
+                                    <tr>
+                                        <td class="product-thumbnail">
+                                            <a href="{{ item.product.get_absolute_url }}"><img
+                                                    src="{{ item.product.image.url }}" alt="" style="height: 60px;object-fit: cover;"></a>
+                                        </td>
+                                        <td class="product-name">
+                                            <h5><a href="{{ item.product.get_absolute_url }}">
+                                                {{ item.product.name }}</a></h5>
+                                        </td>
+                                        <td class="product-cart-price"><span class="amount">
+                                            AED {{ item.product.get_price }}</span></td>
+                                        <td class="cart-quality">
+                                            <div class="product-quality">
+                                                <div class="dec qtybutton quantity-minusing"
+                                                    data-product-Id="{{ item.product.id }}" data-cart-id="{{ item.id }}"
+                                                    min="1">-</div>
+                                                <input class="cart-plus-minus-box input-text qty text"
+                                                    id="product-qty{{ item.product.id }}" name="quantity"
+                                                    value="{{item.quantity}}" readonly>
+                                                <div class="inc qtybutton quantity-plusing"
+                                                    data-product-Id="{{ item.product.id }}"
+                                                    id="quantity-{{ item.product.id }}" min="1" disabled
+                                                    value="{{ item.quantity }}">+</div>
+                                            </div>
+                                        </td>
+                                        <td class="product-total">
+                                            AED <span id="product-price{{ item.product.id }}">
+                                                {{ item.subtotal|floatformat:2 }}</span>
+                                        </td>
+                                        <td class="product-remove remove-cart">
+                                            <a href="{% url 'web:remove_cart_item' item.id %}">
+                                                <i  class="ti-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="row justify-content-between mt-40">
+            
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="cart-calculate-discount-wrap mb-40">
+                    <div class="calculate-discount-content">
+                        <p>Enter your coupon code if you have one.</p>
+                        <div class="input-style">
+                            <input type="text" placeholder="Coupon code">
+                        </div>
+                        <div class="calculate-discount-btn btn-hover">
+                            <a class="btn theme-color" href="#">Apply Coupon</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 col-12">
+                <div class="grand-total-wrap">
+                    <div class="grand-total-content">
+                        <div class="grand-total">
+                            <h4>Total <span>AED <span class="cart_total"> {{cart_total|floatformat:2}}</span></span></h4>
+                        </div>
+                    </div>
+
+                    <div class="grand-total-btn btn-hover">
+                        <a class="btn theme-color" href="{% url 'web:checkout' %}">Proceed to checkout</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% else %}
+<div class="cart-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cart-empty
+                    text-center">
+                    <h2 class="fw-600 mb-30">Your cart is currently empty.</h2>
+                    <a href="{% url 'web:products' %}" class="btn btn-brown border">Return to shop</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+
+{% block js %}
+<script src="{% static 'web/js/cart.js' %}"></script>
+{% endblock js %}

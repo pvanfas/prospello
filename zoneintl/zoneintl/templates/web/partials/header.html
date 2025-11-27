@@ -1,0 +1,139 @@
+{% load static %}
+<!-- Main Header-->
+<header class="main-header header-style-two">
+  <!-- Header top -->
+  <!-- <div class="header-top">
+        <div class="inner-container">
+            <div class="top-left">
+                <div class="service-num"> -->
+  <!-- <a href="tel:733255488"><i class="fa fa-phone"></i>+44 7778 694777</a>
+                    <div class="text">Call us for any question or concern</div> -->
+  <!-- </div>
+            </div>
+            <marquee>
+            <div class="top-right">
+                <ul class="contact-list">
+
+                    <li><a href="tel:733255488"><i class="fa fa-phone"></i>+44 7778 694777</a></li>
+                    <li><a href="#"><i class="fa fa-envelope"></i>info@zoneintl.com</a></li>
+                    <li><i class="fa fa-map-marker"></i>121 King Street,London</li>
+
+                </ul>
+            </div>
+        </marquee>
+        </div>
+    </div> -->
+  <!-- End Header Top -->
+
+  <marquee>
+    <div class="top-right">
+      <a href="#" style="color: white; !important"><i class="fa fa-phone"></i>&nbsp; +44 7778 694777 &nbsp;&nbsp;
+        <i class="fa fa-envelope"></i> &nbsp; info@zoneintl.com &nbsp;&nbsp; <i class="fa fa-map-marker"></i>
+        &nbsp; International House, 64 Nile Street, London N1 7SR, United Kingdom</a>
+
+    </div>
+  </marquee>
+
+  <!-- Main box -->
+  <div class="main-box">
+    <div class="auto-container">
+      <div class="menu-box">
+        <div class="logo"><a href="/"><img src="{% static 'web/images/logo-2.png' %}" alt="" title=""></a></div>
+
+        <!--Nav Box-->
+        <div class="nav-outer">
+          <!-- Main Menu -->
+          <nav class="main-menu navbar-expand-md navbar-light">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navigation clearfix">
+
+                <li><a href="/" style="color: white; !important">Home</a></li>
+                <li><a href="{% url 'web:about' %}" style="color: white; !important">About us</a></li>
+                <li class="dropdown">
+                  <a><span style="color: white; !important">Study</span></a>
+                  <ul>
+                    <li><a href="{% url 'web:courses' %}" style="color: white; !important">Courses</a></li>
+                    <li><a href="{% url 'web:universities' %}" style="color: white; !important">Universities</a></li>
+                  </ul>
+                </li>
+                <li><a href="{% url 'web:services' %}" style="color: white; !important">Services</a></li>
+                <li><a href="{% url 'web:contact' %}" style="color: white; !important">Contact us</a></li>
+
+              </ul>
+            </div>
+          </nav>
+          <!-- Main Menu End-->
+        </div>
+
+        <div class="outer-box">
+
+          <div class="service_wrapper">
+            <span class="icon flaticon-whatsapp" style="color: white; !important"></span>
+            <p style="color: white; !important">Whatsapp us</p>
+            <a href="https://wa.me/447778694777?text=Hello%20Zone%20INTL">
+              <h4 style="color: white; !important">+44 7778 694777</h4>
+            </a>
+          </div>
+
+          <!-- Search Btn -->
+          <!-- <div class="search-box">
+                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                    </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Header  -->
+  <div class="sticky-header">
+    <div class="main-box">
+      <!--Keep This Empty / Menu will come through Javascript-->
+    </div>
+  </div><!-- End Sticky Menu -->
+
+  <!-- Mobile Header -->
+  <div class="mobile-header" style="background-color: #2c2f50;">
+    <div class="logo"><a href="/"><img src="{% static 'web/images/logo-2.png' %}" alt="" title=""></a></div>
+
+    <!--Nav Box-->
+    <div class="nav-outer clearfix">
+      <!--Keep This Empty / Menu will come through Javascript-->
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Header -->
+  <div class="mobile-sticky-header">
+    <div class="logo"><a href="/"><img src="{% static 'web/images/logo-2.png' %}" alt="" title=""></a></div>
+
+    <!--Nav Box-->
+    <div class="nav-outer clearfix">
+      <!--Keep This Empty / Menu will come through Javascript-->
+    </div>
+  </div>
+
+  <!-- Mobile Menu  -->
+  <div class="mobile-menu">
+    <span class="mobile-menu-back-drop"></span>
+    <div class="menu-outer">
+      <nav class="menu-box">
+        <div class="nav-logo"><a href="/"><img src="{% static 'web/images/logo-2.png' %}" alt="" title=""></a></div>
+        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+      </nav>
+
+      <!-- <div class="menu-search">
+                <form method="post" action="http://html.rainbow-themes.net/setech/blog-checkerboard.html">
+                    <div class="form-group">
+                        <input type="text" class="input" name="search-field" value="" placeholder="Search..." required="">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+            </div> -->
+    </div>
+  </div><!-- End Mobile Menu -->
+
+  <!-- Header Search -->
+
+  <!-- End Header Search -->
+
+</header>
+<!--End Main Header -->

@@ -1,0 +1,65 @@
+{% extends 'web/base.html' %}
+
+{% load static extras %}
+
+{% block content %}
+
+<div class="package-area section_padding_md">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h1 class="fs-30 fw-700">Explore <span class="text-orange">international tour packages!</span></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            {% for departure in fixed_departures %}
+            <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp animated" data-wow-duration="1500ms"
+                data-wow-delay="0ms">
+                <div class="package-card">
+                    <div class="package-thumb">
+                        <img src="{{departure.image.crop.280x160}}" alt="{{departure.destination}}" class="img-fluid">
+                        {% if departure.is_sold_out %}
+                        <img src="/static/web/images/soldout.png" alt="" class="soldout">
+                        {% endif %}
+                    </div>
+                    <div class="package-details">
+                        <div class="d-flex flex-wrap align-items-center">
+                            <i class="icon-location fs-20 text-orange"></i>
+                            <div class="content ms-2">
+                                <h5>{{departure.destination}}</h5>
+                                <small class="text-grey ">{{departure.duration}}</small>
+                            </div>
+                        </div>
+
+                        <div class="align-items-center d-flex flex-wrap fs-12 justify-content-between mb-1 mt-2">
+                            <span class="text-grey">From {{departure.departure_from}}</span>
+                            <span class="text-grey">{{departure.date|date:"j M"}}</span>
+                        </div>
+
+                        <small class="text-block">Total number of seats : {{departure.total_seats}}</small>
+                        <small class="text-block" class="text-orange">seats available :
+                            {{departure.available_seats}}</small>
+
+                        <div class="d-flex flex-wrap align-items-center justify-content-between mt-2 text-orange">
+                            <h6 class="fw-600">{{departure.price|change_currency:currency}}</h6>
+                            <a href="{{departure.get_absolute_url}}" class="btn btn-sm btn-primary btn-radius">Book Now
+                                <i class="icon-right"></i></a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+{% include 'web/partials/offers.html' %}
+
+{% endblock %}

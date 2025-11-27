@@ -1,0 +1,41 @@
+{% extends 'website/base.html' %}
+{% load static %}{% load filters %}
+{% block title %}Careers | FETCH - Embellish with style & comfort{% endblock %}
+
+{% block content %}
+
+
+<section id="hero" class="filters pb-0 d-flex align-items-center">
+    <div class="container">
+        <h1 class="main_head w-50">Careers</h1>
+    </div>
+</section>
+
+<main>
+    <section id="blog" class="blog" style="background: url({% static 'web/images/contact_bg.svg' %}) no-repeat right bottom;background-size: contain;">
+        <div class="container">
+
+            <div class="row">
+                {% for career in careers %}
+                <div class="col-lg-4 p-4">
+                    <div class="box bg-red text-white d-flex">
+                        <img src="{{career.featured_image.crop.300x300}}" class="img-fluid w-50" alt="" />
+                        <div class="box-content">
+                            <h6>{{career.title}}</h6>
+                            <a href="{{career.get_view_url}}" class="circ-btn bg-tertiary"><i class="bi bi-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+    <section class="m-0 p-0" style="background: url({% static 'web/images/contact_bg.svg' %}) no-repeat left bottom;background-size: cover;">
+        {% include 'website/partials/footer.html' %}
+    </section>
+
+</main>
+
+{% endblock %}

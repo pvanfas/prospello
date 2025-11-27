@@ -1,0 +1,120 @@
+{% load static %}
+<!--app-sidebar-->
+<div class="sticky">
+    <aside class="app-sidebar">
+        <div class="app-sidebar__logo">
+            <a class="header-brand" href="/">
+                <img src="{{app_settings.logo}}" class="header-brand-img desktop-lgo" alt="">
+                <img src="{{app_settings.logo}}" class="header-brand-img dark-logo" alt="">
+                <img src="{{app_settings.favicon}}" class="header-brand-img mobile-logo" alt="">
+                <img src="{{app_settings.favicon}}" class="header-brand-img darkmobile-logo" alt="">
+            </a>
+        </div>
+        <div class="app-sidebar3">
+            <div class="main-menu">
+
+                <ul class="side-menu">
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:slider_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:slider_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Sliders</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:category_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Categories</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:recipient_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Recipients</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:occasion_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Occasions</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:emotion_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Emotions</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:product_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Products</span>
+                        </a>
+                    </li>
+
+                    
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:offer_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Offers</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:testimonial_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Testimonials</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:collection_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Collections</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:section_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Sections</span>
+                        </a>
+                    </li>
+
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:order_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Orders</span>
+                        </a>
+                    </li>
+                    
+                    <li class="slide">
+                        <a class="side-menu__item" data-bs-toggle="slide" href="{% url 'main:custom_order_list' %}">
+                            <i class="feather feather-bookmark sidemenu_icon"></i>
+                            <span class="side-menu__label">Custom Orders</span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="slide-right" id="slide-right">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </aside>
+</div>

@@ -1,0 +1,28 @@
+<!-- Start Responsive Navbar Area -->
+<div class="responsive-navbar offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas">
+    <div class="offcanvas-header">
+        <a href="{% url 'web:index' %}" class="logo d-inline-block">
+            <img src="/static/web/images/logo/logocolor.svg" alt="" style="width: 100%;height: 40px;object-fit: contain;object-position: left;">
+            <img src="/static/web/images/logo/logowhite.svg" class="sticky" alt="" style="display:none;width: 100%;height: 40px;object-fit: contain;object-position: left;">
+        </a>
+        <button type="button" class="close-btn" data-bs-dismiss="offcanvas" aria-label="Close">
+            <i class="ri-close-line"></i>
+        </button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="accordion" id="navbarAccordion1">
+            <div class="accordion-item"><a href="{% url 'web:index' %}" class="accordion-link active">Home</a></div>
+            <div class="accordion-item"><a href="{% url 'web:courses' %}" class="accordion-link">Courses</a></div>
+            <div class="accordion-item"><a href="{% url 'web:mentors' %}" class="accordion-link">Our Mentors</a></div>
+            <!-- <div class="accordion-item"><a href="{% url 'web:centers' %}" class="accordion-link">Our Centers</a></div> -->
+            <div class="accordion-item"><a href="{% url 'web:webinars' %}" class="accordion-link">Webinars</a></div>
+            <div class="accordion-item"><a href="{% url 'web:about' %}" class="accordion-link">About Us</a></div>
+            <div class="accordion-item"><a href="{% url 'web:contact' %}" class="accordion-link">Contact Us</a></div>
+            <div class="accordion-item"><a href="{% url 'web:refer' %}" class="accordion-link">Refer & Earn</a></div>
+            <div class="accordion-item"><a href="{% url 'web:case_studies' %}" class="accordion-link">Brand Case Studies</a></div>
+            <div class="accordion-item"><a href="{% url 'web:blog' %}" class="accordion-link">Blogs</a></div>
+            <div class="accordion-item"><a href="{% url 'web:communities' %}" class="accordion-link">Join Communities</a></div>
+        </div>
+    </div>
+</div>
+<!-- End Responsive Navbar Area -->

@@ -1,0 +1,55 @@
+{% load static %}
+{% load filters %}
+<section class="filters d-flex align-items-center">
+    <form action="" method="get" class="w-100">
+        <div class="container">
+            <div class="row filter_bar">
+                <div class="col-md-3 p-0">
+                    <div class="form-group">
+                        {{products.form.category}}
+                    </div>
+                </div>
+
+                <div class="col-md-9 p-0">
+                    <div class="form-group">
+                        <div class="inline_form">
+                            {{products.form.name}}
+                            <button type="submit" class="search_btn"><i class="bi bi-search"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </form>
+
+</section>
+<section id="products" class="products">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            {% for product in products.qs %}
+            <div class="col-md-3 col-sm-6 p-4 abs-margin">
+                <div class="neuromorphic_card" onclick="location.href = '{{product.get_view_url}}';">
+                    <div class="text-center">
+                        <img src="{{product.featured_image.url}}" loading="lazy" class="img-fluid img-abs" alt="Fetch office chairs Kerala" onclick="location.href = '{{product.get_view_url}}';" />
+                    </div>
+
+                    <div class="text-content h-100">
+                        <strong class="mb-1 text-center">{{product.name}}</strong>
+                        {% comment %}
+                        <p class="m-0">{{product.summary|linebreaksbr}}</p>
+                        {% endcomment %}
+                    </div>
+                    <a href="{{product.get_view_url}}" class="circ-btn"><i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+            {% empty %}
+            <div class="text-center">
+                <p>No Products Found</p>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{% load static %}{% load filters %}
+{% if testimonials %}
+<section id="testimonials" class="testimonials" style="background: url({% static 'web/images/testimonial_bg.svg' %}) no-repeat left bottom;background-size: cover;">
+    <div class="container">
+        <div class="content text-center">
+            <h3>TESTIMONIALS</h3>
+            <span class="pattern mx-auto w-100p"></span>
+        </div>
+
+        <div class="testimonials-slider swiper">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div class="testimonial-item text-center mx-auto">
+                        <span class="spacer"></span>
+                        <p class="text-bold w-50 text-center mx-auto mh-100px">
+                            {{testimonial.content}}
+                        </p>
+                        <span class="spacer"></span>
+                        <div class="profile">
+                            <img src="{{testimonial.photo.crop.200x200}}" class="testimonial-img" alt="customer photo" />
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+{% endif %}

@@ -1,0 +1,91 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ltn_utilize-overlay"></div>
+
+<!-- BREADCRUMB AREA START -->
+<div class="ltn_breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bs-bg="{% static 'web/img/bg/14.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn_breadcrumb-inner">
+                    <h1 class="page-title">Inside the Blog</h1>
+                    <div class="ltn_breadcrumb-list">
+                        <ul>
+                            <li><a href="/"><span class="ltn_secondary-color"><i class="fas fa-home"></i></span>
+                                    Home</a></li>
+                            <li>Inside the Blog</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+
+<!-- PAGE DETAILS AREA START (blog-details) -->
+<div class="ltn_page-details-area ltn_blog-details-area mb-120">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="ltn_blog-details-wrap">
+                    <div class="ltn_page-details-inner ltn_blog-details-inner">
+                        <div class="ltn_blog-meta">
+                            <ul>
+                                <li class="ltn_blog-category">
+                                    <a href="#">Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <h2 class="ltn_blog-title">{{blog.title}}</h2>
+                        <div class="ltn_blog-meta">
+                            <ul>
+                                <li class="ltn_blog-date">
+                                    <i class="far fa-calendar-alt"></i>{{blog.date}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ltn__blog-details-img">
+                            <img src="{{blog.image.url}}" class="w-100" alt="#">
+                        </div>
+                        {{ blog.content|safe }}
+
+                    </div>
+                    <!-- blog-tags-social-media -->
+
+                    <div class="related-post-area">
+                        <h4 class="title-2">Related Posts</h4>
+                        <div class="row">
+                            {% for blog in related_blogs %}
+                            <div class="col-md-4">
+                                <!-- Blog Item -->
+                                <div class="ltn_blog-item ltn_blog-item-6">
+                                    <div class="ltn_blog-img">
+                                        <a href="{{blog.get_absolute_url}}"><img src="{{blog.image.url}}"
+                                                alt="Image"></a>
+                                    </div>
+                                    <div class="ltn_blog-brief">
+                                        <div class="ltn_blog-meta">
+                                            <ul>
+                                                <li class="ltn_blog-date ltn_secondary-color">
+                                                    <i class="far fa-calendar-alt"></i>{{blog.date}}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <h3 class="ltn_blog-title"><a href="blog-details.html">{{blog.title}}</a></h3>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- PAGE DETAILS AREA END -->
+
+{% endblock content %}

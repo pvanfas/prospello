@@ -1,0 +1,91 @@
+{% extends 'web/base.html' %}
+
+{% load static extras %}
+
+{% block content %}
+
+
+<div class="blog-details-wrapper section_padding_md">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="blog-details">
+                    <div class="blog-title-xl">
+
+                        <div class="row align-items-center justify-content-between">
+                            <div class="col-10">
+                                <h3>{{blog.title}}</h3>
+                            </div>
+                            <div class="col-2 text-end">
+                                <a class="blog-tag" href="#"><i class="icon-tag"></i>{{blog.tag}}</a>
+                            </div>
+                        </div>
+
+                        <div class="blog-info-xl row align-items-center justify-content-start">
+
+                            <div class="d-flex flex-wrap align-items-center col-md-2">
+                                <img src="{{blog.author.image.url}}" class="rounded-circle me-2" style="width: 30px;"
+                                    alt="{{blog.author.name}}" />
+                                <span class="fw-500 fs-14">By {{blog.author.name}}</span>
+                            </div>
+                            <div class="col-md-2">
+                                <i class="icon-calendar"></i>
+                                <small>{{blog.date}}</small>
+                            </div>
+                            <div class="col-md-2">
+                                <i class="icon-eye"></i>
+                                <small>{{blog.views}}</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="blog-img-xl">
+                        <img src="{% static 'web/images/blog.png' %}" alt="" class="img-fluid b-radius">
+                    </div>
+                    <h4 class="fw-700 mt-4">{{blog.title}}</h4>
+
+                    <div class="blog-texts mt-30 fs-14 text-black">
+                        {{blog.content|safe}}
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="package-area section_padding_md">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h1 class="fs-30 fw-700">Popular <span class="text-orange">Blogs</span></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row owl-carousel destination_slider">
+            {% for blog in popular_blogs %}
+            <div class="package-card border-0">
+                <div class="package-thumb b-radius">
+                    <a href="{{blog.get_absolute_url}}" class="w-100">
+                        <img src="{{blog.image.url}}" alt="{{blog.title}}" class="img-fluid">
+                    </a>
+                </div>
+                <div class="package-details bg-none px-0">
+                    <div class="content ms-2">
+                        <span class="text-grey fs-12 fw-600 mb-2 d-block">{{blog.date}}</span>
+                        <h6 class="fw-700">{{blog.title}}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+    {% load static %}
+    <!-- start header -->
+    <header>
+        <!-- start navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-transparent header-light fixed-top navbar-boxed header-reverse-scroll">
+            <div class="container-fluid nav-header-container">
+                <div class="col-auto col-sm-6 col-lg-2 mr-auto pl-lg-0">
+                    <a class="navbar-brand" href="/">
+                        <img src="{% static 'web/images/logo.svg' %}" class="default-logo" alt="" style="height: 60px;object-fit: contain;">
+                        <img src="{% static 'web/images/logo-black.svg' %}" class="alt-logo" alt="" style="height: 50px;object-fit: contain;">
+                        <img src="{% static 'web/images/logo-black.svg' %}" class="mobile-logo" alt="" style="height: 50px;object-fit: contain;">
+                    </a>
+                </div>
+                <div class="col-auto col-lg-8 menu-order px-lg-0">
+                    <button class="navbar-toggler float-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                        <span class="navbar-toggler-line"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                        <ul class="navbar-nav alt-font">
+                            <li class="nav-item">
+                                <a href="{% url 'web:index' %}" class="nav-link">Home</a>
+                            </li>
+
+                            <li class="nav-item dropdown simple-dropdown">
+                                <a href="#" class="nav-link">About</a>
+                                <i class="fa fa-angle-down dropdown-toggle" data-toggle="dropdown" aria-hidden="true"></i>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li class="dropdown"><a href="{% url 'web:about' %}">About</a></li>
+                                    <li class="dropdown"><a href="{% url 'web:story' %}">Our Story</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item"><a href="{% url 'web:projects' %}" class="nav-link">Projects</a></li>
+                            <li class="nav-item"><a href="{% url 'web:services' %}" class="nav-link">Services</a></li>
+                            <li class="nav-item"><a href="{% url 'web:careers' %}" class="nav-link">Careers</a></li>
+                            <li class="nav-item"><a href="{% url 'web:updates' %}" class="nav-link">Updates</a></li>
+                            <li class="nav-item"><a href="{% url 'web:contact' %}" class="nav-link">Contact</a></li>
+
+                            <li class="nav-item"><a href="#" data-toggle="modal" data-target="#exampleModalLong" class="nav-link">Appointment</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+
+    </header>
+    <!-- end header -->

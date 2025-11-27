@@ -1,0 +1,14 @@
+{% load static %}
+{% if clients %}
+<section id="clients" class="clients">
+    <div class="container">
+        <div class="clients-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+                {% for client in clients %}
+                <div class="swiper-slide"><img src="{{client.logo.url}}" class="img-fluid" alt="fetch clients" /></div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

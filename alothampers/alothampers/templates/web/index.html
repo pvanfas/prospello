@@ -1,0 +1,302 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+<div class="slider-banner-area header-border-top-1 pt-60 pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-7 col-sm-7">
+                <div class="slider-active swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for slider in sliders %}
+                        <div class="swiper-slide">
+                            <div class="intro-section slider-height-2 slider-content-center bg-img single-animation-wrap slider-bg-color-3"
+                                style="background-image:url({{slider.image.url}})">
+                                <div class="hm2-slider-animation">
+                                    <div class="slider-content-2 slider-content-2-mrg slider-animated-3">
+                                        <h3 class="animated">{{slider.topline}}</h3>
+                                        <h1 class="font-inc animated">{{slider.title|linebreaksbr}}</h1>
+                                        <div class="slider-btn-2 btn-hover">
+                                            <a href="{{slider.link}}" class="btn hover-border-radius theme-color animated">
+                                                Shop Now
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        <div class="home-slider-prev2 main-slider-nav2"><i class="fa fa-angle-left"></i></div>
+                        <div class="home-slider-next2 main-slider-nav2"><i class="fa fa-angle-right"></i></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-5 col-sm-5">
+                <div class="banner-wrap banner-wrap-margin slider-height-2">
+                    <a href="{% url 'web:customize' %}"><img src="/static/web/images/banner/customize.png" alt=""></a>
+                    <div class="banner-content-7">
+                        <h2>Customize</h2>
+                        <span>Your Gift</span>
+                    </div>
+                    <div class="btn-style-4">
+                        <a class="btn" href="{% url 'web:customize' %}">Get Started</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="banner-area pt-0 pb-60">
+    <div class="container">
+        <div class="row mb-60">
+            <div class="col-md-8 mx-auto">
+                <div class="header-action-style header-search-1">
+                    <div class="search-wrap-1 open">
+                        <form action="{% url 'web:products' %}" method="get">
+                            <input placeholder="Search products…" type="text" name="q">
+                            <button class="button-search"><i class="pe-7s-search"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            {% for category in categories %}
+            <div class="col-lg-2x col-md-3 col-4">
+                <a href="{{category.get_absolute_url}}">
+                    <div class="banner-wrap mb-15">
+                        <img src="{{category.icon.url}}" alt="" class="w-100 filter" style="height: 80px;object-fit: contain;">
+                        <div class="banner-content-1">
+                            <h5>{{category.name}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row justify-content-center mt-20">
+            {% for recipient in recipients %}
+            <div class="col-lg-2x col-md-3 col-4">
+                <a href="{{recipient.get_absolute_url}}">
+                    <div class="banner-wrap mb-15">
+                        <img src="{{recipient.image.url}}" alt="" class="w-100">
+                        <div class="banner-content-1">
+                            <h5>{{recipient.name}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="product-area pt-60 pb-60 add_bg">
+    <div class="container">
+
+        <div class="section-title-tab-wrap mb-60 aos-init aos-animate">
+            <div class="section-title-2">
+                <h2>Trending Products</h2>
+            </div>
+        </div>
+
+        <div class="product-slider-active-1">
+            <div class="swiper-container trending_slider">
+                <div class="swiper-wrapper">
+                    {% for product in trending_products %}
+                    <div class="swiper-slide">
+                        <div class="product-wrap mb-35">
+                            <div class="border img-zoom mb-25 product-img shadow-sm">
+                                <a href="{{product.get_absolute_url}}">
+                                    <img src="{{product.image.url}}" alt="" style="height: 250px;object-fit: cover;" class="shadow">
+                                </a>
+                                {% if product.has_offer %}
+                                <div class="product-badge badge-top badge-right badge-pink">
+                                    <span>-{{product.get_offer.discount}}%</span>
+                                </div>
+                                {% endif %}
+                                <div class="product-action-2-wrap">
+                                    <a href="{{product.get_absolute_url}}" class="product-action-btn-2" title="Quick View">Quick View</a>
+                                </div>
+                            </div>
+                            <div class="product-content">
+                                <h3><a href="{{product.get_absolute_url}}">{{product.name}}</a></h3>
+                                <div class="product-price">
+                                    {% if product.has_offer %}
+                                    <span class="old-price">AED {{product.get_offer.offer_price}} </span>
+                                    {% endif %}
+                                    <span class="new-price">AED {{product.sale_price}} </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% for section in sections %}
+<div class="product-area pb-60 {% cycle '' 'add_bg' %}">
+    <div class="container pt-60">
+        <div class="row" style="{% cycle 'flex-direction:row' 'flex-direction:row-reverse' %}">
+            <div class="col-lg-5 col-md-6">
+                <div class="home-single-product-img aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#"><img src="{{section.image.url}}" alt=""
+                            style="height: 380px;object-fit: contain;"></a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-6">
+                <div class="home-single-product-content">
+                    <h2 data-aos="fade-up" data-aos-delay="200" class="aos-init aos-animate mb-4">
+                        {{section.title}}
+                    </h2>
+                    <p data-aos="fade-up" data-aos-delay="600" class="aos-init aos-animate">
+                        {{section.description|linebreaksbr}}
+                    </p>
+
+                    <div class="product-details-action-wrap aos-init aos-animate mt-4" data-aos="fade-up"
+                        data-aos-delay="1000">
+                        <div class="single-product-cart btn-hover ms-0">
+                            <a href="{{section.button_link|default:"javascript:void(0);"}}">{{section.button_text}}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% if offers %}
+<div class="product-area pb-60 pt-60">
+    <div class="container">
+        <div class="section-border section-border-margin-1" data-aos="fade-up" data-aos-delay="200">
+            <div class="section-title-timer-wrap ">
+                <div class="section-title-1">
+                    <h2>Deal Of The Day</h2>
+                </div>
+            </div>
+        </div>
+        <div class="product-slider-active-1 swiper-container">
+            <div class="swiper-wrapper">
+                {% for offer in offers %}
+                <div class="swiper-slide">
+                    <div class="product-wrap" data-aos="fade-up" data-aos-delay="200">
+                        <div class="border img-zoom mb-25 product-img shadow-sm">
+                            <a href="{{offer.product.get_absolute_url}}">
+                                <img src="{{offer.product.image.url}}" alt="">
+                            </a>
+                            <div class="product-badge badge-top badge-right badge-pink">
+                                <span>-{{offer.discount}}%</span>
+                            </div>
+                            <div class="product-action-2-wrap">
+                                <button class="product-action-btn-2" title="Add To Cart">
+                                    Quick View</button>
+                            </div>
+
+                        </div>
+                        <div class="product-content">
+                            <h3><a href="{{offer.product.get_absolute_url}}">{{offer.product.name}}</a></h3>
+                            <div class="product-price">
+                                {% if offer.product.has_offer %}
+                                <span class="old-price">AED {{offer.product.sale_price}} </span>
+                                {% endif %}
+                                <span class="new-price">AED {{offer.offer_price}} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="product-prev-1 product-nav-1" data-aos="fade-up" data-aos-delay="200"><i
+                    class="fa fa-angle-left"></i></div>
+            <div class="product-next-1 product-nav-1" data-aos="fade-up" data-aos-delay="200"><i
+                    class="fa fa-angle-right"></i></div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+<div class="banner-area pt-60 pb-60 add_bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-30">
+                <h5 class="fw-semibold mb-3">Say Goodbye To Boring Gifts </h5>
+                <p>
+                    and hello to the unconventional way of gifting! Discover unique gifts made for special occasions for
+                    your loved ones.
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            {% for occasion in occasions %}
+            <div class="col-lg-2 col-md-3 col-sm-4 col-6 h-100">
+                <a href="{{occasion.get_absolute_url}}" class="h-100">
+                    <div class="banner-wrap mb-10 mt-10">
+                        <img src="{{occasion.image.url}}" alt="" class="w-100"
+                            style="height: 120px;object-fit: contain;">
+                        <div class="banner-content-1">
+                            <h5>{{occasion.name}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+<div class="banner-area pb-70 pt-0">
+    <div class="container">
+        <div class="row">
+            {% for collection in collections %}
+            <div class="col-lg-4">
+                <div class="banner-wrap mb-30" data-aos="fade-up" data-aos-delay="400">
+                    <a href="{{collection.get_absolute_url}}"><img src="{{collection.image.url}}" alt=""
+                            style="height:260px"></a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div class="testimonial-area pb-80">
+    <div class="container">
+        <div class="section-title-2 st-border-center text-center mb-75" data-aos="fade-up" data-aos-delay="200">
+            <h2>Testimonial</h2>
+        </div>
+        <div class="testimonial-active swiper-container">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                <div class="swiper-slide">
+                    <div class="single-testimonial" data-aos="fade-up" data-aos-delay="200">
+                        <div class="testimonial-img">
+                            <img src="{{testimonial.image.url}}" alt="" class="shadow-sm">
+                        </div>
+                        <p>{{testimonial.content}}</p>
+                        <div class="testimonial-info">
+                            <h4>{{testimonial.name}}</h4>
+                            <span>{{testimonial.position}}</span>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

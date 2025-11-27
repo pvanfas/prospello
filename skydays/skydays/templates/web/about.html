@@ -1,0 +1,140 @@
+{% extends 'web/base.html' %}
+
+{% load static extras %}
+
+{% block content %}
+
+
+<div class="about-area section_padding_sm">
+    <div class="container">
+        <div class="row negative_parent">
+            <div class="col-md-11 mx-auto">
+                <div class="about_card">
+                    <div class="row">
+                        <div class="col-md-4 mt-3">
+                            <h1 class="fs-24 fw-700">WHAT MAKES SKYDAYS THE BEST TRAVEL AGENCY <br><span
+                                    class="text-orange">IN KERALA</span></h1>
+                        </div>
+                        <div class="col-md-8 mt-3">
+                            <p>
+                                Meet our team of seasoned travel experts, passionate about turning your wanderlust into reality. 
+                                Collaborating closely with you, we design a personalized tour that caters to your individual needs, 
+                                whether you're exploring solo, with friends, or alongside family. From your first inquiry to the 
+                                moment you step back into the familiar, we're dedicated to making your journey smooth, memorable, 
+                                and stress-free. The commitment we have to our customers has allowed us to remain a leading travel 
+                                agency in Kerala.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <h5>Vision</h5>
+                            <p>
+                                At Skydays, we make your dream vacation a reality with the most superior travel agency in Kerala. 
+                                We envision inspiring and empowering individuals to traverse the globe, fostering meaningful 
+                                connections with diverse cultures. We believe in the transformative power of travel, encouraging 
+                                everyone to explore beyond boundaries and embrace the beauty of our world.
+                            </p>
+                        </div>
+                        <div class="col-md-6 mt-4">
+                            <h5>Mission</h5>
+                            <p>
+                                Our mission is to curate unparalleled travel experiences, finely tuned to the
+                                preferences of each adventurer. Simultaneously, we champion local communities, endorsing
+                                responsible tourism practices that contribute to the preservation and prosperity of the
+                                destinations we explore. Join us on a journey where every step is a celebration of
+                                exploration, connection, and responsible travel.
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 negative_child">
+                <div class="thumb">
+                    <img src="{% static 'web/images/about.png' %}" alt="About Skydays">
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <h4>Goal of skydays</h4>
+            <p class="mt-2">
+                At Skydays, our goals are rooted in providing unparalleled travel experiences. We strive for customer
+                satisfaction excellence by exceeding expectations and offering personalized service. Committed to
+                sustainable tourism, we minimize our environmental impact and support local communities. We aim to stay
+                innovative, adapting to the evolving needs of modern travelers. Promoting cultural exchange, community
+                empowerment, and global connectivity, we seek to be a positive force for change. Continuous improvement
+                is ingrained in our culture, ensuring that each journey with Skydays is not just a trip but a
+                transformative and responsible exploration.
+            </p>
+        </div>
+    </div>
+</div>
+
+
+<div class="guide-wrapper section_padding_sm">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head head-left text-center mx-auto">
+                    <h2>Meet our <span class="text-orange">team</span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            {% for team in teams %}
+            <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+                <div class="guide-card">
+                    <div class="guide-thumb"></div>
+                    <img src="{{team.image.url}}" alt="{{team.name}}" class="img-fluid guide-img" style="height:300px">
+                </div>
+                <div class="guide-info">
+                    <strong>{{team.name}}</strong>
+                    <p>{{team.designation}}</p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+<div class="review-area section_padding_md">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h2><span class="text-orange">Review</span> your <br> experience with us</h2>
+                </div>
+            </div>
+        </div>
+        <div class="review-slider owl-carousel">
+
+            {% for review in reviews %}
+            <div class="review-card ">
+                <div class="reviewer-info">
+                    <small class="text-yellow ">
+                        {% for i in review.rating|times %}
+                        <i class="icon-star"></i>
+                        {% endfor %}
+                        {% for i in 5|subtract:review.rating|times %}
+                        <i class="icon-star-empty"></i>
+                        {% endfor %}
+                    </small>
+                    <p>{{review.review}}</p>
+                </div>
+                <div class="reviewer-img">
+                    <img src="{{review.image.url}}" alt="{{review.name}}" class="img-fluid">
+                    <h5>{{review.name}}</h5>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+{% include 'web/partials/offers.html' %}
+
+{% endblock %}

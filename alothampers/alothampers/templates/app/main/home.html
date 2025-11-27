@@ -1,0 +1,138 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 %}
+{% block title %}Home: {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+
+<div class="side-app main-container">
+
+    <div class="page-header d-xl-flex d-block">
+        <div class="page-leftheader">
+            <div class="page-title">{% translate "Main Dashboard" %}</div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:slider_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Slider</h6>
+                            <h5 class="m-0 text_h5_style">{{slider_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:category_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Categories</h6>
+                            <h5 class="m-0 text_h5_style">{{category_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:recipient_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Recipients</h6>
+                            <h5 class="m-0 text_h5_style">{{recipient_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:occasion_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Occasions</h6>
+                            <h5 class="m-0 text_h5_style">{{occasion_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:emotion_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Emotions</h6>
+                            <h5 class="m-0 text_h5_style">{{emotion_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:product_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Products</h6>
+                            <h5 class="m-0 text_h5_style">{{product_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:offer_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Offers</h6>
+                            <h5 class="m-0 text_h5_style">{{offer_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:testimonial_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Testimonials</h6>
+                            <h5 class="m-0 text_h5_style">{{testimonial_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-sm-4 col-6">
+            <div class="card border-radius">
+                <a href="{% url 'main:collection_list' %}">
+                    <div class="card-body d-flex">
+                        <div class="content w-100">
+                            <h6 class="font-weight-bold">Collections</h6>
+                            <h5 class="m-0 text_h5_style">{{collection_count}}</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock content %}

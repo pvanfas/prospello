@@ -1,0 +1,1562 @@
+{% extends 'web/base.html' %} {% load static %} {% block extra_css %}
+<style>
+        :root {
+            --forest-green: #1a1a1a;
+            --forest-green-dark: #1a1a1a;
+            --forest-green-light: #1a1a1a;
+            --accent-red: #dc3545;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --shadow-light: rgba(0, 131, 62, 0.1);
+            --shadow-dark: rgba(0, 0, 0, 0.15);
+            --sherikum-green: #00833e;
+        }
+
+        /* Hero Section Styling */
+        .hero {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f0f0f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--forest-green) 0%, rgba(20, 21, 20, 0.1) 100%);
+            opacity: 0.05;
+        }
+
+        .hero .subline {
+            color: var(--forest-green);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            color: var(--text-dark);
+            font-weight: 800;
+            margin: 10px 0 20px 0;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero p {
+            color: var(--text-light);
+        }
+
+        /* Banner Transition Styles */
+        .banner-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-slide {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .banner-slide.active {
+            opacity: 1;
+            transform: translateY(0);
+            position: relative;
+        }
+
+        .banner-image-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner-image-slide {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.8s ease-in-out;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+
+        .banner-image-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            position: relative;
+        }
+
+        .banner-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .banner-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .banner-dot.active {
+            background: var(--sherikum-green);
+            transform: scale(1.2);
+        }
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-green-dark) 100%);
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(23, 24, 24, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--forest-green-dark) 0%, var(--forest-green) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 35, 34, 0.4);
+            color: white;
+        }
+
+        /* Marquee Styling */
+        .marquee {
+            background: linear-gradient(90deg, var(--forest-green), var(--forest-green-dark), var(--forest-green));
+            color: white;
+            font-weight: 600;
+            padding: 15px 0;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .marquee span {
+            margin-right: 100px;
+            font-size: 1.1rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Accordion Styling */
+        .accordion .card {
+            border: 2px solid #e8e8e8;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px var(--shadow-light);
+            margin-bottom: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        .accordion .card:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 8px 30px var(--shadow-dark);
+            transform: translateY(-3px);
+        }
+
+        .accordion .card-header {
+            background: linear-gradient(135deg, white 0%, #f8f9fa 100%);
+            border-bottom: 2px solid #f0f0f0;
+            border-radius: 15px 15px 0 0 !important;
+            padding: 25px;
+            position: relative;
+        }
+
+        /* Bottom border animation removed */
+
+        .accordion .card-header h2 button,
+        .accordion .card-header h3 button {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 700;
+            padding: 0;
+            border: none;
+            background: none;
+            width: 100%;
+            transition: color 0.3s ease;
+        }
+
+        .accordion .card-header h2 button:hover,
+        .accordion .card-header h3 button:hover {
+            color: var(--forest-green);
+            text-decoration: none;
+        }
+
+        .accordion .card-header h2 button:focus,
+        .accordion .card-header h3 button:focus {
+            box-shadow: none;
+            outline: none;
+        }
+
+        .accordion .card-body {
+            padding: 25px;
+            background: #fafafa;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .accordion .fas.fa-chevron-down {
+            transition: all 0.3s ease;
+            color: var(--forest-green);
+            font-size: 1.2rem;
+            padding: 8px;
+            background: rgba(0, 131, 62, 0.1);
+            border-radius: 50%;
+        }
+
+        .accordion .btn[aria-expanded="true"] .fas.fa-chevron-down {
+            transform: rotate(180deg);
+            background: var(--forest-green);
+            color: white;
+        }
+
+        /* Brand Image Styling */
+        .accordion .card-header img {
+            border: 3px solid #e0e0e0;
+            transition: border-color 0.3s ease;
+        }
+
+        .accordion .card:hover .card-header img {
+            border-color: var(--forest-green);
+        }
+
+        /* OPTIMIZED Package Block Styling - No More Excess Green Space */
+        .package_block {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 15px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            {% comment %} border: 2px solid var(--forest-green); {% endcomment %}
+            position: relative;
+            height: auto; /* CHANGED: Allow natural height */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package_block:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(23, 24, 23, 0.25), 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        /* OPTIMIZED Image Container - No Fixed Height */
+        .package_image {
+            position: relative;
+            overflow: hidden;
+            /* REMOVED: Fixed background and height constraints */
+        }
+
+        .package_image img {
+            width: 100%;
+            height: auto; /* CHANGED: Natural height instead of fixed 180px */
+            max-height: 200px; /* ADDED: Maximum height limit */
+            min-height: 120px; /* ADDED: Reasonable minimum height */
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            display: block;
+            opacity: 1 !important;
+            border: none;
+        }
+
+        /* OPTIMIZED Placeholder for Missing Images - Compact Size */
+        .package_image img[src=""],
+        .package_image img:not([src]) {
+            background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-green-light) 100%);
+            height: 120px; /* CHANGED: Reduced from 180px to 120px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 120px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .package_image img[src=""]:after,
+        .package_image img:not([src]):after {
+            content: "📸";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+            color: white;
+        }
+
+    /* Removed hover effect for package image */
+
+        /* OPTIMIZED Package Caption - Flexible Layout */
+        .package-caption {
+            padding: 20px;
+            flex-grow: 1; /* ADDED: Allow content to fill available space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package-caption h6 {
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            line-height: 1.3; /* ADDED: Better line height */
+        }
+
+        .package-caption h6 a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .package-caption h6 a:hover {
+            color: var(--forest-green);
+        }
+
+        .package-caption p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            line-height: 1.5;
+            flex-grow: 1; /* ADDED: Allow description to grow */
+            /* ADDED: Limit text overflow for consistent card heights */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .package-caption-bottom {
+            display: flex;
+            gap: 12px;
+            margin-top: auto; /* ADDED: Push buttons to bottom */
+        }
+
+        .package-caption-bottom a {
+            padding: 10px 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            flex: 1;
+            text-align: center;
+        }
+
+        .package-caption-bottom .brochure {
+            background: var(--sherikum-green);
+            color: white;
+            {% comment %} border: 2px solid var(--text-dark); {% endcomment %}
+        }
+
+        .package-caption-bottom .brochure:hover {
+            background: transparent;
+            color: var(--text-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .package-caption-bottom .plan {
+            background: var(--forest-green);
+            color: white;
+            border: 2px solid var(--forest-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .package-caption-bottom .plan::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .package-caption-bottom .plan:hover {
+            background: var(--forest-green-dark);
+            border-color: var(--forest-green-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 18px rgba(24, 26, 25, 0.4);
+            color: white;
+        }
+
+        .package-caption-bottom .plan:hover::before {
+            left: 100%;
+        }
+
+        /* Group styling */
+        .accordion .card .card {
+            border: 1px solid #e8e8e8;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .accordion .card .card:hover {
+            border-color: var(--forest-green);
+            box-shadow: 0 4px 15px rgba(34, 35, 34, 0.15);
+        }
+
+        .accordion .card .card-header {
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            padding: 20px;
+        }
+
+        .accordion .card .card-body {
+            background: white;
+            padding: 20px;
+        }
+
+        /* Text styling */
+        .text-muted {
+            color: var(--text-light) !important;
+            font-size: 0.85rem;
+        }
+
+        h4, h5 {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        /* Mobile phone icon styling */
+        .main_inline img {
+            transition: transform 0.3s ease;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(27, 28, 28, 0.3);
+        }
+
+        .main_inline img:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* IMPROVED Grid Layout for Better Card Distribution */
+        .meal-categories-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        /* Responsive improvements */
+        @media (max-width: 768px) {
+            .meal-categories-row {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+
+            .package_block {
+                margin-bottom: 15px;
+            }
+
+            .accordion .card-header {
+                padding: 20px 15px;
+            }
+
+            .accordion .card-body {
+                padding: 20px 15px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .package-caption {
+                padding: 15px;
+            }
+
+            .package-caption-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .meal-categories-row {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        /* Loading animation */
+        @keyframes shimmer {
+            0% { background-position: -200px 0; }
+            100% { background-position: calc(200px + 100%) 0; }
+        }
+
+        .package_image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            background-size: 200px 100%;
+            animation: shimmer 2s infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+    /* Removed shimmer hover effect */
+
+        /* Success indicator for loaded content */
+        .loaded-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--forest-green);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .loaded-indicator.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Add a subtle red accent for important elements */
+        .urgent-badge {
+            background: var(--accent-red);
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* REMOVED PROBLEMATIC STYLES THAT CAUSED GREEN BACKGROUND */
+        /* These were causing the excess green space:
+        .package_image {
+            min-height: 180px;
+            background: #f0f0f0;
+            border: 1px dashed #ccc;
+        }
+
+        .package_image img {
+            min-height: 180px;
+            background-color: #fff;
+        }
+        */
+</style>
+{% endblock %} {% block content %}
+<section
+    class=""
+    style="
+        background: linear-gradient(
+            135deg,
+            #f8f9fa 0%,
+            #e9ecef 50%,
+            #f0f0f0 100%
+        );
+    "
+>
+    <div class="section_padding hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="thumb">
+                        {% if banners %}
+                        <div class="banner-image-slider" id="bannerImageSlider">
+                            {% for banner in banners %}
+                            <div
+                                class="banner-image-slide{% if forloop.first %} active{% endif %}"
+                            >
+                                {% if banner.image %}
+                                <img
+                                    src="{{ banner.image.url }}"
+                                    alt="{{ banner.title }}"
+                                    style="
+                                        max-height: 400px;
+                                        filter: drop-shadow(
+                                            0 10px 25px rgba(0, 131, 62, 0.2)
+                                        );
+                                    "
+                                />
+                                {% else %}
+                                <img
+                                    src="/static/web/images/main.png"
+                                    alt="Dinecore Meal Service"
+                                    style="
+                                        max-height: 400px;
+                                        filter: drop-shadow(
+                                            0 10px 25px rgba(0, 131, 62, 0.2)
+                                        );
+                                    "
+                                />
+                                {% endif %}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% else %}
+                        <img
+                            src="/static/web/images/main.png"
+                            alt="Dinecore Meal Service"
+                            style="
+                                max-height: 400px;
+                                filter: drop-shadow(
+                                    0 10px 25px rgba(0, 131, 62, 0.2)
+                                );
+                            "
+                        />
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    {% if banners %}
+                    <div class="banner-slider" id="bannerSlider">
+                        {% for banner in banners %}
+                        <div
+                            class="banner-slide{% if forloop.first %} active{% endif %}"
+                        >
+                            <span class="subline" id="main_title"
+                                >{{ banner.main_title }}</span
+                            >
+                            <h1 id="title">{{ banner.title }}</h1>
+                            <p id="description">{{ banner.description }}</p>
+                            
+                            <!-- Dynamic button based on banner category -->
+                            <div class="main_inline">
+                                {% if banner.category %}
+                                    <a
+                                        href="{{ banner.category.get_web_url }}"
+                                        class="btn btn-primary"
+                                        id="browse_plans"
+                                        >View Plan</a
+                                    >
+                                {% else %}
+                                    <a
+                                        href="#packages"
+                                        class="btn btn-primary"
+                                        id="browse_plans"
+                                        >Browse Plans</a
+                                    >
+                                {% endif %}
+                                <a href="tel:+971569009143"
+                                    ><img
+                                        src="/static/web/images/mobile.png"
+                                        alt="Call us"
+                                        style="width: 40px"
+                                /></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <span class="subline" id="main_title">DINECORE</span>
+                    <h1 id="title">MEAL SERVICE SOLUTION</h1>
+                    <p id="description">
+                        Unlock the joy of effortless cooking with Dinecore. Our
+                        tailored meal plans bring delicious, chef-crafted dishes
+                        right to your table—saving you time and stress every
+                        day. Sign up now and savor the flavors that make life
+                        deliciously simple!
+                    </p>
+                    <div class="main_inline">
+                        <a
+                            href="#packages"
+                            class="btn btn-primary"
+                            id="browse_plans"
+                            >Browse Plans</a
+                        >
+                        <a href="tel:+971569009143"
+                            ><img
+                                src="/static/web/images/mobile.png"
+                                alt="Call us"
+                                style="width: 40px"
+                        /></a>
+                    </div>
+                    {% endif %}
+                    {% if not request.user.is_authenticated %}
+                    <p style="margin-top: 15px">
+                        Or
+                        <a
+                            href="{% url 'auth_login' %}"
+                            class="text-decoration-underline"
+                            style="color: var(--forest-green); font-weight: 600"
+                            >Sign In to your account</a
+                        >
+                    </p>
+                    {% endif %}
+                </div>
+            </div>
+            {% if banners and banners|length > 1 %}
+            <div class="banner-nav" id="bannerNav">
+                {% for banner in banners %}
+                <div
+                    class="banner-dot{% if forloop.first %} active{% endif %}"
+                    data-slide="{{ forloop.counter0 }}"
+                ></div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<section style="background: #f8f9fa" class="section_padding_sm pt-0">
+    <div class="marquee">
+        <span>Savor Every Bite with Our Signature Flavours</span>
+        <span>Your Favorite Meals, Freshly Delivered</span>
+        <span>Classic Dishes, Modern Convenience</span>
+        <span>Premium Quality, Everyday Freshness</span>
+    </div>
+</section>
+
+<section
+    style="background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%)"
+    id="packages"
+>
+    <div class="container section_padding_sm packages">
+        <div class="text-center mb-5">
+            <h2
+                style="
+                    color: var(--text-dark);
+                    font-weight: 800;
+                    margin-bottom: 15px;
+                "
+            >
+                Our Meal Categories
+            </h2>
+            <p style="color: var(--text-light); font-size: 1.1rem">
+                Choose from our carefully curated selection of meal plans
+            </p>
+        </div>
+
+        <div class="accordion" id="brandsAccordion">
+            {% for brand_data in brands_data %}
+            <div class="card mb-3">
+                <div class="card-header" id="heading{{brand_data.brand.id}}">
+                    <h2 class="mb-0">
+                        <button
+                            class="btn btn-link btn-block text-left d-flex align-items-center justify-content-between"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#collapse{{brand_data.brand.id}}"
+                            aria-expanded="false"
+                            aria-controls="collapse{{brand_data.brand.id}}"
+                        >
+                            <div class="d-flex align-items-center">
+                                {% if brand_data.brand.image %}
+                                <img
+                                    src="{{brand_data.brand.image.url}}"
+                                    alt="{{brand_data.brand.name}}"
+                                    style="
+                                        width: 60px;
+                                        height: 60px;
+                                        object-fit: cover;
+                                        border-radius: 12px;
+                                        margin-right: 20px;
+                                    "
+                                />
+                                {% else %}
+                                <img
+                                    src="/static/web/images/main.png"
+                                    alt="{{brand_data.brand.name}}"
+                                    style="
+                                        width: 60px;
+                                        height: 60px;
+                                        object-fit: cover;
+                                        border-radius: 12px;
+                                        margin-right: 20px;
+                                    "
+                                />
+                                {% endif %}
+                                <div>
+                                    <h4 class="mb-1">
+                                        {{brand_data.brand.name}}
+                                    </h4>
+                                    <small class="text-muted"
+                                        >Click to view groups</small
+                                    >
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </h2>
+                </div>
+                <div
+                    id="collapse{{brand_data.brand.id}}"
+                    class="collapse"
+                    aria-labelledby="heading{{brand_data.brand.id}}"
+                    data-parent="#brandsAccordion"
+                >
+                    <div class="card-body">
+                        <div
+                            class="accordion"
+                            id="groupsAccordion{{brand_data.brand.id}}"
+                        >
+                            {% for group_data in brand_data.groups %}
+                            <div class="card mb-2">
+                                <div
+                                    class="card-header"
+                                    id="heading{{group_data.group.id}}"
+                                >
+                                    <h3 class="mb-0">
+                                        <button
+                                            class="btn btn-link btn-block text-left d-flex align-items-center justify-content-between"
+                                            type="button"
+                                            data-toggle="collapse"
+                                            data-target="#collapse{{group_data.group.id}}"
+                                            aria-expanded="false"
+                                            aria-controls="collapse{{group_data.group.id}}"
+                                        >
+                                            <div>
+                                                <h5 class="mb-1">
+                                                    {{group_data.group.name}}
+                                                </h5>
+                                                <small class="text-muted"
+                                                    >Click here to view meal categories</small
+                                                >
+                                            </div>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </button>
+                                    </h3>
+                                </div>
+                                <div
+                                    id="collapse{{group_data.group.id}}"
+                                    class="collapse"
+                                    aria-labelledby="heading{{group_data.group.id}}"
+                                    data-parent="#groupsAccordion{{brand_data.brand.id}}"
+                                >
+                                    <div class="card-body">
+                                        <!-- OPTIMIZED: Using CSS Grid instead of Bootstrap columns for better layout -->
+                                        <div class="meal-categories-row">
+                                            {% for category in group_data.meal_categories %}
+                                            <div class="mb-4">
+                                                <div class="package_block">
+                                                    <div class="package_image">
+                                                        {% if category.image %}
+                                                        <img
+                                                            src="{{category.image.url}}"
+                                                            alt="{{category.name}}"
+                                                            onerror="this.src='/static/web/images/main.png'; this.style.display='block';"
+                                                            style="
+                                                                display: block;
+                                                            "
+                                                        />
+                                                        {% else %}
+                                                        <img
+                                                            src="/static/web/images/main.png"
+                                                            alt="{{category.name}}"
+                                                            style="
+                                                                display: block;
+                                                            "
+                                                        />
+                                                        {% endif %}
+                                                    </div>
+                                                    <div
+                                                        class="package-caption"
+                                                    >
+                                                        <div
+                                                            class="package-caption-top"
+                                                        >
+                                                            <h6>
+                                                                <a
+                                                                    href="{{category.get_web_url}}"
+                                                                    >{{category.name}}</a
+                                                                >
+                                                            </h6>
+                                                            <p>
+                                                                {{category.description}}
+                                                            </p>
+                                                        </div>
+
+                                                        <!-- PRIMARY ACTION - Most prominent -->
+                                                        <div
+                                                            class="primary-action"
+                                                        >
+                                                            <a
+                                                                href="{% url 'web:get_started' category.id %}"
+                                                                class="btn-get-started"
+                                                            >
+                                                                {% comment %}
+                                                                <i
+                                                                    class="fas fa-rocket"
+                                                                ></i>
+                                                                {% endcomment %}
+                                                                Get Started
+                                                            </a>
+                                                        </div>
+
+                                                        <!-- SECONDARY ACTIONS - Smaller, less prominent -->
+                                                        <div
+                                                            class="secondary-actions"
+                                                        >
+                                                            <a
+                                                                href="{{category.get_web_url}}"
+                                                                class="btn-secondary"
+                                                            >
+                                                                {% comment %}
+                                                                <i
+                                                                    class="fas fa-eye"
+                                                                ></i>
+                                                                {% endcomment %}
+                                                                View Plan
+                                                            </a>
+                                                            {% if category.brochure %}
+                                                            <a
+                                                                href="{{category.brochure.url}}"
+                                                                class="btn-secondary"
+                                                                target="_blank"
+                                                            >
+                                                                {% comment %}
+                                                                <i
+                                                                    class="fas fa-download"
+                                                                ></i>
+                                                                {% endcomment %}
+                                                                Brochure
+                                                            </a>
+                                                            {% endif %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% comment %} <div class="loaded-indicator" id="loadedIndicator">
+    Content Loaded Successfully!
+</div> {% endcomment %}
+
+{% endblock content %} {% block javascript %}
+<script>
+    $(document).ready(function () {
+        console.log(
+            "Enhanced Dinecore UI loaded successfully - Optimized Version"
+        );
+
+        // Show loading success indicator
+        setTimeout(function () {
+            $("#loadedIndicator").addClass("show");
+            setTimeout(function () {
+                $("#loadedIndicator").removeClass("show");
+            }, 3000);
+        }, 1000);
+
+        // Enhanced accordion behavior
+        $(".accordion").on("show.bs.collapse", function (e) {
+            console.log("Collapse show event triggered for:", e.target);
+            // Close other accordions in the same parent with smooth animation
+            $(e.target)
+                .closest(".accordion")
+                .find(".collapse.show")
+                .not(e.target)
+                .collapse("hide");
+
+            // Add visual feedback
+            $(e.target).prev(".card-header").addClass("active-header");
+        });
+
+        $(".accordion").on("hide.bs.collapse", function (e) {
+            console.log("Collapse hide event triggered for:", e.target);
+            $(e.target).prev(".card-header").removeClass("active-header");
+        });
+
+        // Enhanced button click animation
+        $(".accordion button").on("click", function (e) {
+            console.log("Button clicked:", this);
+            $(this).addClass("clicked");
+
+            // Add ripple effect
+            const ripple = $('<span class="ripple"></span>');
+            $(this).append(ripple);
+
+            setTimeout(() => {
+                $(this).removeClass("clicked");
+                ripple.remove();
+            }, 600);
+        });
+
+        // Manual collapse toggle with enhanced feedback
+        $('[data-toggle="collapse"]').on("click", function (e) {
+            e.preventDefault();
+            var target = $(this).data("target");
+            console.log("Manual toggle for target:", target);
+            $(target).collapse("toggle");
+
+            // Add loading animation
+            $(this).addClass("loading");
+            setTimeout(() => {
+                $(this).removeClass("loading");
+            }, 300);
+        });
+
+        // Enhanced smooth scroll with easing
+        $('a[href="#packages"]').on("click", function (e) {
+            e.preventDefault();
+            $("html, body").animate(
+                {
+                    scrollTop: $("#packages").offset().top - 80,
+                },
+                1200,
+                "easeInOutQuart"
+            );
+        });
+
+        // Enhanced image loading with fade-in effect
+        $(".package_image img").on("load", function () {
+            $(this).addClass("loaded");
+            // Ensure image is visible
+            $(this).css("opacity", "1");
+        });
+
+        // Handle image loading errors gracefully
+        $(".package_image img").on("error", function () {
+            console.log("Image failed to load:", this.src);
+            // Create a placeholder div instead of broken image
+            const placeholder = $(
+                '<div class="image-placeholder" style="background: linear-gradient(135deg, var(--forest-green) 0%, var(--forest-green-light) 100%); height: 120px; display: flex; align-items: center; justify-content: center; color: white; font-size: 2rem;">📸</div>'
+            );
+            $(this).replaceWith(placeholder);
+        });
+
+        // Enhanced hover effects with stagger animation
+        $(".package_block").hover(
+            function () {
+                $(this)
+                    .find(".package-caption-bottom a")
+                    .each(function (index) {
+                        setTimeout(() => {
+                            $(this).addClass("hover-effect");
+                        }, index * 50);
+                    });
+            },
+            function () {
+                $(this)
+                    .find(".package-caption-bottom a")
+                    .removeClass("hover-effect");
+            }
+        );
+
+        // Add scroll-based animations
+        $(window).scroll(function () {
+            var scrollTop = $(this).scrollTop();
+            var windowHeight = $(this).height();
+
+            $(".package_block").each(function () {
+                var elementTop = $(this).offset().top;
+
+                if (scrollTop + windowHeight > elementTop + 100) {
+                    $(this).addClass("animate-in");
+                }
+            });
+        });
+
+        // Enhanced error handling
+        if (typeof $.fn.collapse === "undefined") {
+            console.error("Bootstrap collapse plugin not loaded!");
+            // Fallback functionality
+            $('[data-toggle="collapse"]').on("click", function (e) {
+                e.preventDefault();
+                var target = $($(this).data("target"));
+                target.slideToggle(300);
+            });
+        } else {
+            console.log(
+                "Bootstrap collapse plugin is available - Enhanced version loaded"
+            );
+        }
+
+        // Add performance monitoring
+        var loadTime = performance.now();
+        console.log("Enhanced UI load time:", loadTime.toFixed(2) + "ms");
+
+        // OPTIMIZED: Force image visibility after DOM load
+        $(".package_image img").each(function () {
+            $(this).css({
+                opacity: "1",
+                visibility: "visible",
+                display: "block",
+            });
+        });
+    });
+
+    // Add custom easing function
+    $.easing.easeInOutQuart = function (x, t, b, c, d) {
+        if ((t /= d / 2) < 1) return (c / 2) * t * t * t * t + b;
+        return (-c / 2) * ((t -= 2) * t * t * t - 2) + b;
+    };
+</script>
+
+<style>
+    /* Additional dynamic styles */
+    .clicked {
+        transform: scale(0.96);
+        transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .ripple {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(0, 131, 62, 0.3);
+        transform: scale(0);
+        animation: ripple-animation 0.6s linear;
+        pointer-events: none;
+    }
+
+    @keyframes ripple-animation {
+        to {
+            transform: scale(4);
+            opacity: 0;
+        }
+    }
+
+    .active-header {
+        background: linear-gradient(
+            135deg,
+            var(--forest-green) 0%,
+            var(--forest-green-light) 100%
+        ) !important;
+        color: white !important;
+    }
+
+    .active-header button,
+    .active-header h4,
+    .active-header h5,
+    .active-header small {
+        color: white !important;
+    }
+
+    .loading {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    .package_image img {
+        opacity: 1;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .package_image img.loaded {
+        opacity: 1;
+    }
+
+    .hover-effect {
+        transform: translateY(-3px) scale(1.02);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .animate-in {
+        animation: slideInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Staggered animation for cards */
+    .accordion .card:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+    .accordion .card:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    .accordion .card:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+    .accordion .card:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+    .accordion .card:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+    .accordion .card:nth-child(6) {
+        animation-delay: 0.6s;
+    }
+
+    /* Improved mobile responsiveness */
+    @media (max-width: 576px) {
+        .package-caption-bottom {
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+        }
+
+        .main_inline {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+    }
+
+    /* Custom scrollbar for better UX */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: var(--forest-green);
+        border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--forest-green-dark);
+    }
+
+    /* Focus indicators for accessibility */
+    .btn:focus,
+    button:focus {
+        outline: 2px solid var(--forest-green) !important;
+        outline-offset: 2px;
+    }
+
+    /* Print styles */
+    @media print {
+        .accordion .card {
+            break-inside: avoid;
+            box-shadow: none;
+            border: 1px solid #ccc;
+        }
+    }
+
+    /* OPTIMIZED: Ensure all images are always visible */
+    .package_image img[src] {
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
+    }
+
+    /* OPTIMIZED: Fallback for completely missing images */
+    .image-placeholder {
+        background: linear-gradient(
+            135deg,
+            var(--forest-green) 0%,
+            var(--forest-green-light) 100%
+        );
+        height: 120px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    /* OPTIMIZED: Better card alignment in grid */
+    .meal-categories-row > div {
+        display: flex;
+        align-items: stretch;
+    }
+
+    .meal-categories-row .package_block {
+        width: 100%;
+        min-height: 100%;
+    }
+    .primary-action {
+        margin-bottom: 15px;
+    }
+
+    .btn-get-started {
+        display: block;
+        width: 100%;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+        padding: 10px 20px;
+        border-radius: 12px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(26, 26, 26, 0.3);
+        border: none;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .btn-get-started:hover {
+        background: linear-gradient(135deg, #2d2d2d 0%, #404040 100%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(26, 26, 26, 0.4);
+        color: white;
+        text-decoration: none;
+    }
+
+    .btn-get-started::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+        transition: left 0.6s ease;
+    }
+
+    .btn-get-started:hover::before {
+        left: 100%;
+    }
+
+    .btn-get-started i {
+        margin-right: 8px;
+        font-size: 1.2rem;
+    }
+
+    /* Secondary actions - Subtle but accessible */
+    .secondary-actions {
+        display: flex;
+        gap: 8px;
+        justify-content: center;
+    }
+
+    .btn-secondary {
+        flex: 1;
+        font-weight: 500;
+        font-size: 0.85rem;
+        padding: 10px 12px;
+        border-radius: 8px;
+        text-decoration: none;
+        text-align: center;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        border: none;
+    }
+
+    /* View Plan button - Dark blue theme */
+    .btn-secondary:first-child {
+        background: #1e3a8a;
+        color: white;
+        border-color: #1e3a8a;
+    }
+
+    .btn-secondary:first-child:hover {
+        background: #1e40af;
+        border-color: #1e40af;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+        text-decoration: none;
+    }
+
+    /* Brochure button - Dark gray theme */
+    .btn-secondary[target="_blank"] {
+        background: #374151;
+        color: white;
+        border-color: #374151;
+    }
+
+    .btn-secondary[target="_blank"]:hover {
+        background: #4b5563;
+        border-color: #4b5563;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(55, 65, 81, 0.3);
+        text-decoration: none;
+    }
+
+    .btn-secondary i {
+        font-size: 0.9rem;
+    }
+
+    /* Enhanced package caption for better spacing */
+    .package-caption {
+        padding: 25px 20px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .package-caption-top {
+        margin-bottom: 20px;
+        flex-grow: 1;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 768px) {
+        .btn-get-started {
+            font-size: 1rem;
+            padding: 12px 18px;
+        }
+
+        .secondary-actions {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .btn-secondary {
+            padding: 8px 12px;
+            font-size: 0.8rem;
+        }
+
+        .package-caption {
+            padding: 20px 15px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .primary-action {
+            margin-bottom: 12px;
+        }
+
+        .btn-get-started {
+            font-size: 0.95rem;
+            padding: 12px 16px;
+        }
+    }
+
+    /* Loading states for better UX */
+    .btn-get-started:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(40, 167, 69, 0.3);
+    }
+
+    /* Focus states for accessibility */
+    .btn-get-started:focus,
+    .btn-secondary:focus {
+        outline: 3px solid rgba(40, 167, 69, 0.5);
+        outline-offset: 2px;
+    }
+
+    /* Tooltips for better guidance */
+    .btn-secondary[title]:hover::after {
+        content: attr(title);
+        position: absolute;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #333;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+        z-index: 1000;
+        opacity: 0;
+        animation: fadeIn 0.3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Banner slider functionality
+        const bannerSlider = document.getElementById("bannerSlider");
+        const bannerImageSlider = document.getElementById("bannerImageSlider");
+        const bannerNav = document.getElementById("bannerNav");
+
+        if (bannerSlider && bannerImageSlider && bannerNav) {
+            const slides = bannerSlider.querySelectorAll(".banner-slide");
+            const imageSlides = bannerImageSlider.querySelectorAll(
+                ".banner-image-slide"
+            );
+            const dots = bannerNav.querySelectorAll(".banner-dot");
+
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Remove active class from all slides and dots
+                slides.forEach((slide) => slide.classList.remove("active"));
+                imageSlides.forEach((slide) =>
+                    slide.classList.remove("active")
+                );
+                dots.forEach((dot) => dot.classList.remove("active"));
+
+                // Add active class to current slide and dot
+                slides[index].classList.add("active");
+                imageSlides[index].classList.add("active");
+                dots[index].classList.add("active");
+
+                currentSlide = index;
+            }
+
+            // Function to go to next slide
+            function nextSlide() {
+                const nextIndex = (currentSlide + 1) % totalSlides;
+                showSlide(nextIndex);
+            }
+
+            // Add click event listeners to dots
+            dots.forEach((dot, index) => {
+                dot.addEventListener("click", () => {
+                    showSlide(index);
+                });
+            });
+
+            // Auto-rotate banners every 5 seconds
+            setInterval(nextSlide, 5000);
+
+            // Pause auto-rotation on hover
+            bannerSlider.addEventListener("mouseenter", () => {
+                clearInterval(window.bannerInterval);
+            });
+
+            bannerSlider.addEventListener("mouseleave", () => {
+                window.bannerInterval = setInterval(nextSlide, 5000);
+            });
+
+            // Initialize interval
+            window.bannerInterval = setInterval(nextSlide, 5000);
+        }
+    });
+</script>
+{% endblock %}

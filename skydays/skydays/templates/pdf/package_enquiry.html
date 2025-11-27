@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>Enquiry Report</title>
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px line-height: 1.4;
+      box-sizing: border-box;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100% width: 100%
+    }
+
+    .container {
+      display: block;
+      max-width: 90%;
+      margin: 0 auto
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .w-100 {
+      width: 100%;
+    }
+
+
+    .text-center {
+      text-align: center
+    }
+
+    .text-end {
+      text-align: right;
+    }
+
+    img {
+      border: none;
+      -ms-interpolation-mode: bicubic;
+      max-width: 100%
+    }
+
+    table {
+      mso-table-lspace: 0pt;
+      mso-table-rspace: 0pt;
+      width: 100%;
+      border-collapse: collapse;
+      border-spacing: 0;
+      margin-top: 20px;
+    }
+
+    table td {
+      vertical-align: top;
+    }
+
+    th,
+    td {
+      padding: 6px;
+    }
+
+    .bordered td,
+    .bordered th {
+      border: 1px solid #eee;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    h3 {
+      font-size: 16px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-weight: 600;
+    }
+
+    .spacer {
+      display: block;
+      height: 40px;
+    }
+
+    .btn a {
+      border: 1px solid #3498db;
+      border-radius: 5px;
+      cursor: pointer;
+      display: inline-block;
+      margin: 0;
+      padding: 12px 25px
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid #f6f6f6;
+    }
+
+    strong,
+    th {
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+
+  <table style="width:100%">
+    <tr>
+      <td class="wrapper" style="text-align:right;padding-bottom: 10px;">
+        <table style="width:100%">
+          <tr>
+            <td style="text-align: left;">
+              <h2>Package Enquiry Report</h2>
+            </td>
+            <td>
+              <a href="https://skydays.travel" title="Skydays" style="display:inline-block;margin:5px" target="_blank">
+                <img src="https://skydays.travel/static/web/images/logo.svg" width="100"></a>
+            </td>
+          </tr>
+        </table>
+        <hr>
+      </td>
+    </tr>
+
+    <tr>
+      <td class="wrapper">
+        <table role="presentation" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><strong>Package</strong></td>
+            <td>: {{ instance.package }}</td>
+          </tr>
+          <tr>
+            <td><strong>Date</strong></td>
+            <td>: {{ instance.date }}</td>
+          </tr>
+          <tr>
+            <td><strong>Hotel Category</strong></td>
+            <td>: {{ instance.hotel_category }}</td>
+          </tr>
+          <tr>
+            <td><strong>Name</strong></td>
+            <td>: {{ instance.name }}</td>
+          </tr>
+          <tr>
+            <td><strong>Whatsapp</strong></td>
+            <td>: {{ instance.whatsapp }}</td>
+          </tr>
+          <tr>
+            <td><strong>Phone</strong></td>
+            <td>: {{ instance.phone }}</td>
+          </tr>
+          <tr>
+            <td><strong>Email</strong></td>
+            <td>: {{ instance.email }}</td>
+          </tr>
+          <tr>
+            <td><strong>Additional Info</strong></td>
+            <td>: {{ instance.additional_info }}</td>
+          </tr>
+          <tr>
+            <td><strong>Timestamp</strong></td>
+            <td>: {{ instance.timestamp }}</td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="wrapper">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center" style="max-width:600px"
+          class="bordered">
+          <tr>
+            <th>Room</th>
+            <th>Adult</th>
+            <th>Child with Bed</th>
+            <th>Child without Bed</th>
+            <th>Infant</th>
+          </tr>
+          {% for traveller in instance.get_travellers %}
+          <tr>
+            <td>Room {{ forloop.counter }}</td>
+            <td>{{ traveller.adult }}</td>
+            <td>{{ traveller.child_with_bed }}</td>
+            <td>{{ traveller.child_without_bed }}</td>
+            <td>{{ traveller.infant }}</td>
+          </tr>
+          {% endfor %}
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align: center;padding-top:40px;">
+        <p>CUSTOMER SUPPORT NUMBERS (24 X 7)</p>
+        <p>+91 90 72073333 | +91 9072073333</p>
+      </td>
+    </tr>
+  </table>
+
+</body>
+
+</html>

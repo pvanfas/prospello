@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Primary Meta Tags -->
+    <title>Prospello Corporate Holdings | Empowering Innovation, Transforming Futures</title>
+    <meta name="title" content="Prospello Corporate Holdings | Empowering Innovation, Transforming Futures" />
+    <meta name="description" content="Driving innovation with cutting-edge digital software solutions and expert consultancy services. Empowering businesses, advancing communities, and delivering impactful growth through technology and strategy." />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ request.get_host }}{{ request.path }}" />
+    <meta property="og:title" content="Prospello Corporate Holdings | Empowering Innovation, Transforming Futures" />
+    <meta property="og:description" content="Driving innovation with cutting-edge digital software solutions and expert consultancy services. Empowering businesses, advancing communities, and delivering impactful growth through technology and strategy." />
+    <meta property="og:image" content="https://prospello.in/static/web/images/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="{{ request.get_host }}{{ request.path }}" />
+    <meta property="twitter:title" content="Prospello Corporate Holdings | Empowering Innovation, Transforming Futures" />
+    <meta property="twitter:description" content="Driving innovation with cutting-edge digital software solutions and expert consultancy services. Empowering businesses, advancing communities, and delivering impactful growth through technology and strategy." />
+    <meta property="twitter:image" content="https://prospello.in/static/web/images/preview.png" />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="57x57" href="{% static 'web/images/favicons/apple-icon-57x57.png' %}">
+    <link rel="apple-touch-icon" sizes="60x60" href="{% static 'web/images/favicons/apple-icon-60x60.png' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'web/images/favicons/apple-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="76x76" href="{% static 'web/images/favicons/apple-icon-76x76.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'web/images/favicons/apple-icon-114x114.png' %}">
+    <link rel="apple-touch-icon" sizes="120x120" href="{% static 'web/images/favicons/apple-icon-120x120.png' %}">
+    <link rel="apple-touch-icon" sizes="144x144" href="{% static 'web/images/favicons/apple-icon-144x144.png' %}">
+    <link rel="apple-touch-icon" sizes="152x152" href="{% static 'web/images/favicons/apple-icon-152x152.png' %}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/images/favicons/apple-icon-180x180.png' %}">
+    <link rel="icon" type="image/png" sizes="192x192"  href="{% static 'web/images/favicons/android-icon-192x192.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/images/favicons/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'web/images/favicons/favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/images/favicons/favicon-16x16.png' %}">
+    <link rel="manifest" href="{% static 'web/images/favicons/manifest.json' %}">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="{% static 'web/images/favicons/ms-icon-144x144.png' %}">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'web/css/vendors.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/icon.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/style.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/responsive.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'web/css/custom.css' %}" />
+</head>
+
+<body data-mobile-nav-trigger-alignment="right" data-mobile-nav-style="modern" data-mobile-nav-bg-color="#1d1d1d">
+
+    {% include 'web/partials/header.html' %}
+
+    {% block content %}
+    
+    {% endblock %}
+
+    {% include 'web/partials/footer.html' %}
+
+    <div class="scroll-progress d-none d-xxl-block">
+        <a href="#" class="scroll-top" aria-label="scroll">
+            <span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span>
+        </a>
+    </div>
+
+    <script type="text/javascript" src="{% static 'web/js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'web/js/vendors.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'web/js/main.js' %}"></script>
+</body>
+
+</html>

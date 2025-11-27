@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1440"
+   height="895"
+   viewBox="0 0 1440 895"
+   version="1.1"
+   id="svg50"
+   sodipodi:docname="testimonial_bg.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview52"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="0.92916667"
+     inkscape:cx="720.53812"
+     inkscape:cy="447.17489"
+     inkscape:window-width="1870"
+     inkscape:window-height="1016"
+     inkscape:window-x="50"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="a" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="b">
+      <rect
+         width="1440"
+         height="895"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     id="a"
+     clip-path="url(#b)">
+    <rect
+       width="1440"
+       height="895"
+       fill="#fff"
+       id="rect7" />
+    <g
+       transform="translate(276.5 -371.769)"
+       id="g13">
+      <line
+         x2="6.5"
+         transform="translate(646 375.019)"
+         fill="none"
+         stroke="#ff7300"
+         stroke-miterlimit="10"
+         stroke-width="2"
+         id="line9" />
+      <line
+         y2="6.5"
+         transform="translate(649.25 371.769)"
+         fill="none"
+         stroke="#ff7300"
+         stroke-miterlimit="10"
+         stroke-width="2"
+         id="line11" />
+    </g>
+    <g
+       transform="translate(276.5 -371.769)"
+       id="g19">
+      <line
+         x2="6.5"
+         transform="translate(646 375.019)"
+         fill="none"
+         stroke="#ff7300"
+         stroke-miterlimit="10"
+         stroke-width="2"
+         id="line15" />
+      <line
+         y2="6.5"
+         transform="translate(649.25 371.769)"
+         fill="none"
+         stroke="#ff7300"
+         stroke-miterlimit="10"
+         stroke-width="2"
+         id="line17" />
+    </g>
+    <ellipse
+       cx="59.5"
+       cy="59"
+       rx="59.5"
+       ry="59"
+       transform="translate(400.655 678.555)"
+       fill="#c11f4e"
+       opacity="0.46"
+       id="ellipse21" />
+    <ellipse
+       cx="59.5"
+       cy="59"
+       rx="59.5"
+       ry="59"
+       transform="translate(1142.654 567.555)"
+       fill="#c11f4e"
+       opacity="0.2"
+       id="ellipse23" />
+    <g
+       transform="translate(886.654 776.555)"
+       fill="none"
+       stroke="#e9b169"
+       stroke-width="9"
+       opacity="0.22"
+       id="g29">
+      <circle
+         cx="26.5"
+         cy="26.5"
+         r="26.5"
+         stroke="none"
+         id="circle25" />
+      <circle
+         cx="26.5"
+         cy="26.5"
+         r="22"
+         fill="none"
+         id="circle27" />
+    </g>
+    <g
+       transform="translate(1283.654 36.28)"
+       fill="none"
+       stroke="#e9b169"
+       stroke-width="9"
+       opacity="0.22"
+       id="g35">
+      <circle
+         cx="26.5"
+         cy="26.5"
+         r="26.5"
+         stroke="none"
+         id="circle31" />
+      <circle
+         cx="26.5"
+         cy="26.5"
+         r="22"
+         fill="none"
+         id="circle33" />
+    </g>
+    <g
+       transform="translate(647.154 14.055)"
+       fill="none"
+       stroke="#ffe7cc"
+       stroke-width="9"
+       opacity="0.22"
+       id="g41">
+      <circle
+         cx="26.5"
+         cy="26.5"
+         r="26.5"
+         stroke="none"
+         id="circle37" />
+      <circle
+         cx="26.5"
+         cy="26.5"
+         r="22"
+         fill="none"
+         id="circle39" />
+    </g>
+    <rect
+       width="1440"
+       height="1053"
+       fill="none"
+       id="rect47" />
+  </g>
+</svg>

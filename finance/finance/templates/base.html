@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	{% load static compress %}
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+
+	<!-- Primary Meta Tags -->
+	<title>{{app_settings.site_title}}</title>
+	<meta name="title" content="{{app_settings.site_title}}" />
+	<meta name="description" content="{{app_settings.site_title}}" />
+	<meta name="author" content="{{app_settings.author}}" >
+	<meta name="keywords" content="{{app_settings.site_keywords}}" />
+	<link rel="icon" href="{% static 'app/config/favicon.png' %}" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'app/config/favicon.png' %}" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{request.build_absolute_uri}}" />
+	<meta property="og:title" content="{{app_settings.site_title}}" />
+	<meta property="og:description" content="{{app_settings.site_title}}" />
+	<meta property="og:image" content="" />
+
+	<!-- X (Twitter) -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="{{request.build_absolute_uri}}" />
+	<meta property="twitter:title" content="{{app_settings.site_title}}" />
+	<meta property="twitter:description" content="{{app_settings.site_title}}" />
+	<meta property="twitter:image" content="" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wdth,wght@75..125,100..800&display=swap" rel="stylesheet">
+
+	{% compress css %}
+	<link rel="stylesheet" href="{% static 'app/plugins/bootstrap/css/bootstrap.css' %}{{current_version}}" />
+	<link rel="stylesheet" href="{% static 'app/css/style.css' %}{{current_version}}" />
+	<link rel="stylesheet" href="{% static 'app/css/plugins.css' %}{{current_version}}" />
+	<link rel="stylesheet" href="{% static 'app/css/animated.css' %}{{current_version}}" />
+	<link rel="stylesheet" href="{% static 'app/css/plugins/jqueryui.css' %}{{current_version}}" />
+	{% endcompress %}
+
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+	{% block css_plugins %}{% endblock %}
+
+	<link rel="stylesheet" href="{% static 'app/css/icons.css' %}{{current_version}}" />
+	<link rel="stylesheet" href="{% static 'app/css/main.css' %}{{current_version}}" />
+	<link rel="stylesheet" href="{% static 'app/css/custom.css' %}{{current_version}}" />
+
+	{% block extra_css %}{% endblock %}
+	<script src="{% static 'app/plugins/jquery/jquery.min.js' %}{{current_version}}"></script>
+
+</head>
+
+<body>
+	{% block body %}
+
+	{% endblock body %}
+
+	{% compress js %}
+	<script src="{% static 'app/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'app/plugins/bootstrap/js/popper.min.js' %}"></script>
+	<script src="{% static 'app/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+
+	<script src="{% static 'app/plugins/select2/select2.full.min.js' %}"></script>
+	<script src="{% static 'app/plugins/p-scrollbar/p-scrollbar.js' %}"></script>
+	<script src="{% static 'app/plugins/bootstrap-datepicker/bootstrap-datepicker.js' %}"></script>
+	<script src="{% static 'app/plugins/date-picker/jquery-ui.js' %}"></script>
+	<script src="{% static 'app/js/masonry.pkgd.min.js' %}" async></script>
+	{% block js_plugins %}{% endblock %}
+	<script src="{% static 'app/js/sticky.js' %}"></script>
+	<script src="{% static 'app/js/themeColors.js' %}"></script>
+	<script src="{% static 'app/js/custom.js' %}{{current_version}}"></script>
+	{% endcompress %}
+
+	{% block javascript %}{% endblock %}
+
+</body>
+
+</html>

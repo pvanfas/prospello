@@ -1,0 +1,220 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-padding-1 add_bg add_bg">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2 class="mb-0">{{title}}</h2>
+        </div>
+    </div>
+</div>
+
+<div class="shop-area shop-page-responsive pt-60 pb-100">
+    <div class="container">
+        <div class="row flex-row-reverse">
+            <div class="col-lg-9">
+                <div class="shop-topbar-wrapper mb-40">
+                    <div class="shop-topbar-left">
+                        <div class="showing-item">
+                            <span>Showing {{products|length}} results</span>
+
+                            {% if request.GET.sort == '' %}<span class="ms-2">(Sorted by Default Sorting)</span>{% endif %}
+                            {% if request.GET.sort == 'price_asc' %}<span class="ms-2">(Sorted by Price - Low to High)</span>{% endif %}
+                            {% if request.GET.sort == 'price_desc' %}<span class="ms-2">(Sorted by Price - High to Low)</span>{% endif %}
+                            {% if request.GET.sort == 'created_asc' %}<span class="ms-2">(Sorted by Newest First)</span>{% endif %}
+                            {% if request.GET.sort == 'created_desc' %}<span class="ms-2">(Sorted by Oldest First)</span>{% endif %}
+                        </div>
+                    </div>
+                    <div class="shop-topbar-right">
+                        <div class="shop-sorting-area">
+                            <form action="" method="get" id="sortForm">
+                                <select class="nice-select nice-select-style-1" name="sort" onchange="submitForm()">
+                                    <option {% if request.GET.sort == '' %}selected{% endif %} value="">Default Sorting</option>
+                                    <option {% if request.GET.sort == 'price_asc' %}selected{% endif %} value="price_asc">Price - Low to High</option>
+                                    <option {% if request.GET.sort == 'price_desc' %}selected{% endif %} value="price_desc">Price - High to Low</option>
+                                    <option {% if request.GET.sort == 'created_asc' %}selected{% endif %} value="created_asc">Newest First</option>
+                                    <option {% if request.GET.sort == 'created_desc' %}selected{% endif %} value="created_desc">Oldest First</option>
+                                </select>
+                            </form>
+                        </div>
+                        <div class="shop-view-mode nav">
+                            <a class="active" href="#shop-1" data-bs-toggle="tab"><i class=" ti-layout-grid3 "></i> </a>
+                            <a href="#shop-2" data-bs-toggle="tab" class=""><i class=" ti-view-list-alt "></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="shop-bottom-area">
+                    <div class="tab-content jump">
+                        <div id="shop-1" class="tab-pane active">
+                            <div class="row">
+                                {% for product in products %}
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-12">
+                                    <div class="product-wrap mb-35">
+                                        <div class="border img-zoom mb-25 product-img shadow-sm">
+                                            <a href="{{product.get_absolute_url}}">
+                                                <img src="{{product.image.url}}" alt=""
+                                                    style="height: 250px;object-fit: cover;">
+                                            </a>
+                                            {% if product.has_offer %}
+                                            <div class="product-badge badge-top badge-right badge-pink">
+                                                <span>-{{product.get_offer.discount}}%</span>
+                                            </div>
+                                            {% endif %}
+                                            <div class="product-action-2-wrap d-flex">
+                                                <a href="{{product.get_absolute_url}}" class="btn btn-warning py-3 w-50" style="padding: 10px 20px;">Customize</a>
+                                                <button class="product-action-btn-2 cart-add-btn w-50" title="Add To Cart"  data-product-id="{{product.pk}}" style="padding: 10px 20px;">Add to cart</button>
+                                            </div>
+                                        </div>
+                                        <div class="product-content">
+                                            <h3><a href="{{product.get_absolute_url}}">{{product.name}}</a></h3>
+                                            <div class="product-price">
+                                                {% if product.has_offer %}
+                                                <span class="old-price">AED {{product.get_offer.offer_price}} </span>
+                                                {% endif %}
+                                                <span class="new-price">AED {{product.sale_price}} </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            
+                            {% include 'web/partials/pagination.html' %}
+                            
+                        </div>
+                        <div id="shop-2" class="tab-pane">
+                            {% for product in products %}
+                            <div class="shop-list-wrap mb-30">
+                                <div class="row">
+                                    <div class="col-lg-4 col-sm-5">
+                                        <div class="product-list-img">
+                                            <a href="{{product.get_absolute_url}}">
+                                                <img src="{{product.image.url}}" alt="Product Style">
+                                            </a>
+                                            {% if product.has_offer %}
+                                            <div class="product-list-badge badge-right badge-pink">
+                                                <span>-{{product.get_offer.discount}}%</span>
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8 col-sm-7">
+                                        <div class="shop-list-content">
+                                            <h3><a href="{{product.get_absolute_url}}">{{product.name}}</a></h3>
+                                            <div class="product-price">
+                                                {% if product.has_offer %}
+                                                <span class="old-price">AED {{product.get_offer.offer_price}} </span>
+                                                {% endif %}
+                                                <span class="new-price">AED {{product.sale_price}} </span>
+                                            </div>
+                                            <div class="product-list-rating">
+                                                <i class=" ti-star"></i>
+                                                <i class=" ti-star"></i>
+                                                <i class=" ti-star"></i>
+                                                <i class=" ti-star"></i>
+                                                <i class=" ti-star"></i>
+                                            </div>
+                                            <p>{{product.summary|default:""}}</p>
+                                            <div class="single-product-cart btn-hover m-0">
+                                                <a href="{{product.get_absolute_url}}" class="btn btn-brown py-3">Customize</a>
+                                                <button class="btn btn-brown cart-add-btn py-3" type="submit" data-product-id="{{product.pk}}">Add to cart</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                            {% include 'web/partials/pagination.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <div class="sidebar-wrapper">
+                    <div class="sidebar-widget mb-40">
+                        <div class="search-wrap-2">
+                            <form class="search-2-form" action="">
+                                {% csrf_token %}
+                                <input placeholder="Search*" type="text">
+                                <button class="button-search"><i class=" ti-search "></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget sidebar-widget-border mb-40 pb-35" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="sidebar-widget-title mb-25">
+                            <h3>Product Categories</h3>
+                        </div>
+                        <div class="sidebar-list-style">
+                            <ul>
+                                {% for category in categories %}
+                                <li><a href="{{category.get_absolute_url}}">{{category.name}} <span>{{category.get_count}}</span></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget sidebar-widget-border mb-40 pb-35" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="sidebar-widget-title mb-25">
+                            <h3>Product Recipients</h3>
+                        </div>
+                        <div class="sidebar-list-style">
+                            <ul>
+                                {% for recipient in recipients %}
+                                <li><a href="{{recipient.get_absolute_url}}">{{recipient.name}} <span>{{recipient.get_count}}</span></a></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget sidebar-widget-border mb-40 pb-35" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="sidebar-widget-title mb-25">
+                            <h3>Shop by Occasion</h3>
+                        </div>
+                        <div class="sidebar-list-style">
+                            <ul>
+                                {% for occasion in occasions %}
+                                <li><a href="{{occasion.get_absolute_url}}">{{occasion.name}}<span>{{occasion.get_count}}</span></a> </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget sidebar-widget-border mb-40 pb-35" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="sidebar-widget-title mb-25">
+                            <h3>Express your emotions.</h3>
+                        </div>
+                        <div class="sidebar-list-style">
+                            <ul>
+                                {% for emotion in emotions %}
+                                <li><a href="{{emotion.get_absolute_url}}">{{emotion.name}}<span>{{emotion.get_count}}</span></a> </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Product Modal end -->
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'web/js/product-details.js' %}"></script>
+<script>
+    function submitForm() {
+        document.getElementById("sortForm").submit();
+    }
+</script>
+{% endblock js %}

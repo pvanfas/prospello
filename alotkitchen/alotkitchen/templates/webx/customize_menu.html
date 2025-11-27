@@ -1,0 +1,150 @@
+{% extends 'web/base.html' %}
+{% load static crispy_forms_tags %}
+
+
+{% block content %}
+<section style="background: #F4F1EA;" id="packages">
+	<div class="container section_padding_sm packages">
+		<div class="row">
+
+            <div class="col-12">
+                <h3 class="text-left">Customize Your Menu</h3>
+            </div>
+
+            <div class="col-12 mb-5">
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                    <ul id="progress-num">
+                        <li><span class="step active">1</span><span>Select Plan</span></li>
+                        <li><span class="step active">2</span><span>Select Meals</span></li>
+                        <li><span class="step">3</span><span>Create Profile</span></li>
+                        <li><span class="step">4</span><span>Add Address</span></li>
+                        <li><span class="step">5</span><span>Set Delivery Address</span></li>
+                        <li><span class="step">6</span>Finish</li>
+                      </ul>
+                </div>
+            </div>
+		
+			<div class="col-lg-12 col-md-6 col-sm-12 mx-auto">
+                <div class="border_box border border-dark">
+
+                    <div class="row pb-3">
+                        <div class="col-md-3">
+                            <div class="package_image">
+                                <img src="{{plan.meal_category.image.url}}" alt="" style="height:150px;width: 100%;object-fit: contain;text-align: center;">
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <h5 class="card-title mb-2 fw-bold">Your Plan</h5>
+                            <p class="mb-1">
+                                You have selected the <strong>{{plan}}</strong> plan. 
+                                {{plan.meal_category.description}}. Changed your mind?  
+                                <a href="javascript: history.go(-1)" class="text-green">Switch to a different plan</a>
+                            </p>
+                            <div class="selected_container">
+                                <span>{{plan.meal_category}}</span>
+                                <span>{{plan.validity}} Days</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row pb-3">
+                        <div class="col-md-9">
+                            <div class="d-flex mt-6 flex-wrap">
+                                {% for mealtype in subplans %}
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="{{mealtype.pk}}">
+                                    <label class="form-check-label" for="{{mealtype.pk}}">
+                                      {{mealtype}}
+                                    </label>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                      
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        
+                        <div class="table-responsive my-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th style="width:22%;max-width:22%;">Day</th>
+                                        <th style="width:26%;max-width:26%;">Breakfast</th>
+                                        <th style="width:26%;max-width:26%;">Lunch</th>
+                                        <th style="width:26%;max-width:26%;">Dinner</th>
+                                    </tr>
+                                </thead>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Monday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.monday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.monday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.monday_dinner}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Tuesday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.tuesday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.tuesday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.tuesday_dinner}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Wednesday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.wednesday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.wednesday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.wednesday_dinner}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Thursday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.thursday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.thursday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.thursday_dinner}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Friday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.friday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.friday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.friday_dinner}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Saturday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.saturday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.saturday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.saturday_dinner}}</td>
+                                </tr>
+                                <tr>
+                                    <td style="width:22%;max-width:22%;" class="py-3">Sunday</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.sunday_breakfast}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.sunday_lunch}}</td>
+                                    <td style="width:26%;max-width:26%;" class="p-0">{{form.sunday_dinner}}</td>
+                                </tr>
+
+                            </table>
+                        </div>
+                        
+                        <div class="pt-3">
+                            <button type="submit" class="btn btn-primary">Next</button>
+                        </div>
+                    </form>
+                </div>
+			</div>
+        </div>
+	</div>
+</section>
+{% endblock content %}
+

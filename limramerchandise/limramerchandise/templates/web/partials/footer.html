@@ -1,0 +1,195 @@
+{% load static %}
+
+<!-- Footer area start -->
+<footer class="footer__area-4">
+    {% if not hide_appointment %}
+    <div class="footer__top-4-wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="footer__top-4">
+                        <h2 class="title">Get in Touch</h2>
+                        <a href="{% url 'web:index' %}#appointment" class="db-btn-main-color-one">Schedule an Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    {% comment %}
+    <div class="footer__widgets db-bg-secondary" style="{% if is_contact %}padding-top:80px{% endif %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__logo">
+                        <a href="/"><img src="{% static 'web/imgs/logo/logo_white.svg' %}" alt="Footer Logo"
+                                style="height: 60px;object-fit: contain;object-position: left;"></a>
+                        <p>
+
+                            LIMRA MERCHANDISE GENERAL TRADING L.L.C, based in the thriving business center of Dubai,
+                            UAE, is a dynamic and innovative company specializing in international trade, with a primary
+                            focus on Fast-Moving Consumer Goods (FMCG).
+                        </p>
+                        <div class="footer__social-4">
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__address">
+                        <h2 class="footer__title">Address</h2>
+                        <ul>
+                            <li>
+                                <span><i class="fa-solid fa-paper-plane"></i></span>
+                                <p>Office no-B3/517, Bin Shabib Mall <br>
+                                    Baghdad street - Al Qusais, Industrial Area 1 <br>
+                                    Dubai, P.O.BOX : 97000
+                                </p>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-phone"></i></span>
+                                <a href="tel:+971542159093">+971 542 159 093</a>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-envelope"></i></span>
+                                <a href="mailto:info@limramerchandise.com">info@limramerchandise.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__service">
+                        <h2 class="footer__title">Line of Business</h2>
+                        <ul>
+                            <li><a href="#">Personal Care </a></li>
+                            <li><a href="#">Food and Beverages</a></li>
+                            <li><a href="#">Cleaning Products</a></li>
+                            <li><a href="#">Paper Products</a></li>
+                            <li><a href="#">Baby and Child Care</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__newsletter">
+                        <div class="footer__title">Quick Links</div>
+                        <ul>
+                            <li><a href="#">Personal Care </a></li>
+                            <li><a href="#">Food and Beverages</a></li>
+                            <li><a href="#">Cleaning Products</a></li>
+                            <li><a href="#">Paper Products</a></li>
+                            <li><a href="#">Baby and Child Care</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xxl-12">
+                    <div class="footer__btm">
+                        <div class="footer__copyright">
+                            <p>© Limra Merchandise {% now 'Y' %}, Developed by Procom Solutions | All Rights Reserved
+                            </p>
+                        </div>
+                        <div class="footer__menu-4">
+                            <ul>
+                                <li><a href="#">Privacy Policy.</a></li>
+                                <li><a href="#">Terms and Conditions</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endcomment %}
+
+
+    {% if not hide_footer %}
+    <div class="footer__widgets db-bg-secondary" style="{% if is_contact %}padding-top:80px{% endif %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__logo">
+
+                        <div class="footer__address ps-0">
+                            <ul class="d-flex socials">
+                                <li><a href="#"><i class="fs-4 me-2 fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fs-4 me-2 fa-brands fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fs-4 me-2 fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fs-4 me-2 fa-brands fa-linkedin"></i></a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__address ps-0">
+                        <ul>
+                            <li>
+                                <span><i class="fa-solid fa-paper-plane"></i></span>
+                                <p>Office no-B3/517, Bin Shabib Mall <br>
+                                    Baghdad street - Al Qusais, Industrial Area 1 <br>
+                                    Dubai, P.O.BOX : 97000
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__address ps-0">
+                        <ul>
+                            <li>
+                                <span><i class="fa-solid fa-phone"></i></span>
+                                <a href="tel:+971542159093">+971 542 159 093</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6">
+                    <div class="footer__address ps-0">
+                        <ul>
+                            <li>
+                                <span><i class="fa-solid fa-envelope"></i></span>
+                                <a href="mailto:info@limramerchandise.com">info@limramerchandise.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xxl-12">
+                    <div class="footer__btm">
+                        <div class="footer__copyright mx-auto">
+                            <p>© Limra Merchandise {% now 'Y' %} | All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+    {% else %}
+
+    <div class="footer__widgets db-bg-secondary p-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-12">
+                    <div class="footer__btm mt-0 py-4">
+                        <div class="footer__copyright mx-auto">
+                            <p>© Limra Merchandise {% now 'Y' %} | All Rights Reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+</footer>
+<!-- Footer area end -->

@@ -1,0 +1,23 @@
+{% extends 'web/base.html' %} {% load static extras %} {% block content %}
+
+<div class="newsletter-area section_padding_md pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card-wrapper text-center">
+                    <h2>Thank You</h2>
+                    <p class="m-0 ps-15">We have recieved your Request, we’ll be in touch right away to set your holiday
+                        in motion.</p>
+                    <p class="m-0 ps-15">If you’d prefer to start with a phone call, talk to a Holiday Specialist by
+                        calling +919072070000.</p>
+
+                    <a href="{{instance.get_pdf_url}}" class="btn btn-white mt-4 me-2" target="_blank">Download
+                        Voucher</a>
+                    <a href="/" class="btn btn-white-inverse mt-4">Go to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

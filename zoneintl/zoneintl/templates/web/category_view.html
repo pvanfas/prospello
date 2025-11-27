@@ -1,0 +1,184 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--Page Title-->
+<section class="page-title" style="background-image: url({% static 'web/images/background/12.jpg' %});">
+  <div class="auto-container">
+    <h1>Courses</h1>
+    <span class="title_divider"></span>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'web:index' %}">Home</a></li>
+      <li><a href="{% url 'web:courses' %}">Category</a></li>
+      <li>Courses</li>
+    </ul>
+  </div>
+</section>
+<!--End Page Title-->
+
+<!-- Sidebar Page Container -->
+<div class="sidebar-page-container right-sidebar">
+  <div class="auto-container">
+    <div class="row clearfix">
+      <!--Content Side-->
+      <div class="content-side col-lg-8 col-md-12 col-sm-12">
+        <div class="blog-sidebar hover-stop">
+
+
+          {% for course in category.get_courses %}
+          <div class="news-block">
+            <div class="inner-box">
+              <div class="lower-content">
+                <h4><a href="#">{{course.name}}</a></h4>
+                <div class="text"><i class="fa fa-university"></i>&nbsp; <b>{{course.university.name}} </b></div>
+                <div class="post-info">
+                  <div class="post-author">
+                    <li><a style="color:blue;"><i class="fa fa-graduation-cap"></i>&nbsp;{{course.type}}</a></li>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <li><a style="color:blue;"><i class="fa fa-calendar"></i>&nbsp;&nbsp;{{course.duration}}</a></li>
+                  </div>
+                  <div class="post-option">
+                  <ul class="social-share">
+                      <a href="{% url 'web:contact' %}" class="theme-btn icon-btn-two small bg_sky">Register</a>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+
+      <!--Sidebar Side-->
+      <div class="sidebar-side sticky-container col-lg-4 col-md-12 col-sm-12">
+        <aside class="sidebar theiaStickySidebar">
+          <div class="sticky-sidebar">
+
+            <!-- Newslatters-->
+            <div class="sidebar-widget newslatters">
+              <div class="sidebar-title">
+                <h3><span class="icon flaticon-rss-symbol"></span>Offers</h3>
+              </div>
+              <div class="text">Enter your Whatsapp number below to get latest offers</div>
+              <form method="get" action="#">
+                <div class="form-group">
+                  <input type="text" name="input" value="" placeholder="Your Name" required>
+                  <br>
+                  <input type="text" name="input" value="" placeholder="Your Whatsapp Number" required>
+                  <button type="submit" class="theme-btn"><span class="btn-title">Submit</span></button>
+                </div>
+              </form>
+            </div>
+
+            <!-- Latest News -->
+            <div class="sidebar-widget latest-news">
+              <div class="sidebar-title">
+                <h3>University</h3>
+              </div>
+              <div class="widget-content">
+                <article class="post">
+
+                  <h5>Northumbria University</h5>
+
+                  <a href="{% url 'web:universities' %}" class="overlay-link"></a>
+                </article>
+
+                <article class="post">
+
+                  <h5>Solent University</h5>
+
+                  <a href="{% url 'web:universities' %}" class="overlay-link"></a>
+                </article>
+
+                <article class="post">
+
+                  <h5>Middlesex University London</h5>
+
+                  <a href="{% url 'web:universities' %}" class="overlay-link"></a>
+                </article>
+
+                <article class="post">
+
+                  <h5>University of Worcester</h5>
+
+                  <a href="{% url 'web:universities' %}" class="overlay-link"></a>
+                </article>
+
+                <center>
+                  <a href="{% url 'web:universities' %}"> View More</a>
+                </center>
+              </div>
+            </div>
+
+            <!-- Tags -->
+            <div class="sidebar-widgets">
+              <div class="widget-content">
+                <div class="banner-box-one" style="background: url({% static 'web/images/resource/banner-bg-1.png' %});">
+                  <div class="content">
+                    <h5 class="title">Contact us</h5>
+                    <p>Facing challenges in the work process is very</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</div>
+<!--End Cart Section-->
+
+<!-- Clients Section -->
+<section class="clients-section style-two">
+  <div class="auto-container">
+
+    <!-- Sponsors Outer -->
+    <div class="sponsors-outer">
+      <!--Sponsors Carousel-->
+      <ul class="sponsors-carousel owl-carousel owl-theme">
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/1_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/1.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/2_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/2.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/3_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/3.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/4_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/4.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/5_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/5.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/6_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/6.png' %}" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--End Clients Section -->
+
+{% endblock content %}

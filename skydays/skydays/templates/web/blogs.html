@@ -1,0 +1,90 @@
+{% extends 'web/base.html' %}
+
+{% load static extras %}
+
+{% block content %}
+
+<div class="about-area section_padding_lg">
+    <div class="container">
+        <div class="row negative_parent">
+            <div class="col-md-12 negative_child">
+                <div class="thumb">
+                    <img src="{% static 'web/images/blog.png' %}" alt="Blog" style="height:300px;object-position:center">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="package-area section_padding_sm">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h2>popular <span class="text-orange">blogs</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row owl-carousel destination_slider">
+            {% for blog in popular_blogs %}
+            <div class="package-card border-0">
+                <div class="package-thumb b-radius">
+                    <a href="{{blog.get_absolute_url}}" class="w-100">
+                        <img src="{{blog.image.url}}" alt="{{blog.title}}" class="img-fluid">
+                    </a>
+                </div>
+                <div class="package-details bg-none px-0">
+                    <div class="content ms-2">
+                        <span class="text-grey fs-12 fw-600 mb-2 d-block">{{blog.date}}</span>
+                        <h6 class="fw-700">{{blog.title}}</h6>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mt-20">
+            <hr>
+        </div>
+
+    </div>
+</div>
+
+<div class="package-area section_padding_sm">
+    <div class="container">
+
+        <div class="row">
+            {% for blog in blogs %}
+            <div class="col-lg-4 col-md-6 col-12">
+                <div class="package-card">
+                    <div class="package-thumb">
+                        <a href="{{blog.get_absolute_url}}" class="w-100">
+                            <img src="{{blog.image.url}}" alt="{{blog.title}}" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="package-details">
+                        <span class="text-orange d-block fw-600 fs-12"><i class="icon-tag text-orange"></i> {{blog.tag}}</span>
+                        <h5 class="fs-18 fw-600 my-2"><a href="{{blog.get_absolute_url}}">{{blog.title}}</a></h5>
+                        <p class="text-black">{{blog.summary}}</p>
+                        
+                        <div class="d-flex flex-wrap align-items-center justify-content-between mb-2 mt-3">
+                            <div class="d-flex flex-wrap align-items-center justify-content-between">
+                                <img src="{{blog.author.image.url}}" class="rounded-circle me-2" style="width: 30px;" alt="{{blog.author.name}}" />
+                                <span class="fw-500 fs-14">By {{blog.author.name}}</span>
+                            </div>
+                            <span class="text-grey fs-11">{{blog.date}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+
+{% endblock %}

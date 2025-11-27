@@ -1,0 +1,474 @@
+{% extends 'web/base.html' %} {% load static extras %} {% block content %}
+
+<div class="about-area section_padding_sm">
+    <div class="container">
+        <div class="row negative_parent">
+            <div class="col-md-12">
+                <div class="thumb">
+                    <img src="{{departure.image.crop.1600x800}}" alt="Skydays Departures" style="height:300px" />
+                </div>
+            </div>
+            <div class="col-md-11 negative_child z-upper mx-auto">
+                <div class="about_card">
+                    <div class="row">
+                        <div class="col-md-10 d-flex flex-wrap align-items-center">
+                            <i class="icon-location fs-30 text-orange"></i>
+                            <h2>{{departure.destination}}</h2>
+                            <small class="text-yellow">
+                                {% for i in departure.rating|times %}
+                                <i class="icon-star"></i>
+                                {% endfor %} {% for i in 5|subtract:departure.rating|times %}
+                                <i class="icon-star-empty"></i>
+                                {% endfor %}
+                            </small>
+                        </div>
+                        <div class="col-md-2 mt-3 text-start text-md-end">
+                            <span class="text-orange fw-600 fs-20">{{departure.price|change_currency:currency}}</span>
+                        </div>
+                    </div>
+
+                    <div class="row mt-3 align-items-center border-bottom pb-3">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-lg-4 col-lg-4 col-sm-12 mt-2">
+                                    <span class="text-grey">{{departure.duration}}</span>
+                                </div>
+                                <div class="col-lg-3 col-lg-4 col-sm-12 mt-2">
+                                    <span class="text-grey">Departure from: {{departure.departure_from}}</span>
+                                </div>
+                                <div class="col-lg-3 col-lg-4 col-sm-12 mt-2">
+                                    <span class="text-grey">Departure date: {{departure.date}}</span>
+                                </div>
+                                <div class="col-lg-3 col-lg-4 col-sm-12 mt-2">
+                                    <span class="text-grey">Total number of seats: {{departure.total_seats}}</span>
+                                </div>
+                                <div class="col-lg-3 col-lg-4 col-sm-12 mt-2">
+                                    <span class="text-grey">Seats available: {{departure.available_seats}}</span>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-2 text-end">
+                            <a href="#">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="31" fill="none">
+                                    <path fill="#999"
+                                        d="M19.996 30.101c-.168-.059-.34-.107-.503-.18-.544-.24-.978-.579-1.263-1.119-1.803-3.414-3.621-6.82-5.444-10.224a.95.95 0 0 0-.387-.375c-3.505-1.761-7.013-3.52-10.53-5.258-.672-.332-1.053-.851-1.286-1.512-.025-.071-.055-.14-.082-.212v-.704c.289-1.033 1.06-1.536 2.06-1.857C11.21 5.88 19.856 3.08 28.507.3c.43-.139.914-.226 1.36-.192 1.114.085 1.788 1.023 1.601 2.136a4.91 4.91 0 0 1-.201.764c-2.89 8.412-5.786 16.823-8.675 25.236-.317.921-.876 1.588-1.871 1.856l-.726.001Zm9.093-26.35-.053-.031c-.05.045-.101.09-.15.137-4.75 4.6-9.498 9.202-14.254 13.796-.17.163-.143.275-.05.45 1.255 2.348 2.504 4.698 3.755 7.047.503.946.994 1.897 1.52 2.83.091.16.325.308.51.332.112.014.273-.21.383-.349.07-.088.094-.213.132-.325 2.71-7.87 5.42-15.74 8.128-23.612.031-.09.053-.183.08-.275Zm-1.349-1.29-.036-.047c-.104.03-.209.056-.312.09C19.818 4.946 12.244 7.391 4.67 9.837c-.65.21-1.303.409-1.942.647-.162.062-.39.263-.38.383.015.174.213.338.346.497.04.049.122.065.184.096 3.321 1.659 6.644 3.314 9.96 4.982.255.129.388.098.584-.091 4.7-4.565 9.409-9.122 14.115-13.68.07-.068.136-.14.203-.21Z" />
+                                </svg>
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <div class="row mt-3">
+                        <div class="col-12 mb-3">
+                            <h5 class="fw-600 fs-16">Costing</h5>
+                        </div>
+                        <div class="col-12">
+                            <div class="table-responsive">
+                                <table class="w-100 table table-bordered">
+                                    <tr>
+                                        <th style="min-width: 120px;">Adult</th>
+                                        <th style="min-width: 150px;">Child with bed (2-12 Years)</th>
+                                        <th style="min-width: 150px;">Child without bed (2-12 Years)</th>
+                                        <th style="min-width: 120px;">Infant (0-2 Years)</th>
+                                        <th style="min-width: 120px;">Single Occupancy</th>
+                                    </tr>
+                                    <tr>
+                                        <td style="min-width: 120px;" id="adult_costing">
+                                            {{departure.adult_costing|change_currency:currency}}</td>
+                                        <td style="min-width: 150px;" id="child_with_bed_costing">
+                                            {{departure.child_with_bed_costing|change_currency:currency}}</td>
+                                        <td style="min-width: 150px;" id="child_without_bed_costing">
+                                            {{departure.child_without_bed_costing|change_currency:currency}}</td>
+                                        <td style="min-width: 120px;" id="infant_costing">
+                                            {{departure.infant_costing|change_currency:currency}}</td>
+                                        <td style="min-width: 120px;" id="single_occupancy_costing">
+                                            {{departure.single_occupancy_costing|change_currency:currency}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <a href="#details" class="btn btn-white bg-blue">Book Now</a>
+                            {% if departure.attachment %}
+                            <a href="{{departure.attachment.url}}" target="_blank"
+                                class="btn btn-white-inverse text-blue">Download Brochure</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="package-details-wrapper" id="details">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="package-details">
+                    <div class="package-tab">
+                        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+                                    aria-selected="true">
+                                    Costing
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-overview-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-overview" type="button" role="tab"
+                                    aria-controls="pills-overview" aria-selected="false">
+                                    Overview
+                                </button>
+                            </li>
+                            {% if departure.brochure %}
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="pills-itinerary-tab" data-bs-toggle="pill"
+                                    data-bs-target="#pills-itinerary" type="button" role="tab"
+                                    aria-controls="pills-itinerary" aria-selected="false">
+                                    Brochure
+                                </button>
+                            </li>
+                            {% endif %}
+                        </ul>
+
+                        <div class="tab-content p-tab-content" id="pills-tabContent">
+                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+                                aria-labelledby="pills-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="tab-content-1 box">
+                                            <div class="p-overview">
+                                                <h5 class="fw-400 fs-18">Overview</h5>
+                                                <form action="" method="post" class="costing_form">
+                                                    {% csrf_token %}
+
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label for="">Travellers</label>
+                                                        </div>
+
+                                                        <div class="col-md-10 text-center mb-3">
+
+                                                            {% for form in formset.forms %}
+                                                            <div class="table-responsive">
+                                                                <table class="table" id="id_orders_table">
+                                                                    <tr class="border" id="{{ form.prefix }}-row">
+                                                                        <td class="form-group number_column text-start">
+                                                                            <span class="btn-secondary" type="button"
+                                                                                class="name_room">Room</span>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Adult</label>
+                                                                            <div class="number">{{form.adult}}</div>
+                                                                            <small>12+ Yrs</small>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Child with Bed</label>
+                                                                            <div class="number">{{form.child_with_bed}}
+                                                                            </div>
+                                                                            <small>Below 12 Yrs</small>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Child without Bed</label>
+                                                                            <div class="number">
+                                                                                {{form.child_without_bed}}</div>
+                                                                            <small>Below 12 Yrs</small>
+                                                                        </td>
+                                                                        <td class="form-group number_column">
+                                                                            <label for="">Infant</label>
+                                                                            <div class="number">{{form.infant}}</div>
+                                                                            <small>0-2 Yrs</small>
+                                                                        </td>
+
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            {% endfor %} {{ formset.management_form }}
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        <div class="col-md-2">
+                                                            <label for="">Contact details</label>
+                                                        </div>
+                                                        <div class="col-md-10 text-end">
+                                                            <div class="row">
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-3">{{form.name}}</div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-3">{{form.phone}}</div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-3">{{form.whatsapp}}</div>
+                                                                </div>
+                                                                <div class="col-md-6">
+                                                                    <div class="form-group mb-3">{{form.email}}</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="row text-center mt-3 fs-16">
+                                                        <p class="text-grey fs-16 mb-2">Your booking details will be
+                                                            sent on these contact details</p>
+                                                        <p
+                                                            class="text-grey fs-16 mb-2 d-flex flex-wrap align-items-center justify-content-center">
+                                                            <input type="checkbox" /> I accept the <a
+                                                                href="{% url 'web:privacy_policy' %}"> Privacy
+                                                                Policy</a> & <a
+                                                                href="{% url 'web:terms_and_conditions' %}"> Terms &
+                                                                Conditions</a>
+                                                        </p>
+                                                    </div>
+
+                                                    <div class="row text-center my-3">
+                                                        <div class="col-lg-9 col-md-8 col-sm-12 mx-auto mb-2">
+                                                            <div class="box py-3 w-100" style="min-height:114px">
+                                                                <p class="mb-1">Costing Breakdown</p>
+                                                                <div id="result"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-md-4 col-sm-12 col-12 mx-auto mb-2">
+                                                            <div class="box bg-orange">
+                                                                <h3 class="fw-400 fs-22 text-white text-center fw-bold">
+                                                                    Total Cost: <span id="total_price">Rs 0.00</span>
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="accordion my-5 content-accordion" id="accordionExample">
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="headingOne">
+                                                                <button class="accordion-button" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseOne" aria-expanded="false"
+                                                                    aria-controls="collapseOne">
+                                                                    Payment terms
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseOne" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingOne"
+                                                                data-bs-parent="#accordionExample">
+                                                                <div class="accordion-body">
+                                                                    {{departure.payment_terms|safe}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="headingTwo">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseTwo" aria-expanded="false"
+                                                                    aria-controls="collapseTwo">
+                                                                    Cancellation policy
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingTwo"
+                                                                data-bs-parent="#accordionExample">
+                                                                <div class="accordion-body">
+                                                                    {{departure.cancellation_policy|safe}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="accordion-item">
+                                                            <h2 class="accordion-header" id="headingThree">
+                                                                <button class="accordion-button collapsed" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#collapseThree"
+                                                                    aria-expanded="false" aria-controls="collapseThree">
+                                                                    Terms and conditions
+                                                                </button>
+                                                            </h2>
+                                                            <div id="collapseThree" class="accordion-collapse collapse"
+                                                                aria-labelledby="headingThree"
+                                                                data-bs-parent="#accordionExample">
+                                                                <div class="accordion-body">
+                                                                    {{departure.terms_and_conditions|safe}}
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="text-center">
+                                                        <h4 class="fw-400 fs-22 fw-bold">Select Payment Method</h4>
+                                                    </div>
+
+                                                    <div class="row mt-3 justify-content-center w-100">
+                                                        <div class="col-lg-3 col-12">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="payment_method" value="ADVANCE"
+                                                                    id="advance_payment">
+                                                                <label class="box payment_card" for="advance_payment">
+                                                                    <h6 class="px-2">Pay advance & book your seats</h6>
+                                                                    <div class="payment_amount" id="advance_amount">
+                                                                        
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-12">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="payment_method" value="FULL"
+                                                                    id="full_payment">
+                                                                <label class="box payment_card" for="full_payment">
+                                                                    <h6>Pay full amount</h6>
+                                                                    <div class="payment_amount" id="full_amount">
+                                                                        {{departure.price}}
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-3 col-12">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="payment_method" value="TALK"
+                                                                    id="talk_counsellor">
+                                                                <label class="box payment_card" for="talk_counsellor">
+                                                                    <h6>Talk with Counselor</h6>
+                                                                    <div class="payment_amount">
+                                                                        <p class="text-grey m-0">You can talk with our
+                                                                            counselor</p>
+                                                                    </div>
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="text-center mt-3">
+                                                        <button class="btn btn-white bg-blue"
+                                                            type="submit">Continue</button>
+                                                    </div>
+
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-overview" role="tabpanel"
+                                aria-labelledby="pills-overview-tab">
+                                <div class="tab-contant-3 box">
+                                    <div class="safe_content">
+                                        {{departure.overview|safe}}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="pills-itinerary" role="tabpanel"
+                                aria-labelledby="pills-itinerary-tab">
+                                <div class="tab-content-2 box">
+                                    <div class="safe_content">
+                                        {% if departure.brochure %}    
+                                        <div id="adobe-dc-view" style="width: 800px;margin: 0 auto;"></div>
+                                        <script src="https://acrobatservices.adobe.com/view-sdk/viewer.js"></script>
+                                        <script type="text/javascript">
+                                            document.addEventListener("adobe_dc_view_sdk.ready", function(){ 
+                                                var adobeDCView = new AdobeDC.View({clientId: "73405d4783f94024aa3660625651a391", divId: "adobe-dc-view"});
+                                                adobeDCView.previewFile({
+                                                    content:{location: {url: "{{departure.brochure.url}}"}},
+                                                    metaData:{fileName: "{{departure}} Brochure"}
+                                                }, {embedMode: "IN_LINE", showPrintPDF: false});
+                                            });
+                                        </script>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} {% block scripts %}
+<script src="{% static 'web/js/jquery.formset.js' %}"></script>
+<script>
+    $("#id_orders_table tr").formset({
+        addText: "+ Add Room",
+        deleteText:
+            '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16"><path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/></svg>',
+        prefix: "traveller",
+        addCssClass: "btn btn-primary text-center",
+        deleteCssClass: "btn-x",
+        added: function (row) {
+            $(row)
+                .find("input[type=number]")
+                .each(function () { if (!$(this).val()) { $(this).val(0); } });
+        },
+    });
+
+    function convertCurrencyToNumber(currencyString) {
+        return Number(currencyString.replace(/[^\d.-]/g, ''));
+    }
+
+    function formatCurrency(amount) {
+        return new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR' }).format(amount);
+    }
+
+    var $adult_costing = $('#adult_costing');
+    var $child_with_bed_costing = $('#child_with_bed_costing');
+    var $child_without_bed_costing = $('#child_without_bed_costing');
+    var $infant_costing = $('#infant_costing');
+    var $single_occupancy_costing = $('#single_occupancy_costing');
+
+    var adult_costing = convertCurrencyToNumber($adult_costing.text());
+    var child_with_bed_costing = convertCurrencyToNumber($child_with_bed_costing.text());
+    var child_without_bed_costing = convertCurrencyToNumber($child_without_bed_costing.text());
+    var infant_costing = convertCurrencyToNumber($infant_costing.text());
+    var single_occupancy_costing = convertCurrencyToNumber($single_occupancy_costing.text());
+
+    function calculatePrice() {
+        var total = 0;
+        data_html = "";
+
+        $('.dynamic-form').each(function (index, element) {
+            var $room = $(element);
+            var adult_count = parseInt($room.find('.adult_count').val());
+            var child_bed_count = parseInt($room.find('.child_bed_count').val());
+            var child_wo_count = parseInt($room.find('.child_wo_count').val());
+            var infant_count = parseInt($room.find('.infant_count').val());
+            var adult_price = adult_count === 1 ? single_occupancy_costing : adult_costing;
+
+            var adult_sumprice = adult_count * adult_price;
+            var child_bed_sumprice = child_bed_count * child_with_bed_costing;
+            var child_wo_sumprice = child_wo_count * child_without_bed_costing;
+            var infant_sumprice = infant_count * infant_costing;
+
+            var roomTotal = adult_sumprice + child_bed_sumprice + child_wo_sumprice + infant_sumprice;
+            total += roomTotal;
+            advance_amout = total * 0.25;
+
+            exp_html = `<p class="mb-0">(${adult_count} Adult x ${adult_price}) + (${child_bed_count} Child with Bed x ${child_with_bed_costing}) + (${child_wo_count} Child without Bed x ${child_without_bed_costing}) + (${infant_count} Infants x ${infant_costing}) = ${roomTotal}</p>`;
+            if (roomTotal > 0) {
+                data_html += exp_html;
+            }
+        });
+
+        $('#total_price').text(formatCurrency(total));
+        $('#full_amount').text(formatCurrency(total));
+        $("#advance_amount").text(formatCurrency(advance_amout));
+        $('#result').html(data_html);
+    }
+    $(document).ready(function () {
+        setInterval(calculatePrice, 800);
+    });
+</script>
+<script>
+    $('#id_phone').on('change', function () {
+        $('#id_whatsapp').val($(this).val());
+    });
+</script>
+{% endblock %}

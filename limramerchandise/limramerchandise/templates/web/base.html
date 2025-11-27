@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+
+    <!-- Site Title -->
+    <title>{% block title %}Limra Merchandise{% endblock %}</title>
+
+    <!-- Site Favicon -->
+    <link rel="icon" type="image/x-icon" href="{% static 'web/imgs/icon/favicon.png' %}">
+
+    <!-- Primary Meta Tags -->
+    <title>Limra Merchandise General Trading LLC</title>
+    <meta name="title" content="Limra Merchandise General Trading LLC" />
+    <meta name="description" content="Personal Care | Skin Care | Cosmetics" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://limramerchandise.com" />
+    <meta property="og:title" content="Limra Merchandise General Trading LLC" />
+    <meta property="og:description" content="Personal Care | Skin Care | Cosmetics" />
+    <meta property="og:image" content="https://limramerchandise.com/static/web/imgs/main/preview.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://limramerchandise.com" />
+    <meta property="twitter:title" content="Limra Merchandise General Trading LLC" />
+    <meta property="twitter:description" content="Personal Care | Skin Care | Cosmetics" />
+    <meta property="twitter:image" content="https://limramerchandise.com/static/web/imgs/main/preview.png" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/imgs/favicon/apple-touch-icon.png' %}?v=1.4">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/imgs/favicon/favicon-32x32.png' %}?v=1.4">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/imgs/favicon/favicon-16x16.png' %}?v=1.4">
+    <link rel="manifest" href="{% static 'web/imgs/favicon/site.webmanifest' %}?v=1.4">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- All CSS Files -->
+    <link rel="stylesheet" href="{% static 'web/css/all.min.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/bootstrap.min.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/meanmenu.min.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/swiper-bundle.min.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/magnific-popup.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/aos.css' %}?v=1.4">
+    <link rel="stylesheet" href="{% static 'web/css/progressbar.css' %}?v=1.4">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.19/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="{% static 'web/css/master.css' %}?v=1.4.4">
+
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+    <!-- Scroll to top -->
+    <button id="scroll_top" class="scroll-top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <!-- Header area start -->
+            {% block header %}
+            {% include 'web/partials/header.html' %}
+            {% endblock %}
+
+            <div class="search__form">
+                <form action="#">
+                    <input type="text" name="s" placeholder="Search...">
+                </form>
+            </div>
+            <!-- Header area end -->
+
+            {% block offcanvas %}
+            {% include 'web/partials/offcanvas.html' %}
+            {% endblock %}
+
+            <main>
+                {% block content %}
+
+                {% endblock %}
+            </main>
+
+            {% block footer %}
+            {% include 'web/partials/footer.html' %}
+            {% endblock %}
+
+        </div>
+    </div>
+
+    <!-- All JS Files -->
+    <script src="{% static 'web/js/jquery-3.6.1.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/bootstrap.bundle.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/jquery.meanmenu.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/swiper-bundle.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/jquery.magnific-popup.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/counter.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/progressbar.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/aos.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/gsap.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/SplitText.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/ScrollSmoother.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/ScrollTrigger.min.js' %}?v=1.4"></script>
+    <script src="{% static 'web/js/vanilla-tilt.min.js' %}?v=1.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.19/build/js/intlTelInput.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
+    <script src="{% static 'web/js/main.js' %}?v=1.4.1"></script>
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>

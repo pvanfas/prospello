@@ -1,0 +1,46 @@
+{% load static %}
+<div class="sidebar-cart-active">
+    <div class="sidebar-cart-all">
+        <a class="cart-close" href="#"><i class="pe-7s-close"></i></a>
+        <div class="cart-content">
+            <h3>Shopping Cart</h3>
+            {% if cart_items %}
+            <ul id="cartItems">
+                {% for item in cart_items %}
+                <li>
+                    <div class="cart-img">
+                        <a href="{{item.product.get_absolute_url}}" class="product_link"><img src="{{item.product.image.url}}" alt="" class="cart_image"></a>
+                    </div>
+                    <div class="cart-title">
+                        <h4><a href="{{item.product.get_absolute_url}}" class="cart_name">{{item.product.name}}</a></h4>
+                        <span>
+                            <span class="cart_price">{{item.quantity}}</span> × 
+                            AED <span class="cart_price">{{item.product.get_price}}</span>
+                        </span>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <ul id="cartItems">
+                <li>
+                    <div class="cart-empty">
+                        <p class="mb-30">Your cart is currently empty.</p>
+                        <a href="{% url 'web:products' %}" class="btn btn-brown border">Return to shop</a>
+                    </div>
+                </li>
+            </ul>
+            {% endif %}
+            
+            <div class="cart-total">
+                <h4>Subtotal: <span>AED <span class="total"> {{cart_total}}</span></span></h4>
+            </div>
+            <div class="cart-btn btn-hover">
+                <a class="theme-color" href="{% url 'web:cart' %}">view cart</a>
+            </div>
+            <div class="checkout-btn btn-hover">
+                <a class="theme-color" href="{% url 'web:checkout' %}">checkout</a>
+            </div>
+        </div>
+    </div>
+</div>

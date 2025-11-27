@@ -1,0 +1,65 @@
+{% extends 'view/base.html' %}
+{% block title %}Custom Package Enquiry{% endblock %}
+{% block content %}
+
+<p>New Custom Package Enquiry Form Submission Recieved. The details of the message are as follows</p>
+
+<table style="width:100%">
+  <tr>
+    <td><strong>First name:</strong></td>
+    <td> {{ instance.first_name }}</td>
+  </tr>
+  <tr>
+    <td><strong>Last name:</strong></td>
+    <td> {{ instance.last_name }}</td>
+  </tr>
+  <tr>
+    <td><strong>Email:</strong></td>
+    <td> {{ instance.email }}</td>
+  </tr>
+  <tr>
+    <td><strong>Phone:</strong></td>
+    <td> {{ instance.phone }}</td>
+  </tr>
+  <tr>
+    <td><strong>Whatsapp:</strong></td>
+    <td> {{ instance.whatsapp }}</td>
+  </tr>
+  <tr>
+    <td><strong>Adult:</strong></td>
+    <td> {{ instance.adult }}</td>
+  </tr>
+  <tr>
+    <td><strong>Child:</strong></td>
+    <td> {{ instance.child }}</td>
+  </tr>
+  <tr>
+    <td><strong>Infant:</strong></td>
+    <td> {{ instance.infant }}</td>
+  </tr>
+  <tr>
+    <td><strong>Travel date:</strong></td>
+    <td> {{ instance.travel_date }}</td>
+  </tr>
+  <tr>
+    <td><strong>Destination:</strong></td>
+    <td> {{ instance.destination }}</td>
+  </tr>
+  <tr>
+    <td><strong>Days:</strong></td>
+    <td> {{ instance.days }}</td>
+  </tr>
+  <tr>
+    <td><strong>Airport:</strong></td>
+    <td> {{ instance.airport }}</td>
+  </tr>
+  <tr>
+    <td><strong>Preference:</strong></td>
+    <td> {{ instance.preference }}</td>
+  </tr>
+  <tr>
+    <td><strong>Timestamp:</strong></td>
+    <td> {{ instance.timestamp }}</td>
+  </tr>
+</table>
+{% endblock %}

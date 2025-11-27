@@ -1,0 +1,66 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block title %}Updates - De Limra Buildcon LLP{% endblock %}
+
+{% block content %}
+<!-- start page title -->
+<section class="half-section bg-light-gray parallax" data-parallax-background-ratio="0.5" style="background-image:url('{% static 'web/images/portfolio-bg2.jpg' %}');">
+    <div class="container">
+        <div class="row align-items-stretch justify-content-center extra-small-screen">
+            <div class="col-12 col-xl-6 col-lg-7 col-md-8 page-title-extra-small text-center d-flex justify-content-center flex-column">
+                <h2 class="text-extra-dark-gray alt-font font-weight-500 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">Updates</h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title -->
+<!-- start section -->
+<section class="pt-0 padding-eleven-lr xl-padding-two-lr xs-no-padding-lr">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 blog-content">
+                <ul class="blog-grid blog-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
+                    <li class="grid-sizer"></li>
+                    <!-- start blog item -->
+
+                    {% for news in newses %}
+                    <li class="grid-item wow animate__fadeIn">
+                        <div class="blog-post border-radius-5px">
+                            <div class="blog-post-image">
+                                <a href="{{news.get_absolute_url}}" title=""><img src="{{news.photo.crop.700x500}}" alt=""></a>
+                                <a href="{{news.get_absolute_url}}" class="blog-category alt-font">{{news.category.title}}</a>
+                            </div>
+
+                            <div class="post-details padding-3-rem-lr padding-2-half-rem-tb lg-padding-2-rem-all md-padding-2-half-rem-tb md-padding-3-rem-lr">
+                                <a href="{{news.get_absolute_url}}" class="alt-font text-small d-inline-block margin-10px-bottom">{{news.date}}</a>
+                                <a href="{{news.get_absolute_url}}" class="alt-font font-weight-500 text-extra-medium text-extra-dark-gray text-green-hover d-block margin-15px-bottom">{{news.title}}</a>
+                                <p>{{news.summary}}</p>
+                                <div class="d-flex align-items-center">
+                                    <img class="avtar-image" src="{% static 'web/images/whatsapp.png' %}" alt="">
+                                    <span class="alt-font text-small mr-auto"><a href="https://wa.me/?text=Checkout%20this%20post%20of%20{{instance.title|urlencode}}%20{{request.build_absolute_uri}}" target="_blank" class="text-sky-blue-hover">Share to Whatsapp</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    {% endfor %}
+
+                </ul>
+                <!-- start pagination -->
+                <!-- <div class="col-12 d-flex justify-content-center margin-7-half-rem-top md-margin-5-rem-top wow animate__fadeIn">
+                        <ul class="pagination pagination-style-01 text-small font-weight-500 align-items-center">
+                            <li class="page-item"><a class="page-link" href="#"><i class="feather icon-feather-arrow-left icon-extra-small d-xs-none"></i></a></li>
+                            <li class="page-item"><a class="page-link" href="#">01</a></li>
+                            <li class="page-item active"><a class="page-link" href="#">02</a></li>
+                            <li class="page-item"><a class="page-link" href="#">03</a></li>
+                            <li class="page-item"><a class="page-link" href="#">04</a></li>
+                            <li class="page-item"><a class="page-link" href="#"><i class="feather icon-feather-arrow-right icon-extra-small  d-xs-none"></i></a></li>
+                        </ul>
+                    </div> -->
+                <!-- end pagination -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+
+{% endblock %}

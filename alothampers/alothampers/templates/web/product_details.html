@@ -1,0 +1,277 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="product-details-area pb-60 pt-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="product-details-img-wrap product-details-vertical-wrap">
+                    <div class="product-details-small-img-wrap">
+                        <div class="swiper-container product-details-small-img-slider-1 pd-small-img-style">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="product-details-small-img">
+                                        <img src="{{product.image.url}}" alt="Product Thumnail">
+                                    </div>
+                                </div>
+                                {% for item in product.get_images %}
+                                <div class="swiper-slide">
+                                    <div class="product-details-small-img">
+                                        <img src="{{item.image.url}}" alt="Product Thumnail">
+                                    </div>
+                                </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-container product-details-big-img-slider-1 pd-big-img-style">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="easyzoom-style">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{product.image.url}}">
+                                            <img src="{{product.image.url}}" alt="">
+                                        </a>
+                                    </div>
+                                    <a class="easyzoom-pop-up img-popup" href="{{product.image.url}}">
+                                        <i class="pe-7s-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            {% for item in product.get_images %}
+                            <div class="swiper-slide">
+                                <div class="easyzoom-style">
+                                    <div class="easyzoom easyzoom--overlay">
+                                        <a href="{{item.image.url}}">
+                                            <img src="{{item.image.url}}" alt="">
+                                        </a>
+                                    </div>
+                                    <a class="easyzoom-pop-up img-popup" href="{{item.image.url}}">
+                                        <i class="pe-7s-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="product-details-content">
+                    <h2>{{product.name}}</h2>
+                    <div class="product-details-price">
+                        <span class="new-price">AED {{product.sale_price}}</span>
+                    </div>
+                    <div class="product-details-review mb-20">
+                        <div class="product-rating">
+                            <i class=" ti-star"></i>
+                            <i class=" ti-star"></i>
+                            <i class=" ti-star"></i>
+                            <i class=" ti-star"></i>
+                            <i class=" ti-star"></i>
+                        </div>
+                    </div>
+                    <p>{{product.summary|default:""}}</p>
+
+                  
+
+                    {% if product.enable_greeting_card or product.enable_gift_wrapping or product.enable_addons %}
+                    <button type="button" class="btn btn-outline-success btn-sm py-2 px-3" data-bs-toggle="modal"
+                        data-bs-target="#staticBackdrop">
+                        Add Greeting Card & Gift Wrap
+                    </button>
+                    {% endif %}
+
+
+                    {% if product.enable_message %}
+                    <div class="form-group mt-3">
+                        <label for="message">{{product.message_label}}</label>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
+                    </div>
+                    {% endif %}
+
+                    {% if product.enable_file_upload %}
+                    <div class="form-group mt-3">
+                        <label for="file">{{product.file_upload_label}}</label>
+                        <input type="file" class="form-control-file" id="file">
+                    </div>
+                    {% endif %}
+
+
+                    <div class="product-details-action-wrap mt-5">
+                        <div class="product-quality">
+                            <div class="dec qtybutton">-</div>
+                            <input class="cart-plus-minus-box input-text qty text" name="quantity" value="1" type="number">
+                            <div class="inc qtybutton">+</div>
+                        </div>
+                        <div class="single-product-cart btn-hover">
+                            <button class="btn cart-add-btn  py-3" type="submit" data-product-id="{{product.pk}}">Add to
+                                cart</button>
+                        </div>
+
+                    </div>
+
+                    <div class="product-details-meta">
+                        <ul>
+                            {% if product.sku %}
+                            <li><span class="title">SKU:</span> {{product.sku}}</li>
+                            {% endif %}
+                            <li><span class="title">Category:</span>
+                                <ul>
+                                    <li><a href="{{product.category.get_absolute_url}}">{{product.category}}</a>,</li>
+                                </ul>
+                            </li>
+                            {% if product.tagline %}
+                            <li><span class="title">Tags:</span>
+                                <ul class="tag">
+                                    <li><a href="#">{{product.tagline}}</a></li>
+                                </ul>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="social-icon-style-4">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-pinterest-p"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if product.video %}
+<div class="video_wrapper pb-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="embed-responsive embed-responsive-16by9">
+                    <video controls class="w-100">
+                        <source src="{{product.video.url}}" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="description-review-area pb-85">
+    <div class="container">
+        <div class="description-review-topbar nav">
+            <a class="active" data-bs-toggle="tab" href="#des-details1"> Description </a>
+            {% if product.get_informations %}
+            <a data-bs-toggle="tab" href="#des-details2" class=""> Information </a>
+            {% endif %}
+            <a data-bs-toggle="tab" href="#des-details3" class=""> Reviews </a>
+        </div>
+        <div class="tab-content">
+            <div id="des-details1" class="tab-pane active">
+                <div class="product-description-content">
+                    <p>{{product.description|safe}} </p>
+                </div>
+            </div>
+            <div id="des-details2" class="tab-pane">
+
+                {% if product.get_informations %}
+                <div class="specification-wrap table-responsive">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <th>Title</th>
+                                <th>Description</th>
+                            </tr>
+                            {% for information in product.get_informations %}
+                            <tr>
+                                <td class="width1">{{ information.title }}</td>
+                                <td>{{ information.description }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+            </div>
+            <div id="des-details3" class="tab-pane">
+                <div class="review-wrapper">
+                    {% for review in product.get_reviews %}
+                    <div class="single-review">
+                        <div class="review-img">
+                            <img src="{{review.photo.url}}" alt="" style="height: 120px;object-fit: cover;">
+                        </div>
+                        <div class="review-content">
+                            <div class="review-rating">
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                                <i class="ti-star"></i>
+                            </div>
+                            <h5><span>{{review.name}}</span> - {{review.created}}</h5>
+                            <p>{{review.comment}}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% if related_products %}
+<div class="related-product-area pb-95">
+    <div class="container">
+        <div class="section-title-2 st-border-center text-center mb-75">
+            <h2>Related Products</h2>
+        </div>
+        <div class="related-product-active swiper-container">
+            <div class="swiper-wrapper">
+                {% for related_product in related_products %}
+                <div class="swiper-slide">
+                    <div class="product-wrap">
+                        <div class="border img-zoom mb-25 product-img shadow-sm">
+                            <a href="{{ related_product.get_absolute_url }}">
+                                <img src="{{ related_product.image.url }}" alt="" style="height: 250px;object-fit: cover;">
+                            </a>
+                            {% if related_product.has_offer %}
+                            <div class="product-badge badge-top badge-right badge-pink">
+                                <span>-{{related_product.get_offer.discount}}%</span>
+                            </div>
+                            {% endif %}
+
+                            <div class="product-action-2-wrap">
+                                <a href="{{ related_product.get_absolute_url }}" class="product-action-btn-2"
+                                    title="Add To Cart"><i class="pe-7s-cart"></i> Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h3><a href="{{ related_product.get_absolute_url }}">{{ related_product.name }}</a></h3>
+                            <div class="product-price">
+                                <span class="new-price">AED {{ related_product.sale_price }} </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% include 'web/partials/addon.html' %}
+
+
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'web/js/product-details.js' %}"></script>
+{% endblock js %}

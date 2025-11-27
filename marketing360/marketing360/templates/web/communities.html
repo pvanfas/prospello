@@ -1,0 +1,234 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}Join Our Communities | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+<div class="page-banner-area communities-banner">
+    <div class="container-fluid">
+        <div class="row justify-content-center" data-cue="fadeIn">
+            <div class="col-lg-10 col-md-12">
+                <div class="page-banner-content communities-banner-content">
+                    <span class="banner-label">Our Communities</span>
+                    <h2>Learn Together, Grow Together</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cash-management-area ptb-100 communities-section">
+    <div class="container-fluid">
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash1.jpg' %}" alt="Community">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Digital Marketing Hub (Free)</h3>
+                        <p>Join thousands of aspiring and professional digital marketers in Kerala. This free community is your gateway to networking, knowledge sharing, industry discussions, job opportunities, and collaborative learning. Perfect for beginners and experienced marketers alike.</p>
+                        <a href="#" class="btn btn-secondary mt-3">Learn More</a>
+                        <a href="#" class="btn btn-primary mt-3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash2.jpg' %}" alt="Community">
+                    </div>
+                    <div class="cash-content">
+                        <h3>SEO & Content Masters (Paid)</h3>
+                        <p>An exclusive premium community for advanced marketers and students. Get access to in-depth SEO strategies, content marketing masterclasses, expert Q&A sessions, case study reviews, premium templates, tools, and direct mentorship from industry leaders.</p>
+                        <a href="#" class="btn btn-secondary mt-3">Learn More</a>
+                        <a href="#" class="btn btn-primary mt-3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash3.jpg' %}" alt="Community">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Freelancer's Circle (Paid)</h3>
+                        <p>A premium community exclusively for freelance digital marketers. Collaborate on projects, share client strategies, access client referrals, discuss pricing models, troubleshoot challenges, and accelerate your freelance business growth with peer support and expert guidance.</p>
+                        <a href="#" class="btn btn-secondary mt-3">Learn More</a>
+                        <a href="#" class="btn btn-primary mt-3">Join Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="features-area pt-100 pb-100 bg-minimal">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Why Join Our Communities?</h2>
+        </div>
+        <div class="row justify-content-center mt-5" data-cues="slideInUp">
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/job.png' %}" alt="Networking" style="width:40px;">
+                    </div>
+                    <h5>Network with the Best</h5>
+                    <p>Connect with the top digital marketers in Kerala, share ideas, and build valuable professional relationships.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/mentor.png' %}" alt="Exclusive Content" style="width:40px;">
+                    </div>
+                    <h5>Exclusive Content</h5>
+                    <p>Get access to exclusive content, resources, and job opportunities that you won't find anywhere else.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/lifetime.png' %}" alt="Collaborate & Grow" style="width:40px;">
+                    </div>
+                    <h5>Collaborate & Grow</h5>
+                    <p>Work on projects together, get feedback on your ideas, and accelerate your career with the support of your peers.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Places Area -->
+<div class="places-area ptb-150">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4 col-md-12">
+                <div class="places-content">
+                    <h2>What Our Students Say</h2>
+
+                    <ul class="places-slider-button">
+                        <li>
+                            <div class="swiper-button-prev">
+                                <i class="ri-arrow-left-s-line"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="swiper-button-next">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="swiper places-slide-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="places-card">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places1.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>"Joining the Digital Marketing Hub community transformed my career. The networking opportunities and shared knowledge helped me land my dream job in digital marketing."</h4>
+                                    <a href="#" class="default-btn">Priya S. - Community Member</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-FFF2E5">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places2.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>"The SEO & Content Masters community is worth every rupee. The expert Q&As and premium resources have taken my content strategy to the next level."</h4>
+                                    <a href="#" class="default-btn">Rahul K. - SEO Specialist</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-EDEFEB">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places3.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>"As a freelancer, the Freelancer's Circle has been invaluable. I've collaborated on amazing projects and doubled my client base within six months."</h4>
+                                    <a href="#" class="default-btn">Meera R. - Freelance Marketer</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places1.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>"The communities here are more than just groups - they're a support system. I've learned so much and made lifelong connections in the digital marketing industry."</h4>
+                                    <a href="#" class="default-btn">Arjun M. - Marketing Manager</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-FFF2E5">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places2.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>"Being part of these communities keeps me updated with the latest trends and best practices. It's like having a team of experts available 24/7."</h4>
+                                    <a href="#" class="default-btn">Sneha P. - Content Creator</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-EDEFEB">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places3.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>"The collaborative environment and knowledge sharing in these communities have accelerated my growth. Highly recommend to anyone serious about digital marketing."</h4>
+                                    <a href="#" class="default-btn">Vikram N. - Digital Strategist</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Places Area -->
+
+
+
+<div class="community-area pb-100 bg-white">
+    <div class="container-fluid">
+        <div class="section-title-wrap" data-cues="slideInUp">
+            <h2 class="section_title">Join Our Community</h2>
+        </div>
+
+        <div class="community-inner-box" data-cues="slideInUp">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-6 col-md-12 p-0">
+                    <div class="community-image">
+                        <img src="/static/web/images/main/community.jpg" alt="image">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 p-0">
+                    <div class="community-content">
+                        <h3>Join our WhatsApp community for updates & real-time news</h3>
+                        <p>Stay connected with the latest updates, industry news, course announcements, and exclusive insights from 360 Marketing School. Our WhatsApp community keeps you informed about upcoming webinars, new course launches, job opportunities, and valuable marketing tips. Join thousands of digital marketers who are staying ahead of the curve.</p>
+                        <div class="community-btn">
+                            <a href="#" class="default-btn">Join WhatsApp Channel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}

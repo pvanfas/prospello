@@ -1,0 +1,59 @@
+{% load static %}
+<div class="off-canvas-active">
+    <a class="off-canvas-close"><i class="ti-close"></i></a>
+    <div class="off-canvas-wrap">
+        <div class="mobile-menu-wrap off-canvas-margin-padding-2">
+            <div id="mobile-menu" class="slinky-mobile-menu text-left">
+                <ul>
+                    <li>
+                        <ul>
+                            {% for recipient in recipients %}
+                            <li>
+                                <a href="{{recipient.get_absolute_url}}">{{recipient.name}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-title" href="#">Shob by Occasion </a>
+                        <ul>
+                            {% for occasion in occasions %}
+                            <li>
+                                <a href="{{occasion.get_absolute_url}}">{{occasion.name}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="dropdown-title" href="#">Express your emotions. </a>
+                        <ul>
+                            {% for emotion in emotions %}
+                            <li>
+                                <a href="{{emotion.get_absolute_url}}">{{emotion.name}}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+
+                    {% for category in nav_categories %}
+                    <li><a href="{{category.get_absolute_url}}">{{category.name}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="language-currency-wrap language-currency-wrap-modify">
+            <div class="currency-wrap border-style">
+                <a class="currency-active" href="#">AED</a>
+            </div>
+            <div class="language-wrap">
+                <a class="language-active" href="#"><img src="/static/web/images/icon-img/flag.png" alt=""> English <i
+                        class=" ti-angle-down "></i></a>
+                <div class="language-dropdown">
+                    <ul>
+                        <li><a href="#"><img src="/static/web/images/icon-img/flag.png" alt="">English </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

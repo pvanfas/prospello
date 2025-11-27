@@ -1,0 +1,36 @@
+{% extends 'view/base.html' %}  
+{% block title %}Contact Form Submission{% endblock %}
+{% block content %}
+<p>You have received a new message from the contact form on your website. The details
+  of the message are as follows</p>
+<table style="width:100%">
+
+  <tr>
+    <td class="wrapper">
+      <table class="m-0">
+        <tr>
+          <td><strong>Name:</strong></td>
+          <td> {{ instance.name }}</td>
+        </tr>
+        <tr>
+          <td><strong>Email:</strong></td>
+          <td> {{ instance.email }}</td>
+        </tr>
+        <tr>
+          <td><strong>Phone:</strong></td>
+          <td> {{ instance.phone }}</td>
+        </tr>
+        <tr>
+          <td><strong>Message:</strong></td>
+          <td> {{ instance.message }}</td>
+        </tr>
+        <tr>
+          <td><strong>Timestamp:</strong></td>
+          <td> {{ instance.timestamp }}</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+
+</table>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% load static %}
+<section id="about" class="about">
+    <div class="container aos-init aos-animate">
+        <div class="row gx-0 justify-content-between">
+            <div class="col-lg-6 d-flex flex-column justify-content-center aos-init aos-animate">
+                <div class="content">
+                    <h3>Who We Are</h3>
+                    <span class="pattern"></span>
+                    <h6>
+                        The exemplary leadership of the experienced team with skilled designers and precise craftsmanship gives a blend of quality and style to the fetch products.
+                    </h6>
+                    <p>
+                        The experienced team of fetch knows that the careful coordination of fabric, finishes, and accessories to the style and nature of architectural space creates a harmonious aesthetics for oces. Fetch chairs
+                        includes vibrant colors, sophisticated neutrals and statement patterns which gives long-term comfort and ergonomic support for you at an attainable price. Our primary objective is to provide you with quality
+                        products at competitive prices and services you can depend on. We value our customers and sell the quality products that we believe represent value to you.
+                    </p>
+                    <div class="box-content row">
+                        <div class="col-6">
+                            <div class="shadow">
+                                <p class="mb-0"><strong>250+</strong> Premium Products</p>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="shadow">
+                                <p class="mb-0"><strong>40+</strong> Years Experience</p>
+                                <span class="line"></span>
+                            </div>
+                        </div>
+                    </div>
+                    {% if not is_about %}
+                    <div class="text-center text-lg-start">
+                        <a href="{% url 'web:about' %}" class="fill-btn">
+                            Read More
+                        </a>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-5 d-flex align-items-center aos-init aos-animate">
+                <img src="{% static 'web/images/user.png' %}" class="img-fluid" alt="Fetch office chairs Kerala" />
+            </div>
+        </div>
+    </div>
+</section>

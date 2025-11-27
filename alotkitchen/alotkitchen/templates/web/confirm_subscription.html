@@ -1,0 +1,129 @@
+{% extends 'web/base.html' %}
+{% load static crispy_forms_tags %}
+{% block content %}
+
+<section style="background: #F4F1EA;" id="packages">
+    <div class="container section_padding_sm packages">
+        <div class="row">
+            
+            <div class="col-12 mb-5">
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                    <ul id="progress-num">
+                        <li><span class="step active">1</span><span>Select Plan</span></li>
+                        <li><span class="step active">2</span><span>Select Meals</span></li>
+                        <li><span class="step active">3</span><span>Create Profile</span></li>
+                        <li><span class="step active">4</span><span>Add Address</span></li>
+                        <li><span class="step active">5</span><span>Set Delivery Address</span></li>
+                        <li><span class="step active">6</span>Finish</li>
+                      </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 mx-auto">
+                <div class="border_box">
+
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        {{form|crispy}}
+
+                        <div class="form-group">
+                            <input type="checkbox" class="form-check-input" id="terms" checked>
+                            <label for="terms">I agree to the <a href="javascript:void(0)"
+                                    data-bs-toggle="modal" data-bs-target="#exampleModal" class="text-primary"> Terms & conditions.</a>
+                            </label>
+                        </div>
+
+                        <div class="pt-3">
+                            <button type="submit" class="btn btn-primary">Complete</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Terms & conditions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="term mb-2">
+                    <strong>Customer Agreement</strong>
+                    <ul class="list-style-cricle">
+                        <li>I, the undersigned, would like to agree to the terms and conditions outlined below and confirm that the information provided is accurate.</li>
+                    </ul>
+                </div>
+
+                <div class="term mb-2">
+                    <strong>Subscription and Cancellation</strong>
+                    <ul class="list-style-cricle">
+                        <li>Customers can subscribe to weekly or monthly packages. Modifications must be made 48 hours in advance.</li>
+                    </ul>
+                </div>
+
+                <div class="term mb-2">
+                    <strong>Payment</strong>
+                    <ul class="list-style-cricle">
+                        <li>Payment for the selected package must be made according to the chosen payment option.</li>
+                        <li>Delivery times are as specified by the customer. Any changes to the delivery schedule should be communicated at least 24 hours in advance.</li>
+                        <li>Delivery times may vary due to unforeseen events or traffic conditions.</li>
+                    </ul>
+                </div>
+
+                <div class="term mb-2">
+                    <strong>5. Food Allergies Consent.</strong>
+                    <ul class="list-style-cricle">
+                        <li>I acknowledge that I have informed Alot Kitchen of all known food allergies. I understand that
+                            Alot Kitchen will try to accommodate my dietary requirements, but I am responsible for notifying,
+                            Alot Kitchen of any changes or new allergies.
+                        </li>
+                        <li>6. I understand that the meals provided by Alot Kitchen are to be consumed within the recommended
+                            time frame for optimal freshness and safety. I acknowledge that consuming food past the recommended
+                            time may pose health risks.</li>
+                        <li>7. Alot Kitchen reserves the right to modify the menu based on ingredient availability.</li>
+                    </ul>
+                </div>
+                
+                <div class="term mb-2">
+                    <strong>Privacy Policy</strong>
+                    <ul class="list-style-cricle">
+                        <li>All personal information collected in this form is confidential and will only be used for meal delivery and communication.</li>
+                    </ul>
+                </div>
+
+                <div class="term mb-2">
+                    <strong>T&C</strong>
+                    <ul class="list-style-cricle">
+                        <li>Meal Schedule Adherence: At Alot Kitchen, all meals are prepared and scheduled in advance according to your subscription plan.</li>
+                        <li>As such, we do not accommodate requests for skipping meals or rescheduling them to a different date or time.</li>
+                    </ul>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+

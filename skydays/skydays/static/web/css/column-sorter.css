@@ -1,0 +1,18 @@
+.cols-columns {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.cols-columns > * {
+  flex: 1;
+  padding: 1rem;
+}
+
+.cols-columns * {
+  box-sizing: border-box;
+}
+
+.cols-columns img {
+  display: block;
+  width: 100%;
+}

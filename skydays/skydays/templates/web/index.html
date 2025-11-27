@@ -1,0 +1,272 @@
+{% extends 'web/base.html' %}
+
+{% load static extras %}
+
+{% block content %}
+
+<div class="main-banner-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="main-banner-content-2 text-center">
+                    <h1>Fuel your wanderlust with an <span>epic holiday trip</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="package-area section_padding_md pt-5">
+    <div class="container">
+        <div class="row fixed_departure">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-2">
+                    <h2 class="text-white">Our Fixed <span class="text-orange">Departure</span></h2>
+                </div>
+            </div>
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="row">
+
+                    {% for departure in fixed_departures %}
+                    <div class="col-lg-3 col-md-6 col-sm-6 wow fadeInUp animated" data-wow-duration="1500ms"
+                        data-wow-delay="0ms">
+                        <div class="package-card">
+                            <div class="package-thumb">
+                                <img src="{{departure.image.crop.280x160}}" alt="{{departure.destination}}"
+                                    class="img-fluid">
+                                {% if departure.is_sold_out %}
+                                <img src="/static/web/images/soldout.png" alt="" class="soldout">
+                                {% endif %}
+                            </div>
+                            <div class="package-details">
+                                <div class="d-flex flex-wrap">
+                                    <i class="icon-location fs-20 text-orange"></i>
+                                    <div class="content ms-1">
+                                        <h5>{{departure.destination}}</h5>
+                                        <small class="text-grey ">{{departure.duration}}</small>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="align-items-center d-flex flex-wrap fs-12 justify-content-between mb-1 mt-2 fs-12">
+                                    <span class="text-grey">From {{departure.departure_from}}</span>
+                                    <span class="text-grey">{{departure.date|date:"j M"}}</span>
+                                </div>
+
+                                <small class="text-block">Total number of seats : {{departure.total_seats}}</small>
+                                <small class="text-block" class="text-orange">seats available :
+                                    {{departure.available_seats}}</small>
+
+                                <div
+                                    class="d-flex flex-wrap align-items-center justify-content-between mt-2 text-orange">
+                                    <h6 class="fw-600 mt-1">{{departure.price|change_currency:currency}}</h6>
+                                    <a href="{{departure.get_absolute_url}}"
+                                        class="btn btn-sm btn-primary btn-radius mt-1">Book Now <i
+                                            class="icon-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 text-center py-2">
+                        <a href="{% url 'web:fixed_departures' %}" class="btn btn-white-inverse">More</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="package-area section_padding_md">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h2>Holiday trip deals</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row owl-carousel destination_slider">
+            {% for package in packages %}
+            <a href="{{package.get_absolute_url}}" class="package-card">
+                <div class="package-thumb">
+                    <img src="{{package.image.crop.280x230}}" alt="{{package.destination}}" class="img-fluid">
+                </div>
+                <div class="package-details">
+                    <div class="d-flex align-items-center">
+                        <i class="icon-location fs-20 text-orange"></i>
+                        <div class="content ms-2">
+                            <h6>{{package.destination}}</h6>
+                            <small class="text-yellow ">
+                                {% for i in package.rating|times %}
+                                <i class="icon-star"></i>
+                                {% endfor %}
+                                {% for i in 5|subtract:package.rating|times %}
+                                <i class="icon-star-empty"></i>
+                                {% endfor %}
+                            </small>
+                        </div>
+                    </div>
+                    <div class="align-items-center d-flex flex-wrap fs-12 justify-content-between mb-1 mt-2">
+                        <span class="text-grey fw-600">From {{package.departure_from}}</span>
+                        <span class="text-orange fw-600 fs-20"><small class="fs-12">Starting from
+                            </small>{{package.price|change_currency:currency}}</span>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 text-center py-2">
+                <a href="{% url 'web:packages' %}" class="btn btn-secondary">More</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="package-area section_padding_md">
+    <div class="container">
+        <div class="thumb customize_area">
+            <div class="content">
+                <h2 class="text-white">Couldn't find what you're looking for?
+                </h2>
+                <p class="text-white my-2">Make your travel package unique with the best travel agency in Kerala</p>
+                <a href="{% url 'web:customize' %}" class="btn btn-white">Customize</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="achievement-area-2 section_padding_md">
+    <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInLeft animated" data-wow-duration="1500ms"
+                data-wow-delay="0ms">
+                <div class="achievement-card-2">
+                    <div class="achieve-info">
+                        <div class="achieve-icon"><i class="flaticon-guide"></i></div>
+                        <h5>Best Travel Agency</h5>
+                        <p>Skydays is committed to providing exceptional service to its clients. With their extensive
+                            knowledge and experience in the travel industry, they are dedicated to ensuring that their
+                            clients have the best possible travel experience.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInLeft animated" data-wow-duration="1500ms"
+                data-wow-delay="200ms">
+                <div class="achievement-card-2">
+                    <div class="achieve-info">
+                        <div class="achieve-icon bg-orange"><i class="flaticon-trust"></i></div>
+                        <h5>Competitive Price</h5>
+                        <p>Skydays offers competitive pricing for all their travel packages. They understand that travel
+                            can be expensive, which is why they strive to offer the best possible rates for their
+                            clients without compromising on quality</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 wow fadeInLeft animated" data-wow-duration="1500ms"
+                data-wow-delay="400ms">
+                <div class="achievement-card-2">
+
+                    <div class="achieve-info">
+                        <div class="achieve-icon"><i class="flaticon-experience"></i></div>
+                        <h5>Global Coverage</h5>
+                        <p>Skydays offers travel packages to destinations all over the world. From Europe to Asia to
+                            Africa, they have an extensive network of partners and suppliers that enable them to offer
+                            their clients the best possible travel experience, no matter where they want to go.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% if videos %}
+<div class="destinations-area section_padding_md">
+    <div class="container">
+        <div class="row owl-carousel video_slider">
+            {% for video in videos %}
+            <div class="border-0 package-card">
+                <a class="package-thumb popup-youtube position-relative"
+                    href="http://www.youtube.com/watch?v={{video.video_id}}">
+                    <img src="{{video.thumbnail.url}}" alt="Video" class="img-fluid">
+                    <div class="play-btn position-absolute">
+                        <i class="icon-play"></i>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+<div class="review-area section_padding_md">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="section-head pb-30">
+                    <h2>Did you enjoy your holiday trip? <br> <span class="text-orange">Leave a review! </span></h2>
+                </div>
+            </div>
+        </div>
+        <div class="review-slider owl-carousel">
+
+            {% for review in reviews %}
+            <div class="review-card ">
+                <div class="reviewer-info">
+                    <small class="text-yellow ">
+                        {% for i in review.rating|times %}
+                        <i class="icon-star"></i>
+                        {% endfor %}
+                        {% for i in 5|subtract:review.rating|times %}
+                        <i class="icon-star-empty"></i>
+                        {% endfor %}
+                    </small>
+                    <p>{{review.review}}</p>
+                </div>
+                <div class="reviewer-img">
+                    <img src="{{review.image.url}}" alt="{{review.name}}" class="img-fluid mb-2">
+                    <strong>{{review.name}}</strong>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+    $(document).ready(function () {
+        $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+            disableOn: 700,
+            type: 'iframe',
+            mainClass: 'mfp-fade',
+            removalDelay: 160,
+            preloader: false,
+            fixedContentPos: false
+        });
+    });
+</script>
+{% endblock %}

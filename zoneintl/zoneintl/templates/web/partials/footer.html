@@ -1,0 +1,98 @@
+{% load static %}
+<!-- Main Footer -->
+<footer class="main-footer">
+  <div class="auto-container">
+    <!--Widgets Section-->
+    <div class="widgets-section">
+      <div class="row">
+        <div class="big-column col-xl-8 col-lg-12 col-md-12">
+          <div class="row">
+            <!--Footer Column-->
+            <div class="footer-column col-lg-3 col-md-12 col-sm-12">
+              <div class="logo"><a href="#"><img src="{% static 'web/images/logo.png' %}" alt=""></a></div>
+            </div>
+
+            <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+              <div class="footer-widget links-widget">
+                <h2 class="widget-title">Quick Links</h2>
+                <div class="widget-content">
+                  <ul class="list">
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    <li><a href="{% url 'web:about' %}">About us</a></li>
+                    <li><a href="{% url 'web:services' %}">Services</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+              <div class="footer-widget links-widget">
+                <h2 class="widget-title">Study</h2>
+                <div class="widget-content">
+                  <ul class="list">
+                    <li><a href="{% url 'web:courses' %}">Courses</a></li>
+                    <li><a href="{% url 'web:universities' %}">Universities</a></li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+              <div class="footer-widget links-widget">
+                <h2 class="widget-title">Policy</h2>
+                <div class="widget-content">
+                  <ul class="list">
+                    <li><a href="#">Privacy policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="big-column col-xl-4 col-lg-12 col-md-12">
+          <div class="row">
+            <div class="footer-column col-lg-12 col-md-12 col-sm-12">
+              <div class="footer-widget links-widget">
+                <h2 class="widget-title">Contact us</h2>
+                <div class="widget-content">
+                  <div class="newsletter-form">
+                    <ul class="list">
+                      <li><a href="tel:+44 7778 694777"><i class="fa fa-phone"></i> +44 7778 694777</a></li>
+                      <li><a href="mailto:info@zoneintl.com"><i class="fa fa-envelope"></i> info@zoneintl.com</a></li>
+                      <li><a href="#"><i class="fa fa-map-marker"></i> International House,<br> 64 Nile Street,
+                          <br>London N1 7SR, <br> United Kingdom</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call Us -->
+    <div class="call-us">
+      <div class="service-num"></div>
+      <div class="social-link">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+
+
+  <!--Bottom-->
+  <div class="footer-bottom">
+    <div class="auto-container">
+      <div class="copyright-text">© Zone International | Powered By <a href="http://prospelloglobal.com/"> Prospello Global Solutions </a></div>
+    </div>
+  </div>
+
+</footer>
+<!-- End Main Footer -->

@@ -1,0 +1,62 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="rts-blog-area rts-section-gap">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-12">
+                <div class="top">
+                    <h2 class="title">Our Blog</h2>
+                </div>
+            </div>
+        </div>
+        <div class="row g-24 mt--30">
+            {% for blog in blogs %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <!-- single blog area start -->
+                <div class="signle-blog-style-one">
+                    <a href="{{blog.get_absolute_url}}" class="thumbnail shadow-sm">
+                        <img src="{{blog.image.url}}" alt="blog" style="height: 260px;">
+                    </a>
+                    <div class="inner-content">
+                        <a href="{{blog.get_absolute_url}}">
+                            <h5 class="title">
+                                {{blog.title}}
+                            </h5>
+                        </a>
+                        <a class="btn-blog-readmore" href="{{blog.get_absolute_url}}"> Read More +</a>
+                    </div>
+                </div>
+                <!-- single blog area end -->
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+ <!-- rts footer area start -->
+ <div class="rts-footer-area social-jumpanimation">
+    <div class="rts-copyright-area-two border-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copy-right-area-inner-two">
+                        <p class="disc">Copyright 2024. All Rights Reserved.</p>
+                        <div class="right">
+                            <ul>
+                                <li><a href="#">Terms & conditions</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+
+{% endblock %}

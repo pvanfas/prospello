@@ -1,0 +1,138 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ltn_utilize-overlay"></div>
+
+<!-- BREADCRUMB AREA START -->
+<div class="ltn_breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bs-bg="{% static 'web/img/bg/14.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn_breadcrumb-inner">
+                    <h1 class="page-title">Contact Us</h1>
+                    <div class="ltn_breadcrumb-list">
+                        <ul>
+                            <li><a href="/"><span class="ltn_secondary-color"><i class="fas fa-home"></i></span>
+                                    Home</a></li>
+                            <li>Contact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+
+<!-- CONTACT ADDRESS AREA START -->
+<div class="ltn_contact-address-area mb-90">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="ltn_contact-address-item ltn_contact-address-item-3 box-shadow">
+                    <div class="ltn_contact-address-icon">
+                        <img src="{% static 'web/img/icons/10.png' %}" alt="Icon Image">
+                    </div>
+                    <h3>Email Address</h3>
+                    <p>nestviewproperties@gmail.com</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ltn_contact-address-item ltn_contact-address-item-3 box-shadow">
+                    <div class="ltn_contact-address-icon">
+                        <img src="{% static 'web/img/icons/11.png' %}" alt="Icon Image">
+                    </div>
+                    <h3>Phone Number</h3>
+                    <p>+447801111600</p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="ltn_contact-address-item ltn_contact-address-item-3 box-shadow">
+                    <div class="ltn_contact-address-icon">
+                        <img src="{% static 'web/img/icons/12.png' %}" alt="Icon Image">
+                    </div>
+                    <h3>Office Address</h3>
+                    <p>44 Broadway, Stratford, London, E15 1XH</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CONTACT ADDRESS AREA END -->
+
+<!-- CONTACT MESSAGE AREA START -->
+<div class="ltn_contact-message-area mb-120 mb--100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn_form-box contact-form-box box-shadow white-bg">
+                    <h4 class="title-2">Get A Quote</h4>
+                    <form action="" method="post" validate required>
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="input-item input-item-name ltn_custom-icon">
+                                    {{form.name}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-item input-item-email ltn_custom-icon">
+                                    {{form.email}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-item">
+                                    {{form.service_type}}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="input-item input-item-phone ltn_custom-icon">
+                                    {{form.phone}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-item input-item-textarea ltn_custom-icon">
+                            {{form.message}}
+                        </div>
+
+                        {% if form.errors %}
+                        <div class="alert alert-danger">
+                            {% for field in form %}
+                            {% for error in field.errors %}
+                            <p>{{error}}</p>
+                            {% endfor %}
+                        {% endfor %}
+                        </div>
+                        {% endif %}
+
+
+                        <div class="btn-wrapper mt-0">
+                            <button class="btn theme-btn-1 btn-effect-1 text-uppercase" type="submit">Submit</button>
+                        </div>
+                        <p class="form-message mb-0 mt-20"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- CONTACT MESSAGE AREA END -->
+
+<!-- GOOGLE MAP AREA START -->
+<div class="google-map mb-120">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.4863910676063!2d-0.001151984495228941!3d51.54097957964062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a78a1908404f%3A0xcf61e2ac117c50ec!2sBizniz%20Point%20Stratford!5e0!3m2!1sen!2sae!4v1668229614199!5m2!1sen!2sae"
+        width="100%" height="100%" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+{% if messages %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {% for message in messages %}
+    <p class="m-0">{{message}}</p>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock content %}

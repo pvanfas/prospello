@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	{% load static compress %}
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+	<title>{% block title %}{{site_title}}{% endblock %}</title>
+
+	<meta content="{% block description %}{{site_title}}{% endblock %}" name="description">
+	<meta content="{{author}}" name="author">
+	<meta name="keywords" content="" />
+  
+	<!-- Favicon for different devices and sizes -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'app/images/favicon/Dinecore-Logo-DP.png' %}?v=3.0">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'app/images/favicon/Dinecore-Logo-DP.png' %}?v=3.0">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'app/images/favicon/Dinecore-Logo-DP.png' %}?v=3.0">
+	<link rel="icon" type="image/x-icon" href="{% static 'app/images/favicon/Dinecore-Logo-DP.ico' %}?v=3.0">
+	<link rel="shortcut icon" href="{% static 'app/images/favicon/Dinecore-Logo-DP.ico' %}?v=3.0">
+	
+	<!-- Web App Manifest for PWA functionality -->
+	<link rel="manifest" href="{% static 'app/images/favicon/site.webmanifest' %}">
+	
+	<!-- Safari pinned tab -->
+	<link rel="mask-icon" href="{% static 'app/images/favicon/safari-pinned-tab.svg' %}" color="#000000">
+	
+	<!-- Microsoft Tiles -->
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-config" content="{% static 'app/images/favicon/browserconfig.xml' %}">
+	
+	<!-- Theme color for mobile browsers -->
+	<meta name="theme-color" content="#ffffff">
+	
+	<!-- Additional PWA meta tags for better "Add to Home Screen" support -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="default">
+	<meta name="apple-mobile-web-app-title" content="Dinecore">
+	<meta name="application-name" content="Dinecore">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+	
+	{% compress css %}
+	<link rel="stylesheet" href="{% static 'app/plugins/bootstrap/css/bootstrap.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'app/css/style.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'app/css/plugins.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'app/css/boxed.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'app/css/animated.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'app/css/plugins/jqueryui.css' %}?v=1.3" />
+	{% endcompress %}
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+	{% block css_plugins %}{% endblock %}
+
+	<link rel="stylesheet" href="{% static 'app/css/icons.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'app/css/custom.css' %}?v=1.3" />
+	<link rel="stylesheet" href="{% static 'web/css/style.css' %}?v=1.3" />
+
+	{% block extra_css %}{% endblock %}
+	<script src="{% static 'app/plugins/jquery/jquery.min.js' %}?v=1.3"></script>
+
+</head>
+
+<body>
+
+	<header class="p-3 bg-black text-white">
+		<div class="container">
+		  <div class="d-flex flex-wrap align-items-center justify-content-between">
+			<a href="/" class="">
+				<img src="/static/app/config/Dinecore-Logo-DP.png" alt="" style="height: 50px;">
+			</a>
+			<div class="text-end">
+				{% if request.user.is_authenticated %}
+				<a href="{% url 'main:dashboard_view' %}" class="btn border text-white me-2">Dashboard</a>
+				<a href="{% url 'auth_logout' %}" class="btn btn-white">Logout</a>
+				{% else %}
+				<a href="{% url 'auth_login' %}" class="btn border text-white me-2">Login</a>
+				<a href="{% url 'users:custom_register' %}" class="btn btn-white">Sign-up</a>
+				{% endif %}
+			</div>
+		  </div>
+		</div>
+	  </header>
+
+	{% block content %}
+
+	{% endblock content %}
+
+
+	<footer class="section_padding" >
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<div class="logo_container mb-4">
+						<img src="/static/app/config/Dinecore-Logo-DP.png" alt="" style="max-width:160px">
+					</div>
+					
+					<address class="mb-2">
+						<span class="icon">
+							<img src="/static/web/images/location.png" alt=""></span>
+							<span>Halawh Alkhyrat Cafe LLC Kitchen <br>Dubai, UAE.</span>
+					</address>
+					<p class="mb-2"><span class="icon"><img src="/static/web/images/phone.png" alt=""></span>+971 56 9009143</p>
+					<p class="mb-2"><span class="icon"><img src="/static/web/images/mail.png" alt=""></span>info@alotkitchen.com</p>
+				</div>
+				<div class="col-md-5">
+					<p  class="mb-3"><strong>Subscription Packages</strong></p>
+					<ul class="d-flex flex-wrap">
+						{% for category in categories %}
+						<li class="mb-2 w-50"><a href="{{category.get_web_url}}">{{category.name}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<p  class="mb-3"><strong>Delivery Locations</strong></p>
+					<ul class="d-flex flex-wrap">
+						{% for area in areas %}
+						<li class="mb-2 w-50"><a href="{% url 'web:page_view' area.slug %}">{{area.name}}</a></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+	{% compress js %}
+	<script src="{% static 'app/plugins/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'app/plugins/bootstrap/js/popper.min.js' %}"></script>
+	<script src="{% static 'app/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'app/plugins/select2/select2.full.min.js' %}"></script>
+	<script src="{% static 'app/plugins/p-scrollbar/p-scrollbar.js' %}"></script>
+	<script src="{% static 'app/plugins/bootstrap-datepicker/bootstrap-datepicker.js' %}?v=1.3"></script>
+	<script src="{% static 'app/plugins/date-picker/jquery-ui.js' %}?v=1.3"></script>
+	<script src="{% static 'app/js/masonry.pkgd.min.js' %}?v=1.3" async></script>
+	{% block js_plugins %}{% endblock %}
+	<script src="{% static 'app/js/sticky.js' %}"></script>
+	<script src="{% static 'app/js/themeColors.js' %}"></script>
+	<script src="{% static 'app/js/custom.js' %}"></script>
+	{% endcompress %}
+	<script>
+		$(document).ready(function() {
+			$('select').select2();
+		});
+	</script>
+
+	{% block javascript %}{% endblock %}
+
+</body>
+
+</html>

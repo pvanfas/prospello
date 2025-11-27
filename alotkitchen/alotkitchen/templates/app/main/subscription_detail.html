@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 humanize %}
+{% block title %}Home: {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+
+<div class="side-app main-container">
+
+
+    <div class="row mt-4">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <h6>Plan:</h6>
+                    </div>
+                    <div class="col-md-9">
+                        <ul class="mt-0">
+                            <li>Submit the form to create a subscription.</li>
+                            <li>Add subscription items or customize the food menu.</li>
+                            <li>Confirm or select the subscription start date.</li>
+                            <li>Confirm and complete the payment.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12">
+
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

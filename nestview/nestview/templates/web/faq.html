@@ -1,0 +1,67 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="ltn_utilize-overlay"></div>
+
+<!-- BREADCRUMB AREA START -->
+<div class="ltn_breadcrumb-area text-left bg-overlay-white-30 bg-image " data-bs-bg="{% static 'web/img/bg/14.jpg' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn_breadcrumb-inner">
+                    <h1 class="page-title">Frequently asked questions</h1>
+                    <div class="ltn_breadcrumb-list">
+                        <ul>
+                            <li><a href="/"><span class="ltn_secondary-color"><i class="fas fa-home"></i></span>
+                                    Home</a></li>
+                            <li>FAQ</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- BREADCRUMB AREA END -->
+
+<!-- FAQ AREA START (faq-2) (ID > accordion_2) -->
+<div class="ltn_faq-area pb-100 border-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="ltn_faq-inner ltn_faq-inner-2">
+                    <div id="accordion_2">
+                        {% for faq in faqs %}
+                        <div class="card">
+                            <h6 class="collapsed ltn_card-title" data-bs-toggle="collapse"
+                                data-bs-target="#faq-item-2-{{faq.id}}" aria-expanded="false">
+                                {{faq.title}}
+                            </h6>
+                            <div id="faq-item-2-{{faq.id}}" class="collapse" data-bs-parent="#accordion_2">
+                                <div class="card-body">
+                                    <p>{{faq.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="need-support text-center mt-100">
+                        <h2>Still need help? Reach out to our support</h2>
+                        <div class="btn-wrapper mb-30">
+                            <a href="{% url 'web:contact' %}" class="theme-btn-1 btn">Contact Us</a>
+                        </div>
+                        <h3><i class="fas fa-phone"></i>+447801111600</h3>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- FAQ AREA START -->
+
+
+{% include 'web/includes/blogs.html' %}
+
+{% endblock content %}

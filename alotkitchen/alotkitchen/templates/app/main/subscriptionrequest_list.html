@@ -1,0 +1,628 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags django_tables2 %}
+{% block title %}{{title|title}} : {{app_settings.site_title}}{% endblock %}
+
+{% block content %}
+<!-- Add Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+<div class="side-app main-container">
+
+    <!--Page header-->
+    <div class="page-header d-flex">
+        <div class="page-leftheader">
+            <div class="page-title">{{title|title}}</div>
+        </div>
+        <div class="page-rightheader ms-md-auto">
+            <div class="btn-list">
+
+                {% if can_add and create_url %}
+                <a href="{{create_url}}" class="btn btn-sm text-white bg-black" title="New">Add New </a>
+                {% endif %}
+
+                <a class="border-dark btn btn-sm btn-white" data-bs-toggle="offcanvas" href="#offcanvasFilter"
+                    role="button" style="border-radius: 50%;" aria-controls="offcanvasFilter" title="Filter Data"> <i
+                        class="feather feather-list"></i> </a>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+            <a href="{{request.get_absolute_url}}?status=">
+                <div class="card bg-gradient-primary card-img-holder text-white">
+                    <div class="card-body">
+                        <h5 class="">All Requests</h5>
+                        <h3 class="mb-0 mt-auto text-white">{{all_requests_count}}</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+            <a href="{{request.get_absolute_url}}?status=PENDING">
+                <div class="card bg-gradient-info card-img-holder text-white">
+                    <div class="card-body">
+                        <h5 class="">Pending Requests</h5>
+                        <h3 class="mb-0 mt-auto text-white">{{pending_requests_count}}</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+            <a href="{{request.get_absolute_url}}?status=APPROVED">
+                <div class="card bg-gradient-success card-img-holder text-white">
+                    <div class="card-body">
+                        <h5 class="">Approved Requests</h5>
+                        <h3 class="mb-0 mt-auto text-white">{{approved_requests_count}}</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 col-6">
+            <a href="{{request.get_absolute_url}}?status=REJECTED">
+                <div class="card bg-gradient-warning card-img-holder text-white">
+                    <div class="card-body">
+                        <h5 class="">Rejected Requests</h5>
+                        <h3 class="mb-0 mt-auto text-white">{{rejected_requests_count}}</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </div>
+
+    <!--End Page header-->
+    <div class="row row-sm">
+        <div class="col-lg-12">
+
+            <div class="card">
+                {% if table.paginated_rows %}
+                <div class="card-body p-0">
+                    <div class="table-responsive">
+                        {% render_table table %}
+                    </div>
+                </div>
+                {% else %}
+                <div class="card-body">
+                    {{title|title}} {% translate "list is empty." %}
+                    {% if can_add and create_url %}<a href="{{create_url}}">{% translate "Add New One" %}</a>{% endif %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- Enhanced Modal -->
+<div class="modal fade" id="approveModal" tabindex="-1" aria-labelledby="approveModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" style="max-width: 90vw; width: 1200px; max-height: 90vh;">
+        <div class="modal-content" style="border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); max-height: 90vh; display: flex; flex-direction: column;">
+            
+            <!-- Loading State - Show First -->
+            <div id="loadingContainer" class="text-center py-5">
+                <div class="modal-header border-0 justify-content-end" style="padding: 15px;">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px;">
+                    <div class="spinner-grow text-primary mb-4" role="status" style="width: 4rem; height: 4rem;">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <h5 class="text-muted mb-3">Loading Delivery Preferences</h5>
+                    <p class="text-muted small">Please wait while we fetch the details...</p>
+                    <div class="progress mx-auto mt-3" style="width: 300px; height: 6px;">
+                        <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" style="width: 100%; border-radius: 3px;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Error State -->
+            <div id="errorContainer" class="d-none">
+                <div class="modal-header border-0 justify-content-end" style="padding: 15px;">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 400px;">
+                    <div class="text-danger mb-4">
+                        <i class="bi bi-exclamation-triangle" style="font-size: 4rem;"></i>
+                    </div>
+                    <h5 class="text-danger mb-3">Failed to Load Data</h5>
+                    <p class="text-muted text-center" id="errorText">Unable to load preference data. Please check your connection and try again.</p>
+                    <button type="button" class="btn btn-outline-primary mt-3" id="retryButton">
+                        <i class="bi bi-arrow-clockwise me-2"></i>Try Again
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Content - Show After Loading -->
+            <div id="mainContent" class="d-none">
+                <!-- Enhanced Header -->
+                <div class="modal-header" style="background: #f8f9fa; border-bottom: 2px solid #e9ecef; border-radius: 20px 20px 0 0; padding: 25px 30px;">
+                    <div class="d-flex align-items-center">
+                        <div class="bg-light rounded-circle p-2 me-3" style="border: 2px solid #dee2e6;">
+                            <i class="bi bi-check-circle text-muted" style="font-size: 24px;"></i>
+                        </div>
+                        <div>
+                            <h4 class="modal-title fw-bold text-dark mb-0" id="approveModalLabel">
+                                <i class="bi bi-clipboard-check me-2 text-muted"></i>Delivery Preferences Review
+                            </h4>
+                            <small class="text-muted">Review and approve meal delivery request</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                
+                <div class="modal-body p-0" style="overflow-y: auto; flex: 1;">
+                    <div class="p-4">
+                        
+                        <!-- Subscription & Payment Info in Cards -->
+                        <div class="row mb-4">
+                            
+                            <!-- Subscription Card -->
+                            <div class="col-md-6 mb-3" id="subscriptionInfo">
+                                <div class="card h-100 border shadow-sm" style="border-radius: 15px;">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-light text-dark rounded-circle p-2 me-3" style="border: 2px solid #dee2e6;">
+                                                <i class="bi bi-calendar3"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-0 text-dark">Subscription Details</h6>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="info-item mb-2">
+                                                    <label class="small text-muted fw-semibold">PLAN NAME</label>
+                                                    <div class="fw-bold" id="planName">Premium Plan</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="info-item mb-2">
+                                                    <label class="small text-muted fw-semibold">MEAL TYPES</label>
+                                                    <div class="fw-bold" id="mealTypes">Sub Plan</div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                        
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="info-item">
+                                                    <label class="small text-muted fw-semibold">START DATE</label>
+                                                    <div class="fw-bold" id="startDate">Jan 1, 2024</div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="info-item">
+                                                    <label class="small text-muted fw-semibold">END DATE</label>
+                                                    <div class="fw-bold" id="endDate">Jan 31, 2024</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Payment Card -->
+                            <div class="col-md-6 mb-3" id="paymentInfo">
+                                <div class="card h-100 border shadow-sm" style="border-radius: 15px;">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-light text-dark rounded-circle p-2 me-3" style="border: 2px solid #dee2e6;">
+                                                <i class="bi bi-currency-rupee"></i>
+                                            </div>
+                                            <h6 class="fw-bold mb-0 text-dark">Payment Summary</h6>
+                                        </div>
+                                        
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="info-item mb-2">
+                                                    <label class="small text-muted fw-semibold">PLAN PRICE</label>
+                                                    <div class="fw-bold text-dark">AED<span id="planPrice">0</span></div>
+                                                </div>
+                                                <div class="info-item mb-2">
+                                                    <label class="small text-muted fw-semibold">MEAL RATE</label>
+                                                    <div class="fw-bold">AED<span id="mealPerRate">0</span></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="info-item mb-2">
+                                                    <label class="small text-muted fw-semibold">SELECTED MEALS</label>
+                                                    <div class="fw-bold">
+                                                        <span id="userSelectedMealsCount">0</span> / <span id="totalMealsInSubscription">0</span>
+                                                    </div>
+                                                </div>
+                                                <div class="info-item mb-2">
+                                                    <label class="small text-muted fw-semibold">TOTAL AMOUNT</label>
+                                                    <div class="fw-bold text-dark">AED<span id="totalPriceUserSelected">0</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
+                        <!-- Selected Meals Section -->
+                        <div id="selectedMealsInfo" class="mb-4">
+                            <div class="card border shadow-sm" style="border-radius: 15px;">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <div class="bg-light text-dark rounded-circle p-2 me-3" style="border: 2px solid #dee2e6;">
+                                            <i class="bi bi-bowl-hot"></i>
+                                        </div>
+                                        <h6 class="fw-bold mb-0 text-dark">Selected Meals</h6>
+                                    </div>
+                                    
+                                    <div id="selectedMealsList" style="max-height: 300px; overflow-y: auto;">
+                                        <!-- Meals will be populated here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Approval Form Section -->
+                        <div class="card border shadow-sm" style="border-radius: 15px;">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-4">
+                                    <div class="bg-light text-dark rounded-circle p-2 me-3" style="border: 2px solid #dee2e6;">
+                                        ⚙️
+                                    </div>
+                                    <h6 class="fw-bold mb-0 text-dark">Approval Settings</h6>
+                                </div>
+
+                                <form id="approveForm" method="post" action="">
+                                    {% csrf_token %}
+                                
+                                    <div class="row">
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label fw-semibold" for="deliveryStaffSelect">
+                                                Assign Delivery Staff
+                                            </label>
+                                            <select class="form-select form-select-lg" id="deliveryStaffSelect" name="delivery_staff" required style="border-radius: 10px;">
+                                                <option value="">Choose delivery staff...</option>
+                                                {% for staff in delivery_staff %}
+                                                <option value="{{ staff.id }}">{{ staff.first_name }} {{ staff.last_name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label class="form-label fw-semibold" for="mealFee">
+                                            Meal Fee
+                                            </label>
+                                            <div class="input-group input-group-md">
+                                                <input type="number" class="form-control" id="mealFee" name="meal_fee" value="0.00" step="0.01" min="0" required style="border-radius: 10px;">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 mb-3">
+                                            <label class="form-label fw-semibold" for="noOfMeals">
+                                            Number of Meals
+                                            </label>
+                                            <input type="number" class="form-control form-control-lg" id="noOfMeals" name="no_of_meals" value="0" min="0" required style="border-radius: 10px;">
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Enhanced Footer -->
+                <div class="modal-footer border-0 p-4" style="background-color: #f8f9fa; border-radius: 0 0 20px 20px;">
+                    <div class="d-flex w-100 justify-content-between align-items-center">
+                        <button type="button" class="btn btn-light btn-lg px-4" data-bs-dismiss="modal" style="border-radius: 50px;">
+                            <i class="bi bi-x-lg me-2"></i>Cancel
+                        </button>
+                        <button type="button" class="btn btn-success btn-lg px-5" id="confirmApproveBtn" style="border-radius: 50px;">
+                            <i class="bi bi-check-lg me-2"></i>Approve Request
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .info-item {
+        margin-bottom: 8px;
+    }
+    
+    .info-item label {
+        display: block;
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+    }
+    
+    .meal-card {
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        transition: all 0.2s ease;
+        margin-bottom: 12px;
+    }
+    
+    .meal-card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transform: translateY(-2px);
+    }
+    
+    .badge {
+        font-size: 0.75em;
+        padding: 0.5em 0.8em;
+        border-radius: 20px;
+    }
+    
+    .avatar {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .form-control:focus, .form-select:focus {
+        border-color: #6c757d;
+        box-shadow: 0 0 0 0.2rem rgba(108, 117, 125, 0.25);
+    }
+    
+    .btn-success:hover {
+        transform: translateY(-1px);
+    }
+
+    /* Loading spinner animation improvements */
+    .spinner-grow {
+        animation-duration: 1.2s;
+    }
+
+    .progress-bar-animated {
+        animation: progress-bar-stripes 1s linear infinite;
+    }
+
+    /* Enhanced modal scrolling */
+    .modal-dialog-scrollable .modal-body {
+        overflow-y: auto;
+        max-height: calc(90vh - 200px);
+    }
+
+    .modal-dialog-scrollable .modal-content {
+        max-height: 90vh;
+        overflow: hidden;
+    }
+
+    /* Smooth scrolling for better UX */
+    .modal-body {
+        scroll-behavior: smooth;
+    }
+
+    /* Custom scrollbar styling */
+    .modal-body::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .modal-body::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 4px;
+    }
+
+    .modal-body::-webkit-scrollbar-thumb {
+        background: #c1c1c1;
+        border-radius: 4px;
+    }
+
+    .modal-body::-webkit-scrollbar-thumb:hover {
+        background: #a8a8a8;
+    }
+</style>
+
+{% endblock content %}
+
+{% block javascript %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const approveModal = document.getElementById('approveModal');
+    let currentPreferenceId = null;
+    
+    if (approveModal) {
+        approveModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const preferenceId = button.getAttribute('data-preference-id');
+            currentPreferenceId = preferenceId;
+            
+            const modalForm = approveModal.querySelector('#approveForm');
+            const urlTemplate = "{% url 'main:approve-preference' pk='PLACEHOLDER' %}";
+            const finalUrl = urlTemplate.replace('PLACEHOLDER', preferenceId);
+            modalForm.setAttribute('action', finalUrl);
+
+            // Show only loading initially
+            showLoadingState();
+            
+            // Fetch data
+            fetchPreferenceData(preferenceId);
+        });
+
+        // Handle modal hide to reset state
+        approveModal.addEventListener('hide.bs.modal', function (event) {
+            resetModalState();
+        });
+
+        const confirmBtn = document.getElementById('confirmApproveBtn');
+        confirmBtn.addEventListener('click', function() {
+            // Add loading state to button
+            confirmBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Processing...';
+            confirmBtn.disabled = true;
+            
+            document.getElementById('approveForm').submit();
+        });
+
+        // Retry button functionality
+        const retryButton = document.getElementById('retryButton');
+        retryButton.addEventListener('click', function() {
+            if (currentPreferenceId) {
+                showLoadingState();
+                fetchPreferenceData(currentPreferenceId);
+            }
+        });
+    }
+
+    function fetchPreferenceData(preferenceId) {
+        axios.get(`/app/approve_modal/${preferenceId}/`)
+            .then(function (response) {
+                populateModalData(response.data);
+                showMainContent();
+            })
+            .catch(function (error) {
+                showErrorState('Unable to load preference data. Please check your connection and try again.');
+                console.error('Error fetching preference data:', error);
+            });
+    }
+
+    function showLoadingState() {
+        document.getElementById('loadingContainer').classList.remove('d-none');
+        document.getElementById('errorContainer').classList.add('d-none');
+        document.getElementById('mainContent').classList.add('d-none');
+    }
+
+    function showErrorState(message) {
+        document.getElementById('loadingContainer').classList.add('d-none');
+        document.getElementById('errorContainer').classList.remove('d-none');
+        document.getElementById('mainContent').classList.add('d-none');
+        
+        const errorText = document.getElementById('errorText');
+        errorText.textContent = message;
+    }
+
+    function showMainContent() {
+        document.getElementById('loadingContainer').classList.add('d-none');
+        document.getElementById('errorContainer').classList.add('d-none');
+        document.getElementById('mainContent').classList.remove('d-none');
+    }
+
+    function resetModalState() {
+        // Reset to loading state for next time
+        showLoadingState();
+        
+        // Reset form
+        const form = document.getElementById('approveForm');
+        if (form) {
+            form.reset();
+        }
+
+        // Reset confirm button
+        const confirmBtn = document.getElementById('confirmApproveBtn');
+        if (confirmBtn) {
+            confirmBtn.innerHTML = '<i class="bi bi-check-lg me-2"></i>Approve Request';
+            confirmBtn.disabled = false;
+        }
+
+        // Clear current preference ID
+        currentPreferenceId = null;
+    }
+
+    function populateModalData(data) {
+        // Safely populate subscription information
+        const subscriptionInfo = data.subscription_info || {};
+        safeSetTextContent('planName', subscriptionInfo.plan_name || 'N/A');
+        safeSetTextContent('startDate', formatDate(subscriptionInfo.start_date));
+        safeSetTextContent('endDate', formatDate(subscriptionInfo.end_date));
+        safeSetTextContent('mealTypes', (subscriptionInfo.meal_types && subscriptionInfo.meal_types.length > 0) ? subscriptionInfo.meal_types.join(', ') : 'N/A');
+
+        // Safely populate payment information
+        const paymentData = data.payment_data || {};
+        safeSetTextContent('planPrice', paymentData.plan_price || '0');
+        safeSetTextContent('totalMealsInSubscription', paymentData.total_meals_in_subscription || '0');
+        safeSetTextContent('mealPerRate', paymentData.meal_per_rate || '0');
+        safeSetTextContent('userSelectedMealsCount', paymentData.user_selected_meals_count || '0');
+        safeSetTextContent('totalPriceUserSelected', paymentData.total_price_user_selected || '0');
+
+        // Populate selected meals with enhanced styling
+        populateSelectedMeals(data.selected_meals || []);
+
+        // Auto-populate form fields
+        const mealFeeInput = document.getElementById('mealFee');
+        const noOfMealsInput = document.getElementById('noOfMeals');
+        
+        if (mealFeeInput) mealFeeInput.value = paymentData.meal_per_rate || '0.00';
+        if (noOfMealsInput) noOfMealsInput.value = paymentData.user_selected_meals_count || '0';
+    }
+
+    // Helper function to safely set text content
+    function safeSetTextContent(elementId, text) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            element.textContent = text;
+        } else {
+            console.warn(`Element with id '${elementId}' not found`);
+        }
+    }
+
+    function populateSelectedMeals(selectedMeals) {
+        const mealsList = document.getElementById('selectedMealsList');
+        mealsList.innerHTML = '';
+
+        if (selectedMeals && selectedMeals.length > 0) {
+            selectedMeals.forEach((meal, index) => {
+                const mealCard = document.createElement('div');
+                mealCard.className = 'meal-card p-3';
+                mealCard.innerHTML = `
+                    <div class="row align-items-center">
+                        <div class="col-md-4">
+                            <h6 class="mb-1 fw-bold">${meal.meal_name}</h6>
+                            <small class="text-muted">
+                                <i class="bi bi-calendar-day me-1"></i>${meal.delivery_dates.length} delivery dates
+                            </small>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-primary">${meal.day}</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-info">${meal.meal_type}</span>
+                        </div>
+                        <div class="col-md-2">
+                            <span class="badge bg-success">${meal.count} meals</span>
+                        </div>
+                        <div class="col-md-2 text-end">
+                            <button class="btn btn-sm btn-outline-secondary" type="button" data-bs-toggle="collapse" 
+                                    data-bs-target="#mealDates${index}" aria-expanded="false">
+                                <i class="bi bi-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="collapse mt-3" id="mealDates${index}">
+                        <div class="border-top pt-2">
+                            <small class="text-muted fw-semibold">Delivery Dates:</small>
+                            <div class="mt-1">
+                                ${meal.delivery_dates.map(date => `<span class="badge bg-light text-dark me-1 mb-1">${date}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                mealsList.appendChild(mealCard);
+            });
+        } else {
+            mealsList.innerHTML = `
+                <div class="text-center py-4">
+                    <i class="bi bi-bowl-hot text-muted" style="font-size: 48px; opacity: 0.3;"></i>
+                    <p class="text-muted mt-3">No meals selected</p>
+                </div>
+            `;
+        }
+    }
+
+    function formatDate(dateString) {
+        if (!dateString) return 'N/A';
+        const date = new Date(dateString);
+        return date.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+    }
+});
+</script>
+{% endblock javascript %}

@@ -1,0 +1,98 @@
+{% extends 'web/base.html' %} {% load static extras %} {% block content %}
+
+<div class="newsletter-area section_padding_md">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card-wrapper">
+                    <h1 class="text-center mb-3 fs-30 fw-700"><span>Customize</span> your package</h1>
+                    <p>You can use this form to request a customized proposal. Let us know your preferences <br> and
+                        we’ll be in touch right away to set your holiday in motion.</p>
+                    <p>If you’d prefer to start with a phone call, talk to a Holiday Specialist by calling +91
+                        8089915528.
+                    </p>
+
+                    <form action="" method="post" class="customization_form">
+                        {% csrf_token %}
+                        {{form.errors}}
+                        <div class="row">
+                            <div class="form-group col-md-6"><label
+                                    for="{{form.first_name.id_for_label}}">{{form.first_name.label}}</label>{{form.first_name}}
+                            </div>
+                            <div class="form-group col-md-6"><label
+                                    for="{{form.last_name.id_for_label}}">{{form.last_name.label}}</label>{{form.last_name}}
+                            </div>
+                            <div class="form-group col-md-6"><label
+                                    for="{{form.email.id_for_label}}">{{form.email.label}}</label>{{form.email}}</div>
+                            <div class="form-group col-md-6"><label
+                                    for="{{form.phone.id_for_label}}">{{form.phone.label}}</label>{{form.phone}}</div>
+                            <div class="form-group col-md-6"><label
+                                    for="{{form.whatsapp.id_for_label}}">{{form.whatsapp.label}}</label>{{form.whatsapp}}
+                            </div>
+                        </div>
+
+                        <div class="row mb-3">
+                            <div class="form-group col-md-12 mb-0">
+                                <label for="" class="text-white">How many people are travelling</label>
+                            </div>
+                            <div class="form-group col-md-2"><label
+                                    for="{{form.adult.id_for_label}}">{{form.adult.label}}</label>
+                                <div class="number">{{form.adult}}</div>
+                            </div>
+                            <div class="form-group col-md-2"><label
+                                    for="{{form.child.id_for_label}}">{{form.child.label}}</label>
+                                <div class="number">{{form.child}}</div>
+                            </div>
+                            <div class="form-group col-md-2"><label
+                                    for="{{form.infant.id_for_label}}">{{form.infant.label}}</label>
+                                <div class="number">{{form.infant}}</div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-4">
+                                <label for="">which date you want to travel</label>
+                                {{form.travel_date}}
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="">which holiday destination you would like to visit?</label>
+                                {{form.destination}}
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="">For how many days</label>
+                                <div class="number">
+                                    {{form.days}}
+                                </div>
+                            </div>
+                            <div class="form-group col-md-8">
+                                <label for="">from which airport you prefer to travel</label>
+                                {{form.airport}}
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="">Mention any other preferances (if any)</label>
+                                {{form.preference}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group col-md-12 mb-0">
+                                <button class="btn btn-white btn-sm">Submit</button>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% include 'web/partials/offers.html' %} {% endblock %}
+
+{% block scripts %}
+<script>
+    $('#id_phone').on('change', function () {
+        $('#id_whatsapp').val($(this).val());
+    });
+</script>
+{% endblock %}

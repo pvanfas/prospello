@@ -1,0 +1,434 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Hero area start -->
+<section class="hero__area_1 px-1">
+    <div class="container">
+        <div class="hero__area_1_inner">
+            <div class="main-thumb text-end owl-carousel owl-theme">
+                {% for slider in sliders %}
+                <div class="slide">
+                    <img class="main-img w-100 slider_img" src="{{slider.image.url}}" alt="{{slider.title}}">
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- Hero area end -->
+
+<!-- Service area start -->
+<section class="service__area pt-0 pb-130">
+    <div class="container">
+        <div class="bg-light1 border-radius-25 pt-80 px-lg-5 px-4 pb-90 pb-120">
+            <div class="row pb-120">
+                <div class="col-xxl-7 col-xl-7 col-xl-7">
+                    <div class="service__title-wrap" data-aos="fade-up">
+                        <h2 class="sec-subtitle">ABOUT US</h2>
+                        <h3 class="sec-title heading-animation">LIMRA MERCHANDISE <br> GENERAL TRADING L.L.C </h3>
+                    </div>
+                </div>
+                <div class="col-xxl-12 col-xl-12 col-xl-12">
+                    <div class="service__text pt-0">
+                        <p class="mb-2 pb-0">
+                            Headquartered in the vibrant business hub of UAE-
+                            Dubai, is a dynamic and forward-thinking entity dedicated to excellence in international
+                            trade (Import and export) with a specialized focus on Fast-Moving Consumer Goods (FMCG) and
+                            Established with a vision to provide unparalleled solutions. Limra has emerged as a key
+                            player in the global market with wide range of high quality FMCG goods to Africa, Asia and
+                            the Middle East. The Company supplies products from all over the world including Malaysia,
+                            Indonesia, China, India, Philippines, Europe and the USA.
+                        </p>
+                        <p>
+                            In 2017, our journey has been
+                            marked by a commitment to delivering high-quality FMCG products and unparalleled service.
+                            With a dynamic team of industry experts and a strong team on distribution network, we have
+                            successfully built a reputation for reliability, efficiency, and the ability to meet the
+                            diverse needs of our clients. We engage in wholesale and retail of Personal Care, Food and
+                            Beverages, Cleaning products, Baby & Child Care and Paper Products. We cover almost all
+                            major cities in UAE through our Distribution Network. We work together with distinguished
+                            brands, both locally and internationally, to ensure our customers have access to a wide
+                            range of high-quality products that cater to their choice and requirements.
+                        </p>
+                        <p>
+                            Our base is built on robust collaboration. We have established long-term relationships with
+                            major suppliers and manufacturers, enabling us to guarantee a smooth supply chain and
+                            deliver products consistently and efficiently. Our comprehensive network allows us to source
+                            FMCG products from international markets, and we make sure that we provide industry trends
+                            to our customers with the latest products in demand. As a future-oriented company, we
+                            continuously invest in market research, innovation, and technology to stay at the forefront
+                            of the FMCG industry. Our flexible strategy allows us to adapt high speed market dynamics,
+                            anticipate customer requirement, and provide customized solutions that drive business
+                            growth. We pride ourselves on our commitment to excellence, innovation, and personalized
+                            support to ensure our customers’ success and happiness.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="service-inner px-lg-5 px-4">
+            <div class="row pt-4">
+                <div class="col-xxl-4 col-xl-4 col-xl-4 col-md-6 mb-4">
+                    <div class="service__item style2 h-100">
+                        <div class="service__content">
+                            <div class="service__title">VISION</div>
+                            <p class="p-0">To be a global leader in providing essential, high-quality consumer goods
+                                that enhance everyday life. This could involve a commitment to innovation,
+                                sustainability, and meeting the diverse needs of consumers while fostering a responsible
+                                and ethical business approach.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-xl-4 col-md-6 mb-4">
+                    <div class="service__item style2 h-100">
+                        <div class="service__content">
+                            <div class="service__title">MISSION</div>
+                            <p class="p-0">
+                                Empowering lives through quality and accessible fast-moving consumer goods and to be a
+                                trusted partner in consistently deliver innovative products that inspire joy,
+                                convenience, and well-being while fostering sustainability and create lasting value for
+                                our consumers and communities.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xxl-4 col-xl-4 col-xl-4 col-md-6 mb-4">
+                    <div class="service__item style2 h-100">
+                        <div class="service__content">
+                            <div class="service__title">OUR BRAND PROMISE</div>
+                            <p class="p-0">To provide innovative and diverse range of high quality products consistently
+                                at the best price, meeting customer needs and providing convenience in everyday life and
+                                to ensure that the customer experience is memorable and exceeds expectations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Service area end -->
+
+{% comment %}
+<section class="about__area pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-6 col-xl-6 col-xl-6 col-md-6">
+                <div class="about__imgs" data-aos="fade-up">
+                    <div class="image-1">
+                        <img class="border-radius-25" src="/static/web/imgs/about/1.png?v=1.4" alt="Image">
+                    </div>
+                    <div class="image-2">
+                        <img src="/static/web/imgs/about/3.png?v=1.4" alt="Image" data-speed="0.85">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-xl-6 col-md-6">
+                <div class="about__content" data-aos="fade-up" data-aos-delay="500">
+                    <h2 class="sec-subtitle">ABOUT US <span>About Us</span>
+                    </h2>
+                    <h3 class="sec-title heading-animation">LIMRA MERCHANDISE GENERAL TRADING L.L.C</h3>
+                    <div class="p-animationx">
+                        <p class="mb-2 pb-0">
+                            Headquartered in the vibrant business hub of UAE-
+                            Dubai, is a dynamic and forward-thinking entity dedicated to excellence in international
+                            trade (Import and export) with a specialized focus on Fast-Moving Consumer Goods (FMCG) and
+                            Established with a vision to provide unparalleled solutions. Limra has emerged as a key
+                            player in the global market with wide range of high quality FMCG goods to Africa, Asia and
+                            the Middle East. The Company supplies products from all over the world including Malaysia,
+                            Indonesia, China, India, Philippines, Europe and the USA.
+                        </p>
+                        <p>
+                            In 2017, our journey has been
+                            marked by a commitment to delivering high-quality FMCG products and unparalleled service.
+                            With a dynamic team of industry experts and a strong team on distribution network, we have
+                            successfully built a reputation for reliability, efficiency, and the ability to meet the
+                            diverse needs of our clients. We engage in wholesale and retail of Personal Care, Food and
+                            Beverages, Cleaning products, Baby & Child Care and Paper Products. We cover almost all
+                            major cities in UAE through our Distribution Network. We work together with distinguished
+                            brands, both locally and internationally, to ensure our customers have access to a wide
+                            range of high-quality products that cater to their choice and requirements.
+                        </p>
+                        <p>
+                            Our base is built on robust collaboration. We have established long-term relationships with
+                            major suppliers and manufacturers, enabling us to guarantee a smooth supply chain and
+                            deliver products consistently and efficiently. Our comprehensive network allows us to source
+                            FMCG products from international markets, and we make sure that we provide industry trends
+                            to our customers with the latest products in demand. As a future-oriented company, we
+                            continuously invest in market research, innovation, and technology to stay at the forefront
+                            of the FMCG industry. Our flexible strategy allows us to adapt high speed market dynamics,
+                            anticipate customer requirement, and provide customized solutions that drive business
+                            growth. We pride ourselves on our commitment to excellence, innovation, and personalized
+                            support to ensure our customers’ success and happiness.
+                        </p>
+                    </div>
+                    <ul data-aos="fade-up">
+                        <li>BRAND POWER</li>
+                        <li>DISTRIBUTION NETWORK</li>
+                        <li>EXPERIENCE</li>
+                        <li>STRONG WORKFORCE</li>
+                    </ul>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <a class="db-btn-arrow" href="{% url 'web:about' %}">Read More <i
+                                class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="/static/web/imgs/shape/6.png?v=1.4" alt="Zigzag Shape" class="shape">
+    </div>
+</section>
+{% endcomment %}
+
+
+<!-- About area start -->
+
+<section class="who__area-6 pt-0 pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-5 col-xl-5 col-lg-6">
+                <div class="who__left">
+                    <div class="sec-title-wrap">
+                        <h2 class="sec-subtitle-2 heading-animation">who we are </h2>
+                        <h3 class="sec-title underline-2 heading-animation">Transforming ideas <br> into reality</h3>
+                    </div>
+                    <div class="who__features">
+                        <div class="who__feature">
+                            <div class="number">
+                                <span class="color-base">01</span>
+                            </div>
+                            <div class="who__content">
+                                <h4 class="title">BRAND POWER</h4>
+                            </div>
+                        </div>
+                        <div class="who__feature">
+                            <div class="number">
+                                <span class="color-base">02</span>
+                            </div>
+                            <div class="who__content">
+                                <h4 class="title">DISTRIBUTION NETWORK</h4>
+                            </div>
+                        </div>
+                        <div class="who__feature">
+                            <div class="number">
+                                <span class="color-base">03</span>
+                            </div>
+                            <div class="who__content">
+                                <h4 class="title">EXPERIENCE</h4>
+                            </div>
+                        </div>
+                        <div class="who__feature">
+                            <div class="number">
+                                <span class="color-base">04</span>
+                            </div>
+                            <div class="who__content">
+                                <h4 class="title">STRONG WORKFORCE</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xxl-7 col-xl-7 col-lg-6">
+                <div class="who__right">
+                    <div class="main-img w-100">
+                        <img src="/static/web/imgs/main/lead.jpeg?v=1.4" alt="Image" style="width:100%">
+                    </div>
+
+                    <div class="who__project">
+                        <div class="project-completed">
+                            <img src="/static/web/imgs/who/6/hand.png?v=1.4" alt="Hand Image">
+                            <h3 class="total counter_fast">100+</h3>
+                            <p>Business Impacted</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- About area end -->
+
+
+<section class="counter__area bg-white">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-12">
+                <div class="counter__inner">
+                    <div class="counter__item" data-aos="fade-right">
+                        <div class="counter__number counter_slow style2">200+
+                        </div>
+                        <h3 class="counter__title color-heading">Brands </h3>
+                    </div>
+                    <div class="counter__item" data-aos="fade-right" data-aos-delay="100">
+                        <div class="counter__number counter_slow style2">1000+
+                        </div>
+                        <h3 class="counter__title color-heading">SKUs </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% comment %}
+<!-- intro area start -->
+<div class="intro-area bg-light1 pt-80 pb-80">
+    <div class="container">
+        <div class="pt-0 mb-5" data-aos="fade-up" data-aos-delay="500">
+            <h2 class="sec-subtitle">Our Presence <span>BUSINESS LINES</span>
+            </h2>
+            <h3 class="sec-title heading-animation">FMCG</h3>
+        </div>
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-lg-4 col-md-6">
+                <div class="single-intro-inner">
+                    <div class="thumb">
+                        <img class="w-100" src="{{category.image.url}}" alt="img"
+                            style="height: 240px;object-fit: cover;">
+                    </div>
+                    <div class="details">
+                        <h5>{{category.title}}</h5>
+                        <span></span>
+                        <p>
+                            {{category.description|linebreaksbr}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endcomment %}
+
+<!-- Text Slider area start -->
+<section class="textslider__area bg-light p">
+    <div class="textslider__inner">
+        <div class="swiper textslider__active textslider_1">
+            <div class="swiper-wrapper">
+                {% for brand in brands %}                
+                <div class="swiper-slide">
+                    <div class="textslider__slide">
+                        <h2><img src="{{brand.image.url}}" alt="" style="height: 80px;"></h2>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="bg-light1">
+    <div class="exp-area">
+        <div class="container">
+            <div class="row pt-5 pb-5">
+                <div class="col-lg-6">
+                    <div class="pb-5 about__content pt-0" data-aos="fade-up" data-aos-delay="500">
+                        <h3 class="sec-title heading-animation">Chairman’s Message</h3>
+                        <p class="mb-2 pb-0">
+                            Dear valued customers and partners,</p>
+                        <p class="mb-2 pb-0"> We are pleased to extend our heartfelt gratitude for your unwavering
+                            support in
+                            making LIMRA MERCHANDISE GENERAL TRADING L.L.C a trusted name in the FMCG industry. Our
+                            commitment to
+                            excellence remains steadfast, and we are dedicated to providing you with high-quality
+                            products and unparalleled service.</p>
+                        <p class="mb-2 pb-0">
+                            As we navigate these dynamic times, your trust fuels our determination to innovate and
+                            adapt. Our collaborative partnership has been instrumental in our success, and we look
+                            forward to continued growth together.
+                        </p>
+                        <p class="mb-2 pb-0">
+                            Thank you for choosing LIMRA. Your satisfaction is our priority, and we are excited about
+                            the journey ahead.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="thumb">
+                        <img src="/static/web/imgs/main/chairman.jpeg?v=1.4" alt="" class="w-100 border-radius-25" style="object-fit: cover;">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- intro area end -->
+
+<!-- Contact area start -->
+<section class="contact__areas pt-80 pb-80" id="appointment">
+    <div class="container">
+        <div class="box-shadow p-xl-5 p-4 border-radius-50">
+            <div class="row">
+                <div class="col-xxl-6 col-xl-6 col-lg-6 mb-lg-0 mb-4">
+                    <img class="border-radius-25" src="/static/web/imgs/intro/10.png?v=1.4" alt="img">
+                </div>
+                <div class="col-xxl-6 col-xl-6 col-lg-6 align-self-center">
+                    <div class="contact__form contact__form-5 mt-0 pt-0 pb-0">
+                        <div class="" data-aos="fade-up" data-aos-delay="600">
+                            <form action="{% url 'web:contact' %}" method="POST" class="ajax reload">
+                                {% csrf_token %}
+                                {{form.name}}
+                                {{form.email}}
+                                {{form.phone}}
+                                {{form.subject}}
+                                {{form.message}}
+                                <button class="submit btn-rollover bg-base" type="submit">Submit <i
+                                        class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact area end -->
+
+{% comment %}
+<!-- Blog area start -->
+<section class="blog__area pt-0 pb-80">
+    <div class="container">
+        <div class="row">
+            <div class="col-xxl-12">
+                <div class="sec-title-wrap" data-aos="fade-up">
+                    <h2 class="sec-subtitle">Our Blog <span>Our Blog</span>
+                    </h2>
+                    <h3 class="sec-title heading-animation">Checkout our Latest News </h3>
+                </div>
+            </div>
+            <div class="col-xxl-12">
+                <div class="blog__list">
+                    {% for news in newses %}
+                    <article class="blog__item" data-aos="fade-up" data-aos-delay="300">
+                        <div class="blog__thumb mb-3">
+                            <div class="shine">
+                                <a href="{{news.get_absolute_url}}">
+                                    <img class="border-radius-25" src="{{news.image.url}}" alt="Thumbnail"
+                                        style="height:300px;width:100%;object-fit:cover;">
+                                </a>
+                            </div>
+                            <div class="date">{{news.date|date:"d"}} <br> {{news.date|date:"F"}}</div>
+                        </div>
+                        <a href="{{news.get_absolute_url}}">
+                            <h4 class="blog__title">{{news.title}}</h4>
+                        </a>
+                        <a class="db-btn-arrow" href="{{news.get_absolute_url}}">Read More <i
+                                class="fa-solid fa-arrow-right"></i></a>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog area end -->
+{% endcomment %}
+
+{% endblock %}

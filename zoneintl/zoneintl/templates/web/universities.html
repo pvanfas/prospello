@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!--Page Title-->
+<section class="page-title" style="background-image: url({% static 'web/images/background/12.jpg' %});">
+  <div class="auto-container">
+    <h1>Universities</h1>
+    <span class="title_divider"></span>
+    <ul class="page-breadcrumb">
+      <li><a href="{% url 'web:index' %}">Home</a></li>
+      <li>Universities</li>
+    </ul>
+  </div>
+</section>
+<!--End Page Title-->
+
+<!-- News Section -->
+<section class="news-section">
+  <div class="auto-container">
+    <div class="row">
+
+      {% for university in universities %}
+      <div class="news-block col-xl-3 col-lg-4 col-md-6 col-sm-12 wow fadeInUp">
+        <div class="inner-box">
+          <div class="image-box">
+            <figure class="image">
+              <a href="#"><img src="{{university.logo.url}}" alt="{{university.name}}"></a>
+            </figure>
+          </div>
+          <div class="lower-content">
+            <center>
+              <h6><a style="color: black;">{{university.name}}</a></h6>
+            </center>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+<!--End News Section -->
+
+
+<!-- Clients Section -->
+<section class="clients-section style-two">
+  <div class="auto-container">
+
+    <!-- Sponsors Outer -->
+    <div class="sponsors-outer">
+      <!--Sponsors Carousel-->
+      <ul class="sponsors-carousel owl-carousel owl-theme">
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/1_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/1.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/2_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/2.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/3_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/3.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/4_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/4.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/5_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/5.png' %}" alt="">
+          </a>
+        </li>
+        <li class="slide-item">
+          <a href="#">
+            <img src="{% static 'web/images/clients/6_hover_red.png' %}" alt="" class="hover_img">
+            <img src="{% static 'web/images/clients/6.png' %}" alt="">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!--End Clients Section -->
+
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% load static %}
+<footer id="footer" class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-5 col-md-12 footer-info">
+                    <a href="index.html" class="logo d-flex align-items-center">
+                        <img src="{% static 'web/images/logo.svg' %}" alt="fetch logo" />
+                    </a>
+                    <p>
+                        The exemplary leadership of the experienced team with skilled designers and precise craftsmanship gives a blend of quality and
+                        style to the fetch products We focus on manufacturing, marketing, trading and exporting of office chairs and furniture. We have
+                        one of the biggest and fascinating collections of office chairs which makes a great contribution to the look of any space.
+                    </p>
+                    <div class="d-flex mt-3">
+                        <img src="{% static 'web/images/accreditation.png' %}" class="d-block" alt="warranty" style="height:70px;object-fit:contain;">
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 footer-links">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><i class="bi bi-chevron-right"></i> <a href="/">Home</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{% url 'web:about' %}">About</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{% url 'web:products' %}">Products</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{% url 'web:updates' %}">Updates</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{% url 'web:careers' %}">Careers</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{% url 'web:contact' %}">Contact Us</a></li>
+                        <li><i class="bi bi-chevron-right"></i> <a href="{% url 'web:privacy_policy' %}">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-4 col-md-6 footer-contact text-center text-md-start">
+                    <h4>Contact Us</h4>
+                    <p>
+                        Galaxy Seating systems,<br />
+                        46/1589/B, 46/1589/C<br />
+                        Madurabazar, BC Road, Feroke<br />
+                        Kozhikode, Kerala, 673631
+                        <br />
+                        <br />
+                        <strong>Phone:</strong> <a href="tel:+919961201464">+91 9961 201 464</a><br />
+                        <strong>Email:</strong><a href="mailto:mail@myfetch.in"> mail@myfetch.in</a> <br />
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="copyright">
+            <p>&copy; 2021 All Rights Reserved, Designed by <a href="#">Prospello.tech</a></p>
+        </div>
+    </div>
+</footer>
+
+
+{% include "website/partials/widgets.html" %}

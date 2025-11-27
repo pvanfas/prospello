@@ -1,0 +1,553 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}Webinars | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+<div class="page-banner-area communities-banner">
+    <div class="container-fluid">
+        <div class="row justify-content-center" data-cue="fadeIn">
+            <div class="col-lg-10 col-md-12">
+                <div class="page-banner-content communities-banner-content">
+                    <span class="banner-label">Webinars</span>
+                    <h2>Upcoming Webinars</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Start Upcoming Webinars Section -->
+<div class="webinars-area pt-100 pb-100" id="upcoming-webinars">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="swiper  position-relative">
+                    <div class="row">
+
+                        <!-- Slide 1 -->
+                        <div class="col-md-6 p-4">
+                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
+                                <div class="col-md-4">
+                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/event-card_indore-2fcffed994dc00f50c0ab5b96475ab19.webp"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: Scale Faster with Digital Marketing">
+                                </div>
+                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <span class="badge bg-primary-subtle text-primary mb-2">Online</span>
+                                        <h4 class="fw-semibold mb-3">Scale Faster with Digital Marketing</h4>
+                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Dec 15, 2024 &nbsp; |
+                                            &nbsp; 4:00 PM - 6:00 PM IST</p>
+                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
+                                    </div>
+                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
+                                            data-bs-target="#event1Modal">
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="col-md-6 p-4">
+                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
+                                <div class="col-md-4">
+                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/akash-gogri--1--d353ffa5db19eb9b959559016ef31bb5.webp"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: Supercharge Your Personal Brand with AI">
+                                </div>
+                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <span class="badge bg-success-subtle text-success mb-2">Online</span>
+                                        <h4 class="fw-semibold mb-3">Supercharge Your Personal Brand with AI</h4>
+                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Dec 20, 2024 &nbsp; |
+                                            &nbsp; 2:00 PM - 4:00 PM IST</p>
+                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
+                                    </div>
+                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
+                                            data-bs-target="#event1Modal">
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="col-md-6 p-4">
+                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
+                                <div class="col-md-4">
+                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/aman-kapoor--jaipur--1--cb90f80a0741c95d2b26f17766b2567a.webp"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: AI Tools to Power Your Marketing Strategy">
+                                </div>
+                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <span class="badge bg-info-subtle text-info mb-2">Online</span>
+                                        <h4 class="fw-semibold mb-3">AI Tools to Power Your Marketing Strategy</h4>
+                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Dec 25, 2024 &nbsp; |
+                                            &nbsp; 5:00 PM - 7:00 PM IST</p>
+                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
+                                    </div>
+                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
+                                            data-bs-target="#event1Modal">
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="col-md-6 p-4">
+                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
+                                <div class="col-md-4">
+                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/event-card_indore-2fcffed994dc00f50c0ab5b96475ab19.webp"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: Content Marketing Mastery">
+                                </div>
+                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
+                                    <div>
+                                        <span class="badge bg-warning-subtle text-warning mb-2">Online</span>
+                                        <h4 class="fw-semibold mb-3">Content Marketing Mastery</h4>
+                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Jan 5, 2025 &nbsp; |
+                                            &nbsp; 3:00 PM - 5:00 PM IST</p>
+                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
+                                    </div>
+                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
+                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
+                                            data-bs-target="#event1Modal">
+                                            Register Now
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Upcoming Webinars Section -->
+
+
+<!-- Why Attend Our Webinars Section -->
+<div class="features-area pb-100">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto mb-5" data-cues="slideInUp">
+            <h2 class="section_title">Why Attend Our Webinars?</h2>
+            <p>Discover what makes our webinars unique and valuable for your growth</p>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/certificate.png' %}" alt="Practical Insights"
+                            style="width:50px;">
+                    </div>
+                    <h5 class="mb-3">Practical Insights</h5>
+                    <p class="mb-0">Gain actionable strategies and techniques that you can apply directly to your marketing campaigns and see immediate results.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/mentor.png' %}" alt="Expert Mentors" style="width:50px;">
+                    </div>
+                    <h5 class="mb-3">Learn from Experts</h5>
+                    <p class="mb-0">Our webinars are hosted by industry veterans with years of experience in their respective fields, sharing real-world insights.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mb-4">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/job.png' %}" alt="Q&A Sessions" style="width:50px;">
+                    </div>
+                    <h5 class="mb-3">Interactive Q&A</h5>
+                    <p class="mb-0">Get your questions answered in real-time and engage in meaningful discussions with our expert speakers and fellow participants.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Why Attend Section -->
+
+{% comment %}
+<div class="cash-management-area ptb-100">
+    <div class="container-fluid">
+        <div class="section-title-wrap" data-cues="slideInUp">
+            <h2 class="section_title">Past Webinars</h2>
+            <p>Missed a webinar? Catch up on our past sessions and watch the highlights.</p>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash4.jpg' %}" alt="Past Webinar">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Content Marketing Masterclass</h3>
+                        <a href="#" class="default-btn mt-3">Watch Highlights</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash5.jpg' %}" alt="Past Webinar">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Email Marketing Automation</h3>
+                        <a href="#" class="default-btn mt-3">Watch Highlights</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash6.jpg' %}" alt="Past Webinar">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Google Analytics for Beginners</h3>
+                        <a href="#" class="default-btn mt-3">Watch Highlights</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="testimonials-area  pb-125">
+    <div class="container-fluid">
+        <div class="section-title-wrap" data-cues="slideInUp">
+            <h2 class="section_title">What Our Participants Say</h2>
+            <p>Missed a webinar? Catch up on our past sessions and watch the highlights.</p>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>Moving from <b>Banking money transfer</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>The most wonderful system in <b>online banking</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>Good support, some room <b>for improvement</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>It was just what I <b>needed</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>Great project and soft <b>UX</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>Great team, promising <b>project</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>Great project and soft <b>UX</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+                <div class="testimonials-card">
+                    <ul class="rating-list">
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                        <li>
+                            <img src="/static/web/images/star1.svg" alt="star">
+                        </li>
+                    </ul>
+                    <h3>Great team, promising <b>project</b></h3>
+                    <p>My website is on wordpress, I'm moving from wordpress to Uvodo. I've a new project now I,m
+                        Working on with Uvodo.</p>
+                    <span class="ps-0 fw-semibold">Vishnu</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="faq-area pb-100">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp" data-disabled="true">
+            <h2 class="section_title" data-cue="slideInUp" data-show="true"
+                style="animation-name: slideInUp; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
+                FAQ</h2>
+        </div>
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp" data-disabled="true">
+            <div class="col-lg-8 col-md-12" data-cue="slideInUp" data-show="true"
+                style="animation-name: slideInUp; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
+                <div class="faq-accordion">
+                    <div class="accordion" id="FaqAccordion">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-One">
+                                Who is eligible for the referral program?
+                            </button>
+                            <div id="collapse-One" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>All existing and past students of 360 Marketing School are eligible to
+                                        participate in the referral program.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-Two">
+                                How many friends can I refer?
+                            </button>
+                            <div id="collapse-Two" class="accordion-collapse collapse show"
+                                data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>There is no limit to the number of friends you can refer. The more you refer, the
+                                        more you earn!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-Three">
+                                When will I receive my reward?
+                            </button>
+                            <div id="collapse-Three" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>Your reward will be processed within 30 days of your friend's confirmed
+                                        enrollment and payment.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endcomment %}
+
+
+
+
+<div class="modal fade" id="event1Modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header align-items-start p-3" style="background-color: #EDEFEB;">
+                <h5 class="modal-title modal-title pt-4 px-4" id="enrollModalBackdropLabel">Apply for the <span
+                        class="primary">Advanced
+                        Digital Marketing <br> Proficiency Program</span></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-3 contact-form-inner px-3 pb-3 pt-0">
+                <form class="contact-form p-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Name">
+                    </div>
+                    <div class="form-group">
+                        <input type="phone" class="form-control" placeholder="Phone">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="subject" class="form-control" placeholder="Subject">
+                    </div>
+                    <button class="default-btn" type="submit">Submit Now</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
+{% block extra_js %}
+<script>
+    const webinarSwiper = new Swiper(".webinarSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 24,
+        loop: true,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev"
+        },
+        breakpoints: {
+            768: { slidesPerView: 1.2 },
+            992: { slidesPerView: 1.4 },
+            1200: { slidesPerView: 1.6 }
+        }
+    });
+</script>
+{% endblock %}

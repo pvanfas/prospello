@@ -1,0 +1,74 @@
+{% extends 'website/base.html' %} {% load static %} {% block title %}{{career.name}} | FETCH - Embellish with style & comfort{% endblock %} {% block content %}
+
+<main>
+    <section id="hero" class="filters pb-0 d-flex align-items-center">
+        <div class="container">
+            <h1 class="main_head w-50">{{career.title}}</h1>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="card border-0">
+                <div class="row g-0">
+                    <div class="col-md-6">
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="main_image border-0" style="background-image: url();">
+                                <img src="{{career.featured_image.thumbnail.350x500}}" id="main_career_image" width="100%" loading="lazy" style="object-fit: cover;height: 100%;width: 100%;">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="py-3 px-5 right-side">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <h3>{{career.name}}</h3> <span class="heart"><i class="bx bx-heart"></i></span>
+                            </div>
+                            <div class="mt-2 pr-3 content">
+                                <p>{{career.content|safe}}</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="m-0 p-0" style="background: url({% static 'web/images/contact_bg.svg' %}) no-repeat left bottom;background-size: cover;">
+
+        <section id="enquiry_form" class="contact">
+            <div class="container">
+                <div class="content text-center mx-auto">
+                    <h3>Apply Now</h3>
+                    <span class="pattern mx-auto"></span>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <form action="" method="post" class="ajax reload" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row gy-4">
+                                <div class="col-md-6">{{form.name}}</div>
+                                <div class="col-md-6">{{form.phone}}</div>
+                                <div class="col-md-6">{{form.email}}</div>
+                                <div class="col-md-6">{{form.place}}</div>
+                                <div class="col-md-12">
+                                    <label for="id_resume">Resume</label>{{form.resume}}</div>
+
+                                <div class="col-md-12 text-center">
+                                    <button type="submit" class="fill-btn">Submit Application</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {% include 'website/partials/footer.html' %}
+    </section>
+
+</main>
+
+{% endblock %}

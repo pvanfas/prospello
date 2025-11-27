@@ -1,0 +1,392 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}Digital Marketing Course | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+
+<div class="about-area">
+    <div class="container-fluid">
+        <div class="about-top-content" data-cues="slideInUp">
+            <span>Courses</span>
+            <h2>Advanced Digital Marketing Program</h2>
+        </div>
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp">
+            <div class="col-lg-8 col-md-12">
+                <div class="about-image">
+                    <img src="/static/web/images/about.jpg" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="about-content">
+                    <p>The world as we know is no longer the same, and changes now occur in days and months, not years.</p>
+                    <p>The digital revolution is here, and Winden is at the center, supporting entrepreneurs and businesses propelling the growth of the global internet economy.</p>
+                    <div class="community-btn">
+                        <a href="#" class="default-btn bg-yellow">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Services Area -->
+<div class="services-area ptb-100 bg-white">
+    <div class="container-fluid">
+
+        <div class="row justify-content-center mt-5 mb-4" data-cues="slideInUp">
+            <div class="col-12 text-center">
+                <h4 class="text-uppercase">Tools & Certifications</h4>
+            </div>
+        </div>
+
+        <div class="row justify-content-center align-items-center" data-cues="fadeIn">
+            {% for partner in partners %}
+            <div class="col-lg-2 col-sm-4 col-6">
+                <div class="brand-item">
+                    <img src="{{partner.logo.url}}" alt="{{partner.name}}">
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumb">
+                    <img src="https://www.lovesdata.com/media/posts/535/responsive/certificate-xl.webp" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumb">
+                    <img src="https://www.lovesdata.com/media/posts/535/responsive/certificate-xl.webp" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumb">
+                    <img src="https://www.lovesdata.com/media/posts/535/responsive/certificate-xl.webp" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Services Area -->
+
+<div class="cash-management-area pt-125 bg-minimal">
+    <div class="container-fluid">
+        <div class="section-title-wrap" data-cues="slideInUp">
+            <h2 class="section_title">Real Projects & Hands-On Training</h2>
+            <p>Apply your skills to real-world scenarios and build a portfolio that stands out.</p>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card bg-white">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash1.jpg' %}" alt="Project">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Live Campaign Management</h3>
+                        <p>Develop, launch, and manage a live marketing campaign for a real business, from budget allocation to performance analysis.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card bg-white">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash2.jpg' %}" alt="Project">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Comprehensive SEO Audit</h3>
+                        <p>Conduct a full SEO audit for a website, identifying technical issues, on-page optimizations, and backlink opportunities.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <div class="cash-management-card bg-white">
+                    <div class="cash-image">
+                        <img src="{% static 'web/images/cash/cash3.jpg' %}" alt="Project">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Social Media Strategy</h3>
+                        <p>Create a data-driven social media strategy for a brand, including content creation, community management, and paid advertising.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="services-area ptb-125">
+    <div class="container-fluid">
+        <div class="section-title" data-cues="slideInUp">
+            <h2 class="section_title">Complete Career Support</h2>
+            <p>We're invested in your success. Our career services are designed to help you land your dream job.</p>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="{% static 'web/images/services/icon1.png' %}" alt="Resume Building">
+                    </div>
+                    <div class="content">
+                        <h3>Resume Building</h3>
+                        <p>Craft a compelling, keyword-optimized resume that grabs the attention of recruiters.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="{% static 'web/images/services/icon2.png' %}" alt="Mock Interviews">
+                    </div>
+                    <div class="content">
+                        <h3>Mock Interviews</h3>
+                        <p>Practice with industry experts and receive personalized feedback to ace your interviews.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="{% static 'web/images/services/icon3.png' %}" alt="Job Placements">
+                    </div>
+                    <div class="content">
+                        <h3>Placement Assist</h3>
+                        <p>Get exclusive access to our network of hiring partners and job openings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="{% static 'web/images/services/icon4.png' %}" alt="Career Guidance">
+                    </div>
+                    <div class="content">
+                        <h3>Career Guidance</h3>
+                        <p>Receive 1-on-1 mentorship to navigate your career path and achieve your goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Places Area -->
+<div class="places-area ptb-150">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-lg-4 col-md-12">
+                <div class="places-content">
+                    <h2>What Our Students Say</h2>
+
+                    <ul class="places-slider-button">
+                        <li>
+                            <div class="swiper-button-prev">
+                                <i class="ri-arrow-left-s-line"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="swiper-button-next">
+                                <i class="ri-arrow-right-s-line"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="swiper places-slide-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="places-card">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places1.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>“Torado has changed the game in terms of simplicity, and certainly been a lifesaver for expat living.”</h4>
+                                    <a href="index-2.html" class="default-btn">Gerald On Trustpilot</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-FFF2E5">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places2.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>“I use Torado to pay a mortgage in a different country each month. Superb. That simple.”</h4>
+                                    <a href="index-2.html" class="default-btn">Gerald On Trustpilot</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-EDEFEB">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places3.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>“I use Torado to pay a mortgage in a different country each month. Superb. That simple.”</h4>
+                                    <a href="index-2.html" class="default-btn">Gerald On Trustpilot</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places1.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>“Torado has changed the game in terms of simplicity, and certainly been a lifesaver for expat living.”</h4>
+                                    <a href="index-2.html" class="default-btn">Gerald On Trustpilot</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-FFF2E5">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places2.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>“I use Torado to pay a mortgage in a different country each month. Superb. That simple.”</h4>
+                                    <a href="index-2.html" class="default-btn">Gerald On Trustpilot</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="places-card bg-EDEFEB">
+                                <div class="places-image">
+                                    <img src="/static/web/images/places/places3.png" alt="image">
+                                </div>
+                                <div class="places-content">
+                                    <h4>“I use Torado to pay a mortgage in a different country each month. Superb. That simple.”</h4>
+                                    <a href="index-2.html" class="default-btn">Gerald On Trustpilot</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Places Area -->
+
+
+<div class="features-area pb-100">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Why Learn With 360 Marketing School?</h2>
+        </div>
+        <div class="row justify-content-center mt-5" data-cues="slideInUp">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/certificate.png' %}" alt="Innovative Curriculum" style="width:40px;">
+                    </div>
+                    <h5>Innovative Curriculum</h5>
+                    <p>Stay ahead with a curriculum that is constantly updated to reflect the latest industry trends.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/mentor.png' %}" alt="Expert Mentorship" style="width:40px;">
+                    </div>
+                    <h5>Expert Mentorship</h5>
+                    <p>Learn from seasoned professionals who are passionate about helping you succeed.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/job.png' %}" alt="Vast Network" style="width:40px;">
+                    </div>
+                    <h5>Vast Network</h5>
+                    <p>Tap into our extensive network of alumni and hiring partners for unparalleled opportunities.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="{% static 'web/images/icons/lifetime.png' %}" alt="Career Support" style="width:40px;">
+                    </div>
+                    <h5>Lifetime Support</h5>
+                    <p>Our commitment to your career doesn't end at graduation. Enjoy lifetime access to our career services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="faq-area ptb-125 bg-minimal">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Frequently Asked Questions</h2>
+        </div>
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp">
+            <div class="col-lg-8 col-md-12">
+                <div class="faq-accordion">
+                    <div class="accordion" id="FaqAccordion">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-One">
+                                What are the prerequisites for this course?
+                            </button>
+                            <div id="collapse-One" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>There are no specific prerequisites for this course. It is open to students from all backgrounds who have a keen interest in digital marketing.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-Two">
+                                Is this course suitable for beginners?
+                            </button>
+                            <div id="collapse-Two" class="accordion-collapse collapse show" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>Yes, the course is designed to cater to both beginners and those with some prior knowledge. We start with the fundamentals and gradually move to advanced topics.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-Three">
+                                Do you provide placement assistance?
+                            </button>
+                            <div id="collapse-Three" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>Absolutely. We offer comprehensive placement support, including resume building, mock interviews, and access to our network of hiring partners.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="cta bg-minimal">
+    <div class="container">
+        <div class="subscribe-area ptb-100">
+            <div class="container">
+                <div class="subscribe-content">
+                    <h2>Ready to Launch Your Digital Marketing Career?</h2>
+
+                    <form class="newsletter-form">
+                        <input type="email" class="input-newsletter" placeholder="Enter your email">
+                        <button type="submit" class="default-btn">Download Brochure</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="subscribe-shape1">
+                <img src="/static/web/images/subscribe/shape1.png" alt="image">
+            </div>
+            <div class="subscribe-shape2">
+                <img src="/static/web/images/subscribe/shape2.png" alt="image">
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

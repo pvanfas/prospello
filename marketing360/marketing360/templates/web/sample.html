@@ -1,0 +1,641 @@
+<div class="features-area pt-100 pb-100">
+    <div class="container-fluid">
+
+        <div data-cues="slideInUp">
+            <h2 class="section_title">Industry Recognised Certifications</h2>
+            <p>Get certified by leading platforms and boost your career</p>
+        </div>
+
+        <div class="row justify-content-center align-items-center mt-5" data-cues="slideInUp">
+            <div class="col-lg-3 col-md-6">
+                <div class="features-card text-center border-0">
+                    <div class="number">01</div>
+                    <h5>Google ad Certified</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="features-card text-center border-0">
+                    <div class="number">02</div>
+                    <h5>Meta Blueprint Certified</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="features-card text-center border-0">
+                    <div class="number">03</div>
+                    <h5>Google Analytics Certified</h5>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="features-card text-center border-0">
+                    <div class="number">04</div>
+                    <h5>Hubspot Certified</h5>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row justify-content-center mt-5" data-cues="slideInUp">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="/static/web/images/icons/certificate.png" alt="Innovation" style="width:40px;">
+                    </div>
+                    <h5>Innovative Curriculum</h5>
+                    <p>Stay ahead with the latest digital marketing trends and hands-on learning modules designed by
+                        industry leaders.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="/static/web/images/icons/mentor.png" alt="Mentorship" style="width:40px;">
+                    </div>
+                    <h5>Expert Mentorship</h5>
+                    <p>Learn from experienced mentors who guide you through real-world projects and career growth.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="/static/web/images/icons/job.png" alt="Networking" style="width:40px;">
+                    </div>
+                    <h5>Vast Network</h5>
+                    <p>Connect with a thriving community of marketers, alumni, and hiring partners for endless
+                        opportunities.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
+                    <div class="feature-icon mb-4">
+                        <img src="/static/web/images/icons/lifetime.png" alt="Career Support" style="width:40px;">
+                    </div>
+                    <h5>Career Support</h5>
+                    <p>Benefit from personalized career guidance, resume building, and placement assistance to land your
+                        dream job.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Start Top Marketing Stories & Case Studies -->
+<div class="stories-case-studies-area pb-100">
+    <div class="container-fluid">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Top Marketing Stories</h2>
+            <p>
+                Explore our curated collection of top marketing stories and case studies.
+            </p>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            {% for story in top_stories %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm p-4 border-blue">
+                    {% if story.image %}
+                    <div class="card-head">
+                        <img src="{{ story.image.url }}" class="card-img" alt="{{ story.title }}"
+                            style="height:220px;object-fit:cover;">
+                        {% endif %}
+                    </div>
+                    <div class="card-body px-0">
+                        <h5 class="card-title">{{ story.title }}</h5>
+                        <p class="card-text">{{ story.summary|truncatewords:30 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No stories available.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Top Marketing Stories & Case Studies -->
+
+
+<!-- Start Money Abroad Area -->
+<div class="money-abroad-area ptb-150">
+    <div class="container">
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp">
+            <div class="col-xl-5 col-md-12">
+                <div class="money-abroad-form">
+                    <div class="thumb">
+                        <img src="/static/web/images/main/socialmedia.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-md-12">
+                <div class="money-abroad-content">
+                    <h2 class="h6">Find your perfect course with AI</h2>
+                    <p>
+                        And we provide you with a platform to learn, upskill, and excel in the world of digital
+                        marketing. Whether you’re interested in digital marketing certifications, digital marketing
+                        coaching, or offline digital marketing courses in Bangalore, we offer you a range of options to
+                        suit your needs.
+                    </p>
+                    <a href="#" class="default-btn">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="24px"
+                            viewBox="0 0 122.879 102.401" enable-background="new 0 0 122.879 102.401"
+                            xml:space="preserve">
+                            <g>
+                                <path
+                                    d="M46.736,0H30.311H16.698C12.083,0,8.144,1.619,4.881,4.881C1.619,8.144,0,12.083,0,16.698v29.313 c0,4.639,1.619,8.579,4.881,11.841c3.262,3.238,7.202,4.882,11.817,4.882c4.301,0,8.603,0,12.904,0 c-0.942,3.673-2.15,7.178-3.624,10.463c-1.45,3.311-3.891,6.477-7.298,9.497c6.525-1.691,12.325-4.229,17.423-7.587 c5.099-3.335,9.497-7.468,13.17-12.373c3.691,0,7.384,0,11.075,0c4.615,0,8.554-1.644,11.816-4.882 c3.264-3.262,4.883-7.202,4.883-11.841V16.698c0-4.615-1.619-8.555-4.883-11.817C68.902,1.619,64.963,0,60.348,0H46.736L46.736,0z M122.879,33.663v29.313c0,2.667-0.475,5.159-1.432,7.479c-0.953,2.314-2.375,4.416-4.266,6.308 c-0.822,0.814-1.684,1.545-2.584,2.188c-0.928,0.66-1.873,1.221-2.84,1.681c-0.051,0.024-0.104,0.047-0.156,0.068 c-1.236,0.575-2.525,1.009-3.863,1.299c-1.389,0.302-2.824,0.453-4.311,0.453h-8.734h-0.018h-0.018h-0.018h-0.016h-0.467 c0.186,0.59,0.379,1.175,0.578,1.755c0.568,1.639,1.207,3.253,1.918,4.837l0.01,0.021h0.002c0.641,1.463,1.496,2.89,2.564,4.279 c1.102,1.434,2.447,2.854,4.033,4.261c1.135,1.004,1.24,2.737,0.238,3.871c-0.707,0.799-1.777,1.088-2.742,0.838l-0.002,0.001 c-3.406-0.884-6.625-1.987-9.654-3.309c-3.031-1.321-5.891-2.87-8.58-4.642l-0.006,0.008c-2.672-1.747-5.172-3.715-7.494-5.897 c-1.969-1.85-3.807-3.857-5.514-6.023h-0.928h-0.016h-0.02h-0.016h-0.018h-8.735c-1.818,0-3.56-0.227-5.223-0.676 c-1.665-0.45-3.251-1.134-4.756-2.048c-1.295-0.784-1.709-2.469-0.925-3.764c0.784-1.295,2.469-1.709,3.764-0.925 c1.031,0.626,2.144,1.102,3.337,1.424c1.186,0.32,2.454,0.482,3.803,0.482h8.735h0.018h0.016h0.02h0.016h2.271v0.011 c0.834,0,1.656,0.379,2.193,1.097c1.732,2.313,3.648,4.456,5.74,6.422c2.066,1.941,4.316,3.708,6.742,5.295l-0.006,0.008 l0.006,0.003c2.305,1.519,4.777,2.865,7.418,4.038c-0.5-0.846-0.938-1.699-1.314-2.561l0,0c-0.752-1.681-1.445-3.438-2.08-5.267 c-0.602-1.738-1.141-3.525-1.617-5.353c-0.105-0.294-0.164-0.61-0.164-0.94c0-1.521,1.232-2.753,2.752-2.753h4.102h0.016h0.018 h0.018h0.018h8.734c1.107,0,2.156-0.108,3.148-0.324c0.943-0.204,1.84-0.503,2.689-0.895c0.041-0.022,0.084-0.044,0.127-0.064 c0.717-0.342,1.393-0.737,2.021-1.186c0.656-0.469,1.289-1.004,1.895-1.606c1.371-1.37,2.391-2.87,3.063-4.501 c0.67-1.624,1.002-3.421,1.002-5.394V33.663c0-1.96-0.332-3.751-1.002-5.373c-0.672-1.628-1.691-3.127-3.063-4.498l0,0l-0.01-0.011 c-1.371-1.371-2.869-2.391-4.498-3.062c-1.621-0.669-3.412-1.002-5.373-1.002h-7.873h-5.738c-1.521,0-2.754-1.233-2.754-2.753 c0-1.521,1.232-2.753,2.754-2.753h5.738h7.873c2.656,0,5.143,0.476,7.459,1.432c2.307,0.952,4.406,2.37,6.295,4.256l0.004,0.005 l0.006,0.005l0.002,0.002c1.887,1.888,3.303,3.986,4.254,6.292C122.404,28.521,122.879,31.008,122.879,33.663L122.879,33.663z" />
+                            </g>
+                        </svg>
+                        <span class="ms-3">Chat Now</span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="money-abroad-shape">
+        <img src="/static/web/images/money-abroad/shape2.png" alt="image">
+    </div>
+</div>
+<!-- End Money Abroad Area -->
+
+
+
+<!-- Start Student Success Stories Area -->
+<div class="student-success-stories-area ptb-100">
+    <div class="container">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Student Success Stories</h2>
+            <p>Discover how our students have transformed their careers and achieved their dreams</p>
+        </div>
+
+        <div class="row justify-content-center" data-cues="slideInUp">
+            {% for student in top_success_stories %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm p-4">
+                    <div class="card-header bg-white border-0 story_card mb-3">
+                        <div class="left">
+                            <img src="{{ student.user_thumbnail.url }}" class="rounded-circle" alt="{{ student.name }}"
+                                style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #eee;">
+                        </div>
+                        <div class="right">
+                            <h6 class="mb-0">{{ student.name }}</h6>
+                            <small class="text-muted mb-0">{{ student.designation }}</small>
+                        </div>
+                    </div>
+                    {% if student.image %}
+                    <img src="{{ student.image.url }}" class="card-img" alt="Success Image"
+                        style="height:180px;object-fit:cover;">
+                    {% endif %}
+                    <div class="card-body px-0">
+                        <p class="card-text">{{ student.story|truncatewords:35 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No student stories available yet.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Student Success Stories Area -->
+
+<!-- Start Our Courses Area -->
+<div class="our-courses-area pb-100">
+    <div class="container">
+        <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
+            <h2 class="section_title">Our Courses</h2>
+            <p>Explore our most popular courses</p>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            {% for course in top_courses %}
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-white border-0 text-center pt-4">
+                        <img src="{{ course.thumbnail.url }}" class="rounded" alt="{{ course.title }}"
+                            style="object-fit: cover; border: 2px solid #eee;">
+                    </div>
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ course.title }}</h5>
+                        <p class="card-text">{{ course.description|truncatewords:25 }}</p>
+                        {% if course.button_url %}
+                        <a href="{{ course.button_url }}" class="btn btn-primary mt-2 course_btn">{{ course.button_text
+                            }}</a>
+                        {% else %}
+                        <button class="btn btn-primary mt-2 course_btn" disabled>{{ course.button_text }}</button>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>No courses available yet.</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- End Our Courses Area -->
+
+
+<!-- Start Calculate Area -->
+<div class="calculate-area pt-125">
+    <div class="container-fluid">
+        <div class="section-title" data-cues="slideInUp">
+            <h2>Confused?</h2>
+        </div>
+
+        <div class="calculate-form-inner" data-cue="fadeIn">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-12">
+                    <div class="calculate-form">
+                        <h2>Get an expert call now</h2>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Fullname">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Phone Number">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Email ID">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-select form-control">
+                                    <option selected>Preferred Time</option>
+                                    <option value="1">Morning (9AM - 12AM)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="" id="" class="form-control" placeholder="Tell us about you"></textarea>
+                            </div>
+                            <button class="default-btn" type="submit">Schedule Call</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <div class="calculate-image"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Calculate Area -->
+
+
+<!-- Start Cash Management Area -->
+<div class="cash-management-area pt-125">
+    <div class="container-fluid">
+        <div class="section-title-wrap" data-cues="slideInUp">
+            <h2 class="section_title">Your Growth Toolkit</h2>
+        </div>
+
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-3 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="/static/web/images/cash/cash1.jpg" alt="image">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Growth Mentorship</h3>
+                        <p>Learn directly from industry experts and mentors who’ve scaled successful digital ventures.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="/static/web/images/cash/cash1.jpg" alt="image">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Career Acceleration</h3>
+                        <p>Get access to job opportunities, internships, and career guidance tailored to your goals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="/static/web/images/cash/cash2.jpg" alt="image">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Networking Hub</h3>
+                        <p>Join a community of professionals, entrepreneurs, and peers to collaborate and grow together.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="cash-management-card">
+                    <div class="cash-image">
+                        <img src="/static/web/images/cash/cash3.jpg" alt="image">
+                    </div>
+                    <div class="cash-content">
+                        <h3>Real-World Projects</h3>
+                        <p>Work on live case studies and campaigns to gain hands-on experience that employers value.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Cash Management Area -->
+
+
+<div class="faq-area ptb-125">
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center" data-cues="slideInUp" data-disabled="true">
+            <div class="col-lg-5 col-md-12" data-cue="slideInUp" data-show="true"
+                style="animation-name: slideInUp; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
+                <div class="faq-image">
+                    <img src="/static/web/images/faq1.jpg" alt="image">
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12" data-cue="slideInUp" data-show="true"
+                style="animation-name: slideInUp; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
+                <div class="faq-accordion">
+                    <h3>General Questions</h3>
+
+                    <div class="accordion" id="FaqAccordion">
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-One" aria-expanded="false" aria-controls="collapse-One">
+                                Is it safe to use a payment gateway app?
+                            </button>
+                            <div id="collapse-One" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion"
+                                style="">
+                                <div class="accordion-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable. If you are going to use a passage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-Two" aria-expanded="true" aria-controls="collapse-Two">
+                                How long does setup take?
+                            </button>
+                            <div id="collapse-Two" class="accordion-collapse collapse show"
+                                data-bs-parent="#FaqAccordion" style="">
+                                <div class="accordion-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable. If you are going to use a passage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-Three" aria-expanded="false" aria-controls="collapse-Three">
+                                How does a payment gateway app work?
+                            </button>
+                            <div id="collapse-Three" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable. If you are going to use a passage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse-Four" aria-expanded="false" aria-controls="collapse-Four">
+                                What customer support is available?
+                            </button>
+                            <div id="collapse-Four" class="accordion-collapse collapse" data-bs-parent="#FaqAccordion">
+                                <div class="accordion-body">
+                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
+                                        have suffered alteration in some form, by injected humour, or randomised words
+                                        which don't look even slightly believable. If you are going to use a passage.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Start Promote Area -->
+<div class="promote-area pt-150 pb-100">
+    <div class="container-fluid">
+        <div class="promote-content" data-cues="slideInUp">
+            <h1>
+                We put the power
+
+                <img src="/static/web/images/promote/arrow.svg" class="arrow-btn" alt="arrow">
+                of digital growth and every tool of innovation <img src="/static/web/images/promote/promote.png"
+                    alt="image">
+                in the hands of our learners.
+
+
+            </h1>
+        </div>
+    </div>
+
+    <div class="animation-view-content">
+        <h2>
+            <span>Flexible Learning</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Expert Mentorship</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Career Growth</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Flexible Learning</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Expert Mentorship</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Flexible Learning</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Expert Mentorship</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Career Growth</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Flexible Learning</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Expert Mentorship</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Flexible Learning</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Expert Mentorship</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Career Growth</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Flexible Learning</span>
+            <img src="/static/web/images/promote/star.svg" alt="image">
+            <span>Expert Mentorship</span>
+        </h2>
+    </div>
+
+    <div class="promote-shape">
+        <img src="/static/web/images/promote/promote2.png" alt="image">
+    </div>
+</div>
+<!-- End Promote Area -->
+
+
+
+<!-- Start Services Area -->
+<div class="services-area pb-125">
+    <div class="container-fluid">
+        <div class="section-title" data-cues="slideInUp">
+            <h2 class="section_title">Why Choose 360 Marketing School</h2>
+        </div>
+        <div class="row justify-content-center" data-cues="slideInUp">
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="/static/web/images/main/practical.svg" alt="icon1" style="height: 75px;">
+                    </div>
+                    <div class="content">
+                        <h3>Practical Learning Style</h3>
+                        <p>Learn the core principles of SEO, SEM, social media, and content marketing to build a strong
+                            foundation.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="/static/web/images/main/mentors.svg" alt="icon1" style="height: 75px;">
+                    </div>
+                    <div class="content">
+                        <h3>Mentors with Industry Expertise</h3>
+                        <p>Dive deeper into analytics, automation, and performance marketing to drive measurable
+                            results.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="/static/web/images/main/internship.svg" alt="icon1" style="height: 75px;">
+                    </div>
+                    <div class="content">
+                        <h3>Real Projects & Internships</h3>
+                        <p>Work on real-world campaigns and case studies to gain practical, job-ready experience through
+                            wide projects.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="services-card">
+                    <div class="icon-image">
+                        <img src="/static/web/images/main/certificate.svg" alt="icon4" style="height: 75px;">
+                    </div>
+                    <div class="content">
+                        <h3>Recognized Certifications</h3>
+                        <p>Earn industry-recognized certifications and get guidance to accelerate your digital marketing
+                            career.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-5 mb-4" data-cues="slideInUp">
+            <div class="col-12 text-center">
+                <h4 class="text-uppercase">Certifications</h4>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumb">
+                    <img src="/static/web/images/main/certificate.webp" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumb">
+                    <img src="/static/web/images/main/certificate.webp" alt="">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumb">
+                    <img src="/static/web/images/main/certificate.webp" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- End Services Area -->
+
+
+<div class="row justify-content-center" data-cues="slideInUp">
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm p-4">
+            <div class="card-header bg-white border-0 story_card mb-3">
+                <div class="left">
+                    <img src="/static/web/images/main/user.jpg" class="rounded-circle" alt=""
+                        style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #eee;">
+                </div>
+                <div class="right">
+                    <h6 class="mb-0">PV Anfas</h6>
+                    <small class="text-muted mb-0">Lead Product Manager</small>
+                </div>
+            </div>
+            <img src="/static/web/images/main/testimonial.jpg" class="card-img" alt="Success Image"
+                style="height:180px;object-fit:cover;">
+            <div class="card-body px-0">
+                <p class="card-text">There are many variations of passages of Lorem Ipsum available, but the
+                    majority have suffered alteration in some form, by injected humour, or randomised words
+                    which don't look even slightly believable. If you are going …</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm p-4">
+            <div class="card-header bg-white border-0 story_card mb-3">
+                <div class="left">
+                    <img src="/static/web/images/main/user.jpg" class="rounded-circle" alt=""
+                        style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #eee;">
+                </div>
+                <div class="right">
+                    <h6 class="mb-0">PV Anfas</h6>
+                    <small class="text-muted mb-0">Lead Product Manager</small>
+                </div>
+            </div>
+            <img src="/static/web/images/main/testimonial.jpg" class="card-img" alt="Success Image"
+                style="height:180px;object-fit:cover;">
+            <div class="card-body px-0">
+                <p class="card-text">There are many variations of passages of Lorem Ipsum available, but the
+                    majority have suffered alteration in some form, by injected humour, or randomised words
+                    which don't look even slightly believable. If you are going …</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-6 mb-4">
+        <div class="card h-100 shadow-sm p-4">
+            <div class="card-header bg-white border-0 story_card mb-3">
+                <div class="left">
+                    <img src="/static/web/images/main/user.jpg" class="rounded-circle" alt=""
+                        style="width: 50px; height: 50px; object-fit: cover; border: 2px solid #eee;">
+                </div>
+                <div class="right">
+                    <h6 class="mb-0">PV Anfas</h6>
+                    <small class="text-muted mb-0">Lead Product Manager</small>
+                </div>
+            </div>
+            <img src="/static/web/images/main/testimonial.jpg" class="card-img" alt="Success Image"
+                style="height:180px;object-fit:cover;">
+            <div class="card-body px-0">
+                <p class="card-text">There are many variations of passages of Lorem Ipsum available, but the
+                    majority have suffered alteration in some form, by injected humour, or randomised words
+                    which don't look even slightly believable. If you are going …</p>
+            </div>
+        </div>
+    </div>
+
+</div>

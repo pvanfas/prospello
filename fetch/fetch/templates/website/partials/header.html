@@ -1,0 +1,22 @@
+{% load static %}
+<header id="header" class="header fixed-top">
+    <div class="navigation_container container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a href="/" class="logo d-flex align-items-center">
+            <img src="{% static 'web/images/logo.svg' %}" alt="fetch logo" />
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link {% if is_index %}active{% endif %}" href="/">Home</a></li>
+                <li><a class="nav-link {% if is_about %}active{% endif %}" href="{% url 'web:about' %}">About</a></li>
+                <li><a class="nav-link {% if is_products %}active{% endif %}" href="{% url 'web:products' %}">Products</a></li>
+                <li><a class="nav-link {% if is_updates %}active{% endif %}" href="{% url 'web:updates' %}">Updates</a></li>
+                <li><a class="nav-link {% if is_careers %}active{% endif %}" href="{% url 'web:careers' %}">Careers</a></li>
+                <li><a class="nav-link {% if is_contact %}active{% endif %}" href="{% url 'web:contact' %}">Contact Us</a></li>
+                <li><a class="getstarted scrollto" href="{% url 'web:contact' %}">Get your Quote</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+    </div>
+</header>

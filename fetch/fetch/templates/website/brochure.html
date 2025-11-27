@@ -1,0 +1,28 @@
+{% extends 'website/base.html' %}
+{% load static %}
+{% block title %}Brochure | FETCH - Embellish with style & comfort{% endblock %}
+
+{% block content %}
+
+<section id="hero" class="subhero pb-0 d-flex align-items-center">
+    <div class="container">
+        <div class="row justify-content-between align-items-center gap-5">
+            <div class="col-lg-4 hero-img mx-auto text-center">
+                <img src="{% static 'web/images/brochure.png' %}" class="img-fluid" alt="office chairs" style="max-height: 40vh;" />
+                <h1 class="h4 paraline text-center w-100"><span>Download Brochure</span></h1>
+                <a class="dwdbtn" href="/static/web/docs/fetch_brochure.pdf">Download PDF</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<main>
+
+    <section class="m-0 p-0 border-top" style="background: url({% static 'web/images/contact_bg.svg' %}) no-repeat left bottom;background-size: cover;">
+        {% include 'website/partials/footer.html' %}
+    </section>
+
+</main>
+
+{% endblock %}

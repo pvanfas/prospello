@@ -1,0 +1,238 @@
+{% extends 'web/base.html' %}
+{% load static crispy_forms_tags %}
+{% block content %}
+<section style="background: #F4F1EA;" id="packages">
+    <div class="container section_padding_sm packages">
+        <div class="row">
+           
+            <div class="col-12 mb-5">
+                <div id="progress">
+                    <div id="progress-bar"></div>
+                    <ul id="progress-num">
+                        <li><span class="step active">1</span><span>Select Plan</span></li>
+                        <li><span class="step active">2</span><span>Select Meals</span></li>
+                        <li><span class="step active">3</span><span>Create Profile</span></li>
+                        <li><span class="step active">4</span><span>Add Address</span></li>
+                        <li><span class="step active">5</span><span>Set Delivery Address</span></li>
+                        <li><span class="step">6</span>Finish</li>
+                      </ul>
+                </div>
+            </div>
+            <div class="col-12">
+                <h3 class="text-left">Select Delivery Address & Time</h3>
+                <p class="text-muted">Please select delivery address and preferred time slot for each meal type.</p>
+            </div>
+           
+            <div class="col-lg-12 col-md-12 col-sm-12 mx-auto">
+                <div class="border_box">
+                    {% if form.errors %}
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div class="alert alert-danger">
+                                    <strong>{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+                        {% for error in form.non_field_errors %}
+                            <div class="alert alert-danger">
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                     
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        
+                        
+                        <!-- Breakfast Section -->
+                        {% if "breakfast_address" in form.fields %}
+                        <div class="meal-section mb-4">
+                            <h5 class="text-warning mb-3">
+                                <i class="fas fa-coffee"></i> Breakfast (8:00 AM - 11:00 AM)
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.breakfast_address|as_crispy_field }}
+                                </div>
+                                {% if "breakfast_delivery_time" in form.fields %}
+                                <div class="col-md-6">
+                                    {{ form.breakfast_delivery_time|as_crispy_field }}
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="copy_breakfast_to_others">
+                                        <label class="form-check-label text-muted" for="copy_breakfast_to_others">
+                                            Copy breakfast address and time to other meals
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endif %}
+                        
+                        <!-- Desi Tiffin Section -->
+                        {% if "desi_tiffin_address" in form.fields %}
+                        <div class="meal-section mb-4">
+                            <h5 class="text-primary mb-3">
+                                <i class="fas fa-drumstick-bite"></i> Desi Tiffin (8:00 AM - 11:00 AM)
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.desi_tiffin_address|as_crispy_field }}
+                                </div>
+                                {% if "desi_tiffin_delivery_time" in form.fields %}
+                                <div class="col-md-6">
+                                    {{ form.desi_tiffin_delivery_time|as_crispy_field }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                        {% endif %}
+                        
+                        <!-- Tiffin Lunch Section -->
+                        {% if "tiffin_lunch_address" in form.fields %}
+                        <div class="meal-section mb-4">
+                            <h5 class="text-info mb-3">
+                                <i class="fas fa-utensils"></i> Tiffin Lunch (8:00 AM - 11:00 AM)
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.tiffin_lunch_address|as_crispy_field }}
+                                </div>
+                                {% if "tiffin_lunch_delivery_time" in form.fields %}
+                                <div class="col-md-6">
+                                    {{ form.tiffin_lunch_delivery_time|as_crispy_field }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                        {% endif %}
+                        
+                        <!-- Lunch Section -->
+                        {% if "lunch_address" in form.fields %}
+                        <div class="meal-section mb-4">
+                            <h5 class="text-success mb-3">
+                                <i class="fas fa-bowl-food"></i> Lunch (12:00 PM - 3:00 PM)
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.lunch_address|as_crispy_field }}
+                                </div>
+                                {% if "lunch_delivery_time" in form.fields %}
+                                <div class="col-md-6">
+                                    {{ form.lunch_delivery_time|as_crispy_field }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <hr>
+                        {% endif %}
+                        
+                        <!-- Dinner Section -->
+                        {% if "dinner_address" in form.fields %}
+                        <div class="meal-section mb-4">
+                            <h5 class="text-dark mb-3">
+                                <i class="fas fa-moon"></i> Dinner (7:00 PM - 10:00 PM)
+                            </h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    {{ form.dinner_address|as_crispy_field }}
+                                </div>
+                                {% if "dinner_delivery_time" in form.fields %}
+                                <div class="col-md-6">
+                                    {{ form.dinner_delivery_time|as_crispy_field }}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        
+                        <div class="pt-3">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                 Next
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.meal-section {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.meal-section h5 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-check-label {
+    font-size: 0.9rem;
+}
+
+.border_box {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+}
+</style>
+{% endblock content %}
+
+{% block javascript %}
+<script>
+$(document).ready(function() {
+    // Copy breakfast address and time to other meals when checkbox is checked
+    $('#copy_breakfast_to_others').change(function() {
+        if ($(this).is(':checked')) {
+            var breakfastAddress = $('#id_breakfast_address').val();
+            var breakfastTime = $('#id_breakfast_delivery_time').val();
+            
+            // Copy to desi tiffin fields if they exist
+            if ($('#id_desi_tiffin_address').length) {
+                $('#id_desi_tiffin_address').val(breakfastAddress);
+            }
+            if ($('#id_desi_tiffin_delivery_time').length) {
+                $('#id_desi_tiffin_delivery_time').val(breakfastTime);
+            }
+            
+            // Copy to tiffin lunch fields if they exist
+            if ($('#id_tiffin_lunch_address').length) {
+                $('#id_tiffin_lunch_address').val(breakfastAddress);
+            }
+            if ($('#id_tiffin_lunch_delivery_time').length) {
+                $('#id_tiffin_lunch_delivery_time').val(breakfastTime);
+            }
+            
+            // Copy to lunch fields if they exist
+            if ($('#id_lunch_address').length) {
+                $('#id_lunch_address').val(breakfastAddress);
+            }
+            if ($('#id_lunch_delivery_time').length) {
+                $('#id_lunch_delivery_time').val(breakfastTime);
+            }
+            
+            // Copy to dinner fields if they exist
+            if ($('#id_dinner_address').length) {
+                $('#id_dinner_address').val(breakfastAddress);
+            }
+            if ($('#id_dinner_delivery_time').length) {
+                $('#id_dinner_delivery_time').val(breakfastTime);
+            }
+            
+        }
+    });
+});
+</script>
+{% endblock javascript %}

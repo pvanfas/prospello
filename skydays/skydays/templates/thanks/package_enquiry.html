@@ -1,0 +1,79 @@
+{% extends 'web/base.html' %} {% load static extras %} {% block content %}
+
+<div class="newsletter-area section_padding_md pb-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="card-wrapper text-center">
+                    <h2>Thank You</h2>
+                    <p class="m-0 ps-15">We have recieved your Request, we’ll be in touch right away to set your holiday
+                        in motion.</p>
+                    <p class="m-0 ps-15">If you’d prefer to start with a phone call, talk to a Holiday Specialist by
+                        calling +919072070000.</p>
+
+
+                    <table style="width:100%;color:#fff" class="mt-5">
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Package</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.package }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Date</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.date }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Hotel Category</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.hotel_category }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Name</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.name }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Whatsapp</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.whatsapp }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Phone</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.phone }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Email</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.email }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Additional Info</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.additional_info }}</td>
+                        </tr>
+                        <tr>
+                            <td class="text-start" colspan="1"><strong>Timestamp</strong></td>
+                            <td class="text-start" colspan="4">{{ instance.timestamp }}</td>
+                        </tr>
+                        <tr>
+                            <th>Room</th>
+                            <th>Adult</th>
+                            <th>Child with Bed</th>
+                            <th>Child without Bed</th>
+                            <th>Infant</th>
+                        </tr>
+                        {% for traveller in instance.get_travellers %}
+                        <tr>
+                            <td>Room {{ forloop.counter }}</td>
+                            <td>{{ traveller.adult }}</td>
+                            <td>{{ traveller.child_with_bed }}</td>
+                            <td>{{ traveller.child_without_bed }}</td>
+                            <td>{{ traveller.infant }}</td>
+                        </tr>
+                        {% endfor %}
+                    </table>
+
+                    <a href="{{instance.get_pdf_url}}" class="btn btn-white mt-4 me-2" target="_blank">Download
+                        Voucher</a>
+                    <a href="/" class="btn btn-white-inverse mt-4">Go to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

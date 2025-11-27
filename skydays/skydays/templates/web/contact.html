@@ -1,0 +1,93 @@
+{% extends 'web/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="about-area section_padding_lg">
+    <div class="container">
+        <div class="row negative_parent">
+
+            <div class="col-md-12 negative_child">
+                <div class="thumb">
+                    <img src="{% static 'web/images/blog.png' %}" alt="Contact Skydays" style="height: 450px;">
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="contact-wrapper section_padding_md">
+
+    <div class="container">
+        <div class="contact-inputs">
+            <div class="row">
+                <div class="col-lg-6 mb-5">
+                    <div class="contact-details">
+                        <h1 class="fs-30 fw-700"> <span class="text-orange">Contact</span> us</h1>
+
+                        {% for branch in branches %}
+                        <address>
+                            <strong class="mt-5 d-block">{{branch.name}}</strong>
+                            <div class="d-flex flex-wrap align-items-center mt-2">
+                                <i class="me-2 icon-location text-orange"></i>
+                                <span class="text-black fs-14">{{branch.address|linebreaksbr}}</span>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center mt-2">
+                                <i class="me-2 icon-call text-orange"></i>
+                                <strong class="text-black fs-14 mb-0"><a class="text-black"
+                                        href="tel:{{branch.phone|slugify}}">{{branch.phone}}</a></strong>
+                            </div>
+                            <div class="d-flex flex-wrap align-items-center mt-1">
+                                <i class="me-2 icon-mail text-orange"></i>
+                                <p class="text-black fs-14 mb-0"><a class="text-black"
+                                        href="mailto:{{branch.email}}">{{branch.email}}</a></p>
+                            </div>
+                        </address>
+                        {% endfor %}
+
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-5">
+                    <div class="card-wrapper">
+                        <h2>Send a message</h2>
+
+                        <form action="" method="post" class="customization_form">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    <label for="">First name*</label>
+                                    {{form.name}}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="">Phone</label>
+                                    {{form.phone}}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="">E-mail</label>
+                                    {{form.email}}
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label for="">Message</label>
+                                    {{form.message}}
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12 mb-0">
+                                    <button class="btn btn-white btn-sm">Submit</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

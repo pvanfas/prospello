@@ -13,15 +13,12 @@ const GrowthStudio = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className={`py-30 px-6 sm:px-10 md:px-20 max-w-5xl mx-auto text-gray-800 dark:text-gray-100 ${theme === "dark" ? "text-white" : "bg-white text-gray-900"
+            className={`py-30 px-6 sm:px-10 md:px-20 max-w-5xl mx-auto ${theme === "dark" ? "text-gray-100" : "text-gray-900"
                 }`}
         >
-            <motion.h1
-                variants={fadeInUp}
-                className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text mb-8"
-            >
+            <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text mb-8">
                 Growth Studio  | TWT Venture Studio
-            </motion.h1>
+            </h1>
             <p className="text-lg font-semibold mb-6">
                 Where Scale Meets Precision. Where Chaos Turns into Compound Growth.
             </p>

@@ -16,30 +16,29 @@ const AccelerationStudio = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className={`py-30 px-6 sm:px-10 md:px-20 max-w-5xl mx-auto text-gray-800 dark:text-gray-100 ${
-          theme === "dark" ? "text-white" : "bg-white text-gray-900"
+        className={`py-30 px-6 sm:px-10 md:px-20 max-w-5xl mx-auto ${
+          theme === "dark" ? "text-gray-100" : "text-gray-900"
         }`}
         >
             {/* Title & Intro */}
-            <motion.h1
-                variants={fadeInUp}
-                className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text mb-8"
-            >
+            <h1 className="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text mb-8">
                 Acceleration Studio | TWT Venture Studio
-            </motion.h1>
+            </h1>
 
-            <motion.p variants={fadeInUp} className="text-xl font-semibold mb-4">
+            <p className="text-xl font-semibold mb-4">
                 Where Hustle Meets Structure. Where Vision Gets Fueled.
-            </motion.p>
+            </p>
 
-            <motion.p variants={fadeInUp} className="text-lg mb-12 text-gray-600 dark:text-gray-300">
+            <p className={`text-lg mb-12 ${
+                theme === "dark" ? "text-gray-300" : "text-gray-600"
+            }`}>
                 At TWT Venture Studio, our Acceleration Studio is not an educational course or learning program.
-                It’s a high-touch strategic consultancy platform tailored for early-stage startups that need more than advice — they need direction, systems, and execution.This is where high-potential founders
+                It's a high-touch strategic consultancy platform tailored for early-stage startups that need more than advice — they need direction, systems, and execution.This is where high-potential founders
                 partner with us to scale fast, build strong, and avoid the common traps of early-stage chaos.
-            </motion.p>
+            </p>
 
             {/* Section: What is it */}
-            <motion.section variants={fadeInUp} className="mb-14">
+            <section className="mb-14">
                 <h2 className="text-3xl font-bold mb-4">What is the Acceleration Studio?</h2>
                 <p className="mb-4">
                     The Acceleration Studio is a founder-first, consultancy-driven launchpad. We don’t hand out certificates or give lectures — we build alongside you.
@@ -61,10 +60,10 @@ const AccelerationStudio = () => {
                     for serious founders.
 
                 </p>
-            </motion.section>
+            </section>
 
             {/* Section: Who is it for */}
-            <motion.section variants={fadeInUp} className="mb-14">
+            <section className="mb-14">
                 <h2 className="text-3xl font-bold mb-4">Who is it for?</h2>
                 <p className="mb-2">The Acceleration Studio is designed for:</p>
                 <ul className="list-disc pl-6 space-y-2 mb-4">
@@ -82,10 +81,10 @@ const AccelerationStudio = () => {
                     <li>Move fast and avoid costly mistakes</li>
                     <li>Need a studio that behaves like a co-founder</li>
                 </ul>
-            </motion.section>
+            </section>
 
             {/* Section: What Do You Get */}
-            <motion.section variants={fadeInUp} className="mb-14">
+            <section className="mb-14">
                 <h2 className="text-3xl font-bold mb-4">What Do You Get? | Our Strategic Offering</h2>
                 <p className="mb-6">Here’s what startups gain when they enter the Acceleration Studio:</p>
                 <ol className="list-decimal pl-6 space-y-6">
@@ -140,11 +139,11 @@ const AccelerationStudio = () => {
                         <p className="mt-2">This isn’t just a program — it’s a growth environment.</p>
                     </li>
                 </ol>
-            </motion.section>
+            </section>
 
 
             {/* Section: Philosophy */}
-            <motion.section variants={fadeInUp} className="mb-14">
+            <section className="mb-14">
                 <h2 className="text-3xl font-bold mb-4">Our Founder-Centric Philosophy</h2>
                 <p className="mb-4">
                     At TWT, we know founders are the single point of leverage. That’s why we focus on helping founders become
@@ -163,11 +162,11 @@ const AccelerationStudio = () => {
                 <p className="mt-4">
                     We help you unlock momentum while staying aligned with your long-term vision.
                 </p>
-            </motion.section>
+            </section>
 
 
             {/* Section: Results */}
-            <motion.section variants={fadeInUp} className="mb-14">
+            <section className="mb-14">
                 <h2 className="text-3xl font-bold mb-4">Real Results: What Happens Post-Studio</h2>
                 <p className="mb-4">
                     Startups that work with our Acceleration Studio go on to:
@@ -182,11 +181,11 @@ const AccelerationStudio = () => {
                 <p className="mt-4">
                     This isn’t a "quick tips" model. It’s operational depth, fast.
                 </p>
-            </motion.section>
+            </section>
 
 
             {/* Section: Why TWT */}
-            <motion.section variants={fadeInUp} className="mb-14">
+            <section className="mb-14">
                 <h2 className="text-3xl font-bold mb-4">Why TWT Acceleration Studio?</h2>
                 <p className="mb-4">
                     Because we’re not educators. We’re builders and consultants. We sit inside your business with you, challenge your roadmap,
@@ -207,11 +206,11 @@ const AccelerationStudio = () => {
                     <li>Truth over fluff</li>
                     <li>Results over noise</li>
                 </ul>
-            </motion.section>
+            </section>
 
 
             {/* Section: Apply */}
-            <motion.section variants={fadeInUp} className="mb-16">
+            <section className="mb-16">
                 <h2 className="text-3xl font-bold mb-4">Apply to Join</h2>
                 <p className="mb-4">
                     We run highly selective cohorts, typically once every quarter. Each cohort accepts only 8–10 startups to ensure deep support.
@@ -235,7 +234,7 @@ const AccelerationStudio = () => {
                 <p className="mt-4 font-semibold italic">
                     Welcome to The Workoholic Tribe. Let’s scale your vision together.
                 </p>
-            </motion.section>
+            </section>
 
 
             {/* CTA Button */}

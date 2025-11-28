@@ -1,0 +1,757 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Bfolio - Personal Portfolio HTML Template</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="/static/web/img/logo/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="/static/web/css/bootstrap.css">
+   <link rel="stylesheet" href="/static/web/css/swiper-bundle.css">
+   <link rel="stylesheet" href="/static/web/css/swiper-gl.css">
+   <link rel="stylesheet" href="/static/web/css/magnific-popup.css">
+   <link rel="stylesheet" href="/static/web/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="/static/web/css/spacing.css">
+   <link rel="stylesheet" href="/static/web/css/main.css">
+</head>
+
+<body class="tp-magic-cursor bfolio-light" data-bg-color="#f5f5f5">
+   <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+   <!-- Preloader -->
+   <div class="preloader">
+      <div class="spinner-wrap">
+         <div class="preloader-logo">
+            <img data-width="140" src="/static/web/img/logo/logo-2.png" alt="" class="img-fluid">
+         </div>
+         <div class="spinner"></div>
+      </div>
+   </div>
+   <!-- Preloader End -->
+
+
+   <!-- Begin magic cursor -->
+   <div id="magic-cursor" class="cursor-white-bg">
+      <div id="ball"></div>
+   </div>
+   <!-- End magic cursor -->
+
+   <!-- back to top start -->
+   <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn">
+         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+               stroke-linejoin="round" />
+         </svg>
+      </button>
+   </div>
+   <!-- back to top end -->
+
+   <!-- offcanvas start -->
+   <div class="tp-offcanvas-2-area offcanvas-2-white-bg p-relative">
+      <div class="tp-offcanvas-2-bg is-left left-box"></div>
+      <div class="tp-offcanvas-2-bg is-right right-box d-none d-md-block"></div>
+      <div class="tp-offcanvas-2-wrapper">
+         <div class="tp-offcanvas-2-left left-box">
+            <div class="tp-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
+               <div class="tp-offcanvas-2-logo">
+                  <a href="index.html">
+                     <img class="logo-1" data-width="150" src="/static/web/img/logo/logo-2.png" alt="">
+                     <img class="logo-2" data-width="150" src="/static/web/img/logo/logo.png" alt="">
+                  </a>
+               </div>
+               <div class="tp-offcanvas-2-close d-md-none text-end">
+                  <button class="tp-offcanvas-2-close-btn">
+                     <span class="texts">
+                        <span>close</span>
+                     </span>
+                     <span class="d-inline-block">
+                        <span>
+                           <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <rect width="32.621" height="1.00918"
+                                 transform="matrix(0.704882 0.709325 -0.704882 0.709325 1.0061 0)" fill="currentcolor">
+                              </rect>
+                              <rect width="32.621" height="1.00918"
+                                 transform="matrix(0.704882 -0.709325 0.704882 0.709325 0 23.2842)" fill="currentcolor">
+                              </rect>
+                           </svg>
+                        </span>
+                     </span>
+                  </button>
+               </div>
+            </div>
+            <div class="tp-offcanvas-menu counter-row">
+               <nav></nav>
+            </div>
+         </div>
+         <div class="tp-offcanvas-2-right right-box d-none d-md-block p-relative">
+            <div class="tp-offcanvas-2-close text-end">
+               <button class="tp-offcanvas-2-close-btn">
+                  <span class="texts"><span>close</span></span>
+                  <span class="d-inline-block">
+                     <span>
+                        <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M9.80859 9.80762L28.1934 28.1924" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"></path>
+                           <path d="M9.80859 28.1924L28.1934 9.80761" stroke="currentColor" stroke-width="1.5"
+                              stroke-linecap="round" stroke-linejoin="round"></path>
+                        </svg>
+                     </span>
+                  </span>
+               </button>
+            </div>
+            <div class="tp-offcanvas-2-right-info-box mt-160">
+               <h4 class="tp-offcanvas-2-right-info-title">Get In Touch</h4>
+               <div class="tp-offcanvas-2-right-info-item">
+                  <label class="mb-10">Phone</label>
+                  <a class="underline-white" href="tel:42345678910">+4 (234) 567 8910</a>
+               </div>
+               <div class="tp-offcanvas-2-right-info-item">
+                  <label class="mb-10">Email</label>
+                  <a class="underline-white" href="mailto:hello@gmail.com">hello@gmail.com</a>
+               </div>
+               <div class="tp-offcanvas-2-right-info-item">
+                  <label class="mb-10">Address</label>
+                  <a class="underline-white"
+                     href="https://www.google.com.bd/maps/@23.7806365,90.4193257,12z?entry=ttu&amp;g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D"
+                     target="_blank">
+                     602 Elgin St. Celina, Delaware <br> 1009
+                  </a>
+               </div>
+               <div class="tp-offcanvas-2-right-info-item">
+                  <label class="mb-15">Follow us</label>
+                  <div class="tp-offcanvas-2-right-social">
+                     <a href="#">
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M16.9992 10.0108C16.2577 9.8718 15.4952 9.79934 14.717 9.79934C10.4351 9.79934 6.6267 11.9933 4.19922 15.3993M14.6 3.3986C12.0964 6.33251 8.33431 8.19855 4.12769 8.19855C3.05149 8.19855 2.00438 8.07641 1 7.84551M11.0942 17C11.2947 16.0289 11.4 15.023 11.4 13.9926C11.4 8.93984 8.86746 4.47731 5 1.80018M17 8.99906C17 13.4173 13.4183 16.999 9 16.999C4.58172 16.999 1 13.4173 1 8.99906C1 4.58083 4.58172 0.999146 9 0.999146C13.4183 0.999146 17 4.58083 17 8.99906Z"
+                              stroke="currentcolor" stroke-width="1.5" stroke-linejoin="round" />
+                        </svg>
+                     </a>
+                     <a href="#">
+                        <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path fill-rule="evenodd" clip-rule="evenodd"
+                              d="M4.41177 0H0L5.23083 7.06953L0.334618 13H2.59681L6.29998 8.51461L9.58823 12.9588H14L8.6172 5.68381L8.62673 5.69636L13.2614 0.0825854H10.9992L7.55741 4.25145L4.41177 0ZM2.43522 1.2381H3.80866L11.5648 11.7206H10.1913L2.43522 1.2381Z"
+                              fill="currentcolor" />
+                        </svg>
+                     </a>
+                     <a href="#">
+                        <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path
+                              d="M12.8438 5.15771C13.396 5.15771 13.8438 4.71 13.8438 4.15771C13.8438 3.60543 13.396 3.15771 12.8438 3.15771V5.15771ZM12.8348 3.15771C12.2825 3.15771 11.8348 3.60543 11.8348 4.15771C11.8348 4.71 12.2825 5.15771 12.8348 5.15771V3.15771ZM8.5 15C6.70396 15 5.45753 14.9979 4.51848 14.8716C3.60819 14.7492 3.13786 14.5269 2.80546 14.1945L1.39124 15.6088C2.15719 16.3747 3.11992 16.7016 4.25198 16.8538C5.35528 17.0021 6.7605 17 8.5 17V15ZM0 8.5C0 10.2395 -0.00212373 11.6447 0.146211 12.748C0.298413 13.8801 0.625299 14.8428 1.39124 15.6088L2.80546 14.1945C2.47305 13.8621 2.25076 13.3918 2.12838 12.4815C2.00212 11.5425 2 10.296 2 8.5H0ZM15 8.5C15 10.296 14.9979 11.5425 14.8716 12.4815C14.7492 13.3918 14.5269 13.8621 14.1945 14.1945L15.6088 15.6088C16.3747 14.8428 16.7016 13.8801 16.8538 12.748C17.0021 11.6447 17 10.2395 17 8.5H15ZM8.5 17C10.2395 17 11.6447 17.0021 12.748 16.8538C13.8801 16.7016 14.8428 16.3747 15.6088 15.6088L14.1945 14.1945C13.8621 14.5269 13.3918 14.7492 12.4815 14.8716C11.5425 14.9979 10.296 15 8.5 15V17ZM8.5 2C10.296 2 11.5425 2.00212 12.4815 2.12838C13.3918 2.25076 13.8621 2.47305 14.1945 2.80546L15.6088 1.39124C14.8428 0.625299 13.8801 0.298413 12.748 0.146211C11.6447 -0.00212374 10.2395 0 8.5 0V2ZM17 8.5C17 6.7605 17.0021 5.35528 16.8538 4.25198C16.7016 3.11992 16.3747 2.15719 15.6088 1.39124L14.1945 2.80546C14.5269 3.13786 14.7492 3.60819 14.8716 4.51848C14.9979 5.45753 15 6.70396 15 8.5H17ZM8.5 0C6.7605 0 5.35528 -0.00212374 4.25198 0.146211C3.11992 0.298413 2.15719 0.625299 1.39124 1.39124L2.80546 2.80546C3.13786 2.47305 3.60819 2.25076 4.51848 2.12838C5.45753 2.00212 6.70396 2 8.5 2V0ZM2 8.5C2 6.70396 2.00212 5.45753 2.12838 4.51848C2.25076 3.60819 2.47305 3.13786 2.80546 2.80546L1.39124 1.39124C0.625299 2.15719 0.298413 3.11992 0.146211 4.25198C-0.00212373 5.35528 0 6.7605 0 8.5H2ZM11.0545 8.50136C11.0545 9.91114 9.91163 11.054 8.50185 11.054V13.054C11.0162 13.054 13.0545 11.0157 13.0545 8.50136H11.0545ZM8.50185 11.054C7.09207 11.054 5.94922 9.91114 5.94922 8.50136H3.94922C3.94922 11.0157 5.9875 13.054 8.50185 13.054V11.054ZM5.94922 8.50136C5.94922 7.09158 7.09207 5.94873 8.50185 5.94873V3.94873C5.9875 3.94873 3.94922 5.98701 3.94922 8.50136H5.94922ZM8.50185 5.94873C9.91163 5.94873 11.0545 7.09158 11.0545 8.50136H13.0545C13.0545 5.98701 11.0162 3.94873 8.50185 3.94873V5.94873ZM12.8438 3.15771H12.8348V5.15771H12.8438V3.15771Z"
+                              fill="currentcolor" />
+                        </svg>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- offcanvas end -->
+
+   <header>
+
+      <!-- tp-header-area-start -->
+      <div class="tp-header-area fix tp-header-3-wrap bf-header-style-2 mt-20 tp-transparent tp-header-spacing">
+         <div class="container-fluid container-1750">
+            <div class="row align-items-center">
+               <div class="col-6">
+                  <div class="tp-header-logo">
+                     <a class="logo-dark d-none" href="index.html"><img data-width="138" src="/static/web/img/logo/logo-2.png" alt=""></a>
+                     <a class="logo-white" href="index.html"><img data-width="138" src="/static/web/img/logo/logo.png" alt=""></a>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <div class="tp-header-right d-flex justify-content-end">
+                     <a href="contact-light.html" class="tp-btn d-none d-md-inline-flex align-items-center ml-30">
+                        <span>
+                           <span class="text-1">Let’s Talk</span>
+                           <span class="text-2">Let’s Talk</span>
+                        </span>
+                     </a>
+                     <button class="tp-header-menu-btn tp-offcanvas-open-btn ml-20">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <nav class="tp-mobile-menu-active d-none">
+         <ul>
+            <li class="has-dropdown is-active">
+               <a href="index.html">Home</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="index.html">Minimal Portfolio</a></li>
+                  <li><a href="index-5-light.html">Video Production</a></li>
+                  <li><a href="index-4-light.html">Digital STUDIO</a></li>
+                  <li><a href="index-6-light.html">Creative Agency</a></li>
+                  <li><a href="index-2-light.html">Creative Portfolio</a></li>
+                  <li><a href="index-3-light.html">Personal Portfolio</a></li>
+                  <li><a href="portfolio-interactive-with-hover.html">Interactive Hover</a></li>
+                  <li><a href="portfolio-interactive-with-scrool.html">Interactive scrool</a></li>
+                  <li><a href="portfolio-mix-slicer.html">portfolio slicer</a></li>
+                  <li><a href="portfolio-revealing-slider.html">portfolio revealing</a></li>
+               </ul>
+            </li>
+            <li class="is-active">
+               <a href="about-me-light.html">About</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="about-me-light.html">About Me Light</a></li>
+                  <li><a href="about-me-dark.html">About Me Dark</a></li>
+                  <li><a href="about-us-light.html">About Us Light</a></li>
+                  <li><a href="about-us-dark.html">About Us Dark</a></li>
+               </ul>
+            </li>
+            <li class="has-dropdown is-active">
+               <a href="#">Pages</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="service-light.html">Service</a></li>
+                  <li><a href="portfolio-light.html">Portfolio</a></li>
+                  <li><a href="portfolio-details-light.html">Portfolio Details</a></li>
+                  <li><a href="blog-light.html">Blog</a></li>
+                  <li><a href="blog-standard-light.html">Blog Standard</a></li>
+                  <li><a href="blog-details-light.html">Blog Details</a></li>
+                  <li><a href="blog-details-sidebar-light.html">Blog Details Sidebar</a></li>
+               </ul>
+            </li>
+            <li class="is-active">
+               <a href="contact-light.html">Contact</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="contact-light.html">Contact Light</a></li>
+                  <li><a href="contact-dark.html">Contact Dark</a></li>
+                  <li><a href="contact-us-light.html">Contact Us Light</a></li>
+                  <li><a href="contact-us-light.html">Contact Us Dark</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+      <!-- tp-header-area-end -->
+
+   </header>
+
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <main>
+
+            <!-- bf-hero-area-start -->
+            <div class="bf-hero-area bf-hero-2-video-wrap bf-hero-2-spacing">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="bf-hero-2-wrap">
+                           <div class="bf-hero-2-title">
+                              VIEDO 
+                              <img class="gif-1 d-none d-md-inline-block" src="/static/web/videos/main-gif-2.gif" alt="">
+                              PRODUCTION<br>
+                              & EDITING
+                              <div class="bf-hero-2-left-right d-none d-md-inline-block">
+                                 <div class="swiper bf-hero-2-arrow-active" dir="rtl">
+                                    <div class="swiper-wrapper">
+                                       <div class="swiper-slide">
+                                          <img src="/static/web/img/update/hero/hero-2/arrow.png" alt="">
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <img src="/static/web/img/update/hero/hero-2/arrow.png" alt="">
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <img src="/static/web/img/update/hero/hero-2/arrow.png" alt="">
+                                       </div>
+                                       <div class="swiper-slide">
+                                          <img src="/static/web/img/update/hero/hero-2/arrow.png" alt="">
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              TO 
+                              <img class="gif-2 d-none d-md-inline-block" src="/static/web/videos/main-gif.gif" alt=""> 
+                              SCAL
+                              YOUR MULTIMEDIA<br>
+                              <img class="gif-3 d-none d-md-inline-block" src="/static/web/videos/main-gif-3.gif" alt="">
+                              CONTENT
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="bf-hero-2-video">
+                  <video loop="" muted="" autoplay="" playsinline="">
+                     <source src="https://html.aqlova.com/videos/video-2.mp4" type="video/mp4">
+                  </video>
+               </div>
+            </div>
+            <!-- bf-hero-area-end -->
+
+            <!-- bf-about-area-start -->
+            <div class="bf-about-area bf-about-2-style pt-150 pb-120" data-bg-color="#f5f5f5">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-9">
+                        <div class="bf-about-title-wrap">
+                           <h2 class="bf-section-title bf-section-title-2 reveal-text mb-125">Crafting impactful and
+                              memorable video experiences
+                              with unwavering passion,
+                              unmatched creativity, and
+                              relentless precision to elevate
+                              brands and inspirel</h2>
+                        </div>
+                     </div>
+                     <div class="col-lg-7">
+                        <div class="bf-about-video">
+                           <video loop="" muted="" autoplay="" playsinline="">
+                              <source src="https://html.aqlova.com/videos/about-video.mp4" type="video/mp4">
+                           </video>
+                        </div>
+                     </div>
+                     <div class="col-lg-5">
+                        <div class="bf-about-content">
+                           <p class="bf-about-dec mb-50">We transform complex digital challenges into elegant,
+                              functional solutions by prioritizing clarity and purpose.
+                              Exceptional digital experiences start with understanding
+                              your unique business objectives audience needs.</p>
+                           <div class="row gx-20">
+                              <div class="col-lg-6 col-md-6">
+                                 <div class="bf-about-thumb mb-20">
+                                    <img class="w-100" src="/static/web/img/update/about/thumb-3.jpg" alt="">
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 col-md-6">
+                                 <div class="bf-about-thumb mb-20">
+                                    <img class="w-100" src="/static/web/img/update/about/thumb-4.jpg" alt="">
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- bf-about-area-end -->
+
+            <!-- bf-text-slider-area-start -->
+            <div class="bf-process-area">
+               <div class="bf-text-moving-area">
+                  <div class="bf-text-moving-top moving-text mb-10">
+                     <div class="bf-text-moving-item wrapper-text d-flex align-items-center">
+                        <span>VISIUAL FINISHING <img class="scrool-rotate-img" src="/static/web/img/update/text/smile.png" alt=""></span>
+                        <span>VISIUAL FINISHING <img class="scrool-rotate-img" src="/static/web/img/update/text/smile.png" alt=""></span>
+                        <span>VISIUAL FINISHING <img class="scrool-rotate-img" src="/static/web/img/update/text/smile.png" alt=""></span>
+                     </div>
+                  </div>
+                  <div class="bf-text-moving-bottom moving-text">
+                     <div class="bf-text-moving-item wrapper-text d-flex align-items-center">
+                        <span>VIDEO EDDITING <img class="scrool-rotate-img" src="/static/web/img/update/text/smile-black.png" alt=""></span>
+                        <span>VIDEO EDDITING <img class="scrool-rotate-img" src="/static/web/img/update/text/smile-black.png" alt=""></span>
+                        <span>VIDEO EDDITING <img class="scrool-rotate-img" src="/static/web/img/update/text/smile-black.png" alt=""></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- bf-text-slider-area-end -->
+
+            <!-- award area start -->
+            <div class="bf-service-vp-style pt-155 title-box pb-160" data-bg-color="#000">
+               <div class="container-fluid container-1650">
+                  <span class="bf-service-vp-subtitle d-inline-block mb-70 ml-60">Video production service©</span>
+                  <div class="design-award-wrap">
+                     <div class="row row-cols-1">
+                        <div class="col">
+                           <div class="design-award-item hover-reveal-item active p-relative">
+                              <div class="design-award-content design-award-content-xs d-flex align-items-center justify-content-between">
+                                 <h4 class="bf-service-vp-title"><a href="service-light.html">Corporate Video Production</a></h4>
+                                 <a href="service-light.html" class="bf-service-vp-btn">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4558L25.4559 8.48525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.48511H25.4559V25.4557" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </a>
+                              </div>
+                              <div class="design-award-reveal-img" data-background="/static/web/img/update/service/vp/thumb.jpg"></div>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="design-award-item hover-reveal-item active p-relative">
+                              <div class="design-award-content design-award-content-xs d-flex align-items-center justify-content-between">
+                                 <h4 class="bf-service-vp-title"><a href="service-light.html">Scriptwriting & Storyboarding</a></h4>
+                                 <a href="service-light.html" class="bf-service-vp-btn">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4558L25.4559 8.48525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.48511H25.4559V25.4557" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </a>
+                              </div>
+                              <div class="design-award-reveal-img" data-background="/static/web/img/update/service/vp/thumb-2.jpg"></div>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="design-award-item hover-reveal-item active p-relative">
+                              <div class="design-award-content design-award-content-xs d-flex align-items-center justify-content-between">
+                                 <h4 class="bf-service-vp-title"><a href="service-light.html">MOTION GRAPHICS AND ANIMATION</a></h4>
+                                 <a href="service-light.html" class="bf-service-vp-btn">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4558L25.4559 8.48525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.48511H25.4559V25.4557" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </a>
+                              </div>
+                              <div class="design-award-reveal-img" data-background="/static/web/img/update/service/vp/thumb-3.jpg"></div>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="design-award-item hover-reveal-item active p-relative">
+                              <div class="design-award-content design-award-content-xs d-flex align-items-center justify-content-between">
+                                 <h4 class="bf-service-vp-title"><a href="service-light.html">SOCIAL MEDIA VIDEO CONTENT</a></h4>
+                                 <a href="service-light.html" class="bf-service-vp-btn">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4558L25.4559 8.48525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.48511H25.4559V25.4557" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </a>
+                              </div>
+                              <div class="design-award-reveal-img" data-background="/static/web/img/update/service/vp/thumb-4.jpg"></div>
+                           </div>
+                        </div>
+                        <div class="col">
+                           <div class="design-award-item hover-reveal-item active p-relative">
+                              <div class="design-award-content design-award-content-xs d-flex align-items-center justify-content-between">
+                                 <h4 class="bf-service-vp-title"><a href="service-light.html">FASHION AND LIFESTYLE VIDEOS</a></h4>
+                                 <a href="service-light.html" class="bf-service-vp-btn">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4558L25.4559 8.48525" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.48511H25.4559V25.4557" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </a>
+                              </div>
+                              <div class="design-award-reveal-img" data-background="/static/web/img/update/service/vp/thumb-5.jpg"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- award area end -->
+
+            <!-- bf-portfolio-area-start -->
+            <div class="bf-portfolio-area bf-portfolio-vp-lg-spacing pt-120 pb-40">
+               <div class="container-fluid container-1830">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="bf-portfolio-title-wrap text-center">
+                           <h2 class="bf-portfolio-vp-maintitle">work</h2>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bf-portfolio-vp-rotate-wrap">
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-1 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner" data-bg-color="#5811d3">
+                                 <span class="bf-portfolio-vp-icon">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4854L25.4559 8.51479" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.51465H25.4559V25.4852" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </span>
+                                 <div class="bf-portfolio-vp-content">
+                                    <div class="bf-portfolio-vp-tag mb-10">
+                                       <span>GRAPHICS</span>
+                                       <span>VIDEO</span>
+                                    </div>
+                                    <h2 class="bf-portfolio-vp-title mb-0">CINEMATIC</h2>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-2 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner bf-portfolio-vp-thumb" data-bg-color="#5811d3">
+                                 <img src="/static/web/img/update/portfolio/vp/portfolio.jpg" alt="">
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bf-portfolio-vp-rotate-wrap">
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-1 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner" data-bg-color="#000">
+                                 <span class="bf-portfolio-vp-icon">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4854L25.4559 8.51479" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.51465H25.4559V25.4852" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </span>
+                                 <div class="bf-portfolio-vp-content">
+                                    <div class="bf-portfolio-vp-tag mb-10">
+                                       <span>GRAPHICS</span>
+                                       <span>VIDEO</span>
+                                    </div>
+                                    <h2 class="bf-portfolio-vp-title mb-0">CINEMATIC</h2>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-2 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner bf-portfolio-vp-thumb" data-bg-color="#bd8202">
+                                 <img src="/static/web/img/update/portfolio/vp/portfolio-2.jpg" alt="">
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bf-portfolio-vp-rotate-wrap">
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-1 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner" data-bg-color="#a20cc8">
+                                 <span class="bf-portfolio-vp-icon">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4854L25.4559 8.51479" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.51465H25.4559V25.4852" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </span>
+                                 <div class="bf-portfolio-vp-content">
+                                    <div class="bf-portfolio-vp-tag mb-10">
+                                       <span>GRAPHICS</span>
+                                       <span>VIDEO</span>
+                                    </div>
+                                    <h2 class="bf-portfolio-vp-title mb-0">CINEMATIC</h2>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-2 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner bf-portfolio-vp-thumb" data-bg-color="#a20cc8">
+                                 <img src="/static/web/img/update/portfolio/vp/portfolio-3.jpg" alt="">
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="bf-portfolio-vp-rotate-wrap">
+                     <div class="row">
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-1 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner" data-bg-color="#bd8202">
+                                 <span class="bf-portfolio-vp-icon">
+                                    <svg width="34" height="34" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M8.48535 25.4854L25.4559 8.51479" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                       <path d="M8.48535 8.51465H25.4559V25.4852" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                 </span>
+                                 <div class="bf-portfolio-vp-content">
+                                    <div class="bf-portfolio-vp-tag mb-10">
+                                       <span>GRAPHICS</span>
+                                       <span>VIDEO</span>
+                                    </div>
+                                    <h2 class="bf-portfolio-vp-title mb-0">CINEMATIC</h2>
+                                 </div>
+                              </a>
+                           </div>
+                        </div>
+                        <div class="col-lg-6">
+                           <div class="bf-portfolio-vp-item bf-portfolio-vp-rotate-item-2 mb-120">
+                              <a href="portfolio-details-light.html" class="bf-portfolio-vp-inner bf-portfolio-vp-thumb" data-bg-color="#bd8202">
+                                 <img src="/static/web/img/update/portfolio/vp/portfolio-4.jpg" alt="">
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- bf-portfolio-area-end -->
+
+            <!-- bf-faq-area-start -->
+            <div class="bf-faq-area pb-130">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-4">
+                        <div class="bf-faq-title-wrap mb-30">
+                           <h2 class="tp-section-tittle bf-section-title-2 reveal-text text-uppercase mb-30">have any questions?</h2>
+                           <a href="contact-light.html" class="tp-btn tp-btn-border d-inline-flex align-items-center">
+                              <span>
+                                 <span class="text-1">Get in Touch</span>
+                                 <span class="text-2">Get in Touch</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-8">
+                        <div class="tp-faq-wrap bf-faq-wrap mb-30">
+                           <div class="tp-faq-accordion" id="general_faqaccordiontwo">
+                              <div class="accordion-item mb-15">
+                                 <h2 class="accordion-header p-relative" id="order_one-1">
+                                    <button class="tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_one-1" aria-expanded="true" aria-controls="order__collapse_one-1">
+                                       Do you design websites from scratch or work with templates?
+                                       <span class="accordion-btn"></span>
+                                    </button>
+                                 </h2>
+                                 <div id="order__collapse_one-1" class="accordion-collapse collapse show" aria-labelledby="order_one-1" data-bs-parent="#general_faqaccordiontwo">
+                                    <div class="accordion-body tp-faq-details-para">
+                                       <p>My pricing typically includes the full design deliverables, such as high-quality exports, source<br>
+                                          files (e.g., Figma or PSD), and up to 2–3 rounds of revisions.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item mb-15">
+                                 <h2 class="accordion-header p-relative" id="order_two-2">
+                                    <button class="collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_two-2" aria-expanded="false" aria-controls="order__collapse_two-2">
+                                       What’s included in the pricing (e.g., revisions, source files)?
+                                       <span class="accordion-btn"></span>
+                                    </button>
+                                 </h2>
+                                 <div id="order__collapse_two-2" class="accordion-collapse collapse" aria-labelledby="order_two-2" data-bs-parent="#general_faqaccordiontwo">
+                                    <div class="accordion-body tp-faq-details-para">
+                                       <p>My pricing typically includes the full design deliverables, such as high-quality exports, source<br>
+                                          files (e.g., Figma or PSD), and up to 2–3 rounds of revisions.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item mb-15">
+                                 <h2 class="accordion-header p-relative" id="order_three-3">
+                                    <button class="collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_three-3" aria-expanded="false" aria-controls="order__collapse_three-3">
+                                       How do you handle project timelines and deadlines?
+                                       <span class="accordion-btn"></span>
+                                    </button>
+                                 </h2>
+                                 <div id="order__collapse_three-3" class="accordion-collapse collapse" aria-labelledby="order_three-3" data-bs-parent="#general_faqaccordiontwo">
+                                    <div class="accordion-body tp-faq-details-para">
+                                       <p>My pricing typically includes the full design deliverables, such as high-quality exports, source<br>
+                                          files (e.g., Figma or PSD), and up to 2–3 rounds of revisions.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item mb-15">
+                                 <h2 class="accordion-header p-relative" id="order_four-4">
+                                    <button class="collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_four-4" aria-expanded="false" aria-controls="order__collapse_four-4">
+                                       Will I get updates or previews during the design process?
+                                       <span class="accordion-btn"></span>
+                                    </button>
+                                 </h2>
+                                 <div id="order__collapse_four-4" class="accordion-collapse collapse" aria-labelledby="order_four-4" data-bs-parent="#general_faqaccordiontwo">
+                                    <div class="accordion-body tp-faq-details-para">
+                                       <p>My pricing typically includes the full design deliverables, such as high-quality exports, source<br>
+                                          files (e.g., Figma or PSD), and up to 2–3 rounds of revisions.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="accordion-item mb-15">
+                                 <h2 class="accordion-header p-relative" id="order_five-5">
+                                    <button class="collapsed tp-faq-btn" type="button" data-bs-toggle="collapse" data-bs-target="#order__collapse_five-5" aria-expanded="false" aria-controls="order__collapse_five-5">
+                                       Have you worked with clients in my industry before?
+                                       <span class="accordion-btn"></span>
+                                    </button>
+                                 </h2>
+                                 <div id="order__collapse_five-5" class="accordion-collapse collapse" aria-labelledby="order_five-5" data-bs-parent="#general_faqaccordiontwo">
+                                    <div class="accordion-body tp-faq-details-para">
+                                       <p>My pricing typically includes the full design deliverables, such as high-quality exports, source<br>
+                                          files (e.g., Figma or PSD), and up to 2–3 rounds of revisions.</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- bf-faq-area-end -->
+
+         </main>
+
+         <footer>
+            <!-- tp-footer-area-start -->
+            <div class="tp-footer-area  bf-footer-2-wrap pt-155" data-bg-color="#000">
+               <div class="container">
+                  <div class="tp-footer-middle mb-30">
+                     <div class="row">
+                        <div class="col-xxl-5 col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                           <div class="tp-footer-widget mb-40">
+                              <h5 class="tp-footer-tittle mb-15">Stay connected</h5>
+                              <a class="tp-footer-email" href="mailto:help@gmail.com">help@gmail.com</a>
+                           </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                           <div class="tp-footer-widget mb-40">
+                              <h5 class="tp-footer-tittle mb-15">London</h5>
+                              <a class="tp-footer-link" href="#">Germany 785 15h Street<br> Office 478 Berlin</a>
+                           </div>
+                        </div>
+                        <div class="col-xxl-2 col-xl-2 col-lg-6 col-md-6 col-sm-6">
+                           <div class="tp-footer-widget ml-40  p-relative mb-40">
+                              <h5 class="tp-footer-tittle mb-15">Contact</h5>
+                              <div>
+                                 <a class="tp-footer-link" href="tel:+999236542654">+999 23654 2654</a>
+                              </div>
+                              <div>
+                                 <a class="tp-footer-link" href="mailto:bfolio@help.com">bfolio@help.com</a>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-xxl-3 col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                           <div class="tp-footer-widget ml-80 p-relative mb-40">
+                              <h5 class="tp-footer-tittle mb-30">Social media</h5>
+                              <div class="tp-footer-social mb-70 d-flex">
+                                 <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                                 <span><a href="#"><i class="fa-brands fa-dribbble"></i></a></span>
+                                 <span><a href="#"><i class="fa-brands fa-behance"></i></a></span>
+                                 <span><a href="#"><i class="fa-brands fa-youtube"></i></a></span>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-12">
+                           <div class="tp-hero-bigtext pt-40">
+                              <h2 class="d-flex">Bf <span class="p-relative shape-2">o
+                                 <svg width="121" height="59" viewBox="0 0 121 59" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M73.7057 0.781014L120.09 58.3117L67.9817 23.5732L0.309197 28.2302L73.7057 0.781014Z" fill="currentColor" />
+                                 </svg>
+                              </span> lio <span class="shape">@</span></h2>
+                           </div>
+                           <div class="tp-footer-copyright pb-15 text-center">
+                              <p>© 2025 <a href="#">Bfolio.</a> All rights reserved.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-footer-area-end -->
+         </footer>
+      </div>
+   </div>
+
+
+
+   <!-- JS here -->
+   <script src="/static/web/js/vendor/jquery.js"></script>
+   <script src="/static/web/js/bootstrap-bundle.js"></script>
+   <script src="/static/web/js/plugin.js"></script>
+   <script src="/static/web/js/split-type.js"></script>
+   <script src="/static/web/js/swiper-bundle.js"></script>
+   <script src="/static/web/js/swiper-gl.js"></script>
+   <script src="/static/web/js/magnific-popup.js"></script>
+   <script src="/static/web/js/nice-select.js"></script>
+   <script src="/static/web/js/purecounter.js"></script>
+   <script src="/static/web/js/ajax-form.js"></script>
+   <script src="/static/web/js/slider-init.js"></script>
+   <script src="/static/web/js/main.js"></script>
+   <script src="/static/web/js/tp-cursor.js"></script>
+</body>
+
+</html>

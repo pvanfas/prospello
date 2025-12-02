@@ -1,0 +1,602 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <title>Bfolio - Personal Portfolio HTML Template</title>
+   <meta name="description" content="">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+   <!-- Place favicon.ico in the root directory -->
+   <link rel="shortcut icon" type="image/x-icon" href="/static/web/img/logo/favicon.png">
+
+   <!-- CSS here -->
+   <link rel="stylesheet" href="/static/web/css/bootstrap.css">
+   <link rel="stylesheet" href="/static/web/css/swiper-bundle.css">
+   <link rel="stylesheet" href="/static/web/css/swiper-gl.css">
+   <link rel="stylesheet" href="/static/web/css/magnific-popup.css">
+   <link rel="stylesheet" href="/static/web/css/font-awesome-pro.css">
+   <link rel="stylesheet" href="/static/web/css/spacing.css">
+   <link rel="stylesheet" href="/static/web/css/main.css">
+</head>
+
+<body class="tp-magic-cursor  bfolio-dark">
+   <!--[if lte IE 9]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+      <![endif]-->
+
+   <!-- Preloader -->
+   <div class="preloader">
+      <div class="spinner-wrap">
+         <div class="preloader-logo">
+            <img data-width="140" src="/static/web/img/logo/logo-2.png" alt="" class="img-fluid">
+         </div>
+         <div class="spinner"></div>
+      </div>
+   </div>
+   <!-- Preloader End -->
+
+   <!-- Begin magic cursor -->
+   <div id="magic-cursor" class="cursor-white-bg">
+      <div id="ball"></div>
+   </div>
+   <!-- End magic cursor -->
+
+   <!-- back to top start -->
+   <div class="back-to-top-wrapper">
+      <button id="back_to_top" type="button" class="back-to-top-btn">
+         <svg width="12" height="7" viewBox="0 0 12 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 6L6 1L1 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+               stroke-linejoin="round" />
+         </svg>
+      </button>
+   </div>
+   <!-- back to top end -->
+
+   <!--search-form-start -->
+   <div class="tp-search-body-overlay"></div>
+   <div class="tp-search-form-toggle">
+      <div class="container">
+         <div class="row mb-70">
+            <div class="col-lg-12">
+               <div class="tp-search-top d-flex justify-content-between align-items-center">
+                  <div class="tp-header-logo">
+                     <a class="logo-dark d-none" href="index.html"><img data-width="138" src="/static/web/img/logo/logo-2.png" alt=""></a>
+                     <a class="logo-white" href="index.html"><img data-width="138" src="/static/web/img/logo/logo.png" alt=""></a>
+                  </div>
+                  <button class="tp-search-close">
+                     <i class="fa-light fa-xmark"></i>
+                  </button>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="col-lg-12">
+               <div class="tp-search-form">
+                  <form action="#">
+                     <div class="tp-search-form-input">
+                        <input type="text" placeholder="What are you looking foor?" required>
+                        <span class="tp-search-focus-border"></span>
+                        <button class="tp-search-form-icon" type="submit">
+                           <i class="fa-sharp fa-regular fa-magnifying-glass"></i>
+                        </button>
+                     </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- search-form-end -->
+
+    <!-- offcanvas start -->
+    <div class="tp-offcanvas-2-area p-relative">
+        <div class="tp-offcanvas-2-bg is-left left-box"></div>
+        <div class="tp-offcanvas-2-bg is-right right-box d-none d-md-block"></div>
+        <div class="tp-offcanvas-2-wrapper">
+            <div class="tp-offcanvas-2-left left-box">
+                <div class="tp-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
+                    <div class="tp-offcanvas-2-logo">
+                        <a href="index.html">
+                           <img class="logo-1" data-width="150" src="/static/web/img/logo/logo-2.png" alt="">
+                           <img class="logo-2" data-width="150" src="/static/web/img/logo/logo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="tp-offcanvas-2-close d-md-none text-end">
+                        <button class="tp-offcanvas-2-close-btn">
+                            <span class="texts">
+                                <span>close</span>
+                            </span>
+                            <span class="d-inline-block">
+                                <span>
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="32.621" height="1.00918" transform="matrix(0.704882 0.709325 -0.704882 0.709325 1.0061 0)" fill="currentcolor"></rect>
+                                        <rect width="32.621" height="1.00918" transform="matrix(0.704882 -0.709325 0.704882 0.709325 0 23.2842)" fill="currentcolor"></rect>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div class="tp-offcanvas-menu counter-row">
+                    <nav></nav>
+                </div>
+            </div>
+            <div class="tp-offcanvas-2-right right-box d-none d-md-block p-relative">
+                <div class="tp-offcanvas-2-close text-end">
+                    <button class="tp-offcanvas-2-close-btn">
+                        <span class="texts"><span>close</span></span>
+                        <span class="d-inline-block">
+                            <span>
+                                <svg width="38" height="38" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.80859 9.80762L28.1934 28.1924" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M9.80859 28.1924L28.1934 9.80761" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                        </span>
+                    </button>
+                </div>
+                <div class="tp-offcanvas-2-right-info-box mt-160">
+                    <h4 class="tp-offcanvas-2-right-info-title">Get In Touch</h4>
+                    <div class="tp-offcanvas-2-right-info-item">
+                        <label class="mb-10">Phone</label>
+                        <a class="underline-white" href="tel:42345678910">+4 (234) 567 8910</a>
+                    </div>
+                    <div class="tp-offcanvas-2-right-info-item">
+                        <label class="mb-10">Email</label>
+                        <a class="underline-white" href="mailto:hello@gmail.com">hello@gmail.com</a>
+                    </div>
+                    <div class="tp-offcanvas-2-right-info-item">
+                        <label class="mb-10">Address</label>
+                        <a class="underline-white" href="https://www.google.com.bd/maps/@23.7806365,90.4193257,12z?entry=ttu&amp;g_ep=EgoyMDI1MDQwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            602 Elgin St. Celina, Delaware <br> 1009
+                        </a>
+                    </div>
+                    <div class="tp-offcanvas-2-right-info-item">
+                        <label class="mb-15">Follow us</label>
+                        <div class="tp-offcanvas-2-right-social">
+                            <a href="#">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.9992 10.0108C16.2577 9.8718 15.4952 9.79934 14.717 9.79934C10.4351 9.79934 6.6267 11.9933 4.19922 15.3993M14.6 3.3986C12.0964 6.33251 8.33431 8.19855 4.12769 8.19855C3.05149 8.19855 2.00438 8.07641 1 7.84551M11.0942 17C11.2947 16.0289 11.4 15.023 11.4 13.9926C11.4 8.93984 8.86746 4.47731 5 1.80018M17 8.99906C17 13.4173 13.4183 16.999 9 16.999C4.58172 16.999 1 13.4173 1 8.99906C1 4.58083 4.58172 0.999146 9 0.999146C13.4183 0.999146 17 4.58083 17 8.99906Z" stroke="currentcolor" stroke-width="1.5" stroke-linejoin="round" />
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg width="14" height="13" viewBox="0 0 14 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M4.41177 0H0L5.23083 7.06953L0.334618 13H2.59681L6.29998 8.51461L9.58823 12.9588H14L8.6172 5.68381L8.62673 5.69636L13.2614 0.0825854H10.9992L7.55741 4.25145L4.41177 0ZM2.43522 1.2381H3.80866L11.5648 11.7206H10.1913L2.43522 1.2381Z" fill="currentcolor" />
+                                </svg>
+                            </a>
+                            <a href="#">
+                                <svg width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12.8438 5.15771C13.396 5.15771 13.8438 4.71 13.8438 4.15771C13.8438 3.60543 13.396 3.15771 12.8438 3.15771V5.15771ZM12.8348 3.15771C12.2825 3.15771 11.8348 3.60543 11.8348 4.15771C11.8348 4.71 12.2825 5.15771 12.8348 5.15771V3.15771ZM8.5 15C6.70396 15 5.45753 14.9979 4.51848 14.8716C3.60819 14.7492 3.13786 14.5269 2.80546 14.1945L1.39124 15.6088C2.15719 16.3747 3.11992 16.7016 4.25198 16.8538C5.35528 17.0021 6.7605 17 8.5 17V15ZM0 8.5C0 10.2395 -0.00212373 11.6447 0.146211 12.748C0.298413 13.8801 0.625299 14.8428 1.39124 15.6088L2.80546 14.1945C2.47305 13.8621 2.25076 13.3918 2.12838 12.4815C2.00212 11.5425 2 10.296 2 8.5H0ZM15 8.5C15 10.296 14.9979 11.5425 14.8716 12.4815C14.7492 13.3918 14.5269 13.8621 14.1945 14.1945L15.6088 15.6088C16.3747 14.8428 16.7016 13.8801 16.8538 12.748C17.0021 11.6447 17 10.2395 17 8.5H15ZM8.5 17C10.2395 17 11.6447 17.0021 12.748 16.8538C13.8801 16.7016 14.8428 16.3747 15.6088 15.6088L14.1945 14.1945C13.8621 14.5269 13.3918 14.7492 12.4815 14.8716C11.5425 14.9979 10.296 15 8.5 15V17ZM8.5 2C10.296 2 11.5425 2.00212 12.4815 2.12838C13.3918 2.25076 13.8621 2.47305 14.1945 2.80546L15.6088 1.39124C14.8428 0.625299 13.8801 0.298413 12.748 0.146211C11.6447 -0.00212374 10.2395 0 8.5 0V2ZM17 8.5C17 6.7605 17.0021 5.35528 16.8538 4.25198C16.7016 3.11992 16.3747 2.15719 15.6088 1.39124L14.1945 2.80546C14.5269 3.13786 14.7492 3.60819 14.8716 4.51848C14.9979 5.45753 15 6.70396 15 8.5H17ZM8.5 0C6.7605 0 5.35528 -0.00212374 4.25198 0.146211C3.11992 0.298413 2.15719 0.625299 1.39124 1.39124L2.80546 2.80546C3.13786 2.47305 3.60819 2.25076 4.51848 2.12838C5.45753 2.00212 6.70396 2 8.5 2V0ZM2 8.5C2 6.70396 2.00212 5.45753 2.12838 4.51848C2.25076 3.60819 2.47305 3.13786 2.80546 2.80546L1.39124 1.39124C0.625299 2.15719 0.298413 3.11992 0.146211 4.25198C-0.00212373 5.35528 0 6.7605 0 8.5H2ZM11.0545 8.50136C11.0545 9.91114 9.91163 11.054 8.50185 11.054V13.054C11.0162 13.054 13.0545 11.0157 13.0545 8.50136H11.0545ZM8.50185 11.054C7.09207 11.054 5.94922 9.91114 5.94922 8.50136H3.94922C3.94922 11.0157 5.9875 13.054 8.50185 13.054V11.054ZM5.94922 8.50136C5.94922 7.09158 7.09207 5.94873 8.50185 5.94873V3.94873C5.9875 3.94873 3.94922 5.98701 3.94922 8.50136H5.94922ZM8.50185 5.94873C9.91163 5.94873 11.0545 7.09158 11.0545 8.50136H13.0545C13.0545 5.98701 11.0162 3.94873 8.50185 3.94873V5.94873ZM12.8438 3.15771H12.8348V5.15771H12.8438V3.15771Z" fill="currentcolor" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- offcanvas end -->
+
+   <header>
+
+      <!-- tp-header-area-start -->
+      <div class="tp-header-area tp-header-3-wrap mt-20 tp-transparent tp-header-spacing">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-6">
+                  <div class="tp-header-logo">
+                     <a class="logo-dark d-none" href="index.html"><img data-width="138" src="/static/web/img/logo/logo-2.png" alt=""></a>
+                     <a class="logo-white" href="index.html"><img data-width="138" src="/static/web/img/logo/logo.png" alt=""></a>
+                  </div>
+               </div>
+               <div class="col-6">
+                  <div class="tp-header-right d-flex justify-content-end">
+                     <button class="tp-header-search tp-search-click">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M9.00004 17.0001C13.4183 17.0001 17.0001 13.4184 17.0001 9.00006C17.0001 4.58176 13.4183 1.00002 9.00004 1.00002C4.58174 1.00002 1 4.58176 1 9.00006C1 13.4184 4.58174 17.0001 9.00004 17.0001Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                           <path d="M19.0004 18.9999L14.6504 14.6499" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                     </button>
+                     <button class="tp-header-menu-btn tp-offcanvas-open-btn ml-30">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                     </button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <nav class="tp-mobile-menu-active d-none">
+         <ul>
+            <li class="has-dropdown is-active">
+               <a href="index.html">Home</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="index.html">Minimal Portfolio</a></li>
+                  <li><a href="index-5-dark.html">Video Production</a></li>
+                  <li><a href="index-4-dark.html">Digital STUDIO</a></li>
+                  <li><a href="index-6-dark.html">Creative Agency</a></li>
+                  <li><a href="index-2-dark.html">Creative Portfolio</a></li>
+                  <li><a href="index-3-dark.html">Personal Portfolio</a></li>
+                  <li><a href="portfolio-interactive-with-hover.html">Interactive Hover</a></li>
+                  <li><a href="portfolio-interactive-with-scrool.html">Interactive scrool</a></li>
+                  <li><a href="portfolio-mix-slicer.html">portfolio slicer</a></li>
+                  <li><a href="portfolio-revealing-slider.html">portfolio revealing</a></li>
+               </ul>
+            </li>
+            <li class="is-active">
+               <a href="about-me-dark.html">About</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="about-me-light.html">About Me Light</a></li>
+                  <li><a href="about-me-dark.html">About Me Dark</a></li>
+                  <li><a href="about-us-light.html">About Us Light</a></li>
+                  <li><a href="about-us-dark.html">About Us Dark</a></li>
+               </ul>
+            </li>
+            <li class="has-dropdown is-active">
+               <a href="#">Pages</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="service-dark.html">Service</a></li>
+                  <li><a href="portfolio-dark.html">Portfolio</a></li>
+                  <li><a href="portfolio-details-dark.html">Portfolio Details</a></li>
+                  <li><a href="blog-dark.html">Blog</a></li>
+                  <li><a href="blog-standard-dark.html">Blog Standard</a></li>
+                  <li><a href="blog-details-dark.html">Blog Details</a></li>
+                  <li><a href="blog-details-sidebar-dark.html">Blog Details Sidebar</a></li>
+               </ul>
+            </li>
+            <li class="is-active">
+               <a href="contact-dark.html">Contact</a>
+               <ul class="tp-submenu submenu">
+                  <li><a href="contact-light.html">Contact Light</a></li>
+                  <li><a href="contact-dark.html">Contact Dark</a></li>
+                  <li><a href="contact-us-light.html">Contact Us Light</a></li>
+                  <li><a href="contact-us-light.html">Contact Us Dark</a></li>
+               </ul>
+            </li>
+         </ul>
+      </nav>
+      <!-- tp-header-area-end -->
+
+   </header>
+
+   <div id="smooth-wrapper">
+      <div id="smooth-content">
+         <main>
+   
+            <!-- tp-hero-area-start -->
+            <div class="tp-hero-area tp-hero-spacing">
+               <div class="container p-relative z-index-1">
+                  <img class="tp-hero-3-shape" src="/static/web/img/hero/hero-3/line-bg.png" alt="">
+                  <div class="row">
+                     <div class="col-lg-10">
+                        <div class="tp-hero-3-content mb-60 mb-25">
+                           <div class="tp-hero-3-thumb mb-35">
+                              <img src="/static/web/img/hero/hero-3/thumb.jpg" alt="">
+                           </div>
+                           <h2 class="tp-hero-3-tittle">Driven by imagination and innovation,<br> I’m growing as a web designer every day.</h2>
+                        </div>
+                     </div>
+                     <div class="col-lg-2 text-lg-end">
+                        <div class="tp-hero-3-text-rotate mb-20 p-relative d-inline-block">
+                           <span class="tp-live-anim-spin d-inline-block">
+                              <svg width="120" height="121" viewBox="0 0 120 121" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M70.6921 0.933822L67.3695 8.4074L66.2285 8.30342L65.3979 3.84027L63.7365 8.19944L62.5956 8.09546L60.7251 0L62.2823 0.10398L63.5284 5.70891L65.1897 1.45272L66.3306 1.5567L67.1613 6.01985L69.4461 0.726861L70.6921 0.933822ZM75.7793 9.03028L75.467 10.275L70.6931 9.03028L72.6647 1.45272L77.3365 2.59451L77.0243 3.84027L73.7026 3.01043L73.1842 5.08603L76.0905 5.81189L75.7793 6.95367L72.8719 6.22781L72.3535 8.09546L75.7793 9.03028ZM82.837 10.691C82.4226 11.7288 81.2807 12.4546 79.8275 11.8327L76.8171 10.587L79.7234 3.32137L82.5257 4.46315C83.7717 4.98205 84.2911 6.01985 83.8758 7.16163C83.5645 7.78451 83.0451 8.30342 82.2145 8.30342C83.0451 8.82232 83.1492 9.86012 82.838 10.691H82.837ZM81.5919 10.0681C81.8001 9.54818 81.696 8.9263 80.8654 8.61436L79.3081 7.99148L78.4774 10.0681L80.0347 10.691C80.7613 10.8979 81.3848 10.587 81.5919 10.0681ZM80.451 5.08603L79.7234 6.85069L81.1766 7.47257C81.696 7.68053 82.1114 7.47257 82.3185 6.95367C82.5267 6.43477 82.4226 5.91587 81.8001 5.70891L80.451 5.08603ZM83.8758 11.1059L85.1208 11.7288C84.8106 12.2477 85.1208 12.9735 85.8474 13.3884C86.574 13.8044 87.1975 13.5964 87.5087 13.0785C87.82 12.5586 87.5087 12.1437 86.9893 11.6248L86.2627 10.8979C85.0167 9.75614 85.2249 8.71834 85.5361 8.09546C86.1596 6.85069 87.7159 6.64273 88.9619 7.36959C90.2079 8.09546 90.7263 9.34122 90.1028 10.691L88.8578 10.0681C89.1691 9.54818 88.9619 8.82232 88.3394 8.51138C87.7159 8.19944 87.0934 8.30342 86.7821 8.82232C86.6781 9.03028 86.4709 9.4452 87.1975 10.0681L87.9241 10.691C88.8578 11.6248 89.3772 12.5586 88.7547 13.7004C88.0272 14.9461 86.574 15.1541 85.2249 14.4272C83.6676 13.7004 83.2533 12.2477 83.8758 11.1059ZM93.0102 10.0681L94.1521 10.7939L89.7926 17.2297L88.6507 16.5029L93.0102 10.0681ZM99.4464 16.3989L97.682 14.9461L93.5296 20.0322L92.4918 19.2023L96.6441 14.1153L94.8787 12.6626L95.7094 11.7288L100.277 15.465L99.4464 16.3989ZM100.277 24.9102L99.3423 25.7401L95.9165 22.2108L101.522 16.8148L104.844 20.2391L103.91 21.069L101.626 18.6824L100.069 20.1362L102.146 22.3157L101.211 23.1456L99.1351 20.966L97.681 22.3157L100.277 24.9102ZM101.834 25.0142L102.665 26.052C102.146 26.4669 102.146 27.1938 102.665 27.9207C103.183 28.5436 103.807 28.6465 104.325 28.3356C104.741 28.0237 104.741 27.4018 104.429 26.7789L104.014 25.8441C103.392 24.2874 104.014 23.4575 104.533 23.0416C105.675 22.2118 107.025 22.6267 107.959 23.7685C108.789 24.9102 108.789 26.363 107.648 27.1938L106.817 26.156C107.336 25.7401 107.44 25.1182 106.92 24.4953C106.506 23.9754 105.883 23.7685 105.364 24.1834C105.156 24.2874 104.845 24.5993 105.26 25.5331L105.675 26.467C106.194 27.6087 106.194 28.7505 105.156 29.5814C104.014 30.4112 102.561 30.1003 101.627 28.8545C100.588 27.4018 100.692 25.8451 101.834 25.0142ZM110.243 37.6768C111.177 37.2619 112.112 37.7808 112.423 38.6106C112.734 39.4405 112.423 40.4793 111.592 40.8942C110.658 41.3091 109.724 40.7902 109.308 39.9604C108.893 39.1305 109.308 38.0917 110.243 37.6768ZM113.979 54.8025L113.564 51.7931L111.592 51.3772L111.384 49.9245L119.482 51.8961L119.689 53.3488L112.319 57.1901L112.111 55.7364L113.979 54.8025ZM115.121 54.2826L118.131 52.8299L114.914 52.1041L115.121 54.2826ZM117.509 63.6249C116.263 63.6249 115.017 62.898 115.017 61.1333V59.3697H112.215V58.0199L120 58.1239L119.896 61.2373C120 62.898 118.754 63.6249 117.509 63.6249ZM117.509 62.1721C118.131 62.1721 118.754 61.8602 118.754 61.1333V59.3697H116.263V61.0294C116.263 61.8602 116.885 62.1721 117.509 62.1721ZM116.678 70.8905C115.432 70.6825 114.29 69.8527 114.499 68.088L114.706 66.3233L111.902 65.9084L112.111 64.5587L119.792 65.5965L119.377 68.7109C119.273 70.4756 117.923 71.0984 116.678 70.8905ZM116.885 69.5407C117.509 69.6447 118.131 69.4378 118.236 68.6069L118.443 66.8423L115.952 66.5313L115.744 68.191C115.64 69.0218 116.263 69.4378 116.885 69.5407ZM118.754 73.174L118.443 74.5228L112.111 72.9661L111.384 75.8725L110.138 75.5606L111.176 71.3054L118.754 73.173V73.174ZM116.99 79.0899L116.574 80.4397L109.204 77.9481L109.62 76.5984L116.99 79.0899ZM112.423 80.8546C114.394 81.7884 115.329 84.1759 114.394 86.1476C113.876 87.2894 112.838 88.0162 111.696 88.3271L111.384 87.0814C112.111 86.8744 112.838 86.4585 113.149 85.6287C113.772 84.2789 113.149 82.7222 111.799 82.0993C110.45 81.4775 108.893 81.9964 108.271 83.3451C107.959 84.072 107.959 84.9018 108.374 85.6287L107.232 86.2515C106.713 85.2137 106.609 83.968 107.129 82.8262C108.062 80.7506 110.346 79.9198 112.423 80.8546ZM104.637 91.0256L106.298 88.4311L105.052 86.7704L105.883 85.5247L110.866 92.2714L110.035 93.5172L101.938 91.7525L102.768 90.5067L104.637 91.0256ZM105.883 91.3376L109.1 92.1674L107.025 89.5729L105.883 91.3376ZM103.599 99.8479L105.052 98.0843L99.9648 93.9321L100.795 92.8943L105.882 97.0455L107.336 95.2818L108.27 96.1117L104.532 100.575L103.599 99.8479ZM103.287 101.925L102.353 102.858L96.8513 97.3574L97.786 96.4236L103.287 101.925ZM98.3045 101.405C99.6545 103.169 99.4464 105.557 97.682 107.01C95.9175 108.359 93.5286 108.151 92.0764 106.387C90.7263 104.623 90.9345 102.132 92.5948 100.783C94.4633 99.433 96.9554 99.744 98.3045 101.405ZM93.2183 105.557C94.1521 106.699 95.8134 107.01 96.9554 106.076C98.0963 105.142 98.2004 103.481 97.2656 102.339C96.3319 101.198 94.7756 100.886 93.5296 101.821C92.3877 102.754 92.2836 104.311 93.2183 105.557ZM87.6128 113.652L83.6686 106.907L84.7065 106.284L90.0007 109.293L87.4056 104.726L88.6507 104L92.5958 110.747L91.4539 111.369L86.1596 108.359L88.7547 112.822L87.6128 113.652ZM83.4605 109.501L82.2145 110.02C82.0073 109.501 81.2807 109.189 80.45 109.501C79.7234 109.812 79.4122 110.435 79.6194 110.954C79.8275 111.473 80.3459 111.577 81.0735 111.473L82.1114 111.369C83.7727 111.162 84.4983 111.992 84.7065 112.615C85.2249 113.86 84.4983 115.21 83.1492 115.729C81.8001 116.248 80.45 115.936 79.9316 114.587L81.1766 114.068C81.3848 114.69 82.0073 114.898 82.7339 114.587C83.3574 114.379 83.6686 113.756 83.4605 113.133C83.3574 112.926 83.1492 112.511 82.2145 112.615L81.2807 112.718C80.0347 112.822 78.8928 112.615 78.4784 111.473C77.958 110.124 78.6856 108.878 80.0347 108.255C81.4889 107.736 82.942 108.359 83.4605 109.501ZM69.0318 114.483C69.1349 115.417 68.4083 116.248 67.4745 116.351C66.5398 116.455 65.606 115.832 65.5029 114.898C65.3979 113.964 66.1244 113.133 67.0592 113.029C67.993 112.822 68.9287 113.445 69.0318 114.483ZM48.1669 111.162L47.9588 116.455L50.761 112.511L51.904 112.718L53.253 117.39L54.7062 112.304L56.0563 112.511L53.8765 120.088L52.7336 119.88L51.0733 114.171L47.7506 119.05L46.6097 118.842L46.9209 110.954L48.1669 111.162ZM44.8442 114.379C44.1177 116.455 41.8338 117.597 39.7581 116.767C37.6815 116.04 36.6436 113.756 37.3702 111.681C38.0968 109.605 40.3806 108.463 42.4573 109.293C44.533 110.02 45.5708 112.304 44.8442 114.379ZM38.6162 112.2C38.0968 113.652 38.7203 115.106 40.1735 115.625C41.5226 116.144 42.9757 115.313 43.4952 113.964C44.0146 112.615 43.3911 111.058 42.042 110.539C40.5888 110.02 39.1356 110.747 38.6162 112.2ZM31.5575 106.699C32.0759 105.765 33.3219 105.142 34.671 105.868L37.5784 107.426L33.8414 114.275L31.1422 112.822C29.8962 112.2 29.5849 111.058 30.1043 110.02C30.4146 109.501 30.935 108.982 31.7657 109.086C31.1422 108.463 31.1422 107.426 31.5575 106.699ZM33.3219 112.615L34.2557 110.954L32.8025 110.228C32.2841 109.916 31.8688 110.124 31.5575 110.643C31.3493 111.162 31.3493 111.681 31.8678 111.889L33.3219 112.615ZM32.6994 107.528C32.3872 108.047 32.4913 108.67 33.2179 109.086L34.671 109.916L35.7099 107.944L34.2557 107.114C33.6332 106.699 33.0107 107.01 32.6994 107.528ZM27.197 110.435L26.0561 109.709L30.4156 103.273L31.5565 104L27.198 110.435H27.197ZM23.9794 108.255L22.9405 107.426L26.9898 102.339L24.6019 100.471L25.3285 99.537L28.7542 102.339L23.9794 108.255ZM20.3464 96.1117L21.1771 95.2818L24.6019 98.7062L19.1004 104.207L15.6747 100.783L16.5053 99.9529L18.8923 102.339L20.3454 100.886L18.2698 98.8102L19.2035 97.8763L21.2802 99.9519L22.8375 98.6022L20.3454 96.1127L20.3464 96.1117ZM13.3908 89.261C12.5602 89.7809 11.5223 89.365 11.107 88.5351C10.5886 87.7053 10.7967 86.6665 11.6264 86.1476C12.4571 85.6287 13.4949 86.0436 14.0143 86.7704C14.4297 87.7043 14.2215 88.7421 13.3908 89.261ZM2.80226 78.2601L2.38793 76.9103L9.86197 74.6268L10.2773 75.9765L2.80226 78.2601ZM1.76443 74.5228L1.45418 73.173L7.88938 71.8243L7.26687 68.8149L8.51188 68.6069L9.34255 72.8621L1.76443 74.5228ZM0.51942 68.399L0.415336 67.0492L6.95462 66.3233L6.64437 63.3139L7.88938 63.2099L8.30471 67.5691L0.51942 68.399ZM5.08611 62.4831L0 62.3781V61.0284L4.98303 61.1323C6.12395 61.1323 6.64437 60.4065 6.64437 59.5756C6.64437 58.7458 6.22803 58.0189 5.08611 58.0189L0.104084 57.915V56.5652H5.1902C6.95462 56.5652 7.99246 58.0189 7.99246 59.5756C7.88938 61.1323 6.85154 62.4831 5.08611 62.4831ZM5.70962 55.0095L5.91678 53.6598C6.53929 53.7647 7.16279 53.2458 7.26587 52.415C7.36996 51.5852 6.95562 51.0653 6.4352 50.9623C5.91678 50.8583 5.50145 51.2732 5.1902 51.8961L4.77486 52.8299C4.15236 54.4906 3.11352 54.5946 2.38693 54.4906C1.03784 54.2836 0.311252 52.9339 0.518419 51.5852C0.726587 50.1314 1.76443 49.1976 3.2176 49.4056L3.01043 50.7553C2.38693 50.6503 1.86851 51.0653 1.76443 51.7921C1.66034 52.415 1.97259 53.0379 2.5951 53.1419C2.80226 53.1419 3.32169 53.1419 3.63294 52.312L4.04827 51.3772C4.56769 50.2354 5.29428 49.4046 6.54029 49.5086C7.99246 49.7165 8.71905 51.0653 8.51188 52.518C8.30471 54.2836 7.05871 55.2175 5.70962 55.0095ZM4.04827 42.2439L3.42577 44.4235L9.75789 46.0832L9.44664 47.433L3.11452 45.7733L2.49201 47.9529L1.35009 47.6409L2.80226 42.036L4.04827 42.2439ZM8.82313 39.9604L8.51288 40.5823L11.107 41.6211L10.5876 42.8658L3.32168 39.9604L4.46261 37.1579C5.08611 35.4972 6.53929 35.2893 7.68121 35.8082C8.72005 36.2231 9.44664 37.1579 9.23847 38.5077L12.6642 37.6768L12.0417 39.2335L8.82313 39.9604ZM7.47404 40.1673L7.99246 38.9226C8.4078 37.9878 7.99246 37.4689 7.36996 37.1579C6.74745 36.846 6.02087 37.0539 5.70861 37.7808L5.08611 39.2335L7.47404 40.1673ZM13.8062 32.0719L12.2489 34.7704L13.599 36.3271L12.8724 37.5728L7.57813 31.1381L8.30471 29.8923L16.5053 31.242L15.7788 32.4868L13.8062 32.0719ZM12.5602 31.8639L9.23847 31.241L11.4182 33.7326L12.5602 31.8639ZM14.3256 23.1456L12.9755 24.9102L18.2698 28.7505L17.4391 29.8923L12.1448 26.052L10.7957 27.8167L9.75789 27.0898L13.1837 22.4197L14.3246 23.1456H14.3256ZM14.5327 21.174L15.4675 20.1362L21.2802 25.3252L20.3464 26.363L14.5327 21.174ZM19.4117 21.2769C17.9585 19.6173 17.9585 17.1257 19.6199 15.673C21.2812 14.2193 23.7722 14.3233 25.2244 15.984C26.6786 17.6446 26.5755 20.1362 25.0172 21.5889C23.3559 23.1456 20.8639 22.9386 19.4117 21.2769ZM24.2906 16.9178C23.2528 15.776 21.6955 15.673 20.5536 16.6068C19.4127 17.6446 19.5158 19.2013 20.4495 20.3431C21.3843 21.4849 23.0446 21.5889 24.1875 20.6541C25.2254 19.6163 25.2254 18.0596 24.2906 16.9178ZM29.3777 8.51138L33.6332 15.0501L32.5953 15.776L27.0939 13.0775L30.0002 17.4367L28.8583 18.1635L24.6019 11.6248L25.6407 10.8979L31.0381 13.5974L28.1317 9.23824L29.3777 8.51138ZM33.8414 12.3516L35.0874 11.7288C35.3976 12.2477 36.1252 12.5586 36.8518 12.1437C37.5784 11.8317 37.7855 11.2099 37.5784 10.587C37.3712 10.0671 36.7477 9.9641 36.1252 10.1721L35.0874 10.379C33.426 10.691 32.6994 9.9641 32.3882 9.34122C31.7657 8.09546 32.4923 6.74671 33.7373 6.12383C34.9833 5.50095 36.4365 5.81189 37.06 7.16163L35.8139 7.78451C35.5027 7.16163 34.8792 6.95467 34.2567 7.26461C33.6342 7.57655 33.3219 8.19944 33.6342 8.71834C33.7373 8.9263 33.9444 9.34122 34.8792 9.13326L35.8139 8.9263C37.059 8.71834 38.2009 8.9263 38.7203 9.9641C39.3428 11.2099 38.7203 12.5586 37.2671 13.2855C35.917 14.0123 34.4649 13.4924 33.8414 12.3516ZM47.9588 6.64273C47.7506 5.70891 48.4772 4.87807 49.4119 4.67011C50.3457 4.46315 51.2804 5.08603 51.4876 6.01985C51.6958 6.95367 50.9692 7.88849 50.0344 7.99148C49.0997 8.09546 48.1659 7.57755 47.9588 6.64273Z" fill="black" fill-opacity="0.5" />
+                              </svg>
+                           </span>
+                           <img class="tp-hero-3-icon s" src="/static/web/img/hero/hero-3/shape.png" alt="">
+                        </div>
+                     </div>
+                     <div class="col-lg-7">
+                        <div class="tp-hero-3-form mb-20">
+                           <p class="tp-hero-3-para">Be the first to get it for only $5 <br> just leave your email below!</p>
+                           <form action="#">
+                              <input class="tp-input mr-20 mb-10" type="text" placeholder="Email address">
+                              <button type="submit" class="tp-btn mb-10 tp-btn-xl d-inline-flex align-items-center">
+                                 <span>
+                                    <span class="text-1">Subscribe</span>
+                                    <span class="text-2">Subscribe</span>
+                                 </span>
+                              </button>
+                           </form>
+                        </div>
+                     </div>
+                     <div class="col-lg-5">
+                        <div class="tp-hero-3-para-2 mt-10 mb-30">
+                           <p>As a freelancer, I’m driven by a passion for crafting eye
+                           catching designs that leave a lasting impact. With<br>
+                           every project, I aim to blend creativity.</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-hero-area-end -->
+
+            <!-- tp-project-area-start -->
+            <div class="tp-project-area pt-50 pb-145">
+               <div class="container">
+                  <div class="row gx-100">
+                     <div class="col-12">
+                        <h2 class="tp-project-tittle reveal-text text-center mb-60">Featured work©</h2>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="tp-project-item tp-btn-switch-hover mb-60">
+                           <div class="tp-project-thumb p-relative fix mb-25" data-cursor="Explore">
+                              <a class="cursor-hide" href="portfolio-details-dark.html">
+                                 <img class="w-100" src="/static/web/img/portfolio/thumb.jpg" alt="">
+                              </a>
+                           </div>
+                           <div class="tp-project-content d-flex justify-content-between flex-wrap">
+                              <h5 class="tp-project-item-tittle mr-10">
+                                 <a class="tp-btn-switch" href="portfolio-details-dark.html">
+                                    <span>
+                                       <span class="text-1">Sonder goods</span>
+                                       <span class="text-2">Sonder goods</span>
+                                    </span>
+                                 </a>
+                              </h5>
+                              <span class="tp-project-dates">/2025</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="tp-project-item tp-btn-switch-hover mb-60">
+                           <div class="tp-project-thumb p-relative fix mb-25" data-cursor="Explore">
+                              <a class="cursor-hide" href="portfolio-details-dark.html">
+                                 <img class="w-100" src="/static/web/img/portfolio/thumb-2.jpg" alt="">
+                              </a>
+                           </div>
+                           <div class="tp-project-content d-flex justify-content-between flex-wrap">
+                              <h5 class="tp-project-item-tittle mr-10">
+                                 <a class="tp-btn-switch" href="portfolio-details-dark.html">
+                                    <span>
+                                       <span class="text-1">Promot Box</span>
+                                       <span class="text-2">Promot Box</span>
+                                    </span>
+                                 </a>
+                              </h5>
+                              <span class="tp-project-dates">/2025</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="tp-project-item tp-btn-switch-hover mb-60">
+                           <div class="tp-project-thumb p-relative fix mb-25" data-cursor="Explore">
+                              <a class="cursor-hide" href="portfolio-details-dark.html">
+                                 <img class="w-100" src="/static/web/img/portfolio/thumb-3.jpg" alt="">
+                              </a>
+                           </div>
+                           <div class="tp-project-content d-flex justify-content-between flex-wrap">
+                              <h5 class="tp-project-item-tittle mr-10">
+                                 <a class="tp-btn-switch" href="portfolio-details-dark.html">
+                                    <span>
+                                       <span class="text-1">Olio Noiring</span>
+                                       <span class="text-2">Olio Noiring</span>
+                                    </span>
+                                 </a>
+                              </h5>
+                              <span class="tp-project-dates">/2025</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6 col-md-6">
+                        <div class="tp-project-item tp-btn-switch-hover mb-60">
+                           <div class="tp-project-thumb p-relative fix mb-25" data-cursor="Explore">
+                              <a class="cursor-hide" href="portfolio-details-dark.html">
+                                 <img class="w-100" src="/static/web/img/portfolio/thumb-4.jpg" alt="">
+                              </a>
+                           </div>
+                           <div class="tp-project-content d-flex justify-content-between flex-wrap">
+                              <h5 class="tp-project-item-tittle mr-10">
+                                 <a class="tp-btn-switch" href="portfolio-details-dark.html">
+                                    <span>
+                                       <span class="text-1">Rando Hando</span>
+                                       <span class="text-2">Rando Hando</span>
+                                    </span>
+                                 </a>
+                              </h5>
+                              <span class="tp-project-dates">/2025</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-12">
+                        <div class="tp-project-btn text-center">
+                           <a href="portfolio-dark.html" class="tp-btn tp-btn-xl d-inline-flex align-items-center">
+                              <span>
+                                 <span class="text-1">View all Showcases</span>
+                                 <span class="text-2">View all Showcases</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-project-area-end -->
+
+            <!-- tp-pricing-area-start -->
+            <div class="tp-pricing-area pb-120">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="text-center mb-50">
+                           <h2 class="tp-section-tittle">Let’s work together</h2>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="tp-pricing-item mb-30 p-relative z-index-2">
+                           <span class="tp-pricing-shape">
+                              <svg width="362" height="324" viewBox="0 0 362 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M332.5 -48.5C440.197 -48.5 527.5 38.5818 527.5 146C527.5 253.418 440.197 340.5 332.5 340.5C224.803 340.5 137.5 253.418 137.5 146C137.5 38.5818 224.803 -48.5 332.5 -48.5Z" stroke="black" stroke-opacity="0.08" />
+                                 <circle cx="221" cy="7" r="220.5" stroke="black" stroke-opacity="0.08" />
+                              </svg>
+                           </span>
+                           <h4 class="tp-pricing-tittle mb-15">Envato landing page <span>$1,999</span></h4>
+                           <p class="mb-30">Transform your concepts into captivating digital experiences
+                           with bespoke single-page website meticulously designed
+                           and developed in Themeforest.</p>
+                           <a class="tp-btn tp-btn-xl tp-btn-border d-inline-flex align-items-center" href="contact-dark.html">
+                              <span>
+                                 <span class="text-1">Discover Work</span>
+                                 <span class="text-2">Discover Work</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="tp-pricing-item mb-30 p-relative z-index-2">
+                           <span class="tp-pricing-shape">
+                              <svg width="362" height="324" viewBox="0 0 362 324" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                 <path d="M332.5 -48.5C440.197 -48.5 527.5 38.5818 527.5 146C527.5 253.418 440.197 340.5 332.5 340.5C224.803 340.5 137.5 253.418 137.5 146C137.5 38.5818 224.803 -48.5 332.5 -48.5Z" stroke="black" stroke-opacity="0.08" />
+                                 <circle cx="221" cy="7" r="220.5" stroke="black" stroke-opacity="0.08" />
+                              </svg>
+                           </span>
+                           <h4 class="tp-pricing-tittle mb-15">Full portfolio website<span>$1,999</span></h4>
+                           <p class="mb-30">Take your online experience to the next level with a multi-page
+                              Themeforest website, expertly tailored to your specific needs,
+                              from functionality to design aesthetics</p>
+                           <a class="tp-btn tp-btn-xl tp-btn-border d-inline-flex align-items-center" href="contact-dark.html">
+                              <span>
+                                 <span class="text-1">Discover Work</span>
+                                 <span class="text-2">Discover Work</span>
+                              </span>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-pricing-area-end -->
+
+            <!-- tp-contact-area-start -->
+            <div class="tp-contact-area pb-135">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="tp-contact-wrap">
+                           <h2 class="tp-section-tittle">Get in touch with me</h2>
+                           <p class="mb-40">Let's bring your ideas to life. With my expertise in Envato design and<br>
+                           development, we can create something truly remarkable.</p>
+                           <form action="#">
+                              <div class="tp-contact-form">
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                       <div class="tp-contact-form-input mb-20">
+                                          <label class="tp-label" for="name">What’s your name?*</label>
+                                          <input class="tp-input" type="text" id="name" placeholder="Orion Paul">
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <div class="tp-contact-form-input mb-20">
+                                          <label class="tp-label" for="email">Enter your email address*</label>
+                                          <input class="tp-input" type="text" id="email" placeholder="orion2345@gmail.com">
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <div class="tp-contact-form-input">
+                                          <label class="tp-label" for="interested">What service are you interested in?*</label>
+                                          <select class="tp-select tp-input mb-20" name="subject" id="interested">
+                                             <option value="1">Personal portfolio</option>
+                                             <option value="2">Digital Agency</option>
+                                             <option value="3">Creative Agency</option>
+                                             <option value="4">It Solution</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <div class="tp-contact-form-input">
+                                          <label class="tp-label" for="budget">What's your ballpark budget?*</label>
+                                          <select class="tp-select tp-input mb-20" name="subject" id="budget">
+                                             <option value="1">$2600</option>
+                                             <option value="2">$3400</option>
+                                             <option value="3">$4100</option>
+                                             <option value="4">$6200</option>
+                                          </select>
+                                       </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                       <div class="tp-contact-form-input mb-20">
+                                          <label class="tp-label" for="email2">Do you already have a website?</label>
+                                          <input class="tp-input" type="text" id="email2" placeholder="bfolio.com">
+                                       </div>
+                                       <div class="tp-contact-form-input mb-20">
+                                          <label class="tp-label" for="textarea">How can I help you?</label>
+                                          <textarea class="tp-input tp-textarea" id="textarea" placeholder="Hey! Could you help me ......"></textarea>
+                                       </div>
+                                       <div class="tp-contact-form-btn">
+                                          <button type="submit" class="tp-btn tp-btn-xl d-flex justify-content-center lh-1">
+                                             <span>
+                                                <span class="text-1">Send Message</span>
+                                                <span class="text-2">Send Message</span>
+                                             </span>
+                                          </button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </form>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-contact-area-end -->
+
+         </main>
+      
+         <footer>
+      
+            <!-- tp-footer-area-start -->
+            <div class="tp-footer-area pb-75">
+               <div class="container p-relative z-index-1">
+                  <img class="tp-hero-3-shape" src="/static/web/img/hero/hero-3/line-bg.png" alt="">
+                  <div class="row">
+                     <div class="col-12">
+                        <div class="tp-footer-3-content-wrap text-center">
+                           <h2 class="tp-footer-3-tittle mb-110">Warm thanks!</h2>
+                           <h5 class="tp-footer-3-subtittle mb-30">Have a beautiful and restful Sunday!</h5>
+                           <div class="tp-footer-social mb-35 d-flex justify-content-center align-items-center">
+                              <span><a href="#"><i class="fa-brands fa-instagram"></i></a></span>
+                              <span><a href="#"><i class="fa-brands fa-dribbble"></i></a></span>
+                              <a href="contact-dark.html" class="tp-btn d-flex justify-content-center lh-1">
+                                 <span>
+                                    <span class="text-1">Get in Touch</span>
+                                    <span class="text-2">Get in Touch</span>
+                                 </span>
+                              </a>
+                           </div>
+                           <div class="tp-footer-3-copyright">
+                              <p>© 2025 Bfolio. All rights reserved by Themepure.</p>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- tp-footer-area-end -->
+
+         </footer>
+      </div>
+   </div>
+
+
+   <!-- JS here -->
+   <script src="/static/web/js/vendor/jquery.js"></script>
+   <script src="/static/web/js/bootstrap-bundle.js"></script>
+   <script src="/static/web/js/plugin.js"></script>
+   <script src="/static/web/js/split-type.js"></script>
+   <script src="/static/web/js/swiper-bundle.js"></script>
+   <script src="/static/web/js/swiper-gl.js"></script>
+   <script src="/static/web/js/magnific-popup.js"></script>
+   <script src="/static/web/js/nice-select.js"></script>
+   <script src="/static/web/js/purecounter.js"></script>
+   <script src="/static/web/js/ajax-form.js"></script>
+   <script src="/static/web/js/slider-init.js"></script>
+   <script src="/static/web/js/main.js"></script>
+   <script src="/static/web/js/tp-cursor.js"></script>
+</body>
+
+</html>

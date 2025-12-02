@@ -62,6 +62,7 @@ Default CSS
   --transition: .6s;
   --bs-btn-active-bg: #EAE66C !important;
   --bs-btn-hover-bg: #EAE66C !important;
+  --bs-primary-rgb: 40, 40, 102 !important;
 }
 
 html {

@@ -1,7 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
-from .models import Audience, BlogCategory, BlogPost, Feature, HiringPartner, Mentor, Tool, WhyUs
+from .models import (
+    Audience,
+    BlogCategory,
+    BlogPost,
+    Feature,
+    HiringPartner,
+    Mentor,
+    Tool,
+    WhyUs,
+)
 
 
 def index(request):
@@ -90,19 +99,21 @@ def case_studies(request):
 def blog(request):
     # Get all categories
     categories = BlogCategory.objects.all()
-    
+
     # Get all blog posts or filter by search
-    blog_posts = BlogPost.objects.select_related('category').all()
-    search_query = request.GET.get('search', '')
-    
+    blog_posts = BlogPost.objects.select_related("category").all()
+    search_query = request.GET.get("search", "")
+
     if search_query:
-        blog_posts = blog_posts.filter(title__icontains=search_query) | blog_posts.filter(summary__icontains=search_query)
-    
+        blog_posts = blog_posts.filter(
+            title__icontains=search_query
+        ) | blog_posts.filter(summary__icontains=search_query)
+
     # Pagination
     paginator = Paginator(blog_posts, 9)  # 9 posts per page
-    page_number = request.GET.get('page', 1)
+    page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
-    
+
     context = {
         "is_blog": True,
         "is_dark_navbar": True,
@@ -117,15 +128,15 @@ def blog_category(request, slug):
     # Get category
     category = get_object_or_404(BlogCategory, slug=slug)
     categories = BlogCategory.objects.all()
-    
+
     # Get posts in this category
     blog_posts = BlogPost.objects.filter(category=category)
-    
+
     # Pagination
     paginator = Paginator(blog_posts, 9)
-    page_number = request.GET.get('page', 1)
+    page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
-    
+
     context = {
         "is_blog": True,
         "is_dark_navbar": True,
@@ -139,8 +150,10 @@ def blog_category(request, slug):
 def blog_detail(request, slug):
     blog_post = get_object_or_404(BlogPost, slug=slug)
     categories = BlogCategory.objects.all()
-    related_posts = BlogPost.objects.filter(category=blog_post.category).exclude(pk=blog_post.pk)[:3]
-    
+    related_posts = BlogPost.objects.filter(category=blog_post.category).exclude(
+        pk=blog_post.pk
+    )[:3]
+
     context = {
         "is_blog": True,
         "is_dark_navbar": True,
@@ -166,7 +179,6 @@ def digital_marketing_courses(request):
     return render(request, "web/courses/digital_marketing_courses.html", context)
 
 
-
 def terms_and_conditions(request):
     context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
     return render(request, "web/terms_and_conditions.html", context)
@@ -185,4 +197,3 @@ def refund_policy(request):
 def cookie_policy(request):
     context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
     return render(request, "web/cookie_policy.html", context)
-

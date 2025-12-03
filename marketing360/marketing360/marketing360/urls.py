@@ -7,7 +7,7 @@ from django.views.generic import TemplateView
 urlpatterns = (
     [
         path("admin/", admin.site.urls),
-        path("ckeditor5/", include('django_ckeditor_5.urls')),
+        path("ckeditor5/", include("django_ckeditor_5.urls")),
         path("", include("web.urls", namespace="web")),
         path(
             "sitemap.xml",

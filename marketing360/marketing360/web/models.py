@@ -72,9 +72,11 @@ class FAQCategory(models.Model):
 
 
 class FAQ(models.Model):
-    category = models.ForeignKey(FAQCategory, on_delete=models.CASCADE, related_name="faqs")
+    category = models.ForeignKey(
+        FAQCategory, on_delete=models.CASCADE, related_name="faqs"
+    )
     question = models.CharField(max_length=255)
-    answer = CKEditor5Field('Answer', config_name='default')
+    answer = CKEditor5Field("Answer", config_name="default")
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -90,7 +92,9 @@ class Community(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
     image = models.ImageField(upload_to="communities/", blank=True, null=True)
-    type = models.CharField(max_length=50, choices=[("free", "Free"), ("paid", "Paid")], default="free")
+    type = models.CharField(
+        max_length=50, choices=[("free", "Free"), ("paid", "Paid")], default="free"
+    )
     features = models.TextField()
     join_link = models.URLField(blank=True)
     learn_more_link = models.URLField(blank=True)
@@ -154,6 +158,7 @@ class BlogCategory(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
+
         return reverse("web:blog_category", kwargs={"slug": self.slug})
 
 
@@ -189,7 +194,7 @@ class Feature(models.Model):
 
 class WhyUs(models.Model):
     title = models.CharField(max_length=100)
-    description = CKEditor5Field('Description', config_name='default')
+    description = CKEditor5Field("Description", config_name="default")
     icon = models.FileField(upload_to="whyus/", blank=True, null=True)
     number = models.PositiveIntegerField()
     order = models.PositiveIntegerField(default=0)
@@ -243,9 +248,15 @@ class HiringPartner(models.Model):
 class BlogPost(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True, blank=True)
-    category = models.ForeignKey(BlogCategory, on_delete=models.SET_NULL, null=True, blank=True, related_name="posts")
-    summary = CKEditor5Field('Summary', config_name='default')
-    content = CKEditor5Field('Content', config_name='extends')
+    category = models.ForeignKey(
+        BlogCategory,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="posts",
+    )
+    summary = CKEditor5Field("Summary", config_name="default")
+    content = CKEditor5Field("Content", config_name="extends")
     featured_image = models.ImageField(upload_to="blog/")
     author = models.CharField(max_length=100, default="Admin")
     is_featured = models.BooleanField(default=False)
@@ -261,6 +272,7 @@ class BlogPost(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             from django.utils.text import slugify
+
             self.slug = slugify(self.title)
             # Ensure unique slug
             original_slug = self.slug
@@ -272,6 +284,7 @@ class BlogPost(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
+
         return reverse("web:blog_detail", kwargs={"slug": self.slug})
 
     def __str__(self):

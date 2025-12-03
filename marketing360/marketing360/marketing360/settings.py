@@ -9,7 +9,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY", default="h*s2=dw+a3kp)k*g%2z+4ozfk6xxa-f-51e)$4csaq9f10=^pe")
+SECRET_KEY = config(
+    "SECRET_KEY", default="h*s2=dw+a3kp)k*g%2z+4ozfk6xxa-f-51e)$4csaq9f10=^pe"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", default=True, cast=bool)
@@ -76,7 +78,7 @@ DATABASES = {
         "PASSWORD": config("DB_PASSWORD", default=""),
         "HOST": config("DB_HOST", default="localhost"),
         "PORT": "5432",
-        'OPTIONS': {},
+        "OPTIONS": {},
     }
 }
 
@@ -151,35 +153,81 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # CKEditor 5 Configuration
 CKEDITOR_5_CONFIGS = {
-    'default': {
-        'toolbar': [
-            'heading', '|',
-            'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
-            'fontSize', 'fontColor', 'fontBackgroundColor', '|',
-            'alignment', '|',
-            'insertTable', 'imageUpload', '|',
-            'outdent', 'indent', '|',
-            'undo', 'redo'
+    "default": {
+        "toolbar": [
+            "heading",
+            "|",
+            "bold",
+            "italic",
+            "link",
+            "bulletedList",
+            "numberedList",
+            "blockQuote",
+            "|",
+            "fontSize",
+            "fontColor",
+            "fontBackgroundColor",
+            "|",
+            "alignment",
+            "|",
+            "insertTable",
+            "imageUpload",
+            "|",
+            "outdent",
+            "indent",
+            "|",
+            "undo",
+            "redo",
         ],
-        'height': 300,
-        'width': '100%',
+        "height": 300,
+        "width": "100%",
     },
-    'extends': {
-        'toolbar': [
-            'heading', '|',
-            'bold', 'italic', 'underline', 'strikethrough', 'code', 'subscript', 'superscript', '|',
-            'link', 'bulletedList', 'numberedList', 'todoList', 'blockQuote', 'codeBlock', '|',
-            'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
-            'alignment', '|',
-            'insertTable', 'imageUpload', 'mediaEmbed', '|',
-            'outdent', 'indent', '|',
-            'horizontalLine', 'pageBreak', '|',
-            'removeFormat', '|',
-            'undo', 'redo', '|',
-            'sourceEditing'
+    "extends": {
+        "toolbar": [
+            "heading",
+            "|",
+            "bold",
+            "italic",
+            "underline",
+            "strikethrough",
+            "code",
+            "subscript",
+            "superscript",
+            "|",
+            "link",
+            "bulletedList",
+            "numberedList",
+            "todoList",
+            "blockQuote",
+            "codeBlock",
+            "|",
+            "fontSize",
+            "fontFamily",
+            "fontColor",
+            "fontBackgroundColor",
+            "highlight",
+            "|",
+            "alignment",
+            "|",
+            "insertTable",
+            "imageUpload",
+            "mediaEmbed",
+            "|",
+            "outdent",
+            "indent",
+            "|",
+            "horizontalLine",
+            "pageBreak",
+            "|",
+            "removeFormat",
+            "|",
+            "undo",
+            "redo",
+            "|",
+            "sourceEditing",
         ],
-        'height': 400,
-        'width': '100%',
+        "height": 400,
+        "width": "100%",
     },
 }
 

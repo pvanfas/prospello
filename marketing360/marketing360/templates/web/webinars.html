@@ -25,105 +25,37 @@
                 <div class="swiper  position-relative">
                     <div class="row">
 
-                        <!-- Slide 1 -->
+                        {% for webinar in webinars %}
                         <div class="col-md-6 p-4">
                             <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
                                 <div class="col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/event-card_indore-2fcffed994dc00f50c0ab5b96475ab19.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: Scale Faster with Digital Marketing">
+                                    {% if webinar.image %}
+                                    <img src="{{ webinar.image.url }}"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="{{ webinar.title }}">
+                                    {% endif %}
                                 </div>
                                 <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
                                     <div>
-                                        <span class="badge bg-primary-subtle text-primary mb-2">Online</span>
-                                        <h4 class="fw-semibold mb-3">Scale Faster with Digital Marketing</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Dec 15, 2024 &nbsp; |
-                                            &nbsp; 4:00 PM - 6:00 PM IST</p>
-                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
+                                        <span class="badge bg-primary-subtle text-primary mb-2">{{ webinar.location }}</span>
+                                        <h4 class="fw-semibold mb-3">{{ webinar.title }}</h4>
+                                        <p class="small mb-2"><i class="bi bi-calendar"></i> {{ webinar.date|date:"M d, Y" }} &nbsp; |
+                                            &nbsp; {{ webinar.time }}</p>
+                                        <p class="small mb-3"><i class="bi bi-laptop"></i> {{ webinar.location }}</p>
                                     </div>
                                     <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
                                         <button class="mt-0 default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event1Modal">
+                                            data-bs-target="#webinarModal{{ webinar.id }}">
                                             Register Now
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Slide 2 -->
-                        <div class="col-md-6 p-4">
-                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
-                                <div class="col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/akash-gogri--1--d353ffa5db19eb9b959559016ef31bb5.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: Supercharge Your Personal Brand with AI">
-                                </div>
-                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <span class="badge bg-success-subtle text-success mb-2">Online</span>
-                                        <h4 class="fw-semibold mb-3">Supercharge Your Personal Brand with AI</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Dec 20, 2024 &nbsp; |
-                                            &nbsp; 2:00 PM - 4:00 PM IST</p>
-                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
-                                    </div>
-                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event1Modal">
-                                            Register Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        {% empty %}
+                        <div class="col-md-12 text-center py-5">
+                            <p class="text-muted">No upcoming webinars at the moment. Check back soon!</p>
                         </div>
-
-                        <!-- Slide 3 -->
-                        <div class="col-md-6 p-4">
-                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
-                                <div class="col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/aman-kapoor--jaipur--1--cb90f80a0741c95d2b26f17766b2567a.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: AI Tools to Power Your Marketing Strategy">
-                                </div>
-                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <span class="badge bg-info-subtle text-info mb-2">Online</span>
-                                        <h4 class="fw-semibold mb-3">AI Tools to Power Your Marketing Strategy</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Dec 25, 2024 &nbsp; |
-                                            &nbsp; 5:00 PM - 7:00 PM IST</p>
-                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
-                                    </div>
-                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event1Modal">
-                                            Register Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Slide 4 -->
-                        <div class="col-md-6 p-4">
-                            <div class="card border-0 shadow overflow-hidden rounded-4 d-flex flex-column flex-md-row h-100">
-                                <div class="col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/event-card_indore-2fcffed994dc00f50c0ab5b96475ab19.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Webinar: Content Marketing Mastery">
-                                </div>
-                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <span class="badge bg-warning-subtle text-warning mb-2">Online</span>
-                                        <h4 class="fw-semibold mb-3">Content Marketing Mastery</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Jan 5, 2025 &nbsp; |
-                                            &nbsp; 3:00 PM - 5:00 PM IST</p>
-                                        <p class="small mb-3"><i class="bi bi-laptop"></i> Live Online Session</p>
-                                    </div>
-                                    <div class="border-top pt-3 d-flex flex-column flex-sm-row justify-content-between align-items-center gap-2">
-                                        <button class="mt-0 default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event1Modal">
-                                            Register Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
 
                     </div>
                 </div>
@@ -489,37 +421,58 @@
 {% endcomment %}
 
 
-
-
-<div class="modal fade" id="event1Modal" tabindex="-1" aria-hidden="true">
+{% for webinar in webinars %}
+<div class="modal fade" id="webinarModal{{ webinar.id }}" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-header align-items-start p-3" style="background-color: #EDEFEB;">
-                <h5 class="modal-title modal-title pt-4 px-4" id="enrollModalBackdropLabel">Apply for the <span
-                        class="primary">Advanced
-                        Digital Marketing <br> Proficiency Program</span></h5>
+                <h5 class="modal-title modal-title pt-4 px-4">Register for <span class="primary">{{ webinar.title }}</span></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-3 contact-form-inner px-3 pb-3 pt-0">
-                <form class="contact-form p-4">
+                {% if messages %}
+                <div class="p-4 pt-0">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <form class="contact-form p-4" method="post">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                        <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="phone" class="form-control" placeholder="Phone">
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                        <div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="subject" class="form-control" placeholder="Subject">
+                        {{ form.subject }}
+                        {% if form.subject.errors %}
+                        <div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>
+                        {% endif %}
                     </div>
-                    <button class="default-btn" type="submit">Submit Now</button>
+                    <button class="default-btn" type="submit">Register Now</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
+{% endfor %}
 
 
 {% endblock %}

@@ -20,45 +20,37 @@
 <div class="cash-management-area ptb-100 communities-section">
     <div class="container-fluid">
         <div class="row justify-content-center" data-cues="slideInUp">
+            {% for community in communities %}
             <div class="col-lg-4 col-sm-6">
                 <div class="cash-management-card">
                     <div class="cash-image">
-                        <img src="{% static 'web/images/cash/cash1.jpg' %}" alt="Community">
+                        {% if community.image %}
+                        <img src="{{ community.image.url }}" alt="{{ community.name }}">
+                        {% else %}
+                        <img src="{% static 'web/images/cash/cash1.jpg' %}" alt="{{ community.name }}">
+                        {% endif %}
                     </div>
                     <div class="cash-content">
-                        <h3>Digital Marketing Hub (Free)</h3>
-                        <p>Join thousands of aspiring and professional digital marketers in Kerala. This free community is your gateway to networking, knowledge sharing, industry discussions, job opportunities, and collaborative learning. Perfect for beginners and experienced marketers alike.</p>
+                        <h3>{{ community.name }}</h3>
+                        <p>{{ community.description }}</p>
+                        {% if community.learn_more_link %}
+                        <a href="{{ community.learn_more_link }}" class="btn btn-secondary mt-3">Learn More</a>
+                        {% else %}
                         <a href="#" class="btn btn-secondary mt-3">Learn More</a>
+                        {% endif %}
+                        {% if community.join_link %}
+                        <a href="{{ community.join_link }}" class="btn btn-primary mt-3">Join Now</a>
+                        {% else %}
                         <a href="#" class="btn btn-primary mt-3">Join Now</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="cash-management-card">
-                    <div class="cash-image">
-                        <img src="{% static 'web/images/cash/cash2.jpg' %}" alt="Community">
-                    </div>
-                    <div class="cash-content">
-                        <h3>SEO & Content Masters (Paid)</h3>
-                        <p>An exclusive premium community for advanced marketers and students. Get access to in-depth SEO strategies, content marketing masterclasses, expert Q&A sessions, case study reviews, premium templates, tools, and direct mentorship from industry leaders.</p>
-                        <a href="#" class="btn btn-secondary mt-3">Learn More</a>
-                        <a href="#" class="btn btn-primary mt-3">Join Now</a>
-                    </div>
-                </div>
+            {% empty %}
+            <div class="col-md-12 text-center py-5">
+                <p class="text-muted">No communities available at the moment. Check back soon!</p>
             </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="cash-management-card">
-                    <div class="cash-image">
-                        <img src="{% static 'web/images/cash/cash3.jpg' %}" alt="Community">
-                    </div>
-                    <div class="cash-content">
-                        <h3>Freelancer's Circle (Paid)</h3>
-                        <p>A premium community exclusively for freelance digital marketers. Collaborate on projects, share client strategies, access client referrals, discuss pricing models, troubleshoot challenges, and accelerate your freelance business growth with peer support and expert guidance.</p>
-                        <a href="#" class="btn btn-secondary mt-3">Learn More</a>
-                        <a href="#" class="btn btn-primary mt-3">Join Now</a>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -69,33 +61,25 @@
             <h2 class="section_title">Why Join Our Communities?</h2>
         </div>
         <div class="row justify-content-center mt-5" data-cues="slideInUp">
+            {% for benefit in benefits %}
             <div class="col-lg-4 col-md-6 col-sm-6">
                 <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
                     <div class="feature-icon mb-4">
-                        <img src="{% static 'web/images/icons/job.png' %}" alt="Networking" style="width:40px;">
+                        {% if benefit.icon %}
+                        <img src="{{ benefit.icon.url }}" alt="{{ benefit.title }}" style="width:40px;">
+                        {% else %}
+                        <img src="{% static 'web/images/icons/job.png' %}" alt="{{ benefit.title }}" style="width:40px;">
+                        {% endif %}
                     </div>
-                    <h5>Network with the Best</h5>
-                    <p>Connect with the top digital marketers in Kerala, share ideas, and build valuable professional relationships.</p>
+                    <h5>{{ benefit.title }}</h5>
+                    <p>{{ benefit.description }}</p>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
-                    <div class="feature-icon mb-4">
-                        <img src="{% static 'web/images/icons/mentor.png' %}" alt="Exclusive Content" style="width:40px;">
-                    </div>
-                    <h5>Exclusive Content</h5>
-                    <p>Get access to exclusive content, resources, and job opportunities that you won't find anywhere else.</p>
-                </div>
+            {% empty %}
+            <div class="col-md-12 text-center py-5">
+                <p class="text-muted">No benefits information available at the moment.</p>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="feature-card h-100 p-4 rounded-3 shadow-sm text-center">
-                    <div class="feature-icon mb-4">
-                        <img src="{% static 'web/images/icons/lifetime.png' %}" alt="Collaborate & Grow" style="width:40px;">
-                    </div>
-                    <h5>Collaborate & Grow</h5>
-                    <p>Work on projects together, get feedback on your ideas, and accelerate your career with the support of your peers.</p>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -126,72 +110,31 @@
             <div class="col-lg-8 col-md-12">
                 <div class="swiper places-slide-swiper">
                     <div class="swiper-wrapper">
+                        {% for testimonial in testimonials %}
+                        <div class="swiper-slide">
+                            <div class="places-card {% cycle 'bg-FFF2E5' 'bg-EDEFEB' '' %}">
+                                <div class="places-image">
+                                    {% if testimonial.image %}
+                                    <img src="{{ testimonial.image.url }}" alt="{{ testimonial.name }}">
+                                    {% else %}
+                                    <img src="/static/web/images/places/places{{ forloop.counter|divisibleby:3|yesno:'3,1' }}.png" alt="{{ testimonial.name }}">
+                                    {% endif %}
+                                </div>
+                                <div class="places-content">
+                                    <h4>"{{ testimonial.testimonial }}"</h4>
+                                    <a href="#" class="default-btn">{{ testimonial.name }} - {{ testimonial.role }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        {% empty %}
                         <div class="swiper-slide">
                             <div class="places-card">
-                                <div class="places-image">
-                                    <img src="/static/web/images/places/places1.png" alt="image">
-                                </div>
                                 <div class="places-content">
-                                    <h4>"Joining the Digital Marketing Hub community transformed my career. The networking opportunities and shared knowledge helped me land my dream job in digital marketing."</h4>
-                                    <a href="#" class="default-btn">Priya S. - Community Member</a>
+                                    <h4>No testimonials available at the moment.</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="swiper-slide">
-                            <div class="places-card bg-FFF2E5">
-                                <div class="places-image">
-                                    <img src="/static/web/images/places/places2.png" alt="image">
-                                </div>
-                                <div class="places-content">
-                                    <h4>"The SEO & Content Masters community is worth every rupee. The expert Q&As and premium resources have taken my content strategy to the next level."</h4>
-                                    <a href="#" class="default-btn">Rahul K. - SEO Specialist</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="places-card bg-EDEFEB">
-                                <div class="places-image">
-                                    <img src="/static/web/images/places/places3.png" alt="image">
-                                </div>
-                                <div class="places-content">
-                                    <h4>"As a freelancer, the Freelancer's Circle has been invaluable. I've collaborated on amazing projects and doubled my client base within six months."</h4>
-                                    <a href="#" class="default-btn">Meera R. - Freelance Marketer</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="places-card">
-                                <div class="places-image">
-                                    <img src="/static/web/images/places/places1.png" alt="image">
-                                </div>
-                                <div class="places-content">
-                                    <h4>"The communities here are more than just groups - they're a support system. I've learned so much and made lifelong connections in the digital marketing industry."</h4>
-                                    <a href="#" class="default-btn">Arjun M. - Marketing Manager</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="places-card bg-FFF2E5">
-                                <div class="places-image">
-                                    <img src="/static/web/images/places/places2.png" alt="image">
-                                </div>
-                                <div class="places-content">
-                                    <h4>"Being part of these communities keeps me updated with the latest trends and best practices. It's like having a team of experts available 24/7."</h4>
-                                    <a href="#" class="default-btn">Sneha P. - Content Creator</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="places-card bg-EDEFEB">
-                                <div class="places-image">
-                                    <img src="/static/web/images/places/places3.png" alt="image">
-                                </div>
-                                <div class="places-content">
-                                    <h4>"The collaborative environment and knowledge sharing in these communities have accelerated my growth. Highly recommend to anyone serious about digital marketing."</h4>
-                                    <a href="#" class="default-btn">Vikram N. - Digital Strategist</a>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>

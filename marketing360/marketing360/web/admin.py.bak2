@@ -10,8 +10,6 @@ from .models import (
     Community,
     CommunityTestimonial,
     Contact,
-    CommunityBenefit,
-    ReferralBenefit,
     Course,
     FAQ,
     FAQCategory,
@@ -20,7 +18,6 @@ from .models import (
     Mentor,
     Newsletter,
     ReferralStep,
-    ReferralTerm,
     StudentSuccessStory,
     Tool,
     Webinar,
@@ -71,20 +68,6 @@ class CommunityAdmin(ImportExportActionModelAdmin):
 class ReferralStepAdmin(ImportExportActionModelAdmin):
     list_display = ("title", "order")
     search_fields = ("title", "description")
-
-@admin.register(ReferralBenefit)
-class ReferralBenefitAdmin(ImportExportActionModelAdmin):
-    list_display = ("title", "order", "is_active")
-    list_filter = ("is_active",)
-    search_fields = ("title", "description")
-    list_editable = ("order", "is_active")
-
-@admin.register(ReferralTerm)
-class ReferralTermAdmin(ImportExportActionModelAdmin):
-    list_display = ("question", "order", "is_active")
-    list_filter = ("is_active",)
-    search_fields = ("question", "answer")
-    list_editable = ("order", "is_active")
 
 
 @admin.register(CaseStudy)
@@ -174,11 +157,3 @@ class CommunityTestimonialAdmin(ImportExportActionModelAdmin):
     list_display = ("name", "role", "community", "order", "is_active")
     list_filter = ("is_active", "community")
     search_fields = ("name", "role", "testimonial")
-
-
-@admin.register(CommunityBenefit)
-class CommunityBenefitAdmin(ImportExportActionModelAdmin):
-    list_display = ("title", "order", "is_active")
-    list_filter = ("is_active",)
-    search_fields = ("title", "description")
-    list_editable = ("order", "is_active")

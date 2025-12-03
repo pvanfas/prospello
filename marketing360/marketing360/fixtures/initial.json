@@ -1206,5 +1206,341 @@
             "order": 8,
             "is_active": true
         }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 1,
+        "fields": {
+            "title": "Scale Faster with Digital Marketing",
+            "description": "Learn proven strategies to accelerate your business growth through effective digital marketing techniques. Master SEO, PPC, and social media marketing.",
+            "date": "2025-12-14",
+            "time": "4:00 PM - 6:00 PM IST",
+            "location": "Live Online Session",
+            "image": "webinars/webinarx.webp",
+            "registration_count": 245,
+            "registration_link": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 2,
+        "fields": {
+            "title": "Supercharge Your Personal Brand with AI",
+            "description": "Discover how to leverage AI tools to build and grow your personal brand. Learn content creation, automation, and engagement strategies.",
+            "date": "2025-12-19",
+            "time": "2:00 PM - 4:00 PM IST",
+            "location": "Live Online Session",
+            "image": "webinars/webinarx.webp",
+            "registration_count": 189,
+            "registration_link": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 3,
+        "fields": {
+            "title": "AI Tools to Power Your Marketing Strategy",
+            "description": "Explore the latest AI marketing tools and learn how to integrate them into your marketing workflow for better results and efficiency.",
+            "date": "2025-12-24",
+            "time": "5:00 PM - 7:00 PM IST",
+            "location": "Live Online Session",
+            "image": "webinars/webinarx.webp",
+            "registration_count": 312,
+            "registration_link": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 4,
+        "fields": {
+            "title": "Content Marketing Mastery",
+            "description": "Master the art of creating compelling content that converts. Learn storytelling, SEO optimization, and content distribution strategies.",
+            "date": "2026-01-03",
+            "time": "3:00 PM - 5:00 PM IST",
+            "location": "Live Online Session",
+            "image": "webinars/webinarx.webp",
+            "registration_count": 156,
+            "registration_link": "",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 5,
+        "fields": {
+            "title": "Email Marketing Automation Workshop",
+            "description": "Build automated email campaigns that nurture leads and drive conversions. Hands-on workshop with practical examples.",
+            "date": "2025-12-29",
+            "time": "6:00 PM - 8:00 PM IST",
+            "location": "Live Online Session",
+            "image": "webinars/webinarx.webp",
+            "registration_count": 203,
+            "registration_link": "",
+            "order": 5
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 6,
+        "fields": {
+            "title": "Social Media Analytics Deep Dive",
+            "description": "Learn to analyze social media metrics and make data-driven decisions to improve your social media ROI.",
+            "date": "2026-01-08",
+            "time": "4:30 PM - 6:30 PM IST",
+            "location": "Live Online Session",
+            "image": "webinars/webinarx.webp",
+            "registration_count": 178,
+            "registration_link": "",
+            "order": 6
+        }
+    },
+     {
+        "model": "web.community",
+        "pk": 1,
+        "fields": {
+            "name": "Digital Marketing Hub (Free)",
+            "description": "Join thousands of aspiring and professional digital marketers in Kerala. This free community is your gateway to networking, knowledge sharing, industry discussions, job opportunities, and collaborative learning. Perfect for beginners and experienced marketers alike.",
+            "image": "communities/cash3.jpg",
+            "type": "free",
+            "features": "Networking, Knowledge Sharing, Industry Discussions, Job Opportunities, Collaborative Learning",
+            "join_link": "",
+            "learn_more_link": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.community",
+        "pk": 2,
+        "fields": {
+            "name": "SEO & Content Masters (Paid)",
+            "description": "An exclusive premium community for advanced marketers and students. Get access to in-depth SEO strategies, content marketing masterclasses, expert Q&A sessions, case study reviews, premium templates, tools, and direct mentorship from industry leaders.",
+            "image": "communities/cash3_u5qyUia.jpg",
+            "type": "paid",
+            "features": "SEO Strategies, Content Marketing Masterclasses, Expert Q&A, Case Studies, Premium Templates, Direct Mentorship",
+            "join_link": "",
+            "learn_more_link": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.community",
+        "pk": 3,
+        "fields": {
+            "name": "Freelancer's Circle (Paid)",
+            "description": "A premium community exclusively for freelance digital marketers. Collaborate on projects, share client strategies, access client referrals, discuss pricing models, troubleshoot challenges, and accelerate your freelance business growth with peer support and expert guidance.",
+            "image": "communities/cash3_aCvuQPZ.jpg",
+            "type": "paid",
+            "features": "Project Collaboration, Client Strategies, Client Referrals, Pricing Models, Peer Support, Expert Guidance",
+            "join_link": "",
+            "learn_more_link": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.communitytestimonial",
+        "pk": 1,
+        "fields": {
+            "name": "Priya S.",
+            "role": "Community Member",
+            "testimonial": "Joining the Digital Marketing Hub community transformed my career. The networking opportunities and shared knowledge helped me land my dream job in digital marketing.",
+            "image": "testimonials/places1.png",
+            "community": null,
+            "order": 1,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitytestimonial",
+        "pk": 2,
+        "fields": {
+            "name": "Rahul K.",
+            "role": "SEO Specialist",
+            "testimonial": "The SEO & Content Masters community is worth every rupee. The expert Q&As and premium resources have taken my content strategy to the next level.",
+            "image": "testimonials/places1_GnI8CTR.png",
+            "community": null,
+            "order": 2,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitytestimonial",
+        "pk": 3,
+        "fields": {
+            "name": "Meera R.",
+            "role": "Freelance Marketer",
+            "testimonial": "As a freelancer, the Freelancer's Circle has been invaluable. I've collaborated on amazing projects and doubled my client base within six months.",
+            "image": "testimonials/places1_IGhRUXW.png",
+            "community": null,
+            "order": 3,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitytestimonial",
+        "pk": 4,
+        "fields": {
+            "name": "Arjun M.",
+            "role": "Marketing Manager",
+            "testimonial": "The communities here are more than just groups - they're a support system. I've learned so much and made lifelong connections in the digital marketing industry.",
+            "image": "testimonials/places1_StSLtxj.png",
+            "community": null,
+            "order": 4,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitytestimonial",
+        "pk": 5,
+        "fields": {
+            "name": "Sneha P.",
+            "role": "Content Creator",
+            "testimonial": "Being part of these communities keeps me updated with the latest trends and best practices. It's like having a team of experts available 24/7.",
+            "image": "testimonials/places1_JimJyg4.png",
+            "community": null,
+            "order": 5,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitytestimonial",
+        "pk": 6,
+        "fields": {
+            "name": "Vikram N.",
+            "role": "Digital Strategist",
+            "testimonial": "The collaborative environment and knowledge sharing in these communities have accelerated my growth. Highly recommend to anyone serious about digital marketing.",
+            "image": "testimonials/places1_NDsRmjZ.png",
+            "community": null,
+            "order": 6,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitybenefit",
+        "pk": 1,
+        "fields": {
+            "title": "Network with the Best",
+            "description": "Connect with the top digital marketers in Kerala, share ideas, and build valuable professional relationships.",
+            "icon": "community_benefits/job.png",
+            "order": 1,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitybenefit",
+        "pk": 2,
+        "fields": {
+            "title": "Exclusive Content",
+            "description": "Get access to exclusive content, resources, and job opportunities that you won't find anywhere else.",
+            "icon": "community_benefits/mentor.png",
+            "order": 2,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.communitybenefit",
+        "pk": 3,
+        "fields": {
+            "title": "Collaborate & Grow",
+            "description": "Work on projects together, get feedback on your ideas, and accelerate your career with the support of your peers.",
+            "icon": "community_benefits/lifetime.png",
+            "order": 3,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.referralstep",
+        "pk": 1,
+        "fields": {
+            "title": "Share Your Referral Link",
+            "description": "Log in to your account and get your unique referral link. Share it with your friends via email, social media, or any other platform.",
+            "icon": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.referralstep",
+        "pk": 2,
+        "fields": {
+            "title": "Your Friend Enrolls",
+            "description": "Your friend uses your link to enroll in any of our courses. They'll receive an instant discount on their course fees.",
+            "icon": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.referralstep",
+        "pk": 3,
+        "fields": {
+            "title": "You Get Rewarded",
+            "description": "Once your friend's enrollment is confirmed, you'll receive your reward—it's that simple!",
+            "icon": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.referralbenefit",
+        "pk": 1,
+        "fields": {
+            "title": "Exclusive Discounts",
+            "description": "Get a significant discount on your next course enrollment for every successful referral.",
+            "icon": "",
+            "order": 1,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.referralbenefit",
+        "pk": 2,
+        "fields": {
+            "title": "Cashback Offers",
+            "description": "Receive cashback rewards directly in your account for every friend who joins.",
+            "icon": "",
+            "order": 2,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.referralbenefit",
+        "pk": 3,
+        "fields": {
+            "title": "Free Workshop Access",
+            "description": "Gain complimentary access to our premium workshops and masterclasses.",
+            "icon": "",
+            "order": 3,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.referralterm",
+        "pk": 1,
+        "fields": {
+            "question": "Who is eligible for the referral program?",
+            "answer": "All existing and past students of 360 Marketing School are eligible to participate in the referral program.",
+            "order": 1,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.referralterm",
+        "pk": 2,
+        "fields": {
+            "question": "How many friends can I refer?",
+            "answer": "There is no limit to the number of friends you can refer. The more you refer, the more you earn!",
+            "order": 2,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.referralterm",
+        "pk": 3,
+        "fields": {
+            "question": "When will I receive my reward?",
+            "answer": "Your reward will be processed within 30 days of your friend's confirmed enrollment and payment.",
+            "order": 3,
+            "is_active": true
+        }
     }
 ]

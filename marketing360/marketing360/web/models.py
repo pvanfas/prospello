@@ -351,3 +351,69 @@ class StudentSuccessStory(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.job_role} at {self.company_name}"
+
+
+class CommunityTestimonial(models.Model):
+    name = models.CharField(max_length=100)
+    role = models.CharField(max_length=100)
+    testimonial = models.TextField()
+    image = models.ImageField(upload_to="testimonials/", blank=True)
+    community = models.ForeignKey(Community, on_delete=models.CASCADE, related_name="testimonials", null=True, blank=True)
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "name"]
+        verbose_name = "Community Testimonial"
+        verbose_name_plural = "Community Testimonials"
+
+    def __str__(self):
+        return f"{self.name} - {self.role}"
+
+
+class CommunityBenefit(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    icon = models.ImageField(upload_to="community_benefits/", blank=True)
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "title"]
+        verbose_name = "Community Benefit"
+        verbose_name_plural = "Community Benefits"
+
+    def __str__(self):
+        return self.title
+
+
+class ReferralBenefit(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField()
+    icon = models.ImageField(upload_to="referral_benefits/")
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "title"]
+        verbose_name = "Referral Benefit"
+        verbose_name_plural = "Referral Benefits"
+
+    def __str__(self):
+        return self.title
+
+
+class ReferralTerm(models.Model):
+    question = models.CharField(max_length=255)
+    answer = models.TextField()
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "question"]
+        verbose_name = "Referral Term"
+        verbose_name_plural = "Referral Terms"
+
+    def __str__(self):
+        return self.question
+

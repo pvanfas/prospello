@@ -6,11 +6,17 @@ from .models import (
     Audience,
     BlogCategory,
     BlogPost,
+    Community,
+    CommunityBenefit,
+    CommunityTestimonial,
     Course,
     Feature,
     HiringPartner,
     Mentor,
     Newsletter,
+    ReferralBenefit,
+    ReferralStep,
+    ReferralTerm,
     StudentSuccessStory,
     Tool,
     Webinar,
@@ -92,12 +98,36 @@ def centers(request):
 
 
 def webinars(request):
-    context = {"is_webinars": True, "is_dark_navbar": True}
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for registering! We'll send you the webinar details soon.")
+            return redirect("web:webinars")
+    else:
+        form = ContactForm()
+    
+    webinars_list = Webinar.objects.all()
+    context = {
+        "is_webinars": True,
+        "is_dark_navbar": True,
+        "webinars": webinars_list,
+        "form": form,
+    }
     return render(request, "web/webinars.html", context)
 
 
 def communities(request):
-    context = {"is_communities": True, "is_dark_navbar": True}
+    communities_list = Community.objects.all()
+    testimonials = CommunityTestimonial.objects.filter(is_active=True)
+    benefits = CommunityBenefit.objects.filter(is_active=True)
+    context = {
+        "is_communities": True,
+        "is_dark_navbar": True,
+        "communities": communities_list,
+        "testimonials": testimonials,
+        "benefits": benefits,
+    }
     return render(request, "web/communities.html", context)
 
 
@@ -156,7 +186,16 @@ def newsletter_subscribe(request):
 
 
 def refer(request):
-    context = {"is_refer": True, "is_dark_navbar": True}
+    steps = ReferralStep.objects.all()
+    benefits = ReferralBenefit.objects.filter(is_active=True)
+    terms = ReferralTerm.objects.filter(is_active=True)
+    context = {
+        "is_refer": True,
+        "is_dark_navbar": True,
+        "referral_steps": steps,
+        "referral_benefits": benefits,
+        "referral_terms": terms,
+    }
     return render(request, "web/refer.html", context)
 
 

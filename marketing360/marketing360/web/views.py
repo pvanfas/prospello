@@ -1,41 +1,71 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 from .models import (
     Audience,
     BlogCategory,
     BlogPost,
+    Course,
     Feature,
     HiringPartner,
     Mentor,
     Tool,
+    Webinar,
     WhyUs,
-)
+    FAQCategory)
+from .forms import ContactForm
 
 
 def index(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for contacting us! We'll get back to you soon.")
+            return redirect("web:index")
+    else:
+        form = ContactForm()
+    
+    courses = Course.objects.all()
     mentors = Mentor.objects.all()
     hiring_partners = HiringPartner.objects.all()
     blogs = BlogPost.objects.all()
     context = {
         "is_index": True,
+        "courses": courses,
         "mentors": mentors,
         "hiring_partners": hiring_partners,
         "blogs": blogs[:3],
+        "form": form,
     }
     return render(request, "web/index.html", context)
 
 
 def courses(request):
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for your interest! We'll contact you soon.")
+            return redirect("web:courses")
+    else:
+        form = ContactForm()
+    
+    courses = Course.objects.all()  # Get the main course
     tools = Tool.objects.all()
     mentors = Mentor.objects.all()
     hiring_partners = HiringPartner.objects.all()
+    webinars = Webinar.objects.all()[:3]  # Get first 3 webinars
     context = {
         "is_courses": True,
         "is_dark_navbar": True,
+        "courses": courses,
         "tools": tools,
         "mentors": mentors,
         "hiring_partners": hiring_partners,
+        "webinars": webinars,
+        "form": form,
     }
     return render(request, "web/courses.html", context)
 
@@ -82,7 +112,20 @@ def about(request):
 
 
 def contact(request):
-    context = {"is_contact": True, "is_dark_navbar": True}
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thank you for contacting us! We'll get back to you soon.")
+            return redirect("web:contact")
+    else:
+        form = ContactForm()
+    
+    context = {
+        "is_contact": True,
+        "is_dark_navbar": True,
+        "form": form
+    }
     return render(request, "web/contact.html", context)
 
 
@@ -165,7 +208,12 @@ def blog_detail(request, slug):
 
 
 def faq(request):
-    context = {"is_faq": True, "is_dark_navbar": True}
+    categories = FAQCategory.objects.prefetch_related('faqs').all()
+    context = {
+        "is_faq": True,
+        "is_dark_navbar": True,
+        "categories": categories,
+    }
     return render(request, "web/faq.html", context)
 
 

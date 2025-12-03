@@ -117,10 +117,10 @@
         "pk": 1,
         "fields": {
             "title": "Digital Marketing Specialisation Cohort Programme",
-            "description": "<p>For anyone from aspiring marketers, career-focused students, sales professionals, social media enthusiasts, freelancers, to business owners, learn to strategise, execute, and grow in digital marketing.</p>",
+            "description": "For anyone from aspiring marketers, career-focused students, sales professionals, social media enthusiasts, freelancers, to business owners, learn to strategise, execute, and grow in digital marketing.",
             "mode": "Online",
             "duration": "6 Months",
-            "image": "",
+            "image": "courses/course.png",
             "order": 1
         }
     },
@@ -129,12 +129,12 @@
         "pk": 1,
         "fields": {
             "title": "Scale Faster with Digital Marketing",
-            "description": "<p>Join us for an intensive session on scaling your business with digital marketing strategies.</p>",
-            "date": "2024-12-15",
-            "time": "4:00 PM - 6:00 PM IST",
-            "location": "Online",
-            "image": "",
-            "registration_count": 0,
+            "description": "Experience learning, networking, and inspiration — right at your fingertips.",
+            "date": "2025-10-11",
+            "time": "4:00 PM - 6:00 PM",
+            "location": "IICC, Indore",
+            "image": "webinars/webinar.webp",
+            "registration_count": 118,
             "registration_link": "",
             "order": 1
         }
@@ -144,14 +144,29 @@
         "pk": 2,
         "fields": {
             "title": "Supercharge Your Personal Brand with AI",
-            "description": "<p>Learn how to leverage AI tools to build and enhance your personal brand.</p>",
-            "date": "2024-12-15",
+            "description": "Experience learning, networking, and inspiration — right at your fingertips.",
+            "date": "2025-10-11",
             "time": "2:00 PM - 4:00 PM",
-            "location": "Online",
-            "image": "",
-            "registration_count": 0,
+            "location": "IIDE Campus, Andheri",
+            "image": "webinars/webinar_u554cBF.webp",
+            "registration_count": 137,
             "registration_link": "",
             "order": 2
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 3,
+        "fields": {
+            "title": "AI Tools to Power Your Marketing Strategy",
+            "description": "Experience learning, networking, and inspiration — right at your fingertips.",
+            "date": "2025-10-13",
+            "time": "5:00 PM - 7:00 PM",
+            "location": "IIDE South Ex II, Delhi",
+            "image": "webinars/webinar_JR4gfFf.webp",
+            "registration_count": 122,
+            "registration_link": "",
+            "order": 3
         }
     },
     {
@@ -427,7 +442,7 @@
         "pk": 1,
         "fields": {
             "name": "Digital Marketing Hub (Free)",
-            "description": "<p>Join thousands of aspiring and professional digital marketers in Kerala. This free community is your gateway to networking, knowledge sharing, industry discussions, job opportunities, and collaborative learning. Perfect for beginners and experienced marketers alike.</p>",
+            "description": "Join thousands of aspiring and professional digital marketers in Kerala. This free community is your gateway to networking, knowledge sharing, industry discussions, job opportunities, and collaborative learning. Perfect for beginners and experienced marketers alike.",
             "image": "",
             "type": "free",
             "features": "",
@@ -441,7 +456,7 @@
         "pk": 2,
         "fields": {
             "name": "SEO & Content Masters (Paid)",
-            "description": "<p>An exclusive premium community for advanced marketers and students. Get access to in-depth SEO strategies, content marketing masterclasses, expert Q&A sessions, case study reviews, premium templates, tools, and direct mentorship from industry leaders.</p>",
+            "description": "An exclusive premium community for advanced marketers and students. Get access to in-depth SEO strategies, content marketing masterclasses, expert Q&A sessions, case study reviews, premium templates, tools, and direct mentorship from industry leaders.",
             "image": "",
             "type": "paid",
             "features": "",
@@ -455,7 +470,7 @@
         "pk": 3,
         "fields": {
             "name": "Freelancer's Circle (Paid)",
-            "description": "<p>A premium community exclusively for freelance digital marketers. Collaborate on projects, share client strategies, access client referrals, discuss pricing models, troubleshoot challenges, and accelerate your freelance business growth with peer support and expert guidance.</p>",
+            "description": "A premium community exclusively for freelance digital marketers. Collaborate on projects, share client strategies, access client referrals, discuss pricing models, troubleshoot challenges, and accelerate your freelance business growth with peer support and expert guidance.",
             "image": "",
             "type": "paid",
             "features": "",
@@ -469,7 +484,7 @@
         "pk": 1,
         "fields": {
             "title": "Share Your Referral Link",
-            "description": "<p>Log in to your account and get your unique referral link. Share it with your friends via email, social media, or any other platform.</p>",
+            "description": "Log in to your account and get your unique referral link. Share it with your friends via email, social media, or any other platform.",
             "icon": "",
             "order": 1
         }
@@ -479,7 +494,7 @@
         "pk": 2,
         "fields": {
             "title": "Friend Signs Up",
-            "description": "<p>When your friend signs up using your referral link and completes their first course purchase, you both get rewarded.</p>",
+            "description": "When your friend signs up using your referral link and completes their first course purchase, you both get rewarded.",
             "icon": "",
             "order": 2
         }
@@ -489,7 +504,7 @@
         "pk": 3,
         "fields": {
             "title": "Earn Rewards",
-            "description": "<p>Receive exclusive rewards and benefits for every successful referral. The more you refer, the more you earn!</p>",
+            "description": "Receive exclusive rewards and benefits for every successful referral. The more you refer, the more you earn!",
             "icon": "",
             "order": 3
         }
@@ -499,7 +514,9 @@
         "pk": 1,
         "fields": {
             "name": "Digital Marketing",
-            "slug": "digital-marketing"
+            "slug": "digital-marketing",
+            "description": "",
+            "order": 0
         }
     },
     {
@@ -507,7 +524,9 @@
         "pk": 2,
         "fields": {
             "name": "Graphic Designing",
-            "slug": "graphic-designing"
+            "slug": "graphic-designing",
+            "description": "",
+            "order": 0
         }
     },
     {
@@ -515,7 +534,9 @@
         "pk": 3,
         "fields": {
             "name": "Career Tips",
-            "slug": "career-tips"
+            "slug": "career-tips",
+            "description": "",
+            "order": 0
         }
     },
     {
@@ -523,7 +544,9 @@
         "pk": 4,
         "fields": {
             "name": "Student Success",
-            "slug": "student-success"
+            "slug": "student-success",
+            "description": "",
+            "order": 0
         }
     },
     {
@@ -531,8 +554,8 @@
         "pk": 1,
         "fields": {
             "title": "Students & Graduates",
-            "description": "<p>Kickstart your marketing career with industry-relevant skills and real-world experience.</p>",
-            "icon": "",
+            "description": "Kickstart your marketing career with industry-relevant skills and real-world experience.",
+            "icon": "audiences/students.svg",
             "order": 1
         }
     },
@@ -541,8 +564,8 @@
         "pk": 2,
         "fields": {
             "title": "Working Professionals",
-            "description": "<p>Level up your marketing expertise and advance your career with strategic insights.</p>",
-            "icon": "",
+            "description": "Level up your marketing expertise and advance your career with strategic insights.",
+            "icon": "audiences/professionals.svg",
             "order": 2
         }
     },
@@ -551,8 +574,8 @@
         "pk": 3,
         "fields": {
             "title": "Aspiring Marketers",
-            "description": "<p>Transform your passion into profession with comprehensive marketing education.</p>",
-            "icon": "",
+            "description": "Transform your passion into profession with comprehensive marketing education.",
+            "icon": "audiences/marketers.svg",
             "order": 3
         }
     },
@@ -561,8 +584,8 @@
         "pk": 4,
         "fields": {
             "title": "Business Owners",
-            "description": "<p>Master marketing strategies to grow your business and reach your target audience effectively.</p>",
-            "icon": "",
+            "description": "Master marketing strategies to grow your business and reach your target audience effectively.",
+            "icon": "audiences/business.svg",
             "order": 4
         }
     },
@@ -571,8 +594,8 @@
         "pk": 5,
         "fields": {
             "title": "Companies",
-            "description": "<p>Empower your team with cutting-edge marketing knowledge and training programs.</p>",
-            "icon": "",
+            "description": "Empower your team with cutting-edge marketing knowledge and training programs.",
+            "icon": "audiences/companies.svg",
             "order": 5
         }
     },
@@ -581,8 +604,8 @@
         "pk": 1,
         "fields": {
             "title": "Human-First Education",
-            "description": "<p>We start with people, not platforms, because understanding audiences builds better marketers.</p>",
-            "icon": "",
+            "description": "We start with people, not platforms, because understanding audiences builds better marketers.",
+            "icon": "features/group.png",
             "order": 1
         }
     },
@@ -591,8 +614,8 @@
         "pk": 2,
         "fields": {
             "title": "360° Strategic Mindset",
-            "description": "<p>Develop the ability to think end-to-end as a strategist, creator, and leader in every brief.</p>",
-            "icon": "",
+            "description": "Develop the ability to think end-to-end as a strategist, creator, and leader in every brief.",
+            "icon": "features/idea.png",
             "order": 2
         }
     },
@@ -601,8 +624,8 @@
         "pk": 3,
         "fields": {
             "title": "Actionable Learning",
-            "description": "<p>Learn by doing. Every lesson moves from concept to project to real-world outcome.</p>",
-            "icon": "",
+            "description": "Learn by doing. Every lesson moves from concept to project to real-world outcome.",
+            "icon": "features/move.png",
             "order": 3
         }
     },
@@ -611,49 +634,53 @@
         "pk": 4,
         "fields": {
             "title": "Hybrid Flexibility",
-            "description": "<p>Access world-class learning online, designed to fit your schedule, without losing personal guidance.</p>",
-            "icon": "",
+            "description": "Access world-class learning online, designed to fit your schedule, without losing personal guidance",
+            "icon": "features/flexibility.png",
             "order": 4
         }
     },
     {
-        "model": "web.feature",
-        "pk": 5,
+        "model": "web.whyus",
+        "pk": 1,
         "fields": {
             "title": "Industry Experts",
-            "description": "<p>Learn from marketing leaders who've built brands and campaigns for real businesses. Our instructors bring years of industry experience directly to your learning journey.</p>",
-            "icon": "",
-            "order": 5
+            "description": "Learn from marketing leaders who've built brands and campaigns for real businesses. Our instructors bring years of industry experience directly to your learning journey.",
+            "icon": "whyus/experts.svg",
+            "number": 1,
+            "order": 1
         }
     },
     {
-        "model": "web.feature",
-        "pk": 6,
+        "model": "web.whyus",
+        "pk": 2,
         "fields": {
             "title": "Real-World Projects",
-            "description": "<p>Build your portfolio with actual client work and case studies. Every project is designed to mirror real marketing challenges you'll face in your career.</p>",
-            "icon": "",
-            "order": 6
+            "description": "Build your portfolio with actual client work and case studies. Every project is designed to mirror real marketing challenges you'll face in your career.",
+            "icon": "whyus/projects.svg",
+            "number": 2,
+            "order": 2
         }
     },
     {
-        "model": "web.feature",
-        "pk": 7,
+        "model": "web.whyus",
+        "pk": 3,
         "fields": {
             "title": "Career Support",
-            "description": "<p>Get personalized career guidance, job placement assistance, and access to our professional network of marketing leaders and hiring managers.</p>",
-            "icon": "",
-            "order": 7
+            "description": "Get personalized career guidance, job placement assistance, and access to our professional network of marketing leaders and hiring managers.",
+            "icon": "whyus/career.svg",
+            "number": 3,
+            "order": 3
         }
     },
     {
-        "model": "web.feature",
-        "pk": 8,
+        "model": "web.whyus",
+        "pk": 4,
         "fields": {
             "title": "Lifetime Support",
-            "description": "<p>Our commitment to your career doesn't end at graduation. Enjoy lifetime access to our career services.</p>",
-            "icon": "",
-            "order": 8
+            "description": "Our commitment to your career doesn't end at graduation. Enjoy lifetime access to our career services.",
+            "icon": "whyus/support.svg",
+            "number": 4,
+            "order": 4
         }
     },
     {
@@ -906,36 +933,6 @@
         "fields": {
             "name": "eduzet",
             "logo": "partners/partners/eduzet.png"
-        }
-    },
-    {
-        "model": "web.blogpost",
-        "pk": 1,
-        "fields": {
-            "title": "5 Digital Marketing Trends You Can’t Ignore in 2025",
-            "summary": "Passionate about spotting future trends, this writer shares insights on the strategies and tools shaping the next wave of digital marketing",
-            "featured_image": "blog/blog1.jpg",
-            "date": "2025-10-18"
-        }
-    },
-    {
-        "model": "web.blogpost",
-        "pk": 2,
-        "fields": {
-            "title": "The Power of Personalization: How to Win Customers Online",
-            "summary": "Focused on customer-first strategies, this author explores how personalization turns casual visitors into loyal buyers.",
-            "featured_image": "blog/blog2.jpg",
-            "date": "2025-10-18"
-        }
-    },
-    {
-        "model": "web.blogpost",
-        "pk": 3,
-        "fields": {
-            "title": "Social Media Ads vs. SEO: Where Should You Invest?",
-            "summary": "Specializing in smart marketing decisions, this writer breaks down where businesses can get the best returns online",
-            "featured_image": "blog/blog3.jpg",
-            "date": "2025-10-18"
         }
     },
     {

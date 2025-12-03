@@ -9,9 +9,11 @@
         <div class="row justify-content-center align-items-center" data-cue="fadeIn">
             <div class="col-lg-6 col-md-12">
                 <div class="page-banner-content faq-banner-content-v2">
-                  
+
                     <h2>Got Questions? We've Got Answers</h2>
-                    <p>Everything you need to know about our programs, enrollment process, learning experience, and career support. Find instant answers to help you make the right decision for your marketing journey.</p>
+                    <p>Everything you need to know about our programs, enrollment process, learning experience, and
+                        career support. Find instant answers to help you make the right decision for your marketing
+                        journey.</p>
                     <div class="faq-quick-links">
                         <a href="#enrollment-section" class="faq-link-item">
                             <i class="bi bi-clipboard-check"></i>
@@ -58,534 +60,52 @@
 <!-- FAQ Categories Section -->
 <div class="faq-area ptb-150">
     <div class="container">
-        <!-- Enrollment & Admissions -->
-        <div id="enrollment-section" class="row justify-content-center align-items-center mb-5" data-cues="slideInUp">
+        {% for category in categories %}
+        <!-- {{ category.name }} -->
+        <div id="{{ category.name|slugify }}-section" class="row justify-content-center align-items-center mb-5"
+            data-cues="slideInUp">
             <div class="col-lg-12">
                 <div class="faq-accordion">
                     <h3 class="mb-4">
-                        <i class="bi bi-clipboard-check me-2"></i>
-                        Enrollment & Admissions
+                        <i class="bi bi-{{ forloop.counter|default:'question' }}-circle me-2"></i>
+                        {{ category.name }}
                     </h3>
 
-                    <div class="accordion" id="enrollmentAccordion">
+                    <div class="accordion" id="accordion{{ category.id }}">
+                        {% for faq in category.faqs.all %}
                         <div class="accordion-item">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#enroll-1" aria-expanded="true" aria-controls="enroll-1">
-                                Who can enroll in the Digital Marketing Specialisation Programme?
+                            <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}"
+                                type="button" data-bs-toggle="collapse"
+                                data-bs-target="#faq-{{ category.id }}-{{ faq.id }}"
+                                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                                aria-controls="faq-{{ category.id }}-{{ faq.id }}">
+                                {{ faq.question }}
                             </button>
-                            <div id="enroll-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#enrollmentAccordion">
+                            <div id="faq-{{ category.id }}-{{ faq.id }}"
+                                class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                                data-bs-parent="#accordion{{ category.id }}">
                                 <div class="accordion-body">
-                                    <p>Our programme is designed for anyone passionate about marketing, including:</p>
-                                    <ul>
-                                        <li><strong>Aspiring marketers</strong> looking to start their career</li>
-                                        <li><strong>Students and recent graduates</strong> wanting industry-relevant skills</li>
-                                        <li><strong>Working professionals</strong> seeking to upskill or transition into marketing</li>
-                                        <li><strong>Business owners</strong> wanting to master marketing for their business</li>
-                                        <li><strong>Freelancers and entrepreneurs</strong> looking to expand their capabilities</li>
-                                    </ul>
-                                    <p>No prior marketing experience is required. We start from the fundamentals and build up to advanced strategies.</p>
+                                    {{ faq.answer|safe }}
                                 </div>
                             </div>
                         </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#enroll-2" aria-expanded="false" aria-controls="enroll-2">
-                                How do I apply for the programme?
-                            </button>
-                            <div id="enroll-2" class="accordion-collapse collapse" data-bs-parent="#enrollmentAccordion">
-                                <div class="accordion-body">
-                                    <p>Applying is simple! You can:</p>
-                                    <ol>
-                                        <li>Fill out the enrollment form on our website</li>
-                                        <li>Schedule a free consultation call with our team</li>
-                                        <li>Complete the application process (including any required documents)</li>
-                                        <li>Receive confirmation and payment details</li>
-                                    </ol>
-                                    <p>Our admissions team will guide you through each step and answer any questions you may have. You can also contact us directly via phone or email for personalized assistance.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#enroll-3" aria-expanded="false" aria-controls="enroll-3">
-                                What are the admission requirements?
-                            </button>
-                            <div id="enroll-3" class="accordion-collapse collapse" data-bs-parent="#enrollmentAccordion">
-                                <div class="accordion-body">
-                                    <p>Our programme has minimal entry requirements to make quality marketing education accessible:</p>
-                                    <ul>
-                                        <li>High school diploma or equivalent (minimum education)</li>
-                                        <li>Basic computer literacy and internet access</li>
-                                        <li>Commitment to complete the 6-month programme</li>
-                                        <li>Passion for marketing and willingness to learn</li>
-                                    </ul>
-                                    <p>We believe in potential and dedication over formal qualifications. During the consultation, we'll assess your fit and help determine if this programme is right for you.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#enroll-4" aria-expanded="false" aria-controls="enroll-4">
-                                Is there an application deadline?
-                            </button>
-                            <div id="enroll-4" class="accordion-collapse collapse" data-bs-parent="#enrollmentAccordion">
-                                <div class="accordion-body">
-                                    <p>We run multiple cohorts throughout the year. While we have intake periods, we recommend applying early as seats fill up quickly. Our cohorts typically start every few months, and we can inform you about upcoming batch dates during your consultation.</p>
-                                    <p>Early enrollment often comes with benefits like access to pre-programme materials and networking opportunities with fellow learners.</p>
-                                </div>
-                            </div>
-                        </div>
+                        {% empty %}
+                        <p class="text-muted">No questions available in this category yet.</p>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Course Details -->
-        <div id="course-section" class="row justify-content-center align-items-center mb-5" data-cues="slideInUp">
-            <div class="col-lg-12 col-md-12">
-                <div class="faq-accordion">
-                    <h3 class="mb-4">
-                        <i class="bi bi-book me-2"></i>
-                        Course Details
-                    </h3>
-
-                    <div class="accordion" id="courseAccordion">
-                        <div class="accordion-item">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#course-1" aria-expanded="true" aria-controls="course-1">
-                                How long is the programme and what is the schedule?
-                            </button>
-                            <div id="course-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#courseAccordion">
-                                <div class="accordion-body">
-                                    <p>The Digital Marketing Specialisation Programme is a <strong>6-month intensive course</strong> delivered in a flexible online format. This allows you to:</p>
-                                    <ul>
-                                        <li>Learn at your own pace while following a structured curriculum</li>
-                                        <li>Attend live sessions and access recorded content</li>
-                                        <li>Balance learning with work or other commitments</li>
-                                        <li>Access course materials 24/7 from anywhere</li>
-                                    </ul>
-                                    <p>You can expect approximately 10-15 hours of learning per week, including live sessions, assignments, and project work.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#course-2" aria-expanded="false" aria-controls="course-2">
-                                What topics are covered in the curriculum?
-                            </button>
-                            <div id="course-2" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
-                                <div class="accordion-body">
-                                    <p>Our comprehensive curriculum covers the entire digital marketing spectrum:</p>
-                                    <ul>
-                                        <li><strong>Marketing Fundamentals:</strong> Consumer psychology, brand building, marketing strategy</li>
-                                        <li><strong>Content Marketing:</strong> Content creation, storytelling, content strategy</li>
-                                        <li><strong>Social Media Marketing:</strong> Platform strategies, community management, social advertising</li>
-                                        <li><strong>Search Engine Optimization (SEO):</strong> On-page/off-page SEO, technical SEO, local SEO</li>
-                                        <li><strong>Pay-Per-Click (PPC):</strong> Google Ads, Facebook Ads, display advertising</li>
-                                        <li><strong>Email Marketing:</strong> Automation, segmentation, campaign optimization</li>
-                                        <li><strong>Analytics & Measurement:</strong> Google Analytics, data interpretation, ROI tracking</li>
-                                        <li><strong>Marketing Automation:</strong> CRM tools, workflow automation</li>
-                                        <li><strong>E-commerce Marketing:</strong> Online store optimization, conversion strategies</li>
-                                    </ul>
-                                    <p>Plus hands-on projects using industry-standard tools and certifications.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#course-3" aria-expanded="false" aria-controls="course-3">
-                                Will I receive any certifications?
-                            </button>
-                            <div id="course-3" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes! Upon successful completion, you'll receive:</p>
-                                    <ul>
-                                        <li><strong>360 Marketing School Certificate of Completion</strong> - validating your comprehensive digital marketing expertise</li>
-                                        <li><strong>Industry Tool Certifications</strong> - including Google Analytics, Google Ads, Facebook Blueprint, and more</li>
-                                        <li><strong>Project Portfolio</strong> - real-world projects demonstrating your skills</li>
-                                    </ul>
-                                    <p>These certifications are recognized by employers and can significantly boost your career prospects. You'll also have a professional portfolio to showcase during job interviews.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#course-4" aria-expanded="false" aria-controls="course-4">
-                                What tools and platforms will I learn to use?
-                            </button>
-                            <div id="course-4" class="accordion-collapse collapse" data-bs-parent="#courseAccordion">
-                                <div class="accordion-body">
-                                    <p>You'll gain hands-on experience with industry-leading tools including:</p>
-                                    <ul>
-                                        <li><strong>Analytics:</strong> Google Analytics, Facebook Analytics, social media insights</li>
-                                        <li><strong>Advertising:</strong> Google Ads, Facebook Ads Manager, LinkedIn Ads</li>
-                                        <li><strong>SEO Tools:</strong> Google Search Console, SEMrush, Ahrefs (overview)</li>
-                                        <li><strong>Content:</strong> Canva, video editing tools, content management systems</li>
-                                        <li><strong>Email Marketing:</strong> Mailchimp, Sendinblue, marketing automation platforms</li>
-                                        <li><strong>Social Media:</strong> Hootsuite, Buffer, native platform tools</li>
-                                        <li><strong>CRM:</strong> HubSpot, Salesforce (overview)</li>
-                                    </ul>
-                                    <p>We provide access to many of these tools during the programme, ensuring you learn with real platforms used in the industry.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        {% empty %}
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <p class="text-muted">No FAQ categories available at the moment. Please check back later.</p>
             </div>
         </div>
-
-        <!-- Learning Experience -->
-        <div class="row justify-content-center align-items-center mb-5" data-cues="slideInUp">
-            <div class="col-lg-12 col-md-12 order-2 order-lg-1">
-                <div class="faq-accordion">
-                    <h3 class="mb-4">
-                        <i class="bi bi-person-workspace me-2"></i>
-                        Learning Experience
-                    </h3>
-
-                    <div class="accordion" id="learningAccordion">
-                        <div class="accordion-item">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#learn-1" aria-expanded="true" aria-controls="learn-1">
-                                How is the course delivered? Is it self-paced or instructor-led?
-                            </button>
-                            <div id="learn-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#learningAccordion">
-                                <div class="accordion-body">
-                                    <p>Our programme combines the best of both worlds with a <strong>hybrid approach</strong>:</p>
-                                    <ul>
-                                        <li><strong>Live Sessions:</strong> Regular interactive sessions with industry experts and mentors</li>
-                                        <li><strong>Recorded Content:</strong> On-demand video lessons you can watch anytime</li>
-                                        <li><strong>Hands-on Projects:</strong> Real-world assignments and case studies</li>
-                                        <li><strong>Peer Learning:</strong> Collaborative activities with fellow students</li>
-                                        <li><strong>Mentor Support:</strong> One-on-one guidance and feedback sessions</li>
-                                    </ul>
-                                    <p>This flexible approach lets you learn at your own pace while maintaining structure and ensuring you stay on track. Live sessions are recorded, so you never miss out.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#learn-2" aria-expanded="false" aria-controls="learn-2">
-                                Who will be teaching the courses?
-                            </button>
-                            <div id="learn-2" class="accordion-collapse collapse" data-bs-parent="#learningAccordion">
-                                <div class="accordion-body">
-                                    <p>You'll learn from industry veterans and guest mentors who bring real-world expertise:</p>
-                                    <ul>
-                                        <li><strong>Core Faculty:</strong> Experienced marketing professionals with proven track records</li>
-                                        <li><strong>Guest Mentors:</strong> Marketing leaders from top companies sharing current industry insights</li>
-                                        <li><strong>Industry Experts:</strong> Specialists in SEO, PPC, content marketing, and more</li>
-                                    </ul>
-                                    <p>Our instructors have worked with leading brands and agencies, bringing practical knowledge and current trends directly to your learning experience. They're not just teachers—they're active practitioners who understand today's marketing landscape.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#learn-3" aria-expanded="false" aria-controls="learn-3">
-                                What kind of projects will I work on?
-                            </button>
-                            <div id="learn-3" class="accordion-collapse collapse" data-bs-parent="#learningAccordion">
-                                <div class="accordion-body">
-                                    <p>You'll complete hands-on projects that mirror real marketing challenges:</p>
-                                    <ul>
-                                        <li><strong>Campaign Planning:</strong> Develop complete marketing strategies for real brands</li>
-                                        <li><strong>Content Creation:</strong> Create blogs, social media content, and video campaigns</li>
-                                        <li><strong>SEO Projects:</strong> Optimize websites and conduct comprehensive SEO audits</li>
-                                        <li><strong>Paid Advertising:</strong> Set up and manage actual ad campaigns</li>
-                                        <li><strong>Analytics Projects:</strong> Analyze data and create actionable insights reports</li>
-                                        <li><strong>Portfolio Building:</strong> Showcase your work in a professional portfolio</li>
-                                    </ul>
-                                    <p>These projects become part of your portfolio, demonstrating your skills to potential employers. Many students have secured jobs by showcasing their course projects.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#learn-4" aria-expanded="false" aria-controls="learn-4">
-                                What if I fall behind or need extra help?
-                            </button>
-                            <div id="learn-4" class="accordion-collapse collapse" data-bs-parent="#learningAccordion">
-                                <div class="accordion-body">
-                                    <p>We provide comprehensive support to ensure your success:</p>
-                                    <ul>
-                                        <li><strong>Dedicated Support Team:</strong> Available to answer questions and provide guidance</li>
-                                        <li><strong>Mentor Sessions:</strong> One-on-one meetings to address specific challenges</li>
-                                        <li><strong>Peer Community:</strong> Connect with classmates for collaboration and support</li>
-                                        <li><strong>Flexible Timeline:</strong> Access to course materials extends beyond programme completion</li>
-                                        <li><strong>Office Hours:</strong> Regular Q&A sessions with instructors</li>
-                                    </ul>
-                                    <p>We understand that everyone learns at different paces. Our team is committed to helping you succeed, whether you need clarification on concepts or help balancing coursework with other commitments.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-           
-        </div>
-
-        <!-- Career Support & Outcomes -->
-        <div id="career-section" class="row justify-content-center align-items-center mb-5" data-cues="slideInUp">
-            <div class="col-lg-12">
-                <div class="faq-accordion">
-                    <h3 class="mb-4">
-                        <i class="bi bi-briefcase me-2"></i>
-                        Career Support & Outcomes
-                    </h3>
-
-                    <div class="accordion" id="careerAccordion">
-                        <div class="accordion-item">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#career-1" aria-expanded="true" aria-controls="career-1">
-                                What kind of career support do you provide?
-                            </button>
-                            <div id="career-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#careerAccordion">
-                                <div class="accordion-body">
-                                    <p>Our comprehensive career support includes:</p>
-                                    <ul>
-                                        <li><strong>Resume & Portfolio Review:</strong> Get feedback on your professional materials</li>
-                                        <li><strong>Interview Preparation:</strong> Mock interviews and coaching sessions</li>
-                                        <li><strong>Job Placement Assistance:</strong> Access to our network of hiring partners</li>
-                                        <li><strong>Career Counseling:</strong> Personalized guidance on career paths and opportunities</li>
-                                        <li><strong>Networking Events:</strong> Connect with industry professionals and alumni</li>
-                                        <li><strong>LinkedIn Profile Optimization:</strong> Enhance your online professional presence</li>
-                                        <li><strong>Alumni Network:</strong> Join a community of successful marketing professionals</li>
-                                    </ul>
-                                    <p>We're invested in your career success beyond just education. Many of our graduates land positions at top companies, start their own agencies, or advance in their current roles.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#career-2" aria-expanded="false" aria-controls="career-2">
-                                What job opportunities are available after completion?
-                            </button>
-                            <div id="career-2" class="accordion-collapse collapse" data-bs-parent="#careerAccordion">
-                                <div class="accordion-body">
-                                    <p>Graduates pursue diverse roles across the marketing spectrum:</p>
-                                    <ul>
-                                        <li><strong>Digital Marketing Specialist:</strong> Manage end-to-end digital campaigns</li>
-                                        <li><strong>Social Media Manager:</strong> Lead social media strategy and execution</li>
-                                        <li><strong>SEO/SEM Specialist:</strong> Optimize visibility and manage paid advertising</li>
-                                        <li><strong>Content Marketing Manager:</strong> Develop and execute content strategies</li>
-                                        <li><strong>Marketing Analyst:</strong> Analyze data and provide strategic insights</li>
-                                        <li><strong>Email Marketing Specialist:</strong> Design and optimize email campaigns</li>
-                                        <li><strong>Marketing Coordinator:</strong> Support marketing initiatives across channels</li>
-                                        <li><strong>Freelancer/Consultant:</strong> Start your own marketing consultancy</li>
-                                    </ul>
-                                    <p>Our hiring partners actively recruit from our alumni network, and many graduates also successfully find positions through our career support services.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#career-3" aria-expanded="false" aria-controls="career-3">
-                                Can I get help finding a job after graduation?
-                            </button>
-                            <div id="career-3" class="accordion-collapse collapse" data-bs-parent="#careerAccordion">
-                                <div class="accordion-body">
-                                    <p>Absolutely! Our career services team provides ongoing support:</p>
-                                    <ul>
-                                        <li><strong>Job Board Access:</strong> Exclusive listings from our hiring partners</li>
-                                        <li><strong>Referral Program:</strong> Direct referrals to companies in our network</li>
-                                        <li><strong>Career Workshops:</strong> Resume writing, interview skills, salary negotiation</li>
-                                        <li><strong>Portfolio Showcase:</strong> Present your work to potential employers</li>
-                                        <li><strong>Alumni Mentorship:</strong> Connect with graduates working in your target companies</li>
-                                    </ul>
-                                    <p>While we can't guarantee job placement, we provide all the tools and support to maximize your chances of success. Many of our alumni attribute their career growth to the skills and connections gained through our programme.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pricing & Payment -->
-        <div class="row justify-content-center align-items-center mb-5" data-cues="slideInUp">
-            <div class="col-lg-12 col-md-12">
-                <div class="faq-accordion">
-                    <h3 class="mb-4">
-                        <i class="bi bi-credit-card me-2"></i>
-                        Pricing & Payment
-                    </h3>
-
-                    <div class="accordion" id="pricingAccordion">
-                        <div class="accordion-item">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#price-1" aria-expanded="true" aria-controls="price-1">
-                                What is the cost of the programme?
-                            </button>
-                            <div id="price-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#pricingAccordion">
-                                <div class="accordion-body">
-                                    <p>We offer competitive pricing for our comprehensive 6-month programme. The investment includes:</p>
-                                    <ul>
-                                        <li>All course materials and content</li>
-                                        <li>Live sessions with industry experts</li>
-                                        <li>Access to marketing tools and platforms</li>
-                                        <li>Certifications and portfolio support</li>
-                                        <li>Career guidance and job placement assistance</li>
-                                        <li>Lifetime access to course materials (with certain restrictions)</li>
-                                    </ul>
-                                    <p>For current pricing and any special offers, please schedule a consultation call or contact our admissions team. We also offer flexible payment plans and scholarships for eligible students.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#price-2" aria-expanded="false" aria-controls="price-2">
-                                Are payment plans available?
-                            </button>
-                            <div id="price-2" class="accordion-collapse collapse" data-bs-parent="#pricingAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes! We understand that investing in education is significant. We offer flexible payment options:</p>
-                                    <ul>
-                                        <li><strong>Full Payment:</strong> Pay upfront and often receive a discount</li>
-                                        <li><strong>Installment Plans:</strong> Spread payments over the course duration</li>
-                                        <li><strong>Scholarships:</strong> Need-based and merit-based financial aid</li>
-                                        <li><strong>Early Bird Discounts:</strong> Special pricing for early enrollment</li>
-                                    </ul>
-                                    <p>During your consultation, our team will discuss payment options that work best for your situation. We're committed to making quality marketing education accessible.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#price-3" aria-expanded="false" aria-controls="price-3">
-                                What is your refund policy?
-                            </button>
-                            <div id="price-3" class="accordion-collapse collapse" data-bs-parent="#pricingAccordion">
-                                <div class="accordion-body">
-                                    <p>We have a fair refund policy designed to protect both students and the school:</p>
-                                    <ul>
-                                        <li><strong>Early Withdrawal:</strong> Full or partial refund within the first 14 days (terms apply)</li>
-                                        <li><strong>Special Circumstances:</strong> Refunds may be considered on a case-by-case basis for documented emergencies</li>
-                                        <li><strong>Programme Cancellation:</strong> Full refund if we cancel the programme</li>
-                                    </ul>
-                                    <p>We encourage students to carefully consider their commitment before enrolling. However, we also understand that circumstances can change. Our admissions team can provide detailed information about our refund policy during your consultation.</p>
-                                    <p><em>Note: Terms and conditions apply. Please refer to our official policy document for complete details.</em></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- General Questions -->
-        <div class="row justify-content-center align-items-center" data-cues="slideInUp">
-            <div class="col-lg-12">
-                <div class="faq-accordion">
-                    <h3 class="mb-4">
-                        <i class="bi bi-question-circle me-2"></i>
-                        General Questions
-                    </h3>
-
-                    <div class="accordion" id="generalAccordion">
-                        <div class="accordion-item">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#general-1" aria-expanded="true" aria-controls="general-1">
-                                What makes 360 Marketing School different from other marketing courses?
-                            </button>
-                            <div id="general-1" class="accordion-collapse collapse show"
-                                data-bs-parent="#generalAccordion">
-                                <div class="accordion-body">
-                                    <p>Our unique approach sets us apart:</p>
-                                    <ul>
-                                        <li><strong>Human-First Philosophy:</strong> We focus on understanding people, not just algorithms or tools</li>
-                                        <li><strong>360° Strategic Mindset:</strong> We teach end-to-end thinking, not just isolated tactics</li>
-                                        <li><strong>Practical Learning:</strong> Every concept is applied through real projects, not just theory</li>
-                                        <li><strong>Industry Connections:</strong> Learn from active practitioners and guest mentors from top companies</li>
-                                        <li><strong>Career Focus:</strong> Comprehensive support beyond just education</li>
-                                        <li><strong>Flexible Yet Structured:</strong> Balance learning with your life commitments</li>
-                                    </ul>
-                                    <p>We don't just teach marketing—we develop marketers who can think strategically, create effectively, and lead confidently.</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#general-2" aria-expanded="false" aria-controls="general-2">
-                                Do I need any prior experience or technical skills?
-                            </button>
-                            <div id="general-2" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
-                                <div class="accordion-body">
-                                    <p>No prior marketing experience is required! Our programme is designed for:</p>
-                                    <ul>
-                                        <li><strong>Beginners:</strong> We start from the fundamentals</li>
-                                        <li><strong>Career Changers:</strong> Transition smoothly into marketing from other fields</li>
-                                        <li><strong>Skill Enhancers:</strong> Professionals looking to add marketing expertise</li>
-                                    </ul>
-                                    <p>Basic computer literacy (using a web browser, basic software) and reliable internet access are the main requirements. We'll teach you everything else, from marketing concepts to using professional tools.</p>
-                                    <p>If you're passionate about marketing and committed to learning, you're ready to start!</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#general-3" aria-expanded="false" aria-controls="general-3">
-                                Can I access course materials after the programme ends?
-                            </button>
-                            <div id="general-3" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
-                                <div class="accordion-body">
-                                    <p>Yes! We provide extended access to course materials so you can:</p>
-                                    <ul>
-                                        <li><strong>Review Content:</strong> Revisit lessons and resources anytime</li>
-                                        <li><strong>Stay Updated:</strong> Access updated materials as the curriculum evolves</li>
-                                        <li><strong>Reference Materials:</strong> Use resources for ongoing projects and work</li>
-                                    </ul>
-                                    <p>While live sessions and instructor access are limited to the programme duration, most course materials remain available for future reference. This ensures your continued growth even after graduation.</p>
-                                    <p><em>Note: Access terms may vary. Please confirm specific details during enrollment.</em></p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="accordion-item">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#general-4" aria-expanded="false" aria-controls="general-4">
-                                How do I get started or learn more?
-                            </button>
-                            <div id="general-4" class="accordion-collapse collapse" data-bs-parent="#generalAccordion">
-                                <div class="accordion-body">
-                                    <p>Getting started is easy! Here are your options:</p>
-                                    <ol>
-                                        <li><strong>Schedule a Free Consultation:</strong> Speak with our admissions team about your goals and how our programme can help</li>
-                                        <li><strong>Attend an Information Session:</strong> Join our webinars or open house events</li>
-                                        <li><strong>Contact Us:</strong> Reach out via phone, email, or our contact form</li>
-                                        <li><strong>Explore Our Website:</strong> Check out course details, mentor profiles, and success stories</li>
-                                    </ol>
-                                    <p>We're here to answer all your questions and help you make an informed decision. Don't hesitate to reach out—we'd love to discuss how we can help you achieve your marketing career goals!</p>
-                                    <p><strong>Ready to start your marketing journey? <a href="/contact" class="text-primary">Contact us today</a>!</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
+
 
 <!-- CTA Section -->
 <div class="faq-cta-area ptb-100" style="background-color: #f8f9fa;">
@@ -593,10 +113,12 @@
         <div class="row justify-content-center" data-cues="slideInUp">
             <div class="col-lg-8 text-center">
                 <h3 class="mb-3">Still Have Questions?</h3>
-                <p class="mb-4">We're here to help! Get in touch with our team for personalized guidance and answers to any specific questions you may have.</p>
+                <p class="mb-4">We're here to help! Get in touch with our team for personalized guidance and answers to
+                    any specific questions you may have.</p>
                 <div class="d-flex gap-3 justify-content-center flex-wrap">
                     <a href="/contact" class="default-btn">Contact Us</a>
-                    <a href="#" class="default-btn border" data-bs-toggle="modal" data-bs-target="#event1Modal">Free Consultation</a>
+                    <a href="#" class="default-btn border" data-bs-toggle="modal" data-bs-target="#event1Modal">Free
+                        Consultation</a>
                 </div>
             </div>
         </div>

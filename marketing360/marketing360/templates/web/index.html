@@ -52,18 +52,47 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-3 contact-form-inner px-3 pb-3 pt-0">
-                <form class="contact-form p-4">
+                {% if messages %}
+                <div class="p-4 pt-0">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <form class="contact-form p-4" method="post">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                        <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="phone" class="form-control" placeholder="Phone">
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                        <div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="subject" class="form-control" placeholder="Subject">
+                        {{ form.subject }}
+                        {% if form.subject.errors %}
+                        <div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                        <div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <button class="default-btn" type="submit">Submit Now</button>
                 </form>
@@ -95,19 +124,20 @@
 </div>
 <!-- End Practical Programs Area -->
 
+
 <!-- Start Overview Area -->
 <div class="overview-area pt-5 pb-125">
     <div class="container-fluid">
         <div class="row justify-content-center" data-cues="slideInUp">
             <div class="col-xl-10 col-md-12 mx-auto">
+                {% for course in courses %}
                 <div class="overview-card">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="content pe-4">
                                 <span class="label">Job Ready Program</span>
-                                <h3>Digital Marketing Courses</h3>
-                                <p>For anyone from aspiring marketers, career-focused students, sales professionals, social media enthusiasts, freelancers, to business owners, learn to strategise, execute, and grow in digital marketing
-                                </p>
+                                <h3>{{ course.title }}</h3>
+                                <div>{{ course.description|safe }}</div>
                                 <span class="spacer_sm"></span>
 
                                 <div class="d-flex course_info">
@@ -122,8 +152,8 @@
                                             </svg>
                                         </span>
                                         <div class="group">
-                                            <span class="group_label">Duration</span>
-                                            <span class="group_value">6 Months</span>
+                                            <span class="group_label">Mode</span>
+                                            <span class="group_value">{{ course.mode }}</span>
                                         </div>
                                     </div>
                                     <div class="group flexgroup">
@@ -137,8 +167,8 @@
                                             </svg>
                                         </span>
                                         <div class="grop">
-                                            <span class="group_label">Internship</span>
-                                            <span class="group_value">2 Months</span>
+                                            <span class="group_label">Duration</span>
+                                            <span class="group_value">{{ course.duration }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -154,10 +184,23 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="/static/web/images/main/course.png" alt="image">
+                            {% if course.image %}
+                            <img src="{{ course.image.url }}" alt="{{ course.title }}">
+                            {% else %}
+                            <img src="/static/web/images/main/course.png" alt="{{ course.title }}">
+                            {% endif %}
                         </div>
                     </div>
                 </div>
+                {% empty %}
+                <div class="overview-card">
+                    <div class="row">
+                        <div class="col-md-12 text-center">
+                            <p class="text-muted">No courses available at the moment. Please check back later.</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
 
                 {% comment %}
                 <div class="overview-card">
@@ -563,18 +606,35 @@
                             <h2>Get In Touch</h2>
                             <p>Fill in your information and we'll be in touch as soon as we can</p>
                         </div>
-                        <form class="modern-contact-form">
+                        {% if messages %}
+                        <div class="mb-4">
+                            {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <form class="modern-contact-form" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-name">Name</label>
-                                        <input type="text" id="contact-name" class="form-control" placeholder="Enter your name" required>
+                                        {{ form.name }}
+                                        {% if form.name.errors %}
+                                        <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-phone">Phone</label>
-                                        <input type="tel" id="contact-phone" class="form-control" placeholder="Enter your phone number" required>
+                                        {{ form.phone }}
+                                        {% if form.phone.errors %}
+                                        <div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -582,19 +642,28 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-email">Email</label>
-                                        <input type="email" id="contact-email" class="form-control" placeholder="Enter your email" required>
+                                        {{ form.email }}
+                                        {% if form.email.errors %}
+                                        <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-subject">Subject</label>
-                                        <input type="text" id="contact-subject" class="form-control" placeholder="What is this regarding?" required>
+                                        {{ form.subject }}
+                                        {% if form.subject.errors %}
+                                        <div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="contact-message">Message</label>
-                                <textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                                {{ form.message }}
+                                {% if form.message.errors %}
+                                <div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>
+                                {% endif %}
                             </div>
                             <div class="form-submit">
                                 <button class="default-btn modern-submit-btn" type="submit">

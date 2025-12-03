@@ -24,17 +24,15 @@
     <div class="container-fluid">
         <div class="row justify-content-center" data-cues="slideInUp">
             <div class="col-xl-10 col-md-12 mx-auto">
+                {% for course in courses %}
                 <div class="overview-card">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="content pe-4">
                                 <span class="label">Job Ready Program</span>
-                                <h3>Digital Marketing Specialisation Cohort Programme</h3>
-                                <p>
-                                    For anyone from aspiring marketers, career-focused students, sales professionals,
-                                    social media enthusiasts, freelancers, to business owners, learn to strategise,
-                                    execute, and grow in digital marketing.
-                                </p>
+                                {% if course %}
+                                <h3>{{ course.title }}</h3>
+                                <div>{{ course.description|safe }}</div>
                                 <span class="spacer_sm"></span>
 
                                 <div class="d-flex course_info bg-transparent mt-0 p-0">
@@ -44,7 +42,7 @@
                                         </span>
                                         <div class="group">
                                             <span class="group_label">Mode</span>
-                                            <span class="group_value">Online</span>
+                                            <span class="group_value">{{ course.mode }}</span>
                                         </div>
                                     </div>
                                     <div class="group flexgroup">
@@ -53,10 +51,11 @@
                                         </span>
                                         <div class="grop">
                                             <span class="group_label">Duration</span>
-                                            <span class="group_value">6 Months</span>
+                                            <span class="group_value">{{ course.duration }}</span>
                                         </div>
                                     </div>
                                 </div>
+                                {% endif %}
 
                                 <div class="d-flex gap-2 w-100">
                                     <div class="overview-btn w-50">
@@ -69,10 +68,11 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <img src="/static/web/images/main/course.png" alt="image">
+                            <img src="{{course.image.url}}" alt="image">
                         </div>
                     </div>
                 </div>
+                {% endfor %}
 
             </div>
         </div>
@@ -221,87 +221,46 @@
                 </div>
                 <div class="swiper webinarSwiper position-relative">
                     <div class="swiper-wrapper">
-
-                        <!-- Slide 1 -->
+                        {% for webinar in webinars %}
+                        <!-- Slide {{ forloop.counter }} -->
                         <div class="swiper-slide">
                             <div
                                 class="card border-0 shadow-sm overflow-hidden rounded-4 d-flex flex-column flex-md-row">
+                                {% if webinar.image %}
                                 <div class="d-none d-md-block col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/event-card_indore-2fcffed994dc00f50c0ab5b96475ab19.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Event 1">
+                                    <img src="{{ webinar.image.url }}"
+                                        class="img-fluid h-100 w-100 object-fit-cover" alt="{{ webinar.title }}">
                                 </div>
-                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
+                                {% endif %}
+                                <div class="p-4 {% if webinar.image %}col-md-8{% else %}col-12{% endif %} d-flex flex-column justify-content-between">
                                     <div>
-                                        <span class="badge bg-primary-subtle text-primary mb-2">Offline</span>
-                                        <h4 class="fw-semibold">Scale Faster with Digital Marketing</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Oct 11, 2025 &nbsp; |
-                                            &nbsp; 4:00 PM - 6:00 PM</p>
-                                        <p class="small mb-3"><i class="bi bi-geo-alt"></i> IICC, Indore</p>
+                                        <span class="badge bg-primary-subtle text-primary mb-2">{{ webinar.location }}</span>
+                                        <h4 class="fw-semibold">{{ webinar.title }}</h4>
+                                        <p class="small mb-2"><i class="bi bi-calendar"></i> {{ webinar.date|date:"M d, Y" }} &nbsp; |
+                                            &nbsp; {{ webinar.time }}</p>
+                                        <p class="small mb-3"><i class="bi bi-geo-alt"></i> {{ webinar.location }}</p>
                                     </div>
                                     <div class="border-top pt-3 d-flex justify-content-between align-items-center">
-                                        <p class="small mb-0"><b>118</b> People Registered</p>
+                                        <p class="small mb-0"><b>{{ webinar.registration_count }}</b> People Registered</p>
                                         <button class="default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event1Modal">
+                                            data-bs-target="#event{{ forloop.counter }}Modal">
                                             Register Now
                                         </button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Slide 2 -->
+                        {% empty %}
+                        <!-- Default Slide if no webinars -->
                         <div class="swiper-slide">
                             <div
                                 class="card border-0 shadow-sm overflow-hidden rounded-4 d-flex flex-column flex-md-row">
-                                <div class="d-none d-md-block col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/akash-gogri--1--d353ffa5db19eb9b959559016ef31bb5.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Event 2">
-                                </div>
-                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <span class="badge bg-primary-subtle text-primary mb-2">Offline</span>
-                                        <h4 class="fw-semibold">Supercharge Your Personal Brand with AI</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Oct 11, 2025 &nbsp; |
-                                            &nbsp; 2:00 PM - 4:00 PM</p>
-                                        <p class="small mb-3"><i class="bi bi-geo-alt"></i> IIDE Campus, Andheri</p>
-                                    </div>
-                                    <div class="border-top pt-3 d-flex justify-content-between align-items-center">
-                                        <p class="small mb-0"><b>137</b> People Registered</p>
-                                        <button class="default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event2Modal">
-                                            Register Now
-                                        </button>
-                                    </div>
+                                <div class="p-4 col-12 d-flex flex-column justify-content-center align-items-center">
+                                    <p class="text-muted">No upcoming webinars at the moment.</p>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Slide 3 -->
-                        <div class="swiper-slide">
-                            <div
-                                class="card border-0 shadow-sm overflow-hidden rounded-4 d-flex flex-column flex-md-row">
-                                <div class="d-none d-md-block col-md-4">
-                                    <img src="https://iide-media.blr1.cdn.digitaloceanspaces.com/production/aman-kapoor--jaipur--1--cb90f80a0741c95d2b26f17766b2567a.webp"
-                                        class="img-fluid h-100 w-100 object-fit-cover" alt="Event 3">
-                                </div>
-                                <div class="p-4 col-md-8 d-flex flex-column justify-content-between">
-                                    <div>
-                                        <span class="badge bg-primary-subtle text-primary mb-2">Offline</span>
-                                        <h4 class="fw-semibold">AI Tools to Power Your Marketing Strategy</h4>
-                                        <p class="small mb-2"><i class="bi bi-calendar"></i> Oct 13, 2025 &nbsp; |
-                                            &nbsp; 5:00 PM - 7:00 PM</p>
-                                        <p class="small mb-3"><i class="bi bi-geo-alt"></i> IIDE South Ex II, Delhi</p>
-                                    </div>
-                                    <div class="border-top pt-3 d-flex justify-content-between align-items-center">
-                                        <p class="small mb-0"><b>122</b> People Registered</p>
-                                        <button class="default-btn" data-bs-toggle="modal"
-                                            data-bs-target="#event3Modal">
-                                            Register Now
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
 
                 </div>
@@ -360,18 +319,47 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body p-3 contact-form-inner px-3 pb-3 pt-0">
-                <form class="contact-form p-4">
+                {% if messages %}
+                <div class="p-4 pt-0">
+                    {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <form class="contact-form p-4" method="post">
+                    {% csrf_token %}
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Name">
+                        {{ form.name }}
+                        {% if form.name.errors %}
+                        <div class="text-danger small mt-1">{{ form.name.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="phone" class="form-control" placeholder="Phone">
+                        {{ form.phone }}
+                        {% if form.phone.errors %}
+                        <div class="text-danger small mt-1">{{ form.phone.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="email" class="form-control" placeholder="Email">
+                        {{ form.email }}
+                        {% if form.email.errors %}
+                        <div class="text-danger small mt-1">{{ form.email.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <div class="form-group">
-                        <input type="subject" class="form-control" placeholder="Subject">
+                        {{ form.subject }}
+                        {% if form.subject.errors %}
+                        <div class="text-danger small mt-1">{{ form.subject.errors.0 }}</div>
+                        {% endif %}
+                    </div>
+                    <div class="form-group">
+                        {{ form.message }}
+                        {% if form.message.errors %}
+                        <div class="text-danger small mt-1">{{ form.message.errors.0 }}</div>
+                        {% endif %}
                     </div>
                     <button class="default-btn" type="submit">Submit Now</button>
                 </form>

@@ -8,7 +8,7 @@ class Course(models.Model):
     description = models.TextField()
     mode = models.CharField(max_length=50, default="Online")
     duration = models.CharField(max_length=50, blank=True)
-    image = models.ImageField(upload_to="courses/", blank=True, null=True)
+    image = models.ImageField(upload_to="courses/")
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -26,7 +26,7 @@ class Webinar(models.Model):
     date = models.DateField()
     time = models.CharField(max_length=50)
     location = models.CharField(max_length=100)
-    image = models.ImageField(upload_to="webinars/", blank=True, null=True)
+    image = models.ImageField(upload_to="webinars/")
     registration_count = models.PositiveIntegerField(default=0)
     registration_link = models.URLField(blank=True)
     order = models.PositiveIntegerField(default=0)
@@ -44,7 +44,7 @@ class Center(models.Model):
     name = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to="centers/", blank=True, null=True)
+    image = models.ImageField(upload_to="centers/")
     address = models.CharField(max_length=255, blank=True)
     contact_info = models.CharField(max_length=255, blank=True)
     order = models.PositiveIntegerField(default=0)
@@ -91,7 +91,7 @@ class FAQ(models.Model):
 class Community(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField()
-    image = models.ImageField(upload_to="communities/", blank=True, null=True)
+    image = models.ImageField(upload_to="communities/")
     type = models.CharField(
         max_length=50, choices=[("free", "Free"), ("paid", "Paid")], default="free"
     )
@@ -112,7 +112,7 @@ class Community(models.Model):
 class ReferralStep(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    icon = models.ImageField(upload_to="referral_steps/", blank=True, null=True)
+    icon = models.ImageField(upload_to="referral_steps/")
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -130,7 +130,7 @@ class CaseStudy(models.Model):
     strategy = models.TextField()
     execution = models.TextField()
     result = models.TextField()
-    image = models.ImageField(upload_to="case_studies/", blank=True, null=True)
+    image = models.ImageField(upload_to="case_studies/")
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -165,7 +165,7 @@ class BlogCategory(models.Model):
 class Audience(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    icon = models.FileField(upload_to="audiences/", blank=True, null=True)
+    icon = models.FileField(upload_to="audiences/")
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -180,7 +180,7 @@ class Audience(models.Model):
 class Feature(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
-    icon = models.ImageField(upload_to="features/", blank=True, null=True)
+    icon = models.ImageField(upload_to="features/")
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -195,7 +195,7 @@ class Feature(models.Model):
 class WhyUs(models.Model):
     title = models.CharField(max_length=100)
     description = CKEditor5Field("Description", config_name="default")
-    icon = models.FileField(upload_to="whyus/", blank=True, null=True)
+    icon = models.FileField(upload_to="whyus/")
     number = models.PositiveIntegerField()
     order = models.PositiveIntegerField(default=0)
 
@@ -213,8 +213,8 @@ class Mentor(models.Model):
     designation = models.CharField(max_length=100)
     bio = models.TextField()
     expertise = models.TextField()
-    profile_picture = models.ImageField(upload_to="mentors/", blank=True, null=True)
-    company_logo = models.ImageField(upload_to="mentors/logos/", blank=True, null=True)
+    profile_picture = models.ImageField(upload_to="mentors/")
+    company_logo = models.ImageField(upload_to="mentors/logos/")
 
     class Meta:
         ordering = ["-name"]

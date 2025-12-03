@@ -60,36 +60,72 @@
                             <h2>Get In Touch</h2>
                             <p>Fill in your information and we'll be in touch as soon as we can</p>
                         </div>
-                        <form class="modern-contact-form">
+                        {% if messages %}
+                        <div class="mb-4">
+                            {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        <form class="modern-contact-form" method="post">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-page-name">Name</label>
-                                        <input type="text" id="contact-page-name" class="form-control" placeholder="Enter your name" required>
+                                        {{ form.name }}
+                                        {% if form.name.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.name.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-page-phone">Phone</label>
-                                        <input type="tel" id="contact-page-phone" class="form-control" placeholder="Enter your phone number" required>
+                                        {{ form.phone }}
+                                        {% if form.phone.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.phone.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-page-email">Email</label>
-                                        <input type="email" id="contact-page-email" class="form-control" placeholder="Enter your email" required>
+                                        {{ form.email }}
+                                        {% if form.email.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.email.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="contact-page-subject">Subject</label>
-                                        <input type="text" id="contact-page-subject" class="form-control" placeholder="What is this regarding?" required>
+                                        {{ form.subject }}
+                                        {% if form.subject.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.subject.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="contact-page-message">Message</label>
-                                        <textarea id="contact-page-message" name="message" class="form-control" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                                        {{ form.message }}
+                                        {% if form.message.errors %}
+                                        <div class="text-danger small mt-1">
+                                            {{ form.message.errors.0 }}
+                                        </div>
+                                        {% endif %}
                                     </div>
                                 </div>
                                 <div class="col-md-12">

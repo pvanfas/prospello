@@ -4333,15 +4333,16 @@ Blog Area CSS
 }
 
 .blog-card .post-image .tag {
-  display: inline-block;
-  border-radius: 5px;
-  padding: 10px 25px;
-  background-color: var(--secondaryColor);
-  color: var(--blackColor);
-  font-weight: 500;
-  position: absolute;
-  left: 30px;
-  top: 30px;
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: var(--secondaryColor);
+    color: var(--blackColor);
+    font-weight: 500;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    font-size: 13px;
 }
 
 .blog-card .post-content {

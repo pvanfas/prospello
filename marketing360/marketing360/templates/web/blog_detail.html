@@ -1,0 +1,92 @@
+{% extends "web/base.html" %}
+{% load static %}
+{% block title %}{{ blog_post.title }} | 360 Marketing School{% endblock %}
+
+{% block content %}
+
+<!-- Start Page Banner Area -->
+<div class="page-banner-area style-ten">
+    <div class="container-fluid">
+        <div class="row justify-content-center" data-cue="fadeIn">
+            <div class="col-lg-8 col-md-12">
+                <div class="page-banner-content">
+                    {% if blog_post.category %}
+                    <span>{{ blog_post.category.name }}</span>
+                    {% endif %}
+                    <h2 class="mb-4">{{ blog_post.title }}</h2>
+                    <ul class="meta-list mb-0">
+                        <li>{{ blog_post.date|date:"d M Y" }}</li>
+                        <li>|</li>
+                        <li>By {{ blog_post.author }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Page Banner Area -->
+
+<div class="blog-details-area pb-100 pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12">
+                <div class="blog-details-content">
+                    {% if blog_post.featured_image %}
+                    <div class="post-image mb-4">
+                        <img src="{{ blog_post.featured_image.url }}" alt="{{ blog_post.title }}" class="img-fluid">
+                    </div>
+                    {% endif %}
+
+                    <div class="blog-content">
+                        {{ blog_post.content|safe }}
+                    </div>
+
+                    {% if related_posts %}
+                    <div class="related-posts mt-5">
+                        <h3>Related Posts</h3>
+                        <div class="row">
+                            {% for post in related_posts %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="blog-card">
+                                    <div class="post-image">
+                                        <a href="{{ post.get_absolute_url }}">
+                                            <img src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                                        </a>
+                                    </div>
+                                    <div class="post-content">
+                                        <ul class="meta-list">
+                                            <li>{{ post.date|date:"d M Y" }}</li>
+                                        </ul>
+                                        <h3>
+                                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-sidebar">
+                    <div class="widget widget-categories">
+                        <h3 class="widget-title">Categories</h3>
+                        <ul>
+                            <li><a href="{% url 'web:blog' %}">All Posts</a></li>
+                            {% for category in categories %}
+                            <li{% if category == blog_post.category %} class="active"{% endif %}>
+                                <a href="{% url 'web:blog_category' category.slug %}">{{ category.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

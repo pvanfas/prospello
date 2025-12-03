@@ -22,6 +22,8 @@ urlpatterns = [
     path("refer/", views.refer, name="refer"),
     path("case_studies/", views.index, name="case_studies"),
     path("blog/", views.blog, name="blog"),
+    path("blog/category/<slug:slug>/", views.blog_category, name="blog_category"),
+    path("blog/<slug:slug>/", views.blog_detail, name="blog_detail"),
     path(
         "terms-and-conditions/", views.terms_and_conditions, name="terms_and_conditions"
     ),

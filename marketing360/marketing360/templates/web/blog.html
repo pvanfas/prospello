@@ -13,9 +13,7 @@
                     <span>Blog</span>
                     <h2 class="mb-4">Read Our Insights</h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit minima vitae doloribus facilis
-                        et nostrum totam iste dolore at magnam quis, iure tempora dolor dicta saepe eligendi repellat
-                        iusto molestiae.
+                        Stay updated with the latest trends, tips, and success stories in marketing.
                     </p>
                 </div>
             </div>
@@ -29,134 +27,81 @@
 </div>
 <!-- End Page Banner Area -->
 
-
-
 <div class="blog-area pb-150 pt-100">
     <div class="container">
         <!-- Blog Controls: Categories, Search, Filter -->
         <div class="row mb-5">
             <div class="col-lg-8 col-md-12 mb-3 mb-lg-0 d-flex align-items-center flex-wrap gap-3">
-                <a href="#" class="blog_category">Digital Marketing</a>
-                <a href="#" class="blog_category">Graphic Designing</a>
-                <a href="#" class="blog_category">Career Tips</a>
-                <a href="#" class="blog_category">Student Success</a>
+                <a href="{% url 'web:blog' %}" class="blog_category{% if not category %} active{% endif %}">All</a>
+                {% for cat in categories %}
+                <a href="{% url 'web:blog_category' cat.slug %}" class="blog_category{% if category.slug == cat.slug %} active{% endif %}">{{ cat.name }}</a>
+                {% endfor %}
             </div>
             <div class="col-lg-4 col-md-12">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2 input_form" type="search" placeholder="Search posts..."
-                        aria-label="Search">
+                <form class="d-flex" role="search" method="get">
+                    <input class="form-control me-2 input_form" type="search" name="search" placeholder="Search posts..."
+                        aria-label="Search" value="{{ search_query }}">
                     <button class="btn btn-outline-primary" type="submit">Search</button>
                 </form>
             </div>
         </div>
 
-        <!-- Featured Posts -->
-
         <!-- Blog Grid -->
         <div class="row">
+            {% for post in page_obj %}
             <div class="col-lg-4 col-md-12">
                 <div class="blog-card">
                     <div class="post-image">
-                        <a href="#"><img src="/static/web/images/blog/blog1.jpg" alt="image"></a>
+                        <a href="{{ post.get_absolute_url }}"><img src="{{ post.featured_image.url }}" alt="{{ post.title }}"></a>
+                        {% if post.is_featured %}
                         <div class="tag">Featured</div>
+                        {% endif %}
                     </div>
                     <div class="post-content">
                         <ul class="meta-list">
-                            <li>12 Aug 2025</li>
+                            <li>{{ post.date|date:"d M Y" }}</li>
                             <li>|</li>
-                            <li>No Comment</li>
+                            <li>{{ post.author }}</li>
                         </ul>
                         <h3>
-                            <a href="#">Unlocking Secure Payments With a Payment Gateway</a>
+                            <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
                         </h3>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="blog-card">
-                    <div class="post-image">
-                        <a href="#"><img src="/static/web/images/blog/blog2.jpg" alt="image"></a>
-                    </div>
-                    <div class="post-content">
-                        <ul class="meta-list">
-                            <li>12 Aug 2025</li>
-                            <li>|</li>
-                            <li>No Comment</li>
-                        </ul>
-                        <h3>
-                            <a href="#">The Evolution of Payment Gateway Apps Innovations</a>
-                        </h3>
-                    </div>
-                </div>
+            {% empty %}
+            <div class="col-12">
+                <p class="text-center">No blog posts found.</p>
             </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="blog-card">
-                    <div class="post-image">
-                        <a href="#"><img src="/static/web/images/blog/blog4.jpg" alt="image"></a>
-                        <div class="tag">Featured</div>
-                    </div>
-                    <div class="post-content">
-                        <ul class="meta-list">
-                            <li>12 Aug 2025</li>
-                            <li>|</li>
-                            <li>No Comment</li>
-                        </ul>
-                        <h3>
-                            <a href="#">Exploring The Features of a Reliable Payment Gateway App</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="blog-card">
-                    <div class="post-image">
-                        <a href="#"><img src="/static/web/images/blog/blog2.jpg" alt="image"></a>
-                    </div>
-                    <div class="post-content">
-                        <ul class="meta-list">
-                            <li>12 Aug 2025</li>
-                            <li>|</li>
-                            <li>No Comment</li>
-                        </ul>
-                        <h3>
-                            <a href="#">The Evolution of Payment Gateway Apps Innovations</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-12">
-                <div class="blog-card">
-                    <div class="post-image">
-                        <a href="#"><img src="/static/web/images/blog/blog4.jpg" alt="image"></a>
-                        <div class="tag">Featured</div>
-                    </div>
-                    <div class="post-content">
-                        <ul class="meta-list">
-                            <li>12 Aug 2025</li>
-                            <li>|</li>
-                            <li>No Comment</li>
-                        </ul>
-                        <h3>
-                            <a href="#">Exploring The Features of a Reliable Payment Gateway App</a>
-                        </h3>
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
 
+            {% if page_obj.has_other_pages %}
             <div class="col-lg-12 col-md-12">
                 <div class="pagination-area">
                     <div class="nav-links">
-                        <a href="blog-grid.html" class="prev page-numbers">
+                        {% if page_obj.has_previous %}
+                        <a href="?page={{ page_obj.previous_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" class="prev page-numbers">
                             <i class="ri-arrow-left-s-line"></i>
                         </a>
-                        <span class="page-numbers current">1</span>
-                        <a href="blog-grid.html" class="page-numbers">2</a>
-                        <a href="blog-grid.html" class="next page-numbers">
+                        {% endif %}
+                        
+                        {% for num in page_obj.paginator.page_range %}
+                            {% if page_obj.number == num %}
+                                <span class="page-numbers current">{{ num }}</span>
+                            {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                <a href="?page={{ num }}{% if search_query %}&search={{ search_query }}{% endif %}" class="page-numbers">{{ num }}</a>
+                            {% endif %}
+                        {% endfor %}
+                        
+                        {% if page_obj.has_next %}
+                        <a href="?page={{ page_obj.next_page_number }}{% if search_query %}&search={{ search_query }}{% endif %}" class="next page-numbers">
                             <i class="ri-arrow-right-s-line"></i>
                         </a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
 
         <div class="row pt-100">

@@ -1,0 +1,1101 @@
+[
+    {
+        "model": "admin_interface.theme",
+        "pk": 1,
+        "fields": {
+            "name": "Django",
+            "active": true,
+            "title": "360 Marketing Administration",
+            "title_color": "#F5DD5D",
+            "title_visible": true,
+            "logo": "",
+            "logo_color": "#FFFFFF",
+            "logo_max_width": 400,
+            "logo_max_height": 100,
+            "logo_visible": false,
+            "favicon": "",
+            "env_name": "",
+            "env_color": "#E74C3C",
+            "env_visible_in_header": true,
+            "env_visible_in_favicon": true,
+            "language_chooser_active": true,
+            "language_chooser_control": "default-select",
+            "language_chooser_display": "code",
+            "css_header_background_color": "#0C4B33",
+            "css_header_text_color": "#44B78B",
+            "css_header_link_color": "#FFFFFF",
+            "css_header_link_hover_color": "#C9F0DD",
+            "css_module_background_color": "#44B78B",
+            "css_module_background_selected_color": "#FFFFCC",
+            "css_module_text_color": "#FFFFFF",
+            "css_module_link_color": "#FFFFFF",
+            "css_module_link_selected_color": "#FFFFFF",
+            "css_module_link_hover_color": "#C9F0DD",
+            "css_module_rounded_corners": true,
+            "css_generic_link_color": "#0C3C26",
+            "css_generic_link_hover_color": "#156641",
+            "css_generic_link_active_color": "#29B864",
+            "css_save_button_background_color": "#0C4B33",
+            "css_save_button_background_hover_color": "#0C3C26",
+            "css_save_button_text_color": "#FFFFFF",
+            "css_delete_button_background_color": "#BA2121",
+            "css_delete_button_background_hover_color": "#A41515",
+            "css_delete_button_text_color": "#FFFFFF",
+            "related_modal_active": true,
+            "related_modal_background_color": "#000000",
+            "related_modal_background_opacity": "0.3",
+            "related_modal_rounded_corners": true,
+            "related_modal_close_button_visible": true,
+            "list_filter_highlight": true,
+            "list_filter_dropdown": true,
+            "list_filter_sticky": true,
+            "list_filter_removal_links": false,
+            "foldable_apps": true,
+            "show_fieldsets_as_tabs": false,
+            "show_inlines_as_tabs": false,
+            "collapsible_stacked_inlines": false,
+            "collapsible_stacked_inlines_collapsed": true,
+            "collapsible_tabular_inlines": false,
+            "collapsible_tabular_inlines_collapsed": true,
+            "recent_actions_visible": true,
+            "form_submit_sticky": false,
+            "form_pagination_sticky": false
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$GpeTYrrKDrNGrfwejNM6qd$YLkzx5SrtTIZ9HPrCRndeM91UfEoBsHODBPT7yToX48=",
+            "last_login": "2025-12-02T21:20:24.862Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-17T16:09:00.248Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "dord0crvmoui8qzbkph7uylq1nokljvh",
+        "fields": {
+            "session_data": ".eJxVjMEOwiAQBf-FsyHAQgGP3vsNBNhFqoYmpT0Z_9026UGvb2bem4W4rTVsnZYwIbsyxS6_W4r5Se0A-IjtPvM8t3WZEj8UftLOxxnpdTvdv4Mae91rm4ckCgophfJSWHJFgiTji85pMBaUQ6U9KGOd0wIc7i5Zgxq8SATs8wW3BzaD:1v9tQj:j5dLaSC9ILi2j6z-1fyQPWESAqUO2NoIOLCnZTZC_4s",
+            "expire_date": "2025-10-31T23:00:13.354Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "eyouap4z52imuwd9w667iprlwn6ysh8d",
+        "fields": {
+            "session_data": ".eJxVjDsOwyAQBe9CHSFYbD4p0_sMaGHXwUmEJWNXUe4eIblI2jcz7y0iHnuJR-MtLiSuAsTld0uYn1w7oAfW-yrzWvdtSbIr8qRNTivx63a6fwcFW-m11cYoCMSjAm0Hn4ZEjGSNCRDGkLx22vhZEzBmr1Ug6zIzzsjgkhWfL8hwN9M:1vQXnM:Hjg6asQcpoHdpQBGJ6oxuforcHin3nd_BzxuiLROrvk",
+            "expire_date": "2025-12-16T21:20:24.864Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "kl36w633m2owdhnsbuucpx10fcu4tony",
+        "fields": {
+            "session_data": ".eJxVjMEOwiAQBf-FsyHAQgGP3vsNBNhFqoYmpT0Z_9026UGvb2bem4W4rTVsnZYwIbsyxS6_W4r5Se0A-IjtPvM8t3WZEj8UftLOxxnpdTvdv4Mae91rm4ckCgophfJSWHJFgiTji85pMBaUQ6U9KGOd0wIc7i5Zgxq8SATs8wW3BzaD:1vFsNX:DPsXT8ofNWopWNYmFJs_WBD_pBLex5pNSlCCWNBAiiA",
+            "expire_date": "2025-11-17T11:05:39.488Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "o1mqgubxj1bmlt56ygcfzjyqtvylvlbh",
+        "fields": {
+            "session_data": ".eJxVjMEOwiAQBf-FsyHAQgGP3vsNBNhFqoYmpT0Z_9026UGvb2bem4W4rTVsnZYwIbsyxS6_W4r5Se0A-IjtPvM8t3WZEj8UftLOxxnpdTvdv4Mae91rm4ckCgophfJSWHJFgiTji85pMBaUQ6U9KGOd0wIc7i5Zgxq8SATs8wW3BzaD:1vD6li:Z9OA2OA8btUxwpwUO3aSwbBCVXqVns65EM_lwJMgQc8",
+            "expire_date": "2025-11-09T19:51:10.545Z"
+        }
+    },
+    {
+        "model": "web.course",
+        "pk": 1,
+        "fields": {
+            "title": "Digital Marketing Specialisation Cohort Programme",
+            "description": "<p>For anyone from aspiring marketers, career-focused students, sales professionals, social media enthusiasts, freelancers, to business owners, learn to strategise, execute, and grow in digital marketing.</p>",
+            "mode": "Online",
+            "duration": "6 Months",
+            "image": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 1,
+        "fields": {
+            "title": "Scale Faster with Digital Marketing",
+            "description": "<p>Join us for an intensive session on scaling your business with digital marketing strategies.</p>",
+            "date": "2024-12-15",
+            "time": "4:00 PM - 6:00 PM IST",
+            "location": "Online",
+            "image": "",
+            "registration_count": 0,
+            "registration_link": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.webinar",
+        "pk": 2,
+        "fields": {
+            "title": "Supercharge Your Personal Brand with AI",
+            "description": "<p>Learn how to leverage AI tools to build and enhance your personal brand.</p>",
+            "date": "2024-12-15",
+            "time": "2:00 PM - 4:00 PM",
+            "location": "Online",
+            "image": "",
+            "registration_count": 0,
+            "registration_link": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faqcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Enrollment & Admissions",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faqcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Course Details",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faqcategory",
+        "pk": 3,
+        "fields": {
+            "name": "Learning Experience",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faqcategory",
+        "pk": 4,
+        "fields": {
+            "name": "Career Support & Outcomes",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.faqcategory",
+        "pk": 5,
+        "fields": {
+            "name": "Pricing & Payment",
+            "order": 5
+        }
+    },
+    {
+        "model": "web.faqcategory",
+        "pk": 6,
+        "fields": {
+            "name": "General Questions",
+            "order": 6
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 1,
+        "fields": {
+            "category": 1,
+            "question": "Who can enroll in the Digital Marketing Specialisation Programme?",
+            "answer": "<p>Our programme is designed for anyone passionate about marketing, including:</p><ul><li><p style=\"margin-left:0px;\"><strong>Aspiring marketers</strong> looking to start their career</p></li><li><p style=\"margin-left:0px;\"><strong>Students and recent graduates</strong> wanting industry-relevant skills</p></li><li><p style=\"margin-left:0px;\"><strong>Working professionals</strong> seeking to upskill or transition into marketing</p></li><li><p style=\"margin-left:0px;\"><strong>Business owners</strong> wanting to master marketing for their business</p></li><li><p style=\"margin-left:0px;\"><strong>Freelancers and entrepreneurs</strong> looking to expand their capabilities</p></li></ul><p>No prior marketing experience is required. We start from the fundamentals and build up to advanced strategies.</p>",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 2,
+        "fields": {
+            "category": 1,
+            "question": "How do I apply for the programme?",
+            "answer": "<p>Applying is simple! You can:</p><ol><li><p style=\"margin-left:0px;\">Fill out the enrollment form on our website</p></li><li><p style=\"margin-left:0px;\">Schedule a free consultation call with our team</p></li><li><p style=\"margin-left:0px;\">Complete the application process (including any required documents)</p></li><li><p style=\"margin-left:0px;\">Receive confirmation and payment details</p></li></ol><p>Our admissions team will guide you through each step and answer any questions you may have. You can also contact us directly via phone or email for personalized assistance.</p>",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 3,
+        "fields": {
+            "category": 1,
+            "question": "What are the admission requirements?",
+            "answer": "<p>Our programme has minimal entry requirements to make quality marketing education accessible:</p><ul><li><p style=\"margin-left:0px;\">High school diploma or equivalent (minimum education)</p></li><li><p style=\"margin-left:0px;\">Basic computer literacy and internet access</p></li><li><p style=\"margin-left:0px;\">Commitment to complete the 6-month programme</p></li><li><p style=\"margin-left:0px;\">Passion for marketing and willingness to learn</p></li></ul><p>We believe in potential and dedication over formal qualifications. During the consultation, we'll assess your fit and help determine if this programme is right for you.</p><p>&nbsp;</p>",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 4,
+        "fields": {
+            "category": 1,
+            "question": "Is there an application deadline?",
+            "answer": "<p>We run multiple cohorts throughout the year. While we have intake periods, we recommend applying early as seats fill up quickly. Our cohorts typically start every few months, and we can inform you about upcoming batch dates during your consultation.</p><p>Early enrollment often comes with benefits like access to pre-programme materials and networking opportunities with fellow learners.</p><p>&nbsp;</p>",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 5,
+        "fields": {
+            "category": 2,
+            "question": "How long is the programme and what is the schedule?",
+            "answer": "<p>The Digital Marketing Specialisation Programme is a <strong>6-month intensive course</strong> delivered in a flexible online format. This allows you to:</p><ul><li><p style=\"margin-left:0px;\">Learn at your own pace while following a structured curriculum</p></li><li><p style=\"margin-left:0px;\">Attend live sessions and access recorded content</p></li><li><p style=\"margin-left:0px;\">Balance learning with work or other commitments</p></li><li><p style=\"margin-left:0px;\">Access course materials 24/7 from anywhere</p></li></ul><p>You can expect approximately 10-15 hours of learning per week, including live sessions, assignments, and project work.</p>",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 6,
+        "fields": {
+            "category": 2,
+            "question": "What topics are covered in the curriculum?",
+            "answer": "<p>Our comprehensive curriculum covers the entire digital marketing spectrum:</p><ul><li><p style=\"margin-left:0px;\"><strong>Marketing Fundamentals:</strong> Consumer psychology, brand building, marketing strategy</p></li><li><p style=\"margin-left:0px;\"><strong>Content Marketing:</strong> Content creation, storytelling, content strategy</p></li><li><p style=\"margin-left:0px;\"><strong>Social Media Marketing:</strong> Platform strategies, community management, social advertising</p></li><li><p style=\"margin-left:0px;\"><strong>Search Engine Optimization (SEO):</strong> On-page/off-page SEO, technical SEO, local SEO</p></li><li><p style=\"margin-left:0px;\"><strong>Pay-Per-Click (PPC):</strong> Google Ads, Facebook Ads, display advertising</p></li><li><p style=\"margin-left:0px;\"><strong>Email Marketing:</strong> Automation, segmentation, campaign optimization</p></li><li><p style=\"margin-left:0px;\"><strong>Analytics &amp; Measurement:</strong> Google Analytics, data interpretation, ROI tracking</p></li><li><p style=\"margin-left:0px;\"><strong>Marketing Automation:</strong> CRM tools, workflow automation</p></li><li><p style=\"margin-left:0px;\"><strong>E-commerce Marketing:</strong> Online store optimization, conversion strategies</p></li></ul><p>Plus hands-on projects using industry-standard tools and certifications.</p>",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 7,
+        "fields": {
+            "category": 2,
+            "question": "Will I receive any certifications?",
+            "answer": "<p>Yes! Upon successful completion, you'll receive:</p><ul><li><p style=\"margin-left:0px;\"><strong>360 Marketing School Certificate of Completion</strong> - validating your comprehensive digital marketing expertise</p></li><li><p style=\"margin-left:0px;\"><strong>Industry Tool Certifications</strong> - including Google Analytics, Google Ads, Facebook Blueprint, and more</p></li><li><p style=\"margin-left:0px;\"><strong>Project Portfolio</strong> - real-world projects demonstrating your skills</p></li></ul><p>These certifications are recognized by employers and can significantly boost your career prospects. You'll also have a professional portfolio to showcase during job interviews.</p>",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 8,
+        "fields": {
+            "category": 2,
+            "question": "What tools and platforms will I learn to use?",
+            "answer": "<p>You'll gain hands-on experience with industry-leading tools including:</p><ul><li><p style=\"margin-left:0px;\"><strong>Analytics:</strong> Google Analytics, Facebook Analytics, social media insights</p></li><li><p style=\"margin-left:0px;\"><strong>Advertising:</strong> Google Ads, Facebook Ads Manager, LinkedIn Ads</p></li><li><p style=\"margin-left:0px;\"><strong>SEO Tools:</strong> Google Search Console, SEMrush, Ahrefs (overview)</p></li><li><p style=\"margin-left:0px;\"><strong>Content:</strong> Canva, video editing tools, content management systems</p></li><li><p style=\"margin-left:0px;\"><strong>Email Marketing:</strong> Mailchimp, Sendinblue, marketing automation platforms</p></li><li><p style=\"margin-left:0px;\"><strong>Social Media:</strong> Hootsuite, Buffer, native platform tools</p></li><li><p style=\"margin-left:0px;\"><strong>CRM:</strong> HubSpot, Salesforce (overview)</p></li></ul><p>We provide access to many of these tools during the programme, ensuring you learn with real platforms used in the industry.</p>",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 9,
+        "fields": {
+            "category": 3,
+            "question": "How is the course delivered? Is it self-paced or instructor-led?",
+            "answer": "<p>Our programme combines the best of both worlds with a <strong>hybrid approach</strong>:</p><ul><li><p style=\"margin-left:0px;\"><strong>Live Sessions:</strong> Regular interactive sessions with industry experts and mentors</p></li><li><p style=\"margin-left:0px;\"><strong>Recorded Content:</strong> On-demand video lessons you can watch anytime</p></li><li><p style=\"margin-left:0px;\"><strong>Hands-on Projects:</strong> Real-world assignments and case studies</p></li><li><p style=\"margin-left:0px;\"><strong>Peer Learning:</strong> Collaborative activities with fellow students</p></li><li><p style=\"margin-left:0px;\"><strong>Mentor Support:</strong> One-on-one guidance and feedback sessions</p></li></ul><p>This flexible approach lets you learn at your own pace while maintaining structure and ensuring you stay on track. Live sessions are recorded, so you never miss out.</p>",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 10,
+        "fields": {
+            "category": 3,
+            "question": "Who will be teaching the courses?",
+            "answer": "<p>You'll learn from industry veterans and guest mentors who bring real-world expertise:</p><ul><li><p style=\"margin-left:0px;\"><strong>Core Faculty:</strong> Experienced marketing professionals with proven track records</p></li><li><p style=\"margin-left:0px;\"><strong>Guest Mentors:</strong> Marketing leaders from top companies sharing current industry insights</p></li><li><p style=\"margin-left:0px;\"><strong>Industry Experts:</strong> Specialists in SEO, PPC, content marketing, and more</p></li></ul><p>Our instructors have worked with leading brands and agencies, bringing practical knowledge and current trends directly to your learning experience. They're not just teachers—they're active practitioners who understand today's marketing landscape.</p>",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 11,
+        "fields": {
+            "category": 3,
+            "question": "What kind of projects will I work on?",
+            "answer": "<p>You'll complete hands-on projects that mirror real marketing challenges:</p><ul><li><p style=\"margin-left:0px;\"><strong>Campaign Planning:</strong> Develop complete marketing strategies for real brands</p></li><li><p style=\"margin-left:0px;\"><strong>Content Creation:</strong> Create blogs, social media content, and video campaigns</p></li><li><p style=\"margin-left:0px;\"><strong>SEO Projects:</strong> Optimize websites and conduct comprehensive SEO audits</p></li><li><p style=\"margin-left:0px;\"><strong>Paid Advertising:</strong> Set up and manage actual ad campaigns</p></li><li><p style=\"margin-left:0px;\"><strong>Analytics Projects:</strong> Analyze data and create actionable insights reports</p></li><li><p style=\"margin-left:0px;\"><strong>Portfolio Building:</strong> Showcase your work in a professional portfolio</p></li></ul><p>These projects become part of your portfolio, demonstrating your skills to potential employers. Many students have secured jobs by showcasing their course projects.</p>",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 12,
+        "fields": {
+            "category": 3,
+            "question": "What if I fall behind or need extra help?",
+            "answer": "<p>We provide comprehensive support to ensure your success:</p><ul><li><p style=\"margin-left:0px;\"><strong>Dedicated Support Team:</strong> Available to answer questions and provide guidance</p></li><li><p style=\"margin-left:0px;\"><strong>Mentor Sessions:</strong> One-on-one meetings to address specific challenges</p></li><li><p style=\"margin-left:0px;\"><strong>Peer Community:</strong> Connect with classmates for collaboration and support</p></li><li><p style=\"margin-left:0px;\"><strong>Flexible Timeline:</strong> Access to course materials extends beyond programme completion</p></li><li><p style=\"margin-left:0px;\"><strong>Office Hours:</strong> Regular Q&amp;A sessions with instructors</p></li></ul><p>We understand that everyone learns at different paces. Our team is committed to helping you succeed, whether you need clarification on concepts or help balancing coursework with other commitments.</p>",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 13,
+        "fields": {
+            "category": 4,
+            "question": "What kind of career support do you provide?",
+            "answer": "<p>Our comprehensive career support includes:</p><ul><li><p style=\"margin-left:0px;\"><strong>Resume &amp; Portfolio Review:</strong> Get feedback on your professional materials</p></li><li><p style=\"margin-left:0px;\"><strong>Interview Preparation:</strong> Mock interviews and coaching sessions</p></li><li><p style=\"margin-left:0px;\"><strong>Job Placement Assistance:</strong> Access to our network of hiring partners</p></li><li><p style=\"margin-left:0px;\"><strong>Career Counseling:</strong> Personalized guidance on career paths and opportunities</p></li><li><p style=\"margin-left:0px;\"><strong>Networking Events:</strong> Connect with industry professionals and alumni</p></li><li><p style=\"margin-left:0px;\"><strong>LinkedIn Profile Optimization:</strong> Enhance your online professional presence</p></li><li><p style=\"margin-left:0px;\"><strong>Alumni Network:</strong> Join a community of successful marketing professionals</p></li></ul><p>We're invested in your career success beyond just education. Many of our graduates land positions at top companies, start their own agencies, or advance in their current roles.</p>",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 14,
+        "fields": {
+            "category": 4,
+            "question": "What job opportunities are available after completion?",
+            "answer": "<p>Graduates pursue diverse roles across the marketing spectrum:</p><ul><li><p style=\"margin-left:0px;\"><strong>Digital Marketing Specialist:</strong> Manage end-to-end digital campaigns</p></li><li><p style=\"margin-left:0px;\"><strong>Social Media Manager:</strong> Lead social media strategy and execution</p></li><li><p style=\"margin-left:0px;\"><strong>SEO/SEM Specialist:</strong> Optimize visibility and manage paid advertising</p></li><li><p style=\"margin-left:0px;\"><strong>Content Marketing Manager:</strong> Develop and execute content strategies</p></li><li><p style=\"margin-left:0px;\"><strong>Marketing Analyst:</strong> Analyze data and provide strategic insights</p></li><li><p style=\"margin-left:0px;\"><strong>Email Marketing Specialist:</strong> Design and optimize email campaigns</p></li><li><p style=\"margin-left:0px;\"><strong>Marketing Coordinator:</strong> Support marketing initiatives across channels</p></li><li><p style=\"margin-left:0px;\"><strong>Freelancer/Consultant:</strong> Start your own marketing consultancy</p></li></ul><p>Our hiring partners actively recruit from our alumni network, and many graduates also successfully find positions through our career support services.</p>",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 15,
+        "fields": {
+            "category": 4,
+            "question": "Can I get help finding a job after graduation?",
+            "answer": "<p>Absolutely! Our career services team provides ongoing support:</p><ul><li><p style=\"margin-left:0px;\"><strong>Job Board Access:</strong> Exclusive listings from our hiring partners</p></li><li><p style=\"margin-left:0px;\"><strong>Referral Program:</strong> Direct referrals to companies in our network</p></li><li><p style=\"margin-left:0px;\"><strong>Career Workshops:</strong> Resume writing, interview skills, salary negotiation</p></li><li><p style=\"margin-left:0px;\"><strong>Portfolio Showcase:</strong> Present your work to potential employers</p></li><li><p style=\"margin-left:0px;\"><strong>Alumni Mentorship:</strong> Connect with graduates working in your target companies</p></li></ul><p>While we can't guarantee job placement, we provide all the tools and support to maximize your chances of success. Many of our alumni attribute their career growth to the skills and connections gained through our programme.</p>",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 16,
+        "fields": {
+            "category": 5,
+            "question": "What is the cost of the programme?",
+            "answer": "<p>We offer competitive pricing for our comprehensive 6-month programme. The investment includes:</p><ul><li><p style=\"margin-left:0px;\">All course materials and content</p></li><li><p style=\"margin-left:0px;\">Live sessions with industry experts</p></li><li><p style=\"margin-left:0px;\">Access to marketing tools and platforms</p></li><li><p style=\"margin-left:0px;\">Certifications and portfolio support</p></li><li><p style=\"margin-left:0px;\">Career guidance and job placement assistance</p></li><li><p style=\"margin-left:0px;\">Lifetime access to course materials (with certain restrictions)</p></li></ul><p>For current pricing and any special offers, please schedule a consultation call or contact our admissions team. We also offer flexible payment plans and scholarships for eligible students.</p>",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 17,
+        "fields": {
+            "category": 5,
+            "question": "Are payment plans available?",
+            "answer": "<p>Yes! We understand that investing in education is significant. We offer flexible payment options:</p><ul><li><p style=\"margin-left:0px;\"><strong>Full Payment:</strong> Pay upfront and often receive a discount</p></li><li><p style=\"margin-left:0px;\"><strong>Installment Plans:</strong> Spread payments over the course duration</p></li><li><p style=\"margin-left:0px;\"><strong>Scholarships:</strong> Need-based and merit-based financial aid</p></li><li><p style=\"margin-left:0px;\"><strong>Early Bird Discounts:</strong> Special pricing for early enrollment</p></li></ul><p>During your consultation, our team will discuss payment options that work best for your situation. We're committed to making quality marketing education accessible.</p>",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 18,
+        "fields": {
+            "category": 5,
+            "question": "What is your refund policy?",
+            "answer": "<p>We have a fair refund policy designed to protect both students and the school:</p><ul><li><p style=\"margin-left:0px;\"><strong>Early Withdrawal:</strong> Full or partial refund within the first 14 days (terms apply)</p></li><li><p style=\"margin-left:0px;\"><strong>Special Circumstances:</strong> Refunds may be considered on a case-by-case basis for documented emergencies</p></li><li><p style=\"margin-left:0px;\"><strong>Programme Cancellation:</strong> Full refund if we cancel the programme</p></li></ul><p>We encourage students to carefully consider their commitment before enrolling. However, we also understand that circumstances can change. Our admissions team can provide detailed information about our refund policy during your consultation.</p><p><i>Note: Terms and conditions apply. Please refer to our official policy document for complete details.</i></p>",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 19,
+        "fields": {
+            "category": 6,
+            "question": "What makes 360 Marketing School different from other marketing courses?",
+            "answer": "<p>Our unique approach sets us apart:</p><ul><li><p style=\"margin-left:0px;\"><strong>Human-First Philosophy:</strong> We focus on understanding people, not just algorithms or tools</p></li><li><p style=\"margin-left:0px;\"><strong>360° Strategic Mindset:</strong> We teach end-to-end thinking, not just isolated tactics</p></li><li><p style=\"margin-left:0px;\"><strong>Practical Learning:</strong> Every concept is applied through real projects, not just theory</p></li><li><p style=\"margin-left:0px;\"><strong>Industry Connections:</strong> Learn from active practitioners and guest mentors from top companies</p></li><li><p style=\"margin-left:0px;\"><strong>Career Focus:</strong> Comprehensive support beyond just education</p></li><li><p style=\"margin-left:0px;\"><strong>Flexible Yet Structured:</strong> Balance learning with your life commitments</p></li></ul><p>We don't just teach marketing—we develop marketers who can think strategically, create effectively, and lead confidently.</p>",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 20,
+        "fields": {
+            "category": 6,
+            "question": "Do I need any prior experience or technical skills?",
+            "answer": "<p>No prior marketing experience is required! Our programme is designed for:</p><ul><li><p style=\"margin-left:0px;\"><strong>Beginners:</strong> We start from the fundamentals</p></li><li><p style=\"margin-left:0px;\"><strong>Career Changers:</strong> Transition smoothly into marketing from other fields</p></li><li><p style=\"margin-left:0px;\"><strong>Skill Enhancers:</strong> Professionals looking to add marketing expertise</p></li></ul><p>Basic computer literacy (using a web browser, basic software) and reliable internet access are the main requirements. We'll teach you everything else, from marketing concepts to using professional tools.</p><p>If you're passionate about marketing and committed to learning, you're ready to start!</p>",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 21,
+        "fields": {
+            "category": 6,
+            "question": "Can I access course materials after the programme ends?",
+            "answer": "<p>Yes! We provide extended access to course materials so you can:</p><ul><li><p style=\"margin-left:0px;\"><strong>Review Content:</strong> Revisit lessons and resources anytime</p></li><li><p style=\"margin-left:0px;\"><strong>Stay Updated:</strong> Access updated materials as the curriculum evolves</p></li><li><p style=\"margin-left:0px;\"><strong>Reference Materials:</strong> Use resources for ongoing projects and work</p></li></ul><p>While live sessions and instructor access are limited to the programme duration, most course materials remain available for future reference. This ensures your continued growth even after graduation.</p><p><i>Note: Access terms may vary. Please confirm specific details during enrollment.</i></p>",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.faq",
+        "pk": 22,
+        "fields": {
+            "category": 6,
+            "question": "How do I get started or learn more?",
+            "answer": "<p>Getting started is easy! Here are your options:</p><ol><li><p style=\"margin-left:0px;\"><strong>Schedule a Free Consultation:</strong> Speak with our admissions team about your goals and how our programme can help</p></li><li><p style=\"margin-left:0px;\"><strong>Attend an Information Session:</strong> Join our webinars or open house events</p></li><li><p style=\"margin-left:0px;\"><strong>Contact Us:</strong> Reach out via phone, email, or our contact form</p></li><li><p style=\"margin-left:0px;\"><strong>Explore Our Website:</strong> Check out course details, mentor profiles, and success stories</p></li></ol><p>We're here to answer all your questions and help you make an informed decision. Don't hesitate to reach out—we'd love to discuss how we can help you achieve your marketing career goals!</p><p><strong>Ready to start your marketing journey? </strong><a href=\"http://127.0.0.1:7800/contact\"><strong>Contact us today</strong></a><strong>!</strong></p>",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.community",
+        "pk": 1,
+        "fields": {
+            "name": "Digital Marketing Hub (Free)",
+            "description": "<p>Join thousands of aspiring and professional digital marketers in Kerala. This free community is your gateway to networking, knowledge sharing, industry discussions, job opportunities, and collaborative learning. Perfect for beginners and experienced marketers alike.</p>",
+            "image": "",
+            "type": "free",
+            "features": "",
+            "join_link": "",
+            "learn_more_link": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.community",
+        "pk": 2,
+        "fields": {
+            "name": "SEO & Content Masters (Paid)",
+            "description": "<p>An exclusive premium community for advanced marketers and students. Get access to in-depth SEO strategies, content marketing masterclasses, expert Q&A sessions, case study reviews, premium templates, tools, and direct mentorship from industry leaders.</p>",
+            "image": "",
+            "type": "paid",
+            "features": "",
+            "join_link": "",
+            "learn_more_link": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.community",
+        "pk": 3,
+        "fields": {
+            "name": "Freelancer's Circle (Paid)",
+            "description": "<p>A premium community exclusively for freelance digital marketers. Collaborate on projects, share client strategies, access client referrals, discuss pricing models, troubleshoot challenges, and accelerate your freelance business growth with peer support and expert guidance.</p>",
+            "image": "",
+            "type": "paid",
+            "features": "",
+            "join_link": "",
+            "learn_more_link": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.referralstep",
+        "pk": 1,
+        "fields": {
+            "title": "Share Your Referral Link",
+            "description": "<p>Log in to your account and get your unique referral link. Share it with your friends via email, social media, or any other platform.</p>",
+            "icon": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.referralstep",
+        "pk": 2,
+        "fields": {
+            "title": "Friend Signs Up",
+            "description": "<p>When your friend signs up using your referral link and completes their first course purchase, you both get rewarded.</p>",
+            "icon": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.referralstep",
+        "pk": 3,
+        "fields": {
+            "title": "Earn Rewards",
+            "description": "<p>Receive exclusive rewards and benefits for every successful referral. The more you refer, the more you earn!</p>",
+            "icon": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.blogcategory",
+        "pk": 1,
+        "fields": {
+            "name": "Digital Marketing",
+            "slug": "digital-marketing"
+        }
+    },
+    {
+        "model": "web.blogcategory",
+        "pk": 2,
+        "fields": {
+            "name": "Graphic Designing",
+            "slug": "graphic-designing"
+        }
+    },
+    {
+        "model": "web.blogcategory",
+        "pk": 3,
+        "fields": {
+            "name": "Career Tips",
+            "slug": "career-tips"
+        }
+    },
+    {
+        "model": "web.blogcategory",
+        "pk": 4,
+        "fields": {
+            "name": "Student Success",
+            "slug": "student-success"
+        }
+    },
+    {
+        "model": "web.audience",
+        "pk": 1,
+        "fields": {
+            "title": "Students & Graduates",
+            "description": "<p>Kickstart your marketing career with industry-relevant skills and real-world experience.</p>",
+            "icon": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.audience",
+        "pk": 2,
+        "fields": {
+            "title": "Working Professionals",
+            "description": "<p>Level up your marketing expertise and advance your career with strategic insights.</p>",
+            "icon": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.audience",
+        "pk": 3,
+        "fields": {
+            "title": "Aspiring Marketers",
+            "description": "<p>Transform your passion into profession with comprehensive marketing education.</p>",
+            "icon": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.audience",
+        "pk": 4,
+        "fields": {
+            "title": "Business Owners",
+            "description": "<p>Master marketing strategies to grow your business and reach your target audience effectively.</p>",
+            "icon": "",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.audience",
+        "pk": 5,
+        "fields": {
+            "title": "Companies",
+            "description": "<p>Empower your team with cutting-edge marketing knowledge and training programs.</p>",
+            "icon": "",
+            "order": 5
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 1,
+        "fields": {
+            "title": "Human-First Education",
+            "description": "<p>We start with people, not platforms, because understanding audiences builds better marketers.</p>",
+            "icon": "",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 2,
+        "fields": {
+            "title": "360° Strategic Mindset",
+            "description": "<p>Develop the ability to think end-to-end as a strategist, creator, and leader in every brief.</p>",
+            "icon": "",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 3,
+        "fields": {
+            "title": "Actionable Learning",
+            "description": "<p>Learn by doing. Every lesson moves from concept to project to real-world outcome.</p>",
+            "icon": "",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 4,
+        "fields": {
+            "title": "Hybrid Flexibility",
+            "description": "<p>Access world-class learning online, designed to fit your schedule, without losing personal guidance.</p>",
+            "icon": "",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 5,
+        "fields": {
+            "title": "Industry Experts",
+            "description": "<p>Learn from marketing leaders who've built brands and campaigns for real businesses. Our instructors bring years of industry experience directly to your learning journey.</p>",
+            "icon": "",
+            "order": 5
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 6,
+        "fields": {
+            "title": "Real-World Projects",
+            "description": "<p>Build your portfolio with actual client work and case studies. Every project is designed to mirror real marketing challenges you'll face in your career.</p>",
+            "icon": "",
+            "order": 6
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 7,
+        "fields": {
+            "title": "Career Support",
+            "description": "<p>Get personalized career guidance, job placement assistance, and access to our professional network of marketing leaders and hiring managers.</p>",
+            "icon": "",
+            "order": 7
+        }
+    },
+    {
+        "model": "web.feature",
+        "pk": 8,
+        "fields": {
+            "title": "Lifetime Support",
+            "description": "<p>Our commitment to your career doesn't end at graduation. Enjoy lifetime access to our career services.</p>",
+            "icon": "",
+            "order": 8
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 1,
+        "fields": {
+            "name": "Ramees Ali",
+            "designation": "Interval Co-Founder",
+            "bio": "Serial entrepreneur and growth strategist, currently building a PrepTech venture in stealth mode. Scaled Interval from $0 to $10M ARR, with a strong background in business growth, GTM strategy, and leadership. Honoured as TiE Best Entrepreneur and AIMA Best Young Entrepreneur, also known for mentoring and advocating innovation-led learning.",
+            "expertise": "Expert in GTM strategy, B2C sales, business scaling, startup growth, leadership, marketing strategy, entrepreneurship",
+            "profile_picture": "mentors/mentors/ramees-ali.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 2,
+        "fields": {
+            "name": "Rahul Raghav",
+            "designation": "Co-Founder @TWT Venture Studio, Ex-COO @Interval Learning",
+            "bio": "Co-founder at TWT Venture Studio and former COO of Interval Learning, bringing extensive experience in business operations and startup leadership. A mentor at KSUM and a trusted business consultant, leadership coach, and corporate trainer, known for guiding teams and entrepreneurs toward sustainable growth and strategic clarity.",
+            "expertise": "Expert in Business consulting, leadership coaching, corporate training, startup operations, team building, business strategy, entrepreneurship",
+            "profile_picture": "mentors/mentors/rahul-raghav.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 3,
+        "fields": {
+            "name": "Afthab Shoukath",
+            "designation": "Founder and CEO of Xpresso Global",
+            "bio": "Founder of Expresso Global, a fast-growing marketing agency known for its creative and strategic approach to brand building. An entrepreneur, brand visionary, and consultant who helps businesses craft meaningful identities and drive measurable growth through modern marketing practices.",
+            "expertise": "Expert in Brand strategy, marketing consulting, creative direction, digital marketing, business growth, entrepreneurship, communication strategy",
+            "profile_picture": "mentors/mentors/afthab-shoukath.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 4,
+        "fields": {
+            "name": "Hamzad Basheer",
+            "designation": "Founder & CEO at Dotin Digital Academy",
+            "bio": "Founder & CEO of Dotin Digital Academy and Co-founder of Offenso Hackers Academy, combining expertise in growth marketing and EdTech innovation. A results-driven marketer passionate about scaling learning ecosystems and empowering the next generation of digital professionals.",
+            "expertise": "Expert in Growth marketing, EdTech strategy, digital transformation, brand growth, performance marketing, startup scaling, innovation management",
+            "profile_picture": "mentors/mentors/hamzad-basheer.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 5,
+        "fields": {
+            "name": "Jishnu P V",
+            "designation": "Founder & CEO of Elance",
+            "bio": "Founder & CEO of Elance Learning, an EdTech innovator reshaping lifelong learning through personalized education. A visionary leader and startup mentor driven by the mission to change the way people learn. Recognized for pioneering efforts in professional education and for building impactful learning ecosystems.",
+            "expertise": "Expert in EdTech innovation, personalized learning, startup mentorship, business leadership, education strategy, growth management, learning experience design",
+            "profile_picture": "mentors/mentors/jishnu-p-v.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 6,
+        "fields": {
+            "name": "Abdul Wajid",
+            "designation": "CEO - Stakque",
+            "bio": "CEO of Stakque and a true polymath in the digital space, helping D2C and B2B brands accelerate growth through paid and organic strategies. Combines analytical precision with creative insight to build scalable marketing systems that drive measurable business results.",
+            "expertise": "Expert in Performance marketing, growth strategy, D2C marketing, B2B marketing, digital advertising, brand scaling, organic growth, marketing analytics",
+            "profile_picture": "mentors/mentors/abdul-wajid.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 7,
+        "fields": {
+            "name": "Shamsu Bonsai",
+            "designation": "Data-Driven Marketing Consultant",
+            "bio": "Data-driven marketing consultant specializing in performance and programmatic marketing. Partnering with Act-On Marketing Agency on acceleration and DTC scale-up initiatives for 2025, with a focus on building efficient growth systems and maximizing ROI through strategic execution.",
+            "expertise": "Expert in Performance marketing, programmatic advertising, DTC growth, marketing automation, data analytics, ROI optimization, digital strategy",
+            "profile_picture": "mentors/mentors/shamsu-bonsai.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 8,
+        "fields": {
+            "name": "Bilna Sandeep",
+            "designation": "Founder of Growwie, Business Growth Strategist",
+            "bio": "Founder of Growwie and business growth strategist, with experience leading construction contracts and building global brands and communities. Also a podcast host, passionate about sharing insights on entrepreneurship, strategy, and scaling businesses",
+            "expertise": "Expert in Business growth strategy, brand building, community building, entrepreneurship, leadership, podcasting, global business development",
+            "profile_picture": "mentors/mentors/bilna-sandeep.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 9,
+        "fields": {
+            "name": "Akhil Jijo",
+            "designation": "Growth Marketing Strategist, Founder of Collabo Digital",
+            "bio": "Founder of Collabo Digital and growth marketing strategist, combining creative direction with data-driven viral marketing expertise. Crafts data-backed growth strategies while mastering organic content algorithms, transforming brands from Kerala to global markets.",
+            "expertise": "Expert in Growth marketing, data-driven marketing, viral marketing, creative strategy, organic content, brand scaling, global marketing, digital strategy",
+            "profile_picture": "mentors/mentors/akhil-jijo.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 10,
+        "fields": {
+            "name": "Hassan Rawther",
+            "designation": "Founder of Adsomia",
+            "bio": "Serial entrepreneur, startup mentor, and certified digital branding specialist based in Kerala. Founder and Director of Adsomia India Pvt. Ltd., guiding startups and first-time founders to overcome challenges through strategic branding and growth-focused marketing. Experienced in advertising agencies and multinational companies, combining performance marketing with business growth consulting.",
+            "expertise": "Expert in Digital branding, performance marketing, business growth consulting, brand management, market expansion, campaign strategy, media planning, entrepreneurship",
+            "profile_picture": "mentors/mentors/hassan-rawther.png",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.mentor",
+        "pk": 11,
+        "fields": {
+            "name": "Akshin",
+            "designation": "Google Certified Freelance Performance Marketer",
+            "bio": "Google-certified freelance performance marketer and consultant, managing monthly budgets of ₹3Cr+ and generating ₹500Cr+ in revenue. Former Digital Marketing Manager at English House and senior ads specialist, combining hands-on campaign expertise with strategic growth insights for brands of all sizes.",
+            "expertise": "Expert in Performance marketing, paid advertising, campaign management, revenue growth, digital strategy, Google Ads, social media advertising, marketing analytics",
+            "profile_picture": "",
+            "company_logo": ""
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 6,
+        "fields": {
+            "name": "Prospello Technologies",
+            "logo": "partners/partners/prospello-technologies.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 7,
+        "fields": {
+            "name": "Oppam",
+            "logo": "partners/partners/oppam.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 8,
+        "fields": {
+            "name": "Aifer",
+            "logo": "partners/partners/aifer.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 9,
+        "fields": {
+            "name": "Ique",
+            "logo": "partners/partners/ique.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 10,
+        "fields": {
+            "name": "Albedo",
+            "logo": "partners/partners/albedo.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 11,
+        "fields": {
+            "name": "Elance",
+            "logo": "partners/partners/elance.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 12,
+        "fields": {
+            "name": "inspler",
+            "logo": "partners/partners/inspler.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 13,
+        "fields": {
+            "name": "collabo",
+            "logo": "partners/partners/collabo.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 14,
+        "fields": {
+            "name": "oh my ad",
+            "logo": "partners/partners/oh-my-ad.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 15,
+        "fields": {
+            "name": "tada",
+            "logo": "partners/partners/tada.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 16,
+        "fields": {
+            "name": "growwie",
+            "logo": "partners/partners/growwie.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 17,
+        "fields": {
+            "name": "snapshare",
+            "logo": "partners/partners/snapshare.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 18,
+        "fields": {
+            "name": "algobiz",
+            "logo": "partners/partners/algobiz.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 19,
+        "fields": {
+            "name": "english cafe",
+            "logo": "partners/partners/english-cafe.png"
+        }
+    },
+    {
+        "model": "web.hiringpartner",
+        "pk": 20,
+        "fields": {
+            "name": "eduzet",
+            "logo": "partners/partners/eduzet.png"
+        }
+    },
+    {
+        "model": "web.blogpost",
+        "pk": 1,
+        "fields": {
+            "title": "5 Digital Marketing Trends You Can’t Ignore in 2025",
+            "summary": "Passionate about spotting future trends, this writer shares insights on the strategies and tools shaping the next wave of digital marketing",
+            "featured_image": "blog/blog1.jpg",
+            "date": "2025-10-18"
+        }
+    },
+    {
+        "model": "web.blogpost",
+        "pk": 2,
+        "fields": {
+            "title": "The Power of Personalization: How to Win Customers Online",
+            "summary": "Focused on customer-first strategies, this author explores how personalization turns casual visitors into loyal buyers.",
+            "featured_image": "blog/blog2.jpg",
+            "date": "2025-10-18"
+        }
+    },
+    {
+        "model": "web.blogpost",
+        "pk": 3,
+        "fields": {
+            "title": "Social Media Ads vs. SEO: Where Should You Invest?",
+            "summary": "Specializing in smart marketing decisions, this writer breaks down where businesses can get the best returns online",
+            "featured_image": "blog/blog3.jpg",
+            "date": "2025-10-18"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 1,
+        "fields": {
+            "name": "shopify",
+            "logo": "tools/Frame_194.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 2,
+        "fields": {
+            "name": "wordpress",
+            "logo": "tools/Frame_196.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 3,
+        "fields": {
+            "name": "woo commerce",
+            "logo": "tools/Frame_198.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 4,
+        "fields": {
+            "name": "google ads",
+            "logo": "tools/Frame_199.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 5,
+        "fields": {
+            "name": "ad manager",
+            "logo": "tools/Frame_200.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 6,
+        "fields": {
+            "name": "bing ads",
+            "logo": "tools/Frame_201.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 7,
+        "fields": {
+            "name": "linkedin ads",
+            "logo": "tools/Frame_202.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 8,
+        "fields": {
+            "name": "tiktok ads",
+            "logo": "tools/Frame_203.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 9,
+        "fields": {
+            "name": "x ads",
+            "logo": "tools/Frame_204.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 10,
+        "fields": {
+            "name": "snapchat ads",
+            "logo": "tools/Frame_205.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 11,
+        "fields": {
+            "name": "youtube advertising",
+            "logo": "tools/Frame_206.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 12,
+        "fields": {
+            "name": "semrush",
+            "logo": "tools/Frame_207.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 13,
+        "fields": {
+            "name": "ahref",
+            "logo": "tools/Frame_208.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 14,
+        "fields": {
+            "name": "moz pro",
+            "logo": "tools/Frame_209.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 15,
+        "fields": {
+            "name": "yoast",
+            "logo": "tools/Frame_210.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 16,
+        "fields": {
+            "name": "Google Search Console",
+            "logo": "tools/Frame_211.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 17,
+        "fields": {
+            "name": "ubersuggest",
+            "logo": "tools/Frame_212.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 18,
+        "fields": {
+            "name": "spyfu",
+            "logo": "tools/Frame_213.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 19,
+        "fields": {
+            "name": "chatgpt",
+            "logo": "tools/Frame_214.png"
+        }
+    },
+    {
+        "model": "web.tool",
+        "pk": 20,
+        "fields": {
+            "name": "claude",
+            "logo": "tools/Frame_215.png"
+        }
+    }
+]

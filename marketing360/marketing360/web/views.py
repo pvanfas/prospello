@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.core.paginator import Paginator
 
-from .models import BlogPost, HiringPartner, Mentor, Tool
+from .models import Audience, BlogCategory, BlogPost, Feature, HiringPartner, Mentor, Tool, WhyUs
 
 
 def index(request):
@@ -58,7 +59,16 @@ def communities(request):
 
 
 def about(request):
-    context = {"is_about": True, "is_dark_navbar": True}
+    features = Feature.objects.all()
+    audiences = Audience.objects.all()
+    whyus_items = WhyUs.objects.all()
+    context = {
+        "is_about": True,
+        "is_dark_navbar": True,
+        "features": features,
+        "audiences": audiences,
+        "whyus_items": whyus_items,
+    }
     return render(request, "web/about.html", context)
 
 
@@ -78,8 +88,67 @@ def case_studies(request):
 
 
 def blog(request):
-    context = {"is_blog": True, "is_dark_navbar": True}
+    # Get all categories
+    categories = BlogCategory.objects.all()
+    
+    # Get all blog posts or filter by search
+    blog_posts = BlogPost.objects.select_related('category').all()
+    search_query = request.GET.get('search', '')
+    
+    if search_query:
+        blog_posts = blog_posts.filter(title__icontains=search_query) | blog_posts.filter(summary__icontains=search_query)
+    
+    # Pagination
+    paginator = Paginator(blog_posts, 9)  # 9 posts per page
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    
+    context = {
+        "is_blog": True,
+        "is_dark_navbar": True,
+        "categories": categories,
+        "page_obj": page_obj,
+        "search_query": search_query,
+    }
     return render(request, "web/blog.html", context)
+
+
+def blog_category(request, slug):
+    # Get category
+    category = get_object_or_404(BlogCategory, slug=slug)
+    categories = BlogCategory.objects.all()
+    
+    # Get posts in this category
+    blog_posts = BlogPost.objects.filter(category=category)
+    
+    # Pagination
+    paginator = Paginator(blog_posts, 9)
+    page_number = request.GET.get('page', 1)
+    page_obj = paginator.get_page(page_number)
+    
+    context = {
+        "is_blog": True,
+        "is_dark_navbar": True,
+        "category": category,
+        "categories": categories,
+        "page_obj": page_obj,
+    }
+    return render(request, "web/blog.html", context)
+
+
+def blog_detail(request, slug):
+    blog_post = get_object_or_404(BlogPost, slug=slug)
+    categories = BlogCategory.objects.all()
+    related_posts = BlogPost.objects.filter(category=blog_post.category).exclude(pk=blog_post.pk)[:3]
+    
+    context = {
+        "is_blog": True,
+        "is_dark_navbar": True,
+        "blog_post": blog_post,
+        "categories": categories,
+        "related_posts": related_posts,
+    }
+    return render(request, "web/blog_detail.html", context)
 
 
 def faq(request):

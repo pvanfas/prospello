@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_ckeditor_5",
     "web",
 ]
 
@@ -147,3 +148,39 @@ STATIC_ROOT = BASE_DIR / "assets"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# CKEditor 5 Configuration
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'link', 'bulletedList', 'numberedList', 'blockQuote', '|',
+            'fontSize', 'fontColor', 'fontBackgroundColor', '|',
+            'alignment', '|',
+            'insertTable', 'imageUpload', '|',
+            'outdent', 'indent', '|',
+            'undo', 'redo'
+        ],
+        'height': 300,
+        'width': '100%',
+    },
+    'extends': {
+        'toolbar': [
+            'heading', '|',
+            'bold', 'italic', 'underline', 'strikethrough', 'code', 'subscript', 'superscript', '|',
+            'link', 'bulletedList', 'numberedList', 'todoList', 'blockQuote', 'codeBlock', '|',
+            'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+            'alignment', '|',
+            'insertTable', 'imageUpload', 'mediaEmbed', '|',
+            'outdent', 'indent', '|',
+            'horizontalLine', 'pageBreak', '|',
+            'removeFormat', '|',
+            'undo', 'redo', '|',
+            'sourceEditing'
+        ],
+        'height': 400,
+        'width': '100%',
+    },
+}
+
+CKEDITOR_5_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"

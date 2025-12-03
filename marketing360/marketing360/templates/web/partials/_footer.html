@@ -24,11 +24,11 @@
                             <div class="single-footer-widget">
                                 <h3>Essential Links</h3>
                                 <ul class="quick-link">
-                                    <li><a href="#">Mission & Vision</a></li>
-                                    <li><a href="#">Programs</a></li>
-                                    <li><a href="#">Events & Workshops</a></li>
-                                    <li><a href="#">Alumni Network</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="{% url 'web:about' %}">Mission & Vision</a></li>
+                                    <li><a href="{% url 'web:courses' %}">Programs</a></li>
+                                    <li><a href="{% url 'web:webinars' %}">Events & Workshops</a></li>
+                                    <li><a href="{% url 'web:communities' %}">Alumni Network</a></li>
+                                    <li><a href="{% url 'web:contact' %}">Contact Us</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -36,11 +36,11 @@
                             <div class="single-footer-widget ps-5">
                                 <h3>Support & Help</h3>
                                 <ul class="quick-link">
-                                    <li><a href="#">FAQs</a></li>
-                                    <li><a href="#">Student Support</a></li>
-                                    <li><a href="#">Career Services</a></li>
-                                    <li><a href="#">Alumni Network</a></li>
-                                    <li><a href="#">Technical Help</a></li>
+                                    <li><a href="{% url 'web:faq' %}">FAQs</a></li>
+                                    <li><a href="{% url 'web:refer' %}">Student Support</a></li>
+                                    <li><a href="{% url 'web:centers' %}">Career Services</a></li>
+                                    <li><a href="{% url 'web:communities' %}">Alumni Network</a></li>
+                                    <li><a href="{% url 'web:contact' %}">Technical Help</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -48,11 +48,11 @@
                             <div class="single-footer-widget ps-3">
                                 <h3>Brand Personality</h3>
                                 <ul class="quick-link">
-                                    <li><a href="#">Join Our Newsletter</a></li>
-                                    <li><a href="#">Become a Mentor</a></li>
-                                    <li><a href="#">Partner With Us</a></li>
+                                    <li><a href="{% url 'web:blog' %}">Join Our Newsletter</a></li>
+                                    <li><a href="{% url 'web:mentors' %}">Become a Mentor</a></li>
+                                    <li><a href="{% url 'web:refer' %}">Partner With Us</a></li>
                                     <li><a href="#">Success Stories</a></li>
-                                    <li><a href="#">Feedback & Suggestions</a></li>
+                                    <li><a href="{% url 'web:contact' %}">Feedback & Suggestions</a></li>
                                 </ul>
                             </div>
                         </div>

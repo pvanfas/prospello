@@ -20,6 +20,7 @@ urlpatterns = [
     path("about/", views.about, name="about"),
     path("contact/", views.contact, name="contact"),
     path("refer/", views.refer, name="refer"),
+    path("newsletter/subscribe/", views.newsletter_subscribe, name="newsletter_subscribe"),
     path("blog/", views.blog, name="blog"),
     path("blog/category/<slug:slug>/", views.blog_category, name="blog_category"),
     path("blog/<slug:slug>/", views.blog_detail, name="blog_detail"),

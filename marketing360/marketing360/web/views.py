@@ -10,11 +10,13 @@ from .models import (
     Feature,
     HiringPartner,
     Mentor,
+    Newsletter,
+    StudentSuccessStory,
     Tool,
     Webinar,
     WhyUs,
     FAQCategory)
-from .forms import ContactForm
+from .forms import ContactForm, NewsletterForm
 
 
 def index(request):
@@ -31,12 +33,14 @@ def index(request):
     mentors = Mentor.objects.all()
     hiring_partners = HiringPartner.objects.all()
     blogs = BlogPost.objects.all()
+    success_stories = StudentSuccessStory.objects.filter(is_active=True)
     context = {
         "is_index": True,
         "courses": courses,
         "mentors": mentors,
         "hiring_partners": hiring_partners,
         "blogs": blogs[:3],
+        "success_stories": success_stories,
         "form": form,
     }
     return render(request, "web/index.html", context)
@@ -127,6 +131,28 @@ def contact(request):
         "form": form
     }
     return render(request, "web/contact.html", context)
+
+
+def newsletter_subscribe(request):
+    if request.method == "POST":
+        form = NewsletterForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data['email']
+            newsletter, created = Newsletter.objects.get_or_create(email=email)
+            if created:
+                messages.success(request, "Thank you for subscribing to our newsletter!")
+            else:
+                if newsletter.is_active:
+                    messages.info(request, "You are already subscribed to our newsletter.")
+                else:
+                    newsletter.is_active = True
+                    newsletter.save()
+                    messages.success(request, "Welcome back! Your subscription has been reactivated.")
+        else:
+            messages.error(request, "Please enter a valid email address.")
+    
+    # Redirect to the referring page or index
+    return redirect(request.META.get('HTTP_REFERER', 'web:index'))
 
 
 def refer(request):

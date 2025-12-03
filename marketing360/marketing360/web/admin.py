@@ -15,7 +15,9 @@ from .models import (
     Feature,
     HiringPartner,
     Mentor,
+    Newsletter,
     ReferralStep,
+    StudentSuccessStory,
     Tool,
     Webinar,
     WhyUs,
@@ -132,3 +134,18 @@ class WhyUsAdmin(ImportExportActionModelAdmin):
     list_display = ("title", "number", "order")
     list_editable = ("order",)
     search_fields = ("title", "description")
+
+
+@admin.register(Newsletter)
+class NewsletterAdmin(ImportExportActionModelAdmin):
+    list_display = ("email", "subscribed_at", "is_active")
+    list_filter = ("is_active", "subscribed_at")
+    search_fields = ("email",)
+    date_hierarchy = "subscribed_at"
+
+
+@admin.register(StudentSuccessStory)
+class StudentSuccessStoryAdmin(ImportExportActionModelAdmin):
+    list_display = ("name", "job_role", "company_name", "package", "order", "is_active")
+    list_filter = ("is_active", "company_name")
+    search_fields = ("name", "job_role", "company_name")

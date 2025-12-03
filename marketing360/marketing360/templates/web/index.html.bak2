@@ -366,35 +366,83 @@
 
             <div class="alumni-slider swiper">
                 <div class="swiper-wrapper">
-                    {% for story in success_stories %}
+                    <!-- Card 1 -->
                     <div class="swiper-slide">
                         <div class="alumni-card">
                             <div class="student-pic">
-                                {% if story.profile_picture %}
-                                <img src="{{ story.profile_picture.url }}" alt="{{ story.name }}">
-                                {% else %}
-                                <img src="/static/web/images/main/student.png" alt="{{ story.name }}">
-                                {% endif %}
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
                             </div>
                             <div class="student-info">
-                                <h5>{{ story.name }}</h5>
+                                <h5>Khushi Surana</h5>
                                 <div class="company-logo">
-                                    {% if story.company_logo %}
-                                    <img src="{{ story.company_logo.url }}" alt="{{ story.company_name }}">
-                                    {% endif %}
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Amazon">
                                 </div>
                                 <div class="job-role">
-                                    <span class="new-role">{{ story.job_role }}</span>
+                                    <span class="new-role">Advertising Ops Specialist</span>
                                 </div>
                             </div>
-                            <div class="package">Package: <span>{{ story.package }}</span></div>
+                            <div class="package">Package: <span>5 LPA</span></div>
                         </div>
                     </div>
-            
-                    {% endfor %}
 
-                    <!-- Final "View More" Card -->
-                    {% if success_stories %}
+                    <!-- Repeat cards for each alumnus -->
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Vishnu</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Google">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">AdWords Strategist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>6 LPA</span></div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Khushi Surana</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Amazon">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">Advertising Ops Specialist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>5 LPA</span></div>
+                        </div>
+                    </div>
+
+                    <!-- Repeat cards for each alumnus -->
+                    <div class="swiper-slide">
+                        <div class="alumni-card">
+                            <div class="student-pic">
+                                <img src="/static/web/images/main/student.png" alt="Khushi Surana">
+                            </div>
+                            <div class="student-info">
+                                <h5>Vishnu</h5>
+                                <div class="company-logo">
+                                    <img src="https://www.digitalacademy360.com/images/company/amazon.png" alt="Google">
+                                </div>
+                                <div class="job-role">
+                                    <span class="new-role">AdWords Strategist</span>
+                                </div>
+                            </div>
+                            <div class="package">Package: <span>6 LPA</span></div>
+                        </div>
+                    </div>
+
+
+                    <!-- Final “View More” Card -->
                     <div class="swiper-slide">
                         <div class="alumni-card final-card">
                             <p>Want to see more inspiring stories?</p>
@@ -408,7 +456,16 @@
                             </a>
                         </div>
                     </div>
-                    {% endif %}
+                </div>
+
+                <!-- Navigation -->
+                <div class="slider-controls">
+                    <button class="prev-btn">
+                        <svg width="16" height="16" viewBox="0 0 20 20">
+                            <path
+                                d="M16.6693 9.16699H6.5276L11.1859 4.50866L10.0026 3.33366L3.33594 10.0003L10.0026 16.667L11.1776 15.492L6.5276 10.8337H16.6693V9.16699Z" />
+                        </svg>
+                    </button>
                     <button class="next-btn">
                         <svg width="16" height="16" viewBox="0 0 20 20">
                             <path

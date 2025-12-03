@@ -1094,5 +1094,117 @@
             "name": "claude",
             "logo": "tools/Frame_215.png"
         }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 1,
+        "fields": {
+            "name": "Priya Sharma",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Digital Marketing Specialist",
+            "company_name": "Amazon",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "6 LPA",
+            "order": 1,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 2,
+        "fields": {
+            "name": "Rahul Verma",
+            "profile_picture": "student_success/student.png",
+            "job_role": "SEO Analyst",
+            "company_name": "Google",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "7 LPA",
+            "order": 2,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 3,
+        "fields": {
+            "name": "Ananya Patel",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Social Media Manager",
+            "company_name": "Meta",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "8 LPA",
+            "order": 3,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 4,
+        "fields": {
+            "name": "Arjun Reddy",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Content Marketing Lead",
+            "company_name": "Microsoft",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "9 LPA",
+            "order": 4,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 5,
+        "fields": {
+            "name": "Sneha Iyer",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Performance Marketing Manager",
+            "company_name": "Flipkart",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "7.5 LPA",
+            "order": 5,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 6,
+        "fields": {
+            "name": "Vikram Singh",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Growth Marketing Specialist",
+            "company_name": "Swiggy",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "6.5 LPA",
+            "order": 6,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 7,
+        "fields": {
+            "name": "Meera Nair",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Brand Manager",
+            "company_name": "Unilever",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "10 LPA",
+            "order": 7,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.studentsuccessstory",
+        "pk": 8,
+        "fields": {
+            "name": "Karthik Menon",
+            "profile_picture": "student_success/student.png",
+            "job_role": "Marketing Automation Specialist",
+            "company_name": "Adobe",
+            "company_logo": "student_success/companies/amazon.png",
+            "package": "8.5 LPA",
+            "order": 8,
+            "is_active": true
+        }
     }
 ]

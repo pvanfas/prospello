@@ -318,3 +318,36 @@ class Tool(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Newsletter(models.Model):
+    email = models.EmailField(unique=True)
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["-subscribed_at"]
+        verbose_name = "Newsletter Subscription"
+        verbose_name_plural = "Newsletter Subscriptions"
+
+    def __str__(self):
+        return self.email
+
+
+class StudentSuccessStory(models.Model):
+    name = models.CharField(max_length=100)
+    profile_picture = models.ImageField(upload_to="student_success/")
+    job_role = models.CharField(max_length=100)
+    company_name = models.CharField(max_length=100)
+    company_logo = models.ImageField(upload_to="student_success/companies/")
+    package = models.CharField(max_length=50, help_text="e.g., 5 LPA")
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "name"]
+        verbose_name = "Student Success Story"
+        verbose_name_plural = "Student Success Stories"
+
+    def __str__(self):
+        return f"{self.name} - {self.job_role} at {self.company_name}"

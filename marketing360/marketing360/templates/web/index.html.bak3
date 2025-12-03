@@ -366,49 +366,6 @@
 
             <div class="alumni-slider swiper">
                 <div class="swiper-wrapper">
-                    {% for story in success_stories %}
-                    <div class="swiper-slide">
-                        <div class="alumni-card">
-                            <div class="student-pic">
-                                {% if story.profile_picture %}
-                                <img src="{{ story.profile_picture.url }}" alt="{{ story.name }}">
-                                {% else %}
-                                <img src="/static/web/images/main/student.png" alt="{{ story.name }}">
-                                {% endif %}
-                            </div>
-                            <div class="student-info">
-                                <h5>{{ story.name }}</h5>
-                                <div class="company-logo">
-                                    {% if story.company_logo %}
-                                    <img src="{{ story.company_logo.url }}" alt="{{ story.company_name }}">
-                                    {% endif %}
-                                </div>
-                                <div class="job-role">
-                                    <span class="new-role">{{ story.job_role }}</span>
-                                </div>
-                            </div>
-                            <div class="package">Package: <span>{{ story.package }}</span></div>
-                        </div>
-                    </div>
-            
-                    {% endfor %}
-
-                    <!-- Final "View More" Card -->
-                    {% if success_stories %}
-                    <div class="swiper-slide">
-                        <div class="alumni-card final-card">
-                            <p>Want to see more inspiring stories?</p>
-                            <a href="#" class="border btn-white px-3 py-2 rounded-pill">
-                                View All Success Stories
-                                <svg width="24" height="24" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M18.2664 12.1064L11.7664 18.6064L11.5477 18.5986L10.8875 17.8486L15.8875 12.6504H3.8504V11.3496H15.8875L10.8875 6.15137L11.5477 5.40137L18.2664 11.8936L18.3719 12Z"
-                                        fill="#000" stroke="#000" stroke-width="0.3" />
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                    {% endif %}
                     <button class="next-btn">
                         <svg width="16" height="16" viewBox="0 0 20 20">
                             <path

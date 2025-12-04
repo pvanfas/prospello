@@ -12,6 +12,7 @@ from .models import (
     Contact,
     CommunityBenefit,
     ReferralBenefit,
+    Page,
     Course,
     FAQ,
     FAQCategory,
@@ -21,6 +22,7 @@ from .models import (
     Newsletter,
     ReferralStep,
     ReferralTerm,
+    PolicyPage,
     StudentSuccessStory,
     Tool,
     Webinar,
@@ -182,3 +184,17 @@ class CommunityBenefitAdmin(ImportExportActionModelAdmin):
     list_filter = ("is_active",)
     search_fields = ("title", "description")
     list_editable = ("order", "is_active")
+
+
+@admin.register(Page)
+class PageAdmin(ImportExportActionModelAdmin):
+    list_display = ("name", "key", "banner_label", "banner_title", "order", "is_active")
+    list_editable = ("order", "is_active")
+    search_fields = ("name", "key", "banner_label", "banner_title")
+
+
+@admin.register(PolicyPage)
+class PolicyPageAdmin(ImportExportActionModelAdmin):
+    list_display = ("title", "key", "is_active")
+    list_filter = ("is_active",)
+    search_fields = ("title", "key")

@@ -1,0 +1,35 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Django makemigrations + migrate",
+			"type": "shell",
+			"command": "python ./manage.py makemigrations && python ./manage.py migrate",
+			"group": "build"
+		},
+		{
+			"label": "Django makemigrations + migrate (retry)",
+			"type": "shell",
+			"command": "python ./manage.py makemigrations && python ./manage.py migrate",
+			"group": "build"
+		},
+		{
+			"label": "Migrate with adjusted Page key",
+			"type": "shell",
+			"command": "python ./manage.py migrate",
+			"group": "build"
+		},
+		{
+			"label": "Django check",
+			"type": "shell",
+			"command": "python ./manage.py check",
+			"group": "build"
+		},
+		{
+			"label": "Run makemigrations + migrate for PolicyPage",
+			"type": "shell",
+			"command": "python ./manage.py makemigrations && python ./manage.py migrate",
+			"group": "build"
+		}
+	]
+}

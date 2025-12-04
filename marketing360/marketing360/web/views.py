@@ -17,6 +17,8 @@ from .models import (
     ReferralBenefit,
     ReferralStep,
     ReferralTerm,
+    Page,
+    PolicyPage,
     StudentSuccessStory,
     Tool,
     Webinar,
@@ -108,11 +110,13 @@ def webinars(request):
         form = ContactForm()
     
     webinars_list = Webinar.objects.all()
+    page = Page.objects.filter(key="webinars").first()
     context = {
         "is_webinars": True,
         "is_dark_navbar": True,
         "webinars": webinars_list,
         "form": form,
+        "page": page,
     }
     return render(request, "web/webinars.html", context)
 
@@ -121,12 +125,14 @@ def communities(request):
     communities_list = Community.objects.all()
     testimonials = CommunityTestimonial.objects.filter(is_active=True)
     benefits = CommunityBenefit.objects.filter(is_active=True)
+    page = Page.objects.filter(key="communities").first()
     context = {
         "is_communities": True,
         "is_dark_navbar": True,
         "communities": communities_list,
         "testimonials": testimonials,
         "benefits": benefits,
+        "page": page,
     }
     return render(request, "web/communities.html", context)
 
@@ -135,12 +141,14 @@ def about(request):
     features = Feature.objects.all()
     audiences = Audience.objects.all()
     whyus_items = WhyUs.objects.all()
+    page = Page.objects.filter(key="about").first()
     context = {
         "is_about": True,
         "is_dark_navbar": True,
         "features": features,
         "audiences": audiences,
         "whyus_items": whyus_items,
+        "page": page,
     }
     return render(request, "web/about.html", context)
 
@@ -155,10 +163,12 @@ def contact(request):
     else:
         form = ContactForm()
     
+    page = Page.objects.filter(key="contact").first()
     context = {
         "is_contact": True,
         "is_dark_navbar": True,
-        "form": form
+        "form": form,
+        "page": page,
     }
     return render(request, "web/contact.html", context)
 
@@ -189,18 +199,21 @@ def refer(request):
     steps = ReferralStep.objects.all()
     benefits = ReferralBenefit.objects.filter(is_active=True)
     terms = ReferralTerm.objects.filter(is_active=True)
+    page = Page.objects.filter(key="refer").first()
     context = {
         "is_refer": True,
         "is_dark_navbar": True,
         "referral_steps": steps,
         "referral_benefits": benefits,
         "referral_terms": terms,
+        "page": page,
     }
     return render(request, "web/refer.html", context)
 
 
 def case_studies(request):
-    context = {"is_case_studies": True, "is_dark_navbar": True}
+    page = Page.objects.filter(key="case_studies").first()
+    context = {"is_case_studies": True, "is_dark_navbar": True, "page": page}
     return render(request, "web/case_studies.html", context)
 
 
@@ -222,12 +235,14 @@ def blog(request):
     page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
 
+    page = Page.objects.filter(key="blog").first()
     context = {
         "is_blog": True,
         "is_dark_navbar": True,
         "categories": categories,
         "page_obj": page_obj,
         "search_query": search_query,
+        "page": page,
     }
     return render(request, "web/blog.html", context)
 
@@ -245,12 +260,14 @@ def blog_category(request, slug):
     page_number = request.GET.get("page", 1)
     page_obj = paginator.get_page(page_number)
 
+    page = Page.objects.filter(key="blog").first()
     context = {
         "is_blog": True,
         "is_dark_navbar": True,
         "category": category,
         "categories": categories,
         "page_obj": page_obj,
+        "page": page,
     }
     return render(request, "web/blog.html", context)
 
@@ -262,51 +279,65 @@ def blog_detail(request, slug):
         pk=blog_post.pk
     )[:3]
 
+    page = Page.objects.filter(slug="blog").first()
     context = {
         "is_blog": True,
         "is_dark_navbar": True,
         "blog_post": blog_post,
         "categories": categories,
         "related_posts": related_posts,
+        "page": page,
     }
     return render(request, "web/blog_detail.html", context)
 
 
 def faq(request):
     categories = FAQCategory.objects.prefetch_related('faqs').all()
+    page = Page.objects.filter(key="faq").first()
     context = {
         "is_faq": True,
         "is_dark_navbar": True,
         "categories": categories,
+        "page": page,
     }
     return render(request, "web/faq.html", context)
 
 
 def digital_marketing_courses(request):
     partners = Partner.objects.all()
+    page = Page.objects.filter(key="digital_marketing_courses").first()
     context = {
         "is_digital_marketing_courses": True,
         "is_dark_navbar": True,
         "partners": partners,
+        "page": page,
     }
     return render(request, "web/courses/digital_marketing_courses.html", context)
 
 
 def terms_and_conditions(request):
-    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    page = Page.objects.filter(key="terms_and_conditions").first()
+    policy = PolicyPage.objects.filter(key="terms_and_conditions", is_active=True).first()
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True, "page": page, "policy": policy}
     return render(request, "web/terms_and_conditions.html", context)
 
 
 def privacy_policy(request):
-    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    page = Page.objects.filter(key="privacy_policy").first()
+    policy = PolicyPage.objects.filter(key="privacy_policy", is_active=True).first()
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True, "page": page, "policy": policy}
     return render(request, "web/privacy_policy.html", context)
 
 
 def refund_policy(request):
-    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    page = Page.objects.filter(key="refund_policy").first()
+    policy = PolicyPage.objects.filter(key="refund_policy", is_active=True).first()
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True, "page": page, "policy": policy}
     return render(request, "web/refund_policy.html", context)
 
 
 def cookie_policy(request):
-    context = {"is_terms_and_conditions": True, "is_dark_navbar": True}
+    page = Page.objects.filter(key="cookie_policy").first()
+    policy = PolicyPage.objects.filter(key="cookie_policy", is_active=True).first()
+    context = {"is_terms_and_conditions": True, "is_dark_navbar": True, "page": page, "policy": policy}
     return render(request, "web/cookie_policy.html", context)

@@ -417,3 +417,58 @@ class ReferralTerm(models.Model):
     def __str__(self):
         return self.question
 
+
+class Page(models.Model):
+    PAGE_KEYS = (
+        ("refer", "Refer & Earn"),
+        ("communities", "Communities"),
+        ("webinars", "Webinars"),
+        ("terms_and_conditions", "Terms and Conditions"),
+        ("privacy_policy", "Privacy Policy"),
+        ("refund_policy", "Refund Policy"),
+        ("cookie_policy", "Cookie Policy"),
+        ("about", "About"),
+        ("contact", "Contact"),
+        ("blog", "Blog"),
+        ("courses", "Courses"),
+        ("centers", "Centers"),
+        ("case_studies", "Case Studies"),
+        ("faq", "FAQ"),
+        ("digital_marketing_courses", "Digital Marketing Courses"),
+    )
+    key = models.CharField(max_length=50, choices=PAGE_KEYS, unique=True)
+    name = models.CharField(max_length=100)
+    banner_label = models.CharField(max_length=100, blank=True)
+    banner_title = models.CharField(max_length=200, blank=True)
+    order = models.PositiveIntegerField(default=0)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["order", "name"]
+        verbose_name = "Page"
+        verbose_name_plural = "Pages"
+
+    def __str__(self):
+        return f"{self.name} ({self.key})"
+
+
+class PolicyPage(models.Model):
+    POLICY_KEYS = (
+        ("terms_and_conditions", "Terms and Conditions"),
+        ("privacy_policy", "Privacy Policy"),
+        ("refund_policy", "Refund Policy"),
+        ("cookie_policy", "Cookie Policy"),
+    )
+    key = models.CharField(max_length=50, choices=POLICY_KEYS, unique=True)
+    title = models.CharField(max_length=200)
+    content = CKEditor5Field("Content", config_name="extends")
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["title"]
+        verbose_name = "Policy Page"
+        verbose_name_plural = "Policy Pages"
+
+    def __str__(self):
+        return f"{self.title} ({self.key})"
+

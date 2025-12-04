@@ -472,3 +472,34 @@ class PolicyPage(models.Model):
     def __str__(self):
         return f"{self.title} ({self.key})"
 
+
+class SiteText(models.Model):
+    key = models.CharField(max_length=100, unique=True)
+    label = models.CharField(max_length=150, blank=True, help_text="Admin-friendly name for this text")
+    value = models.TextField()
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["key"]
+        verbose_name = "Site Text"
+        verbose_name_plural = "Site Texts"
+
+    def __str__(self):
+        return self.label or self.key
+
+
+class SiteImage(models.Model):
+    key = models.CharField(max_length=100, unique=True)
+    label = models.CharField(max_length=150, blank=True, help_text="Admin-friendly name for this image")
+    image = models.ImageField(upload_to="site_images/")
+    alt_text = models.CharField(max_length=200, blank=True, help_text="Alternative text for accessibility")
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["key"]
+        verbose_name = "Site Image"
+        verbose_name_plural = "Site Images"
+
+    def __str__(self):
+        return self.label or self.key
+

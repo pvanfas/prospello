@@ -24,6 +24,8 @@ from .models import (
     ReferralTerm,
     PolicyPage,
     StudentSuccessStory,
+    SiteText,
+    SiteImage,
     Tool,
     Webinar,
     WhyUs,
@@ -184,6 +186,29 @@ class CommunityBenefitAdmin(ImportExportActionModelAdmin):
     list_filter = ("is_active",)
     search_fields = ("title", "description")
     list_editable = ("order", "is_active")
+
+
+@admin.register(SiteText)
+class SiteTextAdmin(ImportExportActionModelAdmin):
+    list_display = ("key", "label", "is_active")
+    list_filter = ("is_active",)
+    search_fields = ("key", "label", "value")
+
+
+@admin.register(SiteImage)
+class SiteImageAdmin(ImportExportActionModelAdmin):
+    list_display = ("key", "label", "alt_text", "is_active", "preview")
+    list_filter = ("is_active",)
+    search_fields = ("key", "label", "alt_text")
+    readonly_fields = ("preview",)
+
+    def preview(self, obj):
+        if obj.image:
+            return mark_safe(
+                f'<img src="{obj.image.url}" width="150" height="auto" style="max-height:150px; object-fit:contain;" />'
+            )
+        return "No Image"
+    preview.short_description = "Preview"
 
 
 @admin.register(Page)

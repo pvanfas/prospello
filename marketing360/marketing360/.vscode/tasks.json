@@ -30,6 +30,12 @@
 			"type": "shell",
 			"command": "python ./manage.py makemigrations && python ./manage.py migrate",
 			"group": "build"
+		},
+		{
+			"label": "Make and apply migrations for SiteText",
+			"type": "shell",
+			"command": "python ./manage.py makemigrations web && python ./manage.py migrate && python ./manage.py check",
+			"group": "build"
 		}
 	]
 }

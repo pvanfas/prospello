@@ -82,14 +82,12 @@ class ReferralBenefitAdmin(ImportExportActionModelAdmin):
     list_display = ("title", "order", "is_active")
     list_filter = ("is_active",)
     search_fields = ("title", "description")
-    list_editable = ("order", "is_active")
 
 @admin.register(ReferralTerm)
 class ReferralTermAdmin(ImportExportActionModelAdmin):
     list_display = ("question", "order", "is_active")
     list_filter = ("is_active",)
     search_fields = ("question", "answer")
-    list_editable = ("order", "is_active")
 
 
 @admin.register(CaseStudy)
@@ -101,7 +99,6 @@ class CaseStudyAdmin(ImportExportActionModelAdmin):
 @admin.register(BlogCategory)
 class BlogCategoryAdmin(ImportExportActionModelAdmin):
     list_display = ("name", "slug", "order")
-    list_editable = ("order",)
     search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
 
@@ -155,7 +152,6 @@ class ToolAdmin(ImportExportActionModelAdmin):
 @admin.register(WhyUs)
 class WhyUsAdmin(ImportExportActionModelAdmin):
     list_display = ("title", "number", "order")
-    list_editable = ("order",)
     search_fields = ("title", "description")
 
 
@@ -186,7 +182,6 @@ class CommunityBenefitAdmin(ImportExportActionModelAdmin):
     list_display = ("title", "order", "is_active")
     list_filter = ("is_active",)
     search_fields = ("title", "description")
-    list_editable = ("order", "is_active")
 
 
 @admin.register(SiteText)
@@ -215,7 +210,6 @@ class SiteImageAdmin(ImportExportActionModelAdmin):
 @admin.register(Page)
 class PageAdmin(ImportExportActionModelAdmin):
     list_display = ("name", "key", "banner_label", "banner_title", "order", "is_active")
-    list_editable = ("order", "is_active")
     search_fields = ("name", "key", "banner_label", "banner_title")
 
 

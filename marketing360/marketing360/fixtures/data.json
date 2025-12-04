@@ -1,3 +1,634 @@
 [
-    
+    {
+        "model": "web.page",
+        "pk": 1,
+        "fields": {
+            "key": "refer",
+            "name": "Refer & Earn",
+            "banner_label": "Refer & Earn",
+            "banner_title": "Invite Friends & Earn Rewards",
+            "order": 10,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.page",
+        "pk": 2,
+        "fields": {
+            "key": "communities",
+            "name": "Communities",
+            "banner_label": "Our Communities",
+            "banner_title": "Learn Together, Grow Together",
+            "order": 20,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.page",
+        "pk": 3,
+        "fields": {
+            "key": "webinars",
+            "name": "Webinars",
+            "banner_label": "Webinars",
+            "banner_title": "Upcoming Webinars",
+            "order": 30,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.page",
+        "pk": 4,
+        "fields": {
+            "key": "terms_and_conditions",
+            "name": "Terms and Conditions",
+            "banner_label": "Policies",
+            "banner_title": "Terms and Conditions",
+            "order": 90,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.page",
+        "pk": 5,
+        "fields": {
+            "key": "privacy_policy",
+            "name": "Privacy Policy",
+            "banner_label": "Policies",
+            "banner_title": "Privacy Policy",
+            "order": 91,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.page",
+        "pk": 6,
+        "fields": {
+            "key": "refund_policy",
+            "name": "Refund Policy",
+            "banner_label": "Policies",
+            "banner_title": "Refund Policy",
+            "order": 92,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.page",
+        "pk": 7,
+        "fields": {
+            "key": "cookie_policy",
+            "name": "Cookie Policy",
+            "banner_label": "Policies",
+            "banner_title": "Cookie Policy",
+            "order": 93,
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.policypage",
+        "pk": 1,
+        "fields": {
+            "key": "terms_and_conditions",
+            "title": "Terms and Conditions",
+            "content": "\n<p><strong>Last updated:</strong> January 15, 2025</p>\n<p>Welcome to <strong>360 Marketing School</strong>. These Terms and Conditions (\"Terms\", \"Terms and Conditions\") govern your access to and use of our website, programs, courses, and services (collectively, the \"Services\") provided by 360 Marketing School (\"we\", \"us\", \"our\", or \"Company\").</p>\n<p>By accessing or using our Services, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access the Services.</p>\n<h4>1. Acceptance of Terms</h4>\n<p>By enrolling in our programs, accessing our website, or using any of our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions and our Privacy Policy. If you do not agree to these Terms, you must not use our Services.</p>\n<h4>2. Eligibility</h4>\n<p>To use our Services, you must:</p>\n<ul>\n<li>Be at least 18 years of age or have parental/guardian consent</li>\n<li>Provide accurate, current, and complete information during registration</li>\n<li>Maintain and promptly update your account information</li>\n<li>Maintain the security of your account credentials</li>\n<li>Be responsible for all activities that occur under your account</li>\n</ul>\n<h4>3. Enrollment and Payment</h4>\n<p><strong>3.1 Enrollment:</strong> Enrollment in our programs is subject to availability and our acceptance of your application. We reserve the right to reject any application at our sole discretion.</p>\n<p><strong>3.2 Fees:</strong> All fees are stated in Indian Rupees (INR) unless otherwise specified. Fees are non-refundable except as stated in our Refund Policy. We reserve the right to change our fees at any time, but such changes will not affect enrolled students during their current program period.</p>\n<p><strong>3.3 Payment:</strong> Payment must be made in full or according to the payment plan selected at the time of enrollment. Failure to make timely payments may result in suspension or termination of your access to the Services.</p>\n<h4>4. Program Access and Usage</h4>\n<p><strong>4.1 License:</strong> Upon enrollment, we grant you a limited, non-exclusive, non-transferable license to access and use the course materials and content for your personal educational purposes only.</p>\n<p><strong>4.2 Restrictions:</strong> You agree not to:</p>\n<ul>\n<li>Copy, reproduce, distribute, or share course materials with third parties</li>\n<li>Record, stream, or broadcast live sessions without permission</li>\n<li>Reverse engineer, decompile, or disassemble any course materials</li>\n<li>Use the Services for any commercial purpose without our written consent</li>\n<li>Attempt to gain unauthorized access to our systems or other students' accounts</li>\n</ul>\n<h4>5. Intellectual Property Rights</h4>\n<p>All content, materials, and intellectual property in our programs, including but not limited to course content, videos, presentations, documents, and software, are the exclusive property of 360 Marketing School or our licensors. You may not use, reproduce, or distribute any content without our prior written permission.</p>\n<p>Projects and assignments created during the program remain your property; however, you grant us a non-exclusive license to showcase your work for promotional and educational purposes.</p>\n<h4>6. Student Conduct</h4>\n<p>You agree to:</p>\n<ul>\n<li>Maintain respectful and professional conduct in all interactions</li>\n<li>Not engage in any form of harassment, discrimination, or inappropriate behavior</li>\n<li>Not submit plagiarized work or violate academic integrity policies</li>\n<li>Not use the Services for any illegal or unauthorized purpose</li>\n<li>Comply with all applicable laws and regulations</li>\n</ul>\n<p>Violation of these conduct standards may result in immediate termination of your enrollment without refund.</p>\n<h4>7. Certificates and Credentials</h4>\n<p><strong>7.1 Completion:</strong> Certificates of completion are issued only to students who successfully complete all required coursework, assignments, and assessments according to our standards.</p>\n<p><strong>7.2 Authenticity:</strong> Our certificates are digital and verifiable. Misrepresentation of credentials is strictly prohibited and may result in legal action.</p>\n<p><strong>7.3 Revocation:</strong> We reserve the right to revoke certificates if we determine that a student violated these Terms or engaged in academic dishonesty.</p>\n<h4>8. Placement and Career Services</h4>\n<p>While we provide placement assistance and career support services, we do not guarantee employment or specific job placements. Placement services are provided on a best-effort basis and depend on various factors including market conditions, student performance, and employer requirements.</p>\n<h4>9. Refund Policy</h4>\n<p>Please refer to our separate <a href=\"/refund_policy/\">Refund Policy</a> for detailed information about refund eligibility, processing timelines, and procedures. Refund requests must be submitted according to the procedures outlined in our Refund Policy.</p>\n<h4>10. Privacy</h4>\n<p>Your use of our Services is also governed by our <a href=\"/privacy_policy/\">Privacy Policy</a>. Please review our Privacy Policy to understand how we collect, use, and protect your personal information.</p>\n<h4>11. Disclaimers</h4>\n<p><strong>11.1 Educational Services:</strong> Our Services are provided for educational purposes only. While we strive to provide accurate and up-to-date information, we do not guarantee the accuracy, completeness, or applicability of any course content.</p>\n<p><strong>11.2 No Warranty:</strong> The Services are provided \"as is\" and \"as available\" without warranties of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>\n<p><strong>11.3 Results:</strong> We do not guarantee specific outcomes, job placements, salary increases, or career advancement as a result of completing our programs.</p>\n<h4>12. Limitation of Liability</h4>\n<p>To the maximum extent permitted by law, 360 Marketing School and its officers, directors, employees, agents, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including but not limited to loss of profits, data, or use, incurred by you or any third party, whether in an action in contract or tort, arising from your access to or use of our Services.</p>\n<h4>13. Indemnification</h4>\n<p>You agree to indemnify, defend, and hold harmless 360 Marketing School and its officers, directors, employees, agents, and affiliates from any claims, damages, losses, liabilities, and expenses (including reasonable attorneys' fees) arising out of or related to your use of the Services, violation of these Terms, or infringement of any intellectual property or other rights of any person or entity.</p>\n<h4>14. Termination</h4>\n<p><strong>14.1 By You:</strong> You may terminate your enrollment at any time by providing written notice. Refunds will be processed according to our Refund Policy.</p>\n<p><strong>14.2 By Us:</strong> We may suspend or terminate your access to the Services immediately, without prior notice, if you violate these Terms, engage in fraudulent activity, or for any other reason we deem necessary to protect our Services or other users.</p>\n<h4>15. Changes to Terms</h4>\n<p>We reserve the right to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion. Your continued use of the Services after any changes become effective constitutes acceptance of the new Terms.</p>\n<h4>16. Governing Law and Dispute Resolution</h4>\n<p><strong>16.1 Governing Law:</strong> These Terms shall be governed by and construed in accordance with the laws of India, without regard to its conflict of law provisions.</p>\n<p><strong>16.2 Dispute Resolution:</strong> Any disputes arising out of or relating to these Terms or the Services shall be resolved through good faith negotiation. If such negotiation fails, disputes shall be resolved through binding arbitration in accordance with the Arbitration and Conciliation Act of India, or through the courts of competent jurisdiction in [City, State], India.</p>\n<h4>17. Contact Information</h4>\n<p>If you have any questions about these Terms and Conditions, please contact us at:</p>\n<ul>\n<li><strong>Email:</strong> <a href=\"mailto:info@360marketing.school\">info@360marketing.school</a></li>\n<li><strong>Website:</strong> <a href=\"/contact/\">Contact Us Page</a></li>\n</ul>\n<h4>18. Miscellaneous</h4>\n<p><strong>18.1 Entire Agreement:</strong> These Terms, together with our Privacy Policy and Refund Policy, constitute the entire agreement between you and 360 Marketing School regarding the Services.</p>\n<p><strong>18.2 Severability:</strong> If any provision of these Terms is found to be unenforceable or invalid, that provision shall be limited or eliminated to the minimum extent necessary, and the remaining provisions shall remain in full force and effect.</p>\n<p><strong>18.3 Waiver:</strong> Our failure to enforce any right or provision of these Terms shall not be considered a waiver of such right or provision.</p>\n<p><strong>18.4 Assignment:</strong> You may not assign or transfer these Terms or your rights hereunder without our prior written consent. We may assign these Terms without restriction.</p>\n<div style=\"margin-top: 50px; padding-top: 30px; border-top: 2px solid #EDEFEB;\">\n<p style=\"font-size: 14px; color: #666;\">By using our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms and Conditions.</p>\n</div>\n",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.policypage",
+        "pk": 2,
+        "fields": {
+            "key": "privacy_policy",
+            "title": "Privacy Policy",
+            "content": "\n<p><strong>Last updated:</strong> January 15, 2025</p>\n<p>At <strong>360 Marketing School</strong> (\"we\", \"us\", \"our\", or \"Company\"), we are committed to protecting your privacy and personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, enroll in our programs, or use our services (collectively, the \"Services\").</p>\n<p>By using our Services, you agree to the collection and use of information in accordance with this Privacy Policy. If you do not agree with our policies and practices, please do not use our Services.</p>\n<h4>1. Information We Collect</h4>\n<p>We collect several types of information from and about users of our Services:</p>\n<p><strong>1.1 Personal Information:</strong> Information that can be used to identify you, including:</p>\n<ul>\n<li>Name, email address, phone number, and mailing address</li>\n<li>Date of birth, gender, and demographic information</li>\n<li>Payment information (credit card details, billing address)</li>\n<li>Educational background and work experience</li>\n<li>Government-issued identification numbers when required</li>\n</ul>\n<p><strong>1.2 Account Information:</strong> Information related to your account, including:</p>\n<ul>\n<li>Username and password</li>\n<li>Profile information and preferences</li>\n<li>Enrollment history and course progress</li>\n<li>Certificates and credentials issued</li>\n</ul>\n<p><strong>1.3 Usage Information:</strong> Information about how you interact with our Services, including:</p>\n<ul>\n<li>Website browsing history and pages visited</li>\n<li>Course access logs and attendance records</li>\n<li>Device information (IP address, browser type, operating system)</li>\n<li>Cookies and similar tracking technologies (see our <a href=\"/cookie_policy/\">Cookie Policy</a>)</li>\n</ul>\n<p><strong>1.4 Communications:</strong> Records of your communications with us, including:</p>\n<ul>\n<li>Customer support inquiries and responses</li>\n<li>Feedback and survey responses</li>\n<li>Email correspondence</li>\n</ul>\n<h4>2. How We Collect Information</h4>\n<p>We collect information through various methods:</p>\n<ul>\n<li><strong>Directly from You:</strong> When you register, enroll in courses, make payments, contact us, or participate in surveys</li>\n<li><strong>Automatically:</strong> Through cookies, web beacons, and similar technologies when you use our website</li>\n<li><strong>From Third Parties:</strong> From payment processors, analytics providers, and other service providers</li>\n<li><strong>From Partners:</strong> From educational partners, employers, or referral sources when applicable</li>\n</ul>\n<h4>3. How We Use Your Information</h4>\n<p>We use the information we collect for the following purposes:</p>\n<ul>\n<li>To provide, maintain, and improve our Services</li>\n<li>To process your enrollment and manage your account</li>\n<li>To process payments and send transaction confirmations</li>\n<li>To communicate with you about your account, courses, and Services</li>\n<li>To send you marketing communications (with your consent)</li>\n<li>To provide customer support and respond to your inquiries</li>\n<li>To monitor and analyze usage patterns and trends</li>\n<li>To detect, prevent, and address technical issues and fraud</li>\n<li>To comply with legal obligations and enforce our Terms and Conditions</li>\n<li>To provide placement assistance and career services</li>\n</ul>\n<h4>4. How We Share Your Information</h4>\n<p>We may share your information in the following circumstances:</p>\n<p><strong>4.1 Service Providers:</strong> We share information with third-party service providers who perform services on our behalf, such as:</p>\n<ul>\n<li>Payment processors for payment processing</li>\n<li>Cloud storage providers for data hosting</li>\n<li>Analytics providers for website analytics</li>\n<li>Email service providers for communications</li>\n</ul>\n<p><strong>4.2 Business Transfers:</strong> If we are involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction.</p>\n<p><strong>4.3 Legal Requirements:</strong> We may disclose your information if required by law or in response to valid requests by public authorities.</p>\n<p><strong>4.4 Protection of Rights:</strong> We may disclose information to protect our rights, privacy, safety, or property, or that of our users or others.</p>\n<p><strong>4.5 With Your Consent:</strong> We may share your information with your explicit consent or at your direction.</p>\n<h4>5. Data Security</h4>\n<p>We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:</p>\n<ul>\n<li>Encryption of sensitive data in transit and at rest</li>\n<li>Secure authentication and access controls</li>\n<li>Regular security assessments and updates</li>\n<li>Employee training on data protection</li>\n<li>Limited access to personal information on a need-to-know basis</li>\n</ul>\n<p>However, no method of transmission over the Internet or electronic storage is 100% secure, and we cannot guarantee absolute security.</p>\n<h4>6. Data Retention</h4>\n<p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. When we no longer need your information, we will delete or anonymize it in accordance with our data retention policies.</p>\n<p>Account information is typically retained while your account is active and for a reasonable period after account closure to comply with legal obligations, resolve disputes, and enforce our agreements.</p>\n<h4>7. Your Rights and Choices</h4>\n<p>Depending on your location, you may have certain rights regarding your personal information:</p>\n<ul>\n<li><strong>Access:</strong> Request access to your personal information</li>\n<li><strong>Correction:</strong> Request correction of inaccurate or incomplete information</li>\n<li><strong>Deletion:</strong> Request deletion of your personal information</li>\n<li><strong>Objection:</strong> Object to processing of your personal information</li>\n<li><strong>Restriction:</strong> Request restriction of processing</li>\n<li><strong>Portability:</strong> Request transfer of your data to another service</li>\n<li><strong>Withdraw Consent:</strong> Withdraw consent where processing is based on consent</li>\n</ul>\n<p>To exercise these rights, please contact us using the information provided in the Contact Information section below.</p>\n<h4>8. Children's Privacy</h4>\n<p>Our Services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If we become aware that we have collected information from a child without parental consent, we will take steps to delete such information promptly.</p>\n<h4>9. International Data Transfers</h4>\n<p>Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that differ from those in your country. We take appropriate measures to ensure that your information receives adequate protection in accordance with this Privacy Policy.</p>\n<h4>10. Third-Party Links</h4>\n<p>Our website may contain links to third-party websites or services. We are not responsible for the privacy practices of these third parties. We encourage you to read the privacy policies of any third-party sites you visit.</p>\n<h4>11. Marketing Communications</h4>\n<p>If you have opted in to receive marketing communications, we may send you promotional emails, newsletters, and other marketing materials. You can opt out of receiving these communications at any time by:</p>\n<ul>\n<li>Clicking the unsubscribe link in our emails</li>\n<li>Updating your preferences in your account settings</li>\n<li>Contacting us directly</li>\n</ul>\n<h4>12. Updates to This Privacy Policy</h4>\n<p>We may update this Privacy Policy from time to time to reflect changes in our practices, technology, legal requirements, or other factors. We will notify you of any material changes by posting the new Privacy Policy on this page and updating the \"Last updated\" date. Your continued use of our Services after such changes constitutes acceptance of the updated policy.</p>\n<h4>13. Contact Information</h4>\n<p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:</p>\n<ul>\n<li><strong>Email:</strong> <a href=\"mailto:info@360marketing.school\">info@360marketing.school</a></li>\n<li><strong>Website:</strong> <a href=\"/contact/\">Contact Us Page</a></li>\n</ul>\n<p>You also have the right to lodge a complaint with your local data protection authority if you believe we have not addressed your concerns adequately.</p>\n<div style=\"margin-top: 50px; padding-top: 30px; border-top: 2px solid #EDEFEB;\">\n<p style=\"font-size: 14px; color: #666;\">By using our Services, you acknowledge that you have read, understood, and agree to this Privacy Policy. Please also review our <a href=\"/terms_and_conditions/\">Terms and Conditions</a> and <a href=\"/cookie_policy/\">Cookie Policy</a>.</p>\n</div>\n",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.policypage",
+        "pk": 3,
+        "fields": {
+            "key": "refund_policy",
+            "title": "Refund Policy",
+            "content": "\n<p><strong>Last updated:</strong> January 15, 2025</p>\n<p>At <strong>360 Marketing School</strong> (\"we\", \"us\", \"our\", or \"Company\"), we want you to be completely satisfied with your enrollment in our programs. This Refund Policy outlines the terms and conditions under which refunds may be granted for our courses, programs, and services (collectively, the \"Services\").</p>\n<p>Please read this policy carefully before making a payment. By enrolling in our programs and making a payment, you acknowledge that you have read, understood, and agree to this Refund Policy.</p>\n<h4>1. General Refund Policy</h4>\n<p>All fees paid for our Services are generally non-refundable unless otherwise stated in this policy or required by applicable law. We provide refunds only in the specific circumstances outlined below and subject to the terms and conditions described.</p>\n<h4>2. Refund Eligibility</h4>\n<p><strong>2.1 Refund Requests Within 7 Days:</strong> You may be eligible for a full refund if you submit a written refund request within 7 calendar days from the date of enrollment, provided that:</p>\n<ul>\n<li>You have not accessed more than 20% of the course content</li>\n<li>You have not downloaded any course materials</li>\n<li>No live sessions have been conducted or attended</li>\n<li>The refund request is made before the program start date (if applicable)</li>\n</ul>\n<p><strong>2.2 Refund Requests After 7 Days:</strong> After 7 calendar days from enrollment, refunds may be considered only under exceptional circumstances, such as:</p>\n<ul>\n<li>Medical emergencies with proper documentation</li>\n<li>Unforeseen circumstances preventing course completion (with valid proof)</li>\n<li>Technical issues on our part that prevent access to the course</li>\n<li>Course cancellation by 360 Marketing School</li>\n</ul>\n<p><strong>2.3 Non-Refundable Items:</strong> The following are non-refundable under any circumstances:</p>\n<ul>\n<li>Application fees or processing fees</li>\n<li>Fees for courses that have been completed or for which certificates have been issued</li>\n<li>Downloaded course materials or resources</li>\n<li>Third-party service fees (payment gateway charges, etc.)</li>\n</ul>\n<h4>3. Partial Refunds</h4>\n<p><strong>3.1 Partial Course Completion:</strong> If you have accessed more than 20% but less than 50% of the course content, you may be eligible for a partial refund at our discretion, typically:</p>\n<ul>\n<li>50% refund if request is made within 14 days of enrollment</li>\n<li>25% refund if request is made within 30 days of enrollment</li>\n<li>No refund after 30 days from enrollment date</li>\n</ul>\n<p><strong>3.2 Payment Plans:</strong> For students on payment plans:</p>\n<ul>\n<li>Refunds are calculated based on payments made up to the refund request date</li>\n<li>Future installments are cancelled upon refund approval</li>\n<li>Refund processing fees may apply</li>\n</ul>\n<h4>4. Refund Request Process</h4>\n<p>To request a refund, you must:</p>\n<ol>\n<li>Submit a written refund request via email to <a href=\"mailto:info@360marketing.school\">info@360marketing.school</a> or through our <a href=\"/contact/\">Contact Us</a> page</li>\n<li>Include your full name, enrollment ID, course/program name, and reason for refund request</li>\n<li>Provide any supporting documentation (medical certificates, etc.) if applicable</li>\n<li>Allow 5-10 business days for review and processing</li>\n</ol>\n<p>Refund requests submitted through any other method (phone, social media, etc.) will not be processed. You must use the official channels mentioned above.</p>\n<h4>5. Refund Processing Time</h4>\n<p><strong>5.1 Review Period:</strong> Refund requests are reviewed within 5-10 business days from the date of submission. We may contact you for additional information during this period.</p>\n<p><strong>5.2 Processing Time:</strong> Once approved, refunds are processed within 10-15 business days. The time taken for the refund to reflect in your account depends on your bank or payment method provider.</p>\n<p><strong>5.3 Refund Method:</strong> Refunds are issued to the original payment method used for the transaction. If the original payment method is no longer available, we will work with you to find an alternative method.</p>\n<h4>6. Refund Amount Calculation</h4>\n<p>The refund amount will be calculated as follows:</p>\n<ul>\n<li><strong>Full Refund:</strong> Original amount paid minus any non-refundable fees (processing fees, third-party charges)</li>\n<li><strong>Partial Refund:</strong> Calculated based on the percentage of course accessed and time elapsed</li>\n<li><strong>Processing Fees:</strong> Payment gateway charges and processing fees are non-refundable and will be deducted from the refund amount</li>\n</ul>\n<h4>7. Course Cancellation by 360 Marketing School</h4>\n<p>If we cancel a course or program for any reason:</p>\n<ul>\n<li>You will receive a full refund of all fees paid</li>\n<li>You will be notified via email and other communication channels</li>\n<li>Refunds will be processed within 15 business days of cancellation</li>\n<li>We will make reasonable efforts to offer alternative course options</li>\n</ul>\n<h4>8. Special Circumstances</h4>\n<p><strong>8.1 Medical Emergencies:</strong> Refund requests due to medical emergencies require:</p>\n<ul>\n<li>Valid medical certificate from a registered medical practitioner</li>\n<li>Medical certificate dated within 30 days of the refund request</li>\n<li>Proof of relationship if the emergency is for a family member</li>\n</ul>\n<p><strong>8.2 Technical Issues:</strong> If you experience technical issues preventing access:</p>\n<ul>\n<li>Contact our support team immediately to resolve the issue</li>\n<li>If the issue cannot be resolved, we will provide a full or partial refund</li>\n<li>Refund eligibility is determined on a case-by-case basis</li>\n</ul>\n<p><strong>8.3 Job Relocation or Other Personal Reasons:</strong> These are generally not eligible for refunds unless the request is made within the initial refund period and meets other eligibility criteria.</p>\n<h4>9. Transfer of Enrollment</h4>\n<p>Instead of a refund, you may be able to:</p>\n<ul>\n<li><strong>Transfer to Another Batch:</strong> Transfer your enrollment to a future batch of the same course (subject to availability and fees difference, if any)</li>\n<li><strong>Transfer to Another Course:</strong> Transfer to a different course (subject to course availability and price difference)</li>\n<li><strong>Transfer to Another Person:</strong> Transfer your enrollment to another eligible individual (subject to approval and transfer fees, if applicable)</li>\n</ul>\n<p>Transfer requests must be submitted in writing and are subject to our approval. Transfer fees may apply.</p>\n<h4>10. Refund Denial</h4>\n<p>Refund requests may be denied in the following circumstances:</p>\n<ul>\n<li>Request is made after the specified time limits</li>\n<li>More than 50% of the course content has been accessed</li>\n<li>Certificate has been issued</li>\n<li>Violation of our Terms and Conditions or academic policies</li>\n<li>Fraudulent or abusive refund requests</li>\n<li>Insufficient documentation for special circumstances</li>\n</ul>\n<p>If your refund request is denied, we will provide a written explanation of the reason for denial.</p>\n<h4>11. Chargebacks and Disputes</h4>\n<p>If you initiate a chargeback or dispute with your payment provider:</p>\n<ul>\n<li>Your account may be suspended pending resolution</li>\n<li>We reserve the right to dispute the chargeback with supporting documentation</li>\n<li>Chargeback fees may be deducted from any refund if the chargeback is resolved in your favor</li>\n<li>We encourage resolving issues directly with us before initiating chargebacks</li>\n</ul>\n<h4>12. Government Regulations</h4>\n<p>This refund policy is subject to applicable laws and regulations in India. If local consumer protection laws provide greater refund rights, those laws will take precedence over this policy.</p>\n<h4>13. Changes to Refund Policy</h4>\n<p>We reserve the right to modify this Refund Policy at any time. Changes will be effective immediately upon posting on our website. The refund policy applicable to your enrollment will be the policy in effect at the time of your enrollment. For significant changes, we will notify enrolled students via email.</p>\n<h4>14. Contact Information</h4>\n<p>For refund requests or questions about this Refund Policy, please contact us at:</p>\n<ul>\n<li><strong>Email:</strong> <a href=\"mailto:info@360marketing.school\">info@360marketing.school</a></li>\n<li><strong>Website:</strong> <a href=\"/contact/\">Contact Us Page</a></li>\n</ul>\n<p>Please include \"Refund Request\" in the subject line of your email for faster processing.</p>\n<h4>15. Acknowledgment</h4>\n<p>By enrolling in our programs and making a payment, you acknowledge that:</p>\n<ul>\n<li>You have read and understood this Refund Policy</li>\n<li>You agree to be bound by the terms and conditions of this policy</li>\n<li>You understand that refunds are subject to the eligibility criteria outlined above</li>\n<li>You will follow the proper refund request process</li>\n</ul>\n<div style=\"margin-top: 50px; padding-top: 30px; border-top: 2px solid #EDEFEB;\">\n<p style=\"font-size: 14px; color: #666;\">For questions about this Refund Policy, please contact us. This policy should be read in conjunction with our <a href=\"/terms_and_conditions/\">Terms and Conditions</a>.</p>\n</div>\n",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.policypage",
+        "pk": 4,
+        "fields": {
+            "key": "cookie_policy",
+            "title": "Cookie Policy",
+            "content": "\n<p><strong>Last updated:</strong> January 15, 2025</p>\n<p>This Cookie Policy explains what cookies are, how <strong>360 Marketing School</strong> (\"we\", \"us\", \"our\") uses cookies on our website, and how you can manage your cookie preferences. By using our website and services, you agree to the use of cookies as described in this policy.</p>\n<h4>1. What Are Cookies?</h4>\n<p>Cookies are small text files that are placed on your computer or mobile device when you visit a website. They are widely used to make websites work more efficiently and provide information to website owners. Cookies allow websites to recognize your device and remember your preferences, such as login information, language settings, and other choices you make.</p>\n<p>Cookies do not contain any personally identifiable information unless you have provided such information to us. They cannot damage your device or read data from other files on your device.</p>\n<h4>2. How We Use Cookies</h4>\n<p>We use cookies for various purposes to enhance your experience on our website and to provide our services effectively:</p>\n<ul>\n<li><strong>Essential Cookies:</strong> These cookies are necessary for the website to function properly. They enable core functionality such as security, network management, and accessibility.</li>\n<li><strong>Functional Cookies:</strong> These cookies allow the website to remember choices you make (such as your username, language, or region) and provide enhanced, personalized features.</li>\n<li><strong>Analytics Cookies:</strong> These cookies help us understand how visitors interact with our website by collecting and reporting information anonymously.</li>\n<li><strong>Marketing Cookies:</strong> These cookies are used to track visitors across websites to display relevant advertisements and measure the effectiveness of our marketing campaigns.</li>\n</ul>\n<h4>3. Types of Cookies We Use</h4>\n<p><strong>3.1 Session Cookies:</strong> These are temporary cookies that are deleted when you close your browser. They help our website remember your actions during a single browsing session.</p>\n<p><strong>3.2 Persistent Cookies:</strong> These cookies remain on your device for a set period or until you delete them. They help us recognize you when you return to our website and remember your preferences.</p>\n<p><strong>3.3 First-Party Cookies:</strong> These are cookies set directly by our website on your device.</p>\n<p><strong>3.4 Third-Party Cookies:</strong> These are cookies set by third-party services that appear on our pages, such as analytics providers, advertising networks, or social media platforms.</p>\n<h4>4. Specific Cookies We Use</h4>\n<p>We may use the following types of cookies on our website:</p>\n<ul>\n<li><strong>Authentication Cookies:</strong> To identify you when you log in and maintain your session</li>\n<li><strong>Preference Cookies:</strong> To remember your settings and preferences</li>\n<li><strong>Security Cookies:</strong> To protect against fraud and maintain security</li>\n<li><strong>Performance Cookies:</strong> To analyze how our website is used and improve performance</li>\n<li><strong>Targeting Cookies:</strong> To deliver relevant content and advertisements</li>\n</ul>\n<h4>5. Third-Party Cookies</h4>\n<p>Some cookies on our website are placed by third-party services that appear on our pages. These third parties may include:</p>\n<ul>\n<li>Google Analytics for website usage analytics</li>\n<li>Social media platforms for social sharing functionality</li>\n<li>Advertising networks for personalized advertising</li>\n<li>Payment processors for secure payment handling</li>\n</ul>\n<p>We do not control these third-party cookies, and you should check their respective privacy and cookie policies for information about how they use cookies.</p>\n<h4>6. Managing Your Cookie Preferences</h4>\n<p>You have the right to accept or reject cookies. Most web browsers automatically accept cookies, but you can modify your browser settings to decline cookies if you prefer. However, disabling cookies may limit your ability to use certain features of our website.</p>\n<p><strong>6.1 Browser Settings:</strong> You can control cookies through your browser settings. Most browsers allow you to:</p>\n<ul>\n<li>See what cookies you have and delete them individually</li>\n<li>Block third-party cookies</li>\n<li>Block cookies from particular sites</li>\n<li>Block all cookies</li>\n<li>Delete all cookies when you close your browser</li>\n</ul>\n<p><strong>6.2 Opt-Out Tools:</strong> You can opt out of certain third-party cookies by visiting their opt-out pages or using industry opt-out tools.</p>\n<h4>7. Impact of Disabling Cookies</h4>\n<p>If you choose to disable cookies, some features of our website may not function properly:</p>\n<ul>\n<li>You may not be able to log in to your account</li>\n<li>Your preferences may not be saved</li>\n<li>Some website features may not be available</li>\n<li>The website may not function as efficiently</li>\n</ul>\n<h4>8. Cookies and Personal Data</h4>\n<p>Our use of cookies is governed by our <a href=\"/privacy_policy/\">Privacy Policy</a>, which explains how we collect, use, and protect your personal information. Some cookies may collect personal data, and we process this data in accordance with applicable data protection laws.</p>\n<h4>9. Updates to This Cookie Policy</h4>\n<p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our practices. When we make changes, we will update the \"Last updated\" date at the top of this policy. We encourage you to review this policy periodically to stay informed about how we use cookies.</p>\n<h4>10. Your Consent</h4>\n<p>By continuing to use our website after being informed about cookies, you consent to our use of cookies as described in this Cookie Policy. If you do not consent to our use of cookies, please disable them in your browser settings or refrain from using our website.</p>\n<h4>11. Contact Information</h4>\n<p>If you have any questions about our use of cookies or this Cookie Policy, please contact us at:</p>\n<ul>\n<li><strong>Email:</strong> <a href=\"mailto:info@360marketing.school\">info@360marketing.school</a></li>\n<li><strong>Website:</strong> <a href=\"/contact/\">Contact Us Page</a></li>\n</ul>\n<div style=\"margin-top: 50px; padding-top: 30px; border-top: 2px solid #EDEFEB;\">\n<p style=\"font-size: 14px; color: #666;\">By using our website, you acknowledge that you have read and understood this Cookie Policy.</p>\n</div>\n",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 65,
+        "fields": {
+            "key": "index.hero_title",
+            "label": "Home - Hero Title",
+            "value": "We shape marketers who think beyond clicks and campaigns",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 66,
+        "fields": {
+            "key": "index.hero_subtitle",
+            "label": "Home - Hero Subtitle",
+            "value": "At 360 Marketing School, learners master the art of connecting people, purpose, and performance, building brands that matter.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 67,
+        "fields": {
+            "key": "index.programs_title",
+            "label": "Home - Programs Section Title",
+            "value": "Practical, real-world programs that equip you to grow your career from every angle.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 68,
+        "fields": {
+            "key": "index.programs_subtitle",
+            "label": "Home - Programs Section Subtitle",
+            "value": "Learn through hands-on projects, real client work, and industry-standard tools that prepare you for success from day one.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 69,
+        "fields": {
+            "key": "courses.hero_title",
+            "label": "Courses - Hero Title",
+            "value": "From India's first <br> Practical Digital Marketing Academy",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 70,
+        "fields": {
+            "key": "courses.tools_title",
+            "label": "Courses - Tools & Certifications Title",
+            "value": "Tools & Certifications",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 71,
+        "fields": {
+            "key": "courses.mentors_title",
+            "label": "Courses - Guest Mentors Title",
+            "value": "Guest Mentors",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 72,
+        "fields": {
+            "key": "courses.mentors_subtitle",
+            "label": "Courses - Guest Mentors Subtitle",
+            "value": "Gain Insights from World-Class Guest Faculty",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 73,
+        "fields": {
+            "key": "about.hero_title",
+            "label": "About - Hero Title",
+            "value": "Shaping the Future of <br>Human Focused Marketing",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 74,
+        "fields": {
+            "key": "about.vision_title",
+            "label": "About - Vision Title",
+            "value": "Our Vision",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 75,
+        "fields": {
+            "key": "about.vision_text",
+            "label": "About - Vision Text",
+            "value": "Marketing today is not about chasing algorithms or clicks. It's about understanding people, their needs, stories, and emotions, and connecting them with brands that matter.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 76,
+        "fields": {
+            "key": "about.mission_title",
+            "label": "About - Mission Title",
+            "value": "Our Mission",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 77,
+        "fields": {
+            "key": "about.mission_text",
+            "label": "About - Mission Text",
+            "value": "At 360 Marketing School, we go deeper than tutorials and certifications. We prepare learners to think, act, and lead like professionals. Because the future of marketing doesn't just need marketers, it needs leaders.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 78,
+        "fields": {
+            "key": "about.different_title",
+            "label": "About - What Makes Us Different Title",
+            "value": "What Makes Us Different",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 79,
+        "fields": {
+            "key": "about.serve_title",
+            "label": "About - Who We Serve Title",
+            "value": "Who We Serve",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 80,
+        "fields": {
+            "key": "contact.hero_title",
+            "label": "Contact - Hero Title",
+            "value": "Got questions? <br> Let's talk growth.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 81,
+        "fields": {
+            "key": "contact.form_title",
+            "label": "Contact - Form Title",
+            "value": "Get In Touch",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 82,
+        "fields": {
+            "key": "faq.hero_title",
+            "label": "FAQ - Hero Title",
+            "value": "Got Questions? We've Got Answers",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 83,
+        "fields": {
+            "key": "faq.hero_subtitle",
+            "label": "FAQ - Hero Subtitle",
+            "value": "Everything you need to know about our programs, enrollment process, learning experience, and career support. Find instant answers to help you make the right decision for your marketing journey.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 84,
+        "fields": {
+            "key": "webinars.upcoming_title",
+            "label": "Webinars - Upcoming Title",
+            "value": "Upcoming Webinars",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 85,
+        "fields": {
+            "key": "communities.benefits_title",
+            "label": "Communities - Benefits Section Title",
+            "value": "Why Join Our Communities?",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 86,
+        "fields": {
+            "key": "communities.testimonials_title",
+            "label": "Communities - Testimonials Title",
+            "value": "What Our Students Say",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 87,
+        "fields": {
+            "key": "refer.how_it_works_title",
+            "label": "Refer - How It Works Title",
+            "value": "How It Works",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 88,
+        "fields": {
+            "key": "refer.benefits_title",
+            "label": "Refer - Benefits Title",
+            "value": "Rewards & Benefits",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 89,
+        "fields": {
+            "key": "blog.hero_title",
+            "label": "Blog - Hero Title",
+            "value": "Read Our Insights",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 90,
+        "fields": {
+            "key": "blog.hero_subtitle",
+            "label": "Blog - Hero Subtitle",
+            "value": "Stay updated with the latest trends, tips, and success stories in marketing.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 91,
+        "fields": {
+            "key": "centers.hero_title",
+            "label": "Centers - Hero Title",
+            "value": "Digital Marketing in Calicut",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 92,
+        "fields": {
+            "key": "centers.why_title",
+            "label": "Centers - Why Choose Title",
+            "value": "Why Choose 360 Marketing School Calicut?",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 93,
+        "fields": {
+            "key": "case_studies.hero_title",
+            "label": "Case Studies - Hero Title",
+            "value": "Real Brands, Real Results",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 94,
+        "fields": {
+            "key": "case_studies.hero_subtitle",
+            "label": "Case Studies - Hero Subtitle",
+            "value": "Discover how we've helped businesses of all sizes achieve their marketing goals. Our case studies showcase our data-driven approach and commitment to delivering measurable success.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 95,
+        "fields": {
+            "key": "case_studies.process_title",
+            "label": "Case Studies - Process Title",
+            "value": "Our Proven Process",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 96,
+        "fields": {
+            "key": "mentors.hero_title",
+            "label": "Mentors - Hero Title",
+            "value": "Meet the Experts Behind Your Learning",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 97,
+        "fields": {
+            "key": "mentors.practical_title",
+            "label": "Mentors - Practical Learning Title",
+            "value": "Practical Learning",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 98,
+        "fields": {
+            "key": "mentors.practical_text",
+            "label": "Mentors - Practical Learning Text",
+            "value": "We believe in learning by doing. Our teaching philosophy is centered around providing you with hands-on training and real-world projects. We bridge the gap between theory and practice, equipping you with the job-ready skills that employers are looking for.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 99,
+        "fields": {
+            "key": "mentors.guest_title",
+            "label": "Mentors - Guest Mentors Title",
+            "value": "Guest Mentors",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 100,
+        "fields": {
+            "key": "mentors.guest_subtitle",
+            "label": "Mentors - Guest Mentors Subtitle",
+            "value": "Gain Insights from World-Class Guest Faculty",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 101,
+        "fields": {
+            "key": "mentors.hiring_title",
+            "label": "Mentors - Hiring Partners Title",
+            "value": "Hiring Partners",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 102,
+        "fields": {
+            "key": "mentors.hiring_subtitle",
+            "label": "Mentors - Hiring Partners Subtitle",
+            "value": "Our Alumni Network Across the Globe",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 103,
+        "fields": {
+            "key": "mentors.commitment_title",
+            "label": "Mentors - Commitment Title",
+            "value": "Commitment to Student Growth",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 104,
+        "fields": {
+            "key": "mentors.commitment_text",
+            "label": "Mentors - Commitment Text",
+            "value": "Our mentors are dedicated to your success. They provide personalized guidance, constructive feedback, and ongoing support to help you achieve your learning goals and advance your career.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 105,
+        "fields": {
+            "key": "footer.description",
+            "label": "Footer - Company Description",
+            "value": "We help marketers develop a 360° mindset through expert-led learning, giving them clear strategies and practical skills to build brands that connect with real people in meaningful ways.",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.sitetext",
+        "pk": 106,
+        "fields": {
+            "key": "footer.copyright",
+            "label": "Footer - Copyright Text",
+            "value": "Copyright 360 Marketing All Rights Reserved",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 1,
+        "fields": {
+            "key": "index.hero_wrap_shape",
+            "label": "Index - Hero Wrap Shape",
+            "image": "static/web/images/main-banner/wrap-shape.png",
+            "alt_text": "Hero wrap shape",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 2,
+        "fields": {
+            "key": "index.hero_shape",
+            "label": "Index - Hero Shape",
+            "image": "static/web/images/main-banner/shape.png",
+            "alt_text": "Hero shape",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 3,
+        "fields": {
+            "key": "index.course_placeholder",
+            "label": "Index - Course Placeholder",
+            "image": "static/web/images/main/course.png",
+            "alt_text": "Course placeholder",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 4,
+        "fields": {
+            "key": "comparison.tick_close",
+            "label": "Comparison - Tick Close Icon",
+            "image": "static/web/images/main/tick-close.svg",
+            "alt_text": "Close icon",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 5,
+        "fields": {
+            "key": "comparison.tick_circle_black",
+            "label": "Comparison - Tick Circle Black Icon",
+            "image": "static/web/images/main/tick-circle-black.svg",
+            "alt_text": "Circle icon",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 6,
+        "fields": {
+            "key": "comparison.tick_circle",
+            "label": "Comparison - Tick Circle Icon",
+            "image": "static/web/images/main/tick-circle.svg",
+            "alt_text": "Check circle icon",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 7,
+        "fields": {
+            "key": "student.placeholder",
+            "label": "Student - Placeholder Image",
+            "image": "static/web/images/main/student.png",
+            "alt_text": "Student placeholder",
+            "is_active": true
+        }
+    },
+    {
+        "model": "web.siteimage",
+        "pk": 8,
+        "fields": {
+            "key": "mentor.placeholder",
+            "label": "Mentor - Placeholder Image",
+            "image": "static/web/images/main/mentor.png",
+            "alt_text": "Mentor placeholder",
+            "is_active": true
+        }
+    }
 ]

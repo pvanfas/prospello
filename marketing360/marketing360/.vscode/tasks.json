@@ -36,6 +36,42 @@
 			"type": "shell",
 			"command": "python ./manage.py makemigrations web && python ./manage.py migrate && python ./manage.py check",
 			"group": "build"
+		},
+		{
+			"label": "Create and apply SiteImage migration",
+			"type": "shell",
+			"command": "python ./manage.py makemigrations web && python ./manage.py migrate && python ./manage.py check",
+			"group": "build"
+		},
+		{
+			"label": "Apply SiteText seeding migration",
+			"type": "shell",
+			"command": "python ./manage.py migrate web 0030_seed_sitetext_defaults && python ./manage.py check",
+			"group": "build"
+		},
+		{
+			"label": "Remigrate expanded SiteText seed data",
+			"type": "shell",
+			"command": "python ./manage.py migrate web 0030_seed_sitetext_defaults --reverse && python ./manage.py migrate web 0030_seed_sitetext_defaults && python ./manage.py check",
+			"group": "build"
+		},
+		{
+			"label": "Apply expanded SiteText seed migration",
+			"type": "shell",
+			"command": "python ./manage.py migrate web 0029_siteimage_alter_sitetext_value && python ./manage.py migrate web 0030_seed_sitetext_defaults && python ./manage.py check",
+			"group": "build"
+		},
+		{
+			"label": "Apply final SiteText migration with all pages",
+			"type": "shell",
+			"command": "python ./manage.py migrate web 0029_siteimage_alter_sitetext_value && python ./manage.py migrate web 0030_seed_sitetext_defaults && python ./manage.py check",
+			"group": "build"
+		},
+		{
+			"label": "Apply final extended SiteText migration",
+			"type": "shell",
+			"command": "python ./manage.py migrate web 0029_siteimage_alter_sitetext_value && python ./manage.py migrate web 0030_seed_sitetext_defaults && python ./manage.py check",
+			"group": "build"
 		}
 	]
 }

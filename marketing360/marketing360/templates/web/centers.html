@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}Our Centre in Calicut | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -8,7 +9,7 @@
     <div class="container-fluid">
         <div class="about-top-content" data-cues="slideInUp">
             <span>Our Centers</span>
-            <h2>Digital Marketing in Calicut</h2>
+            <h2>{% cms_text "centers.hero_title" "Digital Marketing in Calicut" %}</h2>
         </div>
         <div class="row justify-content-center align-items-center" data-cues="slideInUp">
             <div class="col-lg-7 col-md-12">
@@ -35,7 +36,7 @@
 <div class="features-area pt-100 pb-100 bg-white">
     <div class="container-fluid">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">Why Choose 360 Marketing School Calicut?</h2>
+            <h2 class="section_title">{% cms_text "centers.why_title" "Why Choose 360 Marketing School Calicut?" %}</h2>
         </div>
         <div class="row justify-content-center mt-5" data-cues="slideInUp">
             <div class="col-lg-3 col-md-6 col-sm-6">

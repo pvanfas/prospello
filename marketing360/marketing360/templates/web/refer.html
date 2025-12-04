@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}Refer & Earn | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -21,7 +22,7 @@
 <div class="features-area pt-100 pb-100">
     <div class="container">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">How It Works</h2>
+            <h2 class="section_title">{% cms_text "refer.how_it_works_title" "How It Works" %}</h2>
         </div>
         <div class="row justify-content-center mt-5" data-cues="slideInUp">
             {% for step in referral_steps %}
@@ -53,7 +54,7 @@
 <div class="services-area ptb-125">
     <div class="container-fluid">
         <div class="section-title" data-cues="slideInUp">
-            <h2 class="section_title">Rewards & Benefits</h2>
+            <h2 class="section_title">{% cms_text "refer.benefits_title" "Rewards & Benefits" %}</h2>
         </div>
         <div class="row justify-content-center" data-cues="slideInUp">
             {% for benefit in referral_benefits %}

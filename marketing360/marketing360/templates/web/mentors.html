@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}Our Mentors | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -9,7 +10,7 @@
     <div class="container-fluid">
         <div class="about-top-content" data-cues="slideInUp">
             <span>Our Mentors</span>
-            <h2>Meet the Experts Behind Your Learning</h2>
+            <h2>{% cms_text "mentors.hero_title" "Meet the Experts Behind Your Learning" %}</h2>
         </div>
         <div class="row justify-content-center align-items-center" data-cues="slideInUp">
             <div class="col-lg-7 col-md-12">
@@ -19,10 +20,8 @@
             </div>
             <div class="col-lg-5 col-md-12">
                 <div class="about-content">
-                    <h3>Practical Learning</h3>
-                    <p class="mb-0">We believe in learning by doing. Our teaching philosophy is centered around
-                        providing you with hands-on training and real-world projects. We bridge the gap between theory
-                        and practice, equipping you with the job-ready skills that employers are looking for. </p>
+                    <h3>{% cms_text "mentors.practical_title" "Practical Learning" %}</h3>
+                    <p class="mb-0">{% cms_text "mentors.practical_text" "We believe in learning by doing. Our teaching philosophy is centered around providing you with hands-on training and real-world projects. We bridge the gap between theory and practice, equipping you with the job-ready skills that employers are looking for." %}</p>
                     <div class="community-btn">
                         <a href="#" class="default-btn bg-yellow" data-bs-toggle="modal" data-bs-target="#enrollModalBackdrop">Know More</a>
                     </div>
@@ -37,8 +36,8 @@
 <div class="our-courses-area pb-100 pt-100 pb-100">
     <div class="container">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">Guest Mentors</h2>
-            <p>Gain Insights from World-Class Guest Faculty</p>
+            <h2 class="section_title">{% cms_text "mentors.guest_title" "Guest Mentors" %}</h2>
+            <p>{% cms_text "mentors.guest_subtitle" "Gain Insights from World-Class Guest Faculty" %}</p>
         </div>
 
         <div class="mentor-slider">
@@ -119,8 +118,8 @@
 <div class="partner-area pb-100 bg-white">
     <div class="container-fluid">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">Hiring Partners</h2>
-            <p>Our Alumni Network Across the Globe</p>
+            <h2 class="section_title">{% cms_text "mentors.hiring_title" "Hiring Partners" %}</h2>
+            <p>{% cms_text "mentors.hiring_subtitle" "Our Alumni Network Across the Globe" %}</p>
         </div>
         <div class="row justify-content-center align-items-center" data-cues="fadeIn">
             {% for hiring_partner in hiring_partners %}
@@ -150,10 +149,9 @@
                             </div>
                         </div>
                         <div class="col-lg-10 col-md-9 col-8">
-                            <h2 class="section_title mb-3 text-white">Commitment to Student Growth</h2>
+                            <h2 class="section_title mb-3 text-white">{% cms_text "mentors.commitment_title" "Commitment to Student Growth" %}</h2>
                             <p class="text-white fw-light mb-4 mb-lg-3" style="font-size: 18px; line-height: 1.8;">
-                                Our mentors are dedicated to your success. They provide personalized guidance, constructive
-                                feedback, and ongoing support to help you achieve your learning goals and advance your career.
+                                {% cms_text "mentors.commitment_text" "Our mentors are dedicated to your success. They provide personalized guidance, constructive feedback, and ongoing support to help you achieve your learning goals and advance your career." %}
                             </p>
                             <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-md-start">
                                 <div class="subscribe-feature-item">

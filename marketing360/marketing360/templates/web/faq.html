@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}FAQ | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -10,10 +11,8 @@
             <div class="col-lg-6 col-md-12">
                 <div class="page-banner-content faq-banner-content-v2">
 
-                    <h2>Got Questions? We've Got Answers</h2>
-                    <p>Everything you need to know about our programs, enrollment process, learning experience, and
-                        career support. Find instant answers to help you make the right decision for your marketing
-                        journey.</p>
+                    <h2>{% cms_text "faq.hero_title" "Got Questions? We've Got Answers" %}</h2>
+                    <p>{% cms_text "faq.hero_subtitle" "Everything you need to know about our programs, enrollment process, learning experience, and career support. Find instant answers to help you make the right decision for your marketing journey." %}</p>
                     <div class="faq-quick-links">
                         <a href="#enrollment-section" class="faq-link-item">
                             <i class="bi bi-clipboard-check"></i>

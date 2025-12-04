@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}About Us | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -9,7 +10,7 @@
     <div class="container">
         <div class="about-top-content" data-cues="slideInUp">
             <span>About Us</span>
-            <h2>Shaping the Future of <br>Human Focused Marketing</h2>
+            <h2>{% cms_text "about.hero_title" "Shaping the Future of <br>Human Focused Marketing" %}</h2>
         </div>
         <div class="row justify-content-center align-items-center" data-cues="slideInUp">
             <div class="col-lg-6 col-md-12">
@@ -19,20 +20,15 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="about-content mb-4">
-                    <h4>Our Vision</h4>
+                    <h4>{% cms_text "about.vision_title" "Our Vision" %}</h4>
                     <p>
-                        Marketing today is not about chasing algorithms or clicks.
-                        It’s about understanding people, their needs, stories, and emotions, and connecting them with
-                        brands that matter.
+                        {% cms_text "about.vision_text" "Marketing today is not about chasing algorithms or clicks. It's about understanding people, their needs, stories, and emotions, and connecting them with brands that matter." %}
                     </p>
                 </div>
                 <div class="about-content">
-                    <h4>Our Mission</h4>
+                    <h4>{% cms_text "about.mission_title" "Our Mission" %}</h4>
                     <p>
-                        At 360 Marketing School, we go deeper than tutorials and certifications.
-                        We prepare learners to think, act, and lead like professionals.
-                    </p>
-                    <p>Because the future of marketing doesn’t just need marketers, it needs leaders.
+                        {% cms_text "about.mission_text" "At 360 Marketing School, we go deeper than tutorials and certifications. We prepare learners to think, act, and lead like professionals. Because the future of marketing doesn't just need marketers, it needs leaders." %}
                     </p>
                 </div>
             </div>
@@ -47,7 +43,7 @@
 <div class="services-area bg-wrap pt-100 pb-100">
     <div class="container">
         <div class="section-title" data-cues="slideInUp">
-            <h2 class="h3 section_title">What Makes Us Different</h2>
+            <h2 class="h3 section_title">{% cms_text "about.different_title" "What Makes Us Different" %}</h2>
         </div>
         <div class="row justify-content-center" data-cues="slideInUp">
             {% for feature in features %}
@@ -74,7 +70,7 @@
 <div class="who-we-serve-area pb-100">
     <div class="container">
         <div class="section-title" data-cues="slideInUp">
-            <h2 class="h3 section_title">Who We Serve</h2>
+            <h2 class="h3 section_title">{% cms_text "about.serve_title" "Who We Serve" %}</h2>
         </div>
         <div class="row justify-content-center g-4" data-cues="slideInUp">
             {% for audience in audiences %}

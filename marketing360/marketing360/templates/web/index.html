@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}About Us | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -8,7 +9,7 @@
 <div class="main-banner-area">
     <div class="container-fluid">
         <div class="main-banner-content" data-cue="fadeIn">
-            <h1>We shape marketers who think beyond clicks and campaigns</h1>
+            <h1>{% cms_text "index.hero_title" "We shape marketers who think beyond clicks and campaigns" %}</h1>
 
             <div class="banner-inner-content">
                 <div class="row">
@@ -16,7 +17,7 @@
                     <div class="col-lg-6 col-md-10">
                         <div class="inner-content">
                             <p class="mb-5">
-                                At 360 Marketing School, learners master the art of connecting people, purpose, and performance, building brands that matter.
+                                {% cms_text "index.hero_subtitle" "At 360 Marketing School, learners master the art of connecting people, purpose, and performance, building brands that matter." %}
                             </p>
                             <ul class="banner-list mt-0 mb-5">
                                 <li><button type="button" class="btn default-btn mt-0" data-bs-toggle="modal" data-bs-target="#enrollModalBackdrop">Enroll Now</button></li>
@@ -32,10 +33,10 @@
     <div class="main-banner-ellipse" data-cue="fadeIn"></div>
 
     <div class="main-banner-shape1" data-cue="fadeIn">
-        <img src="/static/web/images/main-banner/wrap-shape.png" alt="image">
+        <img src="{% cms_image 'index.hero_wrap_shape' '/static/web/images/main-banner/wrap-shape.png' %}" alt="image">
     </div>
     <div class="main-banner-shape2" data-cue="fadeIn">
-        <img src="/static/web/images/main-banner/shape.png" alt="image">
+        <img src="{% cms_image 'index.hero_shape' '/static/web/images/main-banner/shape.png' %}" alt="image">
     </div>
 </div>
 <!-- End Main Banner Area -->
@@ -109,11 +110,10 @@
             <div class="col-xl-10 col-lg-12 mx-auto">
                 <div class="practical-programs-content text-center mb-5">
                     <h1 class="mb-4">
-                        Practical, real-world programs that equip you 
-                        to grow your career from every angle.
+                        {% cms_text "index.programs_title" "Practical, real-world programs that equip you to grow your career from every angle." %}
                     </h1>
                     <p class="lead-text mb-0">
-                        Learn through hands-on projects, real client work, and industry-standard tools that prepare you for success from day one.
+                        {% cms_text "index.programs_subtitle" "Learn through hands-on projects, real client work, and industry-standard tools that prepare you for success from day one." %}
                     </p>
                 </div>
                 
@@ -187,7 +187,7 @@
                             {% if course.image %}
                             <img src="{{ course.image.url }}" alt="{{ course.title }}">
                             {% else %}
-                            <img src="/static/web/images/main/course.png" alt="{{ course.title }}">
+                            <img src="{% cms_image 'index.course_placeholder' '/static/web/images/main/course.png' %}" alt="{{ course.title }}">
                             {% endif %}
                         </div>
                     </div>
@@ -206,7 +206,7 @@
                 <div class="overview-card">
                     <div class="row">
                         <div class="col-md-6">
-                            <img src="/static/web/images/main/course.png" alt="image">
+                            <img src="{% cms_image 'index.course_placeholder' '/static/web/images/main/course.png' %}" alt="image">
                         </div>
                         <div class="col-md-6">
                             <div class="content ps-4">
@@ -279,7 +279,7 @@
 <div class="why-area pb-125">
     <div class="container-fluid">
         <div class="section-title" data-cues="slideInUp">
-            <h2 class="section_title">360 Marketing School vs Other Institutions</h2>
+            <h2 class="section_title">{% cms_text "index.comparison_title" "360 Marketing School vs Other Institutions" %}</h2>
         </div>
         <section class="comparison-section">
 
@@ -305,16 +305,16 @@
                     <h3>Other Institutions </h3>
                     <hr>
                     <ul>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-circle-black.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-circle-black.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-close.svg" alt="close"></span>No</li>
-                        <li><span><img src="/static/web/images/main/tick-circle-black.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle_black' '/static/web/images/main/tick-circle-black.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle_black' '/static/web/images/main/tick-circle-black.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_close' '/static/web/images/main/tick-close.svg' %}" alt="close"></span>No</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle_black' '/static/web/images/main/tick-circle-black.svg' %}" alt="circle"></span>Yes</li>
                     </ul>
                 </div>
 
@@ -323,16 +323,16 @@
                     <h3>360 Marketing School</h3>
                     <hr>
                     <ul>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Various Specialisation</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Professional & Personal Add-on Skills</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
-                        <li><span><img src="/static/web/images/main/tick-circle.svg" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Various Specialisation</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Professional & Personal Add-on Skills</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
+                        <li><span><img src="{% cms_image 'comparison.tick_circle' '/static/web/images/main/tick-circle.svg' %}" alt="circle"></span>Yes</li>
                     </ul>
                 </div>
             </div>
@@ -349,8 +349,8 @@
 
         <div class="alumni-success">
             <div class="alumni-header">
-                <h2 class="section_title text-white">Student Success Stories</h2>
-                <p class="text-white">Real People, Real Transitions, Real Success</p>
+                <h2 class="section_title text-white">{% cms_text "index.success_stories_title" "Student Success Stories" %}</h2>
+                <p class="text-white">{% cms_text "index.success_stories_subtitle" "Real People, Real Transitions, Real Success" %}</p>
             </div>
 
             <div class="alumni-users">
@@ -373,7 +373,7 @@
                                 {% if story.profile_picture %}
                                 <img src="{{ story.profile_picture.url }}" alt="{{ story.name }}">
                                 {% else %}
-                                <img src="/static/web/images/main/student.png" alt="{{ story.name }}">
+                                <img src="{% cms_image 'student.placeholder' '/static/web/images/main/student.png' %}" alt="{{ story.name }}">
                                 {% endif %}
                             </div>
                             <div class="student-info">
@@ -440,8 +440,8 @@
 <div class="our-courses-area pb-100 lightbg">
     <div class="container">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">Guest Mentors</h2>
-            <p>Gain Insights from World-Class Guest Faculty</p>
+            <h2 class="section_title">{% cms_text "index.guest_mentors_title" "Guest Mentors" %}</h2>
+            <p>{% cms_text "index.guest_mentors_subtitle" "Gain Insights from World-Class Guest Faculty" %}</p>
         </div>
 
         <div class="mentor-slider">
@@ -453,7 +453,7 @@
                             {% if mentor.profile_picture %}
                             <img src="{{mentor.profile_picture.url}}" alt="" class="mentor_img" />
                             {% else %}
-                            <img src="/static/web/images/main/mentor.png" alt="Mentor" class="mentor_img" />
+                            <img src="{% cms_image 'mentor.placeholder' '/static/web/images/main/mentor.png' %}" alt="Mentor" class="mentor_img" />
                             {% endif %}
                             <div class="mentor-info">
                                 <h5>{{mentor.name}}</h5>
@@ -487,7 +487,7 @@
                             {% if mentor.profile_picture %}
                             <img src="{{mentor.profile_picture.url}}" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
                             {% else %}
-                            <img src="/static/web/images/main/mentor.png" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
+                            <img src="{% cms_image 'mentor.placeholder' '/static/web/images/main/mentor.png' %}" alt="{{mentor.name}}" loading="lazy" width="181" height="auto">
                             {% endif %}
                         </div>
                         <div class="faculty-info">
@@ -522,8 +522,8 @@
 <div class="partner-area pb-100 ">
     <div class="container-fluid">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">Hiring Partners</h2>
-            <p>Our Alumni Network Across the Globe</p>
+            <h2 class="section_title">{% cms_text "index.hiring_partners_title" "Hiring Partners" %}</h2>
+            <p>{% cms_text "index.hiring_partners_subtitle" "Our Alumni Network Across the Globe" %}</p>
         </div>
         <div class="row justify-content-center align-items-center" data-cues="fadeIn">
             {% for hiring_partner in hiring_partners %}
@@ -546,8 +546,8 @@
                 <div class="col-lg-8 col-md-12 mx-auto">
                     <div class="contact-form">
                         <div class="contact-form-header">
-                            <h2>Get In Touch</h2>
-                            <p>Fill in your information and we'll be in touch as soon as we can</p>
+                            <h2>{% cms_text "index.contact_title" "Get In Touch" %}</h2>
+                            <p>{% cms_text "index.contact_subtitle" "Fill in your information and we'll be in touch as soon as we can" %}</p>
                         </div>
                         {% if messages %}
                         <div class="mb-4">

@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}Brand Case Studies | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -10,8 +11,8 @@
             <div class="col-lg-6 col-md-12">
                 <div class="page-banner-content">
                     <span>Brand Case Studies</span>
-                    <h2>Real Brands, Real Results</h2>
-                    <p>Discover how we've helped businesses of all sizes achieve their marketing goals. Our case studies showcase our data-driven approach and commitment to delivering measurable success.</p>
+                    <h2>{% cms_text "case_studies.hero_title" "Real Brands, Real Results" %}</h2>
+                    <p>{% cms_text "case_studies.hero_subtitle" "Discover how we've helped businesses of all sizes achieve their marketing goals. Our case studies showcase our data-driven approach and commitment to delivering measurable success." %}</p>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12">
@@ -26,7 +27,7 @@
 <div class="services-area ptb-125">
     <div class="container-fluid">
         <div class="section-title" data-cues="slideInUp">
-            <h2 class="section_title">Our Proven Process</h2>
+            <h2 class="section_title">{% cms_text "case_studies.process_title" "Our Proven Process" %}</h2>
         </div>
         <div class="row justify-content-center" data-cues="slideInUp">
             <div class="col-lg-3 col-md-6">

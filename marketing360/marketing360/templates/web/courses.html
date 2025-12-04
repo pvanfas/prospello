@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}About Us | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -10,7 +11,7 @@
         <div class="row justify-content-center" data-cue="fadeIn">
             <div class="col-lg-10 col-md-10 mx-auto">
                 <div class="herocard">
-                    <h1 class="h2">From India's first <br> Practical Digital Marketing Academy</h1>
+                    <h1 class="h2">{% cms_text "courses.hero_title" "From India's first <br> Practical Digital Marketing Academy" %}</h1>
                 </div>
             </div>
         </div>
@@ -88,7 +89,7 @@
                 <div class="row justify-content-center mb-4" data-cues="slideInUp" data-disabled="true">
                     <div class="col-12 text-center" data-cue="slideInUp" data-show="true"
                         style="animation-name: slideInUp; animation-duration: 600ms; animation-timing-function: ease; animation-delay: 0ms; animation-direction: normal; animation-fill-mode: both;">
-                        <h4 class="text-uppercase">Tools &amp; Certifications</h4>
+                        <h4 class="text-uppercase">{% cms_text "courses.tools_title" "Tools & Certifications" %}</h4>
                     </div>
                 </div>
                 <div class="row justify-content-center align-items-center" data-cues="fadeIn" data-disabled="true">
@@ -114,8 +115,8 @@
 <div class="our-courses-area pt-100 pb-100 lightbg">
     <div class="container">
         <div class="section-title-wrap text-center mx-auto" data-cues="slideInUp">
-            <h2 class="section_title">Guest Mentors</h2>
-            <p>Gain Insights from World-Class Guest Faculty</p>
+            <h2 class="section_title">{% cms_text "courses.mentors_title" "Guest Mentors" %}</h2>
+            <p>{% cms_text "courses.mentors_subtitle" "Gain Insights from World-Class Guest Faculty" %}</p>
         </div>
 
         <div class="mentor-slider">

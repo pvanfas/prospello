@@ -1,5 +1,6 @@
 {% extends "web/base.html" %}
 {% load static %}
+{% load cms_tags %}
 {% block title %}About Us | 360 Marketing School{% endblock %}
 
 {% block content %}
@@ -9,7 +10,7 @@
         <div class="row justify-content-center" data-cue="fadeIn">
             <div class="col-lg-12 col-md-12 mx-auto">
                 <div class="herocard">
-                    <h1 class="h2">Got questions? <br> Let’s talk growth.</h1>
+                    <h1 class="h2">{% cms_text "contact.hero_title" "Got questions? <br> Let's talk growth." %}</h1>
                 </div>
             </div>
         </div>
@@ -57,7 +58,7 @@
                 <div class="col-lg-12 col-md-12">
                     <div class="contact-form">
                         <div class="contact-form-header">
-                            <h2>Get In Touch</h2>
+                            <h2>{% cms_text "contact.form_title" "Get In Touch" %}</h2>
                             <p>Fill in your information and we'll be in touch as soon as we can</p>
                         </div>
                         {% if messages %}

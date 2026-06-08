@@ -26,3 +26,4 @@ class ProductAdmin(ImportExportActionModelAdmin):
     list_editable = ("is_active",)
     search_fields = ("name",)
     autocomplete_fields = ("category",)
+

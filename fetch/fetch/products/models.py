@@ -32,6 +32,7 @@ class Product(models.Model):
     is_featured = models.BooleanField(default=True)
     rank = models.PositiveIntegerField(blank=True, null=True)
     pub_date = models.DateTimeField(auto_now_add=True)
+    alt_tag = models.CharField(max_length=255, blank=True, null=True)
 
     def get_view_url(self):
         return reverse("web:product_single", kwargs={"slug": self.slug})

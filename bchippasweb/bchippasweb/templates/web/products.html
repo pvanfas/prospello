@@ -1,0 +1,170 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start page title -->
+    <section
+        class="ipad-top-space-margin page-title-big-typography cover-background p-0 md-background-position-left-center"
+        style="background-image: url('{% static 'web/images/bchippas-about-title-bg.jpg' %}?v=1.0')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center small-screen">
+                <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large"
+                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                    <h1 class="alt-font fw-400 text-dark-gray text-uppercase ls-minus-1px mb-0">Our Products</h1>
+                    <h2 class="m-auto text-red fw-600 text-uppercase mb-0"><span
+                            class="h-2px w-5px bg-red d-inline-block align-middle me-5px"></span>Authentic Flavours<span
+                            class="h-2px w-5px bg-red d-inline-block align-middle ms-5px"></span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end page title -->
+    <!-- start section -->
+    <section class="pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 md-mb-50px sm-mb-30px">
+                    <img src="{% static 'web/images/hero-03.png' %}?v=1.0" alt="" data-bottom-top="transform: rotate(0deg)"
+                        data-top-bottom="transform:rotate(20deg)">
+                </div>
+                <div class="col-xl-5 offset-xl-1 col-lg-5"
+                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 fw-600 text-red text-uppercase mb-25px d-block"><span
+                            class="w-70px xs-w-50px h-2px bg-red d-inline-block align-middle me-15px"></span>Best
+                        quality products</span>
+                    <h2 class="alt-font text-dark-gray mb-20px">The finest traditional Kerala snacks.</h2>
+                    <p>Enjoy our diverse selection of traditional snacks, spices, and sweets, made with the finest quality ingredients and packed to retain their natural freshness.</p>
+                    <div class="d-inline-block mt-10px xs-mt-0">
+                        <a href="{% url 'web:story' %}"
+                            class="btn btn-dark-gray btn-large btn-switch-text btn-round-edge btn-box-shadow me-30px xl-me-10px xs-mb-10px">
+                            <span>
+                                <span class="btn-double-text" data-text="Our Brand Story">Our Brand Story</span>
+                            </span>
+                        </a>
+                        <a href="{% url 'web:story' %}"
+                            class="alt-font fs-20 d-inline-block align-middle lh-0 text-dark-gray xs-mb-10px"><i
+                                class="bi bi-play-circle icon-very-medium align-middle me-10px"></i>View Our Products</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="cover-background" style="background-image: url({% static "web/images/bchippas-home-05.jpg" %}?v=1.0)">
+        <div class="container">
+            <div class="row justify-content-center mb-1">
+                <div class="col-lg-7 text-center"
+                    data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block"><span
+                            class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>Choose delicious<span
+                            class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span></span>
+                    <h2 class="alt-font text-dark-gray">Popular products</h2>
+                </div>
+            </div>
+            <div class="row mb-6 xs-mb-8">
+                <div class="col tab-style-02 fs-600">
+                    <ul class="nav nav-tabs fs-18 fw-500 justify-content-center text-center mb-4 sm-mb-0"
+                        data-anime='{ "el": "childs", "rotateX": [30, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                        {% for category in categories %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if forloop.first %}active{% endif %}" data-bs-toggle="tab" href="#tab_category_{{ category.id }}">
+                                <i class="{{ category.icon_class|default:'line-icon-Chopsticks' }} d-block icon-large mb-10px"></i>{{ category.name }}
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <div class="tab-content">
+                        {% for category in categories %}
+                        <div class="tab-pane fade in {% if forloop.first %}active show{% endif %}" id="tab_category_{{ category.id }}">
+                            <div class="row justify-content-center">
+                                {% for product in category.product_set.all %}
+                                <div class="col-lg-6 sm-mb-20px mb-4">
+                                    <ul class="pricing-table-style-12 {% if forloop.counter|divisibleby:2 %}ps-15px md-ps-0{% else %}pe-15px md-pe-0{% endif %}">
+                                        <li class="last-paragraph-no-margin">
+                                            <a href="{% url 'web:product_detail' product.id %}" class="d-flex align-items-center">
+                                                <div>
+                                                    {% if product.image %}
+                                                    <img src="{{ product.image.url }}" class="semirounded-circle" alt="{{ product.name }}" style="max-width:120px;width:120px;height:120px;object-fit:cover;">
+                                                    {% else %}
+                                                    <img src="{% static 'web/images/default.png' %}?v=1.0" class="semirounded-circle" alt="{{ product.name }}" style="max-width:120px;width:120px;height:120px;object-fit:cover;">
+                                                    {% endif %}
+                                                </div>
+                                                <div class="ms-30px xs-ms-0">
+                                                    <div class="d-flex align-items-center w-100 fs-18 mb-5px">
+                                                        <p class="fw-600 text-dark-gray hover-text-red transition-3ms">{{ product.name }}</p>
+                                                        <div class="divider-style-03 divider-style-03-02 border-color-extra-medium-gray flex-grow-1 ms-20px me-20px"></div>
+                                                        <div class="ms-auto fw-600 text-dark-gray">{{ product.weight }}</div>
+                                                    </div>
+                                                    <p>{{ product.description|default:"Authentic snacks crafted with tradition."|truncatewords:30 }}</p>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                {% empty %}
+                                <div class="col-12 text-center text-dark-gray">
+                                    <p class="fs-18 mt-4">Coming soon!</p>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center"
+                data-anime='{ "translateY": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                <div class="col-12 text-center last-paragraph-no-margin">
+                    <div
+                        class="d-inline-block align-middle bg-red fw-500 text-white border-radius-30px ps-20px pe-20px fs-14 me-10px sm-m-10px">
+                        Food Expert</div>
+                    <div class="alt-font text-dark-gray fs-19 mb-20px d-inline-block">Special snacks crafted
+                        from the finest <span class="text-decoration-line-bottom-medium fw-600">food technologists.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+    <section class="background-position-center-bottom background-no-repeat"
+        style="background-image: url('{% static 'web/images/bchippas-menu-05.jpg' %}?v=1.0')">
+        <div class="container">
+            <div class="row justify-content-center mb-3">
+                <div class="col-lg-7 text-center"
+                    data-anime='{ "el": "childs", "translateY": [50, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                    <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block"><span
+                            class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>Bichippas
+                        special<span class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span></span>
+                    <h2 class="alt-font fw-400 text-dark-gray">Featured Products</h2>
+                </div>
+            </div>
+            <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 justify-content-center"
+                data-anime='{ "el": "childs", "translateY": [50, 0], "rotateY": [-30, 0], "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 300, "easing": "easeOutQuad" }'>
+                {% for featured in featured_products|slice:":3" %}
+                <div class="col {% if not forloop.last %}border-end xs-border-end-0 border-color-transparent-dark-very-light{% endif %} text-center md-mb-50px sm-mb-30px">
+                    <div class="services-box-style-04 last-paragraph-no-margin border-radius-4px overflow-hidden position-relative">
+                        <div class="mb-25px">
+                            {% if featured.image %}
+                            <img src="{{ featured.image.url }}" alt="{{ featured.product_name }}" data-bottom-top="transform: rotate(10deg)" data-top-bottom="transform:rotate(-10deg)">
+                            {% else %}
+                            <img src="{% static 'web/images/default.png' %}?v=1.0" alt="{{ featured.product_name }}" data-bottom-top="transform: rotate(10deg)" data-top-bottom="transform:rotate(-10deg)">
+                            {% endif %}
+                        </div>
+                        <div class="box-overlay bg-white z-index-minus-1"></div>
+                        <div>
+                            <div class="d-block fs-24 alt-font ls-minus-05px text-dark-gray">{{ featured.product_name }}</div>
+                        </div>
+                    </div>
+                </div>
+                {% empty %}
+                <div class="col text-center">
+                    <div class="d-block fs-24 alt-font ls-minus-05px text-dark-gray">Featured products coming soon.</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+{% endblock %}

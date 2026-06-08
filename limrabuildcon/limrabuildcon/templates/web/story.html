@@ -1,0 +1,103 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start page title -->
+<section id="about" class="overlap-height wow animate__fadeIn padding-60px-bottom parallax" data-parallax-background-ratio="0.5" style="background-image:url('{% static 'web/images/our-story-bg.jpg' %}');">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-8 col-lg-10 text-center overlap-gap-section">
+
+        <h3 class="mt-3 alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px">We focus on creative and <span class="text-gradient-peacock-blue-crome-yellow-2 font-weight-600">strategically</span> driven <span
+            class="text-gradient-peacock-blue-crome-yellow-2 font-weight-600">innovation</span></h3>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end page title -->
+
+<!-- start section -->
+<section class="overflow-visible wow animate__fadeIn" style="    padding: 1px 0;">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-12 col-lg-6 margin-70px-top lg-margin-30px-top md-margin-50px-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+        <div class="w-70 border-radius-6px overflow-hidden position-relative">
+          <img src="{% static 'web/images/limra/story-1.jpg' %}" alt="">
+          <div class="opacity-extra-medium bg-gradient-peacock-blue-crome-yellow"></div>
+        </div>
+        <div class="position-absolute right-15px bottom-0px w-70" data-parallax-layout-ratio="1.1">
+          <img class="border-radius-6px" src="{% static 'web/images/limra/story-2.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-12 col-lg-5 offset-lg-1 wow animate__fadeIn" data-wow-delay="0.4s">
+        <div class="alt-font text-extra-medium font-weight-500 margin-30px-bottom media"><span class="w-50px h-1px bg-fast-blue opacity-7 align-self-center margin-20px-right"></span>
+
+        </div>
+        <h5 class="alt-font text-extra-dark-gray font-weight-500 margin-30px-bottom">Our Story</h5>
+        <p class="w-95 text-justify">
+          De L!MRA is a leading construction company of building and construction. De L!MRA is a moving story in the realty sector.
+          Breaking ground first time in 1986, PMA Nazer, the founder of all our tangible dreams, began scripting our success story
+          with a slew of buildings and infra structure projects across North Kerala. Introducing quality control into every detail
+          of our projects, we slowly moved from strength to strength with back-to-back projects. As time ticked into decades of
+          engineering experience, our business intelligence, innovation and investment of resources proved to be going well with
+          each other.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="wow animate__fadeIn">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 text-center margin-4-half-rem-bottom">
+        <h5 class="alt-font text-extra-dark-gray font-weight-500 letter-spacing-minus-1px">Leadership</h5>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-12 md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+        {% for leader in leaderships %}
+        <div class="row py-3">
+          <div class="col-sm-3">
+            <img src="{{leader.photo.crop.400x400}}" alt="" style="width:100%;height: 100%;object-fit: cover;">
+          </div>
+          <div class="col-sm-9">
+            <div class="box-shadow-small padding-3-rem-all">
+              <span class="text-extra-dark-gray alt-font d-block font-weight-500 margin-10px-bottom">{{leader.name}}</span>
+              <span class="text-extra-dark-gray alt-font d-block font-weight-500 margin-10px-bottom">{{leader.designation}}</span>
+              <p class="text-justify">{{leader.description}}</p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 text-center margin-4-half-rem-bottom">
+        <h5 class="alt-font text-extra-dark-gray font-weight-500 letter-spacing-minus-1px">Our Team</h5>
+      </div>
+    </div>
+    <div class="row row-cols-1 row-cols-lg-4 row-cols-md-2 justify-content-center">
+      {% for team in teams %}
+      <div class="col text-center md-margin-30px-bottom xs-margin-15px-bottom wow animate__fadeIn">
+        <img src="{{team.photo.crop.200x200}}" class="img-circle" alt="">
+        <div class="text-center padding-3-rem-all">
+          <span class="text-extra-dark-gray alt-font d-block font-weight-500">{{team.name}}</span>
+          <p>{{team.designation}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+
+</section>
+<!-- end section -->
+
+
+
+
+{% endblock %}

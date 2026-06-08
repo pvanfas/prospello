@@ -1,0 +1,111 @@
+{% load static %}
+<!-- start footer -->
+<footer class="pb-0 bg-very-light-gray cover-background background-position-center-top sm-background-image-none"
+    style="background-image: url({% static 'web/images/footer-image.png' %}?v=1.0)">
+    <div class="container">
+        <div
+            class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center mt-13 md-mt-15 sm-mt-0 mb-5 sm-mb-50px">
+            <!-- start features box item -->
+            <div class="col icon-with-text-style-03 md-mb-30px">
+                <div class="feature-box ps-8 pe-8 lg-ps-0 lg-pe-0 overflow-hidden">
+                    <div class="feature-box-icon">
+                        <i class="bi bi-chat-square-text d-inline-block icon-medium text-dark-gray mb-15px"></i>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="fw-700 text-dark-gray fs-15 text-uppercase">FSSAI</span>
+                        <div class="w-100 d-block">
+                            <span class="d-block">12345678901234</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end features box item -->
+            <!-- start features box item -->
+            <div class="col icon-with-text-style-03 md-mb-30px">
+                <div class="feature-box ps-8 pe-8 lg-ps-0 lg-pe-0 overflow-hidden">
+                    <div class="feature-box-icon">
+                        <i class="bi bi-telephone-inbound d-inline-block icon-medium text-dark-gray mb-15px"></i>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="fw-700 text-dark-gray fs-15 text-uppercase">Let's talk</span>
+                        <div class="w-100 d-block">
+                            <span class="d-block"><a href="tel:+919847606664">+91 9847606664</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end features box item -->
+            <!-- start features box item -->
+            <div class="col icon-with-text-style-03 xs-mb-30px">
+                <div class="feature-box ps-8 pe-8 lg-ps-0 lg-pe-0 overflow-hidden">
+                    <div class="feature-box-icon">
+                        <i class="bi bi-envelope-open d-inline-block icon-medium text-dark-gray mb-15px"></i>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="fw-700 text-dark-gray fs-15 text-uppercase">Email Us</span>
+                        <div class="w-100 d-block">
+                            <a href="mailto:info@bchippas.com"><span class="">info@bchippas.com</span></a><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end features box item -->
+            <!-- start features box item -->
+            <div class="col icon-with-text-style-03">
+                <div class="feature-box ps-8 pe-8 lg-ps-0 lg-pe-0 overflow-hidden">
+                    <div class="feature-box-icon">
+                        <i class="bi bi-geo-alt d-inline-block icon-medium text-dark-gray mb-15px"></i>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="fw-700 text-dark-gray fs-15 text-uppercase">Contact us</span>
+                        <p class="md-w-70 sm-w-90 xs-w-70 mx-auto">Areekode, Malappuram
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- end features box item -->
+        </div>
+    </div>
+    <div class="border-top border-color-transparent-dark-very-light pt-25px pb-25px">
+        <div class="container">
+            <div class="row align-items-center">
+                <div
+                    class="col-md-4 col-sm-6 fs-15 last-paragraph-no-margin text-center text-sm-start order-3 order-sm-2 order-md-1">
+                    <p>&COPY; Copyright {% now 'Y' %} <a href="{% url 'web:index' %}" target="_blank"
+                            class="text-decoration-line-bottom text-dark-gray fw-600">Prospello Technologies</a></p>
+                </div>
+                <div class="col-md-4 text-center order-1 order-md-2 sm-mb-20px">
+                    <a href="{% url 'web:index' %}" class="footer-logo d-inline-block">
+                        <img src="{% static 'web/images/logo-color.svg' %}" alt="" class="default-logo">
+                    </a>
+                </div>
+                <div
+                    class="col-md-4 col-sm-6 elements-social social-icon-style-08 xs-mb-15px text-center text-sm-end order-2 order-sm-3 order-md-3">
+                    <ul class="small-icon dark d-inline-block">
+                        <li>
+                            <a class="facebook" href="https://www.facebook.com/" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dribbble" href="http://www.dribbble.com" target="_blank">
+                                <i class="fa-brands fa-dribbble"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="twitter" href="https://www.twitter.com" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="instagram" href="https://www.instagram.com" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- end footer -->

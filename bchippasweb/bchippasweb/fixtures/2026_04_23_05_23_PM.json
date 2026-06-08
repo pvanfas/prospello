@@ -1,0 +1,520 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$6dzDPmmXMEsj2fIs41LYng$2H2VhT4IdChROVXUtZ3pxddbF2p/XL4TF70/Q0iVVjE=",
+            "last_login": "2026-04-23T11:34:18.272Z",
+            "is_superuser": true,
+            "username": "prospello",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2026-03-27T09:40:57.066Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "3paq8bu05qss1xps0ajv27368qbb6hed",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGlnrxB-Zkp4zWOvdDQ4gW4qTCnF3iJQC2jcz76USbmtJW5clzazOyqjT75aRHlJ3wHest6ap1XWZs94VfdCur43leTncv4OCvXxrJ4jM5JgEXSZ2kKOPY4gCZAzRkEcfhI1F49haQoZAZgSYpiGgB_X-ACBHOM0:1w64Vh:uDLWa8Ef4O1-Z1REmfx5RbMJe2b5OJeQH7PaHBsC-qk",
+            "expire_date": "2026-04-10T10:33:49.078Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "eaczjddkt5qpm14lvn655hzoiob6ym1n",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGlnrxB-Zkp4zWOvdDQ4gW4qTCnF3iJQC2jcz76USbmtJW5clzazOyqjT75aRHlJ3wHest6ap1XWZs94VfdCur43leTncv4OCvXxrJ4jM5JgEXSZ2kKOPY4gCZAzRkEcfhI1F49haQoZAZgSYpiGgB_X-ACBHOM0:1wFsK2:EHPePyZk98J2r8GIguh3hR_Olv-2SI0EJUJtTCnXFpU",
+            "expire_date": "2026-05-07T11:34:18.281Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "n6mvka8oj2rikwhjou4imftfs7vi6um8",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGlnrxB-Zkp4zWOvdDQ4gW4qTCnF3iJQC2jcz76USbmtJW5clzazOyqjT75aRHlJ3wHest6ap1XWZs94VfdCur43leTncv4OCvXxrJ4jM5JgEXSZ2kKOPY4gCZAzRkEcfhI1F49haQoZAZgSYpiGgB_X-ACBHOM0:1w63he:AepMADIDcpzUXXtSJhi2XiS8zoZ0QAdRFzF1FbvdC84",
+            "expire_date": "2026-04-10T09:42:06.976Z"
+        }
+    },
+    {
+        "model": "web.contact",
+        "pk": 1,
+        "fields": {
+            "name": "Allen Bell",
+            "phone": "7328127840",
+            "email": "allen.bell3456@gmail.com",
+            "message": "Hi,\r\n\r\nI recently came across your website and noticed a few areas where improvements could significantly enhance your visibility on Google.\r\n\r\nWith a well-planned SEO strategy, you can attract more relevant traffic, improve your search rankings, and generate higher-quality inquiries for your business.\r\n\r\nI’d be glad to share insights on how we can strengthen your online presence, along with details of my SEO services and pricing.\r\n\r\nLet me know a convenient time to connect.\r\n\r\nRegards,\r\n\r\nAllen",
+            "created_at": "2026-04-22T20:45:08.187Z"
+        }
+    },
+    {
+        "model": "web.enquiry",
+        "pk": 1,
+        "fields": {
+            "name": "ANFAS PV",
+            "phone": "j",
+            "email": "j@dd.nn",
+            "message": "j",
+            "created_at": "2026-03-24T22:19:26.920Z"
+        }
+    },
+    {
+        "model": "web.enquiry",
+        "pk": 2,
+        "fields": {
+            "name": "ANFAS PV",
+            "phone": "j",
+            "email": "j@dd.nn",
+            "message": "j",
+            "created_at": "2026-03-24T22:19:28.950Z"
+        }
+    },
+    {
+        "model": "web.enquiry",
+        "pk": 3,
+        "fields": {
+            "name": "ANFAS PV",
+            "phone": "j",
+            "email": "j@dd.nn",
+            "message": "j",
+            "created_at": "2026-03-24T22:19:36.983Z"
+        }
+    },
+    {
+        "model": "web.category",
+        "pk": 5,
+        "fields": {
+            "name": "Snacks",
+            "icon_class": "line-icon-Chopsticks",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.category",
+        "pk": 6,
+        "fields": {
+            "name": "Spices",
+            "icon_class": "line-icon-Bike-Helmet",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.category",
+        "pk": 7,
+        "fields": {
+            "name": "Pickles",
+            "icon_class": "line-icon-Cupcake",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.category",
+        "pk": 8,
+        "fields": {
+            "name": "Sweets",
+            "icon_class": "line-icon-Beer",
+            "order": 4
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 9,
+        "fields": {
+            "category": 5,
+            "name": "Banana Chips Classic",
+            "slug": "banana-chips-classic",
+            "weight": "500g",
+            "tagline": null,
+            "description": "Hand-sliced premium Nendran bananas, deep-fried in pure coconut oil for that unmistakable golden crunch and traditional Kerala flavor. A perfect blend of health and taste.",
+            "image": "products/chips.jpg",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 10,
+        "fields": {
+            "category": 5,
+            "name": "Spicy Mixture",
+            "slug": "spicy-mixture",
+            "weight": "250g",
+            "tagline": null,
+            "description": "A fiery and crunchy medley of sev, fried lentils, peanuts, and curry leaves, seasoned with a secret blend of South Indian spices for a bold and addictive snack experience.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 11,
+        "fields": {
+            "category": 5,
+            "name": "Tapioca Chips",
+            "slug": "tapioca-chips",
+            "weight": "100g",
+            "tagline": null,
+            "description": "Thinly sliced cassava roots, kettle-fried to perfection and lightly salted. A naturally gluten-free snack with a satisfyingly hard crunch and earthy undertones.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 12,
+        "fields": {
+            "category": 5,
+            "name": "Jackfruit Chips",
+            "slug": "jackfruit-chips",
+            "weight": "250g",
+            "tagline": null,
+            "description": "Golden slices of ripe jackfruit, fried to preserve their unique tropical sweetness and aroma. A seasonal delicacy from the heart of Kerala, enjoyed worldwide.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 13,
+        "fields": {
+            "category": 5,
+            "name": "Sweet Plantain Chips",
+            "slug": "sweet-plantain-chips",
+            "weight": "400g",
+            "tagline": null,
+            "description": "Ripe plantains sliced thin and fried until caramelized. These chips offer a perfect balance of natural fruit sweetness and a crispy, melt-in-your-mouth texture.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 14,
+        "fields": {
+            "category": 5,
+            "name": "Kerala Murukku",
+            "slug": "kerala-murukku",
+            "weight": "500g",
+            "tagline": null,
+            "description": "Traditional spiral-shaped snack made from a savory blend of rice flour and urad dal, flavored with cumin and sesame seeds. The ultimate crispy tea-time companion.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 15,
+        "fields": {
+            "category": 6,
+            "name": "Chilli Powder",
+            "slug": "chilli-powder",
+            "weight": "250g",
+            "tagline": null,
+            "description": "Grown in the sun-drenched fields of Guntur, our chilli powder is finely ground to provide a consistent heat level and a vibrant red color to all your culinary creations.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 16,
+        "fields": {
+            "category": 6,
+            "name": "Turmeric Powder",
+            "slug": "turmeric-powder",
+            "weight": "200g",
+            "tagline": null,
+            "description": "High-curcumin Alleppey turmeric, known for its deep golden hue and medicinal properties. Stone-ground to retain its natural essential oils and rich, earthy aroma.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 17,
+        "fields": {
+            "category": 6,
+            "name": "Coriander Powder",
+            "slug": "coriander-powder",
+            "weight": "250g",
+            "tagline": null,
+            "description": "Cool-ground coriander seeds that preserve the delicate floral and citrus notes. An essential base for creating authentic, aromatic Indian curries and spice rubs.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 18,
+        "fields": {
+            "category": 6,
+            "name": "Black Pepper Whole",
+            "slug": "black-pepper-whole",
+            "weight": "100g",
+            "tagline": null,
+            "description": "Hand-harvested Tellicherry black peppercorns, prized for their large size and complex, fruity pungency. Perfect for fresh grinding to elevate any gourmet dish.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 19,
+        "fields": {
+            "category": 6,
+            "name": "Cardamom Pods",
+            "slug": "cardamom-pods",
+            "weight": "50g",
+            "tagline": null,
+            "description": "Extra-large green cardamom pods from the Idukki hills. Intensely fragrant with sweet, eucalyptus notes, ideal for both festive biryanis and delicate desserts.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 20,
+        "fields": {
+            "category": 6,
+            "name": "Garam Masala",
+            "slug": "garam-masala",
+            "weight": "150g",
+            "tagline": null,
+            "description": "A heritage blend of twelve whole spices including cinnamon, cloves, and mace. Roasted and ground in small batches for maximum potency, warmth, and flavor.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 21,
+        "fields": {
+            "category": 7,
+            "name": "Mango Pickle",
+            "slug": "mango-pickle",
+            "weight": "400g",
+            "tagline": null,
+            "description": "Raw green mangoes marinated in a spicy brine of mustard, fenugreek, and cold-pressed gingelly oil. A tangy, traditional staple that pairs perfectly with rice and curd.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 22,
+        "fields": {
+            "category": 7,
+            "name": "Lemon Pickle",
+            "slug": "lemon-pickle",
+            "weight": "400g",
+            "tagline": null,
+            "description": "Sun-ripened lemons preserved with sea salt and fiery red chillies. The long curing process creates a soft, jammy texture with a sharp, refreshing, and spicy tang.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 23,
+        "fields": {
+            "category": 7,
+            "name": "Garlic Pickle",
+            "slug": "garlic-pickle",
+            "weight": "300g",
+            "tagline": null,
+            "description": "Whole cloves of robust garlic slow-cooked in a spicy, aromatic gravy. This pickle offers a deep, savory umami punch that enhances the flavor of any meal.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 24,
+        "fields": {
+            "category": 7,
+            "name": "Mixed Veg Pickle",
+            "slug": "mixed-veg-pickle",
+            "weight": "400g",
+            "tagline": null,
+            "description": "A colorful crunch of fresh carrots, cauliflower, and green chillies preserved in a traditional spice blend. A versatile and healthy accompaniment for everyday meals.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 25,
+        "fields": {
+            "category": 7,
+            "name": "Gooseberry Pickle",
+            "slug": "gooseberry-pickle",
+            "weight": "350g",
+            "tagline": null,
+            "description": "Whole Indian gooseberries (Amla) infused with a potent mix of traditional spices. Packed with Vitamin C and a unique blend of sour, bitter, and spicy notes.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 26,
+        "fields": {
+            "category": 7,
+            "name": "Tender Mango Pickle",
+            "slug": "tender-mango-pickle",
+            "weight": "400g",
+            "tagline": null,
+            "description": "Exquisite baby mangoes (Kadumango) kept whole and preserved in a spicy, watery brine. A prized Kerala delicacy known for its intense and refreshing flavor.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 27,
+        "fields": {
+            "category": 8,
+            "name": "Sharkara Varatti",
+            "slug": "sharkara-varatti",
+            "weight": "250g",
+            "tagline": null,
+            "description": "Chunky plantain pieces deep-fried and generously coated with thick jaggery, ginger powder, and cumin. A classic wedding feast (Sadhya) essential and a sweet treat.",
+            "image": "",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 28,
+        "fields": {
+            "category": 8,
+            "name": "Achappam",
+            "slug": "achappam",
+            "weight": "200g",
+            "tagline": null,
+            "description": "Delicate and crunchy rose-shaped cookies made from a batter of fine rice flour and fresh coconut milk. A visual and culinary delight that represents Kerala's heritage.",
+            "image": "products/Achappam.jpg",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 29,
+        "fields": {
+            "category": 8,
+            "name": "Kuzhalappam",
+            "slug": "kuzhalappam",
+            "weight": "250g",
+            "tagline": null,
+            "description": "Tube-shaped fried snacks with a unique roasted flour taste, flavored with onion, garlic, and sesame. A crispy, savory companion perfectly suited for your evening tea.",
+            "image": "products/Kuzhalappam.webp",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 30,
+        "fields": {
+            "category": 8,
+            "name": "Banana Halwa",
+            "slug": "banana-halwa",
+            "weight": "500g",
+            "tagline": null,
+            "description": "A slow-cooked masterpiece made from ripe bananas, jaggery, and pure ghee. This dark, chewy halwa is a signature sweet known for its rich, caramelized, and decadent flavor.",
+            "image": "products/Banana_Halwa.jpg",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 31,
+        "fields": {
+            "category": 8,
+            "name": "Peanut Chikki",
+            "slug": "peanut-chikki",
+            "weight": "300g",
+            "tagline": null,
+            "description": "Traditional energy bars made with premium roasted peanuts and pure jaggery. A crunchy, nutty, and healthy treat that provides an instant natural energy boost.",
+            "image": "products/Peanut_Chikki.webp",
+            "features": null
+        }
+    },
+    {
+        "model": "web.product",
+        "pk": 32,
+        "fields": {
+            "category": 8,
+            "name": "Sesame Balls",
+            "slug": "sesame-balls",
+            "weight": "200g",
+            "tagline": null,
+            "description": "Wholesome spheres of toasted sesame seeds bound together with melted jaggery. A nutrient-dense snack with a rich, nutty aroma and a satisfyingly sweet finish.",
+            "image": "products/Sesame_Balls.jpg",
+            "features": null
+        }
+    },
+    {
+        "model": "web.featuredproduct",
+        "pk": 9,
+        "fields": {
+            "product_name": "Avil Milk Special Pori Avil 400G",
+            "image": "featured_products/p1_bSAYmEB.png",
+            "order": 1
+        }
+    },
+    {
+        "model": "web.featuredproduct",
+        "pk": 10,
+        "fields": {
+            "product_name": "Avil Milk Special Pori Avil 150g",
+            "image": "featured_products/p2.png",
+            "order": 2
+        }
+    },
+    {
+        "model": "web.featuredproduct",
+        "pk": 11,
+        "fields": {
+            "product_name": "Roasted Matta Avil 500G",
+            "image": "featured_products/p3.png",
+            "order": 3
+        }
+    },
+    {
+        "model": "web.testimonial",
+        "pk": 1,
+        "fields": {
+            "name": "Alexander Harvard",
+            "role": "Procurement Manager, Global Foods",
+            "content": "Bchippas consistently delivers the highest quality authentic Kerala snacks. Their B2B supply chain is phenomenal and highly reliable.",
+            "rating": 5,
+            "image": "testimonials/avtar-33.jpg"
+        }
+    },
+    {
+        "model": "web.testimonial",
+        "pk": 2,
+        "fields": {
+            "name": "Maria Smith",
+            "role": "Director, Spices Co.",
+            "content": "We have been sourcing spices and pickles from Bchippas for over two years. The hygiene and packing standards are truly world-class.",
+            "rating": 5,
+            "image": "testimonials/avtar-34.jpg"
+        }
+    },
+    {
+        "model": "web.testimonial",
+        "pk": 3,
+        "fields": {
+            "name": "John Doe",
+            "role": "Owner, John's Supermarket",
+            "content": "Our customers absolutely love the Tapioca and Banana chips. The authentic taste keeps them coming back for more.",
+            "rating": 4,
+            "image": "testimonials/avtar-35.jpg"
+        }
+    }
+]

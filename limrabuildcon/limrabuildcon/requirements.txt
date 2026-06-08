@@ -1,0 +1,7 @@
+Django==4.2.9
+django-tinymce
+django-versatileimagefield
+Pillow
+psycopg2-binary
+python-decouple
+pytz

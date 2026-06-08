@@ -1,0 +1,126 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start page title -->
+    <section
+        class="ipad-top-space-margin page-title-big-typography cover-background p-0 md-background-position-left-center"
+        style="background-image: url('{% static 'web/images/bchippas-about-title-bg.jpg' %}?v=1.0')">
+        <div class="container">
+            <div class="row align-items-center justify-content-center small-screen">
+                <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large"
+                    data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                    <h1 class="alt-font text-dark-gray text-uppercase ls-minus-1px mb-0">B2B Enquiries</h1>
+                    <h2 class="m-auto text-red fw-600 text-uppercase mb-0"><span
+                            class="h-2px w-5px bg-red d-inline-block align-middle me-5px"></span>Partner With Us<span
+                            class="h-2px w-5px bg-red d-inline-block align-middle ms-5px"></span></h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end page title -->
+    <!-- start section -->
+    <section class="pt-0">
+        <div class="container"
+            data-anime='{ "el": "childs", "translateY": [-15, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+            <div class="row">
+                <div class="col-12 pe-17 background-position-right-top background-no-repeat md-pe-15px"
+                    style="background-image: url('{% static 'web/images/bchippas-contact-01.jpg' %}?v=1.0')">
+                    <div id="map" class="map sm-h-350px">
+                        <img src="{% static 'web/images/map.png' %}?v=1.0" alt="" style="width: 100%; height: 100%; object-fit: cover;border-radius:20px;">
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-end justify-content-center">
+                <div class="col-xl-7 col-lg-6 align-self-start">
+                    <span
+                        class="fs-140 lg-fs-100 xs-fs-90 fw-700 text-very-light-gray ls-minus-8px lg-ls-minus-5px xs-ls-minus-4px md-w-100 d-block text-center text-lg-start">Write
+                        here</span>
+                </div>
+                <div
+                    class="col-xl-5 col-lg-6 col-md-12 contact-form-style-03 position-relative overlap-section-one-fourth md-mt-0">
+                    <div
+                        class="bg-very-light-gray p-14 position-relative overflow-hidden mt-50px md-mt-25px sm-mt-15px lg-p-10">
+                        <i
+                            class="bi bi-chat-text fs-140 text-base-color opacity-1 position-absolute top-minus-35px right-minus-20px"></i>
+                        <h2 class="alt-font text-dark-gray mb-15px">How can we help with your B2B needs?</h2>
+                        {% if success %}
+                        <div class="p-20px bg-base-color-transparent border-radius-4px border-1px border-color-base-color mb-25px" data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-check-circle-fill fs-30 text-base-color me-15px text-white"></i>
+                                <div>
+                                    <span class="d-block text-dark-gray fw-600 alt-font">Enquiry Received!</span>
+                                    <span class="text-white fs-15">Thank you for your interest. Our B2B team will reach out to you shortly.</span>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        <form action="{% url 'web:enquiries' %}" method="post">
+                            {% csrf_token %}
+                            <div class="position-relative form-group mb-10px">
+                                <span class="form-icon text-medium-gray"><i class="bi bi-emoji-smile"></i></span>
+                                {{ form.name }}
+                            </div>
+                            <div class="position-relative form-group mb-10px">
+                                <span class="form-icon text-medium-gray"><i class="bi bi-telephone"></i></span>
+                                {{ form.phone }}
+                            </div>
+                            <div class="position-relative form-group mb-10px">
+                                <span class="form-icon medium-gray"><i class="bi bi-envelope"></i></span>
+                                {{ form.email }}
+                            </div>
+                            <div class="position-relative form-group form-textarea mt-10px mb-0">
+                                {{ form.message }}
+                                <span class="form-icon medium-gray"><i class="bi bi-chat-square-dots"></i></span>
+                                <button class="btn btn-dark-gray btn-medium btn-switch-text btn-round-edge btn-box-shadow mt-30px" type="submit">
+                                    <span>
+                                        <span class="btn-double-text" data-text="Send Enquiry">Send Enquiry</span>
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+    <!-- start section -->
+        <section class="pt-0">
+        <div class="container">
+            <div class="row align-items-center">
+                 <div class="col-lg-4 md-mb-40px xs-mb-30px text-center text-md-start"
+                    data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <span class="d-block fs-15 fw-600 text-red text-uppercase mb-15px">Have a question?</span>
+                    <h3 class="alt-font fw-400 text-dark-gray mb-0 w-85 sm-w-100"><span
+                            class="text-decoration-underline">Talk to us.</span></h3>
+                </div>
+                <div class="col-lg-8 text-center text-md-start"
+                    data-anime='{ "el": "childs", "translateX": [50, 0], "opacity": [0,1], "duration": 1200, "delay": 0, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                    <div class="row row-cols-1 row-cols-md-3 row-cols-sm-2 justify-content-center">
+                        <div class="col sm-mb-30px">
+                            <span class="d-block fs-26 alt-font text-dark-gray fw-400 text-uppercase">Write Us</span>
+                            <div>
+                                <a href="mailto:info@bchippas.com"><span>info@bchippas.com</span></a><br />
+                            </div>
+                        </div>
+                        <div class="col sm-mb-30px">
+                            <span class="d-block fs-26 alt-font text-dark-gray fw-400 text-uppercase">Follow Us</span>
+                          
+                            <div class="d-lg-block"><a href="#"><i
+                                        class="instagram fa-brands fa-instagram w-25px text-dark-gray"></i> on
+                                    Instagram</a></div>
+                        </div>
+                        <div class="col">
+                            <span class="d-block fs-26 alt-font text-dark-gray fw-400 text-uppercase">Call Us</span>
+                            <div>
+                                <a href="tel:+919847606664">+91 9847606664</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end section -->
+{% endblock %}

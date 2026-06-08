@@ -1,0 +1,317 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- start product detail section -->
+<section class="mt-6">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Product Image Column -->
+            <div class="col-lg-5 md-mb-50px" data-anime='{ "translateX": [-30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "easing": "easeOutQuad" }'>
+                <div class="position-relative overflow-hidden border-radius-8px border" id="product-gallery">
+                    {% if product_images %}
+                    <img src="{{ product_images.0.image.url }}" alt="{{ product_images.0.alt_text|default:product.name }}" class="w-100 border-radius-8px" id="main-product-image" style="aspect-ratio: 1/1; object-fit: cover;">
+                    {% elif product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}" class="w-100 border-radius-8px" id="main-product-image" style="aspect-ratio: 1/1; object-fit: cover;">
+                    {% else %}
+                    <img src="{% static 'web/images/default.png' %}" alt="{{ product.name }}" class="w-100 border-radius-8px" id="main-product-image" style="aspect-ratio: 1/1; object-fit: cover;">
+                    {% endif %}
+                    <div class="position-absolute top-20px left-20px">
+                        <span class="bg-red text-white fs-12 fw-700 text-uppercase ps-15px pe-15px pt-5px pb-5px border-radius-4px ls-1px">Premium Quality</span>
+                    </div>
+                </div>
+                {% if product_images and product_images|length > 1 %}
+                <div class="d-flex mt-15px" style="gap: 10px; overflow-x: auto;">
+                    {% for img in product_images %}
+                    <div class="product-thumbnail{% if forloop.first %} active{% endif %}" onclick="changeMainImage(this, '{{ img.image.url }}', '{{ img.alt_text|default:product.name|escapejs }}')" style="cursor: pointer; flex-shrink: 0;">
+                        <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:product.name }}" class="border-radius-6px" style="width: 80px; height: 80px; object-fit: cover; border: 2px solid {% if forloop.first %}#27480D{% else %}#e8e8e8{% endif %}; transition: border-color 0.3s;">
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+
+            <!-- Product Info Column -->
+            <div class="col-lg-6 offset-lg-1" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 100, "staggervalue": 150, "easing": "easeOutQuad" }'>
+                <!-- Category Badge -->
+                <span class="text-red fs-14 fw-700 text-uppercase ls-1px mb-10px d-block">{{ product.category.name }}</span>
+
+                <!-- Product Name -->
+                <h2 class="alt-font text-dark-gray fw-600 ls-minus-1px mb-15px">{{ product.name }}</h2>
+
+                {% if product.tagline %}
+                <p class="fs-18 text-medium-gray mb-25px fw-400">{{ product.tagline }}</p>
+                {% endif %}
+
+                <!-- Weight & Availability -->
+                <div class="d-flex align-items-center flex-wrap mb-25px" style="gap: 12px;">
+                    <span class="bg-very-light-gray border-radius-50px ps-20px pe-20px pt-8px pb-8px text-dark-gray fs-14 fw-600">
+                        <i class="bi bi-box-seam me-5px text-red"></i>{{ product.weight }}
+                    </span>
+                    <span class="bg-very-light-gray border-radius-50px ps-20px pe-20px pt-8px pb-8px text-dark-gray fs-14 fw-600">
+                        <i class="bi bi-check2-circle me-5px text-red"></i>Available for Bulk Inquiry
+                    </span>
+                </div>
+
+                <!-- Description -->
+                <p class="fs-16 mb-10px lh-30">{{ product.description|default:"Experience the authentic taste of Kerala with our premium quality products, prepared with traditional recipes and the finest ingredients." }}</p>
+
+                <!-- Quick Highlights -->
+                <div class="row mb-10px">
+                    <div class="col-6 mb-15px">
+                        <div class="d-flex align-items-center">
+                            <div class="w-35px h-35px border-radius-50px d-flex align-items-center justify-content-center me-12px flex-shrink-0">
+                                <i class="bi bi-star-fill text-red fs-14"></i>
+                            </div>
+                            <span class="text-dark-gray fw-600 fs-15">Pure Ingredients</span>
+                        </div>
+                    </div>
+                    <div class="col-6 mb-15px">
+                        <div class="d-flex align-items-center">
+                            <div class="w-35px h-35px border-radius-50px d-flex align-items-center justify-content-center me-12px flex-shrink-0">
+                                <i class="bi bi-shield-check text-red fs-14"></i>
+                            </div>
+                            <span class="text-dark-gray fw-600 fs-15">Zero Preservatives</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons - properly spaced and wrapped -->
+                <div class="d-flex flex-wrap align-items-center" style="gap: 15px;">
+                    <a href="{% url 'web:contact' %}" class="btn btn-dark-gray btn-large btn-switch-text btn-round-edge btn-box-shadow">
+                        <span>
+                            <span class="btn-double-text" data-text="Enquire Now">Enquire Now</span>
+                        </span>
+                    </a>
+                    <a href="{% url 'web:products' %}" class="btn btn-transparent-dark-gray btn-large btn-round-edge">
+                        <i class="bi bi-arrow-left me-5px"></i>All Products
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end product detail section -->
+
+<!-- start product info tabs section -->
+<section class="bg-very-light-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 tab-style-02">
+                <ul class="nav nav-tabs justify-content-center text-center mb-40px fs-17 fw-500" data-anime='{ "el": "childs", "translateY": [20, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 100, "easing": "easeOutQuad" }'>
+                    <li class="nav-item"><a class="nav-link active" data-bs-toggle="tab" href="#tab_overview">Overview</a></li>
+                    {% if features %}
+                    <li class="nav-item"><a class="nav-link" data-bs-toggle="tab" href="#tab_features">Key Features</a></li>
+                    {% endif %}
+                </ul>
+                <div class="tab-content" data-anime='{ "translateY": [20, 0], "opacity": [0,1], "duration": 600, "delay": 200, "easing": "easeOutQuad" }'>
+                    <!-- Overview Tab -->
+                    <div class="tab-pane fade show active" id="tab_overview">
+                        <div class="row align-items-start justify-content-center">
+                            <div class="col-lg-6 last-paragraph-no-margin md-mb-30px">
+                                <h5 class="alt-font text-dark-gray fw-600 mb-20px">The Essence of Traditional Taste</h5>
+                                <p class="fs-16 lh-30">{{ product.description|default:"Experience the authentic taste of Kerala with our premium quality products, prepared with traditional recipes and the finest ingredients." }}</p>
+                                <p class="mt-15px fs-16 lh-30">Our products are crafted using heritage techniques passed down through generations, ensuring every bite carries the soul of authentic Kerala cuisine.</p>
+                            </div>
+                            <div class="col-lg-5 offset-lg-1">
+                                <div class="bg-white border-radius-6px p-30px box-shadow-small">
+                                    <h6 class="alt-font text-dark-gray fw-700 mb-20px text-uppercase fs-22 ls-1px">Product Specifications</h6>
+                                    <ul class="list-unstyled m-0 p-0 fs-15">
+                                        <li class="border-bottom border-color-extra-medium-gray pt-12px pb-12px d-flex justify-content-between">
+                                            <span class="fw-600 text-dark-gray">Category</span>
+                                            <span class="text-medium-gray">{{ product.category.name }}</span>
+                                        </li>
+                                        <li class="border-bottom border-color-extra-medium-gray pt-12px pb-12px d-flex justify-content-between">
+                                            <span class="fw-600 text-dark-gray">Net Weight</span>
+                                            <span class="text-medium-gray">{{ product.weight }}</span>
+                                        </li>
+                                        <li class="border-bottom border-color-extra-medium-gray pt-12px pb-12px d-flex justify-content-between">
+                                            <span class="fw-600 text-dark-gray">Shelf Life</span>
+                                            <span class="text-medium-gray">6 Months</span>
+                                        </li>
+                                        <li class="pt-12px pb-5px d-flex justify-content-between">
+                                            <span class="fw-600 text-dark-gray">Availability</span>
+                                            <span class="text-red fw-600">In Stock</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% if features %}
+                    <!-- Features Tab -->
+                    <div class="tab-pane fade" id="tab_features">
+                        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
+                            {% for feature in features %}
+                            <div class="col mb-20px">
+                                <div class="bg-white p-30px border-radius-6px box-shadow-small h-100 d-flex align-items-start">
+                                    <div class="bg-red w-30px h-30px border-radius-50px d-flex align-items-center justify-content-center me-15px flex-shrink-0 mt-2px">
+                                        <i class="bi bi-check text-white fs-16"></i>
+                                    </div>
+                                    <span class="text-dark-gray fw-600 fs-16">{{ feature }}</span>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end product info tabs section -->
+
+{% if recipes %}
+<!-- start recipes section -->
+<section>
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-7 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block">
+                    <span class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>
+                    Cooking Inspiration
+                    <span class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span>
+                </span>
+                <h2 class="alt-font text-dark-gray fw-600 ls-minus-1px">Creative Kitchen Recipes</h2>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 justify-content-center">
+            {% for recipe in recipes %}
+            <div class="col mb-30px" data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": {% widthratio forloop.counter 1 100 %}, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                <div class="border-radius-8px overflow-hidden box-shadow-large box-shadow-extra-large-hover transition-3ms">
+                    <div class="position-relative overflow-hidden">
+                        {% if recipe.image %}
+                        <img src="{{ recipe.image.url }}" alt="{{ recipe.title }}" class="w-100" style="height: 250px; object-fit: cover;">
+                        {% else %}
+                        <img src="{% static 'web/images/demo-restaurant-blog-01.jpg' %}" alt="{{ recipe.title }}" class="w-100" style="height: 250px; object-fit: cover;">
+                        {% endif %}
+                        <div class="position-absolute top-15px left-15px d-flex" style="gap: 8px;">
+                            <span class="bg-dark-gray text-white fs-11 fw-700 text-uppercase ps-10px pe-10px py-4px border-radius-4px">
+                                <i class="bi bi-clock me-10px"></i>{{ recipe.prep_time|default:"10m" }}
+                            </span>
+                            <span class="bg-red text-white fs-11 fw-700 text-uppercase ps-10px pe-10px py-4px border-radius-4px">
+                                <i class="bi bi-fire me-10px"></i>{{ recipe.cook_time|default:"20m" }}
+                            </span>
+                        </div>
+                    </div>
+                    <div class="bg-white p-25px">
+                        <h5 class="alt-font text-dark-gray mb-10px fw-600">{{ recipe.title }}</h5>
+                        <p class="text-medium-gray mb-15px fs-15">{{ recipe.description|truncatewords:12 }}</p>
+                        <a href="#" class="text-red fw-600 fs-14 text-uppercase ls-05px" data-bs-toggle="modal" data-bs-target="#recipeModal{{ recipe.id }}">
+                            View Full Recipe <i class="bi bi-arrow-right ms-5px"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recipe Modal -->
+            <div class="modal fade" id="recipeModal{{ recipe.id }}" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-xl modal-dialog-centered">
+                    <div class="modal-content border-radius-10px overflow-hidden border-0 bg-white">
+                        <div class="row g-0">
+                            <div class="col-lg-12">
+                                <div class="p-45px md-p-30px position-relative">
+                                    <button type="button" class="btn-close position-absolute top-25px right-25px" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <span class="text-red fs-13 fw-700 text-uppercase ls-1px mb-10px d-block">Recipe Guide</span>
+                                    <h3 class="alt-font text-dark-gray mb-15px fw-600">{{ recipe.title }}</h3>
+                                    <div class="d-flex align-items-center flex-wrap mb-25px pb-20px border-bottom border-color-extra-medium-gray" style="gap: 20px;">
+                                        <span class="text-dark-gray fs-14">
+                                            <i class="bi bi-people text-red me-5px"></i><strong>{{ recipe.servings|default:"2-4" }}</strong> Servings
+                                        </span>
+                                        <span class="text-dark-gray fs-14">
+                                            <i class="bi bi-clock-history text-red me-5px"></i><strong>{{ recipe.prep_time|default:"10m" }}</strong> Prep
+                                        </span>
+                                        <span class="text-dark-gray fs-14">
+                                            <i class="bi bi-fire text-red me-5px"></i><strong>{{ recipe.cook_time|default:"20m" }}</strong> Cook
+                                        </span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-5 mb-25px md-mb-15px">
+                                            <h6 class="alt-font text-dark-gray mb-3 fw-700 fs-15 text-uppercase ls-05px">Ingredients</h6>
+                                            <ul class="mb-0 fs-15 lh-32 list-style-04">
+                                                {% for ingredient in recipe.ingredients.splitlines %}
+                                                    <li class="mb-0">{{ ingredient }}</li>
+                                                {% endfor %}
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <h6 class="alt-font text-dark-gray mb-3 fw-700 fs-15 text-uppercase ls-05px">Cooking Steps</h6>
+                                            <p class="mb-0 fs-15 lh-32">{{ recipe.instructions|linebreaksbr }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end recipes section -->
+{% endif %}
+
+{% if related_products %}
+<!-- start related products section -->
+<section class="bg-very-light-gray">
+    <div class="container">
+        <div class="row justify-content-center mb-4">
+            <div class="col-lg-7 text-center" data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                <span class="fs-15 fw-600 text-red text-uppercase mb-10px d-block">
+                    <span class="w-5px h-2px bg-red d-inline-block align-middle me-5px"></span>
+                    Discover More Flavours
+                    <span class="w-5px h-2px bg-red d-inline-block align-middle ms-5px"></span>
+                </span>
+                <h2 class="alt-font text-dark-gray fw-600">Others in {{ product.category.name }}</h2>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-lg-4 row-cols-sm-2 justify-content-center">
+            {% for related in related_products %}
+            <div class="col mb-30px" data-anime='{ "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": {% widthratio forloop.counter 1 100 %}, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                <a href="{% url 'web:product_detail' related.slug %}" class="d-block border-radius-6px overflow-hidden box-shadow-large box-shadow-extra-large-hover transition-3ms">
+                    <div class="position-relative overflow-hidden">
+                        {% if related.image %}
+                        <img src="{{ related.image.url }}" alt="{{ related.name }}" class="w-100" style="height: 200px; object-fit: cover;">
+                        {% else %}
+                        <img src="{% static 'web/images/default.png' %}" alt="{{ related.name }}" class="w-100" style="height: 200px; object-fit: cover;">
+                        {% endif %}
+                    </div>
+                    <div class="bg-white p-20px text-center">
+                        <h6 class="alt-font text-dark-gray mb-5px fw-600">{{ related.name }}</h6>
+                        <span class="text-medium-gray fs-14">{{ related.weight }}</span>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<!-- end related products section -->
+{% endif %}
+
+<script>
+function changeMainImage(thumbEl, imgUrl, altText) {
+    const mainImg = document.getElementById('main-product-image');
+    mainImg.style.opacity = '0.5';
+    mainImg.style.transition = 'opacity 0.3s ease';
+    
+    setTimeout(function() {
+        mainImg.src = imgUrl;
+        mainImg.alt = altText;
+        mainImg.style.opacity = '1';
+    }, 150);
+    
+    // Update active thumbnail border
+    document.querySelectorAll('.product-thumbnail img').forEach(function(img) {
+        img.style.borderColor = '#e8e8e8';
+    });
+    thumbEl.querySelector('img').style.borderColor = '#A6864F';
+}
+</script>
+
+{% endblock %}

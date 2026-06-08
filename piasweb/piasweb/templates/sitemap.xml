@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://pias.ac/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://pias.ac/learning/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pias.ac/admissions/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pias.ac/events/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://pias.ac/program/diploma-in-advanced-uiux-design-and-prototyping/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://pias.ac/program/diploma-in-advanced-web-application-programming/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://pias.ac/program/diploma-in-business-administration-management/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://pias.ac/program/diploma-in-creative-design-and-digital-arts/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://pias.ac/program/diploma-in-cross-platform-mobile-app-development/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+<url>
+  <loc>https://pias.ac/program/diploma-in-performance-marketing-and-analytics/</loc>
+  <lastmod>2025-02-05T15:14:45+00:00</lastmod>
+  <priority>0.60</priority>
+</url>
+
+
+</urlset>

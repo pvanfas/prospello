@@ -1,0 +1,81 @@
+{% load static %}
+<!-- header style two -->
+<div id="side-bar" class="side-bar header-two">
+    <button class="close-icon-menu"><i class="far fa-times"></i></button>
+    <!-- inner menu area desktop start -->
+    <div class="inner-main-wrapper-desk">
+        <div class="thumbnail">
+            <img src="/static/web/images/logo/logo_black.png" alt="Majicspac" style="height: 60px;object-fit: contain;">
+        </div>
+        <div class="inner-content">
+            <p class="disc">
+                Majic Space is a full-service design firm providing architecture architecture.
+            </p>
+            <div class="contact-information--sidebar">
+                <h6 class="title">Contact Info</h6>
+                <div class="single-info">
+                    <a href="tel:+917659800800">+91 7659 800 800</a>
+                </div>
+                <div class="single-info">
+                    <a href="#">majicspac@gmail.com</a>
+                </div>
+                <h6 class="title mt--30">Office Address</h6>
+                <div class="single-info">
+                    <a href="#">Majicspace Atelier, Athani <br>
+                        Kavathikalam, Kottakkal Pin.676503</a>
+                </div>
+                <div class="rts-social-style-one">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <h4 class="title">Got a project in mind?</h4>
+                <a href="#" class="rts-btn btn-primary">Let's talk</a>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu area start -->
+    <div class="mobile-menu-main">
+        <nav class="nav-main mainmenu-nav mt--30">
+            <ul class="mainmenu metismenu" id="mobile-menu-active">
+                <li><a class="main" href="{% url 'web:index' %}">Home</a></li>
+                <li><a class="main" href="{% url 'web:about' %}">About</a></li>
+                <li><a class="main" href="{% url 'web:portfolio' %}">Portfolio</a></li>
+                <li><a class="main" href="{% url 'web:blog' %}">Blog</a></li>
+                <li><a class="main" href="{% url 'web:contact' %}">Contact</a></li>
+            </ul>
+        </nav>
+
+        <div class="rts-social-style-one pl--20 mt--100">
+            <ul>
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- mobile menu area end -->
+</div>
+<!-- header style two End -->

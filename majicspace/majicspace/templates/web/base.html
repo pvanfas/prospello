@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Majic Space</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/web/images/fav.png">
+    <link rel="stylesheet" href="/static/web/css/plugins/fontawesome-6.css">
+    <link rel="stylesheet" href="/static/web/css/plugins/swiper.min.css">
+    <link rel="stylesheet" href="/static/web/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="/static/web/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/web/css/vendor/metismenu.css">
+    <link rel="stylesheet" href="/static/web/css/style.css?v=1.0">
+</head>
+
+<body class="index-one">
+
+    {% if is_index_header %}
+    {% include 'web/partials/index_header.html' %}
+    {% else %}
+    {% include 'web/partials/sticky_header.html' %}
+    {% endif %}
+
+    {% block content %}
+    
+
+    {% endblock %}
+
+
+    {% include 'web/partials/sidebar.html' %}
+    {% include 'web/partials/gridlines.html' %}
+    {% include 'web/partials/loader.html' %}
+
+
+    <div id="anywhere-home"></div>
+
+
+    <div class="float_icons right">
+        <div class="float_icon">
+            <a class="blantershow-chat d-inline-block" target="_blank" href="https://wa.me/+917659800800" title="Whatsapp Support">
+                <span>Whatsapp Support</span>
+                <img src="/static/web/images/whatsapp.png" alt="">
+            </a>
+        </div>
+    </div>
+
+    <!-- scripts -->
+    <script src="/static/web/js/vendor/jquery.min.js"></script>
+    <script src="/static/web/js/vendor/waw.js"></script>
+
+    <!-- gsap plugins -->
+    <script src="/static/web/js/vendor/gsap.js"></script>
+    <script src="/static/web/js/vendor/metismenu.js"></script>
+    <script src="/static/web/js/plugins/scrolltiger.js"></script>
+    <script src="/static/web/js/plugins/scrolltoplugin.js"></script>
+    <script src="/static/web/js/plugins/splittext.js"></script>
+    <!-- gsap plugins end-->
+
+    <script src="/static/web/js/vendor/magnifying-popup.js"></script>
+
+    <!-- swiper JS 10.2.0 -->
+    <script src="/static/web/js/plugins/swiper.js"></script>
+    <script src="/static/web/js/plugins/counterup.js"></script>
+    <script src="/static/web/js/vendor/waypoint.js"></script>
+    <script src="/static/web/js/vendor/chroma.min.js"></script>
+    <!-- bootstrap 5.0.2 -->
+    <script src="/static/web/js/plugins/bootstrap.min.js"></script>
+    <!-- dymanic Contact Form -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
+    <!-- main Js -->
+    <script src="/static/web/js/main.js?v=1.0"></script>
+
+</body>
+
+</html>

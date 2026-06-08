@@ -1,0 +1,49 @@
+{% load static %}
+<!-- start header -->
+<header>
+    <!-- start navigation -->
+    <nav class="navbar navbar-expand-lg header-transparent bg-transparent header-reverse" data-header-hover="light">
+        <div class="container-fluid">
+            <div class="col-auto col-lg-2 me-lg-0 me-auto">
+                <a class="navbar-brand" href="{% url 'web:index' %}">
+                    <img src="{% static 'web/images/logo-white.svg' %}" alt="" class="default-logo">
+                    <img src="{% static 'web/images/logo-color.svg' %}" alt="" class="alt-logo">
+                    <img src="{% static 'web/images/logo-color.svg' %}" alt="" class="mobile-logo">
+                </a>
+            </div>
+            <div class="col-auto menu-order position-static">
+                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav alt-font ls-1px">
+                        <li class="nav-item"><a href="{% url 'web:index' %}" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="{% url 'web:story' %}" class="nav-link">Story</a></li>
+                        <li class="nav-item"><a href="{% url 'web:products' %}" class="nav-link">Products</a></li>
+                        <li class="nav-item"><a href="{% url 'web:contact' %}" class="nav-link">Contact</a></li>
+                        <li class="nav-item"><a href="{% url 'web:enquiries' %}" class="nav-link">Enquiries</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-auto col-lg-2 text-end d-none d-sm-flex">
+                <div class="header-icon">
+                    <div class="header-button">
+                        <a href="{% url 'web:enquiries' %}"
+                            class="btn border-1 btn-transparent-white-light border-color-transparent-white-light btn-small left-icon btn-switch-text btn-rounded">
+                            <span>
+                                <span><i class="feather icon-feather-briefcase"></i></span>
+                                <span class="btn-double-text" data-text="B2B Enquiry">B2B Enquiry</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation -->
+</header>
+<!-- end header -->

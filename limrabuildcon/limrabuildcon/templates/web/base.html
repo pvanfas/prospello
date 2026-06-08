@@ -1,0 +1,156 @@
+﻿
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  {% load static %}
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{% block title %}De Limra Buildcon LLP{% endblock %}</title>
+  <meta name="description" content="Founded by an ordinary man with an extraordinary vision, De Limra is a moving story in the realty sector. Breaking ground first time in 1986.">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
+  <meta name="author" content="">
+  <meta name="Keywords" content="limra builders, limra in calicut, Limra Buildcon, Best Builder in Calicut,www.limrabuildcon.com">
+  <!-- favicon icon -->
+  <link rel="shortcut icon" href="{% static 'web/images/favicon.png' %}">
+  <link rel="apple-touch-icon" href="{% static 'web/images/apple-touch-icon-57x57.png' %}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{% static 'web/images/apple-touch-icon-72x72.png' %}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{% static 'web/images/apple-touch-icon-114x114.png' %}">
+
+  <!-- Facebook Meta Tags -->
+  <meta property="og:url" content="http://www.limrabuildcon.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Limra Buildcon LLP">
+  <meta property="og:description" content="Founded by an ordinary man with an extraordinary vision, De Limra is a moving story in the realty sector. Breaking ground first time in 1986.">
+  <meta property="og:image" content="https://i.ibb.co/dg7vJc0/DSC01480.jpg">
+
+  <!-- Twitter Meta Tags -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:domain" content="limrabuildcon.com">
+  <meta property="twitter:url" content="http://www.limrabuildcon.com/">
+  <meta property="twitter:title" content="Limra Buildcon LLP">
+  <meta property="twitter:description" content="Founded by an ordinary man with an extraordinary vision, De Limra is a moving story in the realty sector. Breaking ground first time in 1986.">
+  <meta property="twitter:image" content="https://i.ibb.co/dg7vJc0/DSC01480.jpg">
+
+  <!-- style sheets and font icons  -->
+  <link rel="stylesheet" type="text/css" href="{% static 'web/css/font-icons.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'web/css/theme-vendors.min.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'web/css/style.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'web/css/responsive.css' %}" />
+  <!-- revolution slider -->
+  <link rel="stylesheet" type="text/css" href="{% static 'web/revolution/css/settings.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'web/revolution/css/layers.css' %}" />
+  <link rel="stylesheet" type="text/css" href="{% static 'web/revolution/css/navigation.css' %}" />
+
+  <link rel="stylesheet" href="{% static 'web/vendors/owlcarousel/owl.carousel.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'web/vendors/owlcarousel/owl.theme.default.min.css' %}" />
+
+  <link rel="stylesheet" type="text/css" href="{% static 'web/css/custom.css' %}" />
+
+</head>
+
+<body data-mobile-nav-style="classic">
+
+  {% include 'web/partials/header.html' %}
+
+  {% block content %}
+
+  {% endblock %}
+
+  {% include 'web/partials/appointment.html' %}
+  {% include 'web/partials/footer.html' %}
+
+  <!-- start scroll to top -->
+  <a class="scroll-top-arrow" href="javascript:void(0);"><i class="feather icon-feather-arrow-up"></i></a>
+  <!-- end scroll to top -->
+
+  <!-- javascript -->
+  <script type="text/javascript" src="{% static 'web/js/jquery.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'web/js/theme-vendors.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'web/vendors/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'web/js/main.js' %}"></script>
+  <script type="text/javascript" src="{% static 'web/js/custom.js' %}"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.15.3/dist/sweetalert2.all.min.js"></script>
+  <script>
+    $(document).on('submit', 'form.ajax', function(e) {
+      e.preventDefault();
+      var $this = $(this);
+      var data = new FormData(this);
+      var action_url = $this.attr('action');
+      var reset = $this.hasClass('reset');
+      var reload = $this.hasClass('reload');
+      var redirect = $this.hasClass('redirect');
+      var redirect_url = $this.attr('data-redirect');
+
+      $.ajax({
+        url: action_url,
+        type: 'POST',
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        dataType: "json",
+
+        success: function(data) {
+
+          var status = data.status;
+          var title = data.title;
+          var message = data.message;
+          var pk = data.pk;
+
+          if (status == "true") {
+            if (title) {
+              title = title;
+            } else {
+              title = "Success";
+            }
+
+            Swal.fire({
+              title: title,
+              html: message,
+              icon: 'success',
+            }).then(function() {
+              if (redirect) {
+                window.location.href = redirect_url;
+              }
+              if (reload) {
+                window.location.reload();
+              }
+              if (reset) {
+                window.location.reset();
+              }
+            });
+
+          } else {
+            if (title) {
+              title = title;
+            } else {
+              title = "An Error Occurred";
+            }
+            Swal.fire({
+              title: title,
+              html: message,
+              icon: "error"
+            });
+
+          }
+        },
+        error: function(data) {
+          var title = "An error occurred";
+          var message = "something went wrong";
+          Swal.fire({
+            title: title,
+            html: message,
+            icon: "error"
+          });
+        }
+      });
+    });
+  </script>
+
+  {% block javascript %}{% endblock %}
+
+</body>
+
+</html>

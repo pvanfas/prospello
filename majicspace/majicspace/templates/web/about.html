@@ -1,0 +1,456 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- about  page top histoory information  -->
+<div class="about-top-history-information rts-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="title-style-left">
+                    <div class="pre-title-area">
+                        <img src="/static/web/images/about/02.png" alt="about">
+                        <span class="pre-title">Our Project</span>
+                    </div>
+                    <h2 class="title">Our Story</h2>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8 mt_sm--50">
+                <div class="history-right-area-inner">
+                    <p class="disc rts-slide-up">
+                        At Majicspace Atelier, we don’t just design buildings—we shape emotions, craft silences, and
+                        give form to your dreams.
+                    </p>
+                    <p class="disc rts-slide-up">
+                        Our journey began in 2018, led by Abdul Majid, with a deep discomfort: watching homes built to
+                        impress the world outside, but failing the people within. Spaces designed without listening—to
+                        the land, to the light, or to the lives that would unfold inside.
+                    </p>
+                    <p class="disc rts-slide-up">
+                        So we chose another way. We design with empathy and intent, creating spaces that are personal,
+                        functional, and quietly joyful. For us, architecture is not about loud statements—it’s about
+                        serenity, belonging, and beauty that reveals itself over time.
+                    </p>
+                    <p class="disc rts-slide-up">
+                        We work closely with each client, not to control, but to co-create. Guiding their vision into
+                        reality with honesty, care, and craft. Because we believe a home should not only look
+                        beautiful—it should feel like home.
+                    </p>
+                    <p class="disc rts-slide-up">
+                        At Majicspace, we don’t follow trends. We follow truth.
+                    </p>
+                    <p class="disc rts-slide-up">
+                        And in every project, we search for that quiet magic where architecture meets soul.
+                    </p>
+                    <div class="history-right-img mt--80 rts-reveal-one">
+                        <img class="rts-reveal-image-one" src="/static/web/images/about/14.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about  page top histoory information end -->
+
+<!-- our-team start -->
+<div class="rts-team-area rts-section-gap pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="title-style-center">
+                    <div class="pre-title-area">
+                        <img src="/static/web/images/about/02.png" alt="about">
+                        <span class="pre-title">Our Team</span>
+                    </div>
+                    <h2 class="title">Meet Our Talented Team</h2>
+                </div>
+            </div>
+        </div>
+        {% for team in teams %}
+        <div class="row g-5 mt--50 rts-slide-up">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                <!-- team style three -->
+                <div class="team-style-three">
+                    <div class="thumbnail">
+                        <img src="{{team.image.url}}" alt="team" style="width: 100%;height: 400px;object-fit: cover;">
+                    </div>
+                </div>
+                <!-- team style three end -->
+            </div>
+            <div class="col-lg-9 col-md-8 col-sm-6 col-12">
+                <strong class="mb-4 d-block">Abdul Majid – Founder & Creative Director, MajicSpace</strong>
+                <p class="mb-4">
+                    Abdul Majid is the founder and creative head of MajicSpace, a design and development studio that
+                    blends architectural imagination with engineering precision. Trained as a civil engineer, Abdul’s
+                    entry into the world of architecture wasn’t by chance — it was the result of conscious exploration,
+                    grounded mentorship, and years of hands-on learning.
+                </p>
+                <p class="mb-4">
+                    After completing his engineering degree, Abdul began his design journey under the guidance of Ar.
+                    Jose Thomas, a prominent name in the architectural community. This early experience was foundational
+                    — shaping his design sensibilities, helping him understand space-making beyond textbooks, and giving
+                    him direct exposure to the creative and technical depth of real-world architecture.
+                </p>
+                <p class="mb-4">
+                    This mentorship, combined with his engineering background, gave Abdul a rare dual perspective: the
+                    creative sensitivity of an architect and the clarity of a builder. Over the years, he has led
+                    projects ranging from homes and interiors to large-scale hospitality developments like Banasura View
+                    — each crafted with purpose, context, and an eye for beauty.
+                </p>
+                <p class="mb-4">
+                    At MajicSpace, Abdul’s vision is clear: to create spaces that are emotionally resonant, technically
+                    sound, and timeless in character. His approach is rooted in deep thinking, storytelling, and a
+                    belief that design should move people — not just impress them.
+                </p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- our-team end -->
+
+<!-- our working process start -->
+<div class="our-working-process rts-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="title-process-stock-text">
+                    <h2 class="stock-text-1">
+                        OUR WORK PROCESS
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="row g-5 mt--30 separetor-process-top rts-slide-up">
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 pt--50 pt_sm--30">
+                <!-- single working process start -->
+                <div class="single-working-prcess-one">
+                    <div class="inner">
+                        <span>01</span>
+                        <h4 class="title">
+                            Planning and Concept
+                            Development
+                        </h4>
+                        <p class="disc">
+                            This initial phase is crucial for setting the foundation of the design project.
+                        </p>
+                    </div>
+                </div>
+                <!-- single working process end -->
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 pt--50 pt_sm--30">
+                <!-- single working process start -->
+                <div class="single-working-prcess-one">
+                    <div class="inner">
+                        <span>02</span>
+                        <h4 class="title">
+                            Planning and Concept
+                            Development
+                        </h4>
+                        <p class="disc">
+                            This initial phase is crucial for setting the foundation of the design project.
+                        </p>
+                    </div>
+                </div>
+                <!-- single working process end -->
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 pt--50 pt_sm--30">
+                <!-- single working process start -->
+                <div class="single-working-prcess-one">
+                    <div class="inner">
+                        <span>03</span>
+                        <h4 class="title">
+                            Planning and Concept
+                            Development
+                        </h4>
+                        <p class="disc">
+                            This initial phase is crucial for setting the foundation of the design project.
+                        </p>
+                    </div>
+                </div>
+                <!-- single working process end -->
+            </div>
+            <div class="col-lg-3 col-md-4 col-sm-6 col-12 pt--50 pt_sm--30">
+                <!-- single working process start -->
+                <div class="single-working-prcess-one">
+                    <div class="inner">
+                        <span>04</span>
+                        <h4 class="title">
+                            Planning and Concept
+                            Development
+                        </h4>
+                        <p class="disc">
+                            This initial phase is crucial for setting the foundation of the design project.
+                        </p>
+                    </div>
+                </div>
+                <!-- single working process end -->
+            </div>
+        </div>
+    </div>
+</div>
+<!-- our working process end -->
+
+<div class="rts-testimonials-area inner-about rts-slide-up">
+    <div class="container">
+
+        <div class="testimonials-main-wrapper">
+            <div
+                class="swiper mySwiper-three-testimonials swiper-container-initialized swiper-container-horizontal swiper-container-pointer-events">
+                <div class="swiper-wrapper" id="swiper-wrapper-50e64b53c7b776106" aria-live="polite"
+                    style="transform: translate3d(-1405px, 0px, 0px); transition-duration: 0ms;">
+
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-prev" data-swiper-slide-index="2"
+                        role="group" aria-label="3 / 3" style="width: 1335px; margin-right: 70px;">
+                        <div class="row mt--70 mt_sm--30 align-items-center">
+                            <div class="col-lg-8">
+                                <!-- testimonials area start -->
+                                <div class="testimonails-style-three-wrapper">
+                                    <!-- ingle testimonials start -->
+                                    <div class="testimonials-single-three">
+                                        <div class="icon">
+                                            <img src="/static/web/images/testimonials/08.png" alt="testimonias">
+                                        </div>
+                                        <div class="testimonials-body">
+                                            <p class="disc">
+                                                Working with your team was an absolute pleasure. From the initial
+                                                concept to the
+                                                final installation, every step was executed with our professionalism
+                                                and attention
+                                                to detail. The end result exceeded our expectations, and couldn't be
+                                                happier with
+                                                our so beautifully transformed space.
+                                            </p>
+                                            <div class="testimonials-bottom">
+                                                <h5 class="title">John William</h5>
+                                                <span>New Client</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ingle testimonials end -->
+                                </div>
+                                <!-- testimonials area end -->
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail-testimonials d-flex justify-content-end">
+                                    <img src="/static/web/images/testimonials/06.jpg" alt="testimonials">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0" role="group"
+                        aria-label="1 / 3" style="width: 1335px; margin-right: 70px;">
+                        <div class="row mt--70 mt_sm--30 align-items-center">
+                            <div class="col-lg-8">
+                                <!-- testimonials area start -->
+                                <div class="testimonails-style-three-wrapper">
+                                    <!-- ingle testimonials start -->
+                                    <div class="testimonials-single-three">
+                                        <div class="icon">
+                                            <img src="/static/web/images/testimonials/08.png" alt="testimonias">
+                                        </div>
+                                        <div class="testimonials-body">
+                                            <p class="disc">
+                                                Working with your team was an absolute pleasure. From the initial
+                                                concept to the
+                                                final installation, every step was executed with our professionalism
+                                                and attention
+                                                to detail. The end result exceeded our expectations, and couldn't be
+                                                happier with
+                                                our so beautifully transformed space.
+                                            </p>
+                                            <div class="testimonials-bottom">
+                                                <h5 class="title">John William</h5>
+                                                <span>New Client</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ingle testimonials end -->
+                                </div>
+                                <!-- testimonials area end -->
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail-testimonials d-flex justify-content-end">
+                                    <img src="/static/web/images/testimonials/06.jpg" alt="testimonials">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="1" role="group"
+                        aria-label="2 / 3" style="width: 1335px; margin-right: 70px;">
+                        <div class="row mt--70 mt_sm--30 align-items-center">
+                            <div class="col-lg-8">
+                                <!-- testimonials area start -->
+                                <div class="testimonails-style-three-wrapper">
+                                    <!-- ingle testimonials start -->
+                                    <div class="testimonials-single-three">
+                                        <div class="icon">
+                                            <img src="/static/web/images/testimonials/08.png" alt="testimonias">
+                                        </div>
+                                        <div class="testimonials-body">
+                                            <p class="disc">
+                                                Working with your team was an absolute pleasure. From the initial
+                                                concept to the
+                                                final installation, every step was executed with our professionalism
+                                                and attention
+                                                to detail. The end result exceeded our expectations, and couldn't be
+                                                happier with
+                                                our so beautifully transformed space.
+                                            </p>
+                                            <div class="testimonials-bottom">
+                                                <h5 class="title">John William</h5>
+                                                <span>New Client</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ingle testimonials end -->
+                                </div>
+                                <!-- testimonials area end -->
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail-testimonials d-flex justify-content-end">
+                                    <img src="/static/web/images/testimonials/06.jpg" alt="testimonials">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate-prev" data-swiper-slide-index="2" role="group"
+                        aria-label="3 / 3" style="width: 1335px; margin-right: 70px;">
+                        <div class="row mt--70 mt_sm--30 align-items-center">
+                            <div class="col-lg-8">
+                                <!-- testimonials area start -->
+                                <div class="testimonails-style-three-wrapper">
+                                    <!-- ingle testimonials start -->
+                                    <div class="testimonials-single-three">
+                                        <div class="icon">
+                                            <img src="/static/web/images/testimonials/08.png" alt="testimonias">
+                                        </div>
+                                        <div class="testimonials-body">
+                                            <p class="disc">
+                                                Working with your team was an absolute pleasure. From the initial
+                                                concept to the
+                                                final installation, every step was executed with our professionalism
+                                                and attention
+                                                to detail. The end result exceeded our expectations, and couldn't be
+                                                happier with
+                                                our so beautifully transformed space.
+                                            </p>
+                                            <div class="testimonials-bottom">
+                                                <h5 class="title">John William</h5>
+                                                <span>New Client</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ingle testimonials end -->
+                                </div>
+                                <!-- testimonials area end -->
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail-testimonials d-flex justify-content-end">
+                                    <img src="/static/web/images/testimonials/06.jpg" alt="testimonials">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active"
+                        data-swiper-slide-index="0" role="group" aria-label="1 / 3"
+                        style="width: 1335px; margin-right: 70px;">
+                        <div class="row mt--70 mt_sm--30 align-items-center">
+                            <div class="col-lg-8">
+                                <!-- testimonials area start -->
+                                <div class="testimonails-style-three-wrapper">
+                                    <!-- ingle testimonials start -->
+                                    <div class="testimonials-single-three">
+                                        <div class="icon">
+                                            <img src="/static/web/images/testimonials/08.png" alt="testimonias">
+                                        </div>
+                                        <div class="testimonials-body">
+                                            <p class="disc">
+                                                Working with your team was an absolute pleasure. From the initial
+                                                concept to the
+                                                final installation, every step was executed with our professionalism
+                                                and attention
+                                                to detail. The end result exceeded our expectations, and couldn't be
+                                                happier with
+                                                our so beautifully transformed space.
+                                            </p>
+                                            <div class="testimonials-bottom">
+                                                <h5 class="title">John William</h5>
+                                                <span>New Client</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- ingle testimonials end -->
+                                </div>
+                                <!-- testimonials area end -->
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="thumbnail-testimonials d-flex justify-content-end">
+                                    <img src="/static/web/images/testimonials/06.jpg" alt="testimonials">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"
+                    aria-controls="swiper-wrapper-50e64b53c7b776106"></div>
+                <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"
+                    aria-controls="swiper-wrapper-50e64b53c7b776106"></div>
+                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- contact area start -->
+<div class="rts-contact-area rts-section-gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="contct-thumbnail-left rts-reveal-one">
+                    <img class="rts-reveal-image-one" src="/static/web/images/contact/01.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6 pl--60 pr--100 pr_md--10 pr_sm--10 pl_sm--10 pl_md--10 pt_md--50 pt_sm--50">
+                <div class="easy-appoinment-area">
+                    <div class="title-left-style-seven-wrapper">
+                        <h2 class="title">have any questions?</h2>
+                    </div>
+                    <form action="" method="post" class="ajax reload">
+                        {% csrf_token %}
+                        {{form.name}}
+                        {{form.phone}}
+                        {{form.message}}
+                        <button class="rts-btn btn-primary">Send Now</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- contact area start -->
+
+<!-- rts footer area start -->
+<div class="rts-footer-area social-jumpanimation">
+    <div class="rts-copyright-area-two border-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="copy-right-area-inner-two">
+                        <p class="disc">Copyright 2024. All Rights Reserved.</p>
+                        <div class="right">
+                            <ul>
+                                <li><a href="#">Terms & conditions</a></li>
+                                <li><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- rts footer area end -->
+
+{% endblock %}

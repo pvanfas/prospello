@@ -1,0 +1,96 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start page title -->
+<section class="half-section parallax" data-parallax-background-ratio="0.5" style="background-image:url('{% static 'web/images/portfolio-bg2.jpg' %}');     padding: 0px 0;">
+  <div class="container">
+    <div class="row align-items-stretch justify-content-center extra-small-screen">
+      <div class="col-12 col-xl-6 col-lg-7 col-md-8 page-title-extra-small text-center d-flex justify-content-center flex-column">
+        <h2 class="text-gradient-peacock-blue-crome-yellow-2 text-extra-dark-gray alt-font font-weight-500 letter-spacing-minus-1px line-height-50 sm-line-height-45 xs-line-height-30 no-margin-bottom">Projects</h2>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end page title -->
+<!-- start section -->
+<section class="padding-four-lr no-padding-top lg-padding-two-lr sm-no-padding-lr">
+  <div class="container">
+
+    <div class="row text-center mb-4">
+      <div class="col-md-6 mx-auto">
+        <nav>
+          <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-completed-tab" data-toggle="tab" href="#nav-completed" role="tab" aria-controls="nav-completed" aria-selected="true">Completed</a>
+            <a class="nav-item nav-link" id="nav-ongoing-tab" data-toggle="tab" href="#nav-ongoing" role="tab" aria-controls="nav-ongoing" aria-selected="false">Ongoing</a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+          <div class="tab-pane fade show active" id="nav-completed" role="tabpanel" aria-labelledby="nav-completed-tab">
+            <div class="col-12 filter-content">
+              <ul class="portfolio-classic portfolio-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large text-center">
+                <li class="grid-sizer"></li>
+                {% for project in completed_projects %}
+                <li class="grid-item photography wow animate__fadeIn">
+                  <div class="portfolio-box border-radius-6px box-shadow-large">
+                    <div class="portfolio-image">
+                      <img src="{{project.photo.crop.800x650}}" alt="" data-hello="hello">
+                      <div class="portfolio-hover align-items-center justify-content-center d-flex h-100">
+                        <div class="portfolio-icon">
+                          <a href="{{project.photo.crop.800x650}}" data-group="portfolio-items" class="lightbox-group-gallery-item text-slate-blue text-slate-blue-hover rounded-circle bg-white"><i class="fas fa-eye-dropper icon-very-small"
+                              aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-caption padding-30px-tb lg-padding-20px-tb" style="height:200px">
+                      <span class="alt-font text-extra-dark-gray font-weight-500">{{project.title}}</span>
+                      <span class="text-medium d-block margin-one-bottom">{{project.category.title}}</span>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="nav-ongoing" role="tabpanel" aria-labelledby="nav-ongoing-tab">
+            <div class="col-12 filter-content">
+              <ul class="portfolio-classic portfolio-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large text-center">
+                <li class="grid-sizer"></li>
+                {% for project in ongoing_projects %}
+                <li class="grid-item photography wow animate__fadeIn">
+                  <div class="portfolio-box border-radius-6px box-shadow-large">
+                    <div class="portfolio-image">
+                      <img src="{{project.photo.crop.800x650}}" alt="">
+                      <div class="portfolio-hover align-items-center justify-content-center d-flex h-100">
+                        <div class="portfolio-icon">
+                          <a href="{{project.photo.crop.800x650}}" data-group="portfolio-items" class="lightbox-group-gallery-item text-slate-blue text-slate-blue-hover rounded-circle bg-white"><i
+                              class="fas fa-eye-dropper icon-very-small" aria-hidden="true"></i></a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="portfolio-caption padding-30px-tb lg-padding-20px-tb">
+                      <span class="alt-font text-extra-dark-gray font-weight-500">{{project.title}}</span>
+                      <span class="text-medium d-block margin-one-bottom">{{project.category.title}}</span>
+                    </div>
+                  </div>
+                </li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+<!-- end section -->
+
+{% endblock %}

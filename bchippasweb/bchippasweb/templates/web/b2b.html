@@ -1,0 +1,72 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start page title -->
+<section class="ipad-top-space-margin page-title-big-typography cover-background p-0 md-background-position-left-center"
+         style="background-image: url('{% static 'web/images/bchippas-about-title-bg.jpg' %}?v=1.0')">
+    <div class="container">
+        <div class="row align-items-center justify-content-center small-screen">
+            <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large"
+                 data-anime='{ "el": "childs", "translateY": [30, 0], "opacity": [0,1], "duration": 600, "delay": 0, "staggervalue": 200, "easing": "easeOutQuad" }'>
+                <h1 class="alt-font text-dark-gray text-uppercase ls-minus-1px mb-0">B2B Enquiry</h1>
+                <h2 class="m-auto text-red fw-600 text-uppercase mb-0">
+                    <span class="h-2px w-5px bg-red d-inline-block align-middle me-5px"></span>
+                    Partner with us
+                    <span class="h-2px w-5px bg-red d-inline-block align-middle ms-5px"></span>
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title -->
+
+<!-- start section -->
+<section class="pt-0">
+    <div class="container"
+         data-anime='{ "el": "childs", "translateY": [-15, 0], "opacity": [0,1], "duration": 800, "delay": 200, "staggervalue": 300, "easing": "easeOutQuad" }'>
+        <div class="row align-items-end justify-content-center mt-5">
+            <div class="col-xl-7 col-lg-6 align-self-start">
+                <span class="fs-140 lg-fs-100 xs-fs-90 fw-700 text-very-light-gray ls-minus-8px lg-ls-minus-5px xs-ls-minus-4px md-w-100 d-block text-center text-lg-start">Business</span>
+            </div>
+            <div class="col-xl-5 col-lg-6 col-md-12 contact-form-style-03 position-relative overlap-section-one-fourth md-mt-0">
+                <div class="bg-very-light-gray p-14 position-relative overflow-hidden mt-50px md-mt-25px sm-mt-15px lg-p-10">
+                    <i class="bi bi-briefcase fs-140 text-base-color opacity-1 position-absolute top-minus-35px right-minus-20px"></i>
+                    <h2 class="alt-font text-dark-gray mb-15px">B2B Enquiry Form</h2>
+                    <form action="#" method="post">
+                        {% csrf_token %}
+                        <div class="position-relative form-group mb-10px">
+                            <span class="form-icon text-medium-gray"><i class="bi bi-person"></i></span>
+                            <input class="ps-0 border-radius-0px bg-transparent border-color-transparent-dark-very-light form-control required"
+                                   type="text" name="name" placeholder="Your name*" required>
+                        </div>
+                        <div class="position-relative form-group mb-10px">
+                            <span class="form-icon text-medium-gray"><i class="bi bi-envelope"></i></span>
+                            <input class="ps-0 border-radius-0px bg-transparent border-color-transparent-dark-very-light form-control required"
+                                   type="email" name="email" placeholder="Your email address*" required>
+                        </div>
+                        <div class="position-relative form-group mb-10px">
+                            <span class="form-icon text-medium-gray"><i class="bi bi-telephone"></i></span>
+                            <input class="ps-0 border-radius-0px bg-transparent border-color-transparent-dark-very-light form-control required"
+                                   type="tel" name="phone" placeholder="Your phone number*" required>
+                        </div>
+                        <div class="position-relative form-group form-textarea mt-10px mb-0">
+                            <textarea class="ps-0 border-radius-0px bg-transparent border-color-transparent-dark-very-light form-control required"
+                                      name="message" placeholder="Your message*" rows="3" required></textarea>
+                            <span class="form-icon text-medium-gray"><i class="bi bi-chat-square-dots"></i></span>
+                            <button class="btn btn-dark-gray btn-medium btn-switch-text btn-round-edge btn-box-shadow submit mt-30px"
+                                    type="submit">
+                                <span>
+                                    <span class="btn-double-text" data-text="Submit Enquiry">Submit Enquiry</span>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+
+{% endblock %}

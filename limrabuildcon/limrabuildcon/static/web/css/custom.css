@@ -1,0 +1,52 @@
+.fixed-icons {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.clients {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.clients li:first-child {
+    padding-left: 0;
+}
+.clients li {
+    padding: 20px;
+    flex-basis: 20%;
+}
+.clients li img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+}
+.bg-semi-black {
+    background: rgba(0,0,0,0.7);
+}
+.tp-bullets {
+    display: none;
+}
+.img-circle {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+}
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    color: #fff;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+}
+.nav-link:hover {
+    border: none;
+}
+.margin-top-200 {
+    margin-top: 100px;
+}

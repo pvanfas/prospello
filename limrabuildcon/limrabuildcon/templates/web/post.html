@@ -1,0 +1,100 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- start banner section -->
+<section class="big-section cover-background overlap-height padding-70px-bottom">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-xl-6 col-lg-7 col-sm-8 overlap-gap-section text-center">
+        <div class="d-inline-block text-center text-uppercase margin-25px-bottom text-yellow-ochre-light">
+          <a href="/" class="alt-font d-inline-block align-middle text-yellow-ochre-light text-extra-dark-gray-hover">{{news.category.title}}</a>
+          <span class="text-extra-large d-inline-block align-middle">&nbsp;&nbsp;&#8226;&nbsp;&nbsp;</span>
+          <a href="/" class="alt-font d-inline-block align-middle text-yellow-ochre-light text-extra-dark-gray-hover">{{news.date}}</a>
+        </div>
+        <h4 class="alt-font text-extra-dark-gray font-weight-500 letter-spacing-minus-1px margin-35px-bottom">{{news.title}}</h4>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end banner section -->
+
+{% if news.get_images %}
+<!-- start slider section -->
+<section class="pb-0 padding-60px-top position-relative overflow-visible">
+  <div class="slider-blog-banner swiper-container black-move overlap-section-one-fourth"
+    data-slider-options='{ "loop": true, "centeredSlides": true, "slidesPerView": "auto", "speed": 1000, "keyboard": { "enabled": true, "onlyInViewport": true }, "pagination": { "el": ".swiper-pagination", "clickable": true }, "navigation": { "nextEl": ".swiper-button-next", "prevEl": ".swiper-button-prev" } }'>
+    <div class="swiper-wrapper">
+      {% for item in news.get_images %}
+      <div class="swiper-slide w-55 sm-w-100">
+        <div class="w-100 padding-15px-lr">
+          <img class="border-radius-6px w-100" src="{{item.photo.crop.1350x850}}" alt="" />
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="swiper-button-prev rounded-circle slider-navigation-style-07 box-shadow-large bg-white"><i class="feather icon-feather-arrow-left text-extra-dark-gray"></i></div>
+    <div class="swiper-button-next rounded-circle slider-navigation-style-07 box-shadow-large bg-white"><i class="feather icon-feather-arrow-right text-extra-dark-gray"></i></div>
+  </div>
+</section>
+<!-- end slider section -->
+{% endif %}
+
+<!-- start section -->
+<section>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 last-paragraph-no-margin margin-6-rem-bottom wow animate__fadeIn" data-wow-delay="0.2s">
+        <p class="margin-10px-bottom">
+          {{news.content | safe}}
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end section -->
+
+
+<!-- start section -->
+<section class="bg-black">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-5 col-md-6 text-center margin-5-rem-bottom wow animate__fadeIn">
+        <span class="alt-font font-weight-500 text-uppercase d-inline-block">You may also like</span>
+        <h5 class="alt-font font-weight-500 text-extra-dark-gray letter-spacing-minus-1px">Related Updates</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 blog-content">
+        <ul class="blog-clean blog-wrapper grid grid-loading grid-3col xl-grid-3col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
+          <li class="grid-sizer"></li>
+          <!-- start blog item -->
+          {% for news in newses %}
+          <li class="grid-item wow animate__fadeIn">
+            <div class="blog-post text-center border-radius-6px bg-white box-shadow box-shadow-large-hover">
+              <div class="blog-post-image bg-gradient-fast-blue-purple">
+                <a href="{{news.get_absolute_url}}"><img src="{{news.photo.crop.850x885}}" alt="">
+                  <div class="blog-rounded-icon bg-white border-color-white absolute-middle-center">
+                    <i class="feather icon-feather-arrow-right icon-extra-small"></i>
+                  </div>
+                </a>
+              </div>
+              <div class="post-details padding-30px-all xl-padding-25px-lr">
+                <a href="{{news.get_absolute_url}}" class="post-author text-medium text-uppercase">{{news.date}}</a>
+                <a href="{{news.get_absolute_url}}" class="text-green font-weight-500 alt-font d-block">{{news.title}}</a>
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- start section -->
+
+
+{% endblock %}

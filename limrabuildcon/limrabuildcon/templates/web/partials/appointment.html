@@ -1,0 +1,40 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Appointment Form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" class="ajax reload" id="modal_details" action="{% url 'web:appointment' %}" enctype="multipart/form-data">
+                  {% csrf_token %}
+
+                    <div class="form-group">
+                        {{appointment_form.name}}
+                    </div>
+                    <div class="form-group">
+                        {{appointment_form.email}}
+                    </div>
+                    <div class="form-group">
+                        {{appointment_form.phone}}
+                    </div>
+                    <div class="form-group">
+                        {{appointment_form.team}}
+                    </div>
+                    <div class="form-group">
+                        {{appointment_form.message}}
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <input type="submit" value="Get Appointment" id="submit" name="submit" class="btn btn-success" style="background-color: #00B057;color: white">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Primary Meta Tags -->
+    <title>Nestview - Real Estate Solutions</title>
+    <meta name="title" content="Nestview - Real Estate Solutions">
+    <meta name="description"
+        content="A real estate solution that places an emphasis on trust and streamlines the purchasing and selling of homes throughout Europe">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nestview.co.uk/">
+    <meta property="og:title" content="Nestview - Real Estate Solutions">
+    <meta property="og:description"
+        content="A real estate solution that places an emphasis on trust and streamlines the purchasing and selling of homes throughout Europe">
+    <meta property="og:image" content="https://nestview.co.uk/static/web/img/preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://nestview.co.uk/">
+    <meta property="twitter:title" content="Nestview - Real Estate Solutions">
+    <meta property="twitter:description"
+        content="A real estate solution that places an emphasis on trust and streamlines the purchasing and selling of homes throughout Europe">
+    <meta property="twitter:image" content="https://nestview.co.uk/static/web/img/preview.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'web/img/favicon/apple-touch-icon.png' %}?v=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'web/img/favicon/favicon-32x32.png' %}?v=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'web/img/favicon/favicon-16x16.png' %}?v=1.0">
+    <link rel="manifest" href="{% static 'web/img/favicon/site.webmanifest' %}?v=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="{% static 'web/css/font-icons.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'web/css/plugins.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'web/css/style.css' %}?v=1.0">
+    <link rel="stylesheet" href="{% static 'web/css/responsive.css' %}?v=1.0">
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <div class="body-wrapper">
+        {% if is_index %}
+        {% include 'web/partials/header.html' %}
+        {% else %}
+        {% include 'web/partials/header_alt.html' %}
+        {% endif %}
+
+        {% include 'web/partials/mobile-menu.html' %}
+
+        {% block content %}
+
+        {% endblock content %}
+
+        {% include 'web/includes/popup.html' %}
+        {% include 'web/includes/cta.html' %}
+        {% include 'web/partials/footer.html' %}
+
+    </div>
+
+    {% include 'web/partials/preloader.html' %}
+
+    <script src="{% static 'web/js/plugins.js' %}?v=1.0"></script>
+    <script src="{% static 'web/js/main.js' %}?v=1.0"></script>
+
+</body>
+
+</html>

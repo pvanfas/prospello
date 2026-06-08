@@ -1,0 +1,1699 @@
+[
+    {
+        "model": "main.company",
+        "pk": "148d6928-110e-4be1-84ab-576feb873128",
+        "fields": {
+            "created": "2025-10-08T06:57:44.323Z",
+            "updated": "2025-10-08T06:57:44.323Z",
+            "creator": null,
+            "is_active": true,
+            "name": "360 Marketing School"
+        }
+    },
+    {
+        "model": "main.company",
+        "pk": "1ef4d681-5dbe-43b4-b291-b1c03bda4fb2",
+        "fields": {
+            "created": "2025-10-08T06:57:32.368Z",
+            "updated": "2025-10-08T06:57:32.368Z",
+            "creator": null,
+            "is_active": true,
+            "name": "TWT Venture Studio"
+        }
+    },
+    {
+        "model": "main.company",
+        "pk": "38a41d65-abcb-43fc-a4b6-8b22494cd249",
+        "fields": {
+            "created": "2025-10-08T06:57:07.591Z",
+            "updated": "2025-10-08T06:57:07.591Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Prospello Corporate Holdings"
+        }
+    },
+    {
+        "model": "main.company",
+        "pk": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+        "fields": {
+            "created": "2025-10-08T06:57:13.657Z",
+            "updated": "2025-10-08T06:57:13.657Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Prospello Technologies"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+        "fields": {
+            "created": "2025-10-08T06:59:24.417Z",
+            "updated": "2025-10-08T06:59:24.417Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Salaries and Wages Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "3b6a9d1f-878f-4c3b-a858-353c1907b8d7",
+        "fields": {
+            "created": "2025-10-08T07:02:03.997Z",
+            "updated": "2025-10-08T07:02:03.997Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Consulting Income",
+            "transaction_type": "Income"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "40cf1a57-6d30-4d0b-879c-1ecbf28b9651",
+        "fields": {
+            "created": "2025-10-08T07:01:42.729Z",
+            "updated": "2025-10-08T07:01:46.093Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Web Development Income",
+            "transaction_type": "Income"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "44c0206c-e7ce-4505-b141-ec8892a6ca06",
+        "fields": {
+            "created": "2025-10-08T06:59:57.930Z",
+            "updated": "2025-10-08T06:59:57.930Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Computer and IT Equipment (Asset)",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "5948bbae-afe4-4512-aca8-3870ad8fd6e6",
+        "fields": {
+            "created": "2025-10-08T07:01:54.127Z",
+            "updated": "2025-10-08T07:01:54.127Z",
+            "creator": null,
+            "is_active": true,
+            "name": "SaaS Subscription Income",
+            "transaction_type": "Income"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "683d0399-2545-4f22-b795-1ae89d3cf502",
+        "fields": {
+            "created": "2025-10-08T06:59:35.017Z",
+            "updated": "2025-10-08T06:59:35.017Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Office Supplies and Administrative Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "74725783-8584-41b9-ae81-c151b647e2e2",
+        "fields": {
+            "created": "2025-10-08T07:00:03.746Z",
+            "updated": "2025-10-08T07:00:03.746Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Loan Repayment / Debt Servicing",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "7ce472e3-a9eb-497d-9d97-5957d8a9b4d0",
+        "fields": {
+            "created": "2025-10-08T07:01:35.396Z",
+            "updated": "2025-10-08T07:01:35.396Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Software Development Income",
+            "transaction_type": "Income"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "80d8da09-edb5-425b-978b-e0bf464b4d41",
+        "fields": {
+            "created": "2025-10-08T08:33:34.282Z",
+            "updated": "2025-10-08T08:33:34.282Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Loan from Director / Partner",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "8ad0a310-bf37-4a22-a3f8-785bcc72e97e",
+        "fields": {
+            "created": "2025-10-08T06:59:46.719Z",
+            "updated": "2025-10-08T06:59:46.719Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Brand Development Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "b8563d0b-d89d-4ccf-8f0a-ce4b835664b7",
+        "fields": {
+            "created": "2025-10-08T07:02:08.982Z",
+            "updated": "2025-10-08T07:02:08.982Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Cloud Services Income",
+            "transaction_type": "Income"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "c897832d-b006-45c6-8ead-cfe0a4d587fa",
+        "fields": {
+            "created": "2025-10-08T07:02:15.447Z",
+            "updated": "2025-10-08T07:02:15.447Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Maintenance and Support Income",
+            "transaction_type": "Income"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "d89b9eaa-93f6-450c-8ce5-d86b8e4a4757",
+        "fields": {
+            "created": "2025-10-08T07:00:09.727Z",
+            "updated": "2025-10-08T07:00:09.727Z",
+            "creator": null,
+            "is_active": true,
+            "name": "IT Services and Internet Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "e5448de6-a405-4177-aa37-f78f1f18a38a",
+        "fields": {
+            "created": "2025-10-08T06:59:51.763Z",
+            "updated": "2025-10-08T06:59:51.763Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Operations and Maintenance Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "eb9c4bfb-f002-4133-af19-cfbe99bf7e3b",
+        "fields": {
+            "created": "2025-10-08T06:59:40.112Z",
+            "updated": "2025-10-08T06:59:40.112Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Marketing and Advertising Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transactioncategory",
+        "pk": "ee39fe8d-5aed-46a2-8665-5052810eb2e6",
+        "fields": {
+            "created": "2025-10-08T06:59:30.029Z",
+            "updated": "2025-10-08T06:59:30.029Z",
+            "creator": null,
+            "is_active": true,
+            "name": "Office Rent Expense",
+            "transaction_type": "Expense"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "030052ff-9933-4e56-9c71-14ee82b5821a",
+        "fields": {
+            "created": "2025-10-08T09:01:34.196Z",
+            "updated": "2025-10-08T09:01:34.196Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-29",
+            "amount": "67000.00",
+            "title": "Office furnitures",
+            "category": "683d0399-2545-4f22-b795-1ae89d3cf502",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "0c987380-91fa-425f-9c15-0ad6edda8e8f",
+        "fields": {
+            "created": "2025-10-08T09:01:34.210Z",
+            "updated": "2025-10-08T09:01:34.210Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-09-20",
+            "amount": "1850.00",
+            "title": "Server payment sep",
+            "category": "d89b9eaa-93f6-450c-8ce5-d86b8e4a4757",
+            "transaction_type": "Expense",
+            "remarks": "Paid by adnan"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "2b378d93-b684-4e40-9f09-16bbc7cb0453",
+        "fields": {
+            "created": "2025-10-08T09:01:34.192Z",
+            "updated": "2025-10-08T09:01:34.192Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-29",
+            "amount": "23000.00",
+            "title": "Electric,Painting",
+            "category": "683d0399-2545-4f22-b795-1ae89d3cf502",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "33cb4ea8-0552-460e-80f6-17aa96e444f5",
+        "fields": {
+            "created": "2025-10-08T09:01:34.166Z",
+            "updated": "2025-10-08T09:01:34.166Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-07-31",
+            "amount": "7500.00",
+            "title": "Fadil opening debt",
+            "category": "80d8da09-edb5-425b-978b-e0bf464b4d41",
+            "transaction_type": "Expense",
+            "remarks": "Fadil debt"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "3967d6b0-5109-45ae-9946-1a020e600617",
+        "fields": {
+            "created": "2025-10-08T09:01:34.180Z",
+            "updated": "2025-10-08T09:01:34.180Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-21",
+            "amount": "6500.00",
+            "title": "amount paid to sahal",
+            "category": "74725783-8584-41b9-ae81-c151b647e2e2",
+            "transaction_type": "Expense",
+            "remarks": "Paid from Skydays income"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "4133ac11-09ca-4786-ac66-d9fc41f802b4",
+        "fields": {
+            "created": "2025-10-08T08:33:46.747Z",
+            "updated": "2025-10-08T08:33:46.747Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-07-31",
+            "amount": "7500.00",
+            "title": "Fadil opening debt",
+            "category": "80d8da09-edb5-425b-978b-e0bf464b4d41",
+            "transaction_type": "Expense",
+            "remarks": "Fadil debt"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "4db0ebbc-c2bb-41c7-8c62-0353645e5674",
+        "fields": {
+            "created": "2025-10-08T09:01:34.209Z",
+            "updated": "2025-10-08T09:01:34.209Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-31",
+            "amount": "55000.00",
+            "title": "Bhavsagar salary(paid on date 11/09/2025)",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "609c7fd2-5f97-4c03-bb88-ce35ff880c19",
+        "fields": {
+            "created": "2025-10-08T09:01:34.205Z",
+            "updated": "2025-10-08T09:01:34.205Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-02-09",
+            "amount": "1800.00",
+            "title": "Onam celebration pookalam",
+            "category": "683d0399-2545-4f22-b795-1ae89d3cf502",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "6243ccb5-3c80-46f5-a480-c92ae376e17e",
+        "fields": {
+            "created": "2025-10-08T09:01:34.186Z",
+            "updated": "2025-10-08T09:01:34.186Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-26",
+            "amount": "60000.00",
+            "title": "Nihal australia",
+            "category": "74725783-8584-41b9-ae81-c151b647e2e2",
+            "transaction_type": "Expense",
+            "remarks": "Paid from Hikewise income"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "6c3f78d2-6375-4055-8368-cc373831715e",
+        "fields": {
+            "created": "2025-10-08T09:01:34.171Z",
+            "updated": "2025-10-08T09:01:34.171Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-07-31",
+            "amount": "5000.00",
+            "title": "EMI for company laptop(Abhishek)",
+            "category": "44c0206c-e7ce-4505-b141-ec8892a6ca06",
+            "transaction_type": "Expense",
+            "remarks": ""
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "7473c8ed-1a00-4154-b06c-e8a5041a47d6",
+        "fields": {
+            "created": "2025-10-08T09:01:34.212Z",
+            "updated": "2025-10-08T09:01:34.212Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-31",
+            "amount": "15000.00",
+            "title": "Rinzan(intern) salary paid on 22/09/2025",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "75d6c88f-d073-449e-a6dd-cf10342f4134",
+        "fields": {
+            "created": "2025-10-08T09:01:34.188Z",
+            "updated": "2025-10-08T09:01:34.188Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-26",
+            "amount": "30000.00",
+            "title": "Amount paid to anfas",
+            "category": "74725783-8584-41b9-ae81-c151b647e2e2",
+            "transaction_type": "Expense",
+            "remarks": "Paid from Hikewise income"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "7df8230d-8964-48bf-b779-a525140ff1fc",
+        "fields": {
+            "created": "2025-10-08T09:01:34.215Z",
+            "updated": "2025-10-08T09:01:34.215Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-09-24",
+            "amount": "1073.00",
+            "title": "emi bhavasagar laptop",
+            "category": "44c0206c-e7ce-4505-b141-ec8892a6ca06",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "85d08c38-2951-4bdb-b780-10fcc4fd078b",
+        "fields": {
+            "created": "2025-10-08T09:01:34.208Z",
+            "updated": "2025-10-08T09:01:34.208Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-31",
+            "amount": "70000.00",
+            "title": "Abhishek salary (paid on date 11/09/2025",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "8756b65c-028c-4302-bdec-dd1712477ec0",
+        "fields": {
+            "created": "2025-10-08T09:01:34.201Z",
+            "updated": "2025-10-08T09:01:34.201Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-29",
+            "amount": "23000.00",
+            "title": "Anfas salary pending july",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "94b87378-cea9-40d3-80a1-b09967e17128",
+        "fields": {
+            "created": "2025-10-08T09:01:34.199Z",
+            "updated": "2025-10-08T09:01:34.199Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-31",
+            "amount": "10000.00",
+            "title": "Sahal Salary august",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "95b4f4ab-9e64-40dd-97e4-85e08fdf40d8",
+        "fields": {
+            "created": "2025-10-08T09:01:34.202Z",
+            "updated": "2025-10-08T09:01:34.202Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-29",
+            "amount": "25000.00",
+            "title": "Anfas salary August",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "a93094c1-3965-4c4e-b8df-45cdab1e295c",
+        "fields": {
+            "created": "2025-10-08T09:01:34.175Z",
+            "updated": "2025-10-08T09:01:34.175Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-13",
+            "amount": "5000.00",
+            "title": "amount paid to haseeb",
+            "category": "74725783-8584-41b9-ae81-c151b647e2e2",
+            "transaction_type": "Expense",
+            "remarks": "Paid from Skydays income"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "ae04e493-07d9-4e72-b4d0-aed127d78df6",
+        "fields": {
+            "created": "2025-10-08T09:01:34.213Z",
+            "updated": "2025-10-08T09:01:34.213Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-09-22",
+            "amount": "10000.00",
+            "title": "sahal oct salary advance",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "b2526115-c596-4816-b232-36eb9a866233",
+        "fields": {
+            "created": "2025-10-08T09:01:34.182Z",
+            "updated": "2025-10-08T09:08:32.649Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-21",
+            "amount": "28600.00",
+            "title": "Downpayment of laptop",
+            "category": "44c0206c-e7ce-4505-b141-ec8892a6ca06",
+            "transaction_type": "Expense",
+            "remarks": "Paid from Skydays income\r\nrupees 28000 of which total amount=43700 out of which 5000 paid by sagar. monthly emi= 1073"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "b47724b3-daf6-402f-a6ac-fce00c97420a",
+        "fields": {
+            "created": "2025-10-08T09:01:34.169Z",
+            "updated": "2025-10-08T09:01:34.169Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-07-31",
+            "amount": "165000.00",
+            "title": "salary for abhishek,bhavsagar, anand,anfas,sahal",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "bfa56997-2d39-46b9-9be0-0726921c3b45",
+        "fields": {
+            "created": "2025-10-08T09:01:34.204Z",
+            "updated": "2025-10-08T09:01:34.204Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-01-09",
+            "amount": "150000.00",
+            "title": "paid to Fadil debt",
+            "category": "74725783-8584-41b9-ae81-c151b647e2e2",
+            "transaction_type": "Expense",
+            "remarks": "Paid from FitwithAtp consultation fees"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "c7d34c4d-7b07-426a-9ffb-c57719f58fef",
+        "fields": {
+            "created": "2025-10-08T09:01:34.190Z",
+            "updated": "2025-10-08T09:01:34.190Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-29",
+            "amount": "3700.00",
+            "title": "Areekode office materials",
+            "category": "683d0399-2545-4f22-b795-1ae89d3cf502",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "cb155b64-748b-41e6-a9bf-832a69d76664",
+        "fields": {
+            "created": "2025-10-08T09:01:34.177Z",
+            "updated": "2025-10-08T09:01:34.177Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-20",
+            "amount": "1654.00",
+            "title": "Amount paid for server renewal",
+            "category": "d89b9eaa-93f6-450c-8ce5-d86b8e4a4757",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Adnan"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "cff25a40-3fa3-489a-8ab1-13f9696503b4",
+        "fields": {
+            "created": "2025-10-08T09:01:34.198Z",
+            "updated": "2025-10-08T09:01:34.198Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-31",
+            "amount": "20000.00",
+            "title": "Anand salary august",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "ec1dc9e5-e74c-49fd-abc0-15ad75ec9ad0",
+        "fields": {
+            "created": "2025-10-08T09:01:34.184Z",
+            "updated": "2025-10-08T09:01:34.184Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-31",
+            "amount": "6500.00",
+            "title": "adnan salary",
+            "category": "0cbbe2ee-be06-4986-a756-81e14b7a1ae9",
+            "transaction_type": "Expense",
+            "remarks": "Paid from Skydays income"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "f4b4cc3f-5770-4bb0-a080-0e4444b72290",
+        "fields": {
+            "created": "2025-10-08T09:01:34.194Z",
+            "updated": "2025-10-08T09:01:34.194Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-08-29",
+            "amount": "25000.00",
+            "title": "Carpender works",
+            "category": "683d0399-2545-4f22-b795-1ae89d3cf502",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.transaction",
+        "pk": "fa48a9f2-508b-484e-b0bc-7434e515926f",
+        "fields": {
+            "created": "2025-10-08T09:01:34.207Z",
+            "updated": "2025-10-08T09:01:34.207Z",
+            "creator": null,
+            "is_active": true,
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-02-09",
+            "amount": "995.00",
+            "title": "Onam celebration",
+            "category": "683d0399-2545-4f22-b795-1ae89d3cf502",
+            "transaction_type": "Expense",
+            "remarks": "Paid by Fadil"
+        }
+    },
+    {
+        "model": "main.payable",
+        "pk": "865523f3-ae65-4d18-aad6-a6e8ab2b6a68",
+        "fields": {
+            "created": "2025-10-08T09:12:20.362Z",
+            "updated": "2025-10-08T09:12:20.362Z",
+            "creator": 1,
+            "is_active": true,
+            "amount": "20000.00",
+            "title": "Anand",
+            "remarks": "20000 june salary pending",
+            "company": "c42da098-5b8c-4de7-bc74-11d0e84aedc8",
+            "date": "2025-09-04",
+            "is_paid": false
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$srko8JYCsLh0tLq2JJSq57$rTGTBWnT0ekOTk/nXaSNTsRVp0BR0Se90yNwwZwVcrc=",
+            "last_login": "2025-10-07T05:54:08.590Z",
+            "is_superuser": true,
+            "username": "pvanfas",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-05T09:00:52.109Z",
+            "usertype": "Student",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 4,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$tGTZhNiXXLKUQ4BJBfi9th$MXvh/uuPd9oNKgUKenK+y1lSVasEr93AD15o4L6HAC4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "mhac_vgr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:36.521Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 5,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$io0Zf3qoBjI4XaNYtCYSgX$pxYXW8o14uR2qFoOamIIq27WEyOddotFmW3ajjZe50A=",
+            "last_login": "2025-10-07T08:25:25.355Z",
+            "is_superuser": false,
+            "username": "iac_kmlr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:36.722Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 6,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$oDtjN1PPYutmfrEUmVDScr$4ePuH9Apk9TxpzLY5G7RvfktmoJ2ev8ovdzWyGHJEok=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "doa_farook",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:36.916Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$eLv6YmqPN4VJLCUayDWUmy$ra+9zmGn9g5CaJaD8xMEK35FwyNVjV6jCp0pNx6Kjms=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kmmmo_tgd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:37.107Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 8,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$cHpgHON6Z5v71YgiuI9zZT$KJP69pLVW0rM+v5UcwbiHxrBvHa5f+YLaOL2BRf72fI=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sac_mpr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:37.303Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 9,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$iistnE7XWLcArmvX5hBtsd$D8xfYTadKl/JtBHUMPvwaops7osTjvtHiWX6KzA5RIU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "muac_pkl",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:37.498Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 10,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$STLIXUDFPnGHr1PLi6WXm1$FbqgOQWLA8bSRtTPIw9X/zs59i+AWyqP76zVDVBpurA=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "duac_ppd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:37.693Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 11,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$MtL8NwABUzbzb8KUPEl0Tj$fEH3FQIymb+c7Csk6smYpDVV5zywRCBZB4XoTheMFGE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "doa_mmpd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:37.890Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 12,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$KpiS3qHxbuLzINQYDGQrrx$Oufcvpcp497yt3wlxgZDIGiMSkyrn5G052ZycqfZvJQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "pmac_prl",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:38.086Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 13,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$eJxCXt9yn0bjDoT53On4VO$5HsppDoeKgWp25eqBW7xO6x3UBarzUWTw/CPj9Ga9Es=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "mji_nrn",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:38.279Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 14,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$HLiCU9T5XYe3U1uH8CSC2h$XQG0YxpPAiuIZ0axOM/oYmetSsX3SWqqpG3yj7N6450=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "niac_kdv",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:38.474Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 15,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$c8hIXYg1MXQqva35texZPS$0VXp12c9Gdqx/rkRVhtQtZIzbN/28HlyuRISKdAaUE0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sac_arkd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:38.671Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 16,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$8rQyVEWi74wJCNXHkKmxGX$9R/ODHDgWUR06//TSnfVCCkqp6bm8FhYQ097+GG36g0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "doa_cu",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:38.868Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 17,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$qwudAWpV0S5o7OnwtubQCO$d90h986izBUMHuSPJaegRdWXxVBcQFW6mvMslC1b8ns=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "naac_chg",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:39.064Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 18,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$u3tXQ4JwIAVy7ZM5Sqg9YE$Iq1iIG5otcQ7aLOMc5A354SrFrhaWON1WsLuZUgnWQ4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sac_krgd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:39.260Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 19,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$gmQaIepFzM44x2vROmHZvN$BiGVfgZO7SHgiO5iwHJ8Uih3qQudxZirD6xoRl98tjQ=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "aac_pvm",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:39.459Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 20,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$bFcV2712OiYJO4o1KBQGJ0$p+EP9dpqH97h2D3TzCLwLydsq4l2CPqZ30RSFc0WwKM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "iac_knr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:39.655Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 21,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$fUhdUr7HWx4qYyq6C9I80o$ens2wAeSV2vqQyEWkqnWMohfA5dqH+xTMdAH4i/wudM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sac_thkd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:39.851Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 22,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$a3vXJDBKluO5VVO2wGy2vz$3vwR+AeArK8qJSH57C2UdfrbIz/lGsAs5t1WEIxDOXo=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "mac_pnr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:40.047Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 23,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$XNDquHPRVYSJOaiArhIku6$deywQQRaDWV3S7FqBKTm2/KiOb67Z8W75tZ/Ef4Cuwo=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "aiac_knyl",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:40.242Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 24,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$YB3qpYmacHaRKdOgvqTARO$sDsllkSAroSI7GIljjg/HDt6YMPV+Ciq7W1f+w1hlR4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jnsc_edv",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:40.437Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 25,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$OqNhrmF9v24Y074udmKOpl$qzRDiyh6QS0ADmDf3TjAiv7XRYqFDa9vn41djsJX2qY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "aac_vlr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:40.634Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 26,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$qBo91bk5prMqH7liHqpmhB$HmVjonFG7H3Q9Q10fZruYBLG+oZLJxw3rLXzyd7fzdY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "iiac_ppg",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:40.830Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 27,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$8ygnYugks4QDsRMsSOa7gl$zIA8VpQJtql8ZL867s8KMurTZHLzSflU4xaPHLhld+A=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "smac_edk",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:41.025Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 28,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$jaHu3l0DAO9nkpCUZxl0tZ$/ZMUj4NX7i+Z8uSYY9PYkWwPgJSHOJMNfA3cPhzIzhM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "sc_wdr",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:41.222Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 29,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$Rq0PBdYsXvOWWJWeG9PJMb$AyG3Kmp4kGjNFFbiiuQLwXhr/JQJx3pnosSDWq7nzPk=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "ruac_frk",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:41.417Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 30,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$nKjV1JU6KwVxyBhBU6xHbK$+HK7gdtd4h4+zH8fIcVZ0UzDl0GYcaSCFREDa1f+86g=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jbuac_kpm",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:41.613Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 31,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$8r37RIqR20Bzy166G2GGjb$cT6RI8OAgtrddZoHCSF135cqIf6JCTt6YmzbqAdBE0g=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "gac_edk",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:41.809Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 32,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$fM2VPVpuXxlORvfLoW6l3I$d2r8uSTo3EcdqFt8JTLKNaWYi2F58/ekAxsdaJkE19E=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "aiwac_mgm",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:42.005Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 33,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$EcwmbztK7ANGLvtFZzUZrz$aCRILXYWFwHNp3nuIqONyvfaY3vL06yUrzcskwpixLU=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jsac_pkl",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:42.201Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 34,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$dr8exf5SNTxupRCKtrsz82$tp71/uxa5PU+aCs94wIklqbpNLhiBfeGLlxpWnxbF1A=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "duac_vzd",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:42.398Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 35,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$DZDGlAzgAFjxeoXh0N2U7R$4o4GuYHQvQWK1c+AiHLkpjpymfc3e5P71eo1wPmJyaA=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "doa_kuc",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:42.597Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 36,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$p0MIoXK3ZvFcGPJ5PWQvIb$SvDTYCHHHNJ35/c6r8SXyddn9B1USwjZ2PqDmHn913M=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "diac_prl",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:42.793Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 37,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$AOu0EpPRHJMJ9UyQ5tioGj$fKim3j4dHpNQMLuZv2nqI2Vp4K8FClUZeFOTh/FRn0Q=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "jafac_ndp",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:04:42.988Z",
+            "usertype": "CampusConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 38,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$SbRLx5dXUq2pmOxBnnhTet$Bf4Lg77ia2n90Cvpxn/FxYWvARISZT8fB42ZFqiP3Dk=",
+            "last_login": "2025-10-07T08:26:25.262Z",
+            "is_superuser": false,
+            "username": "alappuzha",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:07.338Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 39,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$hjPzOc2aLv5hKDjnEpcntM$qPi01lOihat8QCyGxoWoVSBtWiSjkFzFtf4e98/lDZc=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "ernakulam",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:07.537Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 40,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$BfkNvQ4LHLNDTaQncuKts1$xpUSroX3RffNteXhmVXztOBCkNRbBjvaIsfzQGO77kE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "idukki",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:07.731Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 41,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$TJzrQxelILE8FSE2H02iQt$IpwyfgzKvntJUx+i4pKV+y8Mhg5lp6PdaPTnPITdSzo=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kannur",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:07.926Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 42,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$JMdbqyTDED4snHbppVYdK1$cPioyPa8AAWtVdmX7buaNJODcmu+04kiTvYLeIMLteE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kasaragod",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:08.118Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 43,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$nvxWN2GKa4xkTZqai0qlq0$A0iZN2KTsh77tKNpnDIvUUllRzW6khOBHKQq74vDlSY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kollam",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:08.309Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 44,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$N5xu4eJrAXVUPEV2X8jpfH$KqJ0mc7LVCwzvIoSsaOPnrz4YSlMnZb6DBklP/hIBko=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kottayam",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:08.502Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 45,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$nb2FEi5Zj2vDKmPx5hAtJd$TvgJrtPDSFdNhhlS46PhH/K7gaFFd7C8SPPquLPpFJE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kozhikode_north",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:08.694Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 46,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$CcSzT330hbNIIoGIbST9NE$TXq1hMwbBtv55HiAUN00CbXyCh+Z/pxfNxljINNns3Y=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "kozhikode_south",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:08.887Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 47,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$jXUlL1QcHVIIVsZSmFYyxa$rOBzJS7Cu7rZTj8h1tUQdQGUn/Pfq1Eq93OJSkmseWc=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "malappuram_east",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:09.080Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 48,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$OXqfexRUtUHRfBzDInog42$iQ2N5rjC/AF8Zn6gRrC+wpRetEVcm58+NdVOJThOXA4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "malappuram_west",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:09.273Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 49,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$V2Ml08hcHdpVz2kJyBZFPS$NazrRbz4J4kR3uVuTIocMOmjn0XMVzgJRW2Kqokb9BY=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "palakkad",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:09.478Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 50,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$4VqrxxRihfie4DnUT30SGP$WyML50Uhxj+4Yq1avwI3hDA9pHmlCbWB/SVe+6j2Tqo=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "pathanamthitta",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:09.671Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 51,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$5jji4Pgoj3yRWmaejVdaTX$lsrhd+Njum+QpULkZcbgk4qq4Xzqxoe2A+vg0kTLOIA=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "thiruvananthapuram",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:09.865Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 52,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$8mSOPfom8gVRSdpwINhbx0$/0u+XxX0jEMk1FbRGt81IzNvVXLZQ6+wa132/p1GA/0=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "thrissur",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:10.060Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "users.customuser",
+        "pk": 53,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$QV8jmTp7MfUaaUtEGsb5ZT$qOcaffrQcARdjKxcBQ7kuQ8PAO9znqHwZ46541k8MsM=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "wayanad",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-10-07T08:21:10.254Z",
+            "usertype": "DistrictConvenor",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]

@@ -1,0 +1,22 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="banner-one-swiper-fade-swip">
+    <div class="swiper mySwiper-banner-one-in-two">
+        <div class="swiper-wrapper">
+            {% for banner in banners %}
+            <div class="swiper-slide">
+                <img src="{{banner.image.url}}" alt="banner">
+                <div class="overlay">
+                    <div class="single-left-banner-swiper-start left-swiper-area-start">
+                        <h2 class="title">{{banner.title}}</h2>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  {% load static compress %}
+	<meta charset="UTF-8">
+	<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=0'>
+
+	<!-- Primary Meta Tags -->
+	<title>{{app_settings.site_title}}</title>
+	<meta name="title" content="{{app_settings.site_title}}" />
+	<meta name="description" content="{{app_settings.site_title}}" />
+	<meta name="author" content="{{app_settings.author}}" >
+	<meta name="keywords" content="{{app_settings.site_keywords}}" />
+	<link rel="icon" href="{% static 'app/config/favicon.png' %}" type="image/x-icon" />
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'app/config/favicon.png' %}" />
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="{{request.build_absolute_uri}}" />
+	<meta property="og:title" content="{{app_settings.site_title}}" />
+	<meta property="og:description" content="{{app_settings.site_title}}" />
+	<meta property="og:image" content="" />
+
+	<!-- X (Twitter) -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="{{request.build_absolute_uri}}" />
+	<meta property="twitter:title" content="{{app_settings.site_title}}" />
+	<meta property="twitter:description" content="{{app_settings.site_title}}" />
+	<meta property="twitter:image" content="" />
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Anek+Malayalam:wdth,wght@75..125,100..800&display=swap" rel="stylesheet">
+
+	{% compress css %}
+  <link rel="stylesheet" href="{% static 'app/plugins/bootstrap/css/bootstrap.css' %}?v=1.3" />
+  <link rel="stylesheet" href="{% static 'app/css/style.css' %}?v=1.3" />
+  <link rel="stylesheet" href="{% static 'app/css/plugins.css' %}?v=1.3" />
+  <link rel="stylesheet" href="{% static 'app/css/animated.css' %}?v=1.3" />
+  <link rel="stylesheet" href="{% static 'app/css/plugins/jqueryui.css' %}?v=1.3" />
+  {% endcompress %}
+
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+  {% block css_plugins %}{% endblock %}
+
+  <link rel="stylesheet" href="{% static 'app/css/icons.css' %}?v=1.9" />
+  <link rel="stylesheet" href="{% static 'app/css/main.css' %}?v=1.9" />
+  <link rel="stylesheet" href="{% static 'app/css/custom.css' %}?v=1.9" />
+
+  {% block extra_css %}{% endblock %}
+  <script src="{% static 'app/plugins/jquery/jquery.min.js' %}?v=1.9"></script>
+
+</head>
+
+<body class="app sidebar-mini ltr skin-modes">
+
+  {% include 'app/partials/loader.html' %}
+
+  <div class="page">
+    <div class="page-main">
+
+      {% block header %}
+      {% include 'app/partials/header.html' %}
+      {% endblock %}
+
+      {% block sidebar %}
+      {% include 'app/sidebar/main.html' %}
+      {% endblock %}
+
+      <div class="app-content main-content">
+
+        {% block content %}
+
+        {% endblock %}
+
+      </div>
+
+    </div>
+
+    {% include 'app/partials/sidebar-right.html' %}
+
+    <!-- create a sidebar modal -->
+    <div class="modal fade" id="sidebar-modal" tabindex="-1" role="dialog" aria-labelledby="sidebar-modalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-vertical" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="sidebar-modalLabel">title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    {% comment %}
+    <a href="#top" id="back-to-top"><span class="feather feather-chevrons-up"></span></a>
+    {% endcomment %}
+
+    {% compress js %}
+    <script src="{% static 'app/plugins/bootstrap/js/popper.min.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/bootstrap/js/bootstrap.min.js' %}?v=1.9"></script>
+
+    <script src="{% static 'app/plugins/othercharts/jquery.sparkline.min.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/circle-progress/circle-progress.min.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/sidemenu/sidemenu.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/p-scrollbar/p-scrollbar.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/p-scrollbar/p-scroll1.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/sidebar/sidebar.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/select2/select2.full.min.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/bootstrap-datepicker/bootstrap-datepicker.js' %}?v=1.9"></script>
+    <script src="{% static 'app/plugins/date-picker/jquery-ui.js' %}?v=1.9"></script>
+    <script src="{% static 'app/js/masonry.pkgd.min.js' %}?v=1.9" async></script>
+    {% endcompress %}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
+    {% block js_plugins %}{% endblock %}
+    <script src="{% static 'app/js/sticky.js' %}?v=1.9"></script>
+    <script src="{% static 'app/js/custom.js' %}?v=1.9"></script>
+    <script src="{% static 'app/js/script.js' %}?v=1.9"></script>
+    {% block javascript %}{% endblock %}
+
+</body>
+
+</html>

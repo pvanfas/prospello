@@ -1,0 +1,9 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}{% load crispy_forms_tags %}
+
+{% block title %}{% trans "Registration is closed" %}{% endblock %}
+
+{% block content %}
+<p>{% trans "Sorry, but registration is not available now. Come back later." %}</p>
+<p>Already have an account? <a href="{% url 'auth_login' %}">Login Now</a></p>
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends 'website/base.html' %} 
+{% load static honeypot %} 
+
+{% block title %}{{news.title}} | FETCH - Office chairs brand in Kerala{% endblock %} 
+
+{% block content %}
+<main>
+    <section class="news-hero">
+        <div class="container">
+            <a href="{% url 'web:updates' %}" class="back-btn">
+                <i class="bi bi-arrow-left"></i> Back to Updates
+            </a>
+            <h1>{{news.title}}</h1>
+            <div class="news-meta">
+                <span><i class="bi bi-calendar3 me-2"></i> {{ news.timestamp|date:"F d, Y" }}</span>
+                <span><i class="bi bi-person me-2"></i> Admin</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="article-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="article-card">
+                        <div class="featured-image-wrapper">
+                            <img src="{{news.featured_image.url}}" alt="{{news.title}}" class="img-fluid">
+                        </div>
+                        
+                        <div class="article-content">
+                            {{news.content|safe}}
+                        </div>
+
+                        <div class="share-section">
+                            <span class="fw-bold me-2">Share this:</span>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ domain }}{{ request.path }}" target="_blank" class="share-btn"><i class="bi bi-facebook"></i></a>
+                            <a href="https://twitter.com/intent/tweet?url={{ domain }}{{ request.path }}&text={{ news.title }}" target="_blank" class="share-btn"><i class="bi bi-twitter"></i></a>
+                            <a href="https://api.whatsapp.com/send?text={{ news.title }} {{ domain }}{{ request.path }}" target="_blank" class="share-btn"><i class="bi bi-whatsapp"></i></a>
+                            <a href="mailto:?subject={{ news.title }}&body=Check out this article: {{ domain }}{{ request.path }}" class="share-btn"><i class="bi bi-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Recent Updates</h3>
+                        <div class="recent-posts-list">
+                            {% for item in recent_news %}
+                            <div class="recent-post-item">
+                                <div class="recent-post-thumb">
+                                    <a href="{{ item.get_view_url }}">
+                                        <img src="{{ item.featured_image.crop.100x100 }}" alt="{{ item.title }}">
+                                    </a>
+                                </div>
+                                <div class="recent-post-info">
+                                    <h4><a href="{{ item.get_view_url }}">{{ item.title }}</a></h4>
+                                    <div class="recent-post-date">{{ item.timestamp|date:"M d, Y" }}</div>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <p class="text-muted">No other recent updates.</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget">
+                        <h3 class="widget-title">Need Help?</h3>
+                        <p>Have questions about our products or need a custom solution? Our experts are here to help.</p>
+                        <a href="{% url 'web:contact' %}" class="btn dwdbtn w-100 mt-2">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% load static %}
+<section id="products" class="products">
+  <div class="container">
+    <div class="row align-items-center justify-content-start">
+      <div class="col-md-6">
+        <div class="section me-5">
+          <div class="content">
+            <h3>FEATURED PRODUCTS</h3>
+            <span class="pattern"></span>
+            <h6>
+              We offer a wide range of modular and ergonomic office chairs with defining comfort and diverse needs of modern offices.
+            </h6>
+          </div>
+        </div>
+      </div>
+
+      {% for product in products %}
+      <div class="col-md-3 col-sm-6 p-4 abs-margin">
+        <div class="neuromorphic_card">
+          <div class="text-center">
+            {% if product.featured_image %}
+            <img src="{{product.featured_image.url}}" loading="lazy" class="img-fluid img-abs" alt="featured office chairs" />
+            {% else %}
+            <img src="https://via.placeholder.com/250x350" class="img-fluid img-abs" alt="" />
+            {% endif %}
+          </div>
+
+          <div class="text-content h-100">
+            <strong class="mb-1">{{product.name}}</strong>
+            {% comment %}
+            <p class="m-0">{{product.summary|linebreaksbr}}</p>
+            {% endcomment %}
+          </div>
+          <a href="{{product.get_view_url}}" class="circ-btn"><i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>

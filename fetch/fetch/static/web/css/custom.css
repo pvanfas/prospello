@@ -1,0 +1,123 @@
+.bg-red {
+    background: var(--primary-color);
+}
+
+.bg-tertiary {
+    background: var(--tertiary-color);
+}
+
+.thumbnail_images ul {
+    list-style: none;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-top: 10px
+}
+
+.thumbnail_images ul li {
+    margin: 5px;
+    padding: 10px;
+    border: 2px solid #eee;
+    cursor: pointer;
+    transition: all 0.5s
+}
+
+.thumbnail_images ul li:hover {
+    border: 2px solid #000
+}
+
+.main_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+}
+
+.heart {
+    height: 29px;
+    width: 29px;
+    background-color: #eaeaea;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.ratings span {
+    font-size: 14px;
+    margin-left: 12px
+}
+
+.buttons .btn {
+    padding: 10px;
+    width: 250px;
+    border-radius: 0px !important
+}
+
+.inline_form {
+    position: relative;
+}
+
+.inline_form .search_btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translate(0, -50%);
+    outline: 0;
+    border: 0;
+    background: transparent;
+}
+
+select option {
+    padding: 10px;
+}
+
+.mh-100px {
+    min-height: 100px;
+}
+
+.whatsapp_btn {
+    position: fixed;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: inline-block;
+    bottom: 15px;
+    left: 20px;
+    height: 40px;
+    width: 40px;
+    color: #fff;
+    font-size: 23px;
+    background: #25D366;
+    padding: 4px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: 20px
+}
+
+.whatsapp_btn:hover {
+    transform: scale(1.1);
+}
+
+a {
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+a:hover {
+    color: var(--primary-color);
+    opacity: 0.9;
+}
+
+.share_now_btn {
+    height: 100%;
+    border: 1px solid #000;
+    padding: 10px 12px;
+    margin-left: 10px;
+}

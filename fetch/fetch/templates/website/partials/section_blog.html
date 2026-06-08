@@ -1,0 +1,38 @@
+{% load static %}{% load filters %}
+{% if newses %}
+<section id="blog" class="blog" style="background: url({% static 'web/images/blog_bg.svg' %}) no-repeat right bottom;background-size: contain;">
+    <div class="container">
+        <div class="content text-center mx-auto mb-5">
+            <h3>Updates</h3>
+            <span class="pattern mx-auto"></span>
+            <p class="w-50 mx-auto">
+                One name, countless solutions. 
+                Fetch Office Chairs in Kerala, stand out for its marked versatility, quality, dedication and easiness. Making every moment comfortable for you. 
+            </p>
+        </div>
+
+        <div class="row">
+            {% for news in newses %}
+            <div class="col-lg-4">
+                <div class="box">
+                    <img src="{{news.featured_image.crop.400x250}}" class="img-fluid w-100" alt="office furnitures" />
+                    <div class="box-content">
+                        <h6>{{news.title}}</h6>
+                        <p>{{news.summary}}</p>
+                        <a href="{{news.get_view_url}}"><i class="bi bi-chevron-double-right"></i> Read More</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="text-center">
+                <a href="{% url 'web:updates' %}" class="fill-btn">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}

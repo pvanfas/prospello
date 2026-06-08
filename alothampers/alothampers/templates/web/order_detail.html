@@ -1,0 +1,108 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-padding-1 add_bg">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2 class="m-0">Order: #{{order.order_id}} </h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="my-account-wrapper pb-60 pt-40">
+
+    <div class="cart-area">
+        <div class="container">
+            <div class="row mb-30">
+                <div class="col-md-6 mb-20">
+                    <div class="your-order-area mt-0 py-4">
+                        <h6 class="mb-20 fw-600">Order Information</h6>
+                        <table class="table w-100">
+                            <tr><td class="py-1 fw-500">Order ID:</td><td> {{order.order_id|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Ordered at:</td><td> {{order.completed_at|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Status:</td><td> {{order.status|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Delivery Notes:</td><td> {{order.notes|default:"-"}}</td></tr>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mb-20">
+                    <div class="your-order-area mt-0 p-5">
+                        <h6 class="mb-20 fw-600">Delivery Address</h6>
+                        <table class="table w-100 mb-0">
+                            <tr><td class="py-1 fw-500">First Name:</td><td> {{order.first_name|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Last Name:</td><td> {{order.last_name|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Mobile:</td><td> {{order.mobile|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Alternate Mobile:</td><td> {{order.alternate_mobile|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Email:</td><td> {{order.email|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Address Line 1:</td><td> {{order.address_line_1|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">Address Line 2:</td><td> {{order.address_line_2|default:"-"}}</td></tr>
+                            <tr><td class="py-1 fw-500">City:</td><td> {{order.city|default:"-"}}</td></tr>
+                        </table>
+                    </div>
+                </div>
+
+       
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <form action="">
+                        <div class="cart-table-content">
+                            <div class="table-content table-responsive">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="width-thumbnail"></th>
+                                            <th class="width-name">Product</th>
+                                            <th class="width-price"> Price</th>
+                                            <th class="width-quantity">Quantity</th>
+                                            <th class="width-subtotal">Subtotal</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for item in order.get_items %}
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="{{ item.product_option.get_absolute_url }}"><img
+                                                        src="{{ item.product_option.image.url }}" alt="" style="height:60px;object-fit: cover;"></a>
+                                            </td>
+                                            <td class="product-name">
+                                                <h5><a href="{{ item.product_option.get_absolute_url }}">
+                                                    {{ item.product_option.name }}</a></h5>
+                                            </td>
+                                            <td class="product-cart-price"><span class="amount">
+                                                AED {{ item.product_option.get_price }}</span></td>
+                                            <td class="cart-quality text-center">
+                                                {{ item.quantity }}
+                                            </td>
+                                            <td class="product-total">
+                                                AED <span id="product-price{{ item.product_option.id }}">
+                                                    {{ item.subtotal|floatformat:2 }}</span>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                               Total
+                                            </td>
+                                            <td class="product-name"></td>
+                                            <td class="product-name"></td>
+                                            <td class="product-name"></td>
+                                            <td class="product-total fw-700">AED {{ order.payable|floatformat:2 }}</td>
+                                        </tr>
+                                        
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

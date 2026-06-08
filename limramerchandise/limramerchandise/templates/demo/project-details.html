@@ -1,0 +1,149 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Project Details</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="#">Project Details</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+
+<!-- project detail start  -->
+<section class="projectd__details-inner pt-80 pb-130">
+  <div class="container">
+    <div class="projectd__wrapper-inner">
+      <div class="projectd__thumb">
+        <img src="/static/web/imgs/inner/project-lg-1.jpg" alt="img">
+      </div>
+      <div class="projectd__meta-inner">
+        <div class="projectd__item-inner">
+          <img src="/static/web/imgs/inner/project-d-1.png" alt="icon-1">
+          <div class="projectd__mcontent-inner">
+            <h4 class="title">Jermain Weeks</h4>
+            <span>CEO of Themum</span>
+          </div>
+        </div>
+        <div class="projectd__item-inner">
+          <img src="/static/web/imgs/inner/project-d-2.png" alt="icon-1">
+          <div class="projectd__mcontent-inner">
+            <h4 class="title">Jermain Weeks</h4>
+            <span>CEO of Themum</span>
+          </div>
+        </div>
+        <div class="projectd__item-inner">
+          <img src="/static/web/imgs/inner/project-d-3.png" alt="icon-1">
+          <div class="projectd__mcontent-inner">
+            <h4 class="title">Jermain Weeks</h4>
+            <span>CEO of Themum</span>
+          </div>
+        </div>
+        <div class="projectd__item-inner">
+          <img src="/static/web/imgs/inner/project-d-4.png" alt="icon-1">
+          <div class="projectd__mcontent-inner">
+            <h4 class="title">Jermain Weeks</h4>
+            <span>CEO of Themum</span>
+          </div>
+        </div>
+      </div>
+      <h2 class="projectd__details-title">Project Outline</h2>
+      <p>We manage web development are many variations of passages of Lorem Ipsum available, but the majority have
+        suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
+        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+        embarrassing hidden in the middle of text. All the Lorem Ipsum generators Established fact that a reader
+        will be distracted b</p>
+      <p>Established fact that a reader will be distracted by the readable content of a page when looking at its
+        layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+        opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+        packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem
+        ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the year
+        “Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled”</p>
+      <div class="projectd__checkboxwrapper">
+        <div class="projectd__checkbox">
+          <input type="checkbox" checked name="checkbox" id="checkbox">
+          <label for="checkbox">Ready for project overview</label>
+        </div>
+        <div class="projectd__checkbox">
+          <input type="checkbox" checked name="Creating" id="Creating">
+          <label for="Creating">Creating Wireframe</label>
+        </div>
+        <div class="projectd__checkbox">
+          <input type="checkbox" checked name="Delivery" id="Delivery">
+          <label for="Delivery">Delivery your projct</label>
+        </div>
+        <div class="projectd__checkbox">
+          <input type="checkbox" checked name="Research" id="Research">
+          <label for="Research">Research your Brand Source</label>
+        </div>
+        <div class="projectd__checkbox">
+          <input type="checkbox" checked name="Finalize" id="Finalize">
+          <label for="Finalize">Finalize Check your Projcet</label>
+        </div>
+        <div class="projectd__checkbox">
+          <input type="checkbox" checked name="Ready" id="Ready">
+          <label for="Ready">Ready for project overview</label>
+        </div>
+      </div>
+      <p>Web Development reader will be distracted by the readable content of a page when looking at its layout. The
+        point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+        'Content here, content here', making it look like readable English. Many desktop publishing packages and web
+        page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover
+        many web sites still in their infancy. Various versions have evolved over the year “Lorem Ipsum is simply
+        dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
+        ever since the 1500s, when an unknown printer took a galley of type and scrambled”</p>
+      <h3>Creating Wireframe</h3>
+      <p>We manage web development are many variations of passages of Lorem Ipsum available, but the majority have
+        suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
+        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+        embarrassing hidden in the middle of text. All the Lorem Ipsum generators Established fact that a reader
+        will be distracted b</p>
+      <p>Established fact that a reader will be distracted by the readable content of a page when looking at its
+        layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+        opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+        packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem
+        ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the year
+        “Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled”</p>
+      <div class="projectd__detailsthumb">
+        <img class="border-radius-20" src="/static/web/imgs/inner/blog-details-01.jpg" alt="thumb1">
+        <img class="border-radius-20" src="/static/web/imgs/inner/blog-details-02.jpg" alt="thumb1">
+      </div>
+      <h3>Delivery Your Project</h3>
+      <p>We manage web development are many variations of passages of Lorem Ipsum available, but the majority have
+        suffered alteration in some form, by injected humour, or randomised words which don't look even slightly
+        believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything
+        embarrassing hidden in the middle of text. All the Lorem Ipsum generators Established fact that a reader
+        will be distracted b</p>
+      <p>Established fact that a reader will be distracted by the readable content of a page when looking at its
+        layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as
+        opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing
+        packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem
+        ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the year
+        “Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+        industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+        scrambled”</p>
+    </div>
+  </div>
+</section>
+<!-- /project detail start  -->
+
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+{% block body_bg_attr %}data-bg-color="#f8f8f9"{% endblock %}
+
+{% block offcanvas %}
+{% include 'web/partials/offcanvas.html' %}
+{% endblock offcanvas %}
+
+{% block header %}
+{% include 'web/partials/header_portfolio_interactive.html' %}
+{% endblock header %}
+
+{% block main %}
+
+<!-- portfolio area start -->
+<div class="tp-portfolio-revealing-slider">
+   <div class="tp-portfolio-revealing-slider-slides">
+      <div class="tp-portfolio-revealing-slide s-active">
+         <div class="tp-portfolio-revealing-slide-inner bg-position"
+            data-background="{% static 'web/img/revealing/webgl-1.jpg' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tp-portfolio-revealing-slide-content">
+                        <span class="tp-portfolio-revealing-slide-text">Digital platform</span>
+                        <h2 class="tp-portfolio-revealing-slide-heading"><a href="portfolio-details-light.html">Royal
+                              Benz</a></h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="tp-portfolio-revealing-slide">
+         <div class="tp-portfolio-revealing-slide-inner bg-position"
+            data-background="{% static 'web/img/revealing/webgl-2.jpg' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tp-portfolio-revealing-slide-content">
+                        <span class="tp-portfolio-revealing-slide-text">Greetings, Traveler!</span>
+                        <h2 class="tp-portfolio-revealing-slide-heading"><a href="portfolio-details-light.html">Smart
+                              platform</a></h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="tp-portfolio-revealing-slide">
+         <div class="tp-portfolio-revealing-slide-inner bg-position"
+            data-background="{% static 'web/img/revealing/webgl-3.jpg' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tp-portfolio-revealing-slide-content">
+                        <span class="tp-portfolio-revealing-slide-text">Interactive Mind</span>
+                        <h2 class="tp-portfolio-revealing-slide-heading"><a href="portfolio-details-light.html">World’s
+                              Relays</a></h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="tp-portfolio-revealing-slide">
+         <div class="tp-portfolio-revealing-slide-inner bg-position"
+            data-background="{% static 'web/img/revealing/webgl-4.jpg' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tp-portfolio-revealing-slide-content">
+                        <span class="tp-portfolio-revealing-slide-text">Greetings, Traveler!</span>
+                        <h2 class="tp-portfolio-revealing-slide-heading"><a href="portfolio-details-light.html">Bright
+                              Captive</a></h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="tp-portfolio-revealing-slide">
+         <div class="tp-portfolio-revealing-slide-inner bg-position"
+            data-background="{% static 'web/img/revealing/webgl-5.jpg' %}">
+            <div class="container">
+               <div class="row">
+                  <div class="col-12">
+                     <div class="tp-portfolio-revealing-slide-content">
+                        <span class="tp-portfolio-revealing-slide-text">[ UI, Web Design ]</span>
+                        <h2 class="tp-portfolio-revealing-slide-heading"><a href="portfolio-details-light.html">Top
+                              Paddock</a></h2>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="tp-portfolio-revealing-slider-control">
+      <div class="tp-portfolio-revealing-slider-control-line"></div>
+      <div class="tp-portfolio-revealing-slider-control-line"></div>
+   </div>
+   <div class="tp-portfolio-revealing-slider-control tp-portfolio-revealing-slider-control-right m-right">
+      <div class="tp-portfolio-revealing-slider-control-line"></div>
+      <div class="tp-portfolio-revealing-slider-control-line"></div>
+   </div>
+   <div class="tp-portfolio-revealing-slider-social">
+      <a class="tp-hover-btn-item" href="#">Fb</a>
+      <a class="tp-hover-btn-item" href="#">In</a>
+      <a class="tp-hover-btn-item" href="#">Be</a>
+   </div>
+</div>
+<!-- portfolio area end -->
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+{% block footer %}{% endblock %}

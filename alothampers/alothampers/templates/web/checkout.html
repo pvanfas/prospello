@@ -1,0 +1,107 @@
+{% extends 'web/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-padding-1 add_bg">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2 class="m-0">Checkout </h2>
+        </div>
+    </div>
+</div>
+
+{% if cart_items %}
+<div class="checkout-main-area pb-60 pt-100">
+    <div class="container">
+        <div class="checkout-wrap">
+            <form name="form checkout-form" class="" method="post" >
+                {% csrf_token %}
+                <div class="row">
+                    
+                    <div class="col-lg-7">
+                        
+                        <div class="billing-info-wrap">
+                            <h3>Billing Details</h3>
+                            <div class="row">
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.first_name|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.last_name|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.mobile|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.alternate_mobile|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.address_line_1|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.address_line_2|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.city|as_crispy_field}}</div></div>
+                                <div class="col-lg-6 col-md-6"><div class="billing-info mb-20">{{form.email|as_crispy_field}}</div></div>
+                                <div class="col-lg-12 col-md-12"><div class="billing-info mb-20">{{form.notes|as_crispy_field}}</div></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <div class="your-order-area">
+                            <h3>Your order</h3>
+                            <div class="your-order-wrap gray-bg-4">
+                                <div class="your-order-info-wrap">
+                                    <div class="your-order-info">
+                                        <ul>
+                                            <li>Product <span>Total</span></li>
+                                        </ul>
+                                    </div>
+                                
+                                    <div class="your-order-middle">
+                                        <ul>
+                                            {% for item in cart_items %}
+                                            <li> {{ item.product.name|truncatechars:30 }} X {{item.quantity}} <span>{{item.subtotal}} </span></li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                    <div class="your-order-info order-total">
+                                        <ul>
+                                            <li>Total <span>AED {{cart_total}}</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div class="Place-order btn-hover">
+                                <button type="submit" class="btn">Place Order</button>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="cart-area pt-100 pb-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="cart-empty
+                    text-center">
+                    <h2 class="fw-600 mb-30">Your cart is currently empty.</h2>
+                    <a href="{% url 'web:products' %}" class="btn btn-brown border">Return to shop</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+
+{% block js %}
+<!-- add required attr to all input having class required -->
+<script>
+    $(document).ready(function(){
+        $('input.requiredField').attr('required', true);
+        // append '<span class="asteriskField">*</span>' to end of label of input having class required
+        $('input.requiredField').each(function(){
+            $(this).parent().find('label').append('<span class="asteriskField">*</span>');
+        });
+    });
+</script>
+{% endblock js %}

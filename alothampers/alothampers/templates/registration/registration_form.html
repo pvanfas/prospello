@@ -1,0 +1,23 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Register for an account" %}{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h4 class="mb-4 fw-bold text-center">Register </h4>
+
+<form action="#" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="button-box btn-hover">
+        <button type="submit" class="w-100 bradius">{% trans 'Continue' %}</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </div>
+    <div class="login-toggle-btn">
+        <a href="{% url 'auth_login' %}">Already have an account? Sign in</a>
+    </div>
+</form>
+
+{% endblock %}

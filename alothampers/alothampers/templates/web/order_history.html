@@ -1,0 +1,54 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-padding-1 add_bg">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2 class="m-0">My Orders </h2>
+        </div>
+    </div>
+</div>
+
+
+<div class="my-account-wrapper pb-60 pt-60">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 col-md-8">
+                <div class="myaccount-table table-responsive text-center">
+                    <table class="table table-bordered">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>Order</th>
+                                <th>Order ID</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                                <th>Items</th>
+                                <th>Total</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for order in orders %}
+                            <tr>
+                                <td>{{forloop.counter}}</td>
+                                <td>{{order.order_id}}</td>
+                                <td>{{order.completed_at}}</td>
+                                <td>{{order.status}}</td>
+                                <td>{{order.get_items_count}}</td>
+                                <td>AED {{order.payable}}</td>
+                                <td><a href="{{order.get_absolute_url}}" class="check-btn sqr-btn text-primary fw-500">View Details</a></td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="7">No orders found</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,341 @@
+[
+  {
+    "model": "web.category",
+    "pk": 1,
+    "fields": {
+      "business_line": "FMCG",
+      "title": "Personal Care",
+      "image": "category/240_F_279690872_hV2FBF8JdJmSVsQ1kaZj359J4n0mMItt.jpeg",
+      "description": "- Soap, shampoo, and conditioner\r\n- Toothpaste and oral care products\r\n- Skincare and cosmetics",
+      "order": 1
+    }
+  },
+  {
+    "model": "web.category",
+    "pk": 2,
+    "fields": {
+      "business_line": "FMCG",
+      "title": "Food and Beverages",
+      "image": "category/1000_F_279692163_4O1mMxIe4KdK3GZYl8gDY02zBFn65Gj0.jpeg",
+      "description": "- Snack foods\r\n- Ready-to-eat meals\r\n- Beverages (soft drinks, juices, tea, coffee)",
+      "order": 3
+    }
+  },
+  {
+    "model": "web.category",
+    "pk": 3,
+    "fields": {
+      "business_line": "FMCG",
+      "title": "Cleaning Products",
+      "image": "category/cleaning-products-hong-kong-supermarket-28191093.jpeg",
+      "description": "- Detergents and laundry products\r\n- Cleaning agents (floor cleaners, bathroom cleaners)\r\n- Air fresheners",
+      "order": 2
+    }
+  },
+  {
+    "model": "web.category",
+    "pk": 4,
+    "fields": {
+      "business_line": "FMCG",
+      "title": "Paper Products",
+      "image": "category/sterilized-facial-tissues-classic-150x2-ply-white-tissues-750-original-imafy7y_VIlxMB9.jpeg",
+      "description": "- A4 & Tissues\r\n- Toilet paper\r\n- Paper towels",
+      "order": 4
+    }
+  },
+  {
+    "model": "web.category",
+    "pk": 5,
+    "fields": {
+      "business_line": "FMCG",
+      "title": "Baby and Child Care",
+      "image": "category/1000_F_517750046_bSkExr7BJdzCeYDAuQV4o6nmjzH91Q93.jpeg",
+      "description": "- Diapers\r\n- Baby food\r\n- Childcare products",
+      "order": 5
+    }
+  },
+  {
+    "model": "web.news",
+    "pk": 1,
+    "fields": {
+      "title": "Navigating the Seas of FMCG Shipping: Challenges and Solutions",
+      "slug": "navigating-the-seas-of-fmcg-shipping-challenges-and-solutions",
+      "date": "2024-02-14",
+      "image": "news/1.png",
+      "content": "<p>In the vast ocean of global commerce, the Fast-Moving Consumer Goods (FMCG) sector stands as a formidable titan, constantly in motion, driven by demand, and reliant on efficient shipping networks to satisfy consumer appetites. From toothpaste to packaged foods, FMCG products are omnipresent in our daily lives, underscoring the critical role that shipping plays in ensuring their availability on store shelves. In this blog, we&#39;ll dive into the complex world of FMCG shipping, exploring the challenges faced by businesses in this sector and the innovative solutions they employ to stay afloat.</p>\r\n\r\n<h2>The FMCG Landscape</h2>\r\n\r\n<p>Before delving into shipping intricacies, it&#39;s essential to understand the FMCG landscape. FMCG products are those with a relatively short shelf life and high consumer demand. Examples include beverages, cosmetics, toiletries, and packaged foods. Given their perishable nature and the need for constant replenishment, FMCG companies rely heavily on efficient logistics and shipping networks to maintain supply chains.</p>\r\n\r\n<h2>Challenges in FMCG Shipping</h2>\r\n\r\n<h3>1. Time Sensitivity</h3>\r\n\r\n<p>FMCG products often have strict timelines from production to delivery. Any delays in shipping can lead to stockouts, affecting sales and customer satisfaction.</p>\r\n\r\n<h3>2. Temperature Control</h3>\r\n\r\n<p>Many FMCG items, such as dairy products and fresh produce, require specific temperature conditions during transit to maintain quality and safety standards.</p>\r\n\r\n<h3>3. Packaging Requirements</h3>\r\n\r\n<p>FMCG products come in various shapes and sizes, each requiring specific packaging solutions to ensure safe transport without damage or spoilage.</p>\r\n\r\n<h3>4. Global Distribution</h3>\r\n\r\n<p>With FMCG companies operating on a global scale, shipping routes and regulations can vary significantly, posing challenges in terms of customs clearance, documentation, and compliance.</p>\r\n\r\n<h2>Innovative Solutions</h2>\r\n\r\n<h3>1. Advanced Tracking Systems</h3>\r\n\r\n<p>FMCG companies invest in cutting-edge tracking technologies that provide real-time visibility into the whereabouts of shipments. This allows for proactive management of delays and enables stakeholders to make informed decisions.</p>\r\n\r\n<h3>2. Cold Chain Logistics</h3>\r\n\r\n<p>To address temperature control requirements, FMCG businesses partner with logistics providers specializing in cold chain solutions. These providers offer refrigerated transport and temperature-monitoring systems to safeguard perishable goods.</p>\r\n\r\n<h3>3. Packaging Innovation</h3>\r\n\r\n<p>Innovative packaging solutions, such as insulated containers and shock-absorbent materials, help protect FMCG products during transit, reducing the risk of damage and spoilage.</p>\r\n\r\n<h3>4. Collaborative Partnerships</h3>\r\n\r\n<p>FMCG companies collaborate closely with shipping carriers, customs brokers, and regulatory agencies to streamline processes and ensure seamless movement of goods across borders.</p>\r\n\r\n<h2>Future Trends</h2>\r\n\r\n<p>Looking ahead, the FMCG shipping landscape is poised for further evolution driven by technological advancements and changing consumer preferences. From the adoption of autonomous vehicles for last-mile delivery to the integration of blockchain for supply chain transparency, FMCG businesses are embracing innovation to stay ahead in an increasingly competitive market.</p>\r\n\r\n<p>In conclusion, FMCG shipping is a complex yet vital component of the global supply chain. By understanding the unique challenges and leveraging innovative solutions, businesses in this sector can navigate the seas of shipping with confidence, ensuring that essential goods reach consumers&#39; hands in a timely and efficient manner. As technology continues to reshape the industry, the future of FMCG shipping promises even greater efficiency, reliability, and sustainability.</p>"
+    }
+  },
+  {
+    "model": "web.slider",
+    "pk": 1,
+    "fields": {
+      "title": "Museum of Future",
+      "image": "slider/slide_1.webp",
+      "order": 2
+    }
+  },
+  {
+    "model": "web.slider",
+    "pk": 2,
+    "fields": { "title": "Dubai", "image": "slider/slide_2.webp", "order": 1 }
+  },
+  {
+    "model": "web.slider",
+    "pk": 3,
+    "fields": {
+      "title": "Storage house",
+      "image": "slider/slide_3.webp",
+      "order": 3
+    }
+  },
+  {
+    "model": "web.slider",
+    "pk": 4,
+    "fields": { "title": "Freight", "image": "slider/slide_4.webp", "order": 4 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 1,
+    "fields": { "name": "Closeup", "image": "brand/BRAND00001.png", "order": 1 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 2,
+    "fields": { "name": "Persil", "image": "brand/BRAND00002.png", "order": 2 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 3,
+    "fields": {
+      "name": "Parachute",
+      "image": "brand/BRAND00003.png",
+      "order": 3
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 4,
+    "fields": {
+      "name": "Fair & Lovely",
+      "image": "brand/BRAND00004.png",
+      "order": 4
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 5,
+    "fields": {
+      "name": "Vaseline",
+      "image": "brand/BRAND00005.png",
+      "order": 5
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 6,
+    "fields": {
+      "name": "Lifebuoy",
+      "image": "brand/BRAND00006.png",
+      "order": 6
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 7,
+    "fields": {
+      "name": "Himalaya",
+      "image": "brand/BRAND00007.png",
+      "order": 7
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 8,
+    "fields": { "name": "Rexona", "image": "brand/BRAND00008.png", "order": 8 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 9,
+    "fields": { "name": "Lux", "image": "brand/BRAND00009.png", "order": 9 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 10,
+    "fields": { "name": "Nivea", "image": "brand/BRAND00010.png", "order": 10 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 11,
+    "fields": { "name": "Cerava", "image": "brand/BRAND00011.png", "order": 11 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 12,
+    "fields": { "name": "Axe", "image": "brand/BRAND00012.png", "order": 12 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 13,
+    "fields": { "name": "Dove", "image": "brand/BRAND00013.png", "order": 13 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 14,
+    "fields": {
+      "name": "Cinthol",
+      "image": "brand/BRAND00014.png",
+      "order": 14
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 15,
+    "fields": {
+      "name": "Head & Shoulders",
+      "image": "brand/BRAND00015.png",
+      "order": 15
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 16,
+    "fields": {
+      "name": "Tresemme",
+      "image": "brand/BRAND00016.png",
+      "order": 16
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 17,
+    "fields": { "name": "Vatika", "image": "brand/BRAND00017.png", "order": 17 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 18,
+    "fields": {
+      "name": "Dermi cool",
+      "image": "brand/BRAND00018.png",
+      "order": 18
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 19,
+    "fields": { "name": "Hamam", "image": "brand/BRAND00019.png", "order": 19 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 20,
+    "fields": { "name": "Siso", "image": "brand/BRAND00020.png", "order": 20 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 21,
+    "fields": { "name": "Tide", "image": "brand/BRAND00021.png", "order": 21 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 22,
+    "fields": { "name": "Ariel", "image": "brand/BRAND00022.png", "order": 22 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 23,
+    "fields": { "name": "Jif", "image": "brand/BRAND00023.png", "order": 23 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 24,
+    "fields": { "name": "Dettol", "image": "brand/BRAND00024.png", "order": 24 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 25,
+    "fields": { "name": "Clorox", "image": "brand/BRAND00025.png", "order": 25 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 26,
+    "fields": { "name": "Harpic", "image": "brand/BRAND00026.png", "order": 26 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 27,
+    "fields": { "name": "Fairy", "image": "brand/BRAND00027.png", "order": 27 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 28,
+    "fields": { "name": "Viji", "image": "brand/BRAND00028.png", "order": 28 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 29,
+    "fields": { "name": "Omo", "image": "brand/BRAND00029.png", "order": 29 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 30,
+    "fields": {
+      "name": "Cycle Agarbatti",
+      "image": "brand/BRAND00030.png",
+      "order": 30
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 31,
+    "fields": {
+      "name": "Strepsils",
+      "image": "brand/BRAND00031.png",
+      "order": 31
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 32,
+    "fields": { "name": "Pepsi", "image": "brand/BRAND00032.png", "order": 32 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 33,
+    "fields": {
+      "name": "Cococola",
+      "image": "brand/BRAND00033.png",
+      "order": 33
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 34,
+    "fields": { "name": "Sprite", "image": "brand/BRAND00034.png", "order": 34 }
+  },
+  {
+    "model": "web.brand",
+    "pk": 35,
+    "fields": {
+      "name": "Redbull",
+      "image": "brand/BRAND00035.png",
+      "order": 35
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 36,
+    "fields": {
+      "name": "Nutella",
+      "image": "brand/BRAND00036.png",
+      "order": 36
+    }
+  },
+  {
+    "model": "web.brand",
+    "pk": 37,
+    "fields": {
+      "name": "Nescafe",
+      "image": "brand/BRAND00037.png",
+      "order": 37
+    }
+  }
+]

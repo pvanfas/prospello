@@ -1,0 +1,78 @@
+{% load static %}
+<div class="row align-items-center">
+   <div class="col-xl-2 col-lg-3 col-md-4 col-6">
+      <div class="tp-header-logo {{ logo_extra_class|default:'' }}">
+         <a class="logo-dark d-none" href="{% url 'web:index' %}"><img data-width="138"
+               src="{% static logo_dark_src|default:'web/img/logo/logo-2.png' %}" alt=""></a>
+         <a class="logo-white" href="{% url 'web:index' %}"><img data-width="138"
+               src="{% static logo_white_src|default:'web/img/logo/logo.png' %}" alt=""></a>
+      </div>
+   </div>
+   <div class="col-lg-6 d-none d-xl-block">
+      <div class="tp-main-menu tp-main-menu-2 text-end mr-85">
+         <nav class="tp-mobile-menu-active">
+            <ul>
+               <li class="has-dropdown position-static">
+                  <a href="{% url 'web:index' %}">
+                     <span class="explore-text" data-text="Home">Home</span>
+                  </a>
+          
+               </li>
+               <li>
+                  <a href="about-me-light.html">
+                     <span class="explore-text" data-text="About">About</span>
+                  </a>
+                  <ul class="tp-submenu submenu">
+                     <li><a href="about-me-light.html">About Me Light</a></li>
+
+                     <li><a href="about-us-light.html">About Us Light</a></li>
+
+                  </ul>
+               </li>
+               <li class="has-dropdown">
+                  <a href="#">
+                     <span class="explore-text" data-text="Pages">Pages</span>
+                  </a>
+                  <ul class="tp-submenu submenu">
+                     <li><a href="service-light.html">Service</a></li>
+                     <li><a href="portfolio-light.html">Portfolio</a></li>
+                     <li><a href="portfolio-details-light.html">Portfolio Details</a></li>
+                     <li><a href="blog-light.html">Blog</a></li>
+                     <li><a href="blog-details-light.html">Blog Details</a></li>
+                  </ul>
+               </li>
+               <li>
+                  <a href="{% url 'web:contact' %}">
+                     <span class="explore-text" data-text="Contact">Contact</span>
+                  </a>
+               </li>
+            </ul>
+         </nav>
+      </div>
+   </div>
+   <div class="col-xl-4 col-lg-9 col-md-8 col-6">
+      <div class="tp-header-right d-flex justify-content-end">
+         <button class="tp-header-search tp-search-click">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path
+                  d="M9.00004 17.0001C13.4183 17.0001 17.0001 13.4184 17.0001 9.00006C17.0001 4.58176 13.4183 1.00002 9.00004 1.00002C4.58174 1.00002 1 4.58176 1 9.00006C1 13.4184 4.58174 17.0001 9.00004 17.0001Z"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+               <path d="M19.0004 18.9999L14.6504 14.6499" stroke="currentColor" stroke-width="1.5"
+                  stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+         </button>
+         <a href="{% url 'web:contact' %}"
+            class="tp-btn {{ btn_class|default:'' }} d-none d-md-inline-flex align-items-center ml-30">
+            <span>
+               <span class="text-1">Let’s Talk</span>
+               <span class="text-2">Let’s Talk</span>
+            </span>
+         </a>
+         <button class="tp-header-menu-btn tp-menu-bar ml-10">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+      </div>
+   </div>
+</div>

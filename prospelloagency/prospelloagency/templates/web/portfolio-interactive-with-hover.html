@@ -1,0 +1,112 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+{% block body_bg_attr %}data-bg-color="#f8f8f9"{% endblock %}
+
+{% block offcanvas %}
+{% include 'web/partials/offcanvas.html' %}
+<div class="body-overlay"></div>
+<!-- tp-offcanvus-area-end -->
+{% endblock offcanvas %}
+
+{% block header %}
+{% include 'web/partials/header_portfolio_interactive.html' %}
+
+{% endblock header %}
+
+{% block main %}
+<!-- porfolio-slider-area -->
+<div class="tp-porfolio-10-area tp-porfolio-10-height p-relative fix">
+   <div class="tp-porfolio-10-bg-wrap">
+      <div id="tp-porfolio-10-bg-box" class="tp-porfolio-10-bg-4">
+         <img class="tp-porfolio-10-bg-1" src="{% static 'web/img/update/interactive-img/port-1.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-2" src="{% static 'web/img/update/interactive-img/port-2.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-3" src="{% static 'web/img/update/interactive-img/port-3.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-4" src="{% static 'web/img/update/interactive-img/port-4.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-5" src="{% static 'web/img/update/interactive-img/port-5.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-6" src="{% static 'web/img/update/interactive-img/port-6.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-7" src="{% static 'web/img/update/interactive-img/port-7.jpg' %}" alt="">
+         <img class="tp-porfolio-10-bg-8" src="{% static 'web/img/update/interactive-img/port-5.jpg' %}" alt="">
+      </div>
+   </div>
+   <div class="container container-1380">
+      <div class="row">
+         <div class="col-xl-12">
+            <div class="tp-porfolio-10-title-wrap z-index-5">
+               <ul>
+                  <li rel="tp-porfolio-10-bg-1">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Silkvision</h2>
+                           <span class="tp-porfolio-10-category">/ Visual</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li rel="tp-porfolio-10-bg-2">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Disefio Gräfico</h2>
+                           <span class="tp-porfolio-10-category">/ Creative</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li rel="tp-porfolio-10-bg-3">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">PSD Mockup</h2>
+                           <span class="tp-porfolio-10-category">/ Branding</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li class="active" rel="tp-porfolio-10-bg-4">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Fastwire</h2>
+                           <span class="tp-porfolio-10-category">/ Branding</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li rel="tp-porfolio-10-bg-5">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Tesla</h2>
+                           <span class="tp-porfolio-10-category">/ Mobile Application</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li rel="tp-porfolio-10-bg-6">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Ecommerce</h2>
+                           <span class="tp-porfolio-10-category">/ Digital Design</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li rel="tp-porfolio-10-bg-7">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Cosmetic</h2>
+                           <span class="tp-porfolio-10-category">/ Visual</span>
+                        </div>
+                     </a>
+                  </li>
+                  <li rel="tp-porfolio-10-bg-8">
+                     <a href="portfolio-details-light.html">
+                        <div class="tp-porfolio-10-title-box d-flex align-items-end">
+                           <h2 class="tp-porfolio-10-title">Waves</h2>
+                           <span class="tp-porfolio-10-category">/ UI Design</span>
+                        </div>
+                     </a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- porfolio-slider-area -->
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+{% block footer %}{% endblock %}

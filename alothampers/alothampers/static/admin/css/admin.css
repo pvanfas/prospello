@@ -1,0 +1,8 @@
+#id_products label {
+    width: 100%;
+}
+
+.field-products .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}

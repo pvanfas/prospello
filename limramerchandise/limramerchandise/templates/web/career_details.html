@@ -1,0 +1,51 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Career Details</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="#">Career Details</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+<!-- blog area start -->
+<section class="blog__details pt-80 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 mx-auto">
+        <div class="blog__single">
+          <div class="blog__thumb-inner">
+            <img src="{{news.image.url}}" alt="blog-img" data-lag="0.3" style="height: 450px;width: 100%;object-fit: cover;">
+          </div>
+          <div class="blog__content-inner">
+            
+            <h2 class="blog__title-inner">{{news.title}}</h2>
+            <div class="content">
+              {{news.content|safe}}
+            </div>            
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- /blog area end -->
+
+{% endblock %}

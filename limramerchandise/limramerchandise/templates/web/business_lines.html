@@ -1,0 +1,55 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Business Lines</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="#">Business Lines</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+
+<!-- service area start -->
+<div class="service-area pt-80 pb-130">
+  <div class="container">
+    <div class="pt-0 mb-5" data-aos="fade-up" data-aos-delay="500">
+        <h3>FMCG</h3>
+    </div>
+    <div class="row">
+        {% for category in categories %}
+        <div class="col-lg-4 col-md-6">
+            <div class="single-intro-inner shadow">
+                <div class="thumb">
+                    <img class="w-100" src="{{category.image.url}}" alt="img" style="height: 240px;object-fit: cover;">
+                </div>
+                <div class="details">
+                    <h5>{{category.title}}</h5>
+                    <span></span>
+                    <p>
+                        {{category.description|linebreaksbr}}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- service area end -->
+
+{% endblock %}

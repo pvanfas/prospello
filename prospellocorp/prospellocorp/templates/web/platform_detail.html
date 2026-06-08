@@ -1,0 +1,67 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<section class="pb-0 top-space-margin position-relative overflow-hidden">
+    <div class="container-fluid position-relative">
+        <div class="row g-0">
+            <div class="col-xl-10 col-lg-10 d-flex justify-content-center align-items-center ps-10 xxl-ps-6 xl-ps-4 md-ps-4 sm-ps-0 position-relative order-2 order-lg-1"
+                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                
+                <div class="position-relative z-index-9">
+                    <h2
+                        class="text-dark-gray fw-600 alt-font outside-box-right-10 xl-outside-box-right-15 lg-outside-box-right-20 md-me-0 sm-mb-0 ls-minus-3px">
+                        {{platform}}</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="pt-0">
+    <div class="container">
+        <div class="justify-content-center align-items-center text-center">
+            <div class="border-end border-color-extra-medium-gray sm-mb-30px xs-border-end-0">
+                <span class="d-block text-uppercase fs-14 alt-font lh-26 ls-05px">
+                    {{platform.summary}}
+                </span>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+<!-- <section class="one-fourth-screen" data-parallax-background-ratio="0.5" style="background-image: url({{platform.background_image.url}})" ></section> -->
+
+
+<section class="overflow-hidden  pt-30px">
+    <div class="container">
+        <!-- <div class="row mb-50px sm-mb-30px">
+            <div class="col-12">
+                <img src="{{platform.feature_image.url}}" class="w-100" alt />
+            </div>
+        </div> -->
+        <div class="row row-cols-1 row-cols-lg-1 mb-9">
+            <div class="col mb-30px md-mb-30px text-center text-lg-start">
+                <h5 class="alt-font mb-0 text-dark-gray fw-500 w-80 lg-w-100">
+                    {{platform.tagline}}
+                </h5>
+            </div>
+            <div class="col last-paragraph-no-margin text-center text-lg-start">
+                <p>{{platform.description}}</p>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-12">
+                <img src="{{platform.established_image.url}}" class="w-100" alt />
+            </div>
+        </div> -->
+    </div>
+</section>
+
+
+{% endblock %}

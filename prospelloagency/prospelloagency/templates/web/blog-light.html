@@ -1,0 +1,30 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor{% endblock %}
+
+{% block header %}
+<!-- tp-header-area-start -->
+<div id="header-sticky" class="tp-header-area tp-header-2-spacing mt-20 tp-transparent tp-header-spacing">
+   <div class="container">
+      {% include 'web/partials/header_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-header-area-end -->
+{% endblock header %}
+
+{% block main %}
+
+{% include 'web/partials/blog_grid.html' %}
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+{% block footer %}
+<!-- tp-footer-area-start -->
+<div class="tp-footer-area tp-footer-2-wrap grey-bg pt-155">
+   <div class="container">
+      {% include 'web/partials/footer_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-footer-area-end -->
+{% endblock footer %}

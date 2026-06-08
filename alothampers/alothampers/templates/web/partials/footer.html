@@ -1,0 +1,76 @@
+{% load static %}
+<footer class="footer-area">
+    <div class="bg-brown">
+        <div class="container">
+            <div class="footer-top pt-80 pb-35">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-about mb-40">
+                            <div class="footer-logo">
+                                <a href="/"><img src="/static/web/images/logo/logo.svg" alt="logo"
+                                        style="height:80px"></a>
+                            </div>
+                            <p>
+                                Welcome to Alot, where gifting becomes an art form and every occasion is celebrated with
+                                elegance and style. Explore our exquisite collection of curated gift boxes online in the
+                                UAE, meticulously crafted to delight and impress.
+                            </p>
+                            <div class="footer-social">
+                                <a href="https://www.instagram.com/alotgifthampers"><i class="icon-instagram"></i></a>
+                                <a href="https://www.facebook.com/people/Alot-Gift-Hampers/61557167228549"><i class="icon-facebook"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-6">
+                        <div class="footer-widget footer-widget-margin-1 footer-list mb-40">
+                            <h3 class="footer-title">Information</h3>
+                            <ul>
+                                <li><a href="{% url 'web:about_us' %}">About Us</a></li>
+                                <li><a href="{% url 'web:cart' %}">Cart</a></li>
+                                <li><a href="{% url 'web:checkout' %}">Checkout</a></li>
+                                <li><a href="{% url 'web:my_account' %}">My Account</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6 col-6">
+                        <div class="footer-widget footer-list mb-40">
+                            <h3 class="footer-title">My Account</h3>
+                            <ul>
+                                <li><a href="{% url 'web:delivery_information' %}">Delivery Information</a></li>
+                                <li><a href="{% url 'web:privacy_policy' %}">Privacy Policy</a></li>
+                                <li><a href="{% url 'web:terms_conditions' %}">Terms & Conditions</a></li>
+                                <li><a href="{% url 'web:support' %}">Help & Support</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-12">
+                        <div class="footer-widget footer-widget-margin-2 footer-address mb-40">
+                            <h3 class="footer-title">Get in touch</h3>
+                            <ul>
+                                <li><span>Address: </span>Your address goes here </li>
+                                <li><span>Phone:</span> (+971) 542140143</li>
+                                <li><span>Email: </span>info@alotgifthampers.com</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-black text-white">
+        <div class="container">
+            <div class="footer-bottom copyright text-center">
+                <p>Copyright &copy; {% now 'Y' %} All rights reserved</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="float_icons left">
+    <div class="float_icon">
+        <a class="blantershow-chat d-inline-block" href="https://wa.me/+971542140143/">
+            <img src="/static/web/images/whatsapp.png" alt="" class="me-2">
+            <span>Whatsapp Us</span>
+        </a>
+    </div>
+</div>

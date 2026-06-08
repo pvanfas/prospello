@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!--Page Title-->
+    <section class="page-title" style="background-image: url({% static 'web/images/background/12.jpg' %});">
+      <div class="auto-container">
+        <h1>About us</h1>
+        <span class="title_divider"></span>
+        <ul class="page-breadcrumb">
+          <li><a href="{% url 'web:index' %}">Home</a></li>
+          <li>About us</li>
+        </ul>
+      </div>
+    </section>
+    <!--End Page Title-->
+
+    <!-- Fluid Section Four -->
+    <section class="fluid-section-four">
+      <div class="auto-container">
+        <div class="row">
+          <!-- Content Column -->
+          <div class="content-column col-lg-6 col-md-12 col-sm-12">
+            <div class="inner-column">
+              <div class="sec-title">
+                <h3>About us</h3>
+                <div class="text">ZONE International is an International Student Recruiter, situated in United Kingdom.
+                  We aim to provide exceptional services to students aspiring to pursue further quality education in the UK.</div>
+
+                <br>
+                <div>ZONE International provides quality services and reliable information to our students all
+                  across the globe with only their best interests in mind. And not just in the beginning,
+                  we are there with our clients every step of the way. </div>
+
+                <br>
+                <div>Our counselors are trained specialists who have helped thousands of students find their perfect university.
+                  We offer a multitude of services ranging from finding the right university, career counselling, pick-up and accommodation services and help
+                  with the student visa application process to ensure it goes as smoothly as possible.</div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Image COlumn -->
+          <div class="image-column col-lg-6 col-md-12">
+            <div class="image-layer" style="background-image: url({% static 'web/images/background/18.jpg' %});"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--End  Fluid Section Three -->
+
+    <!-- Get Started -->
+    <section class="get-started" style="background-image: url({% static 'web/images/background/12.png' %});">
+      <div class="auto-container">
+        <div class="row">
+          <div class="column col-lg-6 col-md-12">
+            <div class="inner-column">
+              <div class="sec-title">
+                <h3>Why choose Zone INTL?</h3>
+                <div class="text">Students are looking to pursue higher education at nations like the UK, as the international
+                  exposure would be an incredible advantage for their career prospects in the future. ZONE helps students
+                  understand what their best choices are and help them move where they wish to go.</div>
+                <br>
+                <div>Using our expertise, experience and resources we can identify the most suitable university for each student.</div>
+                <br>
+                We hope to help each and every student find the right fit and create opportunities for the student's personal
+                growth through quality international education and unparalleled support from our side. We believe we have
+                succeeded when our clients have succeeded.
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+  </section>
+  <!-- End Get Started -->
+
+  <!-- Clients Section -->
+  <section class="clients-section style-two">
+    <div class="auto-container">
+
+      <!-- Sponsors Outer -->
+      <div class="sponsors-outer">
+        <!--Sponsors Carousel-->
+        <ul class="sponsors-carousel owl-carousel owl-theme">
+          <li class="slide-item">
+            <a href="#">
+              <img src="{% static 'web/images/clients/1_hover_red.png' %}" alt="" class="hover_img">
+              <img src="{% static 'web/images/clients/1.png' %}" alt="">
+            </a>
+          </li>
+          <li class="slide-item">
+            <a href="#">
+              <img src="{% static 'web/images/clients/2_hover_red.png' %}" alt="" class="hover_img">
+              <img src="{% static 'web/images/clients/2.png' %}" alt="">
+            </a>
+          </li>
+          <li class="slide-item">
+            <a href="#">
+              <img src="{% static 'web/images/clients/3_hover_red.png' %}" alt="" class="hover_img">
+              <img src="{% static 'web/images/clients/3.png' %}" alt="">
+            </a>
+          </li>
+          <li class="slide-item">
+            <a href="#">
+              <img src="{% static 'web/images/clients/4_hover_red.png' %}" alt="" class="hover_img">
+              <img src="{% static 'web/images/clients/4.png' %}" alt="">
+            </a>
+          </li>
+          <li class="slide-item">
+            <a href="#">
+              <img src="{% static 'web/images/clients/5_hover_red.png' %}" alt="" class="hover_img">
+              <img src="{% static 'web/images/clients/5.png' %}" alt="">
+            </a>
+          </li>
+          <li class="slide-item">
+            <a href="#">
+              <img src="{% static 'web/images/clients/6_hover_red.png' %}" alt="" class="hover_img">
+              <img src="{% static 'web/images/clients/6.png' %}" alt="">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!--End Clients Section -->
+  {% endblock content %}

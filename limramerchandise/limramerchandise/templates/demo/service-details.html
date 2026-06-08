@@ -1,0 +1,152 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">service details</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="service-details.html">service details</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+
+<!-- Service Details area start -->
+<section class="service__details-area pb-80 pt-80">
+  <div class="container">
+
+    <div class="service__details top pb-140">
+      <div class="row">
+        <div class="col-xxl-6 col-xl-6 col-lg-6">
+          <div class="img">
+            <img class="border-radius-20" src="/static/web/imgs/service/details/1.jpg" alt="Image">
+          </div>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6">
+          <div class="content">
+            <h2 class="service__details-title heading-animation">Boost your brand, boost your business!</h2>
+            <div class="p-animation">
+              <p>Corporate Payment Vantage refers use of innovative financial technologies and processes to optimize
+                payment and cash management operations for businesses. This includes tools such as virtual cards,
+                automated invoicing,</p>
+            </div>
+            <ul class="list-angle">
+              <li class="heading-animation">Corporate Payment Vantage is a modern financial approach that utilizes
+                technology to optimize
+                payment and cash management operations.</li>
+            </ul>
+            <a class="db-btn-main-color-one btn-rollover" href="{% url 'web:about' %}">Get started <i
+                class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="service__details mid pb-140">
+      <div class="row">
+        <div class="col-xxl-6 col-xl-6 col-lg-6">
+          <div class="content">
+            <h2 class="service__details-title heading-animation">The power of digital the reach of marketing</h2>
+            <div class="p-animation">
+              <p>In today's rapidly evolving business landscape, companies need to be agile, adaptable, and efficient
+                to stay competitive. One crucial aspect</p>
+            </div>
+            <div class="feature">
+              <div class="icon">
+                <img src="/static/web/imgs/icon/phone.png" alt="Icon">
+              </div>
+              <div class="info">
+                <h4 class="title">Content Forge</h4>
+                <p>Corporate Payment Vantage modern financial approach utilizes in our technology to optimize
+                  payment validation ask to use </p>
+              </div>
+            </div>
+            <div class="feature">
+              <div class="icon">
+                <img src="/static/web/imgs/icon/phone.png" alt="Icon">
+              </div>
+              <div class="info">
+                <h4 class="title">Content Forge</h4>
+                <p>Corporate Payment Vantage modern financial approach utilizes in our technology to optimize
+                  payment validation ask to use </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-6 col-xl-6 col-lg-6">
+          <div class="img">
+            <img class="border-radius-20" src="/static/web/imgs/service/details/2.jpg" alt="Image">
+          </div>
+        </div>
+        <div class="col-xxl-12">
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when
+            looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+            distribution of letters, as opposed to using 'Content here, content here', making it look like
+            readable English. Many desktop publishing packages and web page editor Contra popular belief, Lorem
+            Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
+            making it over 2000 years old. Richard McClintock, a Latin profe at Hampden-Sydney College in
+            Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and
+            going through the cites of the word in classical literature</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service__details btm">
+      <div class="row">
+        <div class="col-xxl-12">
+          <h2 class="service__details-title heading-animation">Digital marketing that <br> delivers</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+          <div class="more-service__item">
+            <a href="#"><img src="/static/web/imgs/service/details/3.jpg" alt="Image"></a>
+            <div class="more-service__content">
+              <a href="#">
+                <h3 class="more-service__title">Marketing</h3>
+              </a>
+              <p>How to Solve your Mobile in Development Managemetn System</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+          <div class="more-service__item">
+            <a href="#"><img src="/static/web/imgs/service/details/4.jpg" alt="Image"></a>
+            <div class="more-service__content">
+              <a href="#">
+                <h3 class="more-service__title">Advertising</h3>
+              </a>
+              <p>How to Solve your Mobile in Development Managemetn System</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xxl-4 col-xl-4 col-lg-4 col-md-6">
+          <div class="more-service__item">
+            <a href="#"><img src="/static/web/imgs/service/details/5.jpg" alt="Image"></a>
+            <div class="more-service__content">
+              <a href="#">
+                <h3 class="more-service__title">Content Marketing</h3>
+              </a>
+              <p>How to Solve your Mobile in Development Managemetn System</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Service Details area end -->
+{% endblock %}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fadhil Mohammed | Refining entrepreneurship in the AI World</title>
+	<meta name="title" content="Fadhil Mohammed | Refining entrepreneurship in the AI World">
+	<meta name="description" content="{{about.content|slice:'164'}} ...">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:site_name" content="Fadhil Mohammed">
+	<meta property="og:type" content="website">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:url" content="http://www.fadhilmohammed.com/">
+	<meta property="og:title" content="Fadhil Mohammed | Refining entrepreneurship in the AI World">
+	<meta property="og:description" content="{{about.content|slice:'164'}} ...">
+	<meta property="og:image" content="http://www.fadhilmohammed.com{% static 'web/images/lustre-studio-designer.png' %}">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="http://www.fadhilmohammed.com/">
+	<meta property="twitter:title" content="Fadhil Mohammed | Refining entrepreneurship in the AI World">
+	<meta property="twitter:description" content="{{about.content|slice:'164'}} ...">
+	<meta property="twitter:image" content="http://www.fadhilmohammed.com{% static 'web/images/lustre-studio-designer.png' %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'web/css/style.css' %}">
+</head>
+<body>
+	<!-- Loader -->
+	<div class="loading">
+		<img src="{% static 'web/images/logo-white.png' %}" width="200">
+	</div>
+
+	<!-- Header -->
+	<div class="header fadeIn">
+		<div class="container">
+			<div class="row is-aligned-middle is-gapless is-bottomless">
+				<div class="col is-8-tablet has-text-primary">
+					<a href="/"><div class="logo is-primary"></div></a>
+				</div>
+				<div class="col is-8 hide-on-mobile">
+					<ul class="nav has-text-right">
+						<li><a href="#about">About</a></li>
+						<li><a href="#updates">Updates</a></li>
+						<li><a href="#group_of_companies">Group of Companies</a></li>
+						<li><a class="typeform-share" href="https://form.typeform.com/to/gACnBXnl?typeform-medium=embed-snippet" data-mode="popup" data-size="100" data-hide-headers="true" data-hide-footer="false" target="_blank">Get Appointment</a></li>
+					</ul>
+				</div>
+				<div class="col is-4-tablet hide-on-desktop">
+					<div class="hamburger2">
+						<div class="hamburger hamburger-htx menu-toggle"><span></span></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="nav-mobile nav-close">
+			<li><a href="#about">About</a></li>
+			<li><a href="#updates">Updates</a></li>
+			<li><a href="#group_of_companies">Group of Companies</a></li>
+			<li><a class="typeform-share" href="https://form.typeform.com/to/gACnBXnl?typeform-medium=embed-snippet" data-mode="popup" data-size="100" data-hide-headers="true" data-hide-footer="false" target="_blank">Get Appointment</a></li>
+		</div>
+	</div>
+
+	<!-- Hero -->
+	<section class="hero-full">
+		<div class="container fadeIn">
+			<h1>Redefining entrepreneurship</h1>
+			<a href="#updates" class="link is-underlined-black caps">Learn More</a>
+		</div>
+	</section>
+
+	<!-- About -->
+	<section class="is-black" id="about">
+		<div class="container">
+			<div class="row is-aligned-middle is-gap-large">
+				<div class="col is-6 fadeIn">
+					<div class="image">
+						<img class="is-rounded" src="{% static 'web/images/lustre-studio-designer.png' %}" alt=""  data-scroll-zoom>
+					</div>
+				</div>
+				<div class="col is-6 fadeIn">
+					<h2 class="has-text-white">{{about.title}}</h2>
+					<div class="has-text-white">
+						{{about.content|linebreaks}}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services -->
+	<section class="is-black has-text-white" id="more">
+		<div class="container">
+			<div class="row">
+				<div class="col is-12 fadeIn">
+					<h2>Forward to Future</h2>
+				</div>
+			</div>
+			<div class="row is-equal-height">
+				<div class="col is-4 fadeIn">
+					<div class="card is-secondary">
+						<p class="is-on-dark">{{about.vision}}</p>
+					</div>
+				</div>
+				<div class="col is-4 fadeIn2">
+					<div class="card is-secondary">
+						<p class="is-on-dark">{{about.mission}}</p>
+					</div>
+				</div>
+				<div class="col is-4 fadeIn3">
+					<div class="card is-secondary">
+						<p class="is-on-dark">{{about.dreams}}</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Portfolio -->
+	<div class="row is-split" id="portfolio">
+		<div class="col">
+			<div class="split-container is-left">
+				<div class="card is-section fadeIn">
+					<h2>The bigger your dreams, the earlier you got to start</h2>
+					<a class="link is-underlined-black caps typeform-share" href="https://form.typeform.com/to/gACnBXnl?typeform-medium=embed-snippet" data-mode="popup" data-size="100" data-hide-headers="true" data-hide-footer="false" target="_blank">Click Here</a>
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="split-container is-left">
+				<img src="{% static 'web/images/side.jpeg' %}" alt="" class="portfolio-image">
+			</div>
+		</div>
+	</div>
+
+	<!-- Process -->
+	<section class="is-bottomless is-black has-text-white" id="group_of_companies">
+		<div class="container">
+			<div class="row is-gap-large">
+				<div class="col is-6 fadeIn">
+					<h2>Creating his marks across the globe through prospello global group of companies.</h2>
+				</div>
+				<div class="col is-6 fadeIn2">
+					{% for company in companies %}
+					<h4 class="margin-bottom-small">{{company.title}}</h4>
+					<p class="is-on-dark">
+						{{company.content}}
+					</p>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Social Proof -->
+	<section class="is-black" id="clients">
+		<div class="container">
+			<div class="row hide-on-mobile">
+				{% for company in companies %}
+				<div class="col fadeIn{{forloop.counter}}">
+					<img src="{{company.logo.url}}" alt="{{company.title}}">
+				</div>
+				{% endfor %}
+			</div>
+			<div class="hide-on-desktop fadeIn">
+				<img src="{% static 'web/images/logos/logos_mobile.png' %}" alt="Fadhil Mohammed Client Logos">
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ -->
+	<section id="news">
+		<div class="container fadeIn">
+			<div class="row">
+				<div class="col is-6">
+					<h2>In the Media</h2>
+				</div>
+			</div>
+			<div class="row is-gap-large is-bottomless">
+				<div class="col is-12">
+					<div class="row is-gapless is-bottomless">
+						{% for news in newses %}
+						<div class="col is-6">
+							<button class="accordion">{{news.title}} </button>
+							<div class="panel">
+								<div class="thumb">
+									<img src="{{news.image.url}}" alt="">
+								</div>
+								<p>{{news.content}}</p>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact -->
+	<div class="row is-split">
+		<div class="col is-black has-text-white">
+			<div class="split-container is-left">
+				<div class="card is-section fadeIn">
+					<h2>Together, let's create something beautiful.</h2>
+					<a class="typeform-share link has-text-white is-underlined-white caps" href="https://form.typeform.com/to/gACnBXnl?typeform-medium=embed-snippet" data-mode="popup" data-size="100" data-hide-headers="true" data-hide-footer="false" target="_blank">Get Started</a>
+				</div>
+			</div>
+		</div>
+		<div class="col has-background-over-shoulder">
+			<div class="split-container is-right">
+				<div class="ar ar-1-1"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Space -->
+	<section class="is-small has-text-centered">
+		<div class="container social-links">
+			<a href="mailto:{{about.email}}" class="link is-underlined-black caps">{{about.email}}</a>
+		</div>
+	</section>
+
+
+	<!-- Scripts -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script src="{% static 'web/js/jquery.validate.min.js' %}"></script>
+	<script src="{% static 'web/js/script.js' %}"></script>
+    <script>
+        $(function() {
+            var contactForm = function() {
+                if ($('#contactForm').length > 0 ) {
+                    $( "#contactForm" ).validate( {
+                        rules: {
+                            fname: "required",
+                            lname: "required",
+                            email: {
+                                required: true,
+                                email: true
+                            },
+                            message: {
+                                required: true,
+                                minlength: 5
+                            }
+                        },
+                        messages: {
+                            fname: "Please enter your first name",
+                            lname: "Please enter your last name",
+                            email: "Please enter a valid email address",
+                            message: "Please enter a message"
+                        },
+                        /* submit via ajax */
+                        submitHandler: function(form) {
+
+                        }
+
+                    } );
+                }
+            };
+            contactForm();
+        });
+    </script>
+	<script> (function() { var qs,js,q,s,d=document, gi=d.getElementById, ce=d.createElement, gt=d.getElementsByTagName, id="typef_orm_share", b="https://embed.typeform.com/"; if(!gi.call(d,id)){ js=ce.call(d,"script"); js.id=id; js.src=b+"embed.js"; q=gt.call(d,"script")[0]; q.parentNode.insertBefore(js,q) } })() </script>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+
+<!-- tp-header-area-start -->
+<div class="tp-header-area fix tp-header-3-wrap bf-header-style mt-20 tp-transparent tp-header-spacing">
+   <div class="container-fluid container-1750">
+      <div class="row align-items-center">
+         <div class="col-6">
+            <div class="tp-header-logo">
+               <a href="{% url 'web:index' %}"><img data-width="138" src="{% static 'web/img/logo/logo-2.png' %}" alt=""></a>
+            </div>
+         </div>
+         <div class="col-6">
+            <div class="tp-header-right d-flex justify-content-end">
+               <button class="tp-header-menu-btn tp-offcanvas-open-btn ml-30">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<nav class="tp-mobile-menu-active d-none">
+   <ul>
+      <li class="has-dropdown is-active">
+         <a href="{% url 'web:index' %}">Home</a>
+      </li>
+      <li class="is-active">
+         <a href="about-me-light.html">About</a>
+         <ul class="tp-submenu submenu">
+            <li><a href="about-me-light.html">About Me Light</a></li>
+
+            <li><a href="about-us-light.html">About Us Light</a></li>
+
+         </ul>
+      </li>
+      <li class="has-dropdown is-active">
+         <a href="#">Pages</a>
+         <ul class="tp-submenu submenu">
+            <li><a href="service-light.html">Service</a></li>
+            <li><a href="portfolio-light.html">Portfolio</a></li>
+            <li><a href="portfolio-details-light.html">Portfolio Details</a></li>
+            <li><a href="blog-light.html">Blog</a></li>
+            <li><a href="blog-details-light.html">Blog Details</a></li>
+         </ul>
+      </li>
+      <li class="is-active">
+         <a href="{% url 'web:contact' %}">Contact</a>
+      </li>
+   </ul>
+</nav>
+<!-- tp-header-area-end -->

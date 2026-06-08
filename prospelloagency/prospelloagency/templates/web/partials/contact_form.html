@@ -1,0 +1,40 @@
+{% load static %}
+<!-- bf-contact-area-start -->
+<div class="bf-contact-area bf-about-us-spacing">
+   <div class="container">
+      <div class="row align-items-end">
+         <div class="col-lg-6">
+            <div class="bf-contact-us-content-wrap mb-30">
+               <h2 class="bf-contact-us-title mb-70">get in touch</h2>
+               <span class="bf-contact-us-dec ml-110 d-inline-block mb-45">Have a project in mind? Reach out to<br>
+                  us, and we’ll discuss the best way to<br>
+                  move forward.</span>
+               <div class="bf-contact-us-shape">
+                  <img src="{% static 'web/img/update/contact/shape.png' %}" alt="">
+               </div>
+            </div>
+         </div>
+         <div class="col-lg-6">
+            <div class="bf-contact-us-form mb-30">
+               <form id="contact-form"
+                  action="https://html.aqlova.com/bfolio-prevs/bfolio//static/web/mail-contact-us.php" method="POST">
+                  <input class="tp-input mb-20" type="text" name="name" placeholder="Your name *">
+                  <input class="tp-input mb-20" type="text" name="email" placeholder="Your email *">
+                  <textarea class="tp-input tp-textarea mb-30" name="message" id="textarea"
+                     placeholder="Write your message"></textarea>
+                  <div class="tp-contact-form-btn">
+                     <button type="submit" class="tp-btn tp-btn-xl d-flex justify-content-center lh-1">
+                        <span>
+                           <span class="text-1">Send Message</span>
+                           <span class="text-2">Send Message</span>
+                        </span>
+                     </button>
+                     <p class="ajax-response mt-20"></p>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- bf-contact-area-end -->

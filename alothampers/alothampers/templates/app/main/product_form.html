@@ -1,0 +1,74 @@
+{% extends 'app/base.html' %}
+{% load static i18n crispy_forms_tags %}
+{% block title %}{{title}}: {{app_settings.site_title}}{% endblock %}
+
+{% block javascript %}
+{{form.media}}
+<script>
+    $(document).ready(function () {
+        
+        // autogenerate #id_slug based on #id_name
+        $('#id_name').on('input', function () {
+            var name = $(this).val();
+            var slug = name.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '');
+            $('#id_slug').val(slug);
+        });
+        // #div_id_message_label, #div_id_file_upload_label hide
+        // when the user check id_enable_message, show #div_id_message_label
+        // when the user check id_enable_file_upload, show #div_id_file_upload_label
+        $('#div_id_message_label').hide();
+        $('#div_id_file_upload_label').hide();
+        $('#id_enable_message').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('#div_id_message_label').show();
+            } else {
+                $('#div_id_message_label').hide();
+            }
+        });
+        $('#id_enable_file_upload').on('change', function () {
+            if ($(this).is(':checked')) {
+                $('#div_id_file_upload_label').show();
+            } else {
+                $('#div_id_file_upload_label').hide();
+            }
+        });
+    });
+</script>
+{% endblock javascript %}
+
+{% block content %}
+
+<div class="side-app main-container edit_page">
+
+    <div class="row mt-5">
+        <div class="col-lg-6 col-xl-6 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-header border-bottom-0">
+                    <h5 class="mb-0">{{title}}</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <form class="form-horizontal" method="post" autocomplete="off" enctype="multipart/form-data" action=""
+                                enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{form|crispy}}
+                                <div class="mb-3">
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary me-2">{% translate "Save" %}</button>
+                                        <button type="button" onclick="history.back()"
+                                            class="border btn btn-outline-info">{% translate "Cancel" %}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock content %}

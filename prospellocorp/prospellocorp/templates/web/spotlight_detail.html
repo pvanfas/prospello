@@ -1,0 +1,38 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<section class="pb-0 top-space-margin position-relative overflow-hidden">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center"
+                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <h1 class="h2 text-dark-gray fw-600 alt-font ls-minus-3px sm-ls-minus-4px"
+                    data-fancy-text="{ &quot;opacity&quot;: [0, 1], &quot;translateY&quot;: [50, 0], &quot;filter&quot;: [&quot;blur(20px)&quot;, &quot;blur(0px)&quot;], &quot;string&quot;: [&quot;{{spotlight.title}}&quot;], &quot;duration&quot;: 400, &quot;delay&quot;: 0, &quot;speed&quot;: 20, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                </h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="position-relative pt-0">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 filter-content mt-3 lg-mt-0 mb-3 lg-mb-0">
+                <div class="portfolio-image">
+                    <img src="{{spotlight.image.url}}" alt style="max-height: 600px;object-fit: cover;width:100%;border-radius: 10px;" />
+                </div>
+                <div class="portfolio-caption pt-35px pb-35px sm-pt-20px sm-pb-0">
+                    <div class="text-start html_content">
+                        {{spotlight.description|safe}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

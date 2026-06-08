@@ -1,0 +1,51 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Our Team</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="#">Our Team</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+
+<!-- team area start -->
+<div class="team-area pt-0 pb-130">
+  <div class="container">
+    <div class="team__items-2">
+      {% for team in teams %}
+      <div class="team__item-2" data-aos="fade-up" data-aos-delay="300">
+        <div class="team__thumb-2 border-radius-20">
+          <div class="shine">
+            <a href="{% url 'web:about' %}"><img class="w-100 border-radius-20" src="{{team.image.url}}" alt="thumb"></a>
+          </div>
+        </div>
+        <div class="team__content-2">
+          <a href="{% url 'web:about' %}">
+            <h3 class="team__name">{{team.name}}</h3>
+          </a>
+          <p class="team__post">{{team.designation}}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+<!-- team area end -->
+{% endblock %}

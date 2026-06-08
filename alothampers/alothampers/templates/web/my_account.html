@@ -1,0 +1,170 @@
+{% extends 'web/base.html' %}
+
+{% block content %}
+
+<div class="breadcrumb-area breadcrumb-padding-1 add_bg">
+    <div class="container">
+        <div class="breadcrumb-content">
+            <h2 class="m-0">My Account </h2>
+        </div>
+    </div>
+</div>
+<!-- my account wrapper start -->
+<div class="my-account-wrapper pb-60 pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <!-- My Account Page Start -->
+                <div class="myaccount-page-wrapper">
+                    <!-- My Account Tab Menu Start -->
+                    <div class="row">
+
+                        <div class="col-lg-3 col-md-4">
+                            <div class="myaccount-tab-menu nav" role="tablist">
+                                <a href="#dashboad" class="active" data-bs-toggle="tab">Welcome</a>
+                                <a href="#orders" data-bs-toggle="tab">Orders</a>
+                                <a href="#account-info" data-bs-toggle="tab">Account Details</a>
+                                <a href="#password-info" data-bs-toggle="tab">Change Password</a>
+                                <form action="{% url 'auth_logout' %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit">Logout</button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-9 col-md-8">
+                            <div class="tab-content" id="myaccountContent">
+                                <div class="tab-pane fade show active" id="dashboad" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Dashboard</h3>
+                                        <div class="welcome">
+                                            <p>Hello, <strong>{{user}}</strong></p>
+                                        </div>
+                                        <p class="mb-0">
+                                            Welcome to your account dashboard! Here, you can effortlessly view and
+                                            manage your recent orders, update your shipping and billing information, and
+                                            make any necessary changes to your password or account details. We're
+                                            committed to providing a seamless experience, ensuring all your account
+                                            management needs are just a click away.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="orders" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Orders</h3>
+                                        {% if orders %}
+                                        <div class="myaccount-table table-responsive text-center">
+                                            <table class="table table-bordered">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th>Order</th>
+                                                        <th>Date</th>
+                                                        <th>Status</th>
+                                                        <th>Total</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for order in orders %}
+                                                    <tr>
+                                                        <td>{{order.order_id}}</td>
+                                                        <td>{{order.completed_at}}</td>
+                                                        <td>{{order.get_status_display}}</td>
+                                                        <td>AED {{order.payable}}</td>
+                                                        <td><a href="{{order.get_absolute_url}}"
+                                                                class="check-btn sqr-btn ">View Details</a></td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        {% else %}
+                                        <div class="alert alert-info" role="alert">
+                                            No orders found.
+                                        </div>
+                                        {% endif %}
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="account-info" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Account Details</h3>
+                                        <div class="account-details-form">
+                                            <form action="#">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="first-name" class="required">First Name</label>
+                                                            <input type="text" id="first-name" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="single-input-item">
+                                                            <label for="last-name" class="required">Last Name</label>
+                                                            <input type="text" id="last-name" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="single-input-item">
+                                                    <label for="display-name" class="required">Display Name</label>
+                                                    <input type="text" id="display-name" />
+                                                </div>
+                                                <div class="single-input-item">
+                                                    <label for="email" class="required">Email Addres</label>
+                                                    <input type="email" id="email" />
+                                                </div>
+                                                <div class="single-input-item btn-hover">
+                                                    <button class="check-btn sqr-btn">Save Changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="password-info" role="tabpanel">
+                                    <div class="myaccount-content">
+                                        <h3>Change Password</h3>
+                                        <div class="account-details-form">
+                                            <form action="#">
+                                                <fieldset>
+                                                    <div class="single-input-item">
+                                                        <label for="current-pwd" class="required">Current
+                                                            Password</label>
+                                                        <input type="password" id="current-pwd" />
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <div class="single-input-item">
+                                                                <label for="new-pwd" class="required">New
+                                                                    Password</label>
+                                                                <input type="password" id="new-pwd" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <div class="single-input-item">
+                                                                <label for="confirm-pwd" class="required">Confirm
+                                                                    Password</label>
+                                                                <input type="password" id="confirm-pwd" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </fieldset>
+                                                <div class="single-input-item btn-hover">
+                                                    <button class="check-btn sqr-btn">Save Changes</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

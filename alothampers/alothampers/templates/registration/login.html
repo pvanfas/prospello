@@ -1,0 +1,27 @@
+{% extends "registration/registration_base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Log in" %}{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+
+<h4 class="mb-4 fw-bold text-center">Login </h4>
+<form action="#" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <div class="button-box btn-hover">
+        <button type="submit" class="w-100 bradius">{% trans 'Log in' %}</button>
+        <input type="hidden" name="next" value="{{ next }}" />
+    </div>
+    <div class="d-flex justify-content-between mt-30">
+        <div class="login-toggle-btn pb-0">
+            <a href="{% url 'auth_password_reset' %}">Forgot Password?</a>
+        </div>
+        <div class="login-toggle-btn pb-0">
+            <a href="{% url 'registration_register' %}">Create an Account.</a>
+        </div>
+    </div>
+</form>
+
+{% endblock %}

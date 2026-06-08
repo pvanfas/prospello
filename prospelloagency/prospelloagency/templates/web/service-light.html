@@ -1,0 +1,45 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+{% block body_bg_attr %}data-bg-color="#f5f5f5"{% endblock %}
+
+{% block header %}
+
+<!-- tp-header-area-start -->
+<div id="header-sticky"
+   class="tp-header-area bf-header-3-style bf-header-white tp-header-2-spacing mt-20 tp-transparent tp-header-spacing">
+   <div class="container">
+      {% include 'web/partials/header_inner_content.html' with logo_extra_class='bf-header-logo' logo_dark_src='web/img/logo/logo.png' logo_white_src='web/img/logo/logo-2.png' btn_class='bf-btn-white' %}
+   </div>
+</div>
+<!-- tp-header-area-end -->
+
+{% endblock header %}
+
+{% block main %}
+
+{% include 'web/partials/service_hero.html' %}
+
+{% include 'web/partials/service_brands.html' %}
+
+{% include 'web/partials/service_steps.html' %}
+
+{% include 'web/partials/service_about.html' %}
+
+{% include 'web/partials/service_accordion.html' with service_bg_color="#000" %}
+
+{% include 'web/partials/service_projects.html' %}
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+
+{% block footer %}
+    <!-- tp-footer-area-start -->
+    <div class="tp-footer-area tp-footer-2-wrap grey-bg pt-155">
+       <div class="container">
+          {% include 'web/partials/footer_inner_content.html' %}
+       </div>
+    </div>
+    <!-- tp-footer-area-end -->
+{% endblock footer %}

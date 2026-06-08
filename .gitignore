@@ -1,0 +1,11 @@
+venv/
+*pyc
+__pycache__/
+.DS_Store
+node_modules/
+perfamana/
+hapsweb/
+techweb/
+hopeweb/
+cradlesandcrayons/
+alotkitchen/

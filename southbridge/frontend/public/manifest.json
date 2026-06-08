@@ -1,0 +1,27 @@
+{
+  "name": "Logistics Tracking App",
+  "short_name": "Logistics",
+  "description": "Real-time logistics tracking application",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f97316",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "permissions": [
+    "geolocation",
+    "background-sync"
+  ],
+  "background_sync": [
+    {
+      "tag": "background-location-sync"
+    }
+  ]
+}

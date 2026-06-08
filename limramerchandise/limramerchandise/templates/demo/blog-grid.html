@@ -1,0 +1,186 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Blog Grid</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="#">Blog Grid</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+
+<!-- blog-grid area start -->
+<div class="blog-grid-area pt-80 pb-130">
+  <div class="container">
+    <div class="blog__list">
+      <article class="blog__item mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="blog__thumb">
+          <div class="shine">
+            <a href="blog-details.html">
+              <img class="border-radius-25" src="/static/web/imgs/blog/1.png" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="date">16 <br> March </div>
+        </div>
+        <ul class="blog__meta">
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i> By admin </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-comments"></i> Comments (05) </a>
+          </li>
+        </ul>
+        <a href="blog-details.html">
+          <h4 class="blog__title">Standard chunk of Lorem Ipsum Our Company</h4>
+        </a>
+        <a class="db-btn-arrow" href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+      <article class="blog__item mb-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="blog__thumb">
+          <div class="shine">
+            <a href="blog-details.html">
+              <img class="border-radius-25" src="/static/web/imgs/blog/2.png" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="date">16 <br> March </div>
+        </div>
+        <ul class="blog__meta">
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i> By admin </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-comments"></i> Comments (05) </a>
+          </li>
+        </ul>
+        <a href="blog-details.html">
+          <h4 class="blog__title">These cases are many simple and easy</h4>
+        </a>
+        <a class="db-btn-arrow" href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+      <article class="blog__item mb-4" data-aos="fade-up" data-aos-delay="900">
+        <div class="blog__thumb">
+          <div class="shine">
+            <a href="blog-details.html">
+              <img class="border-radius-25" src="/static/web/imgs/blog/3.png" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="date">16 <br> March </div>
+        </div>
+        <ul class="blog__meta">
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i> By admin </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-comments"></i> Comments (05) </a>
+          </li>
+        </ul>
+        <a href="blog-details.html">
+          <h4 class="blog__title">The standard chunk of Ipsum Our Company</h4>
+        </a>
+        <a class="db-btn-arrow" href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+      <article class="blog__item mb-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="blog__thumb">
+          <div class="shine">
+            <a href="blog-details.html">
+              <img class="border-radius-25" src="/static/web/imgs/blog/1.png" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="date">16 <br> March </div>
+        </div>
+        <ul class="blog__meta">
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i> By admin </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-comments"></i> Comments (05) </a>
+          </li>
+        </ul>
+        <a href="blog-details.html">
+          <h4 class="blog__title">Standard chunk of Lorem Ipsum Our Company</h4>
+        </a>
+        <a class="db-btn-arrow" href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+      <article class="blog__item mb-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="blog__thumb">
+          <div class="shine">
+            <a href="blog-details.html">
+              <img class="border-radius-25" src="/static/web/imgs/blog/2.png" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="date">16 <br> March </div>
+        </div>
+        <ul class="blog__meta">
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i> By admin </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-comments"></i> Comments (05) </a>
+          </li>
+        </ul>
+        <a href="blog-details.html">
+          <h4 class="blog__title">These cases are many simple and easy</h4>
+        </a>
+        <a class="db-btn-arrow" href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+      <article class="blog__item mb-4" data-aos="fade-up" data-aos-delay="900">
+        <div class="blog__thumb">
+          <div class="shine">
+            <a href="blog-details.html">
+              <img class="border-radius-25" src="/static/web/imgs/blog/3.png" alt="Thumbnail">
+            </a>
+          </div>
+          <div class="date">16 <br> March </div>
+        </div>
+        <ul class="blog__meta">
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-user"></i> By admin </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fa-regular fa-comments"></i> Comments (05) </a>
+          </li>
+        </ul>
+        <a href="blog-details.html">
+          <h4 class="blog__title">The standard chunk of Ipsum Our Company</h4>
+        </a>
+        <a class="db-btn-arrow" href="blog-details.html">Read More <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </article>
+    </div>
+  </div>
+</div>
+<!-- blog-grid area end -->
+{% endblock %}

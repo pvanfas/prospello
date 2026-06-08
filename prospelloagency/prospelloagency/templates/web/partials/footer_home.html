@@ -1,0 +1,31 @@
+{% load static %}
+
+<!-- footer area start -->
+<div class="des-footer-wrap bg-position" data-background="{% static 'web/img/update/footer/bg.jpg' %}">
+   <div class="container-fluid">
+      <div class="des-footer-area des-footer-bg text-center">
+         <div class="des-footer-top d-flex align-items-center justify-content-between">
+            <span>Creative Design Agency</span>
+            <div class="des-footer-logo">
+               <a href="{% url 'web:index' %}"><img data-width="140px" src="{% static 'web/img/logo/logo-2.png' %}" alt=""></a>
+            </div>
+            <span>Based in London</span>
+         </div>
+         <div class="des-footer-middle">
+            <span>Contact us and let’s bring your vision to life</span>
+            <h3 class="des-footer-title"><a class="text-scale-anim" href="{% url 'web:contact' %}">Contact Us</a></h3>
+         </div>
+         <div class="des-footer-bottom d-flex align-items-center justify-content-between">
+            <span>Powered by Aqlova</span>
+            <div class="des-footer-bottom-social text-center">
+               <a href="#">Twitter</a>
+               <a href="#">Instagram</a>
+               <a href="#">Behance</a>
+               <a href="#">Dribbble</a>
+            </div>
+            <span>Copyright © 2025</span>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- footer area end -->

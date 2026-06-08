@@ -1,0 +1,52 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">News</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">Home</a> </li>
+              <li> <a href="#">News</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+<!-- blog area start -->
+<div class="blog-grid-area pt-80 pb-130">
+  <div class="container">
+    <div class="blog__list">
+      {% for news in newses %}
+        <article class="blog__item" data-aos="fade-up" data-aos-delay="300">
+            <div class="blog__thumb mb-3">
+                <div class="shine">
+                    <a href="{{news.get_absolute_url}}">
+                        <img class="border-radius-25" src="{{news.image.url}}" alt="Thumbnail" style="height:300px;width:100%;object-fit:cover;">
+                    </a>
+                </div>
+                <div class="date">{{news.date|date:"d"}} <br> {{news.date|date:"F"}} </div>
+            </div>
+            <a href="{{news.get_absolute_url}}"><h4 class="blog__title">{{news.title}}</h4></a>
+            <a class="db-btn-arrow" href="{{news.get_absolute_url}}">Read More <i class="fa-solid fa-arrow-right"></i></a>
+        </article>
+        {% endfor %}
+     
+    </div>
+  </div>
+</div>
+<!-- /blog area end -->
+
+
+{% endblock %}

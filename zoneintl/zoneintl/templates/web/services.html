@@ -1,0 +1,208 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <!--Page Title-->
+    <section class="page-title" style="background-image: url({% static 'web/images/background/12.jpg' %});">
+      <div class="auto-container">
+        <h1>Our Services</h1>
+        <span class="title_divider"></span>
+        <ul class="page-breadcrumb">
+          <li><a href="{% url 'web:index' %}">Home</a></li>
+          <li>Services</li>
+        </ul>
+      </div>
+    </section>
+    <!--End Page Title-->
+
+    <!-- Features Section three-->
+    <section class="features-section-three">
+      <div class="services-outer">
+        <div class="auto-container">
+          <div class="row">
+            <!-- Service Block -->
+            <div class="service-block-three col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <span class="icon flaticon-vision"></span>
+                <h3><a href="#">Best Counselling</a></h3>
+                <div class="text">With the help of our advisors and counsellors you can figure out the best course for you.</div>
+              </div>
+            </div>
+
+            <!-- Service Block -->
+            <div class="service-block-three col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <span class="icon flaticon-statistics"></span>
+                <h3><a href="#">Special Scholarships</a></h3>
+                <div class="text">We can help you get scholarships so that you can go to the college of your long days of dreams.</div>
+              </div>
+            </div>
+
+            <!-- Service Block -->
+            <div class="service-block-three col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <span class="icon flaticon-population"></span>
+                <h3><a href="#">Pick up & Accomodation</a></h3>
+                <div class="text">International students will have their transport and accommodation arranged.</div>
+              </div>
+            </div>
+
+            <!-- Service Block -->
+            <div class="service-block-three col-lg-3 col-md-6 col-sm-12">
+              <div class="inner-box">
+                <span class="icon flaticon-social-media"></span>
+                <h3><a href="#">Visa Assistance</a></h3>
+                <div class="text">We will help international students with the visa application process.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="brand-outer">
+        <div class="auto-container">
+          <!-- Brand Block -->
+          <div class="brand-block row no-gutters">
+            <div class="image-column col-lg-6 col-md-12 order-2" style="background-image: url({% static 'web/images/background/14.jpg' %});"></div>
+            <div class="content-column col-lg-6 col-md-12">
+              <div class="inner-column">
+                <h2>Counselling</h2>
+                <div class="text">Students are confused about which educational institute to choose as there are a large
+                  number of institutions that provide several courses. The mission of ZONE International is to help
+                  students select the best educational institution and country which will serve them best.
+                  <br>
+                  Maintaining
+                  ties with various educational institutions all over the world, ZONE International has adequate experience
+                  in helping candidates access the best universities. Our experienced counsellors can guide the students
+                  in the right direction and have a stable and fulfilling career.
+                </div>
+                <a href="{% url 'web:contact' %}" class="theme-btn icon-btn-two bg_sky"><span>Contact us</span></a>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          <!-- Brand Block -->
+          <div class="brand-block row no-gutters">
+            <div class="image-column col-lg-6 col-md-12 order-2" style="background-image: url({% static 'web/images/background/15.jpg' %});"></div>
+            <div class="content-column col-lg-6 col-md-12">
+              <div class="inner-column">
+                <h2>Scholarships</h2>
+                <div class="text">As the cost of studying in colleges and universities in reputed academic institutes has
+                  increased manifold, a majority of the students rely either on student loans or scholarship grants
+                  to afford the tuition. There are several banks and other financial institutions that offer loans at
+                  seemingly lucrative rates, but there could be a lot of hidden charges and fine print, and students
+                  could be misled into securing loans at unfavourable rates or terms. <br>
+                  At ZONE International, we have
+                  detailed information about all the various scholarships offered, and can assist students in applying
+                  for the right loans at the right rates from the right lenders, and can guide students to apply for
+                  scholarships based on the course and the institute.
+
+                </div>
+                <a href="{% url 'web:contact' %}" class="theme-btn icon-btn-two bg_sky"><span>Contact us</span></a>
+              </div>
+            </div>
+          </div>
+
+          <br>
+          <!-- Brand Block -->
+          <div class="brand-block row no-gutters">
+            <div class="image-column col-lg-6 col-md-12 order-2" style="background-image: url({% static 'web/images/background/151.jpg' %});"></div>
+            <div class="content-column col-lg-6 col-md-12">
+              <div class="inner-column">
+                <h2>Pick up and Accommodation</h2>
+                <div class="text">Finding yourself in a foreign land all by yourself and having no confirmed accommodation
+                  can be extremely difficult. At ZONE International, we help arrange temporary accommodation, so that they
+                  have a place to go to immediately on arrival. We also provide airport pickup facility for the student on
+                  arrival at the host country as it can be stressful to travel to an unknown country and have to do everything
+                  by yourself; it helps to see a friendly and familiar face at the outset.
+                  <br>
+                  We brief students about the
+                  place and institute, the culture, banking and insurance system, medical facilities, food, shopping and
+                  so on, and drop the student to a temporary accommodation.
+
+
+                </div>
+                <a href="{% url 'web:contact' %}" class="theme-btn icon-btn-two bg_sky"><span>Contact us</span></a>
+              </div>
+            </div>
+          </div>
+
+          <br>
+
+          <!-- Brand Block -->
+          <div class="brand-block row no-gutters">
+            <div class="image-column col-lg-6 col-md-12 order-2" style="background-image: url({% static 'web/images/background/152.jpg' %});"></div>
+            <div class="content-column col-lg-6 col-md-12">
+              <div class="inner-column">
+                <h2>Visa Assistance</h2>
+                <div class="text">A student’s visa application may get rejected if the information provided
+                  is incomplete or incorrect in any manner. Students need an experienced guide to assist
+                  them with the visa application process, including the interview. In the case where a student
+                  is going abroad for their university education, we brief them about what to expect as a student
+                  in that institute and country.
+                  <br>
+                  We also help students purchase discounted tickets for their travel
+                  including specifying meal preferences on-flight, foreign exchange, and so on.
+                </div>
+
+                <a href="{% url 'web:contact' %}" class="theme-btn icon-btn-two bg_sky"><span>Contact us</span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <br>
+
+      <!-- Clients Section -->
+      <section class="clients-section style-two">
+        <div class="auto-container">
+
+          <!-- Sponsors Outer -->
+          <div class="sponsors-outer">
+            <!--Sponsors Carousel-->
+            <ul class="sponsors-carousel owl-carousel owl-theme">
+              <li class="slide-item">
+                <a href="#">
+                  <img src="{% static 'web/images/clients/1_hover_red.png' %}" alt="" class="hover_img">
+                  <img src="{% static 'web/images/clients/1.png' %}" alt="">
+                </a>
+              </li>
+              <li class="slide-item">
+                <a href="#">
+                  <img src="{% static 'web/images/clients/2_hover_red.png' %}" alt="" class="hover_img">
+                  <img src="{% static 'web/images/clients/2.png' %}" alt="">
+                </a>
+              </li>
+              <li class="slide-item">
+                <a href="#">
+                  <img src="{% static 'web/images/clients/3_hover_red.png' %}" alt="" class="hover_img">
+                  <img src="{% static 'web/images/clients/3.png' %}" alt="">
+                </a>
+              </li>
+              <li class="slide-item">
+                <a href="#">
+                  <img src="{% static 'web/images/clients/4_hover_red.png' %}" alt="" class="hover_img">
+                  <img src="{% static 'web/images/clients/4.png' %}" alt="">
+                </a>
+              </li>
+              <li class="slide-item">
+                <a href="#">
+                  <img src="{% static 'web/images/clients/5_hover_red.png' %}" alt="" class="hover_img">
+                  <img src="{% static 'web/images/clients/5.png' %}" alt="">
+                </a>
+              </li>
+              <li class="slide-item">
+                <a href="#">
+                  <img src="{% static 'web/images/clients/6_hover_red.png' %}" alt="" class="hover_img">
+                  <img src="{% static 'web/images/clients/6.png' %}" alt="">
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <!--End Clients Section -->
+
+      {% endblock content %}

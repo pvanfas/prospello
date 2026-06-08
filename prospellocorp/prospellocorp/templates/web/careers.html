@@ -1,0 +1,241 @@
+{% extends 'web/base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<section class="p-0 top-space-margin position-relative overflow-hidden">
+    <div class="container-fluid p-0 h-100 position-relative">
+        <div class="row g-0">
+            <div class="col-xl-4 col-lg-5 d-flex justify-content-center align-items-center ps-10 xxl-ps-6 xl-ps-4 md-ps-4 sm-ps-0 position-relative order-2 order-lg-1"
+                data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [30, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;:0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div
+                    class="vertical-title-center align-items-center justify-content-center flex-shrink-0 w-75px sm-w-50px">
+                    <h1 class="title fs-15 alt-font text-dark-gray fw-700 text-uppercase ls-1px text-uppercase d-flex w-auto align-items-center m-0"
+                        data-fancy-text="{ &quot;opacity&quot;: [0, 1], &quot;translateY&quot;: [50, 0], &quot;filter&quot;: [&quot;blur(20px)&quot;, &quot;blur(0px)&quot;], &quot;string&quot;: [&quot;about us&quot;], &quot;duration&quot;: 400, &quot;delay&quot;: 0, &quot;speed&quot;: 50, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    </h1>
+                </div>
+                <div class="border-start border-color-extra-medium-gray ps-40px sm-ps-20px position-relative z-index-9">
+                    <h2
+                        class="text-dark-gray fw-600 alt-font outside-box-right-10 xl-outside-box-right-15 lg-outside-box-right-20 md-me-0 sm-mb-0 ls-minus-3px">
+                        Join a Global Leader of Technology</h2>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-7 position-relative one-half-screen order-1 order-lg-2 md-mb-50px">
+                <div class="overflow-hidden position-relative">
+                    <div class="w-100"
+                        data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;direction&quot;: &quot;lr&quot;, &quot;color&quot;: &quot;#f7f7f7&quot;, &quot;duration&quot;: 1000, &quot;delay&quot;: 0 }">
+                        <img src="/static/web/images/main/careers.jpg" alt class="w-100 liquid-parallax"
+                            data-parallax-liquid="true" data-parallax-position="top" data-parallax-scale="1.05">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pb-0">
+    <div class="container">
+        <div class="row mb-40px">
+            <div class="col-12">
+                <div class="mb-15px">
+                    <span class="w-25px h-1px d-inline-block bg-base-color me-5px align-middle"></span>
+                    <span
+                        class="text-gradient-base-color fs-15 alt-font fw-700 ls-05px text-uppercase d-inline-block align-middle">Empower Your Future with Us</span>
+                </div>
+                <h3 class="text-dark-gray alt-font fw-600 ls-minus-4px mb-25px">Current Openings</h3>
+            </div>
+        </div>
+        <div class="row">
+            {% for career in careers %}
+            <div class="col-lg-12">
+                <a href="{{career.get_absolute_url}}" class="platform_item">
+                    <span class="loop_counter">{{forloop.counter}}</span>
+                    <div class="career_content">
+                        <div class="fw-500 fs-19 text-black  sm-mb-10px mb-10px">{{career.title}}</div>
+                        <p class="fs-15">{{career.summary}}</p>
+                    </div>
+                    <span class="arrow">
+                        <svg fill="#009688" height="20px" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330.002 330.002"
+                            xml:space="preserve">
+                            <g stroke-width="0"></g>
+                            <g stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g>
+                                <path
+                                    d="M233.252,155.997L120.752,6.001c-4.972-6.628-14.372-7.97-21-3c-6.628,4.971-7.971,14.373-3,21 l105.75,140.997L96.752,306.001c-4.971,6.627-3.627,16.03,3,21c2.698,2.024,5.856,3.001,8.988,3.001 c4.561,0,9.065-2.072,12.012-6.001l112.5-150.004C237.252,168.664,237.252,161.33,233.252,155.997z">
+                                </path>
+                            </g>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+<section class="pb-0">
+    <div class="row align-items-center mt-0 sm-mt-40px" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+        <div class="col-12">
+            <div class="bg-linen p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
+                <div
+                    class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-1">
+                    <img src="/static/web/images/demo-branding-agency-services-details-faq-icon.png" alt>
+                </div>
+                <div class="mb-10px">
+                    <span class="w-25px h-1px d-inline-block bg-base-color me-5px align-middle"></span>
+                    <span
+                        class="text-gradient-base-color fs-15 alt-font fw-700 ls-05px text-uppercase d-inline-block align-middle">Working at Prospello</span>
+                </div>
+                <h3 class="alt-font fw-600 text-dark-gray ls-minus-1px">Frequently asked questions</h3>
+                <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="icon-feather-minus"
+                    data-inactive-icon="icon-feather-plus">
+                    {% for faq in faqs %}
+                    <div class="accordion-item {% if forloop.first %}active-accordion{% endif %}">
+                        <div class="accordion-header border-bottom {% if forloop.first %}border-color-transparent-dark-very-light{% else %}border-color-transparent{% endif %}">
+                            <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-0{{forloop.counter}}"
+                                aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" data-bs-parent="#accordion-style-02">
+                                <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
+                                    <i class="feather {% if forloop.first %}icon-feather-minus{% else %}icon-feather-plus{% endif %} fs-20"></i><span class="fw-500">
+                                        {{faq.question}}</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div id="accordion-style-02-0{{forloop.counter}}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}"
+                            data-bs-parent="#accordion-style-02">
+                            <div
+                                class="accordion-body last-paragraph-no-margin border-bottom {% if forloop.first %}border-color-transparent-dark-very-light{% else %}border-color-transparent{% endif %}">
+                                <p class="w-90 sm-w-95 xs-w-100">{{faq.answer}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-40px md-mb-20px sm-mb-0 appear anime-child anime-complete" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [15, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="mb-10px">
+                    <span class="w-25px h-1px d-inline-block bg-base-color me-5px align-middle"></span>
+                    <span
+                        class="text-gradient-base-color fs-15 alt-font fw-700 ls-05px text-uppercase d-inline-block align-middle">Life at Prospello</span>
+                </div> 
+                <h3 class="text-dark-gray fw-600 ls-minus-2px alt-font" >What Makes Propello a Family</h3> 
+            </div>
+            <div class="col-lg-12 appear anime-child anime-complete" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [15, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="row" >
+                    <div class="col-md-3">
+                        <div class="fs-19 fw-600 text-dark-gray w-90 xl-w-100 sm-mb-10px">Innovation at the Core</div>
+                    </div>
+                    <div class="col-md-9 last-paragraph-no-margin">
+                        <p>We embrace a culture of innovation and encourage our
+                            employees to think outside the box, challenge the status quo, and explore new
+                            possibilities</p>
+                    </div>
+                </div>
+                <div class="separator-line-1px border-bottom border-color-extra-medium-gray mt-35px mb-35px" ></div>
+                <div class="row" >
+                    <div class="col-md-3">
+                        <div class="fs-19 fw-600 text-dark-gray w-90 xl-w-100 sm-mb-10px">Growth & Development.</div>
+                    </div>
+                    <div class="col-md-9 last-paragraph-no-margin">
+                        <p>We prioritize continuous learning and invest in our employees'
+                            professional growth through mentorship programs, training opportunities, and
+                            challenging projects.</p>
+                    </div>
+                </div>
+                <div class="separator-line-1px border-bottom border-color-extra-medium-gray mt-35px mb-35px" ></div>
+                <div class="row" >
+                    <div class="col-md-3">
+                        <div class="fs-19 fw-600 text-dark-gray w-90 xl-w-100 sm-mb-10px">Impact That Matters</div>
+                    </div>
+                    <div class="col-md-9 last-paragraph-no-margin">
+                        <p>We oﬀer our employees the opportunity to contribute to
+                            meaningful projects that have a positive impact on our businesses, our communities, and
+                            the world.</p>
+                    </div>
+                </div>
+                <div class="separator-line-1px border-bottom border-color-extra-medium-gray mt-35px mb-35px" ></div>
+                <div class="row" >
+                    <div class="col-md-3">
+                        <div class="fs-19 fw-600 text-dark-gray w-90 xl-w-100 sm-mb-10px">Work-Life Harmony</div>
+                    </div>
+                    <div class="col-md-9 last-paragraph-no-margin">
+                        <p>We understand that a fulfilling career goes hand-in-hand with a
+                            balanced life. We strive to create a supportive and flexible work environment that allows
+                            our employees to thrive both personally and professionally.</p>
+                    </div>
+                </div>
+                <div class="separator-line-1px border-bottom border-color-extra-medium-gray mt-35px mb-35px" ></div>
+                <div class="row" >
+                    <div class="col-md-3">
+                        <div class="fs-19 fw-600 text-dark-gray w-90 xl-w-100 sm-mb-10px">A Strong Community</div>
+                    </div>
+                    <div class="col-md-9 last-paragraph-no-margin">
+                        <p>We foster a collaborative and inclusive environment where
+                            everyone feels valued, respected, and empowered to contribute their unique skills and
+                            perspectives.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12 mt-5">
+                <div class="align-items-lg-stretch row justify-content-center">
+                    <div class="col-md-3 mb-2 h-100">
+                        <div class="card h-100 text-center" style="padding:30px 25px; border-radius: 0;min-height: 200px;">
+                            <div class="thumb mb-20px">
+                                <img src="/static/web/images/main/compensation.png" alt="" style="height: 80px;object-fit: contain;">
+                            </div>
+                            <h6 class="fs-16 fw-600 lh-20 mb-0 text-capitalize text-dark-gray w-90 xl-w-100">Competitive compensation and benefits</h6>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3 mb-2 h-100">
+                        <div class="card h-100 text-center" style="padding:30px 25px; border-radius: 0;min-height: 200px;">
+                            <div class="thumb mb-20px">
+                                <img src="/static/web/images/main/flexible.png" alt="" style="height: 80px;object-fit: contain;">
+                            </div>
+                            <h6 class="fs-16 fw-600 lh-20 mb-0 text-capitalize text-dark-gray w-90 xl-w-100">Flexible work arrangements</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-2 h-100">
+                        <div class="card h-100 text-center" style="padding:30px 25px; border-radius: 0;min-height: 200px;">
+                            <div class="thumb mb-20px">
+                                <img src="/static/web/images/main/wellness.png" alt="" style="height: 80px;object-fit: contain;">
+                            </div>
+                            <h6 class="fs-16 fw-600 lh-20 mb-0 text-capitalize text-dark-gray w-90 xl-w-100">Robust health and wellness programs</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-2 h-100">
+                        <div class="card h-100 text-center" style="padding:30px 25px; border-radius: 0;min-height: 200px;">
+                            <div class="thumb mb-20px">
+                                <img src="/static/web/images/main/community.png" alt="" style="height: 80px;object-fit: contain;">
+                            </div>
+                            <h6 class="fs-16 fw-600 lh-20 mb-0 text-capitalize text-dark-gray w-90 xl-w-100">Social and community engagement activities</h6>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-2 h-100">
+                        <div class="card h-100 text-center" style="padding:30px 25px; border-radius: 0;min-height: 200px;">
+                            <div class="thumb mb-20px">
+                                <img src="/static/web/images/main/professional.png" alt="" style="height: 80px;object-fit: contain;">
+                            </div>
+                            <h6 class="fs-16 fw-600 lh-20 mb-0 text-capitalize text-dark-gray w-90 xl-w-100">Opportunities for professional development</h6>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

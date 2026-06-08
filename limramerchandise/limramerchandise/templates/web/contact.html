@@ -1,0 +1,116 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Contact</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">home</a> </li>
+              <li> <a href="#">Contact</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+<!-- contact -->
+<section class="contact__area-6 pt-80 pb-80">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="row">
+          <div class="col-lg-12 mb-3">
+            <div class="thumb">
+              <img src="/static/web/imgs/main/contact.jpeg?v=1.4" alt="" class="w-100 border-radius-25" style="height:240px;object-fit: cover;">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact__item">
+              <i class="fa-solid fa-location-dot"></i>
+              <h4 class="title">Location</h4>
+              <p>Office no-B3/517, Bin Shabib Mall <br>
+                Baghdad street - Al Qusais, Industrial Area 1 <br>
+                Dubai, P.O.BOX : 97000
+                </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact__item">
+              <i class="fa-solid fa-phone"></i>
+              <h4 class="title">Call us</h4>
+              <p>Tel : +971 439 495 22</p>
+              <p>MOB: +971 542 159 093</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact__item">
+              <i class="fa-solid fa-envelope"></i>
+              <h4 class="title">Email</h4>
+              <a href="mailto:info@limramerchandise.com">info@limramerchandise.com</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact__item">
+              <i class="fa-brands fa-whatsapp"></i>
+              <h4 class="title">Whatsapp</h4>
+              <a href="https://wa.me/+971542159093">+971 542 159 093</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-6">
+        <iframe class="w-100 border-radius-25" height="500"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.701532607383!2d55.37809482538457!3d25.28062387765724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c475ed7622b%3A0xd9e461a20a362c59!2sBin%20Shabib%20Mall!5e0!3m2!1sen!2sin!4v1720360793515!5m2!1sen!2sin"></iframe>
+
+      </div>
+    </div>
+
+    {% comment %}
+    <div class="blog__form">
+      <span class="blog__form-title">Leave a Message</span>
+      <form action="" method="post" class="ajax reload">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6">
+            {{form.name}}
+          </div>
+          <div class="col-md-6">
+            {{form.email}}
+          </div>
+          <div class="col-md-6">
+            {{form.phone}}
+          </div>
+          <div class="col-md-6">
+            {{form.subject}}
+          </div>
+          <div class="col-md-12">
+            {{form.message}}
+          </div>
+          <div class="contact__submitwrap">
+            <button class="contact__submit btn-rollover" type="submit">Send now <i
+                class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    {% endcomment %}
+    
+  </div>
+</section>
+<!-- /contact -->
+
+
+{% endblock %}

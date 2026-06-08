@@ -1,0 +1,203 @@
+{% load static %}
+<div class="tp-postbox-wrapper mr-55">
+   <article class="tp-postbox-item mb-60">
+      <div class="tp-postbox-thumb p-relative mb-35">
+         <img class="w-100" src="{% static 'web/img/blog/postbox/thumb.jpg' %}" alt="">
+         <div class="tp-postbox-date text-center">
+            <span>Jun</span>
+            <h5>16</h5>
+         </div>
+      </div>
+      <div class="tp-postbox-content-wrap">
+         <div class="tp-postbox-meta mb-15 d-flex align-items-center">
+            <a href="#">
+               <img src="{% static 'web/img/blog/postbox/author.png.jpeg' %}" alt="">
+               Polina Viola
+            </a>
+            <div class="tp-postbox-border"></div>
+            <span>Branding</span>
+         </div>
+         <div class="tp-postbox-content">
+            <h3 class="tp-postbox-tittle mb-20"><a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+                  class="common-underline">Complete guide for user follow Ux</a></h3>
+            <p class="mb-30">faucibus enim. In aliquam tempus porta. Mauris vel finibus risus. Maecenas
+               egestas mi
+               sed neque finibus, nec faucibus ipsum aliquet. Duis scelerisque at odio</p>
+            <a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+               class="tp-btn tp-btn-border tp-btn-xl d-inline-flex align-items-center">
+               <span>
+                  <span class="text-1">Read More</span>
+                  <span class="text-2">Read More</span>
+               </span>
+            </a>
+         </div>
+      </div>
+   </article>
+   <article class="tp-postbox-item mb-60">
+      <div class="tp-postbox-thumb p-relative mb-35">
+         <div class="swiper-container postbox-thumb-slider-active">
+            <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <a href="{{ blog_details_url|default:'blog-details-light.html' }}">
+                     <img class="w-100" src="{% static 'web/img/blog/postbox/thumb-2.jpg' %}" alt="">
+                  </a>
+               </div>
+               <div class="swiper-slide">
+                  <a href="{{ blog_details_url|default:'blog-details-light.html' }}">
+                     <img class="w-100" src="{% static 'web/img/blog/postbox/thumb-3.jpg' %}" alt="">
+                  </a>
+               </div>
+               <div class="swiper-slide">
+                  <a href="{{ blog_details_url|default:'blog-details-light.html' }}">
+                     <img class="w-100" src="{% static 'web/img/blog/postbox/thumb-4.jpg' %}" alt="">
+                  </a>
+               </div>
+            </div>
+            <div class="tp-postbox-slider-arrow-wrap d-none d-sm-block">
+               <button class="tp-postbox-arrow-prev">
+                  <i class="fa-sharp fa-solid fa-arrow-right"></i>
+               </button>
+               <button class="tp-postbox-arrow-next">
+                  <i class="fa-sharp fa-solid fa-arrow-left"></i>
+               </button>
+            </div>
+            <div class="tp-postbox-date text-center">
+               <span>Jun</span>
+               <h5>16</h5>
+            </div>
+         </div>
+      </div>
+      <div class="tp-postbox-content-wrap">
+         <div class="tp-postbox-meta mb-15 d-flex align-items-center">
+            <a href="#">
+               <img src="{% static 'web/img/blog/postbox/author-4.png' %}" alt="">
+               Julliyana Dsuza
+            </a>
+            <div class="tp-postbox-border"></div>
+            <span>Development</span>
+         </div>
+         <div class="tp-postbox-content">
+            <h3 class="tp-postbox-tittle mb-20"><a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+                  class="common-underline">Stay updated with the latest design</a></h3>
+            <p class="mb-30">faucibus enim. In aliquam tempus porta. Mauris vel finibus risus. Maecenas
+               egestas mi
+               sed neque finibus, nec faucibus ipsum aliquet. Duis scelerisque at odio</p>
+            <a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+               class="tp-btn tp-btn-border tp-btn-xl d-inline-flex align-items-center">
+               <span>
+                  <span class="text-1">Read More</span>
+                  <span class="text-2">Read More</span>
+               </span>
+            </a>
+         </div>
+      </div>
+   </article>
+   <article class="tp-postbox-item mb-60">
+      <div class="tp-postbox-thumb p-relative mb-35">
+         <img class="w-100" src="{% static 'web/img/blog/postbox/thumb-3.jpg' %}" alt="">
+         <div class="tp-postbox-video-btn">
+            <a class="tp-video-play popup-video" href="https://www.youtube.com/watch?v=go7QYaQR494">
+               <i class="p-relative z-index-3 fa-regular fa-play"></i>
+               <div class="tp-video-btn-anm">
+                  <div class="tp-video-waves tp-video-wave-1"></div>
+                  <div class="tp-video-waves tp-video-wave-2"></div>
+                  <div class="tp-video-waves tp-video-wave-3"></div>
+               </div>
+            </a>
+         </div>
+         <div class="tp-postbox-date text-center">
+            <span>Jun</span>
+            <h5>16</h5>
+         </div>
+      </div>
+      <div class="tp-postbox-content-wrap">
+         <div class="tp-postbox-meta mb-15 d-flex align-items-center">
+            <a href="#">
+               <img src="{% static 'web/img/blog/postbox/author-3.png' %}" alt="">
+               Paul Pitterson
+            </a>
+            <div class="tp-postbox-border"></div>
+            <span>Graphics</span>
+         </div>
+         <div class="tp-postbox-content">
+            <h3 class="tp-postbox-tittle mb-20"><a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+                  class="common-underline">Detailed breakdowns of selected</a></h3>
+            <p class="mb-30">faucibus enim. In aliquam tempus porta. Mauris vel finibus risus. Maecenas
+               egestas mi
+               sed neque finibus, nec faucibus ipsum aliquet. Duis scelerisque at odio</p>
+            <a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+               class="tp-btn tp-btn-border tp-btn-xl d-inline-flex align-items-center">
+               <span>
+                  <span class="text-1">Read More</span>
+                  <span class="text-2">Read More</span>
+               </span>
+            </a>
+         </div>
+      </div>
+   </article>
+   <article class="tp-postbox-item mb-60">
+      <div class="tp-postbox-thumb p-relative mb-35">
+         <img class="w-100" src="{% static 'web/img/blog/postbox/thumb-4.jpg' %}" alt="">
+         <div class="tp-postbox-date text-center">
+            <span>Jun</span>
+            <h5>16</h5>
+         </div>
+      </div>
+      <div class="tp-postbox-content-wrap">
+         <div class="tp-postbox-meta mb-15 d-flex align-items-center">
+            <a href="#">
+               <img src="{% static 'web/img/blog/postbox/author.png.jpeg' %}" alt="">
+               David Hussey
+            </a>
+            <div class="tp-postbox-border"></div>
+            <span>Illustration</span>
+         </div>
+         <div class="tp-postbox-content">
+            <h3 class="tp-postbox-tittle mb-20"><a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+                  class="common-underline">Rental friendly practices for guests</a></h3>
+            <p class="mb-30">faucibus enim. In aliquam tempus porta. Mauris vel finibus risus. Maecenas
+               egestas mi
+               sed neque finibus, nec faucibus ipsum aliquet. Duis scelerisque at odio</p>
+            <a href="{{ blog_details_url|default:'blog-details-light.html' }}"
+               class="tp-btn tp-btn-border tp-btn-xl d-inline-flex align-items-center">
+               <span>
+                  <span class="text-1">Read More</span>
+                  <span class="text-2">Read More</span>
+               </span>
+            </a>
+         </div>
+      </div>
+   </article>
+   <div class="tp-pagination-wrap pt-20">
+      <ul>
+         <li>
+            <a href="#">
+               <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 11L1 6L6 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                     stroke-linejoin="round" />
+               </svg>
+            </a>
+         </li>
+         <li>
+            <a class="active" href="#">1</a>
+         </li>
+         <li>
+            <a href="#">2</a>
+         </li>
+         <li>
+            <a href="#">...</a>
+         </li>
+         <li>
+            <a href="#">4</a>
+         </li>
+         <li>
+            <a href="#">
+               <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 11L6 6L1 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                     stroke-linejoin="round" />
+               </svg>
+            </a>
+         </li>
+      </ul>
+   </div>
+</div>

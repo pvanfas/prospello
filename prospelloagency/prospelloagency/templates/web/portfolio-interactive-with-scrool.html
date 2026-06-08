@@ -1,0 +1,71 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+{% block body_bg_attr %}data-bg-color="#f8f8f9"{% endblock %}
+
+{% block offcanvas %}
+{% include 'web/partials/offcanvas.html' %}
+<div class="body-overlay"></div>
+{% endblock offcanvas %}
+
+{% block header %}
+
+{% include 'web/partials/header_portfolio_interactive.html' %}
+
+{% endblock header %}
+
+{% block main %}
+
+<!-- portfolio area start -->
+<div class="tp-port-slider-area">
+   <div class="tp-port-slider-main p-relative">
+      <div id="tp-port-slider-wrap" class="tp-port-1 tp-port-slider-wrap p-relative">
+         <div class="tp-port-slider-thumb tp-port-1">
+            <img src="{% static 'web/img/update/interactive-img/port-1.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-2">
+            <img src="{% static 'web/img/update/interactive-img/port-2.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-3">
+            <img src="{% static 'web/img/update/interactive-img/port-3.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-4">
+            <img src="{% static 'web/img/update/interactive-img/port-4.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-5">
+            <img src="{% static 'web/img/update/interactive-img/port-5.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-6">
+            <img src="{% static 'web/img/update/interactive-img/port-6.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-7">
+            <img src="{% static 'web/img/update/interactive-img/port-4.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-8">
+            <img src="{% static 'web/img/update/interactive-img/port-5.jpg' %}" alt="">
+         </div>
+         <div class="tp-port-slider-thumb tp-port-9">
+            <img src="{% static 'web/img/update/interactive-img/port-6.jpg' %}" alt="">
+         </div>
+      </div>
+      <div class="tp-port-slider-content-wrap z-index-5">
+         <div class="tp-port-slider-content">
+            <h4 class="tp-port-slider-title active" rel="tp-port-1"><a href="portfolio-details-light.html">Milo</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-2"><a href="portfolio-details-light.html">FASTWIRE</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-3"><a href="portfolio-details-light.html">MEDIABION</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-4"><a href="portfolio-details-light.html">Spruce</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-5"><a href="portfolio-details-light.html">PSDMockup</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-6"><a href="portfolio-details-light.html">JQ Wine</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-7"><a href="portfolio-details-light.html">Diseño</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-8"><a href="portfolio-details-light.html">Photoshoot</a></h4>
+            <h4 class="tp-port-slider-title" rel="tp-port-9"><a href="portfolio-details-light.html">Gráfico</a></h4>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- portfolio area end -->
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+{% block footer %}{% endblock %}

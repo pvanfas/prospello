@@ -1,0 +1,68 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+{% block body_bg_attr %}data-bg-color="#f5f5f5"{% endblock %}
+
+{% block header %}
+<!-- tp-header-area-start -->
+<div id="header-sticky" class="tp-header-area tp-header-2-spacing mt-20 tp-transparent tp-header-spacing">
+   <div class="container">
+      {% include 'web/partials/header_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-header-area-end -->
+{% endblock header %}
+
+{% block main %}
+
+<!-- bf-about-area-start -->
+{% include 'web/partials/about_us_hero.html' %}
+<!-- bf-about-area-end -->
+
+<!-- bf-about-video-area-start -->
+{% include 'web/partials/about_us_video.html' %}
+<!-- bf-about-video-area-end -->
+
+<!-- bf-about-area-start -->
+{% include 'web/partials/about_us_details.html' %}
+<!-- bf-about-area-end -->
+
+<!-- bf-team-area-start -->
+{% include 'web/partials/about_us_team.html' %}
+<!-- bf-team-area-end -->
+
+<!-- bf-banner-area-start -->
+{% include 'web/partials/about_us_quote_banner.html' %}
+<!-- bf-banner-area-end -->
+
+<!-- tp-text-slider-area-start -->
+<div class="tp-text-slider-area bf-text-slider-style pt-155" data-bg-color="#fff">
+   {% include 'web/partials/text_slider_inner.html' %}
+</div>
+<!-- tp-text-slider-area-end -->
+
+<!-- award area start -->
+<div class="fix p-relative z-index-4 pt-85 title-box pb-160" data-bg-color="#fff">
+   <div class="container">
+      {% include 'web/partials/awards_list_inner.html' %}
+   </div>
+</div>
+<!-- award area end -->
+
+<!-- instagram text area start -->
+{% include 'web/partials/instagram_feed.html' %}
+<!-- instagram text area end -->
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+
+{% block footer %}
+<!-- tp-footer-area-start -->
+<div class="tp-footer-area tp-footer-2-wrap grey-bg pt-155">
+   <div class="container">
+      {% include 'web/partials/footer_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-footer-area-end -->
+{% endblock footer %}

@@ -1,0 +1,6 @@
+django-tinymce
+django-admin-interface
+python-decouple
+django-extensions
+pillow
+django-import-export

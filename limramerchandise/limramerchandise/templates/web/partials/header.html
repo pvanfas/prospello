@@ -1,0 +1,30 @@
+{% load static %}
+<header class="header__area pos-abs plr-100 shadow">
+    <div class="header__inner">
+        <div class="header__logo">
+            <a href="/"><img src="{% static 'web/imgs/logo/logo.png' %}" alt="Site Logo" style="height: 40px;object-fit: contain;object-position: left;"></a>
+        </div>
+        <div class="header__menu">
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="{% url 'web:index' %}">Home</a></li>
+                    {% comment %}
+                    <li><a href="{% url 'web:about' %}">About</a></li>
+                    <li><a href="{% url 'web:team' %}">Team</a></li>
+                    <li><a href="{% url 'web:news' %}">News</a></li>
+                    {% endcomment %}
+                    <li><a href="{% url 'web:business_lines' %}">Business Lines</a></li>
+                    <li><a href="{% url 'web:careers' %}">Careers</a></li>
+                    <li><a href="{% url 'web:contact' %}">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header__others">
+            <div class="header__offcanvas">
+                <button class="menu_icon">
+                    <img src="{% static 'web/imgs/icon/menu.png' %}" alt="Menu Icon">
+                </button>
+            </div>
+        </div>
+    </div>
+</header>

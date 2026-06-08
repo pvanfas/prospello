@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Order Received</title>
+    <style>
+        body {
+            font-family: "Verdana", sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+            color: #333333;
+        }
+        .order-details, .customer-details, .order-items {
+            margin-top: 20px;
+        }
+        .order-details th, .customer-details th, .order-items th {
+            text-align: left;
+            padding-right: 10px;
+            font-weight: bold;
+        }
+        .order-details td, .customer-details td, .order-items td {
+            padding: 8px;
+        }
+        .order-items-table th, .order-items-table td {
+            padding: 8px 15px;
+            text-align: left;
+        }
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            font-size: 14px;
+            color: #777777;
+        }
+        .footer a {
+            color: #333333;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>New Order Received - Order ID: {{ order.order_id }}</h1>
+        <p>Dear Admin,</p>
+        <p>We are excited to inform you that a new order has been received on the website. Below are the details of the order:</p>
+
+        <div class="order-details">
+            <table width="100%" width="100%" cellpadding="5" cellspacing="0" border="1" style="border-collapse: collapse;">
+                <tr>
+                    <th>Order ID</th>
+                    <td>{{ order.order_id }}</td>
+                </tr>
+                <tr>
+                    <th>Date Created</th>
+                    <td>{{ order.created }}</td>
+                </tr>
+                <tr>
+                    <th>Total Payable Amount</th>
+                    <td>AED {{ order.payable }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="customer-details">
+            <h3>Customer Details:</h3>
+            <table width="100%" width="100%" cellpadding="5" cellspacing="0" border="1" style="border-collapse: collapse;">
+                <tr>
+                    <th>Name</th>
+                    <td>{{ order.first_name }} {{ order.last_name }}</td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>{{ order.address_line_1 }} {{ order.address_line_2 }}</td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td>{{ order.city }}</td>
+                </tr>
+                <tr>
+                    <th>Mobile</th>
+                    <td>{{ order.mobile }}</td>
+                </tr>
+                <tr>
+                    <th>Alternate Mobile</th>
+                    <td>{{ order.alternate_mobile }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ order.email }}</td>
+                </tr>
+                <tr>
+                    <th>Notes</th>
+                    <td>{{ order.notes }}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="order-items">
+            <h3>Order Items:</h3>
+            <table class="order-items-table" width="100%" cellpadding="5" cellspacing="0" border="1" style="border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                        <th>Message</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in order_items %}
+                        <tr>
+                            <td>{{ item.product_option.name }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>AED {{ item.price }}</td>
+                            <td>{{ item.message }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="order-status">
+            <h3>Order Status: {{ order.status }}</h3>
+        </div>
+
+        <p>Please proceed with processing the order.</p>
+
+        <div class="footer">
+            <p>Thank you!</p>
+        </div>
+    </div>
+
+</body>
+</html>

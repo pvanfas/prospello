@@ -1,0 +1,61 @@
+from django.urls import path
+from django.views.generic import TemplateView
+
+from . import views
+
+app_name = "web"
+
+urlpatterns = [
+    path("", views.HomeView.as_view(), name="home"),
+    path("accounts/register/", views.RegistrationView.as_view(), name="registration_register"),
+    path("customize/", views.CustomizeView.as_view(), name="customize"),
+    path("recipient/<str:slug>/", views.RecipientListView.as_view(), name="recipient"),
+    path("category/<str:slug>/", views.CategoryListView.as_view(), name="category"),
+    path("occasion/<str:slug>/", views.OccasionListView.as_view(), name="occasion"),
+    path("emotion/<str:slug>/", views.EmotionListView.as_view(), name="emotion"),
+    path("collection/<str:slug>/", views.CollectionListView.as_view(), name="collection"),
+    path("product/<str:slug>/", views.ProductDetailView.as_view(), name="product"),
+    path("products/", views.ProductListView.as_view(), name="products"),
+    path("about_us/", views.AboutUsView.as_view(), name="about_us"),
+    path("checkout/", views.CheckoutView.as_view(), name="checkout"),
+    path("my_account/", views.MyAccountView.as_view(), name="my_account"),
+    path("order/detail/<str:order_id>/", views.OrderDetailView.as_view(), name="order_detail"),
+    path("order/delivery/information/", views.DeliveryInformationView.as_view(), name="delivery_information"),
+    path("privacy_policy/", views.PrivacyPolicyView.as_view(), name="privacy_policy"),
+    path("terms_conditions/", views.TermsConditionsView.as_view(), name="terms_conditions"),
+    path("support/", views.SupportView.as_view(), name="support"),
+    path("thankyou/", TemplateView.as_view(template_name="web/thankyou.html"), name="thankyou"),
+    # cart
+    path("shop/cart/", views.CartView.as_view(), name="cart"),
+    path("shop/cart/add/", views.AddToCartView.as_view(), name="add_to_cart"),
+    path("shop/cart/minus/", views.MinusCartView.as_view(), name="minus_to_cart"),
+    path("shop/cart/remove/<int:cart_item_id>/", views.RemoveCartItemView.as_view(), name="remove_cart_item"),
+    # path("test/", views.test, name="test"),
+    # Demo pages
+    # path("blog-details.html",TemplateView.as_view(template_name="demo/blog-details.html")),
+    # path("blog-sidebar.html",TemplateView.as_view(template_name="demo/blog-sidebar.html")),
+    # path("blog.html", TemplateView.as_view(template_name="demo/blog.html")),
+    # path("compare.html", TemplateView.as_view(template_name="demo/compare.html")),
+    # path("contact-us.html", TemplateView.as_view(template_name="demo/contact-us.html")),
+    # path("index-2.html", TemplateView.as_view(template_name="demo/index-2.html")),
+    # path("index-3.html", TemplateView.as_view(template_name="demo/index-3.html")),
+    # path("index-4.html", TemplateView.as_view(template_name="demo/index-4.html")),
+    # path("index-5.html", TemplateView.as_view(template_name="demo/index-5.html")),
+    # path("index-6.html", TemplateView.as_view(template_name="demo/index-6.html")),
+    # path("index-7.html", TemplateView.as_view(template_name="demo/index-7.html")),
+    # path("index-8.html", TemplateView.as_view(template_name="demo/index-8.html")),
+    # path("login-register.html",TemplateView.as_view(template_name="demo/login-register.html")),
+    # path("product-details-2.html",TemplateView.as_view(template_name="demo/product-details-2.html")),
+    # path("product-details-affiliate.html",TemplateView.as_view(template_name="demo/product-details-affiliate.html")),
+    # path("product-details-fixed-img.html",TemplateView.as_view(template_name="demo/product-details-fixed-img.html")),
+    # path("product-details-gallery.html",TemplateView.as_view(template_name="demo/product-details-gallery.html")),
+    # path("product-details-group.html",TemplateView.as_view(template_name="demo/product-details-group.html")),
+    # path("product-details.html",TemplateView.as_view(template_name="demo/product-details.html")),
+    # path("shop-list-sidebar.html",TemplateView.as_view(template_name="demo/shop-list-sidebar.html")),
+    # path("shop-list.html", TemplateView.as_view(template_name="demo/shop-list.html")),
+    # path("shop-location.html",TemplateView.as_view(template_name="demo/shop-location.html")),
+    # path("shop-right-sidebar.html",TemplateView.as_view(template_name="demo/shop-right-sidebar.html")),
+    # path("shop-sidebar.html",TemplateView.as_view(template_name="demo/shop-sidebar.html")),
+    # path("shop.html", TemplateView.as_view(template_name="demo/shop.html")),
+    # path("wishlist.html", TemplateView.as_view(template_name="demo/wishlist.html")),
+]

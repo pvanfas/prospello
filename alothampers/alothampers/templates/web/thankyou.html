@@ -1,0 +1,22 @@
+{% extends 'web/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<div class="contact-form-area pt-60 pb-100">
+    <div class="container">
+        <div class="section-title-4 text-center mb-55">
+            <h2>Thank You</h2>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col-md-8 mx-auto text-center">
+                    <p>We have received your order. We will contact you soon.</p>
+                    <a href="{% url 'web:products' %}" class="btn btn-brown mt-4 border">Continue Shopping</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

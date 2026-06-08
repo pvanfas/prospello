@@ -1,0 +1,104 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Breadcrumb area start -->
+<section class="breadcrumb__area">
+  <div class="container">
+    <div class="row">
+      <div class="col-xxl-12">
+        <div class="breadcrumb__inner">
+          <div class="breadcrumb__left">
+            <h1 class="breadcrumb__title">Careers</h1>
+          </div>
+          <div class="breadcrumb__right">
+            <ul>
+              <li> <a href="{% url 'web:index' %}">Home</a> </li>
+              <li> <a href="#">Careers</a> </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Breadcrumb area end -->
+
+<!-- blog area start -->
+<div class="blog-grid-area pt-30 pb-130">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 mx-auto">
+        <div class="thumb text-center" style="margin-bottom: -30px;">
+          <img src="/static/web/imgs/main/career.jpeg?v=1.4" alt="" style="width: 60%;height: 100%;min-width:40%;object-fit: cover;border-radius: 10px;">
+        </div>
+        <div class="card border-0 pt-4 bg-light1 border-radius-25">
+          <div class="card-body p-4 mb-3">
+            Limra is more than a workplace!!! <br>
+            It is a place for you to discover yourself. <br>
+            At limra , you should be able to experience more, acquire new skills, learn continuously, and apply all that
+            learning to your own success and the success of this organisation.
+          </div>
+        </div>
+
+        <div class="blog__form mt-4 pt-0">
+          <form action="" method="post" class="ajax reload pt-0">
+            {% csrf_token %}
+            <div class="row">
+              <div class="col-md-12 mb-3 mt-4"><span class="blog__form-title">Personal Information</span></div>
+              <div class="col-md-12">{{ form.fullname.label_tag }}{{form.fullname}}</div>
+              <div class="col-md-12">{{ form.email.label_tag }}{{form.email}}</div>
+
+              <div class="col-md-12">{{ form.phone.label_tag }}
+                <div class="d-flex">
+                  <select class="form-control" maxlength="5" id="country_code_select"></select>
+                  {{ form.country_code }}
+                  {{ form.phone }}
+                </div>
+              </div>
+              <div class="col-md-12">{{ form.nationality.label_tag }}{{form.nationality}}</div>
+
+              <div class="col-md-12 mb-3 mt-4"><span class="blog__form-title">Professional Information</span></div>
+              <div class="col-md-12">{{ form.position.label_tag }}{{form.position}}</div>
+              <div class="col-md-12">{{ form.qualification.label_tag }}{{form.qualification}}</div>
+              <div class="col-md-12">{{ form.experience.label_tag }}{{form.experience}}</div>
+              <div class="col-md-12">{{ form.resume.label_tag }}{{form.resume}}</div>
+
+
+              <div class="contact__submitwrap">
+                <button class="contact__submit btn-rollover" type="submit">Send now <i
+                    class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- /blog area end -->
+{% endblock %}
+
+{% block js %}
+<script>
+  $(document).ready(function () {
+    const input = document.querySelector("#country_code_select");
+    const iti = window.intlTelInput(input, {
+      separateDialCode: true,
+      preferredCountries: ["in", "ae", "qa", "sa", "bh", "kw"],
+      utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@19.2.19/build/js/utils.js",
+      initialCountry: "ae",
+      showSelectedDialCode: true,
+    });
+    input.addEventListener("countrychange", function () {
+      document.querySelector("#id_country_code").value = iti.getSelectedCountryData().dialCode;
+    });
+    document.querySelector("#id_phone").addEventListener("keypress", function (e) {
+      if (e.key.length === 1 && e.key.match(/[^0-9]/)) {
+        e.preventDefault();
+      }
+    });
+  });
+</script>
+{% endblock %}

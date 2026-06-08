@@ -1,0 +1,87 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+
+{% block header %}
+
+<!-- tp-header-area-start -->
+<div id="header-sticky" class="tp-header-area tp-header-2-spacing mt-20 tp-transparent tp-header-spacing">
+   <div class="container">
+      {% include 'web/partials/header_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-header-area-end -->
+{% endblock header %}
+
+{% block main %}
+<!-- postbox area start -->
+<div class="tp-blog-details-without-ptb">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="tp-blog-details-without-heading text-center">
+               {% include 'web/partials/blog_post_header.html' with header_class='postbox-details-item' title_class='mb-35' meta_class='justify-content-center' %}
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!-- postbox area end -->
+
+<!-- postbox area start -->
+<section id="postbox" class="postbox-area tp-blog-details-ptb pt-20 pb-120">
+   <div class="container container-1750">
+      <div class="tp-blog-details-banner fix mb-100">
+         <img data-speed=".8" src="{% static 'web/img/blog/blog-details/blog-details-banner.jpg' %}" alt="">
+      </div>
+   </div>
+   <div class="container">
+      <div class="row justify-content-center">
+         <div class="col-xxl-8 col-xl-8 col-lg-8">
+            {% include 'web/partials/blog_post_content.html' %}
+         </div>
+      </div>
+   </div>
+   <div class="container container-1750">
+      <div class="row">
+         <div class="col-xl-12">
+            <a href="#">
+               <div class="postbox-details-nevigation-wrap p-relative">
+                  <div class="postbox-details-nevigation-thumb-bg">
+                     <div class="postbox-details-nevigation-thumb">
+                        <img data-speed=".8" src="{% static 'web/img/blog/blog-details/blog-details-2.jpg' %}" alt="">
+                     </div>
+                  </div>
+                  <div class="postbox-details-nevigation-content">
+                     <span>Next Post</span>
+                     <h4 class="postbox-details-nevigation-title">Tips for thriving in our <br> virtual world</h4>
+                  </div>
+               </div>
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="container container-1330">
+      <div class="row justify-content-center">
+         <div class="col-xl-8">
+            {% include 'web/partials/blog_comments.html' %}
+            {% include 'web/partials/blog_reply_form.html' %}
+         </div>
+      </div>
+   </div>
+</section>
+<!-- postbox area end -->
+
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+
+{% block footer %}
+<!-- tp-footer-area-start -->
+<div class="tp-footer-area tp-footer-2-wrap grey-bg pt-155">
+   <div class="container">
+      {% include 'web/partials/footer_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-footer-area-end -->
+{% endblock footer %}

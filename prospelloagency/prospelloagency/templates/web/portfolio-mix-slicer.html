@@ -1,0 +1,126 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body_class %}tp-magic-cursor bfolio-light{% endblock %}
+{% block body_bg_attr %}data-bg-color="#f8f8f9"{% endblock %}
+
+{% block offcanvas %}
+{% include 'web/partials/offcanvas.html' %}
+{% endblock offcanvas %}
+
+{% block header %}
+{% include 'web/partials/header_portfolio_interactive.html' %}
+{% endblock header %}
+
+{% block main %}
+<div class="tp-portfolio-mix-slider-wrap mix p-relative">
+   <div class="swiper tp-portfolio-mix-slider">
+      <div class="swiper-wrapper">
+         <!-- Slide Item -->
+         <div class="swiper-slide">
+            <div class="tp-portfolio-mix-slider-item">
+               <div class="tp-portfolio-mix-slider-image">
+                  <img class="swiper-gl-image" src="{% static 'web/img/update/mix/thumb.jpg' %}" alt="">
+                  <a class="popup-image" href="{% static 'web/img/update/mix/thumb.jpg' %}">
+                     <i class="fa-regular fa-arrows-maximize"></i>
+                  </a>
+               </div>
+               <div class="tp-portfolio-mix-slider-content">
+                  <span class="tp-portfolio-mix-slide-text">Greetings, Traveler</span>
+                  <h2 class="tp-portfolio-mix-slide-heading"><a href="portfolio-details-light.html">Smart platform</a>
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <!-- End Slide Item -->
+
+         <!-- Slide Item -->
+         <div class="swiper-slide">
+            <div class="tp-portfolio-mix-slider-item">
+               <div class="tp-portfolio-mix-slider-image">
+                  <img class="swiper-gl-image" src="{% static 'web/img/update/mix/thumb-2.jpg' %}" alt="">
+                  <a class="popup-image" href="{% static 'web/img/update/mix/thumb-2.jpg' %}">
+                     <i class="fa-regular fa-arrows-maximize"></i>
+                  </a>
+               </div>
+               <div class="tp-portfolio-mix-slider-content">
+                  <span class="tp-portfolio-mix-slide-text">Interactive Mind</span>
+                  <h2 class="tp-portfolio-mix-slide-heading"><a href="portfolio-details-light.html">World’s Relays</a>
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <!-- End Slide Item -->
+
+         <!-- Slide Item -->
+         <div class="swiper-slide">
+            <div class="tp-portfolio-mix-slider-item">
+               <div class="tp-portfolio-mix-slider-image">
+                  <img class="swiper-gl-image" src="{% static 'web/img/update/mix/thumb-3.jpg' %}" alt="">
+                  <a class="popup-image" href="{% static 'web/img/update/mix/thumb-3.jpg' %}">
+                     <i class="fa-regular fa-arrows-maximize"></i>
+                  </a>
+               </div>
+               <div class="tp-portfolio-mix-slider-content">
+                  <span class="tp-portfolio-mix-slide-text">Greetings, Traveler!</span>
+                  <h2 class="tp-portfolio-mix-slide-heading"><a href="portfolio-details-light.html">Bright Captive</a>
+                  </h2>
+               </div>
+            </div>
+         </div>
+         <!-- End Slide Item -->
+
+         <!-- Slide Item -->
+         <div class="swiper-slide">
+            <div class="tp-portfolio-mix-slider-item">
+               <div class="tp-portfolio-mix-slider-image">
+                  <img class="swiper-gl-image" src="{% static 'web/img/update/mix/thumb-4.jpg' %}" alt="">
+                  <a class="popup-image" href="{% static 'web/img/update/mix/thumb-4.jpg' %}">
+                     <i class="fa-regular fa-arrows-maximize"></i>
+                  </a>
+               </div>
+               <div class="tp-portfolio-mix-slider-content">
+                  <span class="tp-portfolio-mix-slide-text">[ UI, Web Design ]</span>
+                  <h2 class="tp-portfolio-mix-slide-heading"><a href="portfolio-details-light.html">Top Paddock</a></h2>
+               </div>
+            </div>
+         </div>
+         <!-- End Slide Item -->
+
+         <!-- Slide Item -->
+         <div class="swiper-slide">
+            <div class="tp-portfolio-mix-slider-item">
+               <div class="tp-portfolio-mix-slider-image">
+                  <img class="swiper-gl-image" src="{% static 'web/img/update/mix/thumb-5.jpg' %}" alt="">
+                  <a class="popup-image" href="{% static 'web/img/update/mix/thumb-5.jpg' %}">
+                     <i class="fa-regular fa-arrows-maximize"></i>
+                  </a>
+               </div>
+               <div class="tp-portfolio-mix-slider-content">
+                  <span class="tp-portfolio-mix-slide-text">Digital platform</span>
+                  <h2 class="tp-portfolio-mix-slide-heading"><a href="portfolio-details-light.html">Royal Benz</a></h2>
+               </div>
+            </div>
+         </div>
+         <!-- End Slide Item -->
+
+      </div>
+   </div>
+   <div class="tp-portfolio-mix-slider-navigation overflow-hidden">
+      <div class="container-fluid container-1750">
+         <div class="slider-nav">
+            <div class="tp-portfolio-mix-button-prev nav-icon">
+               <i class="fa-solid fa-angle-left"></i>Prev
+            </div>
+            <div class="tp-portfolio-mix-button-next nav-icon">
+               Next<i class="fa-solid fa-angle-right"></i>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="tp-portfolio-mix-pagination has_fade_anim" data-fade-from="bottom" data-fade-offset="0"
+      data-on-scroll="0" data-delay="0.45"></div>
+</div>
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+{% block footer %}{% endblock %}

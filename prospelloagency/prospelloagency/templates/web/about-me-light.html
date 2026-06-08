@@ -1,0 +1,56 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block header %}
+
+<!-- tp-header-area-start -->
+<div id="header-sticky" class="tp-header-area tp-header-2-spacing mt-20 tp-transparent tp-header-spacing">
+   <div class="container">
+      {% include 'web/partials/header_inner_content.html' %}
+   </div>
+</div>
+<!-- tp-header-area-end -->
+
+{% endblock header %}
+{% block main %}
+
+{% include 'web/partials/about_me_intro.html' %}
+
+{% include 'web/partials/about_me_personal_info.html' %}
+
+<!-- tp-text-slider-area-start -->
+<div class="tp-text-slider-area">
+   {% include 'web/partials/text_slider_inner.html' %}
+</div>
+<!-- tp-text-slider-area-end -->
+
+<!-- award area start -->
+<div class="design-award-area pt-190 title-box pb-160 grey-bg">
+   <div class="container">
+      {% include 'web/partials/awards_list_inner.html' %}
+   </div>
+</div>
+<!-- award area end -->
+
+<!-- tp-counter-area-start -->
+{% include 'web/partials/about_me_counter.html' %}
+<!-- tp-counter-area-end -->
+
+<!-- tp-faq-area-start -->
+{% include 'web/partials/about_me_faq.html' %}
+<!-- tp-faq-area-end -->
+{% endblock main %}
+
+{% block footer_class %}{% endblock %}
+
+{% block footer %}
+<div class="tp-footer-area tp-footer-2-wrap grey-bg pt-155">
+   <div class="container">
+      {% include 'web/partials/footer_inner_content.html' %}
+   </div>
+</div>
+{% endblock footer %}
+
+{% block extra_js %}
+<script src="{% static 'web/js/matter.js' %}"></script>
+<script src="{% static 'web/js/throwable.js' %}"></script>
+{% endblock extra_js %}

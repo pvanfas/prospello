@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Serve existing files/directories as-is
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # Fallback all other requests to the SPA entry point
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# If mod_rewrite is not available, you must configure this in your VirtualHost:
+#   AllowOverride All
+# and ensure mod_rewrite is enabled (a2enmod rewrite)
+
+

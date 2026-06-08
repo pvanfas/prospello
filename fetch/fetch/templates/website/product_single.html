@@ -7,13 +7,17 @@
 <meta property="og:url" content="http://www.myfetch.in/" />
 <meta property="og:title" content="FETCH - Embellish with style & comfort" />
 <meta property="og:description" content="Fetch is a leading manufacturer of office chairs for more than 40 years in Kerala, India. Find the best quality office chairs in various models only from fetch." />
+{% if product.featured_image %}
 <meta property="og:image" content="http://www.myfetch.in{{product.featured_image.crop.1200x630}}" />
+{% endif %}
 
 <!-- Twitter -->
 <meta property="twitter:title" content="FETCH - Embellish with style & comfort" />
 <meta property="twitter:url" content="http://www.myfetch.in/" />
 <meta property="twitter:description" content="Fetch is a leading manufacturer of office chairs for more than 40 years in Kerala, India. Find the best quality office chairs in various models only from fetch." />
+{% if product.featured_image %}
 <meta property="twitter:image" content="http://www.myfetch.in{{product.featured_image.crop.1200x630}}" />
+{% endif %}
 <meta property="twitter:card" content="summary_large_image" />
 {% endblock %}
 
@@ -33,7 +37,11 @@
                     <div class="col-md-6 border-end">
                         <div class="d-flex flex-column justify-content-center">
                             <div class="main_image" style="background: url({% static 'web/images/watermark.svg' %}) transparent no-repeat center center  / contain; background-size: contain;">
+                                {% if product.featured_image %}
                                 <img src="{{product.featured_image.url}}" id="main_product_image" width="350" loading="lazy" style="object-fit: contain;height: 100%;">
+                                {% else %}
+                                <img src="https://via.placeholder.com/350x350" id="main_product_image" width="350" loading="lazy" style="object-fit: contain;height: 100%;">
+                                {% endif %}
                             </div>
                             {% comment %}
                             <div class="thumbnail_images">

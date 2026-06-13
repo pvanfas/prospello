@@ -1,4 +1,4 @@
-(function() {
+(function () {
     "use strict";
 
     /**
@@ -101,7 +101,7 @@
     /**
      * Mobile nav toggle
      */
-    on('click', '.mobile-nav-toggle', function(e) {
+    on('click', '.mobile-nav-toggle', function (e) {
         select('#navbar').classList.toggle('navbar-mobile')
         $('#navbar ul').toggle()
         this.classList.toggle('bi-list')
@@ -111,7 +111,7 @@
     /**
      * Mobile nav dropdowns activate
      */
-    on('click', '.navbar .dropdown > a', function(e) {
+    on('click', '.navbar .dropdown > a', function (e) {
         if (select('#navbar').classList.contains('navbar-mobile')) {
             e.preventDefault()
             this.nextElementSibling.classList.toggle('dropdown-active')
@@ -122,20 +122,19 @@
     new Swiper('.hero-slider', {
         speed: 600,
         loop: true,
+        effect: 'fade',
+        fadeEffect: {
+            crossFade: true
+        },
         autoplay: {
             delay: 5000,
             disableOnInteraction: false
         },
-        slidesPerView: 'auto',
+        slidesPerView: 1,
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
             clickable: true
-        },
-        breakpoints: {
-            1200: {
-                slidesPerView: 1,
-            }
         }
     });
 
@@ -158,19 +157,19 @@
         breakpoints: {
             320: {
                 slidesPerView: 2,
-                spaceBetween: 40
+                spaceBetween: 10
             },
             480: {
                 slidesPerView: 3,
-                spaceBetween: 60
+                spaceBetween: 20
             },
             640: {
                 slidesPerView: 4,
-                spaceBetween: 80
+                spaceBetween: 20
             },
             992: {
                 slidesPerView: 6,
-                spaceBetween: 120
+                spaceBetween: 20
             }
         }
     });
@@ -203,11 +202,11 @@
         }
     });
 
-    $("select.form-control").change(function(e){
-         $("select span").html($("select.form-control").val());
+    $("select.form-control").change(function (e) {
+        $("select span").html($("select.form-control").val());
     });
 
-    $(document).on('submit', 'form.ajax', function(e) {
+    $(document).on('submit', 'form.ajax', function (e) {
         e.preventDefault();
         var $this = $(this);
         var data = new FormData(this);
@@ -226,7 +225,7 @@
             processData: false,
             dataType: "json",
 
-            success: function(data) {
+            success: function (data) {
 
                 var status = data.status;
                 var title = data.title;
@@ -244,7 +243,7 @@
                         title: title,
                         html: message,
                         icon: 'success',
-                    }).then(function() {
+                    }).then(function () {
                         if (redirect) {
                             window.location.href = redirect_url;
                         }
@@ -270,7 +269,7 @@
 
                 }
             },
-            error: function(data) {
+            error: function (data) {
                 var title = "An error occurred";
                 var message = "something went wrong";
                 Swal.fire({

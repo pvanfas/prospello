@@ -2,10 +2,18 @@
 {% if clients %}
 <section id="clients" class="clients">
     <div class="container">
+        <div class="clients-header">
+            <h3>Trusted By Leading Brands</h3>
+            <span class="clients-subtitle">Partnering with organizations that value style, durability, and comfort</span>
+        </div>
         <div class="clients-slider swiper">
             <div class="swiper-wrapper align-items-center">
                 {% for client in clients %}
-                <div class="swiper-slide"><img src="{{client.logo.url}}" class="img-fluid" alt="fetch clients" /></div>
+                <div class="swiper-slide">
+                    <div class="client-logo-wrapper">
+                        <img src="{{client.logo.url}}" class="client-logo" alt="{{client.name}}" />
+                    </div>
+                </div>
                 {% endfor %}
             </div>
         </div>

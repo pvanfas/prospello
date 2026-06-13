@@ -16,9 +16,9 @@
                 {% for news in newses %}
                 <div class="col-lg-4 mb-4">
                     <div class="box position-relative h-100 shadow-sm border-0 transition-hover">
-                        <img src="{{news.featured_image.crop.400x240}}" class="img-fluid w-100 rounded-top" alt="{{news.title}}" />
+                        <img src="{{news.featured_image.crop.400x240}}" class="img-fluid w-100 rounded-top" alt="{{news.title|title_normal}}" />
                         <div class="box-content p-4 mb-0">
-                            <h6 class="mb-2"><a href="{{news.get_view_url}}" class="stretched-link text-decoration-none text-dark fw-bold">{{news.title}}</a></h6>
+                            <h6 class="mb-2"><a href="{{news.get_view_url}}" class="stretched-link text-decoration-none text-dark fw-bold">{{news.title|title_normal}}</a></h6>
                             <p class="text-muted small mb-3">{{news.summary|truncatechars:100}}</p>
                             <div class="text-primary small fw-bold">Read More <i class="bi bi-arrow-right"></i></div>
                         </div>

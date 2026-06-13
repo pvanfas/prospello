@@ -1,5 +1,5 @@
 {% extends 'website/base.html' %} {% load static honeypot %} {% block title %}Fetch Office Chairs | High quality office chairs in Kerala{% endblock %} {% block content %}
-<section id="hero" class="hero d-flex align-items-center">
+<section id="hero" class="hero d-flex align-items-center" style="height: 100vh;">
     <div class="container">
 
         <div class="hero-slider swiper">
@@ -7,15 +7,18 @@
                 {% for banner in banners %}
                 <div class="swiper-slide">
                     <div class="row">
-                        <div class="col-lg-7 d-flex flex-column justify-content-center">
+                        <div class="col-lg-6 d-flex flex-column justify-content-center">
                             <h1>{{banner.title}}</h1>
+                            {% if banner.description %}
+                            <h2>{{banner.description}}</h2>
+                            {% endif %}
                             <div class="text-center text-lg-start">
                                 <a href="{% url 'web:products' %}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
                                     Get Started
                                 </a>
                             </div>
                         </div>
-                        <div class="col-lg-5 hero-img">
+                        <div class="col-lg-6 hero-img">
                             <img src="{{banner.photo.url}}" loading="lazy" class="img-fluid" alt="office chairs in kerala" />
                         </div>
                     </div>

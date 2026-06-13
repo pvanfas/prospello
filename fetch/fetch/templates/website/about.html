@@ -1,15 +1,20 @@
 {% extends 'website/base.html' %} {% load static honeypot %} {% block title %}About | Fetch Office chairs brand in Kerala{% endblock %} {% block content %}
-<section id="hero" class="subhero pb-0 d-flex align-items-center">
+<section id="hero" class="subhero pb-0 d-flex align-items-center" style="height: 100vh;">
     <div class="container">
         <div class="row justify-content-between align-items-center">
-            <div class="col-lg-4 hero-img">
-                <img src="{% static 'web/images/subchair.png' %}" class="img-fluid" alt="office chairs" />
+            <div class="col-lg-4 hero-img text-center">
+                <img src="{% static 'web/images/subchair.png' %}" class="img-fluid floating-img" alt="office chairs" style="max-height: 60vh;" />
             </div>
-            <div class="col-lg-7 d-flex flex-column">
-                <h1 class="main_head text-center w-100"><span>FEEL THE CHANGE</span></h1>
-
+            <div class="col-lg-7 d-flex flex-column justify-content-center">
+                <span class="badge rounded-pill px-3 py-2 mb-3 align-self-start" style="color: var(--primary-color) !important; background-color: rgba(193, 31, 78, 0.08) !important; font-size: 0.85rem; letter-spacing: 1.5px; font-weight: 600; text-transform: uppercase;">About Fetch</span>
+                <h1 class="main_head text-start w-100 mb-4" style="font-family: var(--secondary-font); font-size: 3.5rem; font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; text-transform: none;">Feel the <span class="d-inline" style="color: var(--primary-color);">Change</span></h1>
+                <p class="lead text-muted mb-4" style="font-size: 1.15rem; line-height: 1.7; font-family: var(--primary-font); font-weight: 400; max-width: 580px;">We believe in crafting office chairs that do more than just seat you — they elevate your everyday workspace. Experience a new standard of ergonomic design, lasting comfort, and modern elegance tailored for your professional journey.</p>
+                <div class="text-start">
+                    <a href="#about" class="fill-btn scrollto d-inline-flex align-items-center gap-2" style="font-size: 15px; font-weight: 600;">
+                        Discover Our Story <i class="bi bi-arrow-down"></i>
+                    </a>
+                </div>
             </div>
-
         </div>
     </div>
 </section>

@@ -1,7 +1,7 @@
 {% extends 'website/base.html' %} 
-{% load static honeypot %} 
+{% load static honeypot filters %} 
 
-{% block title %}{{news.title}} | FETCH - Office chairs brand in Kerala{% endblock %} 
+{% block title %}{{news.title|title_normal}} | FETCH - Office chairs brand in Kerala{% endblock %} 
 
 {% block content %}
 <main>
@@ -10,7 +10,7 @@
             <a href="{% url 'web:updates' %}" class="back-btn">
                 <i class="bi bi-arrow-left"></i> Back to Updates
             </a>
-            <h1>{{news.title}}</h1>
+            <h1>{{news.title|title_normal}}</h1>
             <div class="news-meta">
                 <span><i class="bi bi-calendar3 me-2"></i> {{ news.timestamp|date:"F d, Y" }}</span>
                 <span><i class="bi bi-person me-2"></i> Admin</span>
@@ -24,7 +24,7 @@
                 <div class="col-lg-8">
                     <div class="article-card">
                         <div class="featured-image-wrapper">
-                            <img src="{{news.featured_image.url}}" alt="{{news.title}}" class="img-fluid">
+                            <img src="{{news.featured_image.url}}" alt="{{news.title|title_normal}}" class="img-fluid">
                         </div>
                         
                         <div class="article-content">
@@ -34,9 +34,9 @@
                         <div class="share-section">
                             <span class="fw-bold me-2">Share this:</span>
                             <a href="https://www.facebook.com/sharer/sharer.php?u={{ domain }}{{ request.path }}" target="_blank" class="share-btn"><i class="bi bi-facebook"></i></a>
-                            <a href="https://twitter.com/intent/tweet?url={{ domain }}{{ request.path }}&text={{ news.title }}" target="_blank" class="share-btn"><i class="bi bi-twitter"></i></a>
-                            <a href="https://api.whatsapp.com/send?text={{ news.title }} {{ domain }}{{ request.path }}" target="_blank" class="share-btn"><i class="bi bi-whatsapp"></i></a>
-                            <a href="mailto:?subject={{ news.title }}&body=Check out this article: {{ domain }}{{ request.path }}" class="share-btn"><i class="bi bi-envelope"></i></a>
+                             <a href="https://twitter.com/intent/tweet?url={{ domain }}{{ request.path }}&text={{ news.title|title_normal }}" target="_blank" class="share-btn"><i class="bi bi-twitter"></i></a>
+                            <a href="https://api.whatsapp.com/send?text={{ news.title|title_normal }} {{ domain }}{{ request.path }}" target="_blank" class="share-btn"><i class="bi bi-whatsapp"></i></a>
+                            <a href="mailto:?subject={{ news.title|title_normal }}&body=Check out this article: {{ domain }}{{ request.path }}" class="share-btn"><i class="bi bi-envelope"></i></a>
                         </div>
                     </div>
                 </div>
@@ -49,11 +49,11 @@
                             <div class="recent-post-item">
                                 <div class="recent-post-thumb">
                                     <a href="{{ item.get_view_url }}">
-                                        <img src="{{ item.featured_image.crop.100x100 }}" alt="{{ item.title }}">
+                                        <img src="{{ item.featured_image.crop.100x100 }}" alt="{{ item.title|title_normal }}">
                                     </a>
                                 </div>
                                 <div class="recent-post-info">
-                                    <h4><a href="{{ item.get_view_url }}">{{ item.title }}</a></h4>
+                                    <h4><a href="{{ item.get_view_url }}">{{ item.title|title_normal }}</a></h4>
                                     <div class="recent-post-date">{{ item.timestamp|date:"M d, Y" }}</div>
                                 </div>
                             </div>

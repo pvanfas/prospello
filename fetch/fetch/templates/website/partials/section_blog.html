@@ -17,8 +17,8 @@
                 <div class="box">
                     <img src="{{news.featured_image.crop.400x250}}" class="img-fluid w-100" alt="office furnitures" />
                     <div class="box-content">
-                        <h6>{{news.title}}</h6>
-                        <p>{{news.summary}}</p>
+                        <h6>{{news.title|title_normal}}</h6>
+                        <p>{{news.summary|truncatechars:120}}</p>
                         <a href="{{news.get_view_url}}"><i class="bi bi-chevron-double-right"></i> Read More</a>
                     </div>
                 </div>

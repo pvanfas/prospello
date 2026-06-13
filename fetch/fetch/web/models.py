@@ -28,6 +28,7 @@ class About(models.Model):
 
 class Banner(models.Model):
     title = models.CharField(max_length=128)
+    description = models.TextField(blank=True, null=True)
     photo = VersatileImageField(
         "Banner Photo", blank=True, null=True, upload_to="images/banners"
     )
